@@ -1,24 +1,19 @@
 package common;
 
+/**
+ *  classe enumerativa sulle possibili tipologie di centri vaccinali
+ * @author  Alessandro Cassani
+ */
 public enum Tipologia {
 
-    OSPEDALIERO, HUB, AZIENDALE;
+    OSPEDALIERO,HUB,AZIENDALE;
 
-    public String getTipologia(Tipologia tipologia){
-        String tipo = "";
-
-        switch (tipologia){
-            case HUB:
-                tipo = "hub";
-                break;
-            case AZIENDALE:
-                tipo = "azindale";
-                break;
-            case OSPEDALIERO:
-                tipo = "ospedaliero";
-                break;
-        }
-
-        return tipo;
+    /**
+     * metodo che visualizza la stringa in minuscolo della tipologia di centro vaccinale associata
+     * @return
+     */
+    @Override
+    public String toString() {
+        return this.name().toLowerCase();
     }
 }

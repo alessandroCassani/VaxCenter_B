@@ -1,33 +1,36 @@
 package common;
 
-public enum Sintomatologia {
+import java.io.Serializable;
 
-    MALDITESTA, FEBBRE, DOLORI_MA, LINFOADENOPATIA, TACHICARDIA, CRISIPERTENSIVA;
+/**
+ * classe enumerativa sulla possibile sintomatologia segnalabile dal cittadino post vaccinazione
+ *
+ * @author  Alessandro Cassani
+ */
+public enum Sintomatologia{
 
-    public String getSintomatologia(Sintomatologia sintomatologia){
-        String sintomo = "";
+    MALDITESTA("Mal di Testa"),FEBBRE("Febbre"), DOLORI_MA("Dolori Muscolari e Articolari"),
+    LINFOADENOPATIA("Linfoadenopatia"), TACHICARDIA("Tachicardia"), CRISIPERTENSIVA("Crisi Ipertensiva");
 
-        switch (sintomatologia){
-            case MALDITESTA:
-                sintomo = "mal di testa";
-                break;
-            case FEBBRE:
-                sintomo = "febbre";
-                break;
-            case DOLORI_MA:
-                sintomo = "dolori muscolari e articolari";
-                break;
-            case LINFOADENOPATIA:
-                sintomo = "linfoadenopatia";
-                break;
-            case TACHICARDIA:
-                sintomo = "tachicardia";
-                break;
-            case CRISIPERTENSIVA:
-                sintomo = "crisi ipertensiva";
-                break;
-        }
+    /**
+     * nome user friendly e minuscolo della sintomatologia segnalata
+     */
+    private String nome;
 
-        return sintomo;
+    /**
+     * metodo che associa un nome alla sintomatologia
+     * @param nome nome della possibile sintomatologia
+     */
+    Sintomatologia(String nome){
+        this.nome = nome;
+    }
+
+    /**
+     * metodo che visualizza una stringa rappresentante il nome della sintomatologia associata
+     * @return nome user friendly e minuscolo della sintomatologia segnalata
+     */
+    @Override
+    public String toString() {
+        return nome;
     }
 }
