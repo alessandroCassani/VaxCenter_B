@@ -67,4 +67,14 @@ public class CentroVaccinale implements Serializable {
     public Tipologia getTipologia(){
         return tipologia;
     }
+
+    /**
+     * metodo che ritorno la stringa rappresentante le informazioni del centro vaccinale
+     * @return nome tipologia e indirizzo del cwentro vaccinale
+     *
+     *  @author Alessandro Cassani
+     */
+    public String toString(){
+        return nome + " tipologia: " + tipologia + "\n" + indirizzo;
+    }
 }

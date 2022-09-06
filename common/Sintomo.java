@@ -42,4 +42,13 @@ public class Sintomo implements Serializable {
         return severita;
     }
 
+    /**
+     * metodo che ritorna le informazioni della sintomatologia segnalata
+     * @return nome sintomatologia e severita' associata
+     *
+     * @author  Alessandro Cassani
+     */
+    public String toString(){
+        return sintomatologia + " severità: " + severita;
+    }
 }

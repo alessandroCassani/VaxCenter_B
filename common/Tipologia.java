@@ -10,7 +10,7 @@ public enum Tipologia {
 
     /**
      * metodo che visualizza la stringa in minuscolo della tipologia di centro vaccinale associata
-     * @return
+     * @return nome della tipologia di centro vaccinale
      */
     @Override
     public String toString() {

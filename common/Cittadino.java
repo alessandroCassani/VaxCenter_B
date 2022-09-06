@@ -15,6 +15,7 @@ public class Cittadino extends Persona {
     private Account account;
 
         /**
+         * metodo che permette la modellazione delle informazioni di un oggetto di tipo Cittadino
          *
          * @param nome nome del cittadino
          * @param cognome cognome del cittadino

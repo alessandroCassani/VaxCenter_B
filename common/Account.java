@@ -21,6 +21,7 @@ public class Account implements Serializable {
 
         /**
          * metodo che permette la creazione di un oggetto di tipo Account
+         *
          * @param userId userId della persona associata all'account
          * @param password password della persona associata all'account
          *
