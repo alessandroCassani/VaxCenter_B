@@ -1,8 +1,9 @@
 package common;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public abstract class Persona {
+public abstract class Persona implements Serializable {
 
     private String nome;
 
@@ -16,9 +17,19 @@ public abstract class Persona {
 
     private Date dataNascita;
 
-    private Indirizzo indirizzo;
-
     private CentroVaccinale centroVaccinale;
+
+    public Persona(){}
+
+    public Persona(String nome,String cognome, String codFisc,String email, String id, Date dataNascita, CentroVaccinale centroVaccinale){
+        this.nome = nome;
+        this.cognome = cognome;
+        this.codFisc = codFisc;
+        this.email = email;
+        this.id = id;
+        this.dataNascita = dataNascita;
+        this.centroVaccinale = centroVaccinale;
+    }
 
 
 
