@@ -70,7 +70,7 @@ public class CentroVaccinale implements Serializable {
 
     /**
      * metodo che ritorno la stringa rappresentante le informazioni del centro vaccinale
-     * @return nome tipologia e indirizzo del cwentro vaccinale
+     * @return nome tipologia e indirizzo del centro vaccinale
      *
      *  @author Alessandro Cassani
      */

@@ -53,5 +53,4 @@ public class EventiAvversi implements Serializable {
     public ArrayList<Sintomo> getSintomi(){
         return sintomi;
     }
-
 }
