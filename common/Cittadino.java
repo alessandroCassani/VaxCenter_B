@@ -11,5 +11,9 @@ public class Cittadino extends Persona {
         this.account = account;
     }
 
+    public Account getAccount(){
+        return account;
+    }
+
 }
 

@@ -13,4 +13,12 @@ public class Vaccinato extends Persona {
         this.dataSomministrazione = dataSomministrazione;
         this.vaccino = vaccino;
     }
+
+    public Date getDataSomministrazione(){
+        return dataSomministrazione;
+    }
+
+    public  Vaccino getVaccino(){
+        return vaccino;
+    }
 }

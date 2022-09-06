@@ -31,9 +31,32 @@ public abstract class Persona implements Serializable {
         this.centroVaccinale = centroVaccinale;
     }
 
+    public String getNome(){
+        return nome;
+    }
 
+    public String getCognome(){
+        return cognome;
+    }
 
+    public String getCodFisc(){
+        return codFisc;
+    }
 
+    public String getEmail(){
+        return email;
+    }
 
+    public String getId(){
+        return id;
+    }
+
+    public Date getDataNascita(){
+        return dataNascita;
+    }
+
+    public CentroVaccinale getCentroVaccinale(){
+        return centroVaccinale;
+    }
 
 }

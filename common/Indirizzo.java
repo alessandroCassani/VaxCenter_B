@@ -1,6 +1,8 @@
 package common;
 
-public class Indirizzo {
+import java.io.Serializable;
+
+public class Indirizzo implements Serializable {
 
     private Qualificatore qualificatore;
 
@@ -23,6 +25,28 @@ public class Indirizzo {
             this.cap = cap;
     }
 
+    public Qualificatore getQualificatore(){
+        return qualificatore;
+    }
 
+    public String getNome(){
+        return nome;
+    }
+
+    public String getCivico(){
+        return civico;
+    }
+
+    public String getComune(){
+        return comune;
+    }
+
+    public String getProvincia(){
+        return provincia;
+    }
+
+    public int getCap(){
+        return cap;
+    }
 
 }
