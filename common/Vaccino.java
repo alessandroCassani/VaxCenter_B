@@ -8,6 +8,12 @@ package common;
 public enum Vaccino {
     PFIZER, ASTRAZENECA, MODERNA, JOHNSON;
 
+    /**
+     * metodo che visualizza nome del vaccino considerato
+     * @return nome del vaccino
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public String toString() {
         if(this.name().equals("JOHNSON"))
