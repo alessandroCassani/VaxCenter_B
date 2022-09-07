@@ -1,6 +1,5 @@
 package common;
 
-import java.io.Serializable;
 
 /**
  * classe enumerativa sulla possibile sintomatologia segnalabile dal cittadino post vaccinazione
