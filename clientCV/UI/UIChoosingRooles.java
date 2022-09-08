@@ -1,13 +1,22 @@
-package clientCV;
+package clientCV.UI;
 
 import javax.swing.*;
 
-/**
- * Nell'interfaccia grafica UIChoosingRooles l'utente sceglie se accedere come operatore o come cittadino
- */
+    /**
+     * Nell'interfaccia grafica UIChoosingRooles l'utente sceglie se accedere come operatore o come cittadino
+     */
 public class UIChoosingRooles extends JFrame {
+        /**
+         * Pannello principale di visualizzazione
+         */
     private JPanel PanelChoosingRooles;
+        /**
+         * Bottone per accedere alla sezione Cittadini
+         */
     private JButton cittadiniButton;
+        /**
+         * Bottone per accedere alla sezione Operatori Vaccinali
+         */
     private JButton operatoreVaccinaleButton;
 
     public UIChoosingRooles(String titolo) {
@@ -15,7 +24,7 @@ public class UIChoosingRooles extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PanelChoosingRooles);
         this.pack();
-        this.setSize(1200, 800);
+        this.setSize(1280, 720);
     }
 
     public static void main(String[] args) {
