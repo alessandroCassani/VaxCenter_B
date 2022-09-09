@@ -19,8 +19,8 @@ public class UIChoosingRooles extends JFrame {
      */
     private JButton operatoreVaccinaleButton;
 
-    public UIChoosingRooles(String titolo) {
-        super(titolo);
+    public UIChoosingRooles(String title) {
+        super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setSize(1280, 720);
