@@ -10,30 +10,26 @@ public class WelcomeScreen extends JFrame {
     Timer timer;
     public WelcomeScreen() {
         displayWelcomeScreen();
-        //setVisible(true);
-        setSize(600,400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JLabel label = new JLabel("Benvenuti");
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        add(label);
     }
 
     private void displayWelcomeScreen() {
         final JWindow win = new JWindow(this);
-        win.setSize(600,400);
+
+        win.setSize(900,600);
         win.setLocationRelativeTo(null);
         win.setVisible(true);
-
-        JPanel panel = new JPanel();
-        win.add(panel);
-        String logoPath = "C:\\Users\\damia\\Desktop\\ic.PNG";
+        GradientPanel gp = new GradientPanel(Color.decode("#00ff87"),Color.decode("#60efff"));
+        win.add(gp);
+        // immagine di prova
+        String logoPath = "C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\UI\\dottori.png";
         JLabel label = new JLabel(new ImageIcon(logoPath));
         label.setHorizontalAlignment(SwingConstants.CENTER);
-        panel.add(label);
-        panel.setBackground(Color.WHITE);
-        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        gp.add(label);
+        gp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         JProgressBar progressBar = new JProgressBar(0,100);
-        progressBar.setForeground(Color.ORANGE);
+
+
+        progressBar.setForeground(Color.decode("#ff930f"));
         win.add(BorderLayout.PAGE_END,progressBar);
         // alla fine della pb viene aperta nella stessa posizione
         win.revalidate();
@@ -44,7 +40,7 @@ public class WelcomeScreen extends JFrame {
                 int value = progressBar.getValue();
                 if(value == 100) {
                     win.dispose();
-                   UIChoosingRooles ui = new UIChoosingRooles("Benvenuti");
+                   UIChoosingRooles ui = new UIChoosingRooles("VAX");
                    ui.setVisible(true);
                     timer.stop();
                 } else {
