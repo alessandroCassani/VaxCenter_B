@@ -18,14 +18,14 @@ public class WelcomeScreen extends JFrame {
         win.setSize(900,600);
         win.setLocationRelativeTo(null);
         win.setVisible(true);
-        GradientPanel gp = new GradientPanel(Color.decode("#00ff87"),Color.decode("#60efff"));
-        win.add(gp);
+        CurvesPanel cp = new CurvesPanel();
+        win.add(cp);
         // immagine di prova
         String logoPath = "C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\UI\\dottori.png";
         JLabel label = new JLabel(new ImageIcon(logoPath));
         label.setHorizontalAlignment(SwingConstants.CENTER);
-        gp.add(label);
-        gp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        cp.add(label);
+        cp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         JProgressBar progressBar = new JProgressBar(0,100);
 
 
