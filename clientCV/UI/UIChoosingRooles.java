@@ -35,6 +35,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     public UIChoosingRooles(){
 
 
+
+
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
         JLabel scelta = new JLabel();
