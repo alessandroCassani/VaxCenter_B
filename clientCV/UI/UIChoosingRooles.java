@@ -41,7 +41,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone operatore vaccinale
-        ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/operatorevaccinale.png")));
+        ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/operatorevaccinale.png")));
         operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
         operatoreVaccinale.setBounds(1055, 270, 400, 120);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -54,7 +54,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone cittadino
-        ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/cittadino.png")));
+        ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/cittadino.png")));
         cittadino = new JButton("CITTADINO", cit);
         cittadino.setBounds(1055, 470, 400, 120);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -67,7 +67,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Icona avvio del programma
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/logo.png")));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/logo.png")));
         setIconImage(logo.getImage());
 
 

@@ -38,7 +38,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
         //Personalizzazione bottone registra centro vaccinale
-        ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/centrivaccinali.png")));
+        ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/centrivaccinali.png")));
         registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
         registraCentroVaccinale.setBounds(1055, 270, 400, 120);
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -51,7 +51,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone rigistra vaccinato
-        ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/registravaccinato.png")));
+        ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/registravaccinato.png")));
         registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
         registraVaccinato.setBounds(1055, 470, 400, 120);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -64,7 +64,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone indietro
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/iconaindietro.png")));
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/iconaindietro.png")));
         backtoChoosingRooles =  new JButton("INDIETRO", ind);
         backtoChoosingRooles.setBounds(1055, 670, 400, 120);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
