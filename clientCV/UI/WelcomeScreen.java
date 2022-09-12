@@ -21,7 +21,7 @@ public class WelcomeScreen extends JFrame {
         CurvesPanel cp = new CurvesPanel();
         win.add(cp);
         // immagine di prova
-        String logoPath = "C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\UI\\dottori.png";
+        String logoPath = "clientCV/images/dottori.png";
         JLabel label = new JLabel(new ImageIcon(logoPath));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         cp.add(label);
@@ -34,14 +34,13 @@ public class WelcomeScreen extends JFrame {
         // alla fine della pb viene aperta nella stessa posizione
         win.revalidate();
 
-        timer = new Timer(100, new ActionListener() {
+        timer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int value = progressBar.getValue();
                 if(value == 100) {
                     win.dispose();
-                   UIChoosingRooles ui = new UIChoosingRooles("VAX");
-                   ui.setVisible(true);
+                   new UIChoosingRooles();
                     timer.stop();
                 } else {
                     progressBar.setValue(value+2);
