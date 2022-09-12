@@ -107,10 +107,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
     }
-    public static void main(String[] args){
-        new UIChoosingRooles();
-    }
-
 
 
     @Override
