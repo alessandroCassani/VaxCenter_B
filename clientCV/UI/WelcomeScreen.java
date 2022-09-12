@@ -15,7 +15,7 @@ public class WelcomeScreen extends JFrame {
     private void displayWelcomeScreen() {
         final JWindow win = new JWindow(this);
 
-        win.setSize(900,600);
+        win.setSize(1600,900);
         win.setLocationRelativeTo(null);
         win.setVisible(true);
         CurvesPanel cp = new CurvesPanel();
