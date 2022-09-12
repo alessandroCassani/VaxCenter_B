@@ -6,16 +6,19 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
 
-    /**
-     * La classe UIChoosingRooles crea l'interfaccia dove l'utente decide il ruolo in cui vuole accedere
-     *
-     * @author Paolo Bruscagin
-     */
+
+
+/**
+ * La classe UIChoosingRooles crea l'interfaccia dove l'utente decide il ruolo in cui vuole accedere
+ *
+ * @author Paolo Bruscagin
+ */
 public class UIChoosingRooles extends JFrame implements ActionListener {
 
+    //utilizzato per richiamre le immagini associate ai bottoni
+    java.net.URL url;
 
     /**
      * Bottone per accedere alla sezione operatore vaccinale
@@ -41,7 +44,11 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone operatore vaccinale
-        ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/operatorevaccinale.png")));
+
+        ImageIcon op;
+        url = ClassLoader.getSystemResource("images/operatorevaccinale.png");
+        op = (url != null) ? new ImageIcon( url ) : null;
+
         operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
         operatoreVaccinale.setBounds(1055, 270, 400, 120);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -54,7 +61,11 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone cittadino
-        ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/cittadino.png")));
+
+        ImageIcon cit;
+        url = ClassLoader.getSystemResource("images/cittadino.png");
+        cit = (url != null) ? new ImageIcon( url ) : null;
+
         cittadino = new JButton("CITTADINO", cit);
         cittadino.setBounds(1055, 470, 400, 120);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -67,7 +78,10 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         //Icona avvio del programma
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/logo.png")));
+
+        ImageIcon logo;
+        url = ClassLoader.getSystemResource("images/logo.png");
+        logo = (url != null) ? new ImageIcon( url ) : null;
         setIconImage(logo.getImage());
 
 
@@ -93,6 +107,10 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
     }
+    public static void main(String[] args){
+        new UIChoosingRooles();
+    }
+
 
 
     @Override

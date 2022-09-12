@@ -6,14 +6,14 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
-    /**
-     * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire
-     * un nuovo centro vaccinale oppure se inserire un nuovo cittadino vaccinato
-     *
-     * @author Paolo Bruscagin
-     */
+
+/**
+ * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire
+ * un nuovo centro vaccinale oppure se inserire un nuovo cittadino vaccinato
+ *
+ * @author Paolo Bruscagin
+ */
 
 public class UIVaccineOperator extends JFrame implements ActionListener {
 
@@ -33,12 +33,18 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     JButton backtoChoosingRooles;
 
     public UIVaccineOperator(){
-
+        //utilizzato per richiamre le immagini associate ai bottoni
+        java.net.URL url;
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
+
         //Personalizzazione bottone registra centro vaccinale
-        ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/centrivaccinali.png")));
+
+        ImageIcon cv;
+        url = ClassLoader.getSystemResource("images/centrivaccinali.png");
+        cv = (url != null) ? new ImageIcon( url ) : null;
+
         registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
         registraCentroVaccinale.setBounds(1055, 270, 400, 120);
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -51,7 +57,11 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone rigistra vaccinato
-        ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/registravaccinato.png")));
+
+        ImageIcon cr;
+        url = ClassLoader.getSystemResource("images/registravaccinato.png");
+        cr = (url != null) ? new ImageIcon( url ) : null;
+
         registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
         registraVaccinato.setBounds(1055, 470, 400, 120);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -64,7 +74,11 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         //Personalizzazione bottone indietro
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("clientCV/images/iconaindietro.png")));
+
+        ImageIcon ind;
+        url = ClassLoader.getSystemResource("images/iconaindietro.png");
+        ind = (url != null) ? new ImageIcon( url ) : null;
+
         backtoChoosingRooles =  new JButton("INDIETRO", ind);
         backtoChoosingRooles.setBounds(1055, 670, 400, 120);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -86,7 +100,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         vo.setLayout(null);
         vo.add(sfondo);
 
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/logo.png")));
+        //Icona avvio del programma
+        ImageIcon logo;
+        url = ClassLoader.getSystemResource("images/logo.png");
+        logo = (url != null) ? new ImageIcon( url ) : null;
         setIconImage(logo.getImage());
 
         this.add(sfondo);
@@ -108,4 +125,3 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     }
 }
-
