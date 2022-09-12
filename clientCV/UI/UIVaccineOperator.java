@@ -1,12 +1,12 @@
 package clientCV.UI;
 
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 /**
  * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire
@@ -46,7 +46,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         cv = (url != null) ? new ImageIcon( url ) : null;
 
         registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
-        registraCentroVaccinale.setBounds(1055, 270, 400, 120);
+        registraCentroVaccinale.setBounds(1000, 270, 500, 120);
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
         registraCentroVaccinale.setBackground(new Color(0xA059E3B3));
         registraCentroVaccinale.setForeground(Color.WHITE);
@@ -63,7 +63,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         cr = (url != null) ? new ImageIcon( url ) : null;
 
         registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
-        registraVaccinato.setBounds(1055, 470, 400, 120);
+        registraVaccinato.setBounds(1000, 470, 500, 120);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0xA059E3B3));
         registraVaccinato.setForeground(Color.WHITE);
@@ -79,8 +79,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         url = ClassLoader.getSystemResource("images/iconaindietro.png");
         ind = (url != null) ? new ImageIcon( url ) : null;
 
-        backtoChoosingRooles =  new JButton("INDIETRO", ind);
-        backtoChoosingRooles.setBounds(1055, 670, 400, 120);
+        backtoChoosingRooles =  new JButton("     INDIETRO", ind);
+        backtoChoosingRooles.setBounds(1075, 670, 350, 120);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
         backtoChoosingRooles.setBackground(new Color(0xA059E3B3));
         backtoChoosingRooles.setForeground(Color.WHITE);
@@ -101,6 +101,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         vo.add(sfondo);
 
         //Icona avvio del programma
+
         ImageIcon logo;
         url = ClassLoader.getSystemResource("images/logo.png");
         logo = (url != null) ? new ImageIcon( url ) : null;
@@ -134,6 +135,4 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         }
 
     }
-
-
 }
