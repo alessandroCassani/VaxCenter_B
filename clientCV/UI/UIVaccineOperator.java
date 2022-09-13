@@ -1,12 +1,12 @@
 package clientCV.UI;
 
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 /**
  * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire
@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
  */
 
 public class UIVaccineOperator extends JFrame implements ActionListener {
+
 
     /**
      * Bottone per accedere alla sezione registra centro vaccinale
@@ -33,17 +34,15 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     JButton backtoChoosingRooles;
 
     public UIVaccineOperator(){
-        //utilizzato per richiamre le immagini associate ai bottoni
-        java.net.URL url;
+
+
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
 
         //Personalizzazione bottone registra centro vaccinale
 
-        ImageIcon cv;
-        url = ClassLoader.getSystemResource("images/centrivaccinali.png");
-        cv = (url != null) ? new ImageIcon( url ) : null;
+        ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/centrivaccinali.png")));
 
         registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
         registraCentroVaccinale.setBounds(1000, 270, 500, 120);
@@ -58,9 +57,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Personalizzazione bottone rigistra vaccinato
 
-        ImageIcon cr;
-        url = ClassLoader.getSystemResource("images/registravaccinato.png");
-        cr = (url != null) ? new ImageIcon( url ) : null;
+        ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registravaccinato.png")));
+
 
         registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
         registraVaccinato.setBounds(1000, 470, 500, 120);
@@ -75,9 +73,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Personalizzazione bottone indietro
 
-        ImageIcon ind;
-        url = ClassLoader.getSystemResource("images/iconaindietro.png");
-        ind = (url != null) ? new ImageIcon( url ) : null;
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
+
 
         backtoChoosingRooles =  new JButton("     INDIETRO", ind);
         backtoChoosingRooles.setBounds(1075, 670, 350, 120);
@@ -102,9 +99,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Icona avvio del programma
 
-        ImageIcon logo;
-        url = ClassLoader.getSystemResource("images/logo.png");
-        logo = (url != null) ? new ImageIcon( url ) : null;
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
         this.add(sfondo);
@@ -115,6 +110,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setVisible(true);
+        this.setForeground(Color.WHITE);
+
     }
 
 
