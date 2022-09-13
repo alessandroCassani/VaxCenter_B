@@ -10,7 +10,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ * La classe UIRegisterVaxCenter permette di creare un nuovo Centro Vaccinale
+ *
+ *  @author Paolo Bruscagin
+ */
+
+
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
+
 
 
     /**
