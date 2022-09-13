@@ -1,6 +1,6 @@
 package clientCV.UI;
 
-// da completare
+// da completare graficamnete
 
 import javax.swing.*;
 import javax.swing.border.Border;
