@@ -70,6 +70,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     JButton backToUIVaccineOperator;
 
+
+
     public UIRegisterVaxCenter(){
 
         Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
@@ -77,48 +79,49 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
 
 
+
         nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 14));
         nomeCentroVaccinale.setText(" Nome Centro Vaccinale");
-        nomeCentroVaccinale.setBounds(50, 100, 525, 50);
+        nomeCentroVaccinale.setBounds(50, 100, 525, 75);
         nomeCentroVaccinale.setFocusable(false);
         nomeCentroVaccinale.setBorder(bordo);
 
         qualificatore.setFont(new Font("Arial", Font.BOLD, 14));
-        qualificatore.setBounds(50, 175, 100, 50);
+        qualificatore.setBounds(50, 200, 100, 75);
         qualificatore.setFocusable(false);
         qualificatore.setBorder(bordo);
 
         nomeVia.setFont(new Font("Arial", Font.BOLD, 14));
         nomeVia.setText(" Nome Via");
-        nomeVia.setBounds(175, 175, 300, 50);
+        nomeVia.setBounds(175, 200, 300, 75);
         nomeVia.setFocusable(false);
         nomeVia.setBorder(bordo);
 
         numeroCivico.setFont(new Font("Arial", Font.BOLD, 14));
         numeroCivico.setText(" N°");
-        numeroCivico.setBounds(500, 175, 75, 50);
+        numeroCivico.setBounds(500, 200, 75, 75);
         numeroCivico.setFocusable(false);
         numeroCivico.setBorder(bordo);
 
         comune.setFont(new Font("Arial", Font.BOLD, 14));
         comune.setText(" Comune");
-        comune.setBounds(50, 250, 350, 50);
+        comune.setBounds(50, 300, 350, 75);
         comune.setFocusable(false);
         comune.setBorder(bordo);
 
         cap.setFont(new Font("Arial", Font.BOLD, 14));
         cap.setText(" CAP");
-        cap.setBounds(425, 250, 150, 50);
+        cap.setBounds(425, 300, 150, 75);
         cap.setFocusable(false);
         cap.setBorder(bordo);
 
         tipologia.setFont(new Font("Arial", Font.BOLD, 14));
-        tipologia.setBounds(50, 325, 200, 50);
+        tipologia.setBounds(50, 400, 200, 75);
         tipologia.setFocusable(false);
         tipologia.setBorder(bordo);
 
 
-        registra.setBounds(325, 325, 250, 50);
+        registra.setBounds(325, 400, 250, 75);
         registra.setFont(new Font("Georgia", Font.BOLD, 20));
         registra.setBackground(new Color(0x07AF45));
         registra.setForeground(Color.WHITE);
@@ -127,9 +130,10 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         registra.addActionListener(this);
         registra.setOpaque(true);
 
+
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
         backToUIVaccineOperator =  new JButton("     INDIETRO", ind);
-        backToUIVaccineOperator.setBounds(75, 700, 475, 100);
+        backToUIVaccineOperator.setBounds(50, 700, 300, 100);
         backToUIVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
         backToUIVaccineOperator.setBackground(new Color(0xFA4723));
         backToUIVaccineOperator.setForeground(Color.WHITE);
@@ -137,6 +141,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         backToUIVaccineOperator.setFocusable(false);
         backToUIVaccineOperator.addActionListener(this);
         backToUIVaccineOperator.setOpaque(true);
+
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -177,6 +182,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             new UIVaccineOperator();
         } else if(e.getSource() == registra){
             this.dispose();
+
 
         }
 
