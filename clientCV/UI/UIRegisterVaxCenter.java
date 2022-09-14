@@ -1,6 +1,5 @@
 package clientCV.UI;
 
-// da completare graficamnete
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -10,27 +9,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-/**
- * La classe UIRegisterVaxCenter permette di creare un nuovo Centro Vaccinale
- *
- *  @author Paolo Bruscagin
- */
-
-
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
-
 
 
     /**
      * Area di testo per scrivere il nome del Centro vaccinale
      */
-    JTextField nomeCentroVaccinale = new JTextField("Nome Centro Vaccinale");
+    JTextField nomeCentroVaccinale = new JTextField();
 
     /**
      * Menù a tendina per scegliere il qualificatore del Centro Vaccinale
      */
 
-    JComboBox qualificatore = new JComboBox();
+    JComboBox qualificatore =new JComboBox<>(new String[]{"Via", "Viale", "Piazza"});
 
     /**
      * Area di testo per scrivere il nome della via/viale/piazza del Centro vaccinale
@@ -54,8 +45,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere la sigla della provincia del Centro Vaccinale
      */
 
-    JComboBox siglaProvincia = new JComboBox();
-
+    JTextField siglaProvincia = new JTextField();
     /**
      * Area di testo per scrivere il CAP del Centro Vaccinale
      */
@@ -66,28 +56,87 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere la tipologia del Centro Vaccinale (tipologia (ospedaliero, aziendale, hub)
      */
 
-    JComboBox tipologia = new JComboBox();
+    JComboBox<String> tipologia = new JComboBox(new String[]{"HUB", "OSPEDALIERO", "AZIENDALE"});
 
     /**
      * Bottone per la verifica dei dati scritti
      */
 
-    JButton verificaDati = new JButton();
+    JButton registra = new JButton("REGISTRA");
 
     /**
      * Bottone per tornare nell'interfaccia UIVaccineOperator
      */
 
-    JButton backToUIVaccineOperator = new JButton();
+    JButton backToUIVaccineOperator;
 
     public UIRegisterVaxCenter(){
 
         Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
+        Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
 
-        nomeCentroVaccinale.setText ("Inserisci il nome del Centro Vaccinale ...");
-        nomeCentroVaccinale.setBounds(1055, 270, 400, 120);
+
+        nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 14));
+        nomeCentroVaccinale.setText(" Nome Centro Vaccinale");
+        nomeCentroVaccinale.setBounds(50, 100, 525, 50);
         nomeCentroVaccinale.setFocusable(false);
         nomeCentroVaccinale.setBorder(bordo);
+
+        qualificatore.setFont(new Font("Arial", Font.BOLD, 14));
+        qualificatore.setBounds(50, 175, 100, 50);
+        qualificatore.setFocusable(false);
+        qualificatore.setBorder(bordo);
+
+        nomeVia.setFont(new Font("Arial", Font.BOLD, 14));
+        nomeVia.setText(" Nome Via");
+        nomeVia.setBounds(175, 175, 300, 50);
+        nomeVia.setFocusable(false);
+        nomeVia.setBorder(bordo);
+
+        numeroCivico.setFont(new Font("Arial", Font.BOLD, 14));
+        numeroCivico.setText(" N°");
+        numeroCivico.setBounds(500, 175, 75, 50);
+        numeroCivico.setFocusable(false);
+        numeroCivico.setBorder(bordo);
+
+        comune.setFont(new Font("Arial", Font.BOLD, 14));
+        comune.setText(" Comune");
+        comune.setBounds(50, 250, 350, 50);
+        comune.setFocusable(false);
+        comune.setBorder(bordo);
+
+        cap.setFont(new Font("Arial", Font.BOLD, 14));
+        cap.setText(" CAP");
+        cap.setBounds(425, 250, 150, 50);
+        cap.setFocusable(false);
+        cap.setBorder(bordo);
+
+        tipologia.setFont(new Font("Arial", Font.BOLD, 14));
+        tipologia.setBounds(50, 325, 200, 50);
+        tipologia.setFocusable(false);
+        tipologia.setBorder(bordo);
+
+
+        registra.setBounds(325, 325, 250, 50);
+        registra.setFont(new Font("Georgia", Font.BOLD, 20));
+        registra.setBackground(new Color(0x07AF45));
+        registra.setForeground(Color.WHITE);
+        registra.setBorder(bordobtn);
+        registra.setFocusable(false);
+        registra.addActionListener(this);
+        registra.setOpaque(true);
+
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
+        backToUIVaccineOperator =  new JButton("     INDIETRO", ind);
+        backToUIVaccineOperator.setBounds(75, 700, 475, 100);
+        backToUIVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
+        backToUIVaccineOperator.setBackground(new Color(0xFA4723));
+        backToUIVaccineOperator.setForeground(Color.WHITE);
+        backToUIVaccineOperator.setBorder(bordobtnInd);
+        backToUIVaccineOperator.setFocusable(false);
+        backToUIVaccineOperator.addActionListener(this);
+        backToUIVaccineOperator.setOpaque(true);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -97,12 +146,20 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         JPanel cv = new JPanel();
         cv.setBounds(0, 0, 1600, 900);
         cv.setLayout(null);
-        cv.add(nomeCentroVaccinale);
+
+        this.add(nomeCentroVaccinale);
+        this.add(qualificatore);
+        this.add(nomeVia);
+        this.add(numeroCivico);
+        this.add(comune);
+        this.add(cap);
+        this.add(tipologia);
+        this.add(registra);
+        this.add(backToUIVaccineOperator);
 
 
 
-
-        this.setTitle("VaxCenter");
+        this.setTitle("Registra Centro Vaccinale");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1600,900);
         this.setLayout(null);
@@ -115,6 +172,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == backToUIVaccineOperator){
+            this.dispose();
+            new UIVaccineOperator();
+        } else if(e.getSource() == registra){
+            this.dispose();
+
+        }
 
     }
 
