@@ -38,6 +38,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
 
 
         //Personalizzazione bottone registra centro vaccinale
@@ -79,9 +80,9 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles =  new JButton("     INDIETRO", ind);
         backtoChoosingRooles.setBounds(1075, 670, 350, 120);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
-        backtoChoosingRooles.setBackground(new Color(0xA059E3B3));
+        backtoChoosingRooles.setBackground(new Color(0xFA4723));
         backtoChoosingRooles.setForeground(Color.WHITE);
-        backtoChoosingRooles.setBorder(bordo);
+        backtoChoosingRooles.setBorder(bordobtnInd);
         backtoChoosingRooles.setFocusable(false);
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
@@ -103,7 +104,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         setIconImage(logo.getImage());
 
         this.add(sfondo);
-        this.setTitle("VaxCenter");
+        this.setTitle("Operatore Vaccinale");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1600,900);
         this.setLayout(null);
@@ -125,7 +126,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
             new UIChoosingRooles();
         } else if(e.getSource() == registraCentroVaccinale){
             this.dispose();
-            //new UIRegisterVaxCenter();
+            new UIRegisterVaxCenter();
         } else if(e.getSource() == registraVaccinato){
             this.dispose();
             //new UIRegisterVaccinated();
