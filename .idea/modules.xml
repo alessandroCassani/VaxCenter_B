@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VaxCenter_B.iml" filepath="$PROJECT_DIR$/.idea/VaxCenter_B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clientCV.iml" filepath="$PROJECT_DIR$/clientCV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serverCV.iml" filepath="$PROJECT_DIR$/serverCV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util.iml" filepath="$PROJECT_DIR$/util.iml" />
     </modules>
   </component>
 </project>
