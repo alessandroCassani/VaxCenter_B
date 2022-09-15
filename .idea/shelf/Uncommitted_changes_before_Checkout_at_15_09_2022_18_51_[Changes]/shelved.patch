@@ -1,0 +1,190 @@
+Index: util.iml
+===================================================================
+diff --git a/util.iml b/util.iml
+deleted file mode 100644
+--- a/util.iml	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
++++ /dev/null	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
+@@ -1,15 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_16">
+-    <output url="file://$MODULE_DIR$/util/target/classes" />
+-    <output-test url="file://$MODULE_DIR$/util/target/test-classes" />
+-    <content url="file://$MODULE_DIR$/util">
+-      <sourceFolder url="file://$MODULE_DIR$/util/src/main/java" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/util/src/main/resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/util/src/test/java" isTestSource="true" />
+-      <excludeFolder url="file://$MODULE_DIR$/util/target" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="16" jdkType="JavaSDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: clientCV.iml
+===================================================================
+diff --git a/clientCV.iml b/clientCV.iml
+deleted file mode 100644
+--- a/clientCV.iml	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
++++ /dev/null	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
+@@ -1,15 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_16">
+-    <output url="file://$MODULE_DIR$/clientCV/target/classes" />
+-    <output-test url="file://$MODULE_DIR$/clientCV/target/test-classes" />
+-    <content url="file://$MODULE_DIR$/clientCV">
+-      <sourceFolder url="file://$MODULE_DIR$/clientCV/src/main/java" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/clientCV/src/main/resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/clientCV/src/test/java" isTestSource="true" />
+-      <excludeFolder url="file://$MODULE_DIR$/clientCV/target" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="16" jdkType="JavaSDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
++++ /dev/null	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/clientCV.iml" filepath="$PROJECT_DIR$/clientCV.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/serverCV.iml" filepath="$PROJECT_DIR$/serverCV.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/util.iml" filepath="$PROJECT_DIR$/util.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: serverCV.iml
+===================================================================
+diff --git a/serverCV.iml b/serverCV.iml
+deleted file mode 100644
+--- a/serverCV.iml	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
++++ /dev/null	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
+@@ -1,15 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_16">
+-    <output url="file://$MODULE_DIR$/serverCV/target/classes" />
+-    <output-test url="file://$MODULE_DIR$/serverCV/target/test-classes" />
+-    <content url="file://$MODULE_DIR$/serverCV">
+-      <sourceFolder url="file://$MODULE_DIR$/serverCV/src/main/java" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/serverCV/src/main/resources" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/serverCV/src/test/java" isTestSource="true" />
+-      <excludeFolder url="file://$MODULE_DIR$/serverCV/target" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="16" jdkType="JavaSDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b5aa8f1-5aab-455f-a226-785c296afb96\" name=\"Changes\" comment=\"cambiamento struttura moduli e package di progetto\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"module-info\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"main\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2EoKIuzglBobAuLR0ZtXSyR9VOV\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/IdeaProjects/VaxCenter_B/util/src/main/java&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\util\\src\\main\\java\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\java\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"UISplashScreen\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"clientCV.UI.UISplashScreen\" />\r\n      <module name=\"VaxCenter_B\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"clientCV.UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.UISplashScreen\" />\r\n        <item itemvalue=\"Application.UISplashScreen\" />\r\n        <item itemvalue=\"Application.UISplashScreen\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6b5aa8f1-5aab-455f-a226-785c296afb96\" name=\"Changes\" comment=\"\" />\r\n      <created>1663256423679</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1663256423679</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"cambiamento struttura moduli e package di progetto\">\r\n      <created>1663258918566</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663258918566</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"cambiamento struttura moduli e package di progetto\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cambiamento struttura moduli e package di progetto\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 963dbe048d77ab99a0dbf06e2dce676afe707d84)
++++ b/.idea/workspace.xml	(date 1663260600057)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="cambiamento struttura moduli e package di progetto" />
++    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica ws">
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/clientCV.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/serverCV.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/util.iml" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -37,14 +43,17 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/IdeaProjects/VaxCenter_B/util/src/main/java&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "jdk.selected.JAVA_MODULE": "16",
++    "last_opened_file_path": "C:/Users/admin/IdeaProjects/VaxCenter_B/util/src/main/java",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
+@@ -54,8 +63,8 @@
+   </component>
+   <component name="RunManager">
+     <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="clientCV.UI.UISplashScreen" />
+-      <module name="VaxCenter_B" />
++      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
++      <module name="clientCV" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="clientCV.UI.*" />
+@@ -71,6 +80,7 @@
+         <item itemvalue="Application.UISplashScreen" />
+         <item itemvalue="Application.UISplashScreen" />
+         <item itemvalue="Application.UISplashScreen" />
++        <item itemvalue="Application.UISplashScreen" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -90,7 +100,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1663258918566</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="aggiunta vcs">
++      <created>1663260339936</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1663260339936</updated>
++    </task>
++    <task id="LOCAL-00003" summary="modifica ws">
++      <created>1663260565352</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1663260565352</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -106,6 +130,8 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="cambiamento struttura moduli e package di progetto" />
+-    <option name="LAST_COMMIT_MESSAGE" value="cambiamento struttura moduli e package di progetto" />
++    <MESSAGE value="aggiunta vcs" />
++    <MESSAGE value="modifica ws" />
++    <option name="LAST_COMMIT_MESSAGE" value="modifica ws" />
+   </component>
+ </project>
+\ No newline at end of file
