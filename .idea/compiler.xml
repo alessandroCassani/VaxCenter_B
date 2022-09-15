@@ -6,9 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="util" />
-        <module name="serverCV" />
-        <module name="clientCV" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
