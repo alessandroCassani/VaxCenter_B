@@ -54,8 +54,8 @@
   </component>
   <component name="RunManager">
     <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="clientCV.UI.UISplashScreen" />
-      <module name="VaxCenter_B" />
+      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
+      <module name="clientCV" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
@@ -66,8 +66,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="util" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="util" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UISplashScreen" />
