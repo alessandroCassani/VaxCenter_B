@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="posizionata checkNox showpassword">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunto listener login non completo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
@@ -155,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663340031673</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="aggiunto listener checkbox">
+      <created>1663340645994</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663340645995</updated>
+    </task>
+    <task id="LOCAL-00010" summary="aggiunto listener login non completo">
+      <created>1663340851393</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663340851393</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +193,8 @@
     <MESSAGE value="campi label e textfield grafici inseriti, compreso button login" />
     <MESSAGE value="posizionamento e ridimensionamento immagine" />
     <MESSAGE value="posizionata checkNox showpassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="posizionata checkNox showpassword" />
+    <MESSAGE value="aggiunto listener checkbox" />
+    <MESSAGE value="aggiunto listener login non completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto listener login non completo" />
   </component>
 </project>

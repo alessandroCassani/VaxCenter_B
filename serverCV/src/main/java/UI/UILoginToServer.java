@@ -61,10 +61,14 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBounds(750,300,100,30);
         pswTextField.setBorder(bordo);
 
-        showPassword.setBounds(870,305,20,20);
+        showPassword.setBounds(860,305,150,20);
         showPassword.addActionListener(this);
 
         loginButton.setBounds(675,380,90,40);
+        loginButton.setFont(new Font("Georgia", Font.BOLD, 15));
+        loginButton.setBorder(bordo);
+        loginButton.setFocusable(false);
+        loginButton.setOpaque(true);
         loginButton.addActionListener(this);
 
 
