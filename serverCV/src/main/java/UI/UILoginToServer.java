@@ -21,11 +21,9 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     JLabel pswLabel = new JLabel("password:");
 
-    JButton loginButton = new JButton("LOGIN");
+    JButton loginButton=new JButton("LOGIN");
 
     Container container = getContentPane();
-
-    JCheckBox showPassword = new JCheckBox("show password");
 
     public static void main(String[] args) {
         new UILoginToServer();
@@ -52,6 +50,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         userTextField.setBounds(750,250,100,30);
         userTextField.setBorder(bordo);
 
+
         pswLabel.setFont(new Font("Arial",Font.ITALIC,20));
         pswLabel.setBounds(600,300,100,20);
         pswLabel.setBorder(bordo);
@@ -60,15 +59,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBounds(750,300,100,30);
         pswTextField.setBorder(bordo);
 
-        showPassword.setBounds(860,305,150,20);
-        showPassword.addActionListener(this);
-
         loginButton.setBounds(675,380,90,40);
-        loginButton.setFont(new Font("Georgia", Font.BOLD, 15));
-        loginButton.setBorder(bordo);
-        loginButton.setFocusable(false);
-        loginButton.setOpaque(true);
-        loginButton.addActionListener(this);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -83,31 +74,19 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(pswTextField);
         container.add(loginButton);
         container.add(background);
-        container.add(showPassword);
 
 
-        this.setTitle("Login to Server");
-        this.setSize(1000,600);
+        setTitle("Login to server");
+        setSize(1000,600);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == showPassword) {
-            if (showPassword.isSelected())
-                pswTextField.setEchoChar((char) 0);
-             else
-                pswTextField.setEchoChar('*');
-        }
 
-        if(e.getSource() == loginButton){
-            //accesso a db con metodo connect
-            this.dispose();
-            new UIServerHome();
-        }
     }
 }
