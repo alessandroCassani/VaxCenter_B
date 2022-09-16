@@ -21,7 +21,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     JLabel pswLabel = new JLabel("password:");
 
-    JButton loginButton=new JButton("LOGIN");
+    JButton loginButton = new JButton("LOGIN");
 
     Container container = getContentPane();
 
@@ -87,7 +87,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(showPassword);
 
 
-        this.setTitle("login to server");
+        this.setTitle("Login to Server");
         this.setSize(1000,600);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
