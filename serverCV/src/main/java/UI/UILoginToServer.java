@@ -52,7 +52,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
         userTextField.setBounds(750,250,100,30);
         userTextField.setBorder(bordo);
 
-
         pswLabel.setFont(new Font("Arial",Font.ITALIC,20));
         pswLabel.setBounds(600,300,100,20);
         pswLabel.setBorder(bordo);

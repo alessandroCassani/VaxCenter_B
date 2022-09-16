@@ -6,6 +6,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class UIServerHome extends JFrame implements ActionListener {
 
@@ -17,6 +18,8 @@ public class UIServerHome extends JFrame implements ActionListener {
 
     Container container = getContentPane();
 
+    JLabel status = new JLabel();
+
     public UIServerHome(){
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
 
@@ -26,19 +29,27 @@ public class UIServerHome extends JFrame implements ActionListener {
         textField.setBounds(260,80,600,100);
         textField.setBorder(bordo);
 
+        status.setFont(new Font("Arial",Font.ITALIC,20));
+        status.setBounds(420,400,200,30);
+        status.setBorder(bordo);
+
         startBtn.setBorder(bordo);
         startBtn.setBounds(225,250,130,60);
         startBtn.setBackground(Color.GREEN);
         startBtn.setOpaque(true);
+        startBtn.addActionListener(this);
 
         stopBtn.setBorder(bordo);
         stopBtn.setBounds(635,250,130,60);
         stopBtn.setBackground(Color.red);
         stopBtn.setOpaque(true);
+        stopBtn.addActionListener(this);
+
 
         container.add(startBtn);
         container.add(stopBtn);
         container.add(textField);
+        container.add(status);
 
 
         this.setTitle("Server Home");
@@ -54,9 +65,19 @@ public class UIServerHome extends JFrame implements ActionListener {
         new UIServerHome();
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if(e.getSource() == startBtn){
+            // caricamento oggetto server nel registry
+             status.setText("server running...");
+        }
+
+        if(e.getSource() == stopBtn){
+            //eliminazione oggetto server dal registry
+            status.setText("server offline!");
+
+        }
 
     }
 }

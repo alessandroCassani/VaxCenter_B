@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica dimensione checkBox">
-      <change afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663341631221</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield">
+      <created>1663343805346</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663343805346</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +211,8 @@
     <MESSAGE value="aggiunto listener checkbox" />
     <MESSAGE value="aggiunto listener login non completo" />
     <MESSAGE value="modifica dimensione checkBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica dimensione checkBox" />
+    <MESSAGE value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfiel" />
+    <MESSAGE value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield" />
   </component>
 </project>
