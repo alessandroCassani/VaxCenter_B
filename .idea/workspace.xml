@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="eliminazione target (relativo a .class)">
-      <change afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="creazione campi e font">
+      <change afterPath="$PROJECT_DIR$/serverCV/src/main/resources/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "16",
-    "last_opened_file_path": "C:/Users/admin/IdeaProjects/VaxCenter_B/util/src/main/java",
+    "last_opened_file_path": "C:/Users/admin/IdeaProjects/VaxCenter_B/serverCV/src/main/resources/images",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -55,15 +56,20 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\serverCV\src\main\resources\images" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\resources" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\resources\images" />
+      <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\serverCV\src\main\resources\images" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
-      <module name="clientCV" />
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
+      <module name="serverCV" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
@@ -76,11 +82,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663260935155</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="creazione campi e font">
+      <created>1663320689723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663320689723</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +145,7 @@
     <MESSAGE value="cambiamento struttura moduli e package di progetto" />
     <MESSAGE value="eliminazione .class" />
     <MESSAGE value="eliminazione target (relativo a .class)" />
-    <option name="LAST_COMMIT_MESSAGE" value="eliminazione target (relativo a .class)" />
+    <MESSAGE value="creazione campi e font" />
+    <option name="LAST_COMMIT_MESSAGE" value="creazione campi e font" />
   </component>
 </project>
