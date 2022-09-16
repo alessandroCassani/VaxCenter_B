@@ -62,6 +62,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBorder(bordo);
 
         showPassword.setBounds(870,305,20,20);
+        showPassword.addActionListener(this);
 
         loginButton.setBounds(675,380,90,40);
 
@@ -92,6 +93,13 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == showPassword) {
+            if (showPassword.isSelected()) {
+                pswTextField.setEchoChar((char) 0);
+            } else {
+                pswTextField.setEchoChar('*');
+            }
+      }
 
     }
 }
