@@ -62,9 +62,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
         loginButton.setBounds(675,380,90,40);
 
 
-
-
-
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         JLabel background = new JLabel(logo);
         background.setBounds(0,-20,600,600);
@@ -79,12 +76,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(background);
 
 
-        this.setTitle("login to server");
-        this.setSize(1000,600);
+        setTitle("Login to server");
+        setSize(1000,600);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setVisible(true);
     }
 
