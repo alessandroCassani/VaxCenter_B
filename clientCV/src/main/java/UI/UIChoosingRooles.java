@@ -1,6 +1,5 @@
 package UI;
 
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -35,8 +34,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
-        JLabel scelta = new JLabel();
-        scelta.setText("SELEZIONA LA TIPOLOGIA DI UTENTE");
+        JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 25));
         scelta.setBounds(975, 100, 700, 200);
 
@@ -75,26 +73,30 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
-        JLabel sfondo = new JLabel();
-        sfondo.setBounds(0, 0, 1600, 900);
-        sfondo.add(scelta);
-        sfondo.add(operatoreVaccinale);
-        sfondo.add(cittadino);
 
-        JPanel home = new JPanel();
-        home.setBounds(0, 0, 1600, 900);
-        home.setLayout(null);
-        home.add(sfondo);
+        //JLabel sfondo = new JLabel();
+        //sfondo.setBounds(0, 0, 1600, 900);
+        //sfondo.add(scelta);
+        //sfondo.add(operatoreVaccinale);
+        //sfondo.add(cittadino);
 
-        this.add(sfondo);
-        this.setTitle("VaxCenter");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1600,900);
-        this.setLayout(null);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setVisible(true);
-        this.setForeground(Color.WHITE);
+        //JPanel home = new JPanel();
+        setBounds(0, 0, 1600, 900);
+        setLocationRelativeTo(null);
+        setLayout(null);
+        add(scelta);
+        add(operatoreVaccinale);
+        add(cittadino);
+        //home.add(sfondo);
+
+        //this.add(sfondo);
+        setTitle("VaxCenter");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1600,900);
+
+        setResizable(false);
+        setVisible(true);
+        setForeground(Color.WHITE);
 
 
 
@@ -107,7 +109,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             new UIVaccineOperator();
         } else if(e.getSource() == cittadino){
             this.dispose();
-            //new UICitizen();
+            new UICitizen();
         }
 
 

@@ -1,6 +1,5 @@
 package UI;
 
-
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Objects;
@@ -9,9 +8,11 @@ import javax.swing.*;
 public class UISplashScreen extends JWindow {
 
     private static JProgressBar progressBar = new JProgressBar();
-    private static UISplashScreen execute;
     private static int count;
     private static Timer timer1;
+    Container container = getContentPane();
+    JWindow j = new JWindow();
+
 
     public UISplashScreen() {
 
@@ -19,7 +20,8 @@ public class UISplashScreen extends JWindow {
          *  La classe UISplashSceern crea l'interfaccia di animazione principale prima di passare alla classe UIChoosingRooles
          */
 
-        Container container = getContentPane();
+
+
         container.setLayout(null);
         JPanel panel = new JPanel();
         ImageIcon stemma = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo_stemma.png")));
@@ -31,16 +33,18 @@ public class UISplashScreen extends JWindow {
         panel.setBounds(225, -10, 800, 450);
         panel.setLayout(null);
         container.add(panel);
-
-        progressBar.setMaximum(50);
+        j.add(container);
+        progressBar.setMaximum(30);
         progressBar.setForeground(Color.ORANGE);
         progressBar.setBounds(5, 430, 790, 15);
+        j.setSize(800, 450);
+        j.setLocationRelativeTo(null);
+        this.setIconImage(stemma.getImage());
+        this.setVisible(true);
         this.add(progressBar);
         this.loadProgressBar();
-        this.setSize(800, 450);
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
-        this.setIconImage(stemma.getImage());
+        j.setVisible(true);
+
     }
 
     private void loadProgressBar() {
@@ -50,20 +54,33 @@ public class UISplashScreen extends JWindow {
                 count++;
 
                 progressBar.setValue(count);
+                getContentPane();
 
 
-                if (count == 50) {
+
+                if (count == 30) {
+                    j.setVisible(false);
                     new UIChoosingRooles();
                     timer1.stop();
+
+
+
                 }
+
+
 
             }
 
 
+
         };
-        timer1 = new Timer(50, al);
+
+        timer1 = new Timer(30, al);
         timer1.start();
+
+
     }
+
 
     public static void main(String[] args) {
         new UISplashScreen();
