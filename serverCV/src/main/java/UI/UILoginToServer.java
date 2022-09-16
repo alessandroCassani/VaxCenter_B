@@ -25,6 +25,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     Container container = getContentPane();
 
+    JCheckBox showPassword = new JCheckBox("show password");
+
     public static void main(String[] args) {
         new UILoginToServer();
     }
@@ -59,10 +61,9 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBounds(750,300,100,30);
         pswTextField.setBorder(bordo);
 
+        showPassword.setBounds(870,305,20,20);
+
         loginButton.setBounds(675,380,90,40);
-
-
-
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -77,6 +78,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(pswTextField);
         container.add(loginButton);
         container.add(background);
+        container.add(showPassword);
 
 
         this.setTitle("login to server");
