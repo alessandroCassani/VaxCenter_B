@@ -67,6 +67,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         JLabel background = new JLabel(logo);
+        background.setBounds(0,-20,600,600);
 
         container.add(hostLabel);
         container.add(hostName);
@@ -75,10 +76,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(userTextField);
         container.add(pswTextField);
         container.add(loginButton);
+        container.add(background);
 
-
-
-        setSize(1000,600);
 
         this.setTitle("login to server");
         this.setSize(1000,600);
