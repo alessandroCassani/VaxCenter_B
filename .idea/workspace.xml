@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiornamento UI operatori vaccinali">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/info_vaxcenter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/registraCittadino_vaxcenter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_09_2022_18_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_09_2022_18_51__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_09_2022_18_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_09_2022_18_51__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="add doc">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "16",
-    "last_opened_file_path": "C:/Users/brusc/Documents/GitHub/VaxCenter_B/clientCV/src/main/resources/images",
+    "last_opened_file_path": "C:/Users/brusc/Documents/GitHub/VaxCenter_B/documentazione",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,6 +58,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\resources" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
@@ -118,7 +112,7 @@
       <updated>1663256423679</updated>
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
-      <workItem from="1663318491994" duration="1077000" />
+      <workItem from="1663318491994" duration="1637000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -134,7 +128,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663269806745</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="aggiornamenti UI generali">
+      <created>1663322295266</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663322295266</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add doc">
+      <created>1663322393625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663322393625</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +162,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cambiamento struttura moduli e package di progetto" />
     <MESSAGE value="aggiornamento UI operatori vaccinali" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiornamento UI operatori vaccinali" />
+    <MESSAGE value="aggiornamenti UI generali" />
+    <MESSAGE value="add doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add doc" />
   </component>
 </project>

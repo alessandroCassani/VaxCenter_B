@@ -8,6 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ *  La classe UIRegisterVaccinated crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un vaccinato
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     JComboBox nomeCV = new JComboBox<>(new String[]{}); // da fare in modo diverso

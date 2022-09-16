@@ -8,6 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ *  La classe UIRegisterVaxCenter crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
 

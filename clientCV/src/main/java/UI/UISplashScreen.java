@@ -5,7 +5,17 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 import javax.swing.*;
 
+/**
+ *  La classe UISplashSceern crea l'interfaccia di animazione principale prima di passare alla classe UIChoosingRooles
+ *
+ *  @author Paolo Bruscagin
+ */
+
 public class UISplashScreen extends JWindow {
+
+    /**
+     * Conteiner della durata di 4 secondi utilizzato come intro per poi accedre all'interfaccia UIChoosingRoles
+     */
 
     private static JProgressBar progressBar = new JProgressBar();
     private static int count;
@@ -15,11 +25,6 @@ public class UISplashScreen extends JWindow {
 
 
     public UISplashScreen() {
-
-        /**
-         *  La classe UISplashSceern crea l'interfaccia di animazione principale prima di passare alla classe UIChoosingRooles
-         */
-
 
 
         container.setLayout(null);

@@ -8,13 +8,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ * La classe UIChoosingRooles crea l'interfaccia dove il cittadino sceglie se visualizzare le info di un centro vaccinale,
+ * di registrarsi presso un centro vaccinale, di accedere e di inserire eventuali eventi avversi avuto dopo la somministrazione del vaccino
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class UICitizen extends JFrame implements ActionListener {
 
+    /**
+     * Bottone per accedere alla sezione info centro vaccinale
+     */
     JButton cercaCentroVaccinale;
+
+    /**
+     * Bottone per accedere alla sezione registra centro cittadino
+     */
 
     JButton registraCittadino;
 
+    /**
+     * Bottone per accedere alla sezione login del cittadino
+     */
+
     JButton login;
+
+    /**
+     * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
+     */
 
     JButton backToChoosingRooles;
 
