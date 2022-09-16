@@ -65,6 +65,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
 
         loginButton.setBounds(675,380,90,40);
+        loginButton.addActionListener(this);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -94,12 +95,14 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == showPassword) {
-            if (showPassword.isSelected()) {
+            if (showPassword.isSelected())
                 pswTextField.setEchoChar((char) 0);
-            } else {
+             else
                 pswTextField.setEchoChar('*');
-            }
-      }
+        }
 
+        if(e.getSource() == loginButton){
+            //accesso a db e apertura UI server
+        }
     }
 }
