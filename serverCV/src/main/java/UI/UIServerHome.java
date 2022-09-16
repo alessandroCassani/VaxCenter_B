@@ -70,14 +70,15 @@ public class UIServerHome extends JFrame implements ActionListener {
 
         if(e.getSource() == startBtn){
             // caricamento oggetto server nel registry
+
              status.setText("server running...");
         }
 
         if(e.getSource() == stopBtn){
             //eliminazione oggetto server dal registry
+
             status.setText("server offline!");
 
         }
-
     }
 }

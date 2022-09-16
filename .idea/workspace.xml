@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta label di status, implementazione action Performed">
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +68,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="UIServerHome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UIServerHome" />
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
       <module name="serverCV" />
       <extension name="coverage">
         <pattern>
@@ -83,11 +83,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UIServerHome" />
-        <item itemvalue="Application.UIServerHome" />
-        <item itemvalue="Application.UIServerHome" />
-        <item itemvalue="Application.UIServerHome" />
-        <item itemvalue="Application.UIServerHome" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663343805346</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="aggiunta label di status, implementazione action Performed">
+      <created>1663344877557</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663344877557</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +220,7 @@
     <MESSAGE value="modifica dimensione checkBox" />
     <MESSAGE value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfiel" />
     <MESSAGE value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta classe UIServerHome, aggiunta bottoni colorati e textfield" />
+    <MESSAGE value="aggiunta label di status, implementazione action Performed" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta label di status, implementazione action Performed" />
   </component>
 </project>

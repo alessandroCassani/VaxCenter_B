@@ -105,7 +105,9 @@ public class UILoginToServer extends JFrame implements ActionListener {
         }
 
         if(e.getSource() == loginButton){
-            //accesso a db e apertura UI server
+            //accesso a db con metodo connect
+            this.dispose();
+            new UIServerHome();
         }
     }
 }
