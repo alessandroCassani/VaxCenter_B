@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="campi label e textfield grafici inseriti, compreso button login">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="posizionamento e ridimensionamento immagine">
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
     </list>
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663329317556</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="posizionamento e ridimensionamento immagine">
+      <created>1663329914307</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663329914307</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +169,7 @@
     <MESSAGE value="agiunta immagine e jLabel varie" />
     <MESSAGE value="modifica label e tipologia campi" />
     <MESSAGE value="campi label e textfield grafici inseriti, compreso button login" />
-    <option name="LAST_COMMIT_MESSAGE" value="campi label e textfield grafici inseriti, compreso button login" />
+    <MESSAGE value="posizionamento e ridimensionamento immagine" />
+    <option name="LAST_COMMIT_MESSAGE" value="posizionamento e ridimensionamento immagine" />
   </component>
 </project>
