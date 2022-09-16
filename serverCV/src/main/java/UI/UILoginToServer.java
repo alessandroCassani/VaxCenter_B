@@ -25,6 +25,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     Container container = getContentPane();
 
+    JCheckBox showPassword = new JCheckBox("show password");
+
     public static void main(String[] args) {
         new UILoginToServer();
     }
@@ -59,7 +61,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBounds(750,300,100,30);
         pswTextField.setBorder(bordo);
 
+        showPassword.setBounds(860,310,130,15);
+        showPassword.addActionListener(this);
+
         loginButton.setBounds(675,380,90,40);
+        loginButton.setOpaque(true);
+        loginButton.addActionListener(this);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -74,6 +81,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(pswTextField);
         container.add(loginButton);
         container.add(background);
+        container.add(showPassword);
 
 
         setTitle("Login to server");
@@ -87,6 +95,17 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == loginButton){
+            //verifica accesso db con metodo connect
+            new UIServerHome();
+        }
+
+        if(e.getSource() == showPassword){
+            if (showPassword.isSelected())
+                pswTextField.setEchoChar((char) 0);
+                else
+                pswTextField.setEchoChar('*');
+        }
 
     }
 }
