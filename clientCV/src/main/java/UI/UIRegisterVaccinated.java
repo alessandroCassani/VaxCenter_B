@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
+import java.time.LocalDate;
+
+
 
 /**
  *  La classe UIRegisterVaccinated crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un vaccinato
@@ -26,7 +29,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     JTextField codiceFiscale = new JTextField(16);
 
-    //la data
+    LocalDate todaysDate = LocalDate.now();
+
+    JTextField data = new JTextField(String.valueOf(todaysDate));
 
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
@@ -89,6 +94,15 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         codiceFiscale.setBorder(bordo);
         codiceFiscale.setPreferredSize(new Dimension(325, 75));
         codiceFiscale.setBounds(50, 300, 325, 75);
+
+        JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg)");
+        labeldata.setFont(new Font("Georgia", Font.BOLD, 12));
+        add(labeldata).setBounds(400, 255, 550, 75);
+
+        data.setFont(new Font("Arial", Font.BOLD, 20));
+        data.setBorder(bordo);
+        data.setPreferredSize(new Dimension(325, 75));
+        data.setBounds(400, 300, 325, 75);
 
         JLabel labelTipVac = new JLabel("Tipologia");
         labelTipVac.setFont(new Font("Georgia", Font.BOLD, 12));
@@ -153,6 +167,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(status);
         add(IDUnivoco);
         add(warningIDUnivoco);
+        add(data);
 
         //Icona avvio del programma
 
@@ -195,6 +210,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 nome.setText("");
                 cognome.setText("");
                 codiceFiscale.setText("");
+                data.setText(String.valueOf(todaysDate));
                 vaccinoSomministrato.setSelectedItem("Pfizer");
                 status.setText("");
                 IDUnivoco.setText("");
