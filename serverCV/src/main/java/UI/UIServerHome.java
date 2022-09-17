@@ -61,10 +61,6 @@ public class UIServerHome extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new UIServerHome();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 

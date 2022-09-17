@@ -93,10 +93,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setVisible(true);
         this.setForeground(Color.WHITE);
-
-
+        this.setVisible(true);
 
     }
 
@@ -109,8 +107,5 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             this.dispose();
             //new UICitizen();
         }
-
-
-
     }
 }

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica colori bottoni e tetFields">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UIServerHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +70,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
-      <module name="serverCV" />
+    <configuration name="UIChoosingRooles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UIChoosingRooles" />
+      <module name="clientCV" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
@@ -83,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UIChoosingRooles" />
+        <item itemvalue="Application.UIChoosingRooles" />
+        <item itemvalue="Application.UIChoosingRooles" />
+        <item itemvalue="Application.UIChoosingRooles" />
+        <item itemvalue="Application.UIChoosingRooles" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663345889342</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="modifica colori bottoni e tetFields">
+      <created>1663374287703</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663374287703</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +170,7 @@
     <MESSAGE value="aggiornamenti UI generali" />
     <MESSAGE value="add doc" />
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
+    <MESSAGE value="modifica colori bottoni e tetFields" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica colori bottoni e tetFields" />
   </component>
 </project>
