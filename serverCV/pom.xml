@@ -9,7 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>it.uninsubria</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>it.uninsubria</groupId>
             <artifactId>util</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
