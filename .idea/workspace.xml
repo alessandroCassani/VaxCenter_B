@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="continuazione registraVaccinato">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="creazioni nuove ultime classi UI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663433717804</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="creazioni nuove ultime classi UI">
+      <created>1663434186976</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663434186976</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +192,7 @@
     <MESSAGE value="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti" />
     <MESSAGE value="continuazione registraVaccinato e registraCV" />
     <MESSAGE value="continuazione registraVaccinato" />
-    <option name="LAST_COMMIT_MESSAGE" value="continuazione registraVaccinato" />
+    <MESSAGE value="creazioni nuove ultime classi UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="creazioni nuove ultime classi UI" />
   </component>
 </project>
