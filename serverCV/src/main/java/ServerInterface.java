@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public interface ServerInterface extends Remote {
 
-    boolean  registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException;
+    boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException;
 
     boolean registraCittadino(Cittadino cittadino) throws RemoteException;
 
