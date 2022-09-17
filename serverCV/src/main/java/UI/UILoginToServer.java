@@ -16,17 +16,17 @@ import java.util.Objects;
 public class UILoginToServer extends JFrame implements ActionListener {
 
     /**
-     * label host
+     * label rappresentante la stringa host
      */
     JLabel hostLabel = new JLabel("host:");
 
     /**
-     * label di default uguale a localhost
+     * label rappresentante la stringa di default uguale a localhost
      */
     JLabel hostName = new JLabel("localhost");
 
     /**
-     * label di default uguale a username
+     * label rappresentante la stringa di default uguale a username
      */
     JLabel userLabel = new JLabel("username:");
 
@@ -152,6 +152,5 @@ public class UILoginToServer extends JFrame implements ActionListener {
                 else
                 pswTextField.setEchoChar('*');
         }
-
     }
 }
