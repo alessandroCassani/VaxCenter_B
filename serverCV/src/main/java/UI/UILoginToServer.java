@@ -50,6 +50,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
         userTextField.setFont(new Font("Arial",Font.BOLD,20));
         userTextField.setBounds(750,250,100,30);
+        userTextField.setBackground(new Color(0Xf5bbcd));
         userTextField.setBorder(bordo);
 
 
@@ -59,6 +60,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
         pswTextField.setFont(new Font("Arial",Font.BOLD,20));
         pswTextField.setBounds(750,300,100,30);
+        pswTextField.setBackground(new Color(0Xf5bbcd));
         pswTextField.setBorder(bordo);
 
         showPassword.setBounds(860,310,130,15);
@@ -67,6 +69,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
         loginButton.setBounds(675,380,90,40);
         loginButton.setOpaque(true);
         loginButton.addActionListener(this);
+        loginButton.setForeground(new Color(0XFFE900));
+        loginButton.setBackground(new Color(0Xe43e6f));
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
