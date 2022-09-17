@@ -75,6 +75,18 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     JButton backToUIVaccineOperator;
 
+    /**
+     * campo di testo in cui viene visuaizzato lo stato della registra centro vaccinale
+      */
+
+    JLabel status = new JLabel();
+
+
+    /**
+     * Bottone per pulire tutte le JTextField e le JComboBox
+     */
+    JButton pulisci = new JButton();
+
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica
@@ -94,6 +106,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelNome).setBounds(50, 55, 550, 75);
 
         nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 20));
+        nomeCentroVaccinale.setBorder(bordo);
         nomeCentroVaccinale.setPreferredSize(new Dimension(550, 75));
         nomeCentroVaccinale.setBounds(50, 100, 550, 75);
 
@@ -102,10 +115,12 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelIndirizzo).setBounds(180, 155, 550, 75);
 
         qualificatore.setFont(new Font("Arial", Font.BOLD, 20));
+        qualificatore.setBorder(bordo);
         qualificatore.setBounds(50, 200, 100, 75);
 
 
         nomeVia.setFont(new Font("Arial", Font.BOLD, 20));
+        nomeVia.setBorder(bordo);
         nomeVia.setPreferredSize(new Dimension(325, 75));
         nomeVia.setBounds(175, 200, 325, 75);
 
@@ -114,6 +129,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelNumeroCivico).setBounds(530, 155, 550, 75);
 
         numeroCivico.setFont(new Font("Arial", Font.BOLD, 20));
+        numeroCivico.setBorder(bordo);
         numeroCivico.setPreferredSize(new Dimension(75, 75));
         numeroCivico.setBounds(525, 200, 75, 75);
 
@@ -122,6 +138,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelComune).setBounds(50, 255, 550, 75);
 
         comune.setFont(new Font("Arial", Font.BOLD, 20));
+        comune.setBorder(bordo);
         comune.setPreferredSize(new Dimension(325, 75));
         comune.setBounds(50, 300, 325, 75);
 
@@ -130,6 +147,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelSigla).setBounds(402, 255, 550, 75);
 
         siglaProvincia.setFont(new Font("Arial", Font.BOLD, 20));
+        siglaProvincia.setBorder(bordo);
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(400, 300, 75, 75);
 
@@ -138,10 +156,12 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelCAP).setBounds(505, 255, 550, 75);
 
         cap.setFont(new Font("Arial", Font.BOLD, 20));
+        cap.setBorder(bordo);
         cap.setPreferredSize(new Dimension(100, 75));
         cap.setBounds(500, 300, 100, 75);
 
         tipologia.setFont(new Font("Arial", Font.BOLD, 20));
+        tipologia.setBorder(bordo);
         tipologia.setBounds(50, 400, 275, 75);
 
         JLabel labelTip = new JLabel("Tipologia");
@@ -157,6 +177,15 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         registra.addActionListener(this);
         registra.setOpaque(true);
 
+        pulisci = new JButton("PULISCI");
+        pulisci.setBounds(400, 700, 200, 100);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
+        pulisci.setBackground(new Color(0xEF0808));
+        pulisci.setForeground(Color.WHITE);
+        pulisci.setBorder(bordobtnInd);
+        pulisci.setFocusable(false);
+        pulisci.addActionListener(this);
+        pulisci.setOpaque(true);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
         backToUIVaccineOperator =  new JButton("     INDIETRO", ind);
@@ -169,6 +198,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         backToUIVaccineOperator.addActionListener(this);
         backToUIVaccineOperator.setOpaque(true);
 
+        status.setFont(new Font("Georgia", Font.BOLD, 18));
+        status.setBounds(125, 500, 400, 75);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -189,8 +220,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(tipologia);
         add(registra);
         add(backToUIVaccineOperator);
-
-
+        add(status);
+        add(pulisci);
 
 
         setTitle("Registra Centro Vaccinale");
@@ -211,7 +242,24 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             this.dispose();
             new UIVaccineOperator();
         } else if(e.getSource() == registra){
-            this.dispose();
+            //this.dispose();
+            if (!nomeCentroVaccinale.getText().equals("")){
+                status.setForeground(new Color(0xEC0909));
+                status.setText("I dati inseriti non sono corretti!");
+            } else {
+                status.setForeground(new Color(0x077507));
+                status.setText("Centro Vaccinale registrato con successo!");
+            }
+        }else if(e.getSource() == pulisci){
+            nomeCentroVaccinale.setText("");
+            qualificatore.setSelectedItem("Via");
+            nomeVia.setText("");
+            numeroCivico.setText("");
+            comune.setText("");
+            siglaProvincia.setText("");
+            cap.setText("");
+            tipologia.setSelectedItem("HUB");
+            status.setText("");
 
 
 
