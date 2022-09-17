@@ -40,6 +40,10 @@ public class UICitizen extends JFrame implements ActionListener {
 
     JButton backToChoosingRooles;
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
+
     public UICitizen() {
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
@@ -121,6 +125,10 @@ public class UICitizen extends JFrame implements ActionListener {
 
 
     }
+
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

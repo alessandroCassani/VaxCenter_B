@@ -28,6 +28,9 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     JButton cittadino;
 
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
 
     public UIChoosingRooles(){
 
@@ -101,6 +104,10 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
     }
+
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

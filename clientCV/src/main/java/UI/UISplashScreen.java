@@ -23,6 +23,9 @@ public class UISplashScreen extends JWindow {
     Container container = getContentPane();
     JWindow j = new JWindow();
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
 
     public UISplashScreen() {
 
@@ -51,6 +54,10 @@ public class UISplashScreen extends JWindow {
         j.setVisible(true);
 
     }
+
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
 
     private void loadProgressBar() {
         ActionListener al = new ActionListener() {

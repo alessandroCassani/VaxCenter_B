@@ -33,6 +33,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
      */
     JButton backtoChoosingRooles;
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
+
     public UIVaccineOperator(){
 
 
@@ -117,8 +121,9 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     }
 
-
-
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
 
 
     @Override

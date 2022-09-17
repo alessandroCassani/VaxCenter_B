@@ -34,6 +34,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     JButton backToVaccineOperator = new JButton();
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
 
     public UIRegisterVaccinated(){
 
@@ -74,6 +77,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
     }
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backToVaccineOperator) {

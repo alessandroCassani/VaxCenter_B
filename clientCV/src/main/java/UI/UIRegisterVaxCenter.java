@@ -76,7 +76,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
     JButton backToUIVaccineOperator;
 
 
-
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
     public UIRegisterVaxCenter(){
 
         Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
@@ -200,7 +202,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     }
 
-
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backToUIVaccineOperator){
