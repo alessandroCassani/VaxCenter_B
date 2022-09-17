@@ -117,6 +117,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         qualificatore.setFont(new Font("Arial", Font.BOLD, 20));
         qualificatore.setBorder(bordo);
         qualificatore.setBounds(50, 200, 100, 75);
+        qualificatore.setBackground(Color.WHITE);
 
 
         nomeVia.setFont(new Font("Arial", Font.BOLD, 20));
@@ -163,6 +164,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         tipologia.setFont(new Font("Arial", Font.BOLD, 20));
         tipologia.setBorder(bordo);
         tipologia.setBounds(50, 400, 275, 75);
+        tipologia.setBackground(Color.WHITE);
 
         JLabel labelTip = new JLabel("Tipologia");
         labelTip.setFont(new Font("Georgia", Font.BOLD, 12));
