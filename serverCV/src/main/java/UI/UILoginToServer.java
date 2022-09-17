@@ -8,29 +8,64 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ * classe che rappresenta l'interfaccia grafica per accedere al dataBase Postgre e alle funzionalita' del server
+ *
+ *  @author Alessandro Cassani
+ */
 public class UILoginToServer extends JFrame implements ActionListener {
 
+    /**
+     * label host
+     */
     JLabel hostLabel = new JLabel("host:");
 
+    /**
+     * label di default uguale a localhost
+     */
     JLabel hostName = new JLabel("localhost");
+
+    /**
+     * label di default uguale a username
+     */
     JLabel userLabel = new JLabel("username:");
 
+    /**
+     * campo di testo dove inserire lo user
+     */
     JTextField userTextField = new JTextField();
-
+    /**
+     * campo di testo dove inserire lo password
+     */
     JPasswordField pswTextField = new JPasswordField();
 
+    /**
+     * label rappresentante password
+     */
     JLabel pswLabel = new JLabel("password:");
 
+    /**
+     * bottone di login
+     */
     JButton loginButton=new JButton("LOGIN");
 
+    /**
+     * container dei componenti di interfaccia grafica
+     */
     Container container = getContentPane();
 
+    /**
+     * checkBox che permette di mostrare o nascondere la password inserita
+     */
     JCheckBox showPassword = new JCheckBox("show password");
 
     public static void main(String[] args) {
         new UILoginToServer();
     }
 
+    /**
+     * costruttore che permette il caricamento dei componenti di interfaccia grafica
+     */
     public UILoginToServer(){
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
 
@@ -96,6 +131,13 @@ public class UILoginToServer extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setVisible(true);
     }
+
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti di interfaccia grafica
+     * @param e the event to be processed
+     *
+     * @author Alessandro Cassani
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -1,25 +1,48 @@
-package UI;
+ package UI;
 
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Objects;
+ import javax.swing.*;
+ import javax.swing.border.Border;
+ import javax.swing.border.LineBorder;
+ import java.awt.*;
+ import java.awt.event.ActionEvent;
+ import java.awt.event.ActionListener;
 
-public class UIServerHome extends JFrame implements ActionListener {
+ /**
+  * classe che rappresenta l'interfaccia grafica che permette di gestire l'accensione e lo spegnimento del server
+  * @author Alessandro Cassani
+  */
+ public class UIServerHome extends JFrame implements ActionListener {
 
+     /**
+      * bottone di accensione server
+      */
     JButton startBtn = new JButton("START");
 
+     /**
+      * campo di testo per UI per informare l'utente sullo scopo dell'interfaccia grafica
+      */
     JLabel textField = new JLabel("manage the server!");
 
+     /**
+      * bottone di spegnimento dle server
+      */
     JButton stopBtn = new JButton("STOP");
 
+     /**
+      * container di interfaccia
+      */
     Container container = getContentPane();
 
+     /**
+      *campo di testo in cui viene visuaizzato lo stato del server (on/off)
+      */
     JLabel status = new JLabel();
 
+     /**
+      * costruttore che contiene le informazioni per il caricamento dei componenti di interfaccia grafica
+      *
+      * @author Alessandro Cassani
+      */
     public UIServerHome(){
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
 
@@ -61,6 +84,12 @@ public class UIServerHome extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+     /**
+      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+      * @param e the event to be processed
+      *
+      * @author Alessandro Cassani
+      */
     @Override
     public void actionPerformed(ActionEvent e) {
 
