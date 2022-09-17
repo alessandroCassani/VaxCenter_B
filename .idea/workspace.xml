@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="cambiamento struttura moduli e package di progetto" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/UI/UILoginToServer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -23,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="UI_bugGrafici" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,23 +44,35 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/IdeaProjects/VaxCenter_B/util/src/main/java&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/documentazione&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\resources" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
-      <module name="clientCV" />
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
+      <module name="serverCV" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
@@ -66,26 +83,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="util" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="util" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -97,6 +101,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663256423679</updated>
+      <workItem from="1663269559793" duration="2778000" />
+      <workItem from="1663278816959" duration="88000" />
+      <workItem from="1663318491994" duration="1637000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -105,15 +112,107 @@
       <option name="project" value="LOCAL" />
       <updated>1663258918566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="aggiornamento UI operatori vaccinali">
+      <created>1663269806745</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663269806745</updated>
+    </task>
+    <task id="LOCAL-00003" summary="aggiornamenti UI generali">
+      <created>1663322295266</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663322295266</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add doc">
+      <created>1663322393625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663322393625</updated>
+    </task>
+    <task id="LOCAL-00005" summary="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
+      <created>1663345889342</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663345889342</updated>
+    </task>
+    <task id="LOCAL-00006" summary="modifica colori bottoni e tetFields">
+      <created>1663374287703</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663374287703</updated>
+    </task>
+    <task id="LOCAL-00007" summary="modifica colori bottoni e tetFields">
+      <created>1663375160561</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663375160562</updated>
+    </task>
+    <task id="LOCAL-00008" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
+      <created>1663376665078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663376665079</updated>
+    </task>
+    <task id="LOCAL-00009" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
+      <created>1663376899169</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663376899169</updated>
+    </task>
+    <task id="LOCAL-00010" summary="aggiunta javaDoc">
+      <created>1663412919386</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663412919387</updated>
+    </task>
+    <task id="LOCAL-00011" summary="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc">
+      <created>1663413667092</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663413667092</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <created>1663413757118</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663413757118</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="changeStructure" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -121,6 +220,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cambiamento struttura moduli e package di progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiamento struttura moduli e package di progetto" />
+    <MESSAGE value="aggiornamento UI operatori vaccinali" />
+    <MESSAGE value="aggiornamenti UI generali" />
+    <MESSAGE value="add doc" />
+    <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
+    <MESSAGE value="modifica colori bottoni e tetFields" />
+    <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
+    <MESSAGE value="aggiunta javaDoc" />
+    <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
