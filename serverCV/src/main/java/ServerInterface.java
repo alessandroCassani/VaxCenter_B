@@ -99,5 +99,4 @@ public interface ServerInterface extends Remote {
      *  @author Alessandro Cassani
      */
     boolean isVaccinatedRegistrated(String user) throws RemoteException;
-
 }
