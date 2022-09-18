@@ -137,13 +137,13 @@ public class UICitizen extends JFrame implements ActionListener {
             new UIChoosingRooles();
         } else if (e.getSource() == cercaCentroVaccinale) {
             this.dispose();
-            //new
+            new UISearchVaxCenter();
         } else if (e.getSource() == registraCittadino) {
             this.dispose();
-            //new
+            new UIRegisterCitizen();
         } else if (e.getSource() == login) {
             this.dispose();
-            //new
+            new UILogin();
 
         }
     }
