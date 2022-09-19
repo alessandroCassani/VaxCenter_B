@@ -107,15 +107,15 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
 
-        this.add(sfondo);
-        this.setTitle("VaxCenter");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1600,900);
-        this.setLayout(null);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setForeground(Color.WHITE);
-        this.setVisible(true);
+
+        setTitle("VaxCenter");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1600,900);
+        setLayout(null);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setForeground(Color.WHITE);
+        setVisible(true);
 
 
     }

@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-      
-
     <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiuna javadoc remoteException">
-    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/pom.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-
         <option value="Interface" />
-
         <option value="Class" />
       </list>
     </option>
@@ -42,11 +34,8 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
         <entry key="$PROJECT_DIR$" value="serverUI" />
-
         <entry key="$PROJECT_DIR$" value="UI_bugGrafici" />
-
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,33 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/LibrerieJava/swingx-all-1.6.4.jar&quot;,
-
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/documentazione&quot;,
-
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-
-
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "16",
+    "last_opened_file_path": "C:/LibrerieJava/swingx-all-1.6.4.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
@@ -131,12 +111,11 @@
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
       <workItem from="1663318491994" duration="1637000" />
-
       <workItem from="1663441032207" duration="41000" />
       <workItem from="1663533990594" duration="1579000" />
       <workItem from="1663599967457" duration="1931000" />
       <workItem from="1663602155260" duration="11809000" />
-
+      <workItem from="1663617746883" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -166,62 +145,61 @@
       <option name="project" value="LOCAL" />
       <updated>1663322393625</updated>
     </task>
-
-    <task id="LOCAL-00005" summary="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti">
-      <created>1663429556748</created>
+    <task id="LOCAL-00005" summary="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
+      <created>1663345889342</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1663429556748</updated>
+      <updated>1663345889342</updated>
     </task>
-    <task id="LOCAL-00006" summary="continuazione registraVaccinato e registraCV">
-      <created>1663432361408</created>
+    <task id="LOCAL-00006" summary="modifica colori bottoni e tetFields">
+      <created>1663374287703</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1663432361408</updated>
+      <updated>1663374287703</updated>
     </task>
-    <task id="LOCAL-00007" summary="continuazione registraVaccinato">
-      <created>1663433717804</created>
+    <task id="LOCAL-00007" summary="modifica colori bottoni e tetFields">
+      <created>1663375160561</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1663433717804</updated>
+      <updated>1663375160562</updated>
     </task>
-    <task id="LOCAL-00008" summary="creazioni nuove ultime classi UI">
-      <created>1663434186976</created>
+    <task id="LOCAL-00008" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
+      <created>1663376665078</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1663434186976</updated>
+      <updated>1663376665079</updated>
     </task>
-    <task id="LOCAL-00009" summary="creazioni nuove ultime classi UI">
-      <created>1663441043977</created>
+    <task id="LOCAL-00009" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
+      <created>1663376899169</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1663441043977</updated>
+      <updated>1663376899169</updated>
     </task>
-    <task id="LOCAL-00010" summary="JFrame cittadino">
-      <created>1663534306342</created>
+    <task id="LOCAL-00010" summary="aggiunta javaDoc">
+      <created>1663412919386</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1663534306343</updated>
+      <updated>1663412919387</updated>
     </task>
-    <task id="LOCAL-00011" summary="Pulsanti indietro e accedi UICitizen completa">
-      <created>1663535051192</created>
+    <task id="LOCAL-00011" summary="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc">
+      <created>1663413667092</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1663535051192</updated>
+      <updated>1663413667092</updated>
     </task>
-    <task id="LOCAL-00012" summary="Pulsanti indietro e accedi UICitizen completa">
-      <created>1663535564467</created>
+    <task id="LOCAL-00012" summary=".">
+      <created>1663413757118</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1663535564467</updated>
+      <updated>1663413757118</updated>
     </task>
     <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
       <created>1663601861870</created>
@@ -279,66 +257,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663615449172</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
-
-    <task id="LOCAL-00005" summary="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
-      <created>1663345889342</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1663345889342</updated>
-    </task>
-    <task id="LOCAL-00006" summary="modifica colori bottoni e tetFields">
-      <created>1663374287703</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1663374287703</updated>
-    </task>
-    <task id="LOCAL-00007" summary="modifica colori bottoni e tetFields">
-      <created>1663375160561</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1663375160562</updated>
-    </task>
-    <task id="LOCAL-00008" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
-      <created>1663376665078</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1663376665079</updated>
-    </task>
-    <task id="LOCAL-00009" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
-      <created>1663376899169</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1663376899169</updated>
-    </task>
-    <task id="LOCAL-00010" summary="aggiunta javaDoc">
-      <created>1663412919386</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1663412919387</updated>
-    </task>
-    <task id="LOCAL-00011" summary="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc">
-      <created>1663413667092</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1663413667092</updated>
-    </task>
-    <task id="LOCAL-00012" summary=".">
-      <created>1663413757118</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1663413757118</updated>
-    </task>
     <option name="localTasksCounter" value="13" />
-
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +291,6 @@
     <MESSAGE value="aggiornamento UI operatori vaccinali" />
     <MESSAGE value="aggiornamenti UI generali" />
     <MESSAGE value="add doc" />
-
     <MESSAGE value="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti" />
     <MESSAGE value="continuazione registraVaccinato e registraCV" />
     <MESSAGE value="continuazione registraVaccinato" />
@@ -385,8 +303,6 @@
     <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
     <MESSAGE value="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent." />
     <MESSAGE value="Continuazione UIAdverseEvent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continuazione UIAdverseEvent" />
-
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
     <MESSAGE value="modifica colori bottoni e tetFields" />
     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
@@ -394,6 +310,5 @@
     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
-
   </component>
 </project>
