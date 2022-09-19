@@ -151,7 +151,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         registraCittadino.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(75, 700, 225, 75);
+        status.setBounds(75, 700, 400, 75);
 
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
@@ -210,7 +210,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             this.dispose();
             new UICitizen();
         } else if (e.getSource() == registraCittadino) {
-            if (!nomeCittadino.getText().equals("")){
+            if (!nomeCittadino.getText().equals("Paolo")){
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
             } else{

@@ -207,7 +207,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         }else  if (e.getSource() == registraVaccinato) {
             IDUnivoco.setText("");
             warningIDUnivoco.setText("");
-            if (!nome.getText().equals("")){
+            if (!nome.getText().equals("Paolo")){
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti!");
             } else {
