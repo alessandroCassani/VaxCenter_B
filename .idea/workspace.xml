@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta javadoc">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="completamento UIRegisterCitizen - UIRegisterVaccinated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +118,7 @@
       <workItem from="1663441032207" duration="41000" />
       <workItem from="1663533990594" duration="1579000" />
       <workItem from="1663599967457" duration="1931000" />
-      <workItem from="1663602155260" duration="6452000" />
+      <workItem from="1663602155260" duration="7126000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -219,7 +218,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663602409691</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="completamento UIRegisterCitizen">
+      <created>1663609544689</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1663609544689</updated>
+    </task>
+    <task id="LOCAL-00016" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
+      <created>1663609658073</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663609658073</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +262,8 @@
     <MESSAGE value="Pulsanti indietro e accedi UICitizen completa" />
     <MESSAGE value="modifica della jcombobox registravaccinato" />
     <MESSAGE value="aggiunta javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta javadoc" />
+    <MESSAGE value="completamento UIRegisterCitizen" />
+    <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
+    <option name="LAST_COMMIT_MESSAGE" value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
   </component>
 </project>

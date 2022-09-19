@@ -17,7 +17,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 public class UIRegisterCitizen extends JFrame implements ActionListener {
 
-    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca",}); // da fare in modo diverso
+    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     JTextField nomeCittadino = new JTextField(30);
 
