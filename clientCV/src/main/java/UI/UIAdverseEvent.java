@@ -15,6 +15,12 @@ import java.util.Objects;
 
 public class UIAdverseEvent extends JFrame implements ActionListener {
 
+    JPanel inserisciEventiAvversi = new JPanel();
+
+    JPanel riepilogoEventiAvversiPersonali = new JPanel();
+
+    JButton pulisciEventiAvversi = new JButton();
+
     JButton backToCitizen;
 
     public UIAdverseEvent(){
@@ -55,7 +61,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backToCitizen) {
             this.dispose();
-            new UIHomeCitizen();
+            new UICitizen();
         }
 
     }
