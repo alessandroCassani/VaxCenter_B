@@ -30,7 +30,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
 
-    JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     JTextField nome = new JTextField(30);
 
