@@ -32,9 +32,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica
      */
 
-    public UIChoosingRooles(){
-
-
+    public UIChoosingRooles(String title){
+        super(title);
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");

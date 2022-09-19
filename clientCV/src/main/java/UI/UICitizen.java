@@ -134,7 +134,7 @@ public class UICitizen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backToChoosingRooles) {
             this.dispose();
-            new UIChoosingRooles();
+            new UIChoosingRooles("Vax_Center");
         } else if (e.getSource() == cercaCentroVaccinale) {
             this.dispose();
             //new
