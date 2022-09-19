@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 
 public class WelcomeScreen extends JFrame {
@@ -25,8 +26,9 @@ public class WelcomeScreen extends JFrame {
         win.add(cp);
         // immagine di prova
 
-        String imPath = "C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\src\\main\\resources\\images\\dottori.png";
-        JLabel label = new JLabel(new ImageIcon(imPath));
+        // da sistemare
+        URL url = getClass().getResource("/images/sfondo.png");
+        JLabel label = new JLabel(new ImageIcon(url));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         cp.add(label);
         cp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -38,7 +40,7 @@ public class WelcomeScreen extends JFrame {
         // alla fine della pb viene aperta nella stessa posizione
         win.revalidate();
 
-        timer = new Timer(50, new ActionListener() {
+        timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int value = progressBar.getValue();
