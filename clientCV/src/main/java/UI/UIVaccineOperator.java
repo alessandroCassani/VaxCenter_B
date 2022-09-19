@@ -130,7 +130,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backtoChoosingRooles){
             this.dispose();
-            new UIChoosingRooles("Vax_Center");
+            new UIChoosingRooles();
         } else if(e.getSource() == registraCentroVaccinale){
             this.dispose();
             new UIRegisterVaxCenter();

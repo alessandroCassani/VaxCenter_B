@@ -32,8 +32,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica
      */
 
-    public UIChoosingRooles(String title){
-        super(title);
+    public UIChoosingRooles(){
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
@@ -76,22 +75,13 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        //JLabel sfondo = new JLabel();
-        //sfondo.setBounds(0, 0, 1600, 900);
-        //sfondo.add(scelta);
-        //sfondo.add(operatoreVaccinale);
-        //sfondo.add(cittadino);
-
-        //JPanel home = new JPanel();
         setBounds(0, 0, 1600, 900);
         setLocationRelativeTo(null);
         setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
-        //home.add(sfondo);
 
-        //this.add(sfondo);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1600,900);

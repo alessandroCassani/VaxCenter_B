@@ -46,7 +46,7 @@ public class WelcomeScreen extends JFrame {
                 int value = progressBar.getValue();
                 if(value == 100) {
                     win.dispose();
-                   UIChoosingRooles ui = new UIChoosingRooles("VAX");
+                   UIChoosingRooles ui = new UIChoosingRooles();
                    ui.setVisible(true);
                     timer.stop();
                 } else {
