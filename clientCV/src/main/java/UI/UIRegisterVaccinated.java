@@ -1,5 +1,7 @@
 package UI;
 
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -11,17 +13,20 @@ import java.time.LocalDate;
 
 
 
+
+
 /**
  *  La classe UIRegisterVaccinated crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un vaccinato
  *
  * @author Paolo Bruscagin
+ * @author Damiano Ficara
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
 
-    JComboBox nomeCV = new JComboBox<>(new String[]{}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new Object[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     JTextField nome = new JTextField(30);
 
@@ -67,6 +72,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nomeCV.setBorder(bordo);
         nomeCV.setBounds(50, 100, 675, 75);
         nomeCV.setBackground(Color.WHITE);
+        AutoCompleteDecorator.decorate(nomeCV);
+
 
         JLabel labelnomeVac = new JLabel("Nome");
         labelnomeVac.setFont(new Font("Georgia", Font.BOLD, 12));
