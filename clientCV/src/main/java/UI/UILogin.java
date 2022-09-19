@@ -63,6 +63,9 @@ public class UILogin extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
+
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
