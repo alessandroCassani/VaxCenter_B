@@ -68,7 +68,7 @@ public class UILogin extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == accedi) {
             this.dispose();
-            new UIAdverseEvent();
+            new UIHomeCitizen();
         }else if(e.getSource() == backToCitizen) {
             this.dispose();
             new UICitizen();
