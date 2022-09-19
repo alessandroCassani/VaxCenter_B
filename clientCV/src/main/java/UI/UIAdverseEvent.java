@@ -21,6 +21,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     JButton pulisciEventiAvversi = new JButton();
 
+    JButton registraEA = new JButton();
+
     JButton backToCitizen;
 
     public UIAdverseEvent(){
@@ -28,6 +30,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
         Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
         Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
+
+
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
 
