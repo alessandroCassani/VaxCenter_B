@@ -33,6 +33,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
      */
     JButton backtoChoosingRooles;
 
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
+
     public UIVaccineOperator(){
 
 
@@ -87,33 +91,45 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
 
-        JLabel sfondo = new JLabel();
-        sfondo.setBounds(0, 0, 1600, 900);
-        sfondo.add(registraCentroVaccinale);
-        sfondo.add(registraVaccinato);
-        sfondo.add(backtoChoosingRooles);
+        //Label sfondo = new JLabel();
+        //sfondo.setBounds(0, 0, 1600, 900);
+        //sfondo.add(registraCentroVaccinale);
+        //sfondo.add(registraVaccinato);
+        //sfondo.add(backtoChoosingRooles);
 
-        JPanel vo = new JPanel();
-        vo.setBounds(0, 0, 1600, 900);
-        vo.setLayout(null);
-        vo.add(sfondo);
+        //JPanel vo = new JPanel();
+        setBounds(0, 0, 1600, 900);
+        setLayout(null);
+        //vo.add(sfondo);
+        add(registraCentroVaccinale);
+        add(registraVaccinato);
+        add(backtoChoosingRooles);
 
         //Icona avvio del programma
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        this.add(sfondo);
-        this.setTitle("Operatore Vaccinale");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1600,900);
-        this.setLayout(null);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setVisible(true);
-        this.setForeground(Color.WHITE);
+        //this.add(sfondo);
+        setTitle("Operatore Vaccinale");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1600,900);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+        setForeground(Color.WHITE);
+
+
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
     }
+
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -125,7 +141,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
             new UIRegisterVaxCenter();
         } else if(e.getSource() == registraVaccinato){
             this.dispose();
-            //new UIRegisterVaccinated();
+            new UIRegisterVaccinated();
         }
 
     }
