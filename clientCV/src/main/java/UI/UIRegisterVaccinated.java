@@ -30,7 +30,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
 
-    JComboBox nomeCV = new JComboBox<>(new Object[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     JTextField nome = new JTextField(30);
 
@@ -218,6 +218,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
             }
         }else if(e.getSource() == pulisci) {
+                nomeCV.setSelectedItem("Paolo");
                 nome.setText("");
                 cognome.setText("");
                 codiceFiscale.setText("");
