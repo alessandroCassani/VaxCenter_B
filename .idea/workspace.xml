@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Pulsanti indietro e accedi UICitizen completa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-    </list>
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica della jcombobox registravaccinato" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +43,6 @@
     "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "16",
     "last_opened_file_path": "C:/LibrerieJava/swingx-all-1.6.4.jar",
@@ -118,7 +114,7 @@
       <workItem from="1663318491994" duration="1637000" />
       <workItem from="1663441032207" duration="41000" />
       <workItem from="1663533990594" duration="1579000" />
-      <workItem from="1663599967457" duration="1778000" />
+      <workItem from="1663599967457" duration="1931000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -204,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663535564467</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
+      <created>1663601861870</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663601861870</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +235,7 @@
     <MESSAGE value="creazioni nuove ultime classi UI" />
     <MESSAGE value="JFrame cittadino" />
     <MESSAGE value="Pulsanti indietro e accedi UICitizen completa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pulsanti indietro e accedi UICitizen completa" />
+    <MESSAGE value="modifica della jcombobox registravaccinato" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica della jcombobox registravaccinato" />
   </component>
 </project>

@@ -2,6 +2,10 @@ package UI;
 
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
+/**
+ * Libreria utilizzata per cercare tramite caratteri nella JComboBox i nomi dei centri vaccinali
+ */
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
