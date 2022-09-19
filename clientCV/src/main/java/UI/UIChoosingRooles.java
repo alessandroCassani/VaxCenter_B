@@ -97,6 +97,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1600,900);
 
+
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
@@ -104,6 +105,17 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
+
+
+        this.add(sfondo);
+        this.setTitle("VaxCenter");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(1600,900);
+        this.setLayout(null);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setForeground(Color.WHITE);
+        this.setVisible(true);
 
 
     }
@@ -121,8 +133,5 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             this.dispose();
             new UICitizen();
         }
-
-
-
     }
 }

@@ -119,6 +119,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         setVisible(true);
         setForeground(Color.WHITE);
 
+
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
@@ -127,6 +128,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     /**
      * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
      */
+
 
 
     @Override
