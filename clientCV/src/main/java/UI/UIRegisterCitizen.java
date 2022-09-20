@@ -195,6 +195,10 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setSize (dim.width / 2, dim.height / 2);
+        setLocationRelativeTo(null);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setTitle("Registrazione");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1600, 900);
@@ -202,9 +206,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
     }
     @Override

@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiuna javadoc remoteException">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="risoluzione problema di build">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/swingx_all_1_6_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/swingx_all_1_6_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/centrivaccinali.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/cittadino.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/iconaindietro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/logo_stemma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/operatorevaccinale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/registravaccinato.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="serverUI" />
-        <entry key="$PROJECT_DIR$" value="UI_bugGrafici" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,24 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "16",
-    "last_opened_file_path": "C:/LibrerieJava/swingx-all-1.6.4.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Downloads/swingx-all-1.6.4.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
@@ -77,9 +84,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
-      <module name="serverCV" />
+    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
+      <module name="clientCV" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
@@ -92,11 +99,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.UISplashScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -111,11 +118,6 @@
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
       <workItem from="1663318491994" duration="1637000" />
-      <workItem from="1663441032207" duration="41000" />
-      <workItem from="1663533990594" duration="1579000" />
-      <workItem from="1663599967457" duration="1931000" />
-      <workItem from="1663602155260" duration="11809000" />
-      <workItem from="1663617746883" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -201,62 +203,6 @@
       <option name="project" value="LOCAL" />
       <updated>1663413757118</updated>
     </task>
-    <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
-      <created>1663601861870</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1663601861870</updated>
-    </task>
-    <task id="LOCAL-00014" summary="aggiunta javadoc">
-      <created>1663602409691</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1663602409691</updated>
-    </task>
-    <task id="LOCAL-00015" summary="completamento UIRegisterCitizen">
-      <created>1663609544689</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1663609544689</updated>
-    </task>
-    <task id="LOCAL-00016" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
-      <created>1663609658073</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1663609658073</updated>
-    </task>
-    <task id="LOCAL-00017" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
-      <created>1663610240452</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1663610240452</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent.">
-      <created>1663610905641</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663610905641</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Continuazione UIAdverseEvent">
-      <created>1663611773591</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663611773591</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Continuazione UIAdverseEvent">
-      <created>1663615449172</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1663615449172</updated>
-    </task>
     <option name="localTasksCounter" value="13" />
     <servers />
   </component>
@@ -291,18 +237,6 @@
     <MESSAGE value="aggiornamento UI operatori vaccinali" />
     <MESSAGE value="aggiornamenti UI generali" />
     <MESSAGE value="add doc" />
-    <MESSAGE value="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti" />
-    <MESSAGE value="continuazione registraVaccinato e registraCV" />
-    <MESSAGE value="continuazione registraVaccinato" />
-    <MESSAGE value="creazioni nuove ultime classi UI" />
-    <MESSAGE value="JFrame cittadino" />
-    <MESSAGE value="Pulsanti indietro e accedi UICitizen completa" />
-    <MESSAGE value="modifica della jcombobox registravaccinato" />
-    <MESSAGE value="aggiunta javadoc" />
-    <MESSAGE value="completamento UIRegisterCitizen" />
-    <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
-    <MESSAGE value="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent." />
-    <MESSAGE value="Continuazione UIAdverseEvent" />
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
     <MESSAGE value="modifica colori bottoni e tetFields" />
     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />

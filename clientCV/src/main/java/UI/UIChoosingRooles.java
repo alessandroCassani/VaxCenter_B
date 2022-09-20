@@ -85,7 +85,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         //JPanel home = new JPanel();
         setBounds(0, 0, 1600, 900);
-        setLocationRelativeTo(null);
         setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
@@ -95,29 +94,24 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         //this.add(sfondo);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
+        setLocationRelativeTo(null);
 
 
         setResizable(false);
-        setVisible(true);
         setForeground(Color.WHITE);
 
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-
 
 
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
         setLayout(null);
-        setLocationRelativeTo(null);
         setResizable(false);
         setForeground(Color.WHITE);
         setVisible(true);
-
-
+        
     }
 
     /**
