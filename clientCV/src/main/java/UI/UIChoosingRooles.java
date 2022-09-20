@@ -38,8 +38,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
-        scelta.setFont(new Font("Georgia", Font.BOLD, 25));
-        scelta.setBounds(975, 100, 700, 200);
+        scelta.setFont(new Font("Georgia", Font.BOLD, 17));
+        scelta.setBounds(580, 100, 400, 30);
 
 
         //Personalizzazione bottone operatore vaccinale
@@ -47,8 +47,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
 
         operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
-        operatoreVaccinale.setBounds(1055, 270, 400, 120);
-        operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
+        operatoreVaccinale.setBounds(600, 180, 310, 100);
+        operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         operatoreVaccinale.setBackground(new Color(0xA059E3B3));
         operatoreVaccinale.setForeground(Color.WHITE);
         operatoreVaccinale.setBorder(bordo);
@@ -61,9 +61,10 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
 
+
         cittadino = new JButton("CITTADINO", cit);
-        cittadino.setBounds(1055, 470, 400, 120);
-        cittadino.setFont(new Font("Georgia", Font.BOLD, 20));
+        cittadino.setBounds(600, 320, 310, 100);
+        cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setBackground(new Color(0xA059E3B3));
         cittadino.setForeground(Color.WHITE);
         cittadino.setBorder(bordo);
@@ -71,30 +72,26 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         cittadino.addActionListener(this);
         cittadino.setOpaque(true);
 
-
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         //Icona avvio del programma
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        //JPanel home = new JPanel();
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setSize (dim.width / 2, dim.height / 2);
+        setSize (1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
         setForeground(Color.WHITE);
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
-        setResizable(false);
+
         setForeground(Color.WHITE);
         setVisible(true);
     }
