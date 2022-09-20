@@ -35,6 +35,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         inserisciEventiAvversi.setBounds(801, 0, 750, 750);
         inserisciEventiAvversi.setBorder(bordo);
+        inserisciEventiAvversi.setLayout(null);
+
+        riepilogoEventiAvversiPersonali.setBounds(801, 0, 750, 750);
+        riepilogoEventiAvversiPersonali.setBorder(bordo);
+        riepilogoEventiAvversiPersonali.setLayout(null);
+
 
         switcha.setFont(new Font("Arial", Font.BOLD, 15));
         switcha.setBounds(413, 487, 160, 15);
@@ -50,6 +56,10 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         registraEA.setOpaque(true);
 
         inserisciEventiAvversi.add(registraEA);
+
+        JLabel giaRegistrati = new JLabel("Eventi avversi già registrati");
+        giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 12));
+        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(505, 255, 550, 75);
 
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
@@ -69,6 +79,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         add(backToCitizen);
         add(switcha);
         add(inserisciEventiAvversi).setVisible(false);
+        add(riepilogoEventiAvversiPersonali).setVisible(true);
 
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -94,10 +105,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             new UICitizen();
         } else if (e.getSource() == switcha) {
             if (switcha.isSelected()) {
-
+                riepilogoEventiAvversiPersonali.setVisible(false);
                 inserisciEventiAvversi.setVisible(true);
             } else {
                 inserisciEventiAvversi.setVisible(false);
+                riepilogoEventiAvversiPersonali.setVisible(true);
 
 
             }
