@@ -201,7 +201,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setTitle("Registrazione");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600, 900);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
@@ -236,15 +235,13 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected()) {
-                password.setEchoChar((char) 0);
-                ripetiPassword.setEchoChar((char) 0);
+                 password.setEchoChar((char) 0);
+                 ripetiPassword.setEchoChar((char) 0);
             }
             else{
                 password.setEchoChar('*');
                 ripetiPassword.setEchoChar('*');
-
+            }
         }
-        }
-
     }
 }

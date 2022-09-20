@@ -228,14 +228,12 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         setTitle("Registra Centro Vaccinale");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setSize (dim.width / 2, dim.height / 2);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
     }
 
     /**

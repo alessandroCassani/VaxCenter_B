@@ -109,7 +109,6 @@ public class UICitizen extends JFrame implements ActionListener {
         add(login);
         add(backToChoosingRooles);
 
-
         //Icona avvio del programma
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -119,14 +118,11 @@ public class UICitizen extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setSize (dim.width / 2, dim.height / 2);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
-
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-
     }
 
     /**

@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="risoluzione problema di build">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/swingx_all_1_6_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/swingx_all_1_6_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="prime modifiche setSize">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/centrivaccinali.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/cittadino.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/iconaindietro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/logo_stemma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/operatorevaccinale.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/registravaccinato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663413757118</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="prime modifiche setSize">
+      <created>1663656851989</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663656851989</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +241,7 @@
     <MESSAGE value="aggiunta javaDoc" />
     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="prime modifiche setSize" />
+    <option name="LAST_COMMIT_MESSAGE" value="prime modifiche setSize" />
   </component>
 </project>

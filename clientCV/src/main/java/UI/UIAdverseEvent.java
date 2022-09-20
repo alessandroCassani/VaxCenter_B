@@ -31,8 +31,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
         Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
 
-
-
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
 
         backToCitizen =  new JButton("     INDIETRO", ind);
