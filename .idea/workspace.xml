@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Aggiunta immagine">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Aggiunta campi username e password">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/resources/images/prova-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/citizen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/prova-removebg-preview.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +65,7 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UILogin">
+  <component name="RunManager" selected="Application.UILogin (1)">
     <configuration name="UILogin (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mycompany.uilogin.UILogin" />
       <module name="clientCV" />
@@ -141,8 +146,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UILogin (1)" />
+        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.WelcomeScreen (1)" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISplashScreen" />
@@ -160,7 +165,8 @@
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
       <workItem from="1663318491994" duration="1637000" />
-      <workItem from="1663765352663" duration="2730000" />
+      <workItem from="1663765352663" duration="2939000" />
+      <workItem from="1663793415809" duration="485000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -274,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663767484608</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Aggiunta campi username e password">
+      <created>1663768234138</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663768234138</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +332,7 @@
     <MESSAGE value="Impostazione background login" />
     <MESSAGE value="Split panel in due sezioni" />
     <MESSAGE value="Aggiunta immagine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta immagine" />
+    <MESSAGE value="Aggiunta campi username e password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta campi username e password" />
   </component>
 </project>
