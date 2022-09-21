@@ -190,9 +190,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setSize (1000,600);
         setLocationRelativeTo(null);
+        setForeground(Color.WHITE);
         setResizable(false);
         setVisible(true);
-        setForeground(Color.WHITE);
+
     }
     /**
      * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica

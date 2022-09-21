@@ -63,36 +63,19 @@ public class UISplashScreen extends JWindow {
 
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 count++;
-
                 progressBar.setValue(count);
                 getContentPane();
-
-
-
                 if (count == 30) {
                     j.setVisible(false);
-                    new UIRegisterVaxCenter();
+                    new UIRegisterCitizen();
                     timer1.stop();
 
-
-
                 }
-
-
-
             }
-
-
-
         };
-
         timer1 = new Timer(30, al);
         timer1.start();
-
-
     }
-
-
     public static void main(String[] args) {
         new UISplashScreen();
     }
