@@ -20,12 +20,12 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione operatore vaccinale
      */
-    JButton operatoreVaccinale;
+    JButton operatoreVaccinale = new JButton();
 
     /**
      * Bottone per accedere alla sezione cittadino
      */
-    JButton cittadino;
+    JButton cittadino = new JButton();
 
 
     /**
@@ -46,10 +46,21 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
 
-        operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
+
+        JLabel iconOV = new JLabel(op);
+        JLabel operator = new JLabel("OPERATORE VACCINALE");
+        operator.setFont(new Font("Georgia", Font.BOLD, 15));
+        operator.setForeground(Color.WHITE);
+        operatoreVaccinale.setLayout(new BorderLayout());
+        operatoreVaccinale.add(iconOV,BorderLayout.WEST);
+        operatoreVaccinale.add(operator,BorderLayout.CENTER);
+
+        //operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
+
         operatoreVaccinale.setBounds(600, 180, 310, 100);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         operatoreVaccinale.setBackground(new Color(0xA059E3B3));
+        operatoreVaccinale.setHorizontalTextPosition(SwingConstants.RIGHT);
         operatoreVaccinale.setForeground(Color.WHITE);
         operatoreVaccinale.setBorder(bordo);
         operatoreVaccinale.setFocusable(false);
@@ -61,12 +72,20 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
 
-
-        cittadino = new JButton("CITTADINO", cit);
-        cittadino.setBounds(600, 320, 310, 100);
+        JLabel icon = new JLabel(cit);
+        JLabel citizen = new JLabel("         CITTADINO");
+        citizen.setForeground(Color.WHITE);
+        citizen.setFont(new Font("Georgia", Font.BOLD, 15));
+        //cittadino = new JButton("CITTADINO", cit);
+        cittadino.setLayout(new BorderLayout());
+        cittadino.add(icon,BorderLayout.WEST);
+        cittadino.add(citizen,BorderLayout.CENTER);
+        cittadino.setBounds(600, 330, 310, 100);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setBackground(new Color(0xA059E3B3));
         cittadino.setForeground(Color.WHITE);
+       // cittadino.setHorizontalTextPosition(SwingConstants.RIGHT);
+        cittadino.setIconTextGap(80);
         cittadino.setBorder(bordo);
         cittadino.setFocusable(false);
         cittadino.addActionListener(this);

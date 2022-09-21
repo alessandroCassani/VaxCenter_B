@@ -137,9 +137,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         qualificatore.setBackground(Color.WHITE);
 
 
-        JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza (Completo)");
+        JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza");
         labelIndirizzo.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labelIndirizzo).setBounds(360, 165, 550, 75);
+        add(labelIndirizzo).setBounds(367, 165, 550, 75);
 
         nomeVia.setFont(new Font("Arial", Font.BOLD, 20));
         nomeVia.setBorder(bordo);
