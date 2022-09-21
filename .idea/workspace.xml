@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="SIstemazione generale">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_09_2022_17_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_09_2022_17_44__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Split panel in due sezioni">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
     </list>
@@ -62,13 +61,13 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UILogin">
-    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+  <component name="RunManager" selected="Application.UILogin (1)">
+    <configuration name="UILogin (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycompany.uilogin.UILogin" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UI.*" />
+          <option name="PATTERN" value="com.mycompany.uilogin.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,12 +75,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
-      <module name="serverCV" />
+    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+      <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="clientCV.UI.*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UILogin (1)" />
         <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.WelcomeScreen (1)" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +161,7 @@
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
       <workItem from="1663318491994" duration="1637000" />
-      <workItem from="1663765352663" duration="878000" />
+      <workItem from="1663765352663" duration="1995000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -262,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663605619397</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Split panel in due sezioni">
+      <created>1663766529991</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1663766529992</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +310,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Creazione classi aggiunta animazioni nella WelcomeScreen" />
     <MESSAGE value="Modifica immagine e sistemazione bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifica immagine e sistemazione bug" />
+    <MESSAGE value="Impostazione background login" />
+    <MESSAGE value="Split panel in due sezioni" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split panel in due sezioni" />
   </component>
 </project>
