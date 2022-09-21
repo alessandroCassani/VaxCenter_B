@@ -77,7 +77,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         cognomeCittadino.setPreferredSize(new Dimension(325, 75));
         cognomeCittadino.setBounds(540, 95, 250, 55);
 
-        JLabel labelEmail = new JLabel("Email");
+        JLabel labelEmail = new JLabel("Email:");
         labelEmail.setFont(new Font("Georgia", Font.BOLD, 12));
         add(labelEmail).setBounds(160, 150, 550, 75);
 

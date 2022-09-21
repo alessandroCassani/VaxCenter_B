@@ -103,7 +103,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
-        labelNome.setFont(new Font("Georgia",Font.ITALIC, 20));
+        labelNome.setFont(new Font("Georgia",Font.ITALIC, 17));
         add(labelNome).setBounds(150, 55, 550, 75);
 
         nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 20));
@@ -137,7 +137,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         qualificatore.setBackground(Color.WHITE);
 
 
-        JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza");
+        JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza:");
         labelIndirizzo.setFont(new Font("Georgia",Font.ITALIC, 17));
         add(labelIndirizzo).setBounds(367, 165, 550, 75);
 

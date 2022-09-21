@@ -70,7 +70,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(tiotoloVaccinato).setBounds(350, 0, 550, 55);
 
 
-        JLabel labelnomeVac = new JLabel("Nome");
+        JLabel labelnomeVac = new JLabel("Nome:");
         labelnomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelnomeVac).setBounds(140, 35, 550, 55);
 
@@ -106,7 +106,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         data.setPreferredSize(new Dimension(325, 55));
         data.setBounds(520, 195, 325, 55);
 
-        JLabel labelTipVac = new JLabel("Tipologia");
+        JLabel labelTipVac = new JLabel("Tipologia:");
         labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelTipVac).setBounds(140, 260, 550, 55);
 
