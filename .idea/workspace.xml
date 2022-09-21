@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Continuazione UIAdverseEvent">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiuna javadoc remoteException">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +112,7 @@
       <workItem from="1663533990594" duration="1579000" />
       <workItem from="1663599967457" duration="1931000" />
       <workItem from="1663602155260" duration="11809000" />
-      <workItem from="1663617746883" duration="1088000" />
-      <workItem from="1663681521901" duration="3414000" />
+      <workItem from="1663617746883" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -195,19 +198,19 @@
       <option name="project" value="LOCAL" />
       <updated>1663413757118</updated>
     </task>
-    <task id="LOCAL-00013" summary="Risoluzione build">
-      <created>1663618019229</created>
+    <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
+      <created>1663601861870</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1663618019229</updated>
+      <updated>1663601861870</updated>
     </task>
-    <task id="LOCAL-00014" summary="Continuazione UIAdverseEvent">
-      <created>1663689097093</created>
+    <task id="LOCAL-00014" summary="aggiunta javadoc">
+      <created>1663602409691</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1663689097093</updated>
+      <updated>1663602409691</updated>
     </task>
     <task id="LOCAL-00015" summary="completamento UIRegisterCitizen">
       <created>1663609544689</created>
@@ -251,7 +254,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663615449172</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,14 +299,13 @@
     <MESSAGE value="completamento UIRegisterCitizen" />
     <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
     <MESSAGE value="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent." />
+    <MESSAGE value="Continuazione UIAdverseEvent" />
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
     <MESSAGE value="modifica colori bottoni e tetFields" />
     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
     <MESSAGE value="aggiunta javaDoc" />
     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
-    <MESSAGE value="Risoluzione build" />
-    <MESSAGE value="Continuazione UIAdverseEvent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continuazione UIAdverseEvent" />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

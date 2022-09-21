@@ -23,6 +23,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
     JTextField cognomeCittadino = new JTextField(30);
 
+    JTextField codiceFiscale = new JTextField(16);
+
     JTextField email = new JTextField(30);
 
     JTextField userID =new JTextField(20);
@@ -84,6 +86,15 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         cognomeCittadino.setBorder(bordo);
         cognomeCittadino.setPreferredSize(new Dimension(325, 75));
         cognomeCittadino.setBounds(400, 200, 325, 75);
+
+        JLabel labelCF = new JLabel("Codice Fiscale");
+        labelCF.setFont(new Font("Georgia", Font.BOLD, 12));
+        add(labelCF).setBounds(750, 155, 550, 75);
+
+        codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
+        codiceFiscale.setBorder(bordo);
+        codiceFiscale.setPreferredSize(new Dimension(325, 75));
+        codiceFiscale.setBounds(750, 200, 325, 75);
 
         JLabel labelEmail = new JLabel("Email");
         labelEmail.setFont(new Font("Georgia", Font.BOLD, 12));
@@ -191,6 +202,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         add(status);
         add(pulisci);
         add(backToCitizen);
+        add(codiceFiscale);
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
