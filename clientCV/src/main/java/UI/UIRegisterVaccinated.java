@@ -125,7 +125,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         registraVaccinato.setOpaque(true);
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
-        labelNome.setFont(new Font("Georgia", Font.BOLD, 12));
+        labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(520, 260, 550, 55);
 
         nomeCV.setFont(new Font("Arial", Font.BOLD, 20));

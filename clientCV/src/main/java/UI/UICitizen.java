@@ -28,11 +28,8 @@ public class UICitizen extends JFrame implements ActionListener {
 
     JButton registraCittadino;
 
-    /**
-     * Bottone per accedere alla sezione login del cittadino
-     */
+    JLabel login = new JLabel("Accedi");
 
-    JButton login;
 
     /**
      * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
@@ -54,9 +51,12 @@ public class UICitizen extends JFrame implements ActionListener {
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
 
 
-        cercaCentroVaccinale = new JButton("info CENTRI VACCINALE", info); //mettere foto
-        cercaCentroVaccinale.setBounds(1000, 150, 500, 120);
-        cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
+        login.setFont(new Font("Georgia", Font.ITALIC, 20));
+        login.setBounds(890,20,100,30);
+
+        cercaCentroVaccinale = new JButton("<html>RICERCA<br> CENTRO VACCINALE</html>", info); //mettere foto
+        cercaCentroVaccinale.setBounds(600, 90, 350, 110);
+        cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         cercaCentroVaccinale.setBackground(new Color(0xA059E3B3));
         cercaCentroVaccinale.setForeground(Color.WHITE);
         cercaCentroVaccinale.setBorder(bordo);
@@ -67,8 +67,8 @@ public class UICitizen extends JFrame implements ActionListener {
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
 
 
-        registraCittadino = new JButton("REGISTRATI PRESSO UN CENTRO VACCINALE", reg); //mettere foto
-        registraCittadino.setBounds(975, 300, 550, 120);
+        registraCittadino = new JButton("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>", reg); //mettere foto
+        registraCittadino.setBounds(600, 230, 350, 110);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(0xA059E3B3));
         registraCittadino.setForeground(Color.WHITE);
@@ -77,23 +77,11 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.addActionListener(this);
         registraCittadino.setOpaque(true);
 
-        login = new JButton("LOGIN"); //mettere foto
-        login.setBounds(1075, 450, 350, 120);
-        login.setFont(new Font("Georgia", Font.BOLD, 25));
-        login.setBackground(new Color(0xAB33BE));
-        login.setForeground(Color.WHITE);
-        login.setBorder(bordoLogin);
-        login.setFocusable(false);
-        login.addActionListener(this);
-        login.setOpaque(true);
 
 
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
-
-
-        backToChoosingRooles = new JButton("     INDIETRO", ind);
-        backToChoosingRooles.setBounds(1075, 600, 350, 120);
-        backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
+        backToChoosingRooles = new JButton("INDIETRO");
+        backToChoosingRooles.setBounds(600, 400, 350, 110);
+        backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
         backToChoosingRooles.setBackground(new Color(0xFA4723));
         backToChoosingRooles.setForeground(Color.WHITE);
         backToChoosingRooles.setBorder(bordobtnInd);
@@ -102,7 +90,6 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.setOpaque(true);
 
 
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
         add(cercaCentroVaccinale);
         add(registraCittadino);
@@ -117,7 +104,7 @@ public class UICitizen extends JFrame implements ActionListener {
         setTitle("Cittadino");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setSize (dim.width / 2, dim.height / 2);
+        setSize (1000,600);
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setResizable(false);

@@ -103,7 +103,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
-        labelNome.setFont(new Font("Georgia",Font.ITALIC, 17));
+        labelNome.setFont(new Font("Georgia",Font.ITALIC, 20));
         add(labelNome).setBounds(150, 55, 550, 75);
 
         nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 20));
@@ -149,7 +149,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         JLabel labelNumeroCivico = new JLabel("N°");
         labelNumeroCivico.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelNumeroCivico).setBounds(690, 165, 550, 75);
+        add(labelNumeroCivico).setBounds(720, 165, 550, 75);
 
         numeroCivico.setFont(new Font("Arial", Font.BOLD, 20));
         numeroCivico.setBorder(bordo);
@@ -168,7 +168,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labelCAP).setBounds(460, 265, 550, 75);
+        add(labelCAP).setBounds(465, 265, 550, 75);
 
         cap.setFont(new Font("Arial", Font.BOLD, 20));
         cap.setBorder(bordo);
