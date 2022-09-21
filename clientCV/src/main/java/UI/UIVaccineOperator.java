@@ -42,7 +42,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     public UIVaccineOperator(){
 
         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(0xFFF6821A, true), 4, true);
 
         //Personalizzazione bottone registra centro vaccinale
 
@@ -81,9 +81,9 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles =  new JButton("     INDIETRO", ind);
         backtoChoosingRooles.setBounds(600, 400, 360, 100);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
-        backtoChoosingRooles.setBackground(new Color(0xFA4723));
-        backtoChoosingRooles.setForeground(Color.WHITE);
+        backtoChoosingRooles.setBackground(new Color(0xFF5C5C));
         backtoChoosingRooles.setBorder(bordobtnInd);
+        backtoChoosingRooles.setForeground(Color.WHITE);
         backtoChoosingRooles.setFocusable(false);
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);

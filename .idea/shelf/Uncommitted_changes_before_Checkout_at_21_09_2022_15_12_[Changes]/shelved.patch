@@ -1,0 +1,304 @@
+Index: clientCV/src/main/java/UI/UISplashScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.Objects;\r\nimport javax.swing.*;\r\n\r\n/**\r\n *  La classe UISplashSceern crea l'interfaccia di animazione principale prima di passare alla classe UIChoosingRooles\r\n *\r\n *  @author Paolo Bruscagin\r\n */\r\n\r\npublic class UISplashScreen extends JWindow {\r\n\r\n    /**\r\n     * Conteiner della durata di 4 secondi utilizzato come intro per poi accedre all'interfaccia UIChoosingRoles\r\n     */\r\n\r\n    private static JProgressBar progressBar = new JProgressBar();\r\n    private static int count;\r\n    private static Timer timer1;\r\n    Container container = getContentPane();\r\n    JWindow j = new JWindow();\r\n\r\n    /**\r\n     * costruttore che permette il caricamento dei componenti d'interfaccia grafica\r\n     */\r\n\r\n    public UISplashScreen() {\r\n\r\n\r\n        container.setLayout(null);\r\n        JPanel panel = new JPanel();\r\n        ImageIcon stemma = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/logo_stemma.png\")));\r\n        JLabel label = new JLabel(\"\");\r\n        label.setIcon(stemma);\r\n        label.setBounds(0,0,800,450);\r\n        panel.add(label);\r\n        panel.setForeground(Color.WHITE);\r\n        panel.setBounds(225, -10, 800, 450);\r\n        panel.setLayout(null);\r\n        container.add(panel);\r\n        j.add(container);\r\n        progressBar.setMaximum(30);\r\n        progressBar.setForeground(Color.ORANGE);\r\n        progressBar.setBounds(5, 430, 790, 15);\r\n        j.setSize(800, 450);\r\n        j.setLocationRelativeTo(null);\r\n        this.setIconImage(stemma.getImage());\r\n        this.setVisible(true);\r\n        this.add(progressBar);\r\n        this.loadProgressBar();\r\n        j.setVisible(true);\r\n\r\n        /*Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();\r\n        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);*/\r\n\r\n    }\r\n\r\n    /**\r\n     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica\r\n     */\r\n\r\n    private void loadProgressBar() {\r\n        ActionListener al = new ActionListener() {\r\n\r\n            public void actionPerformed(java.awt.event.ActionEvent evt) {\r\n                count++;\r\n\r\n                progressBar.setValue(count);\r\n                getContentPane();\r\n\r\n\r\n\r\n                if (count == 30) {\r\n                    j.setVisible(false);\r\n                    new UIChoosingRooles();\r\n                    timer1.stop();\r\n\r\n\r\n\r\n                }\r\n\r\n\r\n\r\n            }\r\n\r\n\r\n\r\n        };\r\n\r\n        timer1 = new Timer(30, al);\r\n        timer1.start();\r\n\r\n\r\n    }\r\n\r\n\r\n    public static void main(String[] args) {\r\n        new UISplashScreen();\r\n    }\r\n};
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clientCV/src/main/java/UI/UISplashScreen.java b/clientCV/src/main/java/UI/UISplashScreen.java
+--- a/clientCV/src/main/java/UI/UISplashScreen.java	(revision cb0be9cbf3c9ea4c9d911f1e46eab50a6324d689)
++++ b/clientCV/src/main/java/UI/UISplashScreen.java	(date 1663765827167)
+@@ -52,10 +52,6 @@
+         this.add(progressBar);
+         this.loadProgressBar();
+         j.setVisible(true);
+-
+-        /*Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);*/
+-
+     }
+ 
+     /**
+Index: clientCV/src/main/java/UI/UIVaccineOperator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.Objects;\r\n\r\n/**\r\n * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire\r\n * un nuovo centro vaccinale oppure se inserire un nuovo cittadino vaccinato\r\n *\r\n * @author Paolo Bruscagin\r\n */\r\n\r\npublic class UIVaccineOperator extends JFrame implements ActionListener {\r\n\r\n\r\n    /**\r\n     * Bottone per accedere alla sezione registra centro vaccinale\r\n     */\r\n    JButton registraCentroVaccinale ;\r\n\r\n    /**\r\n     * Bottone per accedere alla sezione registra vaccinato\r\n     */\r\n    JButton registraVaccinato;\r\n\r\n    /**\r\n     * Bottone per tornare nell'interfaccia grafica UIChoosingRooles\r\n     */\r\n    JButton backtoChoosingRooles;\r\n\r\n    /**\r\n     * costruttore che permette il caricamento dei componenti d'interfaccia grafica\r\n     */\r\n\r\n    public UIVaccineOperator(){\r\n\r\n\r\n\r\n        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);\r\n        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);\r\n\r\n\r\n        //Personalizzazione bottone registra centro vaccinale\r\n\r\n        ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/centrivaccinali.png\")));\r\n\r\n        registraCentroVaccinale =  new JButton(\"REGISTRA CENTRO VACCINALE\", cv);\r\n        registraCentroVaccinale.setBounds(1000, 270, 500, 120);\r\n        registraCentroVaccinale.setFont(new Font(\"Georgia\", Font.BOLD, 20));\r\n        registraCentroVaccinale.setBackground(new Color(0xA059E3B3));\r\n        registraCentroVaccinale.setForeground(Color.WHITE);\r\n        registraCentroVaccinale.setBorder(bordo);\r\n        registraCentroVaccinale.setFocusable(false);\r\n        registraCentroVaccinale.addActionListener(this);\r\n        registraCentroVaccinale.setOpaque(true);\r\n\r\n\r\n        //Personalizzazione bottone rigistra vaccinato\r\n\r\n        ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/registravaccinato.png\")));\r\n\r\n\r\n        registraVaccinato =  new JButton(\"REGISTRA VACCINATO\", cr);\r\n        registraVaccinato.setBounds(1000, 470, 500, 120);\r\n        registraVaccinato.setFont(new Font(\"Georgia\", Font.BOLD, 20));\r\n        registraVaccinato.setBackground(new Color(0xA059E3B3));\r\n        registraVaccinato.setForeground(Color.WHITE);\r\n        registraVaccinato.setBorder(bordo);\r\n        registraVaccinato.setFocusable(false);\r\n        registraVaccinato.addActionListener(this);\r\n        registraVaccinato.setOpaque(true);\r\n\r\n\r\n        //Personalizzazione bottone indietro\r\n\r\n        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/iconaindietro.png\")));\r\n\r\n\r\n        backtoChoosingRooles =  new JButton(\"     INDIETRO\", ind);\r\n        backtoChoosingRooles.setBounds(1075, 670, 350, 120);\r\n        backtoChoosingRooles.setFont(new Font(\"Georgia\", Font.BOLD, 20));\r\n        backtoChoosingRooles.setBackground(new Color(0xFA4723));\r\n        backtoChoosingRooles.setForeground(Color.WHITE);\r\n        backtoChoosingRooles.setBorder(bordobtnInd);\r\n        backtoChoosingRooles.setFocusable(false);\r\n        backtoChoosingRooles.addActionListener(this);\r\n        backtoChoosingRooles.setOpaque(true);\r\n\r\n        //Label sfondo = new JLabel();\r\n        //sfondo.setBounds(0, 0, 1600, 900);\r\n        //sfondo.add(registraCentroVaccinale);\r\n        //sfondo.add(registraVaccinato);\r\n        //sfondo.add(backtoChoosingRooles);\r\n\r\n        //JPanel vo = new JPanel();\r\n        setBounds(0, 0, 1600, 900);\r\n        setLayout(null);\r\n        //vo.add(sfondo);\r\n        add(registraCentroVaccinale);\r\n        add(registraVaccinato);\r\n        add(backtoChoosingRooles);\r\n\r\n        //Icona avvio del programma\r\n\r\n        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/logo.png\")));\r\n        setIconImage(logo.getImage());\r\n\r\n        //this.add(sfondo);\r\n        setTitle(\"Operatore Vaccinale\");\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        setSize(1600,900);\r\n        setLocationRelativeTo(null);\r\n        setResizable(false);\r\n        setVisible(true);\r\n        setForeground(Color.WHITE);\r\n\r\n\r\n        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();\r\n        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);\r\n\r\n    }\r\n\r\n    /**\r\n     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica\r\n     */\r\n\r\n\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        if(e.getSource() == backtoChoosingRooles){\r\n            this.dispose();\r\n            new UIChoosingRooles();\r\n        } else if(e.getSource() == registraCentroVaccinale){\r\n            this.dispose();\r\n            new UIRegisterVaxCenter();\r\n        } else if(e.getSource() == registraVaccinato){\r\n            this.dispose();\r\n            new UIRegisterVaccinated();\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clientCV/src/main/java/UI/UIVaccineOperator.java b/clientCV/src/main/java/UI/UIVaccineOperator.java
+--- a/clientCV/src/main/java/UI/UIVaccineOperator.java	(revision cb0be9cbf3c9ea4c9d911f1e46eab50a6324d689)
++++ b/clientCV/src/main/java/UI/UIVaccineOperator.java	(date 1663765817094)
+@@ -42,7 +42,7 @@
+ 
+ 
+         Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
+-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
++        Border bordobtnInd = new LineBorder(new Color(0xFF0000, true), 4, true);
+ 
+ 
+         //Personalizzazione bottone registra centro vaccinale
+@@ -84,9 +84,9 @@
+         backtoChoosingRooles =  new JButton("     INDIETRO", ind);
+         backtoChoosingRooles.setBounds(1075, 670, 350, 120);
+         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
+-        backtoChoosingRooles.setBackground(new Color(0xFA4723));
+-        backtoChoosingRooles.setForeground(Color.WHITE);
++        backtoChoosingRooles.setBackground(new Color(0xFF5C5C));
+         backtoChoosingRooles.setBorder(bordobtnInd);
++        backtoChoosingRooles.setForeground(Color.WHITE);
+         backtoChoosingRooles.setFocusable(false);
+         backtoChoosingRooles.addActionListener(this);
+         backtoChoosingRooles.setOpaque(true);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b5aa8f1-5aab-455f-a226-785c296afb96\" name=\"Changes\" comment=\"aggiuna javadoc remoteException\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"module-info\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"main\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"serverUI\" />\r\n        <entry key=\"$PROJECT_DIR$\" value=\"UI_bugGrafici\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2EoKIuzglBobAuLR0ZtXSyR9VOV\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Git.Branch.Popup.ShowAllRemotes\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"jdk.selected.JAVA_MODULE\": \"16\",\r\n    \"last_opened_file_path\": \"C:/LibrerieJava/swingx-all-1.6.4.jar\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\brusc\\Documents\\GitHub\\VaxCenter_B\\documentazione\" />\r\n      <recent name=\"C:\\Users\\brusc\\Documents\\GitHub\\VaxCenter_B\\clientCV\\src\\main\\resources\\images\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\util\\src\\main\\java\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\java\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"UILoginToServer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UI.UILoginToServer\" />\r\n      <module name=\"serverCV\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"clientCV.UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6b5aa8f1-5aab-455f-a226-785c296afb96\" name=\"Changes\" comment=\"\" />\r\n      <created>1663256423679</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1663256423679</updated>\r\n      <workItem from=\"1663269559793\" duration=\"2778000\" />\r\n      <workItem from=\"1663278816959\" duration=\"88000\" />\r\n      <workItem from=\"1663318491994\" duration=\"1637000\" />\r\n      <workItem from=\"1663441032207\" duration=\"41000\" />\r\n      <workItem from=\"1663533990594\" duration=\"1579000\" />\r\n      <workItem from=\"1663599967457\" duration=\"1931000\" />\r\n      <workItem from=\"1663602155260\" duration=\"11809000\" />\r\n      <workItem from=\"1663617746883\" duration=\"77000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"cambiamento struttura moduli e package di progetto\">\r\n      <created>1663258918566</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663258918566</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"aggiornamento UI operatori vaccinali\">\r\n      <created>1663269806745</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663269806745</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"aggiornamenti UI generali\">\r\n      <created>1663322295266</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663322295266</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"add doc\">\r\n      <created>1663322393625</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663322393625</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox\">\r\n      <created>1663345889342</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663345889342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"modifica colori bottoni e tetFields\">\r\n      <created>1663374287703</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663374287703</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"modifica colori bottoni e tetFields\">\r\n      <created>1663375160561</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663375160562</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java\">\r\n      <created>1663376665078</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663376665079</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java\">\r\n      <created>1663376899169</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663376899169</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"aggiunta javaDoc\">\r\n      <created>1663412919386</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663412919387</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc\">\r\n      <created>1663413667092</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663413667092</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\".\">\r\n      <created>1663413757118</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663413757118</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"modifica della jcombobox registravaccinato\">\r\n      <created>1663601861870</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663601861870</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"aggiunta javadoc\">\r\n      <created>1663602409691</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663602409691</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"completamento UIRegisterCitizen\">\r\n      <created>1663609544689</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663609544689</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"completamento UIRegisterCitizen - UIRegisterVaccinated\">\r\n      <created>1663609658073</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663609658073</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"completamento UIRegisterCitizen - UIRegisterVaccinated\">\r\n      <created>1663610240452</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663610240452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent.\">\r\n      <created>1663610905641</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663610905641</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Continuazione UIAdverseEvent\">\r\n      <created>1663611773591</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663611773591</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Continuazione UIAdverseEvent\">\r\n      <created>1663615449172</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663615449172</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"13\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"changeStructure\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"cambiamento struttura moduli e package di progetto\" />\r\n    <MESSAGE value=\"aggiornamento UI operatori vaccinali\" />\r\n    <MESSAGE value=\"aggiornamenti UI generali\" />\r\n    <MESSAGE value=\"add doc\" />\r\n    <MESSAGE value=\"aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti\" />\r\n    <MESSAGE value=\"continuazione registraVaccinato e registraCV\" />\r\n    <MESSAGE value=\"continuazione registraVaccinato\" />\r\n    <MESSAGE value=\"creazioni nuove ultime classi UI\" />\r\n    <MESSAGE value=\"JFrame cittadino\" />\r\n    <MESSAGE value=\"Pulsanti indietro e accedi UICitizen completa\" />\r\n    <MESSAGE value=\"modifica della jcombobox registravaccinato\" />\r\n    <MESSAGE value=\"aggiunta javadoc\" />\r\n    <MESSAGE value=\"completamento UIRegisterCitizen\" />\r\n    <MESSAGE value=\"completamento UIRegisterCitizen - UIRegisterVaccinated\" />\r\n    <MESSAGE value=\"Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent.\" />\r\n    <MESSAGE value=\"Continuazione UIAdverseEvent\" />\r\n    <MESSAGE value=\"collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox\" />\r\n    <MESSAGE value=\"modifica colori bottoni e tetFields\" />\r\n    <MESSAGE value=\"aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java\" />\r\n    <MESSAGE value=\"aggiunta javaDoc\" />\r\n    <MESSAGE value=\"aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc\" />\r\n    <MESSAGE value=\".\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\".\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cb0be9cbf3c9ea4c9d911f1e46eab50a6324d689)
++++ b/.idea/workspace.xml	(date 1663765817809)
+@@ -4,15 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiuna javadoc remoteException">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_05__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
++    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica dimensione, fino UIRegisterVaccinated.java">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -34,8 +29,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="serverUI" />
+-        <entry key="$PROJECT_DIR$" value="UI_bugGrafici" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -49,24 +43,24 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Git.Branch.Popup.ShowAllRemotes": "true",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "jdk.selected.JAVA_MODULE": "16",
+-    "last_opened_file_path": "C:/LibrerieJava/swingx-all-1.6.4.jar",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Libraries",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Downloads/swingx-all-1.6.4.jar&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
+@@ -77,9 +71,9 @@
+     </key>
+   </component>
+   <component name="RunManager">
+-    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
+-      <module name="serverCV" />
++    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
++      <module name="clientCV" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="clientCV.UI.*" />
+@@ -92,11 +86,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.UILoginToServer" />
+-        <item itemvalue="Application.UILoginToServer" />
+-        <item itemvalue="Application.UILoginToServer" />
+-        <item itemvalue="Application.UILoginToServer" />
+-        <item itemvalue="Application.UILoginToServer" />
++        <item itemvalue="Application.UISplashScreen" />
++        <item itemvalue="Application.UISplashScreen" />
++        <item itemvalue="Application.UISplashScreen" />
++        <item itemvalue="Application.UISplashScreen" />
++        <item itemvalue="Application.UISplashScreen" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -111,11 +105,6 @@
+       <workItem from="1663269559793" duration="2778000" />
+       <workItem from="1663278816959" duration="88000" />
+       <workItem from="1663318491994" duration="1637000" />
+-      <workItem from="1663441032207" duration="41000" />
+-      <workItem from="1663533990594" duration="1579000" />
+-      <workItem from="1663599967457" duration="1931000" />
+-      <workItem from="1663602155260" duration="11809000" />
+-      <workItem from="1663617746883" duration="77000" />
+     </task>
+     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
+       <created>1663258918566</created>
+@@ -201,63 +190,35 @@
+       <option name="project" value="LOCAL" />
+       <updated>1663413757118</updated>
+     </task>
+-    <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
+-      <created>1663601861870</created>
++    <task id="LOCAL-00013" summary="prime modifiche setSize">
++      <created>1663656851989</created>
+       <option name="number" value="00013" />
+       <option name="presentableId" value="LOCAL-00013" />
+       <option name="project" value="LOCAL" />
+-      <updated>1663601861870</updated>
++      <updated>1663656851989</updated>
+     </task>
+-    <task id="LOCAL-00014" summary="aggiunta javadoc">
+-      <created>1663602409691</created>
++    <task id="LOCAL-00014" summary="completate modifiche setSize e eliminazione codice commentato">
++      <created>1663658341470</created>
+       <option name="number" value="00014" />
+       <option name="presentableId" value="LOCAL-00014" />
+       <option name="project" value="LOCAL" />
+-      <updated>1663602409691</updated>
++      <updated>1663658341470</updated>
+     </task>
+-    <task id="LOCAL-00015" summary="completamento UIRegisterCitizen">
+-      <created>1663609544689</created>
++    <task id="LOCAL-00015" summary="setSize server">
++      <created>1663659838016</created>
+       <option name="number" value="00015" />
+       <option name="presentableId" value="LOCAL-00015" />
+       <option name="project" value="LOCAL" />
+-      <updated>1663609544689</updated>
++      <updated>1663659838016</updated>
+     </task>
+-    <task id="LOCAL-00016" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
+-      <created>1663609658073</created>
++    <task id="LOCAL-00016" summary="modifica dimensione, fino UIRegisterVaccinated.java">
++      <created>1663756534970</created>
+       <option name="number" value="00016" />
+       <option name="presentableId" value="LOCAL-00016" />
+       <option name="project" value="LOCAL" />
+-      <updated>1663609658073</updated>
+-    </task>
+-    <task id="LOCAL-00017" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
+-      <created>1663610240452</created>
+-      <option name="number" value="00017" />
+-      <option name="presentableId" value="LOCAL-00017" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1663610240452</updated>
+-    </task>
+-    <task id="LOCAL-00018" summary="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent.">
+-      <created>1663610905641</created>
+-      <option name="number" value="00018" />
+-      <option name="presentableId" value="LOCAL-00018" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1663610905641</updated>
+-    </task>
+-    <task id="LOCAL-00019" summary="Continuazione UIAdverseEvent">
+-      <created>1663611773591</created>
+-      <option name="number" value="00019" />
+-      <option name="presentableId" value="LOCAL-00019" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1663611773591</updated>
+-    </task>
+-    <task id="LOCAL-00020" summary="Continuazione UIAdverseEvent">
+-      <created>1663615449172</created>
+-      <option name="number" value="00020" />
+-      <option name="presentableId" value="LOCAL-00020" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1663615449172</updated>
++      <updated>1663756534970</updated>
+     </task>
+-    <option name="localTasksCounter" value="13" />
++    <option name="localTasksCounter" value="17" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -291,24 +252,16 @@
+     <MESSAGE value="aggiornamento UI operatori vaccinali" />
+     <MESSAGE value="aggiornamenti UI generali" />
+     <MESSAGE value="add doc" />
+-    <MESSAGE value="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti" />
+-    <MESSAGE value="continuazione registraVaccinato e registraCV" />
+-    <MESSAGE value="continuazione registraVaccinato" />
+-    <MESSAGE value="creazioni nuove ultime classi UI" />
+-    <MESSAGE value="JFrame cittadino" />
+-    <MESSAGE value="Pulsanti indietro e accedi UICitizen completa" />
+-    <MESSAGE value="modifica della jcombobox registravaccinato" />
+-    <MESSAGE value="aggiunta javadoc" />
+-    <MESSAGE value="completamento UIRegisterCitizen" />
+-    <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
+-    <MESSAGE value="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent." />
+-    <MESSAGE value="Continuazione UIAdverseEvent" />
+     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
+     <MESSAGE value="modifica colori bottoni e tetFields" />
+     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
+     <MESSAGE value="aggiunta javaDoc" />
+     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
+     <MESSAGE value="." />
+-    <option name="LAST_COMMIT_MESSAGE" value="." />
++    <MESSAGE value="prime modifiche setSize" />
++    <MESSAGE value="completate modifiche setSize e eliminazione codice commentato" />
++    <MESSAGE value="setSize server" />
++    <MESSAGE value="modifica dimensione, fino UIRegisterVaccinated.java" />
++    <option name="LAST_COMMIT_MESSAGE" value="modifica dimensione, fino UIRegisterVaccinated.java" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/clientCV/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/util/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/serverCV/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" default=\"true\" project-jdk-name=\"16\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision cb0be9cbf3c9ea4c9d911f1e46eab50a6324d689)
++++ b/.idea/misc.xml	(date 1663765855143)
+@@ -10,7 +10,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
