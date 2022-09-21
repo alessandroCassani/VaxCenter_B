@@ -66,65 +66,65 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato:");
         tiotoloVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
-        add(tiotoloVaccinato).setBounds(50, 10, 550, 75);
+        add(tiotoloVaccinato).setBounds(50, 0, 550, 55);
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale");
         labelNome.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelNome).setBounds(50, 55, 550, 75);
+        add(labelNome).setBounds(50, 45, 550, 55);
 
         nomeCV.setFont(new Font("Arial", Font.BOLD, 20));
         nomeCV.setBorder(bordo);
-        nomeCV.setBounds(50, 100, 675, 75);
+        nomeCV.setBounds(50, 90, 675, 55);
         nomeCV.setBackground(Color.WHITE);
         AutoCompleteDecorator.decorate(nomeCV);
 
 
         JLabel labelnomeVac = new JLabel("Nome");
         labelnomeVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelnomeVac).setBounds(50, 155, 550, 75);
+        add(labelnomeVac).setBounds(50, 145, 550, 55);
 
         nome.setFont(new Font("Arial", Font.BOLD, 20));
         nome.setBorder(bordo);
-        nome.setPreferredSize(new Dimension(325, 75));
-        nome.setBounds(50, 200, 325, 75);
+        nome.setPreferredSize(new Dimension(325, 55));
+        nome.setBounds(50, 190, 325, 75);
 
         JLabel labelcognomeVac = new JLabel("Cognome");
         labelcognomeVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelcognomeVac).setBounds(400, 155, 550, 75);
+        add(labelcognomeVac).setBounds(400, 145, 550, 55);
 
         cognome.setFont(new Font("Arial", Font.BOLD, 20));
         cognome.setBorder(bordo);
-        cognome.setPreferredSize(new Dimension(325, 75));
-        cognome.setBounds(400, 200, 325, 75);
+        cognome.setPreferredSize(new Dimension(325, 55));
+        cognome.setBounds(400, 190, 325, 55);
 
         JLabel labelcf = new JLabel("Codice Fiscale");
         labelcf.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelcf).setBounds(50, 255, 550, 75);
+        add(labelcf).setBounds(50, 245, 550, 55);
 
         codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
         codiceFiscale.setBorder(bordo);
-        codiceFiscale.setPreferredSize(new Dimension(325, 75));
-        codiceFiscale.setBounds(50, 300, 325, 75);
+        codiceFiscale.setPreferredSize(new Dimension(325, 55));
+        codiceFiscale.setBounds(50, 290, 325, 55);
 
         JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg)");
         labeldata.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labeldata).setBounds(400, 255, 550, 75);
+        add(labeldata).setBounds(400, 245, 550, 55);
 
         data.setFont(new Font("Arial", Font.BOLD, 20));
         data.setBorder(bordo);
-        data.setPreferredSize(new Dimension(325, 75));
-        data.setBounds(400, 300, 325, 75);
+        data.setPreferredSize(new Dimension(325, 55));
+        data.setBounds(400, 290, 325, 55);
 
         JLabel labelTipVac = new JLabel("Tipologia");
         labelTipVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelTipVac).setBounds(50, 355, 550, 75);
+        add(labelTipVac).setBounds(50, 345, 550, 55);
 
         vaccinoSomministrato.setFont(new Font("Arial", Font.BOLD, 20));
         vaccinoSomministrato.setBorder(bordo);
-        vaccinoSomministrato.setBounds(50, 400, 325, 75);
+        vaccinoSomministrato.setBounds(50, 390, 325, 55);
         vaccinoSomministrato.setBackground(Color.WHITE);
 
-        registraVaccinato.setBounds(475, 400, 250, 75);
+        registraVaccinato.setBounds(475, 390, 250, 55);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0x07AF45));
         registraVaccinato.setForeground(Color.WHITE);
@@ -137,7 +137,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
         backToVaccineOperator =  new JButton("     INDIETRO", ind);
-        backToVaccineOperator.setBounds(50, 700, 300, 100);
+        backToVaccineOperator.setBounds(50, 490, 300, 80);
         backToVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
         backToVaccineOperator.setBackground(new Color(0xFA4723));
         backToVaccineOperator.setForeground(Color.WHITE);
@@ -147,7 +147,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         backToVaccineOperator.setOpaque(true);
 
         pulisci = new JButton("PULISCI");
-        pulisci.setBounds(400, 700, 200, 100);
+        pulisci.setBounds(400, 490, 200, 80);
         pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
         pulisci.setBackground(new Color(0xEF0808));
         pulisci.setForeground(Color.WHITE);
@@ -157,14 +157,13 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         pulisci.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(125, 500, 400, 75);
+        status.setBounds(125, 490, 400, 55);
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        IDUnivoco.setBounds(125, 550, 400, 75);
+        IDUnivoco.setBounds(125, 540, 400, 55);
         warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        warningIDUnivoco.setBounds(125, 575, 600, 75);
+        warningIDUnivoco.setBounds(125, 565, 600, 55);
 
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
 
         add(backToVaccineOperator);
@@ -189,7 +188,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        setSize (dim.width / 2, dim.height / 2);
+        setSize (1000,600);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);

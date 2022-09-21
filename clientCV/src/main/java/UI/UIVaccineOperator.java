@@ -17,6 +17,8 @@ import java.util.Objects;
 
 public class UIVaccineOperator extends JFrame implements ActionListener {
 
+    final String rcv = "REGISTRA \n CENTRO VACCINALE";
+
 
     /**
      * Bottone per accedere alla sezione registra centro vaccinale
@@ -46,9 +48,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/centrivaccinali.png")));
 
-        registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
-        registraCentroVaccinale.setBounds(1000, 270, 500, 120);
-        registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
+        registraCentroVaccinale =  new JButton("<html>REGISTRA<br> CENTRO VACCINALE</html>", cv);
+        registraCentroVaccinale.setHorizontalAlignment(SwingConstants.CENTER);
+        registraCentroVaccinale.setBounds(600, 80, 350, 95);
+        registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCentroVaccinale.setBackground(new Color(0xA059E3B3));
         registraCentroVaccinale.setForeground(Color.WHITE);
         registraCentroVaccinale.setBorder(bordo);
@@ -61,8 +64,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registravaccinato.png")));
 
         registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
-        registraVaccinato.setBounds(1000, 470, 500, 120);
-        registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
+        registraVaccinato.setBounds(600, 220, 360, 95);
+        registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setBackground(new Color(0xA059E3B3));
         registraVaccinato.setForeground(Color.WHITE);
         registraVaccinato.setBorder(bordo);
@@ -76,8 +79,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         backtoChoosingRooles =  new JButton("     INDIETRO", ind);
-        backtoChoosingRooles.setBounds(1075, 670, 350, 120);
-        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
+        backtoChoosingRooles.setBounds(600, 400, 360, 100);
+        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
         backtoChoosingRooles.setBackground(new Color(0xFA4723));
         backtoChoosingRooles.setForeground(Color.WHITE);
         backtoChoosingRooles.setBorder(bordobtnInd);
@@ -85,7 +88,6 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
 
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
         add(registraCentroVaccinale);
         add(registraVaccinato);
@@ -100,7 +102,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        setSize (dim.width / 2, dim.height / 2);
+        setSize (1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
