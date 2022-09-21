@@ -22,13 +22,13 @@ public class UICitizen extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione info centro vaccinale
      */
-    JButton cercaCentroVaccinale;
+    JButton cercaCentroVaccinale = new JButton();
 
     /**
      * Bottone per accedere alla sezione registra centro cittadino
      */
 
-    JButton registraCittadino;
+    JButton registraCittadino = new JButton();
 
     JLabel login = new JLabel("Accedi");
 
@@ -62,7 +62,13 @@ public class UICitizen extends JFrame implements ActionListener {
             }
         });
 
-        cercaCentroVaccinale = new JButton("<html>RICERCA<br> CENTRO VACCINALE</html>", info); //mettere foto
+        JLabel cercaCV = new JLabel(info);
+        JLabel cercaLabel = new JLabel("<html>RICERCA<br> CENTRO VACCINALE</html>");
+        cercaLabel.setForeground(Color.WHITE);
+        cercaLabel.setFont(new Font("Georgia", Font.BOLD, 15));
+        cercaCentroVaccinale.setLayout(new BorderLayout());
+        cercaCentroVaccinale.add(cercaCV,BorderLayout.WEST);
+        cercaCentroVaccinale.add(cercaLabel,BorderLayout.CENTER);
         cercaCentroVaccinale.setBounds(600, 90, 350, 110);
         cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         cercaCentroVaccinale.setBackground(new Color(0xA059E3B3));
@@ -75,7 +81,13 @@ public class UICitizen extends JFrame implements ActionListener {
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
 
 
-        registraCittadino = new JButton("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>", reg); //mettere foto
+        JLabel registraCitizen = new JLabel(reg);
+        JLabel registralabel = new JLabel("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
+        registralabel.setForeground(Color.WHITE);
+        registralabel.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraCittadino.setLayout(new BorderLayout());
+        registraCittadino.add(registraCitizen,BorderLayout.WEST);
+        registraCittadino.add(registralabel,BorderLayout.CENTER);
         registraCittadino.setBounds(600, 240, 350, 110);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(0xA059E3B3));

@@ -55,8 +55,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.add(iconOV,BorderLayout.WEST);
         operatoreVaccinale.add(operator,BorderLayout.CENTER);
 
-        //operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
-
         operatoreVaccinale.setBounds(600, 180, 310, 100);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         operatoreVaccinale.setBackground(new Color(0xA059E3B3));
