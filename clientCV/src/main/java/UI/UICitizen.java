@@ -6,6 +6,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Objects;
 
 /**
@@ -53,6 +55,12 @@ public class UICitizen extends JFrame implements ActionListener {
 
         login.setFont(new Font("Georgia", Font.ITALIC, 20));
         login.setBounds(890,20,100,30);
+        login.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new UILogin();
+            }
+        });
 
         cercaCentroVaccinale = new JButton("<html>RICERCA<br> CENTRO VACCINALE</html>", info); //mettere foto
         cercaCentroVaccinale.setBounds(600, 90, 350, 110);
@@ -130,7 +138,6 @@ public class UICitizen extends JFrame implements ActionListener {
         } else if (e.getSource() == login) {
             this.dispose();
             new UILogin();
-
         }
     }
 }
