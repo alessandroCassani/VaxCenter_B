@@ -69,7 +69,6 @@ public class UISplashScreen extends JWindow {
                     j.setVisible(false);
                     new UIChoosingRooles();
                     timer1.stop();
-
                 }
             }
         };

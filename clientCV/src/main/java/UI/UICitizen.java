@@ -76,7 +76,7 @@ public class UICitizen extends JFrame implements ActionListener {
 
 
         registraCittadino = new JButton("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>", reg); //mettere foto
-        registraCittadino.setBounds(600, 230, 350, 110);
+        registraCittadino.setBounds(600, 240, 350, 110);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(0xA059E3B3));
         registraCittadino.setForeground(Color.WHITE);

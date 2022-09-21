@@ -148,7 +148,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         pulisci = new JButton("PULISCI");
         pulisci.setBounds(670, 450, 230, 65);
-        pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 20));
         pulisci.setBackground(new Color(0xEF0808));
         pulisci.setForeground(Color.WHITE);
         pulisci.setBorder(bordobtnInd);
@@ -157,7 +157,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         pulisci.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(125, 490, 400, 55);
+        status.setBounds(350, 370, 400, 55);
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
         IDUnivoco.setBounds(125, 540, 400, 55);
@@ -195,6 +195,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setVisible(true);
 
     }
+
     /**
      * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
      */
@@ -214,7 +215,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 status.setText("Centro Vaccinale registrato con successo!");
                 IDUnivoco.setText("ID Univoco: 100000001");
                 warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
-
             }
         }else if(e.getSource() == pulisci) {
                 nomeCV.setSelectedItem("Paolo");
@@ -226,9 +226,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 status.setText("");
                 IDUnivoco.setText("");
                 warningIDUnivoco.setText("");
-
-            }
         }
-
     }
+}
 

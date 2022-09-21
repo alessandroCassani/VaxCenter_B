@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="finita modifica UICiti">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta mouseListener to accedi label">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,12 +236,12 @@
       <option name="project" value="LOCAL" />
       <updated>1663781154213</updated>
     </task>
-    <task id="LOCAL-00017" summary="completamento UIRegisterCitizen - UIRegisterVaccinated">
-      <created>1663610240452</created>
+    <task id="LOCAL-00017" summary="aggiunta mouseListener to accedi label">
+      <created>1663781490253</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1663610240452</updated>
+      <updated>1663781490253</updated>
     </task>
     <task id="LOCAL-00018" summary="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent.">
       <created>1663610905641</created>
@@ -263,7 +264,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663615449172</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,8 +294,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="aggiornamento UI operatori vaccinali" />
-    <MESSAGE value="aggiornamenti UI generali" />
     <MESSAGE value="add doc" />
     <MESSAGE value="aggiunta javadoc - label e pulsante pulisci e controllo dati inseriti" />
     <MESSAGE value="continuazione registraVaccinato e registraCV" />
@@ -318,6 +317,8 @@
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
     <MESSAGE value="finita modifica UIRegisterCitizen" />
     <MESSAGE value="finita modifica UICiti" />
-    <option name="LAST_COMMIT_MESSAGE" value="finita modifica UICiti" />
+    <MESSAGE value="aggiunta mouseListener to accedi button" />
+    <MESSAGE value="aggiunta mouseListener to accedi label" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta mouseListener to accedi label" />
   </component>
 </project>
