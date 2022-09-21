@@ -12,7 +12,7 @@ public class DBManagment {
     /**
      * Nome del database
      */
-    String nameDB = "vaxcenter";
+    final String nameDB = "vaxcenter";
 
     /**
      * Rappresenta l'istanza corrente del databse
@@ -45,7 +45,15 @@ public class DBManagment {
     Connection connection = null;
 
     /**
+     * Url per la connessione al server Postgres
+     */
+    String url = "jdbc:postgresql://"+ hostDB + ":" + portDB + "/";
+
+
+    /**
      * Metodo che ritorna l'istanza del database
+     *
+     * @author Luca Perfetti
      */
     public static DBManagment getDB(){
         if(instanceDB == null){
@@ -56,8 +64,16 @@ public class DBManagment {
 
     /**
      * Metodo che crea la connessine al server Postgres tramite il driver JDBC
+     *
+     * @param hostDB host del database
+     * @param portDB porta del database
+     * @param userDB username per accedere al server di Postgres
+     * @param passwordDB password per accedere al server di Postgres
+     * @return true o false, in base all'esito dell'operazione
+     *
+     * @author Luca Perfetti
      */
-    public Connection connect(String hostDB, int portDB; String userDB, String passwordDB){
+    public boolean connect(String hostDB, int portDB; String userDB, String passwordDB){
         this.hostDB = hostDB;
         this.portDB = portDB;
         this.userDB = userDB;
@@ -65,48 +81,57 @@ public class DBManagment {
 
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://"+ hostDB + ":" + portDB + "/" + nameDB, userDB, passwordDB);
+            connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
 
             if(connection!=null){
-                System.out.println("Connection established");
                 createTable();
+                return true;
             }else{
                 System.out.println("Connection failed");
             }
         }catch (Exception e){
             createDB();
         }
-        return connection;
+        return false;
     }
 
     /**
      * Metodo che permette di creare il database con le relative tabelle nel caso in cui quest'ultimo non esiste già
+     *
+     * @return true o false, in base all'esito dell'operazione
+     *
+     * @author Luca Perfetti
      */
-    public void createDB(){
+    public boolean createDB(){
         PreparedStatement preparedstmt;
 
         try{
-            connection = DriverManager.getConnection("jdbc:postgresql://" + hostDB + ":" + portDB + "/", userDB, passwordDB);
+            connection = DriverManager.getConnection(url, userDB, passwordDB);
             String query = "create database " + nameDB;
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
             preparedstmt.close();
             connection.close();
-            System.out.println("Database created");
             createTable();
+            return true;
         }catch(Exception e){
             System.out.println(e);
         }
+        return false;
     }
 
     /**
      * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono già
+     *
+     * @return true o false, in base all'esito dell'operazione
+     *
+     * @author Luca Perfetti
      */
-    public void createTable(){
+    public boolean createTable(){
         PreparedStatement preparedstmt;
 
         try{
-            connection = DriverManager.getConnection("jdbc:postgresql://" + hostDB + ":" + portDB + "/" + nameDB, userDB, passwordDB);
+            connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
 
             String query = "create table if not exists Vaccinati("
                     + "id Numeric PRIMARY KEY,"
@@ -115,7 +140,7 @@ public class DBManagment {
                     + "cognome VARCHAR(30),"
                     + "codiceFiscale CHAR(16),"
                     + "dataVaccino DATE,"
-                    + "vaxTipo VARCHAR(30)"
+                    + "vaxTipo VARCHAR(30),"
                     + "isReg BOOLEAN);"
 
                     + "create table if not exists CentroVaccinale("
@@ -126,7 +151,7 @@ public class DBManagment {
                     + "comune VARCHAR(30),"
                     + "sigla CHAR(2),"
                     + "cap VARCHAR(5),"
-                    + "tipologia VARCHAR(20)"
+                    + "tipologia VARCHAR(20),"
                     + "numeroSegnalazioni Numeric,"
                     + "avgSeverita Numeric);"
 
@@ -146,9 +171,10 @@ public class DBManagment {
             preparedstmt.execute();
             preparedstmt.close();
             connection.close();
-            System.out.println("Table created");
+            return true;
         }catch(Exception e){
             System.out.println(e);
         }
+        return false;
     }
 }
