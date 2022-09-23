@@ -39,8 +39,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     public UIVaccineOperator(){
 
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF6821A, true), 4, true);
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
         //Personalizzazione bottone registra centro vaccinale
 
@@ -56,7 +56,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraCentroVaccinale.setHorizontalAlignment(SwingConstants.CENTER);
         registraCentroVaccinale.setBounds(600, 80, 350, 95);
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
-        registraCentroVaccinale.setBackground(new Color(0xA059E3B3));
+        registraCentroVaccinale.setBackground(new Color(65, 102, 245));
         registraCentroVaccinale.setForeground(Color.WHITE);
         registraCentroVaccinale.setBorder(bordo);
         registraCentroVaccinale.setFocusable(false);
@@ -76,7 +76,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraVaccinato.add(registraVaccinatoLabel,BorderLayout.CENTER);
         registraVaccinato.setBounds(600, 220, 360, 95);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
-        registraVaccinato.setBackground(new Color(0xA059E3B3));
+        registraVaccinato.setBackground(new Color(65, 102, 245));
         registraVaccinato.setForeground(Color.WHITE);
         registraVaccinato.setBorder(bordo);
         registraVaccinato.setFocusable(false);
@@ -89,7 +89,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles =  new JButton("INDIETRO");
         backtoChoosingRooles.setBounds(600, 400, 360, 100);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
-        backtoChoosingRooles.setBackground(new Color(0xFF5C5C));
+        backtoChoosingRooles.setBackground(new Color(248, 9, 55));
         backtoChoosingRooles.setBorder(bordobtnInd);
         backtoChoosingRooles.setForeground(Color.WHITE);
         backtoChoosingRooles.setFocusable(false);
@@ -111,6 +111,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setSize (1000, 600);
+        getContentPane().setBackground(new Color(181, 226, 232));
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);

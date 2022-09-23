@@ -60,10 +60,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     public UIRegisterVaccinated(){
 
-        Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
-        Border bordoCombo = new LineBorder(new Color(0xFF000000, true), 1, true);
-        Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 3, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 3, true);
+        //Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
+        //Border bordoCombo = new LineBorder(new Color(0xFF000000, true), 1, true);
+        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
         JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato:");
         tiotoloVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -118,9 +118,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         registraVaccinato.setBounds(380, 450, 230, 65);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
-        registraVaccinato.setBackground(new Color(0x07AF45));
+        registraVaccinato.setBackground(new Color(0,0,128));
         registraVaccinato.setForeground(Color.WHITE);
-        registraVaccinato.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        registraVaccinato.setBorder(bordobtn);
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
         registraVaccinato.setOpaque(true);
@@ -137,10 +137,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
        // ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
-        backToVaccineOperator =  new JButton("   INDIETRO");
+        backToVaccineOperator =  new JButton("INDIETRO");
         backToVaccineOperator.setBounds(90, 450, 230, 65);
         backToVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
-        backToVaccineOperator.setBackground(new Color(0xFA4723));
+        backToVaccineOperator.setBackground(new Color(248, 9, 55));
         backToVaccineOperator.setForeground(Color.WHITE);
         backToVaccineOperator.setBorder(bordobtnInd);
         backToVaccineOperator.setFocusable(false);
@@ -192,6 +192,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setSize (1000,600);
         setLocationRelativeTo(null);
         setForeground(Color.WHITE);
+        getContentPane().setBackground(new Color(181, 226, 232));
         setResizable(false);
         setVisible(true);
 

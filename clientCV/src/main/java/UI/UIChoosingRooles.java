@@ -35,7 +35,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     public UIChoosingRooles(){
 
 
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
@@ -57,7 +57,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         operatoreVaccinale.setBounds(600, 180, 310, 100);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
-        operatoreVaccinale.setBackground(new Color(0xA059E3B3));
+        operatoreVaccinale.setBackground(new Color(65, 102, 245));
         operatoreVaccinale.setHorizontalTextPosition(SwingConstants.RIGHT);
         operatoreVaccinale.setForeground(Color.WHITE);
         operatoreVaccinale.setBorder(bordo);
@@ -80,7 +80,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         cittadino.add(citizen,BorderLayout.CENTER);
         cittadino.setBounds(600, 330, 310, 100);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
-        cittadino.setBackground(new Color(0xA059E3B3));
+        cittadino.setBackground(new Color(65, 102, 245));
         cittadino.setForeground(Color.WHITE);
        // cittadino.setHorizontalTextPosition(SwingConstants.RIGHT);
         cittadino.setIconTextGap(80);
@@ -108,7 +108,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
-
+        getContentPane().setBackground(new Color(181, 226, 232));
         setForeground(Color.WHITE);
         setVisible(true);
     }

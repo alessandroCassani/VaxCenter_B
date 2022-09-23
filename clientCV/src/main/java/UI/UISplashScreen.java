@@ -67,7 +67,7 @@ public class UISplashScreen extends JWindow {
                 getContentPane();
                 if (count == 30) {
                     j.setVisible(false);
-                    new UIRegisterVaccinated();
+                    new UIChoosingRooles();
                     timer1.stop();
                 }
             }

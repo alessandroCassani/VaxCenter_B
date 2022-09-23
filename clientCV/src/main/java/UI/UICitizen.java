@@ -45,10 +45,8 @@ public class UICitizen extends JFrame implements ActionListener {
 
     public UICitizen() {
 
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
-        Border bordoLogin = new LineBorder(new Color(0xFFF63BE6, true), 4, true);
-
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
 
@@ -71,7 +69,7 @@ public class UICitizen extends JFrame implements ActionListener {
         cercaCentroVaccinale.add(cercaLabel,BorderLayout.CENTER);
         cercaCentroVaccinale.setBounds(600, 90, 350, 110);
         cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
-        cercaCentroVaccinale.setBackground(new Color(0xA059E3B3));
+        cercaCentroVaccinale.setBackground(new Color(65, 102, 245));
         cercaCentroVaccinale.setForeground(Color.WHITE);
         cercaCentroVaccinale.setBorder(bordo);
         cercaCentroVaccinale.setFocusable(false);
@@ -90,7 +88,7 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.add(registralabel,BorderLayout.CENTER);
         registraCittadino.setBounds(600, 240, 350, 110);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
-        registraCittadino.setBackground(new Color(0xA059E3B3));
+        registraCittadino.setBackground(new Color(65, 102, 245));
         registraCittadino.setForeground(Color.WHITE);
         registraCittadino.setBorder(bordo);
         registraCittadino.setFocusable(false);
@@ -102,7 +100,7 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles = new JButton("INDIETRO");
         backToChoosingRooles.setBounds(600, 400, 350, 110);
         backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
-        backToChoosingRooles.setBackground(new Color(0xFA4723));
+        backToChoosingRooles.setBackground(new Color(248, 9, 55));
         backToChoosingRooles.setForeground(Color.WHITE);
         backToChoosingRooles.setBorder(bordobtnInd);
         backToChoosingRooles.setFocusable(false);
@@ -127,6 +125,7 @@ public class UICitizen extends JFrame implements ActionListener {
         setSize (1000,600);
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(181, 226, 232));
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
