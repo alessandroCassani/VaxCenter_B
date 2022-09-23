@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiuna javadoc remoteException">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022_17_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/pom.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica posizione label in UIRegisterCitizen.class">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UI_bugGrafici" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,12 +49,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;16&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/documentazione&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/LibrerieJava/swingx-all-1.6.4.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
@@ -75,7 +68,7 @@
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.UISplashScreen">
     <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
       <module name="serverCV" />
@@ -89,9 +82,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientCV.UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UILoginToServer" />
@@ -110,6 +116,11 @@
       <workItem from="1663269559793" duration="2778000" />
       <workItem from="1663278816959" duration="88000" />
       <workItem from="1663318491994" duration="1637000" />
+      <workItem from="1663441032207" duration="41000" />
+      <workItem from="1663533990594" duration="1579000" />
+      <workItem from="1663599967457" duration="1931000" />
+      <workItem from="1663602155260" duration="11809000" />
+      <workItem from="1663617746883" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -195,7 +206,98 @@
       <option name="project" value="LOCAL" />
       <updated>1663413757118</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="finita modifica UIRegisterVaccinated">
+      <created>1663770440666</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663770440666</updated>
+    </task>
+    <task id="LOCAL-00014" summary="finita modifica UIRegisterVaxCenter">
+      <created>1663774931140</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663774931140</updated>
+    </task>
+    <task id="LOCAL-00015" summary="finita modifica UIRegisterCitizen">
+      <created>1663779042380</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1663779042380</updated>
+    </task>
+    <task id="LOCAL-00016" summary="finita modifica UICiti">
+      <created>1663781154213</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663781154213</updated>
+    </task>
+    <task id="LOCAL-00017" summary="aggiunta mouseListener to accedi label">
+      <created>1663781490253</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663781490253</updated>
+    </task>
+    <task id="LOCAL-00018" summary="modifiche dimensioni">
+      <created>1663781997513</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663781997513</updated>
+    </task>
+    <task id="LOCAL-00019" summary="modifica allineamento choosingRoles">
+      <created>1663783194315</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663783194315</updated>
+    </task>
+    <task id="LOCAL-00020" summary="modifica allinemanto icone nei Button della intera UI">
+      <created>1663787211424</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1663787211424</updated>
+    </task>
+    <task id="LOCAL-00021" summary="modifiche tdimensioni testo dimenticate">
+      <created>1663788463326</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1663788463326</updated>
+    </task>
+    <task id="LOCAL-00022" summary="modifiche label di info sopra textField">
+      <created>1663927925991</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663927925992</updated>
+    </task>
+    <task id="LOCAL-00023" summary="MODIFICA colori UIRegisterVaccinated">
+      <created>1663934754980</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1663934754980</updated>
+    </task>
+    <task id="LOCAL-00024" summary="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
+      <created>1663938065676</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1663938065677</updated>
+    </task>
+    <task id="LOCAL-00025" summary="modifica posizione label in UIRegisterCitizen.class">
+      <created>1663938530835</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1663938530835</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,16 +327,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambiamento struttura moduli e package di progetto" />
-    <MESSAGE value="aggiornamento UI operatori vaccinali" />
-    <MESSAGE value="aggiornamenti UI generali" />
-    <MESSAGE value="add doc" />
+    <MESSAGE value="aggiunta javadoc" />
+    <MESSAGE value="completamento UIRegisterCitizen" />
+    <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
+    <MESSAGE value="Creazione classe UIHomeCitizen ed implementazione UIAdverseEvent." />
+    <MESSAGE value="Continuazione UIAdverseEvent" />
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
     <MESSAGE value="modifica colori bottoni e tetFields" />
     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
     <MESSAGE value="aggiunta javaDoc" />
     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="finita modifica UIRegisterVaccinated" />
+    <MESSAGE value="finita modifica UIRegisterVaxCenter" />
+    <MESSAGE value="finita modifica UIRegisterCitizen" />
+    <MESSAGE value="finita modifica UICiti" />
+    <MESSAGE value="aggiunta mouseListener to accedi button" />
+    <MESSAGE value="aggiunta mouseListener to accedi label" />
+    <MESSAGE value="modifiche dimensioni" />
+    <MESSAGE value="modifica allineamento choosingRoles" />
+    <MESSAGE value="modifica allinemanto icone nei Button della intera UI" />
+    <MESSAGE value="modifiche tdimensioni testo dimenticate" />
+    <MESSAGE value="modifiche label di info sopra textField" />
+    <MESSAGE value="MODIFICA colori UIRegisterVaccinated" />
+    <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
+    <MESSAGE value="modifica posizione label in UIRegisterCitizen.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica posizione label in UIRegisterCitizen.class" />
   </component>
 </project>

@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_21_09_2022_15_12_[Changes]" date="1663765944659" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 21/09/2022 15:12 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UISplashScreen$1.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UISplashScreen$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12_[Changes]/UISplashScreen$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UIVaccineOperator.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UIVaccineOperator.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12_[Changes]/UIVaccineOperator.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UISplashScreen.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UISplashScreen.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12_[Changes]/UISplashScreen.class" />
+  </binary>
+</changelist>

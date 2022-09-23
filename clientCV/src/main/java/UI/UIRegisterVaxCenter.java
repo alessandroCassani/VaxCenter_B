@@ -8,6 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ *  La classe UIRegisterVaxCenter crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
 
@@ -26,30 +32,30 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Area di testo per scrivere il nome della via/viale/piazza del Centro vaccinale
      */
 
-    JTextField nomeVia = new JTextField();
+    JTextField nomeVia = new JTextField(30);
 
     /**
      * Area di testo per scrivere il numero civico del Centro vaccinale
      */
 
-    JTextField numeroCivico = new JTextField();
+    JTextField numeroCivico = new JTextField(10);
 
     /**
      * Area di testo per scrivere il comune del Centro vaccinale
      */
 
-    JTextField comune = new JTextField();
+    JTextField comune = new JTextField(30);
 
     /**
      * Menù a tendina per scegliere la sigla della provincia del Centro Vaccinale
      */
 
-    JTextField siglaProvincia = new JTextField();
+    JTextField siglaProvincia = new JTextField(2);
     /**
      * Area di testo per scrivere il CAP del Centro Vaccinale
      */
 
-    JTextField cap = new JTextField();
+    JTextField cap = new JTextField(5);
 
     /**
      * Menù a tendina per scegliere la tipologia del Centro Vaccinale (tipologia (ospedaliero, aziendale, hub)
@@ -69,73 +75,121 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     JButton backToUIVaccineOperator;
 
+    /**
+     * campo di testo in cui viene visuaizzato lo stato della registra centro vaccinale
+      */
+
+    JLabel status = new JLabel();
 
 
+    /**
+     * Bottone per pulire tutte le JTextField e le JComboBox
+     */
+    JButton pulisci;
+
+
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
     public UIRegisterVaxCenter(){
 
         Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
-        Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
+        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
+
+        JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale");
+        tiotoloCV.setFont(new Font("Georgia", Font.BOLD, 20));
+        add(tiotoloCV).setBounds(350, 10, 550, 55);
 
 
+        JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
+        labelNome.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelNome).setBounds(150, 55, 550, 75);
 
-        nomeCentroVaccinale.setFont(new Font("Arial", Font.BOLD, 14));
-        nomeCentroVaccinale.setText(" Nome Centro Vaccinale");
-
-        nomeCentroVaccinale.setBounds(50, 100, 525, 75);
-        nomeCentroVaccinale.setFocusable(false);
-        nomeCentroVaccinale.setBorder(bordo);
-
-        qualificatore.setFont(new Font("Arial", Font.BOLD, 14));
-        qualificatore.setBounds(50, 200, 100, 75);
-        qualificatore.setFocusable(false);
-        qualificatore.setBorder(bordo);
-
-        nomeVia.setFont(new Font("Arial", Font.BOLD, 14));
-        nomeVia.setText(" Nome Via");
-        nomeVia.setBounds(175, 200, 300, 75);
-        nomeVia.setFocusable(false);
-        nomeVia.setBorder(bordo);
-
-        numeroCivico.setFont(new Font("Arial", Font.BOLD, 14));
-        numeroCivico.setText(" N°");
-        numeroCivico.setBounds(500, 200, 75, 75);
-        numeroCivico.setFocusable(false);
-        numeroCivico.setBorder(bordo);
-
-        comune.setFont(new Font("Arial", Font.BOLD, 14));
-        comune.setText(" Comune");
-        comune.setBounds(50, 300, 350, 75);
-        comune.setFocusable(false);
-        comune.setBorder(bordo);
-
-        cap.setFont(new Font("Arial", Font.BOLD, 14));
-        cap.setText(" CAP");
-        cap.setBounds(425, 300, 150, 75);
-        cap.setFocusable(false);
-        cap.setBorder(bordo);
-
-        tipologia.setFont(new Font("Arial", Font.BOLD, 14));
-        tipologia.setBounds(50, 400, 200, 75);
-        tipologia.setFocusable(false);
-        tipologia.setBorder(bordo);
+        nomeCentroVaccinale.setFont(new Font("Arial", Font.ITALIC, 20));
+        nomeCentroVaccinale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        nomeCentroVaccinale.setPreferredSize(new Dimension(550, 55));
+        nomeCentroVaccinale.setBounds(130, 110, 225, 55);
 
 
-        registra.setBounds(325, 400, 250, 75);
-        registra.setFont(new Font("Georgia", Font.BOLD, 20));
-        registra.setBackground(new Color(0x07AF45));
-        registra.setForeground(Color.WHITE);
-        registra.setBorder(bordobtn);
-        registra.setFocusable(false);
-        registra.addActionListener(this);
-        registra.setOpaque(true);
+        JLabel labelTip = new JLabel("Tipologia:");
+        labelTip.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelTip).setBounds(450, 55, 550, 75);
+
+        tipologia.setFont(new Font("Arial", Font.ITALIC, 20));
+        tipologia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        tipologia.setBounds(450, 110, 75, 55);
+        tipologia.setBackground(Color.WHITE);
+
+        JLabel labelComune = new JLabel("Comune:");
+        labelComune.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelComune).setBounds(700, 55, 550, 75);
+
+        comune.setFont(new Font("Arial", Font.ITALIC, 20));
+        comune.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        comune.setPreferredSize(new Dimension(325, 75));
+        comune.setBounds(630, 110, 225, 55);
 
 
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
-        backToUIVaccineOperator =  new JButton("     INDIETRO", ind);
-        backToUIVaccineOperator.setBounds(50, 700, 300, 100);
+        qualificatore.setFont(new Font("Arial", Font.ITALIC, 20));
+        qualificatore.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        qualificatore.setBounds(180, 220, 75, 55);
+        qualificatore.setBackground(Color.WHITE);
+
+
+        JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza:");
+        labelIndirizzo.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelIndirizzo).setBounds(367, 165, 550, 75);
+
+        nomeVia.setFont(new Font("Arial", Font.ITALIC, 20));
+        nomeVia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        nomeVia.setPreferredSize(new Dimension(325, 75));
+        nomeVia.setBounds(360, 220, 225, 55);
+
+
+        JLabel labelNumeroCivico = new JLabel("N°");
+        labelNumeroCivico.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelNumeroCivico).setBounds(720, 165, 550, 75);
+
+        numeroCivico.setFont(new Font("Arial", Font.ITALIC, 20));
+        numeroCivico.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        numeroCivico.setPreferredSize(new Dimension(75, 75));
+        numeroCivico.setBounds(690, 220, 75, 55);
+
+
+        JLabel labelSigla = new JLabel("Provincia:");
+        labelSigla.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelSigla).setBounds(190, 265, 550, 75);
+
+        siglaProvincia.setFont(new Font("Arial", Font.ITALIC, 20));
+        siglaProvincia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        siglaProvincia.setPreferredSize(new Dimension(100, 75));
+        siglaProvincia.setBounds(190, 320, 75, 55);
+
+        JLabel labelCAP = new JLabel("CAP:");
+        labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labelCAP).setBounds(465, 265, 550, 75);
+
+        cap.setFont(new Font("Arial", Font.ITALIC, 20));
+        cap.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        cap.setPreferredSize(new Dimension(100, 75));
+        cap.setBounds(450, 320, 75, 55);
+
+        pulisci = new JButton("PULISCI");
+        pulisci.setBounds(690, 320, 130, 55);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
+        pulisci.setBackground(new Color(0xEF0808));
+        pulisci.setForeground(Color.WHITE);
+        pulisci.setBorder(bordobtnInd);
+        pulisci.setFocusable(false);
+        pulisci.addActionListener(this);
+        pulisci.setOpaque(true);
+
+
+        backToUIVaccineOperator =  new JButton("INDIETRO");
+        backToUIVaccineOperator.setBounds(160, 440, 220, 55);
         backToUIVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
-        backToUIVaccineOperator.setBackground(new Color(0xFA4723));
+        backToUIVaccineOperator.setBackground(new Color(248, 9, 55));
         backToUIVaccineOperator.setForeground(Color.WHITE);
         backToUIVaccineOperator.setBorder(bordobtnInd);
         backToUIVaccineOperator.setFocusable(false);
@@ -143,47 +197,81 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         backToUIVaccineOperator.setOpaque(true);
 
 
+        registra.setBounds(620, 440, 220, 55);
+        registra.setFont(new Font("Georgia", Font.BOLD, 20));
+        registra.setBackground(new Color(0,0,128));
+        registra.setForeground(Color.WHITE);
+        registra.setBorder(bordobtn);
+        registra.setFocusable(false);
+        registra.addActionListener(this);
+        registra.setOpaque(true);
+
+
+
+        status.setFont(new Font("Georgia", Font.BOLD, 18));
+        status.setBounds(125, 500, 400, 75);
+
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
 
-        JPanel cv = new JPanel();
-        cv.setBounds(0, 0, 1600, 900);
-        cv.setLayout(null);
+        //JPanel cv = new JPanel();
+        setBounds(0, 0, 1600, 900);
+        setLayout(null);
 
-        this.add(nomeCentroVaccinale);
-        this.add(qualificatore);
-        this.add(nomeVia);
-        this.add(numeroCivico);
-        this.add(comune);
-        this.add(cap);
-        this.add(tipologia);
-        this.add(registra);
-        this.add(backToUIVaccineOperator);
+        add(nomeCentroVaccinale);
+        add(qualificatore);
+        add(nomeVia);
+        add(numeroCivico);
+        add(comune);
+        add(siglaProvincia);
+        add(cap);
+        add(tipologia);
+        add(registra);
+        add(backToUIVaccineOperator);
+        add(status);
+        add(pulisci);
 
 
-
-        this.setTitle("Registra Centro Vaccinale");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1600,900);
-        this.setLayout(null);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setVisible(true);
-        this.setForeground(Color.WHITE);
+        setTitle("Registra Centro Vaccinale");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setSize (1000,600);
+        getContentPane().setBackground(new Color(181, 226, 232));
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
     }
 
-
+    /**
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backToUIVaccineOperator){
             this.dispose();
             new UIVaccineOperator();
         } else if(e.getSource() == registra){
-            this.dispose();
-
-
+            //this.dispose();
+            if (!nomeCentroVaccinale.getText().equals("")){
+                status.setForeground(new Color(0xEC0909));
+                status.setText("I dati inseriti non sono corretti!");
+            } else {
+                status.setForeground(new Color(0x077507));
+                status.setText("Centro Vaccinale registrato con successo!");
+            }
+        }else if(e.getSource() == pulisci){
+            nomeCentroVaccinale.setText("");
+            qualificatore.setSelectedItem("Via");
+            nomeVia.setText("");
+            numeroCivico.setText("");
+            comune.setText("");
+            siglaProvincia.setText("");
+            cap.setText("");
+            tipologia.setSelectedItem("HUB");
+            status.setText("");
         }
 
     }

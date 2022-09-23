@@ -124,11 +124,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
 
         setTitle("Login to server");
-        setSize(1000,600);
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setSize (dim.width / 2, dim.height / 2);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
 
