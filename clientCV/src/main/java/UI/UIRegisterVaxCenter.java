@@ -97,7 +97,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
-        JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale:");
+        JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale");
         tiotoloCV.setFont(new Font("Georgia", Font.BOLD, 20));
         add(tiotoloCV).setBounds(350, 10, 550, 55);
 

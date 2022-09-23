@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica posizione label in UIRegisterCitizen.class">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663938065677</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="modifica posizione label in UIRegisterCitizen.class">
+      <created>1663938530835</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1663938530835</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +327,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica della jcombobox registravaccinato" />
     <MESSAGE value="aggiunta javadoc" />
     <MESSAGE value="completamento UIRegisterCitizen" />
     <MESSAGE value="completamento UIRegisterCitizen - UIRegisterVaccinated" />
@@ -350,6 +351,7 @@
     <MESSAGE value="modifiche label di info sopra textField" />
     <MESSAGE value="MODIFICA colori UIRegisterVaccinated" />
     <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
+    <MESSAGE value="modifica posizione label in UIRegisterCitizen.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica posizione label in UIRegisterCitizen.class" />
   </component>
 </project>

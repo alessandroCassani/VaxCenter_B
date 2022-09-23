@@ -65,7 +65,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
-        JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato:");
+        JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato");
         tiotoloVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         add(tiotoloVaccinato).setBounds(350, 0, 550, 55);
 
