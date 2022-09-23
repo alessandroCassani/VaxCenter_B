@@ -18,6 +18,8 @@ public class UILogin extends javax.swing.JFrame {
     public UILogin() {
         this.setUndecorated(true);
         initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
