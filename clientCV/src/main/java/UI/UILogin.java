@@ -4,6 +4,8 @@
  */
 package UI;
 
+import java.awt.*;
+
 /**
  *
  * @author damiano ficara
@@ -15,7 +17,6 @@ public class UILogin extends javax.swing.JFrame {
      */
     public UILogin() {
         this.setUndecorated(true);
-        this.setLocation(500,1000);
         initComponents();
     }
 
@@ -42,9 +43,9 @@ public class UILogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(96, 117, 137));
+        jPanel1.setBackground(new java.awt.Color(162, 162, 208));
 
-        jPanel2.setBackground(new java.awt.Color(35, 190, 86));
+        jPanel2.setBackground(new java.awt.Color(162, 173, 208));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/citizen.png"))); // NOI18N
@@ -73,6 +74,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-5865.png"))); // NOI18N
         jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(35, 190, 86)));
 
+        jTextField2.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
         jTextField2.setBackground(new java.awt.Color(96, 117, 137));
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(96, 117, 137)));
 
@@ -98,6 +100,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car-key-5803.png"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(35, 190, 86)));
 
+        jPasswordField2.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         jPasswordField2.setBackground(new java.awt.Color(96, 117, 137));
         jPasswordField2.setBorder(null);
         jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +124,7 @@ public class UILogin extends javax.swing.JFrame {
                         .addComponent(jPasswordField2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jLabel2.setBackground(new java.awt.Color(35, 190, 86));
+        jLabel2.setBackground(new java.awt.Color(25, 25, 112));
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(96, 117, 137));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -223,7 +226,9 @@ public class UILogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UILogin().setVisible(true);
+                UILogin login = new UILogin();
+                        login.setLocationRelativeTo(null);
+                        login.setVisible(true);
             }
         });
     }
