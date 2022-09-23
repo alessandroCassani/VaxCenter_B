@@ -44,6 +44,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 600));
 
         jPanel1.setBackground(new java.awt.Color(162, 162, 208));
 
@@ -76,7 +77,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-5865.png"))); // NOI18N
         jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(35, 190, 86)));
 
-        jTextField2.setFont(new java.awt.Font("Cambria Math", 0, 14)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         jTextField2.setBackground(new java.awt.Color(96, 117, 137));
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(96, 117, 137)));
 
@@ -189,12 +190,10 @@ public class UILogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
+    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {
-        System.exit(0);
+       this.toBack();
     }
 
     /**
@@ -235,7 +234,6 @@ public class UILogin extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -247,5 +245,4 @@ public class UILogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField2;
-    // End of variables declaration
 }
