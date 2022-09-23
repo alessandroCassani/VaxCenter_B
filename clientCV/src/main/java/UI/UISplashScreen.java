@@ -29,13 +29,13 @@ public class UISplashScreen extends JWindow {
 
     public UISplashScreen() {
 
-
         container.setLayout(null);
         JPanel panel = new JPanel();
         ImageIcon stemma = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo_stemma.png")));
         JLabel label = new JLabel("");
         label.setIcon(stemma);
-        label.setBounds(0,0,800,450);
+        label.setIconTextGap(2);
+        label.setBounds(100,20,800,450);
         panel.add(label);
         panel.setForeground(Color.WHITE);
         panel.setBounds(225, -10, 800, 450);
@@ -44,18 +44,14 @@ public class UISplashScreen extends JWindow {
         j.add(container);
         progressBar.setMaximum(30);
         progressBar.setForeground(Color.ORANGE);
-        progressBar.setBounds(5, 430, 790, 15);
-        j.setSize(800, 450);
+        progressBar.setBounds(100, 470, 790, 20);
+        j.setSize(1000, 600);
         j.setLocationRelativeTo(null);
         this.setIconImage(stemma.getImage());
         this.setVisible(true);
         this.add(progressBar);
         this.loadProgressBar();
         j.setVisible(true);
-
-        /*Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);*/
-
     }
 
     /**
@@ -67,36 +63,18 @@ public class UISplashScreen extends JWindow {
 
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 count++;
-
                 progressBar.setValue(count);
                 getContentPane();
-
-
-
                 if (count == 30) {
                     j.setVisible(false);
                     new UIChoosingRooles();
                     timer1.stop();
-
-
-
                 }
-
-
-
             }
-
-
-
         };
-
         timer1 = new Timer(30, al);
         timer1.start();
-
-
     }
-
-
     public static void main(String[] args) {
         new UISplashScreen();
     }

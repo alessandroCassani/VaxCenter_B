@@ -21,12 +21,12 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione registra centro vaccinale
      */
-    JButton registraCentroVaccinale ;
+    JButton registraCentroVaccinale = new JButton() ;
 
     /**
      * Bottone per accedere alla sezione registra vaccinato
      */
-    JButton registraVaccinato;
+    JButton registraVaccinato = new JButton();
 
     /**
      * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
@@ -39,68 +39,64 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     public UIVaccineOperator(){
 
-
-
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
-
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
         //Personalizzazione bottone registra centro vaccinale
 
         ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/centrivaccinali.png")));
 
-        registraCentroVaccinale =  new JButton("REGISTRA CENTRO VACCINALE", cv);
-        registraCentroVaccinale.setBounds(1000, 270, 500, 120);
-        registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
-        registraCentroVaccinale.setBackground(new Color(0xA059E3B3));
+        JLabel iconCV = new JLabel(cv);
+        JLabel registraCV = new JLabel("<html>REGISTRA<br> CENTRO VACCINALE</html>");
+        registraCV.setForeground(Color.WHITE);
+        registraCV.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraCentroVaccinale.setLayout(new BorderLayout());
+        registraCentroVaccinale.add(iconCV,BorderLayout.WEST);
+        registraCentroVaccinale.add(registraCV,BorderLayout.CENTER);
+        registraCentroVaccinale.setHorizontalAlignment(SwingConstants.CENTER);
+        registraCentroVaccinale.setBounds(600, 80, 350, 95);
+        registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraCentroVaccinale.setBackground(new Color(65, 102, 245));
         registraCentroVaccinale.setForeground(Color.WHITE);
         registraCentroVaccinale.setBorder(bordo);
         registraCentroVaccinale.setFocusable(false);
         registraCentroVaccinale.addActionListener(this);
         registraCentroVaccinale.setOpaque(true);
 
-
         //Personalizzazione bottone rigistra vaccinato
 
         ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registravaccinato.png")));
 
-
-        registraVaccinato =  new JButton("REGISTRA VACCINATO", cr);
-        registraVaccinato.setBounds(1000, 470, 500, 120);
-        registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
-        registraVaccinato.setBackground(new Color(0xA059E3B3));
+        JLabel iconRV = new JLabel(cr);
+        JLabel registraVaccinatoLabel = new JLabel("REGISTRA VACCINATO");
+        registraVaccinatoLabel.setForeground(Color.WHITE);
+        registraVaccinatoLabel.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraVaccinato.setLayout(new BorderLayout());
+        registraVaccinato.add(iconRV,BorderLayout.WEST);
+        registraVaccinato.add(registraVaccinatoLabel,BorderLayout.CENTER);
+        registraVaccinato.setBounds(600, 220, 360, 95);
+        registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraVaccinato.setBackground(new Color(65, 102, 245));
         registraVaccinato.setForeground(Color.WHITE);
         registraVaccinato.setBorder(bordo);
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
         registraVaccinato.setOpaque(true);
 
-
         //Personalizzazione bottone indietro
 
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
 
-
-        backtoChoosingRooles =  new JButton("     INDIETRO", ind);
-        backtoChoosingRooles.setBounds(1075, 670, 350, 120);
-        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
-        backtoChoosingRooles.setBackground(new Color(0xFA4723));
-        backtoChoosingRooles.setForeground(Color.WHITE);
+        backtoChoosingRooles =  new JButton("INDIETRO");
+        backtoChoosingRooles.setBounds(600, 400, 360, 100);
+        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
+        backtoChoosingRooles.setBackground(new Color(248, 9, 55));
         backtoChoosingRooles.setBorder(bordobtnInd);
+        backtoChoosingRooles.setForeground(Color.WHITE);
         backtoChoosingRooles.setFocusable(false);
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
 
-        //Label sfondo = new JLabel();
-        //sfondo.setBounds(0, 0, 1600, 900);
-        //sfondo.add(registraCentroVaccinale);
-        //sfondo.add(registraVaccinato);
-        //sfondo.add(backtoChoosingRooles);
-
-        //JPanel vo = new JPanel();
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
-        //vo.add(sfondo);
         add(registraCentroVaccinale);
         add(registraVaccinato);
         add(backtoChoosingRooles);
@@ -110,27 +106,21 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        //this.add(sfondo);
         setTitle("Operatore Vaccinale");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setSize (1000, 600);
+        getContentPane().setBackground(new Color(181, 226, 232));
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
-
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
     }
 
     /**
      * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
      */
-
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backtoChoosingRooles){
@@ -143,6 +133,5 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
             this.dispose();
             new UIRegisterVaccinated();
         }
-
     }
 }

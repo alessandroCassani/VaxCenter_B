@@ -60,86 +60,87 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     public UIRegisterVaccinated(){
 
-        Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
-        Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
+        //Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
+        //Border bordoCombo = new LineBorder(new Color(0xFF000000, true), 1, true);
+        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
-        JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato:");
+        JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato");
         tiotoloVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
-        add(tiotoloVaccinato).setBounds(50, 10, 550, 75);
-
-        JLabel labelNome = new JLabel("Nome Centro Vaccinale");
-        labelNome.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelNome).setBounds(50, 55, 550, 75);
-
-        nomeCV.setFont(new Font("Arial", Font.BOLD, 20));
-        nomeCV.setBorder(bordo);
-        nomeCV.setBounds(50, 100, 675, 75);
-        nomeCV.setBackground(Color.WHITE);
-        AutoCompleteDecorator.decorate(nomeCV);
+        add(tiotoloVaccinato).setBounds(350, 0, 550, 55);
 
 
-        JLabel labelnomeVac = new JLabel("Nome");
-        labelnomeVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelnomeVac).setBounds(50, 155, 550, 75);
+        JLabel labelnomeVac = new JLabel("Nome:");
+        labelnomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelnomeVac).setBounds(280, 35, 550, 55);
 
         nome.setFont(new Font("Arial", Font.BOLD, 20));
-        nome.setBorder(bordo);
-        nome.setPreferredSize(new Dimension(325, 75));
-        nome.setBounds(50, 200, 325, 75);
+        nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        nome.setPreferredSize(new Dimension(325, 55));
+        nome.setBounds(140, 80, 325, 55);
 
-        JLabel labelcognomeVac = new JLabel("Cognome");
-        labelcognomeVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelcognomeVac).setBounds(400, 155, 550, 75);
+        JLabel labelcognomeVac = new JLabel("Cognome:");
+        labelcognomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelcognomeVac).setBounds(650, 35, 550, 55);
 
         cognome.setFont(new Font("Arial", Font.BOLD, 20));
-        cognome.setBorder(bordo);
-        cognome.setPreferredSize(new Dimension(325, 75));
-        cognome.setBounds(400, 200, 325, 75);
+        cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        cognome.setPreferredSize(new Dimension(325, 55));
+        cognome.setBounds(520, 80, 325, 55);
 
-        JLabel labelcf = new JLabel("Codice Fiscale");
-        labelcf.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelcf).setBounds(50, 255, 550, 75);
+        JLabel labelcf = new JLabel("Codice Fiscale:");
+        labelcf.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelcf).setBounds(250, 150, 550, 55);
 
         codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
-        codiceFiscale.setBorder(bordo);
-        codiceFiscale.setPreferredSize(new Dimension(325, 75));
-        codiceFiscale.setBounds(50, 300, 325, 75);
+        //codiceFiscale.setBorder(bordo);
+        codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        codiceFiscale.setPreferredSize(new Dimension(325, 55));
+        codiceFiscale.setBounds(140, 195, 325, 55);
 
-        JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg)");
-        labeldata.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labeldata).setBounds(400, 255, 550, 75);
+        JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg):");
+        labeldata.setFont(new Font("Georgia",Font.ITALIC, 17));
+        add(labeldata).setBounds(530, 150, 550, 55);
 
-        data.setFont(new Font("Arial", Font.BOLD, 20));
-        data.setBorder(bordo);
-        data.setPreferredSize(new Dimension(325, 75));
-        data.setBounds(400, 300, 325, 75);
+        data.setFont(new Font("Arial", Font.ITALIC, 20));
+        data.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        data.setPreferredSize(new Dimension(325, 55));
+        data.setBounds(520, 195, 325, 55);
 
-        JLabel labelTipVac = new JLabel("Tipologia");
-        labelTipVac.setFont(new Font("Georgia", Font.BOLD, 12));
-        add(labelTipVac).setBounds(50, 355, 550, 75);
+        JLabel labelTipVac = new JLabel("Tipologia:");
+        labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelTipVac).setBounds(260, 260, 550, 55);
 
-        vaccinoSomministrato.setFont(new Font("Arial", Font.BOLD, 20));
-        vaccinoSomministrato.setBorder(bordo);
-        vaccinoSomministrato.setBounds(50, 400, 325, 75);
+        vaccinoSomministrato.setFont(new Font("Arial", Font.ITALIC, 20));
+        vaccinoSomministrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        vaccinoSomministrato.setBounds(140, 305, 325, 55);
         vaccinoSomministrato.setBackground(Color.WHITE);
 
-        registraVaccinato.setBounds(475, 400, 250, 75);
+        registraVaccinato.setBounds(380, 450, 230, 65);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
-        registraVaccinato.setBackground(new Color(0x07AF45));
+        registraVaccinato.setBackground(new Color(0,0,128));
         registraVaccinato.setForeground(Color.WHITE);
         registraVaccinato.setBorder(bordobtn);
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
         registraVaccinato.setOpaque(true);
 
+        JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
+        labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelNome).setBounds(590, 260, 550, 55);
+
+        nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
+        nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        nomeCV.setBounds(520, 305, 325, 55);
+        nomeCV.setBackground(Color.WHITE);
+        AutoCompleteDecorator.decorate(nomeCV);
 
 
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
-        backToVaccineOperator =  new JButton("     INDIETRO", ind);
-        backToVaccineOperator.setBounds(50, 700, 300, 100);
+       // ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
+        backToVaccineOperator =  new JButton("INDIETRO");
+        backToVaccineOperator.setBounds(90, 450, 230, 65);
         backToVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
-        backToVaccineOperator.setBackground(new Color(0xFA4723));
+        backToVaccineOperator.setBackground(new Color(248, 9, 55));
         backToVaccineOperator.setForeground(Color.WHITE);
         backToVaccineOperator.setBorder(bordobtnInd);
         backToVaccineOperator.setFocusable(false);
@@ -147,8 +148,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         backToVaccineOperator.setOpaque(true);
 
         pulisci = new JButton("PULISCI");
-        pulisci.setBounds(400, 700, 200, 100);
-        pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
+        pulisci.setBounds(670, 450, 230, 65);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 20));
         pulisci.setBackground(new Color(0xEF0808));
         pulisci.setForeground(Color.WHITE);
         pulisci.setBorder(bordobtnInd);
@@ -157,14 +158,13 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         pulisci.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(125, 500, 400, 75);
+        status.setBounds(350, 370, 400, 55);
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        IDUnivoco.setBounds(125, 550, 400, 75);
+        IDUnivoco.setBounds(125, 540, 400, 55);
         warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        warningIDUnivoco.setBounds(125, 575, 600, 75);
+        warningIDUnivoco.setBounds(125, 565, 600, 55);
 
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
 
         add(backToVaccineOperator);
@@ -187,18 +187,17 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         setTitle("Registra Vaccinato");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600, 900);
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setVisible(true);
-        setForeground(Color.WHITE);
-
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-
+        setSize (1000,600);
+        setLocationRelativeTo(null);
+        setForeground(Color.WHITE);
+        getContentPane().setBackground(new Color(181, 226, 232));
+        setResizable(false);
+        setVisible(true);
 
     }
+
     /**
      * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
      */
@@ -218,7 +217,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 status.setText("Centro Vaccinale registrato con successo!");
                 IDUnivoco.setText("ID Univoco: 100000001");
                 warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
-
             }
         }else if(e.getSource() == pulisci) {
                 nomeCV.setSelectedItem("Paolo");
@@ -230,9 +228,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 status.setText("");
                 IDUnivoco.setText("");
                 warningIDUnivoco.setText("");
-
-            }
         }
-
     }
+}
 

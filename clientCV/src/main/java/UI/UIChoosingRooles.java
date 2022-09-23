@@ -20,12 +20,12 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione operatore vaccinale
      */
-    JButton operatoreVaccinale;
+    JButton operatoreVaccinale = new JButton();
 
     /**
      * Bottone per accedere alla sezione cittadino
      */
-    JButton cittadino;
+    JButton cittadino = new JButton();
 
 
     /**
@@ -35,21 +35,30 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     public UIChoosingRooles(){
 
 
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
-        scelta.setFont(new Font("Georgia", Font.BOLD, 25));
-        scelta.setBounds(975, 100, 700, 200);
+        scelta.setFont(new Font("Georgia", Font.BOLD, 17));
+        scelta.setBounds(580, 100, 400, 30);
 
 
         //Personalizzazione bottone operatore vaccinale
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
 
-        operatoreVaccinale =  new JButton("OPERATORE VACCINALE", op);
-        operatoreVaccinale.setBounds(1055, 270, 400, 120);
-        operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
-        operatoreVaccinale.setBackground(new Color(0xA059E3B3));
+
+        JLabel iconOV = new JLabel(op);
+        JLabel operator = new JLabel("OPERATORE VACCINALE");
+        operator.setFont(new Font("Georgia", Font.BOLD, 15));
+        operator.setForeground(Color.WHITE);
+        operatoreVaccinale.setLayout(new BorderLayout());
+        operatoreVaccinale.add(iconOV,BorderLayout.WEST);
+        operatoreVaccinale.add(operator,BorderLayout.CENTER);
+
+        operatoreVaccinale.setBounds(600, 180, 310, 100);
+        operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
+        operatoreVaccinale.setBackground(new Color(65, 102, 245));
+        operatoreVaccinale.setHorizontalTextPosition(SwingConstants.RIGHT);
         operatoreVaccinale.setForeground(Color.WHITE);
         operatoreVaccinale.setBorder(bordo);
         operatoreVaccinale.setFocusable(false);
@@ -61,63 +70,47 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
 
-        cittadino = new JButton("CITTADINO", cit);
-        cittadino.setBounds(1055, 470, 400, 120);
-        cittadino.setFont(new Font("Georgia", Font.BOLD, 20));
-        cittadino.setBackground(new Color(0xA059E3B3));
+        JLabel icon = new JLabel(cit);
+        JLabel citizen = new JLabel("         CITTADINO");
+        citizen.setForeground(Color.WHITE);
+        citizen.setFont(new Font("Georgia", Font.BOLD, 15));
+        //cittadino = new JButton("CITTADINO", cit);
+        cittadino.setLayout(new BorderLayout());
+        cittadino.add(icon,BorderLayout.WEST);
+        cittadino.add(citizen,BorderLayout.CENTER);
+        cittadino.setBounds(600, 330, 310, 100);
+        cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
+        cittadino.setBackground(new Color(65, 102, 245));
         cittadino.setForeground(Color.WHITE);
+       // cittadino.setHorizontalTextPosition(SwingConstants.RIGHT);
+        cittadino.setIconTextGap(80);
         cittadino.setBorder(bordo);
         cittadino.setFocusable(false);
         cittadino.addActionListener(this);
         cittadino.setOpaque(true);
 
-
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         //Icona avvio del programma
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        //JLabel sfondo = new JLabel();
-        //sfondo.setBounds(0, 0, 1600, 900);
-        //sfondo.add(scelta);
-        //sfondo.add(operatoreVaccinale);
-        //sfondo.add(cittadino);
-
-        //JPanel home = new JPanel();
-        setBounds(0, 0, 1600, 900);
-        setLocationRelativeTo(null);
         setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
-        //home.add(sfondo);
-
-        //this.add(sfondo);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
-
-
-        setResizable(false);
-        setVisible(true);
-        setForeground(Color.WHITE);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-
-
-
-        setTitle("VaxCenter");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600,900);
-        setLayout(null);
+        setSize (1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
         setForeground(Color.WHITE);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        getContentPane().setBackground(new Color(181, 226, 232));
+        setForeground(Color.WHITE);
         setVisible(true);
-
-
     }
 
     /**

@@ -31,8 +31,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         Border bordobtn = new LineBorder(new Color(0xFF37C47A, true), 4, true);
         Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
 
-
-
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
 
         backToCitizen =  new JButton("     INDIETRO", ind);
@@ -52,16 +50,15 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setSize (dim.width / 2, dim.height / 2);
+        setLocationRelativeTo(null);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setTitle("Eventi Avversi");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600, 900);
-        setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
 
     }
     @Override

@@ -6,6 +6,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Objects;
 
 /**
@@ -20,19 +22,16 @@ public class UICitizen extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione info centro vaccinale
      */
-    JButton cercaCentroVaccinale;
+    JButton cercaCentroVaccinale = new JButton();
 
     /**
      * Bottone per accedere alla sezione registra centro cittadino
      */
 
-    JButton registraCittadino;
+    JButton registraCittadino = new JButton();
 
-    /**
-     * Bottone per accedere alla sezione login del cittadino
-     */
+    JLabel login = new JLabel("Accedi");
 
-    JButton login;
 
     /**
      * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
@@ -46,18 +45,31 @@ public class UICitizen extends JFrame implements ActionListener {
 
     public UICitizen() {
 
-        Border bordo = new LineBorder(new Color(0xFF37C47A, true), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(0xFFF68E3B, true), 4, true);
-        Border bordoLogin = new LineBorder(new Color(0xFFF63BE6, true), 4, true);
-
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
 
 
-        cercaCentroVaccinale = new JButton("info CENTRI VACCINALE", info); //mettere foto
-        cercaCentroVaccinale.setBounds(1000, 150, 500, 120);
-        cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 20));
-        cercaCentroVaccinale.setBackground(new Color(0xA059E3B3));
+        login.setFont(new Font("Georgia", Font.ITALIC, 20));
+        login.setBounds(890,20,100,30);
+        login.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new UILogin();
+            }
+        });
+
+        JLabel cercaCV = new JLabel(info);
+        JLabel cercaLabel = new JLabel("<html>RICERCA<br> CENTRO VACCINALE</html>");
+        cercaLabel.setForeground(Color.WHITE);
+        cercaLabel.setFont(new Font("Georgia", Font.BOLD, 15));
+        cercaCentroVaccinale.setLayout(new BorderLayout());
+        cercaCentroVaccinale.add(cercaCV,BorderLayout.WEST);
+        cercaCentroVaccinale.add(cercaLabel,BorderLayout.CENTER);
+        cercaCentroVaccinale.setBounds(600, 90, 350, 110);
+        cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
+        cercaCentroVaccinale.setBackground(new Color(65, 102, 245));
         cercaCentroVaccinale.setForeground(Color.WHITE);
         cercaCentroVaccinale.setBorder(bordo);
         cercaCentroVaccinale.setFocusable(false);
@@ -67,34 +79,28 @@ public class UICitizen extends JFrame implements ActionListener {
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
 
 
-        registraCittadino = new JButton("REGISTRATI PRESSO UN CENTRO VACCINALE", reg); //mettere foto
-        registraCittadino.setBounds(975, 300, 550, 120);
+        JLabel registraCitizen = new JLabel(reg);
+        JLabel registralabel = new JLabel("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
+        registralabel.setForeground(Color.WHITE);
+        registralabel.setFont(new Font("Georgia", Font.BOLD, 15));
+        registraCittadino.setLayout(new BorderLayout());
+        registraCittadino.add(registraCitizen,BorderLayout.WEST);
+        registraCittadino.add(registralabel,BorderLayout.CENTER);
+        registraCittadino.setBounds(600, 240, 350, 110);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
-        registraCittadino.setBackground(new Color(0xA059E3B3));
+        registraCittadino.setBackground(new Color(65, 102, 245));
         registraCittadino.setForeground(Color.WHITE);
         registraCittadino.setBorder(bordo);
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
         registraCittadino.setOpaque(true);
 
-        login = new JButton("LOGIN"); //mettere foto
-        login.setBounds(1075, 450, 350, 120);
-        login.setFont(new Font("Georgia", Font.BOLD, 25));
-        login.setBackground(new Color(0xAB33BE));
-        login.setForeground(Color.WHITE);
-        login.setBorder(bordoLogin);
-        login.setFocusable(false);
-        login.addActionListener(this);
-        login.setOpaque(true);
 
 
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/iconaindietro.png")));
-
-
-        backToChoosingRooles = new JButton("     INDIETRO", ind);
-        backToChoosingRooles.setBounds(1075, 600, 350, 120);
-        backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 20));
-        backToChoosingRooles.setBackground(new Color(0xFA4723));
+        backToChoosingRooles = new JButton("INDIETRO");
+        backToChoosingRooles.setBounds(600, 400, 350, 110);
+        backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
+        backToChoosingRooles.setBackground(new Color(248, 9, 55));
         backToChoosingRooles.setForeground(Color.WHITE);
         backToChoosingRooles.setBorder(bordobtnInd);
         backToChoosingRooles.setFocusable(false);
@@ -102,13 +108,11 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.setOpaque(true);
 
 
-        setBounds(0, 0, 1600, 900);
         setLayout(null);
         add(cercaCentroVaccinale);
         add(registraCittadino);
         add(login);
         add(backToChoosingRooles);
-
 
         //Icona avvio del programma
 
@@ -117,16 +121,14 @@ public class UICitizen extends JFrame implements ActionListener {
 
         setTitle("Cittadino");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1600, 900);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setSize (1000,600);
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
+        getContentPane().setBackground(new Color(181, 226, 232));
         setResizable(false);
         setVisible(true);
         setForeground(Color.WHITE);
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-
-
     }
 
     /**
@@ -147,7 +149,6 @@ public class UICitizen extends JFrame implements ActionListener {
         } else if (e.getSource() == login) {
             this.dispose();
             new UILogin();
-
         }
     }
 }
