@@ -17,7 +17,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 public class UIRegisterCitizen extends JFrame implements ActionListener {
 
-    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
 
     JTextField nomeCittadino = new JTextField(30);
 
@@ -38,9 +38,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     JButton pulisci;
 
     JCheckBox showPassword = new JCheckBox("show password");
-
-    //JCheckBox showRipetiPassword = new JCheckBox("show password");
-
 
     JButton backToCitizen;
 

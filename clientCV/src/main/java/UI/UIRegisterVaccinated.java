@@ -72,7 +72,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelnomeVac = new JLabel("Nome:");
         labelnomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelnomeVac).setBounds(140, 35, 550, 55);
+        add(labelnomeVac).setBounds(280, 35, 550, 55);
 
         nome.setFont(new Font("Arial", Font.BOLD, 20));
         nome.setBorder(bordo);
@@ -81,7 +81,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelcognomeVac = new JLabel("Cognome:");
         labelcognomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelcognomeVac).setBounds(520, 35, 550, 55);
+        add(labelcognomeVac).setBounds(650, 35, 550, 55);
 
         cognome.setFont(new Font("Arial", Font.BOLD, 20));
         cognome.setBorder(bordo);
@@ -90,7 +90,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelcf = new JLabel("Codice Fiscale:");
         labelcf.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelcf).setBounds(140, 150, 550, 55);
+        add(labelcf).setBounds(250, 150, 550, 55);
 
         codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
         codiceFiscale.setBorder(bordo);
@@ -99,7 +99,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg):");
         labeldata.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labeldata).setBounds(520, 150, 550, 55);
+        add(labeldata).setBounds(530, 150, 550, 55);
 
         data.setFont(new Font("Arial", Font.BOLD, 20));
         data.setBorder(bordo);
@@ -108,7 +108,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelTipVac = new JLabel("Tipologia:");
         labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelTipVac).setBounds(140, 260, 550, 55);
+        add(labelTipVac).setBounds(260, 260, 550, 55);
 
         vaccinoSomministrato.setFont(new Font("Arial", Font.BOLD, 20));
         vaccinoSomministrato.setBorder(bordoCombo);
@@ -126,7 +126,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelNome).setBounds(520, 260, 550, 55);
+        add(labelNome).setBounds(590, 260, 550, 55);
 
         nomeCV.setFont(new Font("Arial", Font.BOLD, 20));
         nomeCV.setBorder(bordoCombo);
