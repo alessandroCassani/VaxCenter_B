@@ -75,7 +75,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(labelnomeVac).setBounds(280, 35, 550, 55);
 
         nome.setFont(new Font("Arial", Font.BOLD, 20));
-        nome.setBorder(bordo);
+        nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nome.setPreferredSize(new Dimension(325, 55));
         nome.setBounds(140, 80, 325, 55);
 
@@ -84,7 +84,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(labelcognomeVac).setBounds(650, 35, 550, 55);
 
         cognome.setFont(new Font("Arial", Font.BOLD, 20));
-        cognome.setBorder(bordo);
+        cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognome.setPreferredSize(new Dimension(325, 55));
         cognome.setBounds(520, 80, 325, 55);
 
@@ -93,7 +93,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(labelcf).setBounds(250, 150, 550, 55);
 
         codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
-        codiceFiscale.setBorder(bordo);
+        //codiceFiscale.setBorder(bordo);
+        codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 55));
         codiceFiscale.setBounds(140, 195, 325, 55);
 
@@ -101,8 +102,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labeldata.setFont(new Font("Georgia",Font.ITALIC, 17));
         add(labeldata).setBounds(530, 150, 550, 55);
 
-        data.setFont(new Font("Arial", Font.BOLD, 20));
-        data.setBorder(bordo);
+        data.setFont(new Font("Arial", Font.ITALIC, 20));
+        data.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         data.setPreferredSize(new Dimension(325, 55));
         data.setBounds(520, 195, 325, 55);
 
@@ -110,8 +111,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelTipVac).setBounds(260, 260, 550, 55);
 
-        vaccinoSomministrato.setFont(new Font("Arial", Font.BOLD, 20));
-        vaccinoSomministrato.setBorder(bordoCombo);
+        vaccinoSomministrato.setFont(new Font("Arial", Font.ITALIC, 20));
+        vaccinoSomministrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         vaccinoSomministrato.setBounds(140, 305, 325, 55);
         vaccinoSomministrato.setBackground(Color.WHITE);
 
@@ -119,7 +120,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0x07AF45));
         registraVaccinato.setForeground(Color.WHITE);
-        registraVaccinato.setBorder(bordobtn);
+        registraVaccinato.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
         registraVaccinato.setOpaque(true);
@@ -128,8 +129,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(590, 260, 550, 55);
 
-        nomeCV.setFont(new Font("Arial", Font.BOLD, 20));
-        nomeCV.setBorder(bordoCombo);
+        nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
+        nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(520, 305, 325, 55);
         nomeCV.setBackground(Color.WHITE);
         AutoCompleteDecorator.decorate(nomeCV);
