@@ -49,11 +49,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
-
         JLabel titoloCittadino = new JLabel("Registrati presso un Centro Vaccinale");
         titoloCittadino.setFont(new Font("Georgia", Font.BOLD, 20));
         add(titoloCittadino).setBounds(320, 0, 550, 75);
-
 
         JLabel labelnomeCit = new JLabel("Nome:");
         labelnomeCit.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -121,7 +119,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         showPassword.setBounds(820,325,160,15);
         showPassword.addActionListener(this);
 
-
         JLabel labelInfopsw = new JLabel("a\nb\nc\ne"); // serve per i requisiti password
         labelInfopsw.setFont(new Font("Georgia", Font.BOLD, 8));
         labelInfopsw.setForeground(new Color(0xEC0909));
@@ -136,7 +133,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         IDUnivoco.setBounds(160, 410, 250, 55);
         IDUnivoco.setBackground(Color.WHITE);
         IDUnivoco.setHorizontalAlignment(JTextField.CENTER);
-
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -160,7 +156,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         status.setFont(new Font("Georgia", Font.BOLD, 18));
         status.setBounds(75, 700, 400, 75);
 
-
         backToCitizen = new JButton("INDIETRO");
         backToCitizen.setBounds(70, 485, 190 , 65);
         backToCitizen.setFont(new Font("Georgia", Font.BOLD, 17));
@@ -180,7 +175,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         pulisci.setFocusable(false);
         pulisci.addActionListener(this);
         pulisci.setOpaque(true);
-
 
         setLayout(null);
         add(nomeCV);
@@ -210,7 +204,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
     }
     @Override
     public void actionPerformed(ActionEvent e) {

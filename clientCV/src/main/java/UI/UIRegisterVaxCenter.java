@@ -100,7 +100,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale");
         tiotoloCV.setFont(new Font("Georgia", Font.BOLD, 20));
-        add(tiotoloCV).setBounds(350, 10, 550, 55);
+        add(tiotoloCV).setBounds(340, 10, 550, 55);
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia",Font.ITALIC, 17));

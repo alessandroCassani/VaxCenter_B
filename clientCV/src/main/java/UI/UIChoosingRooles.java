@@ -43,7 +43,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
-        scelta.setBounds(580, 100, 400, 30);
+        scelta.setBounds(590, 100, 400, 30);
 
 
         //Personalizzazione bottone operatore vaccinale

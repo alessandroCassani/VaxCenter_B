@@ -86,7 +86,6 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Personalizzazione bottone indietro
 
-
         backtoChoosingRooles =  new JButton("INDIETRO");
         backtoChoosingRooles.setBounds(600, 400, 350, 95);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
