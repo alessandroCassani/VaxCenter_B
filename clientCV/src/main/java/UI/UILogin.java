@@ -18,6 +18,9 @@ public class UILogin extends javax.swing.JFrame {
     public UILogin() {
         this.setUndecorated(true);
         initComponents();
+        setSize(1000,600);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setVisible(true);
     }

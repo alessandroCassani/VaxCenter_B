@@ -1,5 +1,6 @@
 package UI;
 
+import UI.graphics.CurvesPanel;
 import org.jdesktop.swingx.JXDatePicker;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
-        scelta.setBounds(580, 100, 400, 30);
+        scelta.setBounds(590, 100, 400, 30);
 
 
         //Personalizzazione bottone operatore vaccinale
@@ -57,8 +58,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.setLayout(new BorderLayout());
         operatoreVaccinale.add(iconOV,BorderLayout.WEST);
         operatoreVaccinale.add(operator,BorderLayout.CENTER);
-
-        operatoreVaccinale.setBounds(600, 180, 310, 100);
+        operatoreVaccinale.setBounds(600, 180, 350, 95);
         operatoreVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         operatoreVaccinale.setBackground(new Color(65, 102, 245));
         operatoreVaccinale.setHorizontalTextPosition(SwingConstants.RIGHT);
@@ -68,10 +68,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.addActionListener(this);
         operatoreVaccinale.setOpaque(true);
 
-
-
-
-
         //Personalizzazione bottone cittadino
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
@@ -80,15 +76,13 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         JLabel citizen = new JLabel("         CITTADINO");
         citizen.setForeground(Color.WHITE);
         citizen.setFont(new Font("Georgia", Font.BOLD, 15));
-        //cittadino = new JButton("CITTADINO", cit);
         cittadino.setLayout(new BorderLayout());
         cittadino.add(icon,BorderLayout.WEST);
         cittadino.add(citizen,BorderLayout.CENTER);
-        cittadino.setBounds(600, 330, 310, 100);
+        cittadino.setBounds(600, 330, 350, 95);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setBackground(new Color(65, 102, 245));
         cittadino.setForeground(Color.WHITE);
-       // cittadino.setHorizontalTextPosition(SwingConstants.RIGHT);
         cittadino.setIconTextGap(80);
         cittadino.setBorder(bordo);
         cittadino.setFocusable(false);

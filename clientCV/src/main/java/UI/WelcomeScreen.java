@@ -49,15 +49,12 @@ public class WelcomeScreen extends JFrame {
                     new UIChoosingRooles();
                     timer.stop();
                 } else {
-                    progressBar.setValue(value+2);
+                    progressBar.setValue(value+4);
                 }
             }
         });
         timer.start();
-
     }
-
-
     public static void main(String[] args) {
         new WelcomeScreen();
     }

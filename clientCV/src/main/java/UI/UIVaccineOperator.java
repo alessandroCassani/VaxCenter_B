@@ -75,7 +75,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraVaccinato.setLayout(new BorderLayout());
         registraVaccinato.add(iconRV,BorderLayout.WEST);
         registraVaccinato.add(registraVaccinatoLabel,BorderLayout.CENTER);
-        registraVaccinato.setBounds(600, 220, 360, 95);
+        registraVaccinato.setBounds(600, 220, 350, 95);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setBackground(new Color(65, 102, 245));
         registraVaccinato.setForeground(Color.WHITE);
@@ -86,9 +86,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Personalizzazione bottone indietro
 
-
         backtoChoosingRooles =  new JButton("INDIETRO");
-        backtoChoosingRooles.setBounds(600, 400, 360, 100);
+        backtoChoosingRooles.setBounds(600, 400, 350, 95);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
         backtoChoosingRooles.setBackground(new Color(248, 9, 55));
         backtoChoosingRooles.setBorder(bordobtnInd);

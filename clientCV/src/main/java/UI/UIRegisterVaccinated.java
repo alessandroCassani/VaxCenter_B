@@ -80,6 +80,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nome.setPreferredSize(new Dimension(325, 55));
         nome.setBounds(140, 80, 325, 55);
+        nome.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelcognomeVac = new JLabel("Cognome:");
         labelcognomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -89,6 +90,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognome.setPreferredSize(new Dimension(325, 55));
         cognome.setBounds(520, 80, 325, 55);
+        cognome.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelcf = new JLabel("Codice Fiscale:");
         labelcf.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -98,6 +100,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 55));
         codiceFiscale.setBounds(140, 195, 325, 55);
+        codiceFiscale.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg):");
         labeldata.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -163,11 +166,11 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
         IDUnivoco.setBounds(125, 540, 400, 55);
+        IDUnivoco.setHorizontalAlignment(JTextField.CENTER);
         warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
         warningIDUnivoco.setBounds(125, 565, 600, 55);
 
         setLayout(null);
-
         add(backToVaccineOperator);
         add(nomeCV);
         add(nome);
