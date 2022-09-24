@@ -13,6 +13,7 @@ import java.util.Objects;
  * un nuovo centro vaccinale oppure se inserire un nuovo cittadino vaccinato
  *
  * @author Paolo Bruscagin
+ * @author Alessandro Cassani
  */
 
 public class UIVaccineOperator extends JFrame implements ActionListener {

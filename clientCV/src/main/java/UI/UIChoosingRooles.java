@@ -1,5 +1,7 @@
 package UI;
 
+import org.jdesktop.swingx.JXDatePicker;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -14,6 +16,7 @@ import java.util.Objects;
  * La classe UIChoosingRooles crea l'interfaccia dove l'utente decide il ruolo in cui vuole accedere
  *
  * @author Paolo Bruscagin
+ * @author Alessandro Cassani
  */
 public class UIChoosingRooles extends JFrame implements ActionListener {
 
@@ -64,6 +67,9 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.setFocusable(false);
         operatoreVaccinale.addActionListener(this);
         operatoreVaccinale.setOpaque(true);
+
+
+
 
 
         //Personalizzazione bottone cittadino

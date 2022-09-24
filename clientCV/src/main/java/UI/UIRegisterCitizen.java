@@ -13,6 +13,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 /**
  *
  * @author Paolo Bruscagin
+ * @author Alessandro Cassani
  */
 
 public class UIRegisterCitizen extends JFrame implements ActionListener {

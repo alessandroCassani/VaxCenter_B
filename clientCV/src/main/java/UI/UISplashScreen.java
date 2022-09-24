@@ -9,6 +9,7 @@ import javax.swing.*;
  *  La classe UISplashSceern crea l'interfaccia di animazione principale prima di passare alla classe UIChoosingRooles
  *
  *  @author Paolo Bruscagin
+ *  @author Alessandro Cassani
  */
 
 public class UISplashScreen extends JWindow {

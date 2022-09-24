@@ -15,6 +15,7 @@ import java.util.Objects;
  * di registrarsi presso un centro vaccinale, di accedere e di inserire eventuali eventi avversi avuto dopo la somministrazione del vaccino
  *
  * @author Paolo Bruscagin
+ * @author Alessandro Cassani
  */
 
 public class UICitizen extends JFrame implements ActionListener {
