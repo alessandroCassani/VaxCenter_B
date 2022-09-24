@@ -122,7 +122,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         tipologia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         tipologia.setBounds(420, 110, 145, 50);
         tipologia.setBackground(Color.WHITE);
-        ((JLabel)tipologia.getRenderer()).setHorizontalAlignment(JLabel.RIGHT);
+        ((JLabel)tipologia.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
 
         JLabel labelComune = new JLabel("Comune:");
