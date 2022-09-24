@@ -1,0 +1,17 @@
+Index: clientCV/src/main/java/UI/WelcomeScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport UI.Graphics.CurvesPanel;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.net.URL;\r\n\r\n\r\npublic class WelcomeScreen extends JFrame {\r\n\r\n    Timer timer;\r\n    public WelcomeScreen() {\r\n        displayWelcomeScreen();\r\n    }\r\n\r\n    private void displayWelcomeScreen() {\r\n        final JWindow win = new JWindow(this);\r\n\r\n        win.setSize(900,600);\r\n        win.setLocationRelativeTo(null);\r\n        win.setVisible(true);\r\n        CurvesPanel cp = new CurvesPanel();\r\n        win.add(cp);\r\n        // immagine di prova\r\n\r\n        // da sistemare\r\n        URL url = getClass().getResource(\"/images/sfondo.png\");\r\n        JLabel label = new JLabel(new ImageIcon(url));\r\n        label.setHorizontalAlignment(SwingConstants.CENTER);\r\n        cp.add(label);\r\n        cp.setBorder(BorderFactory.createLineBorder(Color.BLACK));\r\n        JProgressBar progressBar = new JProgressBar(0,100);\r\n\r\n\r\n        progressBar.setForeground(Color.decode(\"#ff930f\"));\r\n        win.add(BorderLayout.PAGE_END,progressBar);\r\n        // alla fine della pb viene aperta nella stessa posizione\r\n        win.revalidate();\r\n\r\n        timer = new Timer(100, new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                int value = progressBar.getValue();\r\n                if(value == 100) {\r\n                    win.dispose();\r\n                   UIChoosingRooles ui = new UIChoosingRooles();\r\n                   ui.setVisible(true);\r\n                    timer.stop();\r\n                } else {\r\n                    progressBar.setValue(value+2);\r\n                }\r\n            }\r\n        });\r\n        timer.start();\r\n\r\n    }\r\n\r\n\r\n    public static void main(String[] args) {\r\n        new WelcomeScreen();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/clientCV/src/main/java/UI/WelcomeScreen.java b/clientCV/src/main/java/UI/WelcomeScreen.java
+--- a/clientCV/src/main/java/UI/WelcomeScreen.java	
++++ b/clientCV/src/main/java/UI/WelcomeScreen.java	
+@@ -40,7 +40,7 @@
+         // alla fine della pb viene aperta nella stessa posizione
+         win.revalidate();
+ 
+-        timer = new Timer(100, new ActionListener() {
++        timer = new Timer(50, new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 int value = progressBar.getValue();
