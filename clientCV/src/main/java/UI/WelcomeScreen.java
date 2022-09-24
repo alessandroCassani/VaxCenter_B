@@ -56,6 +56,6 @@ public class WelcomeScreen extends JFrame {
         timer.start();
     }
     public static void main(String[] args) {
-        new WelcomeScreen();
+        new UIAdverseEvent();
     }
 }
