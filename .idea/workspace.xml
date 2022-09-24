@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="centralizzato testo in comboBox">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica rounded corners">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundJTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundJTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664041892980</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="modifica rounded corners">
+      <created>1664042360458</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1664042360458</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +400,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
     <MESSAGE value="finita modifica UIRegisterVaccinated" />
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
@@ -421,6 +424,7 @@
     <MESSAGE value="modifiche dimensioni UIChoosingRooles.java" />
     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
     <MESSAGE value="centralizzato testo in comboBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="centralizzato testo in comboBox" />
+    <MESSAGE value="modifica rounded corners" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica rounded corners" />
   </component>
 </project>
