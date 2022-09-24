@@ -110,6 +110,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         nomeCentroVaccinale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeCentroVaccinale.setPreferredSize(new Dimension(550, 55));
         nomeCentroVaccinale.setBounds(130, 110, 225, 55);
+        nomeCentroVaccinale.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelTip = new JLabel("Tipologia:");
         labelTip.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -128,6 +129,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         comune.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         comune.setPreferredSize(new Dimension(325, 75));
         comune.setBounds(630, 110, 225, 55);
+        comune.setHorizontalAlignment(JTextField.CENTER);
 
         qualificatore.setFont(new Font("Arial", Font.ITALIC, 20));
         qualificatore.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
@@ -142,6 +144,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         nomeVia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeVia.setPreferredSize(new Dimension(325, 75));
         nomeVia.setBounds(375, 220, 225, 55);
+        nomeVia.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelNumeroCivico = new JLabel("N°");
         labelNumeroCivico.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -151,6 +154,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         numeroCivico.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         numeroCivico.setPreferredSize(new Dimension(75, 75));
         numeroCivico.setBounds(705, 220, 75, 55);
+        numeroCivico.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelSigla = new JLabel("Provincia:");
         labelSigla.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -160,6 +164,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(195, 325, 75, 55);
+        siglaProvincia.setHorizontalAlignment(JTextField.CENTER);
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -169,6 +174,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         cap.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cap.setPreferredSize(new Dimension(100, 75));
         cap.setBounds(455, 325, 75, 55);
+        cap.setHorizontalAlignment(JTextField.CENTER);
 
         pulisci = new JButton("PULISCI");
         pulisci.setBounds(695, 325, 130, 55);

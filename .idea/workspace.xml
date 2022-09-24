@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica allineamenti UIRegisterVaxCenter">
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="modifica login dimensione e centralità">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664026162126</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="modifica login dimensione e centralità">
+      <created>1664026564942</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1664026564942</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +368,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Continuazione UIAdverseEvent" />
     <MESSAGE value="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox" />
     <MESSAGE value="modifica colori bottoni e tetFields" />
     <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
@@ -383,6 +392,7 @@
     <MESSAGE value="Sistemazione generale e aggiunta classi grafiche" />
     <MESSAGE value="Sistemazione UILogin" />
     <MESSAGE value="modifica allineamenti UIRegisterVaxCenter" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica allineamenti UIRegisterVaxCenter" />
+    <MESSAGE value="modifica login dimensione e centralità" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica login dimensione e centralità" />
   </component>
 </project>
