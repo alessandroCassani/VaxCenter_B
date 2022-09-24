@@ -7,8 +7,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
-
-import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 
@@ -22,22 +20,21 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
     JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
 
-    RoundJTextField nomeCittadino = new RoundJTextField(30);
+    JTextField nomeCittadino = new JTextField(30);
 
-    RoundJTextField cognomeCittadino = new RoundJTextField(30);
+    JTextField cognomeCittadino = new JTextField(30);
 
+    JTextField codiceFiscale = new JTextField(16);
 
-    RoundJTextField email = new RoundJTextField(30);
+    JTextField email = new JTextField(30);
 
-    RoundJTextField codiceFiscale = new RoundJTextField(16);
+    JTextField userID =new JTextField(20);
 
-    RoundJTextField userID =new RoundJTextField(20);
+    JPasswordField password = new JPasswordField(20);
 
-    RoundJTextField password = new RoundJTextField(20);
+    JPasswordField ripetiPassword = new JPasswordField(20);
 
-    RoundJTextField ripetiPassword = new RoundJTextField(20);
-
-    RoundJTextField IDUnivoco = new RoundJTextField(16);
+    JTextField IDUnivoco = new JTextField(16);
 
     JButton registraCittadino = new JButton("REGISTRA");
 
@@ -53,8 +50,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
-        Border bordobtnPul = new LineBorder(new Color(169,50, 38), 2, true);
-
 
         JLabel titoloCittadino = new JLabel("Registrati presso un Centro Vaccinale");
         titoloCittadino.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -68,6 +63,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(100, 95, 790, 55);
         nomeCV.setBackground(Color.WHITE);
+        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         AutoCompleteDecorator.decorate(nomeCV);
 
 
@@ -78,10 +74,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         nomeCittadino.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeCittadino.setPreferredSize(new Dimension(325, 75));
-        nomeCittadino.setBounds(100, 195, 250, 50);
-        nomeCittadino.setHorizontalAlignment(JTextField.CENTER);
-        nomeCittadino.setEchoChar((char) 0);
-
+        nomeCittadino.setBounds(100, 195, 250, 55);
 
         JLabel labelcognomeCit = new JLabel("Cognome:");
         labelcognomeCit.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -90,9 +83,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         cognomeCittadino.setFont(new Font("Arial", Font.ITALIC, 20));
         cognomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognomeCittadino.setPreferredSize(new Dimension(325, 75));
-        cognomeCittadino.setBounds(370, 195, 250, 50);
-        cognomeCittadino.setHorizontalAlignment(JTextField.CENTER);
-        cognomeCittadino.setEchoChar((char) 0);
+        cognomeCittadino.setBounds(370, 195, 250, 55);
 
         JLabel labelCF = new JLabel("Codice Fiscale:");
         labelCF.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -103,31 +94,23 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         codiceFiscale.setPreferredSize(new Dimension(325, 75));
         codiceFiscale.setBounds(640, 195, 250, 55);
 
-
         JLabel labelEmail = new JLabel("Email:");
         labelEmail.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelEmail).setBounds(100, 240, 250, 75);
 
-        email.setFont(new Font("Arial", Font.ITALIC, 20));
+        email.setFont(new Font("Arial", Font.BOLD, 20));
         email.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         email.setPreferredSize(new Dimension(325, 75));
-
-        email.setBounds(100, 295, 250, 50);
-        email.setHorizontalAlignment(JTextField.CENTER);
-        email.setEchoChar((char) 0);
+        email.setBounds(100, 295, 250, 55);
 
         JLabel labelUserID = new JLabel("User ID:");
         labelUserID.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelUserID).setBounds(370, 240, 250, 75);
 
-        userID.setFont(new Font("Arial", Font.ITALIC, 20));
+        userID.setFont(new Font("Arial", Font.BOLD, 20));
         userID.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         userID.setPreferredSize(new Dimension(325, 75));
-
-        userID.setBounds(370, 295, 250, 50);
-        userID.setHorizontalAlignment(JTextField.CENTER);
-        userID.setEchoChar((char) 0);
-
+        userID.setBounds(370, 295, 250, 55);
 
         JLabel labelIDUnivoco = new JLabel("ID Vaccinazione:");
         labelIDUnivoco.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -139,26 +122,21 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         IDUnivoco.setBackground(Color.WHITE);
 
         JLabel labelPassword = new JLabel("Password:");
-        labelPassword.setFont(new Font("Georgia", Font.BOLD, 17));
+        labelPassword.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelPassword).setBounds(100, 350, 250, 55);
 
         password.setFont(new Font("Arial", Font.ITALIC, 20));
         password.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
-
-        password.setBounds(100, 390, 250, 50);
-
+        password.setBounds(100, 390, 250, 55);
         password.setBackground(Color.WHITE);
 
-
         JLabel labelRipetiPassword = new JLabel("Ripeti Password:");
-        labelRipetiPassword.setFont(new Font("Georgia", Font.BOLD, 17));
+        labelRipetiPassword.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelRipetiPassword).setBounds(100, 435, 550, 55);
 
         ripetiPassword.setFont(new Font("Arial", Font.ITALIC, 20));
         ripetiPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
-
-        ripetiPassword.setBounds(100, 475, 250, 50);
-
+        ripetiPassword.setBounds(100, 475, 250, 55);
         ripetiPassword.setBackground(Color.WHITE);
 
         showPassword.setFont(new Font("Arial", Font.BOLD, 15));
@@ -166,20 +144,10 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         showPassword.setBounds(370,400,160,15);
         showPassword.addActionListener(this);
 
-
         JLabel labelInfopsw = new JLabel("Requisiti Password:"); // serve per i requisiti password
         labelInfopsw.setFont(new Font("Georgia", Font.BOLD, 8));
         labelInfopsw.setForeground(new Color(0xEC0909));
         add(labelInfopsw).setBounds(370, 420, 200, 15);
-
-
-
-        IDUnivoco.setFont(new Font("Arial", Font.ITALIC, 20));
-        IDUnivoco.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
-        IDUnivoco.setBounds(160, 410, 250, 50);
-        IDUnivoco.setBackground(Color.WHITE);
-        IDUnivoco.setHorizontalAlignment(JTextField.CENTER);
-        IDUnivoco.setEchoChar((char) 0);
 
         JLabel labelInfopsw1 = new JLabel("-Lunghezza compresa tra 8 e 20 caratteri"); // serve per i requisiti password
         labelInfopsw1.setFont(new Font("Georgia", Font.BOLD, 8));
@@ -201,16 +169,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         labelInfopsw4.setForeground(new Color(0xEC0909));
         add(labelInfopsw4).setBounds(370, 465, 250, 10);
 
-
-        nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
-        nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-        nomeCV.setBounds(540, 410, 250, 50);
-        nomeCV.setBackground(Color.WHITE);
-        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.RIGHT);
-        AutoCompleteDecorator.decorate(nomeCV);
-
         registraCittadino.setBounds(675, 380, 150, 50);
-
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
         registraCittadino.setBackground(new Color(0,0,128));
         registraCittadino.setForeground(Color.WHITE);
@@ -222,14 +181,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         status.setFont(new Font("Georgia", Font.BOLD, 18));
         status.setBounds(75, 700, 400, 75);
 
-
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToCitizen = new JButton(ind);
         backToCitizen.setBounds(10, 5, 55 , 55);
-
-        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
-
-
         backToCitizen.setFont(new Font("Georgia", Font.BOLD, 17));
         backToCitizen.setBackground(new Color(181, 226, 232));
         backToCitizen.setForeground(Color.WHITE);
@@ -238,6 +192,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         backToCitizen.addActionListener(this);
         backToCitizen.setOpaque(true);
 
+        ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
         pulisci = new JButton(pul);
         pulisci.setBounds(850, 380, 50, 50);
         pulisci.setFont(new Font("Georgia", Font.BOLD, 17));
@@ -247,7 +202,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         pulisci.setFocusable(false);
         pulisci.addActionListener(this);
         pulisci.setOpaque(true);
-
 
         setLayout(null);
         add(nomeCV);
@@ -261,7 +215,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         add(ripetiPassword);
         add(IDUnivoco);
         add(registraCittadino);
-        //add(status);
         add(pulisci);
         add(backToCitizen);
 
