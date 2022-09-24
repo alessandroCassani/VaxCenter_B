@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_09_2022_15_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022_22_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022_22_08__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="aggiunta data Picker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISplashScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +70,14 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="UI" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
@@ -207,12 +211,12 @@
       <option name="project" value="LOCAL" />
       <updated>1663413757118</updated>
     </task>
-    <task id="LOCAL-00013" summary="modifica della jcombobox registravaccinato">
-      <created>1663601861870</created>
+    <task id="LOCAL-00013" summary="aggiunta data Picker">
+      <created>1664010996264</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1663601861870</updated>
+      <updated>1664010996264</updated>
     </task>
     <task id="LOCAL-00014" summary="aggiunta javadoc">
       <created>1663602409691</created>
@@ -263,7 +267,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663615449172</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +319,7 @@
     <MESSAGE value="aggiunta javaDoc" />
     <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="aggiunta data Picker" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta data Picker" />
   </component>
 </project>
