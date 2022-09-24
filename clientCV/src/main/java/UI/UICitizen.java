@@ -31,7 +31,7 @@ public class UICitizen extends JFrame implements ActionListener {
 
     JButton registraCittadino = new JButton();
 
-    JLabel login = new JLabel("Accedi");
+    JLabel login = new JLabel("Login");
 
 
     /**

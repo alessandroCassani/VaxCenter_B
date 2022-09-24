@@ -68,10 +68,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.addActionListener(this);
         operatoreVaccinale.setOpaque(true);
 
-
-
-
-
         //Personalizzazione bottone cittadino
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));

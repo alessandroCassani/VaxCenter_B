@@ -260,7 +260,5 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             tipologia.setSelectedItem("HUB");
             status.setText("");
         }
-
     }
-
 }
