@@ -149,6 +149,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(540, 410, 250, 50);
         nomeCV.setBackground(Color.WHITE);
+        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.RIGHT);
         AutoCompleteDecorator.decorate(nomeCV);
 
         registraCittadino.setBounds(410, 485, 190, 60);

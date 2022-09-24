@@ -122,6 +122,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         tipologia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         tipologia.setBounds(420, 110, 145, 50);
         tipologia.setBackground(Color.WHITE);
+        ((JLabel)tipologia.getRenderer()).setHorizontalAlignment(JLabel.RIGHT);
+
 
         JLabel labelComune = new JLabel("Comune:");
         labelComune.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -139,6 +141,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         qualificatore.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         qualificatore.setBounds(195, 220, 75, 50);
         qualificatore.setBackground(Color.WHITE);
+        ((JLabel)qualificatore.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
         JLabel labelIndirizzo = new JLabel("Nome Via/Viale/Piazza:");
         labelIndirizzo.setFont(new Font("Georgia",Font.ITALIC, 17));
