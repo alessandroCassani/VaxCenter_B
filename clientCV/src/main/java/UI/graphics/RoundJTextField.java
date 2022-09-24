@@ -49,6 +49,8 @@ public class RoundJTextField extends JPasswordField {
      * @param x   the <i>x</i> coordinata del punto
      * @param y   the <i>y</i> coordinata del punto
      * @return true o false in base all'esito del controllo
+     *
+     * @author Alessandro Cassani
      */
     public boolean contains(int x, int y) {
         if (shape == null || !shape.getBounds().equals(getBounds())) {
