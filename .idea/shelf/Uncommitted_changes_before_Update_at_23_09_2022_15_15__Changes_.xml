@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_23_09_2022_15_15_[Changes]" date="1663938919167" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_09_2022_15_15_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 23/09/2022 15:15 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UIRegisterVaxCenter.class" />
-    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UIRegisterVaxCenter.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_09_2022_15_15_[Changes]/UIRegisterVaxCenter.class" />
-  </binary>
-</changelist>
