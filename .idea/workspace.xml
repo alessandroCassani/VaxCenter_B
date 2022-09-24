@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="Sistemazione UILogin">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/color50ind.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/coloroPul50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +48,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$USER_HOME$/LAB B/swingx-all-1.6.4.jar" />
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../LAB B/swingx-all-1.6.4.jar" />
->>>>>>> main
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
@@ -65,6 +66,7 @@
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
@@ -109,14 +111,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <list>
       <item itemvalue="Application.UISplashScreen" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
     </list>
-=======
->>>>>>> main
     <recent_temporary>
       <list>
         <item itemvalue="Application.WelcomeScreen" />
@@ -124,11 +123,6 @@
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UISplashScreen" />
-<<<<<<< HEAD
-=======
-        <item itemvalue="Application.UILoginToServer" />
->>>>>>> main
       </list>
     </recent_temporary>
   </component>
@@ -148,6 +142,7 @@
       <workItem from="1663599967457" duration="1931000" />
       <workItem from="1663602155260" duration="11809000" />
       <workItem from="1663617746883" duration="77000" />
+      <workItem from="1664033539074" duration="5737000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
