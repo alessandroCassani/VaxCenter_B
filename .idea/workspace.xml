@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica main">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_09_2022_19_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_09_2022_19_28__Changes_.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica rounded corners">
+      <change afterPath="$PROJECT_DIR$/serverCV/src/main/java/DBManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +62,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.WelcomeScreen">
+    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
       <module name="serverCV" />
@@ -110,6 +115,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UILogin" />
       <item itemvalue="Application.UISplashScreen" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
@@ -117,9 +123,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UISplashScreen" />
+        <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
@@ -127,7 +133,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6b5aa8f1-5aab-455f-a226-785c296afb96" name="Changes" comment="" />
+      <changelist id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifiche dimensioni UIChoosingRooles.java" />
       <created>1663256423679</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -351,7 +357,35 @@
       <option name="project" value="LOCAL" />
       <updated>1664027194330</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="modifiche dimensioni UIChoosingRooles.java">
+      <created>1664028769618</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1664028769618</updated>
+    </task>
+    <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
+      <created>1664041542365</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1664041542365</updated>
+    </task>
+    <task id="LOCAL-00033" summary="centralizzato testo in comboBox">
+      <created>1664041892980</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1664041892980</updated>
+    </task>
+    <task id="LOCAL-00034" summary="modifica rounded corners">
+      <created>1664042360458</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1664042360458</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,10 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica colori bottoni e tetFields" />
-    <MESSAGE value="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java" />
-    <MESSAGE value="aggiunta javaDoc" />
-    <MESSAGE value="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc" />
     <MESSAGE value="." />
     <MESSAGE value="finita modifica UIRegisterVaccinated" />
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
@@ -406,6 +436,10 @@
     <MESSAGE value="modifica allineamenti UIRegisterVaxCenter" />
     <MESSAGE value="modifica login dimensione e centralità" />
     <MESSAGE value="centralizzato testo in textField" />
-    <option name="LAST_COMMIT_MESSAGE" value="centralizzato testo in textField" />
+    <MESSAGE value="modifiche dimensioni UIChoosingRooles.java" />
+    <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
+    <MESSAGE value="centralizzato testo in comboBox" />
+    <MESSAGE value="modifica rounded corners" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica rounded corners" />
   </component>
 </project>
