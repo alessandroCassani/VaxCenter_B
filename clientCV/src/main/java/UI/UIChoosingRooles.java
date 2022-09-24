@@ -40,7 +40,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         Border bordo = new LineBorder(new Color(0,49,83), 2, true);
-
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
         scelta.setBounds(590, 100, 400, 30);
@@ -52,7 +51,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         JLabel iconOV = new JLabel(op);
-        JLabel operator = new JLabel("OPERATORE VACCINALE");
+        JLabel operator = new JLabel("    OPERATORE VACCINALE");
         operator.setFont(new Font("Georgia", Font.BOLD, 15));
         operator.setForeground(Color.WHITE);
         operatoreVaccinale.setLayout(new BorderLayout());
@@ -73,13 +72,13 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
 
         JLabel icon = new JLabel(cit);
-        JLabel citizen = new JLabel("         CITTADINO");
+        JLabel citizen = new JLabel("                 CITTADINO");
         citizen.setForeground(Color.WHITE);
         citizen.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setLayout(new BorderLayout());
         cittadino.add(icon,BorderLayout.WEST);
         cittadino.add(citizen,BorderLayout.CENTER);
-        cittadino.setBounds(600, 330, 350, 95);
+        cittadino.setBounds(600, 335, 350, 95);
         cittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setBackground(new Color(65, 102, 245));
         cittadino.setForeground(Color.WHITE);

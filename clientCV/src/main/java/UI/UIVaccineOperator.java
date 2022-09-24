@@ -69,7 +69,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registravaccinato.png")));
 
         JLabel iconRV = new JLabel(cr);
-        JLabel registraVaccinatoLabel = new JLabel("REGISTRA VACCINATO");
+        JLabel registraVaccinatoLabel = new JLabel("   REGISTRA VACCINATO");
         registraVaccinatoLabel.setForeground(Color.WHITE);
         registraVaccinatoLabel.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setLayout(new BorderLayout());

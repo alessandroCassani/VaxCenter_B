@@ -53,6 +53,7 @@ public class UICitizen extends JFrame implements ActionListener {
 
 
         login.setFont(new Font("Georgia", Font.ITALIC, 20));
+        login.setForeground(new Color(0,49,83));
         login.setBounds(890,20,100,30);
         login.addMouseListener(new MouseAdapter() {
             @Override
@@ -78,7 +79,6 @@ public class UICitizen extends JFrame implements ActionListener {
         cercaCentroVaccinale.setOpaque(true);
 
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
-
 
         JLabel registraCitizen = new JLabel(reg);
         JLabel registralabel = new JLabel("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
