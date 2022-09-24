@@ -12,6 +12,7 @@ import java.util.Objects;
  *  La classe UIRegisterVaxCenter crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
  *
  * @author Paolo Bruscagin
+ * @author Alessandro Cassani
  */
 
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
@@ -159,24 +160,24 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         JLabel labelSigla = new JLabel("Provincia:");
         labelSigla.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labelSigla).setBounds(190, 265, 550, 75);
+        add(labelSigla).setBounds(190, 270, 550, 75);
 
         siglaProvincia.setFont(new Font("Arial", Font.ITALIC, 20));
         siglaProvincia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
-        siglaProvincia.setBounds(190, 320, 75, 55);
+        siglaProvincia.setBounds(190, 325, 75, 55);
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labelCAP).setBounds(465, 265, 550, 75);
+        add(labelCAP).setBounds(465, 270, 550, 75);
 
         cap.setFont(new Font("Arial", Font.ITALIC, 20));
         cap.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cap.setPreferredSize(new Dimension(100, 75));
-        cap.setBounds(450, 320, 75, 55);
+        cap.setBounds(450, 325, 75, 55);
 
         pulisci = new JButton("PULISCI");
-        pulisci.setBounds(690, 320, 130, 55);
+        pulisci.setBounds(690, 325, 130, 55);
         pulisci.setFont(new Font("Georgia", Font.BOLD, 15));
         pulisci.setBackground(new Color(0xEF0808));
         pulisci.setForeground(Color.WHITE);

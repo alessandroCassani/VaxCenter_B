@@ -1,5 +1,6 @@
 package UI;
 
+import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 /**
@@ -24,6 +25,7 @@ import java.time.LocalDate;
  *
  * @author Paolo Bruscagin
  * @author Damiano Ficara
+ * @author Alessandro Cassani
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
@@ -40,12 +42,14 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     LocalDate todaysDate = LocalDate.now();
 
-    JTextField data = new JTextField(String.valueOf(todaysDate));
+    JXDatePicker data = new JXDatePicker();
 
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
     JLabel IDUnivoco = new JLabel();
+
     JLabel warningIDUnivoco = new JLabel();
+
     JLabel status = new JLabel();
 
     JButton registraVaccinato = new JButton("REGISTRA");
@@ -60,8 +64,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     public UIRegisterVaccinated(){
 
-        //Border bordo = new LineBorder(new Color(0xFF000000, true), 2, true);
-        //Border bordoCombo = new LineBorder(new Color(0xFF000000, true), 1, true);
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
@@ -74,7 +76,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelnomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelnomeVac).setBounds(280, 35, 550, 55);
 
-        nome.setFont(new Font("Arial", Font.BOLD, 20));
+        nome.setFont(new Font("Arial", Font.ITALIC, 20));
         nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nome.setPreferredSize(new Dimension(325, 55));
         nome.setBounds(140, 80, 325, 55);
@@ -83,7 +85,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelcognomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelcognomeVac).setBounds(650, 35, 550, 55);
 
-        cognome.setFont(new Font("Arial", Font.BOLD, 20));
+        cognome.setFont(new Font("Arial", Font.ITALIC, 20));
         cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognome.setPreferredSize(new Dimension(325, 55));
         cognome.setBounds(520, 80, 325, 55);
@@ -92,8 +94,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelcf.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelcf).setBounds(250, 150, 550, 55);
 
-        codiceFiscale.setFont(new Font("Arial", Font.BOLD, 20));
-        //codiceFiscale.setBorder(bordo);
+        codiceFiscale.setFont(new Font("Arial", Font.ITALIC, 20));
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 55));
         codiceFiscale.setBounds(140, 195, 325, 55);
@@ -103,17 +104,17 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(labeldata).setBounds(530, 150, 550, 55);
 
         data.setFont(new Font("Arial", Font.ITALIC, 20));
-        data.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        data.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         data.setPreferredSize(new Dimension(325, 55));
         data.setBounds(520, 195, 325, 55);
 
         JLabel labelTipVac = new JLabel("Tipologia:");
         labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelTipVac).setBounds(260, 260, 550, 55);
+        add(labelTipVac).setBounds(260, 265, 550, 55);
 
         vaccinoSomministrato.setFont(new Font("Arial", Font.ITALIC, 20));
         vaccinoSomministrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-        vaccinoSomministrato.setBounds(140, 305, 325, 55);
+        vaccinoSomministrato.setBounds(140, 310, 325, 55);
         vaccinoSomministrato.setBackground(Color.WHITE);
 
         registraVaccinato.setBounds(380, 450, 230, 65);
@@ -127,11 +128,11 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelNome).setBounds(590, 260, 550, 55);
+        add(labelNome).setBounds(590, 265, 550, 55);
 
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-        nomeCV.setBounds(520, 305, 325, 55);
+        nomeCV.setBounds(520, 310, 325, 55);
         nomeCV.setBackground(Color.WHITE);
         AutoCompleteDecorator.decorate(nomeCV);
 
@@ -223,7 +224,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 nome.setText("");
                 cognome.setText("");
                 codiceFiscale.setText("");
-                data.setText(String.valueOf(todaysDate));
                 vaccinoSomministrato.setSelectedItem("Pfizer");
                 status.setText("");
                 IDUnivoco.setText("");
