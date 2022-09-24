@@ -68,7 +68,7 @@ public class UICitizen extends JFrame implements ActionListener {
         cercaCentroVaccinale.setLayout(new BorderLayout());
         cercaCentroVaccinale.add(cercaCV,BorderLayout.WEST);
         cercaCentroVaccinale.add(cercaLabel,BorderLayout.CENTER);
-        cercaCentroVaccinale.setBounds(600, 90, 350, 110);
+        cercaCentroVaccinale.setBounds(600, 90, 350, 95);
         cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         cercaCentroVaccinale.setBackground(new Color(65, 102, 245));
         cercaCentroVaccinale.setForeground(Color.WHITE);
@@ -87,7 +87,7 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.setLayout(new BorderLayout());
         registraCittadino.add(registraCitizen,BorderLayout.WEST);
         registraCittadino.add(registralabel,BorderLayout.CENTER);
-        registraCittadino.setBounds(600, 240, 350, 110);
+        registraCittadino.setBounds(600, 240, 350, 95);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(65, 102, 245));
         registraCittadino.setForeground(Color.WHITE);
@@ -99,7 +99,7 @@ public class UICitizen extends JFrame implements ActionListener {
 
 
         backToChoosingRooles = new JButton("INDIETRO");
-        backToChoosingRooles.setBounds(600, 400, 350, 110);
+        backToChoosingRooles.setBounds(600, 400, 350, 95);
         backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
         backToChoosingRooles.setBackground(new Color(248, 9, 55));
         backToChoosingRooles.setForeground(Color.WHITE);
