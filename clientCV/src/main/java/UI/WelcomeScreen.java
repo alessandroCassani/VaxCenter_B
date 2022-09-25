@@ -32,7 +32,7 @@ public class WelcomeScreen extends JFrame {
         label.setHorizontalAlignment(SwingConstants.CENTER);
         cp.add(label);
         cp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        JProgressBar progressBar = new JProgressBar(0,100);
+        JProgressBar progressBar = new JProgressBar(0,60);
 
 
         progressBar.setForeground(Color.decode("#ff930f"));
@@ -40,11 +40,11 @@ public class WelcomeScreen extends JFrame {
         // alla fine della pb viene aperta nella stessa posizione
         win.revalidate();
 
-        timer = new Timer(100, new ActionListener() {
+        timer = new Timer(60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int value = progressBar.getValue();
-                if(value == 100) {
+                if(value == 60) {
                     win.dispose();
                     new UIChoosingRooles();
                     timer.stop();

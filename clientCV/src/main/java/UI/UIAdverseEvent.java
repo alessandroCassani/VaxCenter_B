@@ -15,22 +15,39 @@ import java.util.Objects;
 
 public class UIAdverseEvent extends JFrame implements ActionListener {
 
-    JPanel inserisciEventiAvversi = new JPanel();
+    /**
+     * Panel per registrare gli eventi avversi
+     */
 
+    JPanel inserisciEventiAvversi = new JPanel();
+    /**
+     * Panel pervisualizzare gli eventi avversi già registrati
+     */
     JPanel riepilogoEventiAvversiPersonali = new JPanel();
 
+    /**
+     * Bottone per pulire tutti gli elementi della JPanel inserisciEventiAvversi
+     */
     JButton pulisciEventiAvversi;
 
-    JLabel status = new JLabel();
+    JLabel status = new JLabel("Eventi Avversi Registrati!");
 
 
     JCheckBox switcha = new JCheckBox();
 
+    /**
+     * Bottone per registrare gli eventi avversi
+     */
     JButton registraEA = new JButton("REGISTRA");
 
+    /**
+     * Bottone per tornare alle UICitizen
+     */
     JButton backToCitizen;
 
     JLabel labelinsEventiAvversi = new JLabel("Inserisci Eventi avversi");
+    JLabel giaRegistrati = new JLabel("Eventi avversi già registrati");
+
 
     JLabel labelmalDiTesta = new JLabel("Mail di Testa");
 
@@ -85,6 +102,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     JTextField notetaCrisiIpertensiva = new JTextField();
 
+    String data[][] = {{"Mal di testa", "0","/"},{"Febbre", "0","/"},{"Dolori Musc. Art.", "0","/"},{"Linfoanedopatia", "0","/"},{"Tachicardia", "0","/"},{"Crisi Ipertensiva", "0","/"}};
+    String coloumn[]= {"NOME", "SEVERITA'", "NOTE"};
+
+    /**
+     * Tabella che mostra il riepilogo degli eventi avversi già registrati
+     */
+    JTable tabellaRiepilogo = new JTable(data, coloumn);
+
+
+
 
 
 
@@ -128,8 +155,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         VaccinatoPresso.setBounds(40, 400, 200, 20);
 
 
-        labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelinsEventiAvversi.setBounds(20, 20, 200, 20);
+
 
         //Mal di Testa
 
@@ -271,37 +297,21 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         pulisciEventiAvversi.setOpaque(true);
 
 
-        JLabel giaRegistrati = new JLabel("Eventi avversi già registrati");
+
         giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 15));
         riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);
+        tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
+        tabellaRiepilogo.setBounds(50,50,450,420);
+        tabellaRiepilogo.setBackground(new Color(209, 245, 250));
 
-        inserisciEventiAvversi.add(registraEA);
-        inserisciEventiAvversi.add(pulisciEventiAvversi);
-        inserisciEventiAvversi.add(labelinsEventiAvversi);
-        inserisciEventiAvversi.add(labelmalDiTesta);
-        inserisciEventiAvversi.add(checkBoxMaldiTesta);
-        inserisciEventiAvversi.add(severitaMDT).setVisible(false);
-        inserisciEventiAvversi.add(noteMalditesta).setVisible(false);
-        inserisciEventiAvversi.add(labelFebbre);
-        inserisciEventiAvversi.add(checkBoxFebbre);
-        inserisciEventiAvversi.add(severitaFebbre).setVisible(false);
-        inserisciEventiAvversi.add(noteFebbre).setVisible(false);
-        inserisciEventiAvversi.add(labelDMA);
-        inserisciEventiAvversi.add(checkBoxDMA);
-        inserisciEventiAvversi.add(severitaDMA).setVisible(false);
-        inserisciEventiAvversi.add(noteDMA).setVisible(false);
-        inserisciEventiAvversi.add(labellinfoadenopatia);
-        inserisciEventiAvversi.add(checkBoxlinfoadenopatia);
-        inserisciEventiAvversi.add(severitalinfoadenopatia).setVisible(false);
-        inserisciEventiAvversi.add(notelinfoadenopatia).setVisible(false);
-        inserisciEventiAvversi.add(labeltachicardia);
-        inserisciEventiAvversi.add(checkBoxtachicardia);
-        inserisciEventiAvversi.add(severitatachicardia).setVisible(false);
-        inserisciEventiAvversi.add(notetachicardia).setVisible(false);
-        inserisciEventiAvversi.add(labelCrisiIpertensiva);
-        inserisciEventiAvversi.add(checkBoxCrisiIpertensiva);
-        inserisciEventiAvversi.add(severitaCrisiIpertensiva).setVisible(false);
-        inserisciEventiAvversi.add(notetaCrisiIpertensiva).setVisible(false);
+        tabellaRiepilogo.setRowHeight(60);
+        tabellaRiepilogo.setBorder(bordobtn);
+        getContentPane().add(tabellaRiepilogo);
+
+
+        tabellaRiepilogo.setEnabled(false);
+        riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
+
 
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
@@ -315,6 +325,15 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         backToCitizen.setFocusable(false);
         backToCitizen.addActionListener(this);
         backToCitizen.setOpaque(true);
+
+        status.setBounds(30, 400, 250, 30);
+        status.setFont(new Font("Georgia", Font.BOLD, 15));
+        status.setBackground(new Color(209, 245, 250));
+        status.setForeground(new Color(0x07AF45));
+        status.setVisible(false);
+        inserisciEventiAvversi.add(status);
+
+
 
 
         add(backToCitizen);
@@ -345,6 +364,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         setVisible(true);
 
     }
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backToCitizen) {
@@ -352,11 +378,45 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             new UICitizen();
         } else if (e.getSource() == switcha) {
             if (switcha.isSelected()) {
+
                 riepilogoEventiAvversiPersonali.setVisible(false);
                 inserisciEventiAvversi.setVisible(true);
+                labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));
+                labelinsEventiAvversi.setBounds(20, 20, 200, 20);
+                inserisciEventiAvversi.add(registraEA);
+                inserisciEventiAvversi.add(pulisciEventiAvversi);
+                inserisciEventiAvversi.add(labelinsEventiAvversi);
+                inserisciEventiAvversi.add(labelmalDiTesta);
+                inserisciEventiAvversi.add(checkBoxMaldiTesta);
+                inserisciEventiAvversi.add(severitaMDT).setVisible(false);
+                inserisciEventiAvversi.add(noteMalditesta).setVisible(false);
+                inserisciEventiAvversi.add(labelFebbre);
+                inserisciEventiAvversi.add(checkBoxFebbre);
+                inserisciEventiAvversi.add(severitaFebbre).setVisible(false);
+                inserisciEventiAvversi.add(noteFebbre).setVisible(false);
+                inserisciEventiAvversi.add(labelDMA);
+                inserisciEventiAvversi.add(checkBoxDMA);
+                inserisciEventiAvversi.add(severitaDMA).setVisible(false);
+                inserisciEventiAvversi.add(noteDMA).setVisible(false);
+                inserisciEventiAvversi.add(labellinfoadenopatia);
+                inserisciEventiAvversi.add(checkBoxlinfoadenopatia);
+                inserisciEventiAvversi.add(severitalinfoadenopatia).setVisible(false);
+                inserisciEventiAvversi.add(notelinfoadenopatia).setVisible(false);
+                inserisciEventiAvversi.add(labeltachicardia);
+                inserisciEventiAvversi.add(checkBoxtachicardia);
+                inserisciEventiAvversi.add(severitatachicardia).setVisible(false);
+                inserisciEventiAvversi.add(notetachicardia).setVisible(false);
+                inserisciEventiAvversi.add(labelCrisiIpertensiva);
+                inserisciEventiAvversi.add(checkBoxCrisiIpertensiva);
+                inserisciEventiAvversi.add(severitaCrisiIpertensiva).setVisible(false);
+                inserisciEventiAvversi.add(notetaCrisiIpertensiva).setVisible(false);
             } else {
                 inserisciEventiAvversi.setVisible(false);
                 riepilogoEventiAvversiPersonali.setVisible(true);
+
+
+
+
 
 
             }
@@ -482,9 +542,15 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             severitaCrisiIpertensiva.setVisible(false);
             notetaCrisiIpertensiva.setVisible(false);
 
+            status.setVisible(false);
 
+
+
+        }else if(e.getSource() == registraEA){
+            status.setVisible(true);
 
         }
     }
 
 }
+
