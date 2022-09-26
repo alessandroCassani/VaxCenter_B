@@ -77,7 +77,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         nomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeCittadino.setPreferredSize(new Dimension(325, 75));
         nomeCittadino.setBounds(100, 195, 250, 55);
-        nomeCittadino.setEchoChar((char) 0);
 
         JLabel labelcognomeCit = new JLabel("Cognome:");
         labelcognomeCit.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -87,7 +86,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         cognomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognomeCittadino.setPreferredSize(new Dimension(325, 75));
         cognomeCittadino.setBounds(370, 195, 250, 55);
-        cognomeCittadino.setEchoChar((char) 0);
 
         JLabel labelCF = new JLabel("Codice Fiscale:");
         labelCF.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -97,7 +95,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 75));
         codiceFiscale.setBounds(640, 195, 250, 55);
-        codiceFiscale.setEchoChar((char) 0);
 
         JLabel labelEmail = new JLabel("Email:");
         labelEmail.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -107,7 +104,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         email.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         email.setPreferredSize(new Dimension(325, 75));
         email.setBounds(100, 295, 250, 55);
-        email.setEchoChar((char) 0);
 
         JLabel labelUserID = new JLabel("User ID:");
         labelUserID.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -117,7 +113,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         userID.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         userID.setPreferredSize(new Dimension(325, 75));
         userID.setBounds(370, 295, 250, 55);
-        userID.setEchoChar((char) 0);
 
         JLabel labelIDUnivoco = new JLabel("ID Vaccinazione:");
         labelIDUnivoco.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -127,8 +122,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         IDUnivoco.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         IDUnivoco.setBounds(640, 295, 250, 55);
         IDUnivoco.setBackground(Color.WHITE);
-        IDUnivoco.setEchoChar((char) 0);
-
 
         JLabel labelPassword = new JLabel("Password:");
         labelPassword.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -138,6 +131,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         password.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         password.setBounds(100, 390, 250, 55);
         password.setBackground(Color.WHITE);
+        password.setEchoChar('*');
 
         JLabel labelRipetiPassword = new JLabel("Ripeti Password:");
         labelRipetiPassword.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -147,6 +141,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         ripetiPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         ripetiPassword.setBounds(100, 475, 250, 55);
         ripetiPassword.setBackground(Color.WHITE);
+        ripetiPassword.setEchoChar('*');
 
         showPassword.setFont(new Font("Arial", Font.BOLD, 15));
         showPassword.setBackground(new Color(181, 226, 232));

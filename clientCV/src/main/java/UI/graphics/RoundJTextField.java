@@ -20,6 +20,7 @@ public class RoundJTextField extends JPasswordField {
         super(size);
         setOpaque(false);
         setHorizontalAlignment(JTextField.CENTER);
+        setEchoChar((char)0);
     }
 
     /**
