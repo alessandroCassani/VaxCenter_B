@@ -4,7 +4,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- * interfaccia dei metodi del server, che andranno utilizzati nel sistema distribuito tramite RMI
+ * interfaccia dei metodi del server, che saranno utilizzati nel sistema distribuito tramite RMI
  *
  * @author Alessandro Cassani
  */
@@ -14,7 +14,7 @@ public interface ServerInterface extends Remote {
      * segnatura del metodo che permette la registrazione di un centro vaccinale
      * @param centroVaccinale centro vaccinale
      * @return true o false, in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      *  @author Alessandro Cassani
      */
@@ -58,7 +58,7 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean signUp(Account account) throws RemoteException;
+    boolean isSignedUp(Account account) throws RemoteException;
 
     /**
      * segnatura del metodo che permette il controllo in fase di accesso e registrazione dell'utente dell'avvenuta registrazione del cittadino

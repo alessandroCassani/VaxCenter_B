@@ -13,6 +13,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 
 /**
+ * La classe UICitizen crea l'interfaccia dove viene presentato il menu' di funzionalita' a cui l'utente cittadino puo' accedervi
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
