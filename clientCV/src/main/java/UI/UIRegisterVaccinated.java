@@ -79,7 +79,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nome.setPreferredSize(new Dimension(325, 55));
         nome.setBounds(140, 80, 325, 50);
-        nome.setHorizontalAlignment(JTextField.CENTER);
         nome.setEchoChar((char) 0);
 
         JLabel labelcognomeVac = new JLabel("Cognome:");
@@ -90,7 +89,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognome.setPreferredSize(new Dimension(325, 55));
         cognome.setBounds(520, 80, 325, 50);
-        cognome.setHorizontalAlignment(JTextField.CENTER);
         cognome.setEchoChar((char) 0);
 
         JLabel labelcf = new JLabel("Codice Fiscale:");
@@ -101,7 +99,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 55));
         codiceFiscale.setBounds(140, 195, 325, 50);
-        codiceFiscale.setHorizontalAlignment(JTextField.CENTER);
         codiceFiscale.setEchoChar((char) 0);
 
         JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg):");
@@ -140,8 +137,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(520, 310, 325, 50);
         nomeCV.setBackground(Color.WHITE);
-        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         AutoCompleteDecorator.decorate(nomeCV);
+        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
         backToVaccineOperator =  new JButton("INDIETRO");
         backToVaccineOperator.setBounds(90, 450, 230, 60);
@@ -168,7 +165,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
         IDUnivoco.setBounds(125, 540, 400, 50);
-        IDUnivoco.setHorizontalAlignment(JTextField.CENTER);
         warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
         warningIDUnivoco.setBounds(125, 565, 600, 55);
 
