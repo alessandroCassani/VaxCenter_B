@@ -137,8 +137,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(520, 310, 325, 50);
         nomeCV.setBackground(Color.WHITE);
-        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         AutoCompleteDecorator.decorate(nomeCV);
+        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
         backToVaccineOperator =  new JButton("INDIETRO");
         backToVaccineOperator.setBounds(90, 450, 230, 60);
