@@ -158,7 +158,7 @@
       <workItem from="1663602155260" duration="11809000" />
       <workItem from="1663617746883" duration="77000" />
       <workItem from="1664186008992" duration="9000" />
-      <workItem from="1664217501951" duration="4478000" />
+      <workItem from="1664217501951" duration="7184000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -412,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664221046733</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Sistemazione UIAdverseEvent">
+      <created>1664222136120</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1664222136120</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

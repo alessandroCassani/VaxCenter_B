@@ -133,14 +133,36 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     //Tabella riassuntiva Eventi Avversi già registrati
-    String data[][] = {{"Mal di testa", "0","/"},{"Febbre", "0","/"},{"Dolori Musc. Art.", "0","/"},{"Linfoadenopatia", "0","/"},{"Tachicardia", "0","/"},{"Crisi Ipertensiva", "0","/"}};
+
+    String nomeEvento = "NOME";
+    String severitàEvento = "SEVERITA'";
+    String noteEvento = "NOTE";
+
+    //Dati che il DB automaticamente imposta e di conseguenza il valore della cella viene modificato
+    String s1;
+    String s2;
+    String s3;
+    String s4;
+    String s5;
+    String s6;
+
+    String note1;
+    String note2;
+    String note3;
+    String note4;
+    String note5;
+    String note6;
+
+
+
+    //Tabella 6x3 (righe x colonne)
+    String data[][] = {{nomeEvento,severitàEvento,noteEvento },{"Mal di testa", s1,note1},{"Febbre", s2,note2},{"Dolori Musc. Art.", s3,note3},{"Linfoadenopatia", s4,note4},{"Tachicardia", s5,note5},{"Crisi Ipertensiva", s6,note6}};
     String coloumn[]= {"NOME", "SEVERITA'", "NOTE"};
 
     /**
      * Tabella che mostra il riepilogo degli eventi avversi già registrati
      */
     JTable tabellaRiepilogo = new JTable(data, coloumn);
-
 
 
 
@@ -360,12 +382,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
         tabellaRiepilogo.setBounds(50,50,450,420);
         tabellaRiepilogo.setBackground(new Color(209, 245, 250));
-
         tabellaRiepilogo.setRowHeight(60);
         tabellaRiepilogo.setBorder(bordobtn_AE);
-        getContentPane().add(tabellaRiepilogo);
         tabellaRiepilogo.setEnabled(false);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
+
 
         add(riepilogoEventiAvversiPersonali);
 
