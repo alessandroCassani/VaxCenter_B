@@ -66,7 +66,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
 
-    JLabel labelinsEventiAvversi = new JLabel("Inserisci Eventi avversi");
+    JLabel labelinsEventiAvversi = new JLabel("Inserisci Eventi avversi:");
 
     JLabel giaRegistrati = new JLabel("Eventi avversi già registrati");
 
@@ -164,6 +164,44 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JTable tabellaRiepilogo = new JTable(data, coloumn);
 
+    //JLabel per severità e note di ogni riga
+
+    JLabel severitaEA1 = new JLabel("Severità");
+
+
+    JLabel noteEA1 = new JLabel("Note (max. 256)");
+
+
+    JLabel severitaEA2 = new JLabel("Severità");
+
+
+    JLabel noteEA2 = new JLabel("Note (max. 256)");
+
+
+    JLabel severitaEA3 = new JLabel("Severità");
+
+
+    JLabel noteEA3 = new JLabel("Note (max. 256)");
+
+    JLabel severitaEA4 = new JLabel("Severità");
+
+
+    JLabel noteEA4 = new JLabel("Note (max. 256)");
+
+
+    JLabel severitaEA5 = new JLabel("Severità");
+
+
+    JLabel noteEA5 = new JLabel("Note (max. 256)");
+
+
+    JLabel severitaEA6 = new JLabel("Severità");
+
+
+    JLabel noteEA6 = new JLabel("Note (max. 256)");
+
+    JLabel premiQuadrato = new JLabel("Se hai avuto uno di questi simboli clicca il quadratino");
+
 
 
     public UIAdverseEvent(){
@@ -249,126 +287,167 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         add(infoUtente);
 
 
+        //Label informativa quadratino eventi avversi
+        premiQuadrato.setFont(new Font("Georgia", Font.BOLD, 10));
+        premiQuadrato.setBounds(20, 370, 300, 12);
+        premiQuadrato.setForeground(new Color(0x0729AF));
 
-        //Registrazione Eventi Avversi
+
+
+        //Label severità e note
+        severitaEA1.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA1.setBounds(160, 57, 60, 12);
+
+        noteEA1.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA1.setBounds(250, 57, 250, 12);
+
+        severitaEA2.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA2.setBounds(160, 107, 60, 12);
+
+        noteEA2.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA2.setBounds(250, 107, 250, 12);
+
+        severitaEA3.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA3.setBounds(160, 157, 60, 12);
+
+        noteEA3.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA3.setBounds(250, 157, 250, 12);
+
+        severitaEA4.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA4.setBounds(160, 207, 60, 12);
+
+        noteEA4.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA4.setBounds(250, 207, 250, 12);
+
+        severitaEA5.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA5.setBounds(160, 257, 60, 12);
+
+        noteEA5.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA5.setBounds(250, 257, 250, 12);
+
+        severitaEA6.setFont(new Font("Georgia", Font.BOLD, 10));
+        severitaEA6.setBounds(160, 307, 60, 12);
+
+        noteEA6.setFont(new Font("Georgia", Font.BOLD, 10));
+        noteEA6.setBounds(250, 307, 250, 12);
 
         //Mal di Testa
         labelmalDiTesta.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelmalDiTesta.setBounds(20, 50, 100, 20);
+        labelmalDiTesta.setBounds(20, 75, 100, 20);
 
         checkBoxMaldiTesta.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxMaldiTesta.setBounds(130, 57, 20, 15);
+        checkBoxMaldiTesta.setBounds(130, 77, 20, 15);
         checkBoxMaldiTesta.addActionListener(this);
         checkBoxMaldiTesta.setBackground(new Color(209, 245, 250));
 
         severitaMDT.setFont(new Font("Arial", Font.BOLD, 12));
-        severitaMDT.setBounds(160, 50, 60, 30);
+        severitaMDT.setBounds(160, 75, 60, 30);
         severitaMDT.setBackground(Color.WHITE);
         severitaMDT.setBorder(bordobtn_AE);
 
         noteMalditesta.setFont(new Font("Arial", Font.BOLD, 10));
         noteMalditesta.setPreferredSize(new Dimension(325, 75));
-        noteMalditesta.setBounds(250, 50, 250, 30);
+        noteMalditesta.setBounds(250, 75, 250, 30);
         noteMalditesta.setBorder(bordobtn_AE);
 
 
         //Febbre
         labelFebbre.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelFebbre.setBounds(20, 105, 100, 20);
+        labelFebbre.setBounds(20, 125, 100, 20);
 
         checkBoxFebbre.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxFebbre.setBounds(130, 107, 20, 15);
+        checkBoxFebbre.setBounds(130, 127, 20, 15);
         checkBoxFebbre.addActionListener(this);
         checkBoxFebbre.setBackground(new Color(209, 245, 250));
 
         severitaFebbre.setFont(new Font("Arial", Font.BOLD, 12));
-        severitaFebbre.setBounds(160, 105, 60, 30);
+        severitaFebbre.setBounds(160, 125, 60, 30);
         severitaFebbre.setBackground(Color.WHITE);
         severitaFebbre.setBorder(bordobtn_AE);
 
         noteFebbre.setFont(new Font("Arial", Font.BOLD, 10));
         noteFebbre.setPreferredSize(new Dimension(325, 75));
-        noteFebbre.setBounds(250, 105, 250, 30);
+        noteFebbre.setBounds(250, 125, 250, 30);
         noteFebbre.setBorder(bordobtn_AE);
 
 
         //Dolore Addominale e/o Articolare
         labelDMA.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelDMA.setBounds(20, 155, 100, 20);
+        labelDMA.setBounds(20, 175, 100, 20);
 
         checkBoxDMA.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxDMA.setBounds(130, 157, 20, 15);
+        checkBoxDMA.setBounds(130, 177, 20, 15);
         checkBoxDMA.addActionListener(this);
         checkBoxDMA.setBackground(new Color(209, 245, 250));
 
         severitaDMA.setFont(new Font("Arial", Font.BOLD, 12));
-        severitaDMA.setBounds(160, 155, 60, 30);
+        severitaDMA.setBounds(160, 175, 60, 30);
         severitaDMA.setBackground(Color.WHITE);
         severitaDMA.setBorder(bordobtn_AE);
 
         noteDMA.setFont(new Font("Arial", Font.BOLD, 10));
         noteDMA.setPreferredSize(new Dimension(325, 75));
-        noteDMA.setBounds(250, 155, 250, 30);
+        noteDMA.setBounds(250, 175, 250, 30);
         noteDMA.setBorder(bordobtn_AE);
 
 
         //Linfoadenopatia
         labellinfoadenopatia.setFont(new Font("Georgia", Font.BOLD, 12));
-        labellinfoadenopatia.setBounds(20, 205, 100, 20);
+        labellinfoadenopatia.setBounds(20, 225, 100, 20);
 
         checkBoxlinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxlinfoadenopatia.setBounds(130, 207, 20, 15);
+        checkBoxlinfoadenopatia.setBounds(130, 227, 20, 15);
         checkBoxlinfoadenopatia.addActionListener(this);
         checkBoxlinfoadenopatia.setBackground(new Color(209, 245, 250));
 
         severitalinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 12));
-        severitalinfoadenopatia.setBounds(160, 205, 60, 30);
+        severitalinfoadenopatia.setBounds(160, 225, 60, 30);
         severitalinfoadenopatia.setBackground(Color.WHITE);
         severitalinfoadenopatia.setBorder(bordobtn_AE);
 
         notelinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 10));
         notelinfoadenopatia.setPreferredSize(new Dimension(325, 75));
-        notelinfoadenopatia.setBounds(250, 205, 250, 30);
+        notelinfoadenopatia.setBounds(250, 225, 250, 30);
         notelinfoadenopatia.setBorder(bordobtn_AE);
 
 
         //Tachicardia
         labeltachicardia.setFont(new Font("Georgia", Font.BOLD, 12));
-        labeltachicardia.setBounds(20, 255, 100, 20);
+        labeltachicardia.setBounds(20, 275, 100, 20);
 
         checkBoxtachicardia.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxtachicardia.setBounds(130, 257, 20, 15);
+        checkBoxtachicardia.setBounds(130, 277, 20, 15);
         checkBoxtachicardia.addActionListener(this);
         checkBoxtachicardia.setBackground(new Color(209, 245, 250));
 
         severitatachicardia.setFont(new Font("Arial", Font.BOLD, 12));
-        severitatachicardia.setBounds(160, 255, 60, 30);
+        severitatachicardia.setBounds(160, 275, 60, 30);
         severitatachicardia.setBackground(Color.WHITE);
         severitatachicardia.setBorder(bordobtn_AE);
 
         notetachicardia.setFont(new Font("Arial", Font.BOLD, 10));
         notetachicardia.setPreferredSize(new Dimension(325, 75));
-        notetachicardia.setBounds(250, 255, 250, 30);
+        notetachicardia.setBounds(250, 275, 250, 30);
         notetachicardia.setBorder(bordobtn_AE);
 
 
         //Crisi Ipertensiva
         labelCrisiIpertensiva.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelCrisiIpertensiva.setBounds(20, 305, 100, 20);
+        labelCrisiIpertensiva.setBounds(20, 325, 100, 20);
 
         checkBoxCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 15));
-        checkBoxCrisiIpertensiva.setBounds(130, 307, 20, 15);
+        checkBoxCrisiIpertensiva.setBounds(130, 327, 20, 15);
         checkBoxCrisiIpertensiva.addActionListener(this);
         checkBoxCrisiIpertensiva.setBackground(new Color(209, 245, 250));
 
         severitaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 12));
-        severitaCrisiIpertensiva.setBounds(160, 305, 60, 30);
+        severitaCrisiIpertensiva.setBounds(160, 325, 60, 30);
         severitaCrisiIpertensiva.setBackground(Color.WHITE);
         severitaCrisiIpertensiva.setBorder(bordobtn_AE);
 
         notetaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 10));
         notetaCrisiIpertensiva.setPreferredSize(new Dimension(325, 75));
-        notetaCrisiIpertensiva.setBounds(250, 305, 250, 30);
+        notetaCrisiIpertensiva.setBounds(250, 325, 250, 30);
         notetaCrisiIpertensiva.setBorder(bordobtn_AE);
 
         //Panel info Eventi avversi già registrati
@@ -400,6 +479,19 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         labelinsEventiAvversi.setBounds(20, 20, 200, 20);
 
         inserisciEventiAvversi.add(labelinsEventiAvversi);
+        inserisciEventiAvversi.add(premiQuadrato);
+        inserisciEventiAvversi.add(severitaEA1).setVisible(false);
+        inserisciEventiAvversi.add(noteEA1).setVisible(false);
+        inserisciEventiAvversi.add(severitaEA2).setVisible(false);
+        inserisciEventiAvversi.add(noteEA2).setVisible(false);
+        inserisciEventiAvversi.add(severitaEA3).setVisible(false);
+        inserisciEventiAvversi.add(noteEA3).setVisible(false);
+        inserisciEventiAvversi.add(severitaEA4).setVisible(false);
+        inserisciEventiAvversi.add(noteEA4).setVisible(false);
+        inserisciEventiAvversi.add(severitaEA5).setVisible(false);
+        inserisciEventiAvversi.add(noteEA5).setVisible(false);
+        inserisciEventiAvversi.add(severitaEA6).setVisible(false);
+        inserisciEventiAvversi.add(noteEA6).setVisible(false);
         inserisciEventiAvversi.add(labelmalDiTesta);
         inserisciEventiAvversi.add(checkBoxMaldiTesta);
         inserisciEventiAvversi.add(severitaMDT).setVisible(false);
@@ -503,12 +595,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxMaldiTesta.isSelected()) {
                 severitaMDT.setVisible(true);
                 noteMalditesta.setVisible(true);
+                noteEA1.setVisible(true);
+                severitaEA1.setVisible(true);
                 severitaMDT.setSelectedItem("1");
                 noteMalditesta.setText("");
 
             }else{
                 severitaMDT.setVisible(false);
                 noteMalditesta.setVisible(false);
+                noteEA1.setVisible(false);
+                severitaEA1.setVisible(false);
                 severitaMDT.setSelectedItem("1");
                 noteMalditesta.setText("");
             }
@@ -517,12 +613,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxFebbre.isSelected()) {
                 severitaFebbre.setVisible(true);
                 noteFebbre.setVisible(true);
+                noteEA2.setVisible(true);
+                severitaEA2.setVisible(true);
                 severitaFebbre.setSelectedItem("1");
                 noteFebbre.setText("");
 
             }else{
                 severitaFebbre.setVisible(false);
                 noteFebbre.setVisible(false);
+                noteEA2.setVisible(false);
+                severitaEA2.setVisible(false);
                 severitaFebbre.setSelectedItem("1");
                 noteFebbre.setText("");
             }
@@ -531,12 +631,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxDMA.isSelected()) {
                 severitaDMA.setVisible(true);
                 noteDMA.setVisible(true);
+                noteEA3.setVisible(true);
+                severitaEA3.setVisible(true);
                 severitaDMA.setSelectedItem("1");
                 noteDMA.setText("");
 
             }else{
                 severitaDMA.setVisible(false);
                 noteDMA.setVisible(false);
+                noteEA3.setVisible(false);
+                severitaEA3.setVisible(false);
                 severitaDMA.setSelectedItem("1");
                 noteDMA.setText("");
             }
@@ -545,12 +649,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxlinfoadenopatia.isSelected()) {
                 severitalinfoadenopatia.setVisible(true);
                 notelinfoadenopatia.setVisible(true);
+                noteEA4.setVisible(true);
+                severitaEA4.setVisible(true);
                 severitalinfoadenopatia.setSelectedItem("1");
                 notelinfoadenopatia.setText("");
 
             }else{
                 severitalinfoadenopatia.setVisible(false);
                 notelinfoadenopatia.setVisible(false);
+                noteEA4.setVisible(false);
+                severitaEA4.setVisible(false);
                 severitalinfoadenopatia.setSelectedItem("1");
                 notelinfoadenopatia.setText("");
             }
@@ -559,12 +667,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxtachicardia.isSelected()) {
                 severitatachicardia.setVisible(true);
                 notetachicardia.setVisible(true);
+                noteEA5.setVisible(true);
+                severitaEA5.setVisible(true);
                 severitatachicardia.setSelectedItem("1");
                 notetachicardia.setText("");
 
             }else{
                 severitatachicardia.setVisible(false);
                 notetachicardia.setVisible(false);
+                noteEA5.setVisible(false);
+                severitaEA5.setVisible(false);
                 severitatachicardia.setSelectedItem("1");
                 notetachicardia.setText("");
             }
@@ -573,12 +685,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             if (checkBoxCrisiIpertensiva.isSelected()) {
                 severitaCrisiIpertensiva.setVisible(true);
                 notetaCrisiIpertensiva.setVisible(true);
+                noteEA6.setVisible(true);
+                severitaEA6.setVisible(true);
                 severitaCrisiIpertensiva.setSelectedItem("1");
                 notetaCrisiIpertensiva.setText("");
 
             }else{
                 severitaCrisiIpertensiva.setVisible(false);
                 notetaCrisiIpertensiva.setVisible(false);
+                noteEA6.setVisible(false);
+                severitaEA6.setVisible(false);
                 severitaCrisiIpertensiva.setSelectedItem("1");
                 notetaCrisiIpertensiva.setText("");
             }
@@ -589,36 +705,48 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             checkBoxMaldiTesta.setSelected(false);
             severitaMDT.setVisible(false);
             noteMalditesta.setVisible(false);
+            noteEA1.setVisible(false);
+            severitaEA1.setVisible(false);
 
             severitaFebbre.setSelectedItem("1");
             noteFebbre.setText("");
             checkBoxFebbre.setSelected(false);
             severitaFebbre.setVisible(false);
             noteFebbre.setVisible(false);
+            noteEA2.setVisible(false);
+            severitaEA2.setVisible(false);
 
             severitaDMA.setSelectedItem("1");
             noteDMA.setText("");
             checkBoxDMA.setSelected(false);
             severitaDMA.setVisible(false);
             noteDMA.setVisible(false);
+            noteEA3.setVisible(false);
+            severitaEA3.setVisible(false);
 
             severitalinfoadenopatia.setSelectedItem("1");
             notelinfoadenopatia.setText("");
             checkBoxlinfoadenopatia.setSelected(false);
             severitalinfoadenopatia.setVisible(false);
             notelinfoadenopatia.setVisible(false);
+            noteEA4.setVisible(false);
+            severitaEA4.setVisible(false);
 
             severitatachicardia.setSelectedItem("1");
             notetachicardia.setText("");
             checkBoxtachicardia.setSelected(false);
             severitatachicardia.setVisible(false);
             notetachicardia.setVisible(false);
+            noteEA5.setVisible(false);
+            severitaEA5.setVisible(false);
 
             severitaCrisiIpertensiva.setSelectedItem("1");
             notetaCrisiIpertensiva.setText("");
             checkBoxCrisiIpertensiva.setSelected(false);
             severitaCrisiIpertensiva.setVisible(false);
             notetaCrisiIpertensiva.setVisible(false);
+            noteEA6.setVisible(false);
+            severitaEA6.setVisible(false);
 
             status.setVisible(false);
 
