@@ -23,7 +23,9 @@ import java.util.Objects;
 public class UIAdverseEvent extends JFrame implements ActionListener {
 
     //Controllo dei 3 Panel
-
+    /**
+     * Panel per visualizzare il riepilogo dati dell'utente
+     */
     JPanel infoUtente = new JPanel();
 
     /**
@@ -54,7 +56,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JButton backToCitizen;
 
     //Status "Pop-up" per indicare se la registrazione è avvenuta con successo
-
+    /**
+     * Status che indica se gli eventi avversi sono stati registrati con successo o meno (pop-up)
+     */
     JLabel status = new JLabel("Eventi Avversi Registrati!");
 
 
@@ -65,69 +69,168 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
-
+    /**
+     * Label Titolo situata nel Panelper registrare gli Eventi Avversi
+     */
     JLabel labelinsEventiAvversi = new JLabel("Inserisci Eventi avversi:");
 
+    /**
+     * Label Titolo situata nel Panel di riepilogo degli Eventi Avversi
+     */
     JLabel giaRegistrati = new JLabel("Eventi avversi già registrati");
 
 
     // Sintomatologia Mal di Testa
+
+    /**
+     * Label Mal di testa
+     */
     JLabel labelmalDiTesta = new JLabel("Mail di Testa");
+
+    /**
+     * CheckBox Mal di testa (flag)
+     */
 
     JCheckBox checkBoxMaldiTesta = new JCheckBox();
 
+    /**
+     * Severità Mal di testa (da 1 a 5)
+     */
+
     JComboBox severitaMDT = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
+
+    /**
+     * Note per l'evento avverso "Mal di Testa" max. 256 caratteri
+     */
 
     JTextField noteMalditesta = new JTextField();
 
 
     // Sintomatologia Febbre
+
+    /**
+     * Label Febbre
+     */
     JLabel labelFebbre = new JLabel("Febbre");
+
+    /**
+     * CheckBox Febbre (flag)
+     */
 
     JCheckBox checkBoxFebbre = new JCheckBox();
 
+    /**
+     * Severità Mal di testa (da 1 a 5)
+     */
+
     JComboBox severitaFebbre = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
+
+    /**
+     * Note per l'evento avverso "Febbre" max. 256 caratteri
+     */
 
     JTextField noteFebbre = new JTextField();
 
 
     // Sintomatologia Dolori Muscolari e/o Articolari
 
+    /**
+     * Label Dolori Muscolari e/o Articolari
+     */
+
     JLabel labelDMA = new JLabel("Dolori Mus. e Art.");
+
+    /**
+     * CheckBox Dolori Muscolari e/o Articolari (flag)
+     */
 
     JCheckBox checkBoxDMA = new JCheckBox();
 
+    /**
+     * Severità Dolori Muscolari e/o Articolari (da 1 a 5)
+     */
+
     JComboBox severitaDMA = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
+
+    /**
+     * Note per l'evento avverso "Dolori Muscolari e/o Articolari" max. 256 caratteri
+     */
 
     JTextField noteDMA = new JTextField();
 
 
     // Sintomatologia Linfoadenopatia
+
+    /**
+     * Label Linfoadenopatia
+     */
     JLabel labellinfoadenopatia = new JLabel("Linfoadenopatia");
+
+    /**
+     * CheckBox Linfoadenopatia (flag)
+     */
 
     JCheckBox checkBoxlinfoadenopatia = new JCheckBox();
 
+    /**
+     * Severità Linfoadenopatia (da 1 a 5)
+     */
+
     JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
 
+    /**
+     * Note per l'evento avverso "Linfoadenopatia" max. 256 caratteri
+     */
 
-    // Sintomatologia Tachicardia
     JTextField notelinfoadenopatia = new JTextField();
 
+    // Sintomatologia Tachicardia
+
+    /**
+     * Label Tachicardia
+     */
     JLabel labeltachicardia = new JLabel("Tachicardia");
 
+    /**
+     * CheckBox Tachicardia (flag)
+     */
     JCheckBox checkBoxtachicardia = new JCheckBox();
 
+    /**
+     * Severità Tachicardia (da 1 a 5)
+     */
+
     JComboBox severitatachicardia = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
+
+    /**
+     * Note per l'evento avverso "Tachicardia" max. 256 caratteri
+     */
 
     JTextField notetachicardia = new JTextField();
 
 
     // Sintomatologia Crisi Ipertensiva
+
+    /**
+     * Label Crisi Ipertensiva
+     */
     JLabel labelCrisiIpertensiva = new JLabel("Crisi Ipertensiva");
+
+    /**
+     * CheckBox Crisi Ipertensiva (flag)
+     */
 
     JCheckBox checkBoxCrisiIpertensiva = new JCheckBox();
 
+
+    /**
+     * Severità Crisi Ipertensiva (da 1 a 5)
+     */
     JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{"1", "2", "3", "4", "5"});
+
+    /**
+     * Note per l'evento avverso "Crisi Ipertensiva" max. 256 caratteri
+     */
 
     JTextField notetaCrisiIpertensiva = new JTextField();
 
@@ -203,7 +306,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     //Label informativa per far capire all'utente che deve schiacciare
     // il quadratino per inserire severità ed eventuali note per l'evento avverso selezionato
 
-    JLabel premiQuadrato = new JLabel("Se hai avuto uno di questi simboli clicca il quadratino");
+
+    /**
+     * Label informazioni pulsante quadrato eventi avversi
+     */
+    JLabel premiQuadrato = new JLabel("Se hai avuto uno di questi sintomi clicca il quadratino");
 
 
 
@@ -584,6 +691,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             this.dispose();
             new UICitizen();
         } else if (e.getSource() == switcha) {
+            //Passaggio da un Panel all'altro
+            //in seguito inserire comando automatico che capisca se gli eventi avversi sono registrati o meno
             if (switcha.isSelected()) {
                 //sistemare grafica
                 add(riepilogoEventiAvversiPersonali).setVisible(false);
