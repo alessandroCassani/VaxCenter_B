@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica dim x psw in UIRegisterCitizen.java">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica dim e colore psw in UIRegisterCitizen.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
     </list>
@@ -441,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664178786492</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="modifica dim e colore psw in UIRegisterCitizen.java">
+      <created>1664179260879</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1664179260879</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica allineamento choosingRoles" />
     <MESSAGE value="modifica allinemanto icone nei Button della intera UI" />
     <MESSAGE value="modifiche tdimensioni testo dimenticate" />
     <MESSAGE value="modifiche label di info sopra textField" />
@@ -496,6 +503,7 @@
     <MESSAGE value="modifica dim weight psw in UIRegisterCitizen.java" />
     <MESSAGE value="modifica dim width psw in UIRegisterCitizen.java" />
     <MESSAGE value="modifica dim x psw in UIRegisterCitizen.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica dim x psw in UIRegisterCitizen.java" />
+    <MESSAGE value="modifica dim e colore psw in UIRegisterCitizen.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica dim e colore psw in UIRegisterCitizen.java" />
   </component>
 </project>
