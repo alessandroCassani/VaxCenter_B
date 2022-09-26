@@ -28,9 +28,11 @@ public class UICitizen extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione registra centro cittadino
      */
-
     JButton registraCittadino = new JButton();
 
+    /**
+     * Label di login, quando premuto avvio UI di login
+     */
     JLabel login = new JLabel("Login");
 
 
@@ -41,7 +43,10 @@ public class UICitizen extends JFrame implements ActionListener {
     JButton backToChoosingRooles;
 
     /**
-     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata di menu' del cittadino
+     *
+     * @author Paolo Bruscagin
+     * @author Alessandro Cassani
      */
 
     public UICitizen() {
@@ -96,8 +101,6 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.addActionListener(this);
         registraCittadino.setOpaque(true);
 
-
-
         backToChoosingRooles = new JButton("INDIETRO");
         backToChoosingRooles.setBounds(600, 400, 350, 95);
         backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
@@ -108,7 +111,6 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.addActionListener(this);
         backToChoosingRooles.setOpaque(true);
 
-
         setLayout(null);
         add(cercaCentroVaccinale);
         add(registraCittadino);
@@ -116,10 +118,8 @@ public class UICitizen extends JFrame implements ActionListener {
         add(backToChoosingRooles);
 
         //Icona avvio del programma
-
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
-
         setTitle("Cittadino");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

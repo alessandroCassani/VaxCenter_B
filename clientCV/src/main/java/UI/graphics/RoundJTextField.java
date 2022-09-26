@@ -39,7 +39,7 @@ public class RoundJTextField extends JPasswordField {
      * metodo che permette la colorazione e la gestione dell'angolatura del bordo del rettangolo associato alla RoundJTextField
      * @param g  the <code>Graphics</code> context in which to paint
      *
-     * @author Alessandro Cassaniv
+     * @author Alessandro Cassani
      */
     protected void paintBorder(Graphics g) {
         g.setColor(new Color(65, 102, 245));
