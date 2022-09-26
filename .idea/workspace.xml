@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="RoundJTextField.java settata echoChar(0) di default, modificata solo in campo password e ripeti password in UIRegisterCitizen.java">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
-    </list>
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica dim psw in UIRegisterCitizen.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -413,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664177788707</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="modifica dim psw in UIRegisterCitizen.java">
+      <created>1664178059337</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1664178059337</updated>
+    </task>
+    <task id="LOCAL-00040" summary="modifica dim psw in UIRegisterCitizen.java">
+      <created>1664178309254</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1664178309254</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finita modifica UICiti" />
     <MESSAGE value="aggiunta mouseListener to accedi button" />
     <MESSAGE value="aggiunta mouseListener to accedi label" />
     <MESSAGE value="modifiche dimensioni" />
@@ -468,6 +478,7 @@
     <MESSAGE value="aggiuntaRoundJTextField in UIRegisterCitizen.java, e caratteri italic" />
     <MESSAGE value="RoundJTextField.java settata allineamento orizzontale in classe" />
     <MESSAGE value="RoundJTextField.java settata echoChar(0) di default, modificata solo in campo password e ripeti password in UIRegisterCitizen.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="RoundJTextField.java settata echoChar(0) di default, modificata solo in campo password e ripeti password in UIRegisterCitizen.java" />
+    <MESSAGE value="modifica dim psw in UIRegisterCitizen.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica dim psw in UIRegisterCitizen.java" />
   </component>
 </project>
