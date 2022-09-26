@@ -1,0 +1,357 @@
+Index: clientCV/src/main/java/UI/UIAdverseEvent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.Objects;\r\n\r\n/**\r\n *\r\n * @author Paolo Bruscagin\r\n */\r\n\r\npublic class UIAdverseEvent extends JFrame implements ActionListener {\r\n\r\n    /**\r\n     * Panel per registrare gli eventi avversi\r\n     */\r\n\r\n    JPanel inserisciEventiAvversi = new JPanel();\r\n    /**\r\n     * Panel pervisualizzare gli eventi avversi già registrati\r\n     */\r\n    JPanel riepilogoEventiAvversiPersonali = new JPanel();\r\n\r\n    /**\r\n     * Bottone per pulire tutti gli elementi della JPanel inserisciEventiAvversi\r\n     */\r\n    JButton pulisciEventiAvversi;\r\n\r\n    JLabel status = new JLabel(\"Eventi Avversi Registrati!\");\r\n\r\n\r\n    JCheckBox switcha = new JCheckBox();\r\n\r\n    /**\r\n     * Bottone per registrare gli eventi avversi\r\n     */\r\n    JButton registraEA = new JButton(\"REGISTRA\");\r\n\r\n    /**\r\n     * Bottone per tornare alle UICitizen\r\n     */\r\n    JButton backToCitizen;\r\n\r\n    JLabel labelinsEventiAvversi = new JLabel(\"Inserisci Eventi avversi\");\r\n    JLabel giaRegistrati = new JLabel(\"Eventi avversi già registrati\");\r\n\r\n\r\n    JLabel labelmalDiTesta = new JLabel(\"Mail di Testa\");\r\n\r\n    JCheckBox checkBoxMaldiTesta = new JCheckBox();\r\n\r\n    JComboBox severitaMDT = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n    JTextField noteMalditesta = new JTextField();\r\n\r\n    JLabel labelFebbre = new JLabel(\"Febbre\");\r\n\r\n    JCheckBox checkBoxFebbre = new JCheckBox();\r\n\r\n    JComboBox severitaFebbre = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n    JTextField noteFebbre = new JTextField();\r\n\r\n    JLabel labelDMA = new JLabel(\"Dolori Mus. e Art.\");\r\n\r\n    JCheckBox checkBoxDMA = new JCheckBox();\r\n\r\n    JComboBox severitaDMA = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n\r\n    JTextField noteDMA = new JTextField();\r\n\r\n    JLabel labellinfoadenopatia = new JLabel(\"Linfoadenopatia\");\r\n\r\n    JCheckBox checkBoxlinfoadenopatia = new JCheckBox();\r\n\r\n    JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n\r\n    JTextField notelinfoadenopatia = new JTextField();\r\n\r\n    JLabel labeltachicardia = new JLabel(\"Tachicardia\");\r\n\r\n    JCheckBox checkBoxtachicardia = new JCheckBox();\r\n\r\n    JComboBox severitatachicardia = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n\r\n    JTextField notetachicardia = new JTextField();\r\n\r\n\r\n    JLabel labelCrisiIpertensiva = new JLabel(\"Crisi Ipertensiva\");\r\n\r\n    JCheckBox checkBoxCrisiIpertensiva = new JCheckBox();\r\n\r\n    JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{\"1\", \"2\", \"3\", \"4\", \"5\"});\r\n\r\n\r\n    JTextField notetaCrisiIpertensiva = new JTextField();\r\n\r\n    String data[][] = {{\"Mal di testa\", \"0\",\"/\"},{\"Febbre\", \"0\",\"/\"},{\"Dolori Musc. Art.\", \"0\",\"/\"},{\"Linfoanedopatia\", \"0\",\"/\"},{\"Tachicardia\", \"0\",\"/\"},{\"Crisi Ipertensiva\", \"0\",\"/\"}};\r\n    String coloumn[]= {\"NOME\", \"SEVERITA'\", \"NOTE\"};\r\n\r\n    /**\r\n     * Tabella che mostra il riepilogo degli eventi avversi già registrati\r\n     */\r\n    JTable tabellaRiepilogo = new JTable(data, coloumn);\r\n\r\n\r\n\r\n\r\n\r\n\r\n    public UIAdverseEvent(){\r\n\r\n        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);\r\n        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);\r\n        Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);\r\n\r\n\r\n        JLabel titoloRiepilogo = new JLabel(\"Riepilogo Dati:\");\r\n        titoloRiepilogo.setFont(new Font(\"Georgia\", Font.BOLD, 20));\r\n        titoloRiepilogo.setBounds(100, 50, 200, 30);\r\n\r\n        JLabel nomeUtente = new JLabel(\"Nome: \");\r\n        nomeUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        nomeUtente.setBounds(20, 100, 200, 20);\r\n\r\n        JLabel cognomeUtente = new JLabel(\"Cognome: \");\r\n        cognomeUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        cognomeUtente.setBounds(20, 150, 200, 20);\r\n\r\n        JLabel codiceFiscaleUtente = new JLabel(\"Codice Fiscale: \");\r\n        codiceFiscaleUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        codiceFiscaleUtente.setBounds(20, 200, 200, 20);\r\n\r\n        JLabel emailUtente = new JLabel(\"Email: \");\r\n        emailUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        emailUtente.setBounds(20, 250, 200, 20);\r\n\r\n        JLabel UserIDUtente = new JLabel(\"UserID: \");\r\n        UserIDUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        UserIDUtente.setBounds(20, 300, 200, 20);\r\n\r\n        JLabel IDUnivocoUtente = new JLabel(\"ID Univoco: \");\r\n        IDUnivocoUtente.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        IDUnivocoUtente.setBounds(20, 350, 200, 20);\r\n\r\n        JLabel VaccinatoPresso = new JLabel(\"Vaccinato presso: \");\r\n        VaccinatoPresso.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        VaccinatoPresso.setBounds(20, 400, 200, 20);\r\n\r\n\r\n\r\n\r\n\r\n        //Mal di Testa\r\n\r\n        labelmalDiTesta.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labelmalDiTesta.setBounds(20, 50, 100, 20);\r\n\r\n\r\n        checkBoxMaldiTesta.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxMaldiTesta.setBounds(130, 57, 20, 15);\r\n        checkBoxMaldiTesta.addActionListener(this);\r\n        checkBoxMaldiTesta.setBackground(new Color(209, 245, 250));\r\n\r\n        severitaMDT.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitaMDT.setBounds(160, 50, 60, 30);\r\n        severitaMDT.setBackground(Color.WHITE);\r\n\r\n        noteMalditesta.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        noteMalditesta.setPreferredSize(new Dimension(325, 75));\r\n        noteMalditesta.setBounds(250, 50, 250, 30);\r\n\r\n        labelFebbre.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labelFebbre.setBounds(20, 105, 100, 20);\r\n\r\n        checkBoxFebbre.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxFebbre.setBounds(130, 107, 20, 15);\r\n        checkBoxFebbre.addActionListener(this);\r\n        checkBoxFebbre.setBackground(new Color(209, 245, 250));\r\n\r\n        severitaFebbre.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitaFebbre.setBounds(160, 105, 60, 30);\r\n        severitaFebbre.setBackground(Color.WHITE);\r\n\r\n        noteFebbre.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        noteFebbre.setPreferredSize(new Dimension(325, 75));\r\n        noteFebbre.setBounds(250, 105, 250, 30);\r\n\r\n        labelDMA.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labelDMA.setBounds(20, 155, 100, 20);\r\n\r\n        checkBoxDMA.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxDMA.setBounds(130, 157, 20, 15);\r\n        checkBoxDMA.addActionListener(this);\r\n        checkBoxDMA.setBackground(new Color(209, 245, 250));\r\n\r\n        severitaDMA.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitaDMA.setBounds(160, 155, 60, 30);\r\n        severitaDMA.setBackground(Color.WHITE);\r\n\r\n        noteDMA.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        noteDMA.setPreferredSize(new Dimension(325, 75));\r\n        noteDMA.setBounds(250, 155, 250, 30);\r\n\r\n        labellinfoadenopatia.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labellinfoadenopatia.setBounds(20, 205, 100, 20);\r\n\r\n        checkBoxlinfoadenopatia.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxlinfoadenopatia.setBounds(130, 207, 20, 15);\r\n        checkBoxlinfoadenopatia.addActionListener(this);\r\n        checkBoxlinfoadenopatia.setBackground(new Color(209, 245, 250));\r\n\r\n        severitalinfoadenopatia.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitalinfoadenopatia.setBounds(160, 205, 60, 30);\r\n        severitalinfoadenopatia.setBackground(Color.WHITE);\r\n\r\n        notelinfoadenopatia.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        notelinfoadenopatia.setPreferredSize(new Dimension(325, 75));\r\n        notelinfoadenopatia.setBounds(250, 205, 250, 30);\r\n\r\n        labeltachicardia.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labeltachicardia.setBounds(20, 255, 100, 20);\r\n\r\n        checkBoxtachicardia.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxtachicardia.setBounds(130, 257, 20, 15);\r\n        checkBoxtachicardia.addActionListener(this);\r\n        checkBoxtachicardia.setBackground(new Color(209, 245, 250));\r\n\r\n        severitatachicardia.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitatachicardia.setBounds(160, 255, 60, 30);\r\n        severitatachicardia.setBackground(Color.WHITE);\r\n\r\n        notetachicardia.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        notetachicardia.setPreferredSize(new Dimension(325, 75));\r\n        notetachicardia.setBounds(250, 255, 250, 30);\r\n\r\n        labelCrisiIpertensiva.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labelCrisiIpertensiva.setBounds(20, 305, 100, 20);\r\n\r\n        checkBoxCrisiIpertensiva.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        checkBoxCrisiIpertensiva.setBounds(130, 307, 20, 15);\r\n        checkBoxCrisiIpertensiva.addActionListener(this);\r\n        checkBoxCrisiIpertensiva.setBackground(new Color(209, 245, 250));\r\n\r\n        severitaCrisiIpertensiva.setFont(new Font(\"Arial\", Font.BOLD, 12));\r\n        severitaCrisiIpertensiva.setBounds(160, 305, 60, 30);\r\n        severitaCrisiIpertensiva.setBackground(Color.WHITE);\r\n\r\n        notetaCrisiIpertensiva.setFont(new Font(\"Arial\", Font.BOLD, 10));\r\n        notetaCrisiIpertensiva.setPreferredSize(new Dimension(325, 75));\r\n        notetaCrisiIpertensiva.setBounds(250, 305, 250, 30);\r\n\r\n\r\n        //\r\n\r\n\r\n\r\n        riepilogoEventiAvversiPersonali.setBounds(400, 25, 550, 500);\r\n        riepilogoEventiAvversiPersonali.setLayout(null);\r\n        riepilogoEventiAvversiPersonali.setBackground(new Color(209, 245, 250));\r\n        giaRegistrati.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);\r\n        tabellaRiepilogo.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        tabellaRiepilogo.setBounds(50,50,450,420);\r\n        tabellaRiepilogo.setBackground(new Color(209, 245, 250));\r\n\r\n        tabellaRiepilogo.setRowHeight(60);\r\n        tabellaRiepilogo.setBorder(bordobtn);\r\n        getContentPane().add(tabellaRiepilogo);\r\n\r\n\r\n\r\n        tabellaRiepilogo.setEnabled(false);\r\n        riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);\r\n\r\n        add(riepilogoEventiAvversiPersonali).setVisible(false);\r\n\r\n        switcha.setFont(new Font(\"Arial\", Font.BOLD, 15));\r\n        switcha.setBounds(200, 487, 20, 15);\r\n        switcha.addActionListener(this);\r\n        switcha.setBackground(new Color(181, 226, 232));\r\n\r\n\r\n        registraEA.setBounds(300, 425, 150, 50);\r\n        registraEA.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        registraEA.setBackground(new Color(0,0,128));\r\n        registraEA.setForeground(Color.WHITE);\r\n        registraEA.setBorder(bordobtn);\r\n        registraEA.setFocusable(false);\r\n        registraEA.addActionListener(this);\r\n        registraEA.setOpaque(true);\r\n\r\n        ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/coloroPul50.png\")));\r\n\r\n        pulisciEventiAvversi = new JButton(pul);\r\n        pulisciEventiAvversi.setBounds(470, 425, 50, 50);\r\n        pulisciEventiAvversi.setFont(new Font(\"Georgia\", Font.BOLD, 17));\r\n        pulisciEventiAvversi.setBackground(new Color(209, 245, 250));\r\n        pulisciEventiAvversi.setForeground(Color.WHITE);\r\n        pulisciEventiAvversi.setBorder(bordobtnPul);\r\n        pulisciEventiAvversi.setFocusable(false);\r\n        pulisciEventiAvversi.addActionListener(this);\r\n        pulisciEventiAvversi.setOpaque(true);\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/color50ind.png\")));\r\n\r\n        backToCitizen = new JButton(ind);\r\n        backToCitizen.setBounds(10, 5, 55 , 55);\r\n        backToCitizen.setFont(new Font(\"Georgia\", Font.BOLD, 20));\r\n        backToCitizen.setBackground(new Color(181, 226, 232));\r\n        backToCitizen.setForeground(Color.WHITE);\r\n        backToCitizen.setBorder(bordobtnInd);\r\n        backToCitizen.setFocusable(false);\r\n        backToCitizen.addActionListener(this);\r\n        backToCitizen.setOpaque(true);\r\n\r\n        status.setBounds(30, 400, 250, 30);\r\n        status.setFont(new Font(\"Georgia\", Font.BOLD, 15));\r\n        status.setBackground(new Color(209, 245, 250));\r\n        status.setForeground(new Color(0x07AF45));\r\n        status.setVisible(false);\r\n\r\n\r\n\r\n\r\n        add(backToCitizen);\r\n        add(switcha);\r\n        add(titoloRiepilogo);\r\n        add(nomeUtente);\r\n        add(cognomeUtente);\r\n        add(codiceFiscaleUtente);\r\n        add(emailUtente);\r\n        add(UserIDUtente);\r\n        add(IDUnivocoUtente);\r\n        add(VaccinatoPresso);\r\n\r\n\r\n        inserisciEventiAvversi.setBounds(400, 25, 550, 500);\r\n        inserisciEventiAvversi.setLayout(null);\r\n        inserisciEventiAvversi.setBackground(new Color(209, 245, 250));\r\n\r\n        labelinsEventiAvversi.setFont(new Font(\"Georgia\", Font.BOLD, 12));\r\n        labelinsEventiAvversi.setBounds(20, 20, 200, 20);\r\n        inserisciEventiAvversi.add(registraEA);\r\n        inserisciEventiAvversi.add(pulisciEventiAvversi);\r\n        inserisciEventiAvversi.add(labelinsEventiAvversi);\r\n        inserisciEventiAvversi.add(labelmalDiTesta);\r\n        inserisciEventiAvversi.add(checkBoxMaldiTesta);\r\n        inserisciEventiAvversi.add(severitaMDT).setVisible(false);\r\n        inserisciEventiAvversi.add(noteMalditesta).setVisible(false);\r\n        inserisciEventiAvversi.add(labelFebbre);\r\n        inserisciEventiAvversi.add(checkBoxFebbre);\r\n        inserisciEventiAvversi.add(severitaFebbre).setVisible(false);\r\n        inserisciEventiAvversi.add(noteFebbre).setVisible(false);\r\n        inserisciEventiAvversi.add(labelDMA);\r\n        inserisciEventiAvversi.add(checkBoxDMA);\r\n        inserisciEventiAvversi.add(severitaDMA).setVisible(false);\r\n        inserisciEventiAvversi.add(noteDMA).setVisible(false);\r\n        inserisciEventiAvversi.add(labellinfoadenopatia);\r\n        inserisciEventiAvversi.add(checkBoxlinfoadenopatia);\r\n        inserisciEventiAvversi.add(severitalinfoadenopatia).setVisible(false);\r\n        inserisciEventiAvversi.add(notelinfoadenopatia).setVisible(false);\r\n        inserisciEventiAvversi.add(labeltachicardia);\r\n        inserisciEventiAvversi.add(checkBoxtachicardia);\r\n        inserisciEventiAvversi.add(severitatachicardia).setVisible(false);\r\n        inserisciEventiAvversi.add(notetachicardia).setVisible(false);\r\n        inserisciEventiAvversi.add(labelCrisiIpertensiva);\r\n        inserisciEventiAvversi.add(checkBoxCrisiIpertensiva);\r\n        inserisciEventiAvversi.add(severitaCrisiIpertensiva).setVisible(false);\r\n        inserisciEventiAvversi.add(notetaCrisiIpertensiva).setVisible(false);\r\n        inserisciEventiAvversi.add(status);\r\n\r\n        add(inserisciEventiAvversi).setVisible(false);\r\n\r\n\r\n        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/images/logo.png\")));\r\n        setIconImage(logo.getImage());\r\n\r\n        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();\r\n        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);\r\n        setTitle(\"Eventi Avversi\");\r\n        setForeground(Color.WHITE);\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        setSize (1000,600);\r\n        getContentPane().setBackground(new Color(181, 226, 232));\r\n        setLocationRelativeTo(null);\r\n        setResizable(false);\r\n        setVisible(true);\r\n\r\n    }\r\n\r\n    /**\r\n     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente\r\n     * @param e the event to be processed\r\n     *\r\n     * @author Paolo Bruscagin\r\n     */\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        if (e.getSource() == backToCitizen) {\r\n            this.dispose();\r\n            new UICitizen();\r\n        } else if (e.getSource() == switcha) {\r\n            if (switcha.isSelected()) {\r\n\r\n                riepilogoEventiAvversiPersonali.setVisible(false);\r\n                add(inserisciEventiAvversi).setVisible(true);\r\n\r\n            } else if(!switcha.isSelected()){\r\n                inserisciEventiAvversi.setVisible(false);\r\n                add(riepilogoEventiAvversiPersonali).setVisible(true);\r\n\r\n\r\n\r\n\r\n\r\n\r\n            }\r\n\r\n        } else if (e.getSource() == checkBoxMaldiTesta) {\r\n            if (checkBoxMaldiTesta.isSelected()) {\r\n                severitaMDT.setVisible(true);\r\n                noteMalditesta.setVisible(true);\r\n                severitaMDT.setSelectedItem(\"1\");\r\n                noteMalditesta.setText(\"\");\r\n\r\n            }else{\r\n                severitaMDT.setVisible(false);\r\n                noteMalditesta.setVisible(false);\r\n                severitaMDT.setSelectedItem(\"1\");\r\n                noteMalditesta.setText(\"\");\r\n            }\r\n        }\r\n        else if (e.getSource() == checkBoxFebbre) {\r\n            if (checkBoxFebbre.isSelected()) {\r\n                severitaFebbre.setVisible(true);\r\n                noteFebbre.setVisible(true);\r\n                severitaFebbre.setSelectedItem(\"1\");\r\n                noteFebbre.setText(\"\");\r\n\r\n            }else{\r\n                severitaFebbre.setVisible(false);\r\n                noteFebbre.setVisible(false);\r\n                severitaFebbre.setSelectedItem(\"1\");\r\n                noteFebbre.setText(\"\");\r\n            }\r\n        }\r\n        else if (e.getSource() == checkBoxDMA) {\r\n            if (checkBoxDMA.isSelected()) {\r\n                severitaDMA.setVisible(true);\r\n                noteDMA.setVisible(true);\r\n                severitaDMA.setSelectedItem(\"1\");\r\n                noteDMA.setText(\"\");\r\n\r\n            }else{\r\n                severitaDMA.setVisible(false);\r\n                noteDMA.setVisible(false);\r\n                severitaDMA.setSelectedItem(\"1\");\r\n                noteDMA.setText(\"\");\r\n            }\r\n        }\r\n        else if (e.getSource() == checkBoxlinfoadenopatia) {\r\n            if (checkBoxlinfoadenopatia.isSelected()) {\r\n                severitalinfoadenopatia.setVisible(true);\r\n                notelinfoadenopatia.setVisible(true);\r\n                severitalinfoadenopatia.setSelectedItem(\"1\");\r\n                notelinfoadenopatia.setText(\"\");\r\n\r\n            }else{\r\n                severitalinfoadenopatia.setVisible(false);\r\n                notelinfoadenopatia.setVisible(false);\r\n                severitalinfoadenopatia.setSelectedItem(\"1\");\r\n                notelinfoadenopatia.setText(\"\");\r\n            }\r\n        }\r\n        else if (e.getSource() == checkBoxtachicardia) {\r\n            if (checkBoxtachicardia.isSelected()) {\r\n                severitatachicardia.setVisible(true);\r\n                notetachicardia.setVisible(true);\r\n                severitatachicardia.setSelectedItem(\"1\");\r\n                notetachicardia.setText(\"\");\r\n\r\n            }else{\r\n                severitatachicardia.setVisible(false);\r\n                notetachicardia.setVisible(false);\r\n                severitatachicardia.setSelectedItem(\"1\");\r\n                notetachicardia.setText(\"\");\r\n            }\r\n        }\r\n        else if (e.getSource() == checkBoxCrisiIpertensiva) {\r\n            if (checkBoxCrisiIpertensiva.isSelected()) {\r\n                severitaCrisiIpertensiva.setVisible(true);\r\n                notetaCrisiIpertensiva.setVisible(true);\r\n                severitaCrisiIpertensiva.setSelectedItem(\"1\");\r\n                notetaCrisiIpertensiva.setText(\"\");\r\n\r\n            }else{\r\n                severitaCrisiIpertensiva.setVisible(false);\r\n                notetaCrisiIpertensiva.setVisible(false);\r\n                severitaCrisiIpertensiva.setSelectedItem(\"1\");\r\n                notetaCrisiIpertensiva.setText(\"\");\r\n            }\r\n        }else if(e.getSource() == pulisciEventiAvversi){\r\n\r\n            severitaMDT.setSelectedItem(\"1\");\r\n            noteMalditesta.setText(\"\");\r\n            checkBoxMaldiTesta.setSelected(false);\r\n            severitaMDT.setVisible(false);\r\n            noteMalditesta.setVisible(false);\r\n\r\n            severitaFebbre.setSelectedItem(\"1\");\r\n            noteFebbre.setText(\"\");\r\n            checkBoxFebbre.setSelected(false);\r\n            severitaFebbre.setVisible(false);\r\n            noteFebbre.setVisible(false);\r\n\r\n            severitaDMA.setSelectedItem(\"1\");\r\n            noteDMA.setText(\"\");\r\n            checkBoxDMA.setSelected(false);\r\n            severitaDMA.setVisible(false);\r\n            noteDMA.setVisible(false);\r\n\r\n            severitalinfoadenopatia.setSelectedItem(\"1\");\r\n            notelinfoadenopatia.setText(\"\");\r\n            checkBoxlinfoadenopatia.setSelected(false);\r\n            severitalinfoadenopatia.setVisible(false);\r\n            notelinfoadenopatia.setVisible(false);\r\n\r\n            severitatachicardia.setSelectedItem(\"1\");\r\n            notetachicardia.setText(\"\");\r\n            checkBoxtachicardia.setSelected(false);\r\n            severitatachicardia.setVisible(false);\r\n            notetachicardia.setVisible(false);\r\n\r\n            severitaCrisiIpertensiva.setSelectedItem(\"1\");\r\n            notetaCrisiIpertensiva.setText(\"\");\r\n            checkBoxCrisiIpertensiva.setSelected(false);\r\n            severitaCrisiIpertensiva.setVisible(false);\r\n            notetaCrisiIpertensiva.setVisible(false);\r\n\r\n            status.setVisible(false);\r\n\r\n\r\n\r\n        }else if(e.getSource() == registraEA){\r\n            status.setVisible(true);\r\n\r\n        }\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clientCV/src/main/java/UI/UIAdverseEvent.java b/clientCV/src/main/java/UI/UIAdverseEvent.java
+--- a/clientCV/src/main/java/UI/UIAdverseEvent.java	(revision 2a65ed2b8dbbe69575a7134a0c4066b4f544db4e)
++++ b/clientCV/src/main/java/UI/UIAdverseEvent.java	(date 1664183758161)
+@@ -152,8 +152,7 @@
+ 
+         JLabel VaccinatoPresso = new JLabel("Vaccinato presso: ");
+         VaccinatoPresso.setFont(new Font("Georgia", Font.BOLD, 15));
+-        VaccinatoPresso.setBounds(20, 400, 200, 20);
+-
++        VaccinatoPresso.setBounds(40, 400, 200, 20);
+ 
+ 
+ 
+@@ -259,28 +258,16 @@
+ 
+ 
+         //
+-
++        inserisciEventiAvversi.setBounds(400, 25, 550, 500);
++        inserisciEventiAvversi.setLayout(null);
++        inserisciEventiAvversi.setBackground(new Color(209, 245, 250));
+ 
+ 
+         riepilogoEventiAvversiPersonali.setBounds(400, 25, 550, 500);
+         riepilogoEventiAvversiPersonali.setLayout(null);
+         riepilogoEventiAvversiPersonali.setBackground(new Color(209, 245, 250));
+-        giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 15));
+-        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);
+-        tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
+-        tabellaRiepilogo.setBounds(50,50,450,420);
+-        tabellaRiepilogo.setBackground(new Color(209, 245, 250));
+-
+-        tabellaRiepilogo.setRowHeight(60);
+-        tabellaRiepilogo.setBorder(bordobtn);
+-        getContentPane().add(tabellaRiepilogo);
+ 
+ 
+-
+-        tabellaRiepilogo.setEnabled(false);
+-        riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
+-
+-        add(riepilogoEventiAvversiPersonali).setVisible(false);
+ 
+         switcha.setFont(new Font("Arial", Font.BOLD, 15));
+         switcha.setBounds(200, 487, 20, 15);
+@@ -311,7 +298,19 @@
+ 
+ 
+ 
++        giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 15));
++        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);
++        tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
++        tabellaRiepilogo.setBounds(50,50,450,420);
++        tabellaRiepilogo.setBackground(new Color(209, 245, 250));
++
++        tabellaRiepilogo.setRowHeight(60);
++        tabellaRiepilogo.setBorder(bordobtn);
++        getContentPane().add(tabellaRiepilogo);
+ 
++
++        tabellaRiepilogo.setEnabled(false);
++        riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
+ 
+ 
+ 
+@@ -332,12 +331,15 @@
+         status.setBackground(new Color(209, 245, 250));
+         status.setForeground(new Color(0x07AF45));
+         status.setVisible(false);
++        inserisciEventiAvversi.add(status);
+ 
+ 
+ 
+ 
+         add(backToCitizen);
+         add(switcha);
++        add(inserisciEventiAvversi).setVisible(false);
++        add(riepilogoEventiAvversiPersonali).setVisible(true);
+         add(titoloRiepilogo);
+         add(nomeUtente);
+         add(cognomeUtente);
+@@ -347,81 +349,70 @@
+         add(IDUnivocoUtente);
+         add(VaccinatoPresso);
+ 
++        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
++        setIconImage(logo.getImage());
++
++        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
++        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
++        setTitle("Eventi Avversi");
++        setForeground(Color.WHITE);
++        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
++        setSize (1000,600);
++        getContentPane().setBackground(new Color(181, 226, 232));
++        setLocationRelativeTo(null);
++        setResizable(false);
++        setVisible(true);
+ 
+-        inserisciEventiAvversi.setBounds(400, 25, 550, 500);
+-        inserisciEventiAvversi.setLayout(null);
+-        inserisciEventiAvversi.setBackground(new Color(209, 245, 250));
++    }
+ 
+-        labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));
+-        labelinsEventiAvversi.setBounds(20, 20, 200, 20);
+-        inserisciEventiAvversi.add(registraEA);
+-        inserisciEventiAvversi.add(pulisciEventiAvversi);
+-        inserisciEventiAvversi.add(labelinsEventiAvversi);
+-        inserisciEventiAvversi.add(labelmalDiTesta);
+-        inserisciEventiAvversi.add(checkBoxMaldiTesta);
+-        inserisciEventiAvversi.add(severitaMDT).setVisible(false);
+-        inserisciEventiAvversi.add(noteMalditesta).setVisible(false);
+-        inserisciEventiAvversi.add(labelFebbre);
+-        inserisciEventiAvversi.add(checkBoxFebbre);
+-        inserisciEventiAvversi.add(severitaFebbre).setVisible(false);
+-        inserisciEventiAvversi.add(noteFebbre).setVisible(false);
+-        inserisciEventiAvversi.add(labelDMA);
+-        inserisciEventiAvversi.add(checkBoxDMA);
+-        inserisciEventiAvversi.add(severitaDMA).setVisible(false);
+-        inserisciEventiAvversi.add(noteDMA).setVisible(false);
+-        inserisciEventiAvversi.add(labellinfoadenopatia);
+-        inserisciEventiAvversi.add(checkBoxlinfoadenopatia);
+-        inserisciEventiAvversi.add(severitalinfoadenopatia).setVisible(false);
+-        inserisciEventiAvversi.add(notelinfoadenopatia).setVisible(false);
+-        inserisciEventiAvversi.add(labeltachicardia);
+-        inserisciEventiAvversi.add(checkBoxtachicardia);
+-        inserisciEventiAvversi.add(severitatachicardia).setVisible(false);
+-        inserisciEventiAvversi.add(notetachicardia).setVisible(false);
+-        inserisciEventiAvversi.add(labelCrisiIpertensiva);
+-        inserisciEventiAvversi.add(checkBoxCrisiIpertensiva);
+-        inserisciEventiAvversi.add(severitaCrisiIpertensiva).setVisible(false);
+-        inserisciEventiAvversi.add(notetaCrisiIpertensiva).setVisible(false);
+-        inserisciEventiAvversi.add(status);
+-
+-        add(inserisciEventiAvversi).setVisible(false);
+-
+-
+-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
+-        setIconImage(logo.getImage());
+-
+-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+-        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+-        setTitle("Eventi Avversi");
+-        setForeground(Color.WHITE);
+-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+-        setSize (1000,600);
+-        getContentPane().setBackground(new Color(181, 226, 232));
+-        setLocationRelativeTo(null);
+-        setResizable(false);
+-        setVisible(true);
+-
+-    }
+-
+-    /**
+-     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+-     * @param e the event to be processed
+-     *
+-     * @author Paolo Bruscagin
+-     */
+-    @Override
+-    public void actionPerformed(ActionEvent e) {
+-        if (e.getSource() == backToCitizen) {
+-            this.dispose();
+-            new UICitizen();
+-        } else if (e.getSource() == switcha) {
+-            if (switcha.isSelected()) {
+-
+-                riepilogoEventiAvversiPersonali.setVisible(false);
+-                add(inserisciEventiAvversi).setVisible(true);
+-
+-            } else if(!switcha.isSelected()){
++    /**
++     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
++     * @param e the event to be processed
++     *
++     * @author Paolo Bruscagin
++     */
++    @Override
++    public void actionPerformed(ActionEvent e) {
++        if (e.getSource() == backToCitizen) {
++            this.dispose();
++            new UICitizen();
++        } else if (e.getSource() == switcha) {
++            if (switcha.isSelected()) {
++
++                riepilogoEventiAvversiPersonali.setVisible(false);
++                inserisciEventiAvversi.setVisible(true);
++                labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));
++                labelinsEventiAvversi.setBounds(20, 20, 200, 20);
++                inserisciEventiAvversi.add(registraEA);
++                inserisciEventiAvversi.add(pulisciEventiAvversi);
++                inserisciEventiAvversi.add(labelinsEventiAvversi);
++                inserisciEventiAvversi.add(labelmalDiTesta);
++                inserisciEventiAvversi.add(checkBoxMaldiTesta);
++                inserisciEventiAvversi.add(severitaMDT).setVisible(false);
++                inserisciEventiAvversi.add(noteMalditesta).setVisible(false);
++                inserisciEventiAvversi.add(labelFebbre);
++                inserisciEventiAvversi.add(checkBoxFebbre);
++                inserisciEventiAvversi.add(severitaFebbre).setVisible(false);
++                inserisciEventiAvversi.add(noteFebbre).setVisible(false);
++                inserisciEventiAvversi.add(labelDMA);
++                inserisciEventiAvversi.add(checkBoxDMA);
++                inserisciEventiAvversi.add(severitaDMA).setVisible(false);
++                inserisciEventiAvversi.add(noteDMA).setVisible(false);
++                inserisciEventiAvversi.add(labellinfoadenopatia);
++                inserisciEventiAvversi.add(checkBoxlinfoadenopatia);
++                inserisciEventiAvversi.add(severitalinfoadenopatia).setVisible(false);
++                inserisciEventiAvversi.add(notelinfoadenopatia).setVisible(false);
++                inserisciEventiAvversi.add(labeltachicardia);
++                inserisciEventiAvversi.add(checkBoxtachicardia);
++                inserisciEventiAvversi.add(severitatachicardia).setVisible(false);
++                inserisciEventiAvversi.add(notetachicardia).setVisible(false);
++                inserisciEventiAvversi.add(labelCrisiIpertensiva);
++                inserisciEventiAvversi.add(checkBoxCrisiIpertensiva);
++                inserisciEventiAvversi.add(severitaCrisiIpertensiva).setVisible(false);
++                inserisciEventiAvversi.add(notetaCrisiIpertensiva).setVisible(false);
++            } else {
+                 inserisciEventiAvversi.setVisible(false);
+-                add(riepilogoEventiAvversiPersonali).setVisible(true);
++                riepilogoEventiAvversiPersonali.setVisible(true);
+ 
+ 
+ 
+Index: clientCV/src/main/java/UI/WelcomeScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\n\r\nimport UI.graphics.CurvesPanel;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.net.URL;\r\n\r\n\r\npublic class WelcomeScreen extends JFrame {\r\n\r\n    Timer timer;\r\n    public WelcomeScreen() {\r\n        displayWelcomeScreen();\r\n    }\r\n\r\n    private void displayWelcomeScreen() {\r\n        final JWindow win = new JWindow(this);\r\n\r\n        win.setSize(1000,600);\r\n        win.setLocationRelativeTo(null);\r\n        win.setVisible(true);\r\n        CurvesPanel cp = new CurvesPanel();\r\n        win.add(cp);\r\n        // immagine di prova\r\n\r\n        // da sistemare\r\n        URL url = getClass().getResource(\"/images/sfondo.png\");\r\n        JLabel label = new JLabel(new ImageIcon(url));\r\n        label.setHorizontalAlignment(SwingConstants.CENTER);\r\n        cp.add(label);\r\n        cp.setBorder(BorderFactory.createLineBorder(Color.BLACK));\r\n        JProgressBar progressBar = new JProgressBar(0,60);\r\n\r\n\r\n        progressBar.setForeground(Color.decode(\"#ff930f\"));\r\n        win.add(BorderLayout.PAGE_END,progressBar);\r\n        // alla fine della pb viene aperta nella stessa posizione\r\n        win.revalidate();\r\n\r\n        timer = new Timer(60, new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                int value = progressBar.getValue();\r\n                if(value == 60) {\r\n                    win.dispose();\r\n                    new UIAdverseEvent();\r\n                    timer.stop();\r\n                } else {\r\n                    progressBar.setValue(value+4);\r\n                }\r\n            }\r\n        });\r\n        timer.start();\r\n    }\r\n    public static void main(String[] args) {\r\n        new WelcomeScreen();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clientCV/src/main/java/UI/WelcomeScreen.java b/clientCV/src/main/java/UI/WelcomeScreen.java
+--- a/clientCV/src/main/java/UI/WelcomeScreen.java	(revision 2a65ed2b8dbbe69575a7134a0c4066b4f544db4e)
++++ b/clientCV/src/main/java/UI/WelcomeScreen.java	(date 1664183758162)
+@@ -46,7 +46,7 @@
+                 int value = progressBar.getValue();
+                 if(value == 60) {
+                     win.dispose();
+-                    new UIAdverseEvent();
++                    new UIChoosingRooles();
+                     timer.stop();
+                 } else {
+                     progressBar.setValue(value+4);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6a756c39-fa39-4a16-a2a1-e9b428ae5872\" name=\"Changes\" comment=\"UIAdverseElements\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"CodeStyleSettingsInfer\">\r\n    <option name=\"done\" value=\"true\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"module-info\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"main\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2EoKIuzglBobAuLR0ZtXSyR9VOV\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Git.Branch.Popup.ShowAllRemotes\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\brusc\\Documents\\GitHub\\VaxCenter_B\\documentazione\" />\r\n      <recent name=\"C:\\Users\\brusc\\Documents\\GitHub\\VaxCenter_B\\clientCV\\src\\main\\resources\\images\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\util\\src\\main\\java\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\admin\\IdeaProjects\\VaxCenter_B\\clientCV\\src\\main\\java\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\src\\main\\resources\\images\" />\r\n      <recent name=\"C:\\Users\\damia\\Desktop\\Progetti\\VaxCenter_B\\clientCV\\src\\main\\java\\UI\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.WelcomeScreen\">\r\n    <configuration name=\"UILogin\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UI.UILogin\" />\r\n      <module name=\"clientCV\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UILoginToServer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UI.UILoginToServer\" />\r\n      <module name=\"serverCV\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"clientCV.UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UISplashScreen\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UI.UISplashScreen\" />\r\n      <module name=\"clientCV\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"clientCV.UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"WelcomeScreen\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UI.WelcomeScreen\" />\r\n      <module name=\"clientCV\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"UI.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.UILogin\" />\r\n      <item itemvalue=\"Application.UISplashScreen\" />\r\n      <item itemvalue=\"Application.UILoginToServer\" />\r\n      <item itemvalue=\"Application.WelcomeScreen\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.WelcomeScreen\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n        <item itemvalue=\"Application.UISplashScreen\" />\r\n        <item itemvalue=\"Application.WelcomeScreen\" />\r\n        <item itemvalue=\"Application.UILoginToServer\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6a756c39-fa39-4a16-a2a1-e9b428ae5872\" name=\"Changes\" comment=\"modifiche dimensioni UIChoosingRooles.java\" />\r\n      <created>1663256423679</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1663256423679</updated>\r\n      <workItem from=\"1663269559793\" duration=\"2778000\" />\r\n      <workItem from=\"1663278816959\" duration=\"88000\" />\r\n      <workItem from=\"1663318491994\" duration=\"1637000\" />\r\n      <workItem from=\"1663441032207\" duration=\"41000\" />\r\n      <workItem from=\"1663533990594\" duration=\"1579000\" />\r\n      <workItem from=\"1663599967457\" duration=\"1931000\" />\r\n      <workItem from=\"1663602155260\" duration=\"11809000\" />\r\n      <workItem from=\"1663617746883\" duration=\"77000\" />\r\n      <workItem from=\"1664176936818\" duration=\"130000\" />\r\n      <workItem from=\"1664177083350\" duration=\"133000\" />\r\n      <workItem from=\"1664180506991\" duration=\"1828000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"cambiamento struttura moduli e package di progetto\">\r\n      <created>1663258918566</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663258918566</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"aggiornamento UI operatori vaccinali\">\r\n      <created>1663269806745</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663269806745</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"aggiornamenti UI generali\">\r\n      <created>1663322295266</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663322295266</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"add doc\">\r\n      <created>1663322393625</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663322393625</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox\">\r\n      <created>1663345889342</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663345889342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"modifica colori bottoni e tetFields\">\r\n      <created>1663374287703</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663374287703</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"modifica colori bottoni e tetFields\">\r\n      <created>1663375160561</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663375160562</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java\">\r\n      <created>1663376665078</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663376665079</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java\">\r\n      <created>1663376899169</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663376899169</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"aggiunta javaDoc\">\r\n      <created>1663412919386</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663412919387</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc\">\r\n      <created>1663413667092</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663413667092</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\".\">\r\n      <created>1663413757118</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663413757118</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"finita modifica UIRegisterVaccinated\">\r\n      <created>1663770440666</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663770440666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"finita modifica UIRegisterVaxCenter\">\r\n      <created>1663774931140</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663774931140</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"finita modifica UIRegisterCitizen\">\r\n      <created>1663779042380</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663779042380</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"finita modifica UICiti\">\r\n      <created>1663781154213</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663781154213</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"aggiunta mouseListener to accedi label\">\r\n      <created>1663781490253</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663781490253</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"modifiche dimensioni\">\r\n      <created>1663781997513</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663781997513</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"modifica allineamento choosingRoles\">\r\n      <created>1663783194315</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663783194315</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"modifica allinemanto icone nei Button della intera UI\">\r\n      <created>1663787211424</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663787211424</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"modifiche tdimensioni testo dimenticate\">\r\n      <created>1663788463326</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663788463326</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"modifiche label di info sopra textField\">\r\n      <created>1663927925991</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663927925992</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"MODIFICA colori UIRegisterVaccinated\">\r\n      <created>1663934754980</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663934754980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00024\" summary=\"modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali\">\r\n      <created>1663938065676</created>\r\n      <option name=\"number\" value=\"00024\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663938065677</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00025\" summary=\"modifica posizione label in UIRegisterCitizen.class\">\r\n      <created>1663938530835</created>\r\n      <option name=\"number\" value=\"00025\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663938530835</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00026\" summary=\"Sistemazione generlae\">\r\n      <created>1663943212477</created>\r\n      <option name=\"number\" value=\"00026\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00026\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663943212478</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00027\" summary=\"Sistemazione UILogin\">\r\n      <created>1663943965621</created>\r\n      <option name=\"number\" value=\"00027\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00027\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1663943965621</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00028\" summary=\"modifica allineamenti UIRegisterVaxCenter\">\r\n      <created>1664026162126</created>\r\n      <option name=\"number\" value=\"00028\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00028\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664026162126</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00029\" summary=\"modifica login dimensione e centralità\">\r\n      <created>1664026564942</created>\r\n      <option name=\"number\" value=\"00029\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00029\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664026564942</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00030\" summary=\"centralizzato testo in textField\">\r\n      <created>1664027194330</created>\r\n      <option name=\"number\" value=\"00030\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00030\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664027194330</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00031\" summary=\"modifiche dimensioni UIChoosingRooles.java\">\r\n      <created>1664028769618</created>\r\n      <option name=\"number\" value=\"00031\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00031\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664028769618</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00032\" summary=\"creata classe custom Tf, con estensione PasswordField\">\r\n      <created>1664041542365</created>\r\n      <option name=\"number\" value=\"00032\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00032\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664041542365</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00033\" summary=\"centralizzato testo in comboBox\">\r\n      <created>1664041892980</created>\r\n      <option name=\"number\" value=\"00033\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00033\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664041892980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00034\" summary=\"modifica rounded corners\">\r\n      <created>1664042360458</created>\r\n      <option name=\"number\" value=\"00034\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00034\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664042360458</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00035\" summary=\"UIAdverseElements\">\r\n      <created>1664128697204</created>\r\n      <option name=\"number\" value=\"00035\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00035\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664128697204</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"36\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"changeStructure\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"finita modifica UIRegisterVaccinated\" />\r\n    <MESSAGE value=\"finita modifica UIRegisterVaxCenter\" />\r\n    <MESSAGE value=\"finita modifica UIRegisterCitizen\" />\r\n    <MESSAGE value=\"finita modifica UICiti\" />\r\n    <MESSAGE value=\"aggiunta mouseListener to accedi button\" />\r\n    <MESSAGE value=\"aggiunta mouseListener to accedi label\" />\r\n    <MESSAGE value=\"modifiche dimensioni\" />\r\n    <MESSAGE value=\"modifica allineamento choosingRoles\" />\r\n    <MESSAGE value=\"modifica allinemanto icone nei Button della intera UI\" />\r\n    <MESSAGE value=\"modifiche tdimensioni testo dimenticate\" />\r\n    <MESSAGE value=\"modifiche label di info sopra textField\" />\r\n    <MESSAGE value=\"MODIFICA colori UIRegisterVaccinated\" />\r\n    <MESSAGE value=\"modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali\" />\r\n    <MESSAGE value=\"modifica posizione label in UIRegisterCitizen.class\" />\r\n    <MESSAGE value=\"Sistemazione generlae\" />\r\n    <MESSAGE value=\"Sistemazione generale e aggiunta classi grafiche\" />\r\n    <MESSAGE value=\"Sistemazione UILogin\" />\r\n    <MESSAGE value=\"modifica allineamenti UIRegisterVaxCenter\" />\r\n    <MESSAGE value=\"modifica login dimensione e centralità\" />\r\n    <MESSAGE value=\"centralizzato testo in textField\" />\r\n    <MESSAGE value=\"modifiche dimensioni UIChoosingRooles.java\" />\r\n    <MESSAGE value=\"creata classe custom Tf, con estensione PasswordField\" />\r\n    <MESSAGE value=\"centralizzato testo in comboBox\" />\r\n    <MESSAGE value=\"modifica rounded corners\" />\r\n    <MESSAGE value=\"UIAdverseElements\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"UIAdverseElements\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2a65ed2b8dbbe69575a7134a0c4066b4f544db4e)
++++ b/.idea/workspace.xml	(date 1664183758160)
+@@ -4,19 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="UIAdverseElements">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione UIAdverseEvent">
+       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="CodeStyleSettingsInfer">
+-    <option name="done" value="true" />
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -41,25 +35,18 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectCodeStyleSettingsMigration">
+-    <option name="version" value="2" />
+-  </component>
+   <component name="ProjectId" id="2EoKIuzglBobAuLR0ZtXSyR9VOV" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Git.Branch.Popup.ShowAllRemotes": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "settings.editor.selected.configurable": "preferences.pluginManager"
+-  }
+-}]]></component>
++  <component name="PropertiesComponent">
++    <property name="last_opened_file_path" value="$USER_HOME$/LAB B/swingx-all-1.6.4.jar" />
++    <property name="project.structure.last.edited" value="Libraries" />
++    <property name="project.structure.proportion" value="0.15" />
++    <property name="project.structure.side.proportion" value="0.2" />
++  </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
+@@ -158,9 +145,6 @@
+       <workItem from="1663599967457" duration="1931000" />
+       <workItem from="1663602155260" duration="11809000" />
+       <workItem from="1663617746883" duration="77000" />
+-      <workItem from="1664176936818" duration="130000" />
+-      <workItem from="1664177083350" duration="133000" />
+-      <workItem from="1664180506991" duration="1828000" />
+     </task>
+     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
+       <created>1663258918566</created>
+@@ -400,14 +384,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1664042360458</updated>
+     </task>
+-    <task id="LOCAL-00035" summary="UIAdverseElements">
+-      <created>1664128697204</created>
+-      <option name="number" value="00035" />
+-      <option name="presentableId" value="LOCAL-00035" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1664128697204</updated>
+-    </task>
+-    <option name="localTasksCounter" value="36" />
++    <option name="localTasksCounter" value="35" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -437,6 +414,7 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
++    <MESSAGE value="." />
+     <MESSAGE value="finita modifica UIRegisterVaccinated" />
+     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
+     <MESSAGE value="finita modifica UIRegisterCitizen" />
+@@ -461,7 +439,6 @@
+     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
+     <MESSAGE value="centralizzato testo in comboBox" />
+     <MESSAGE value="modifica rounded corners" />
+-    <MESSAGE value="UIAdverseElements" />
+-    <option name="LAST_COMMIT_MESSAGE" value="UIAdverseElements" />
++    <option name="LAST_COMMIT_MESSAGE" value="modifica rounded corners" />
+   </component>
+ </project>
+\ No newline at end of file

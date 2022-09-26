@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1664183830362" recycled="false" toDelete="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UIAdverseEvent.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UIAdverseEvent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/UIAdverseEvent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/WelcomeScreen$1.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/WelcomeScreen$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/WelcomeScreen$1.class" />
+  </binary>
+</changelist>
