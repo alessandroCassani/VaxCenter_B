@@ -35,7 +35,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     JButton backtoChoosingRooles;
 
     /**
-     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica relativa al menu delloperatore vaccinale
+     *
+     * @author Alessandro Cassani
+     * @author paolo Bruscagin
      */
 
     public UIVaccineOperator(){
@@ -105,7 +108,6 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
-
         setTitle("Operatore Vaccinale");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

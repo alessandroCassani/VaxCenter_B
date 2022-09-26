@@ -3,11 +3,6 @@ package UI;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-/**
- * Libreria utilizzata per cercare tramite caratteri nella JComboBox i nomi dei centri vaccinali
- */
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -17,11 +12,11 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 /**
- *  La classe UIRegisterVaccinated crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un vaccinato
+ *  La classe UiRegisterVaccinated crea l'interfaccia grafica dove e' possibile inserire le informazioni necessarie alla registrazione a sistema di un vaccinato
  *
  * @author Paolo Bruscagin
+ * @author alessandor Cassani
  * @author Damiano Ficara
- * @author Alessandro Cassani
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
@@ -53,7 +48,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     JXDatePicker data = new JXDatePicker();
 
     /**
-     *  Menu a tendina che indica le tipologie di vaccino somministrate che l'utente puo' selezionare
+     * Menu a tendina che indica le tipologie di vaccino somministrate che l'utente puo' selezionare
      */
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
@@ -63,7 +58,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     JLabel IDUnivoco = new JLabel();
 
     /**
-     *
+     *label rappresentante un messaggio di avviso relativo all'ID univoco
      */
     JLabel warningIDUnivoco = new JLabel();
 

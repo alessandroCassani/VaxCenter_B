@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
 /**
- * classe che permette la personalizzazione delle textField componenti l'interfaccia grafica
+ * classe che permette la personalizzazione delle textField presenti nell'interfaccia grafica di tutto il sistema
  *
  * @author Alessandro Cassani
  */

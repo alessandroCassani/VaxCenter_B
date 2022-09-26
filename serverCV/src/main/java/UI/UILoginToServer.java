@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 /**
- * classe che rappresenta l'interfaccia grafica per accedere al dataBase Postgre e alle funzionalita' del server
+ * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al dataBase Postgres e alle funzionalita' del server
  *
  *  @author Alessandro Cassani
  */

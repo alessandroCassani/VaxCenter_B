@@ -12,7 +12,7 @@ public enum Sintomatologia{
     LINFOADENOPATIA("Linfoadenopatia"), TACHICARDIA("Tachicardia"), CRISIPERTENSIVA("Crisi Ipertensiva");
 
     /**
-     * nome user friendly e minuscolo della sintomatologia segnalata
+     * nome user friendly e in minuscolo della sintomatologia segnalata
      */
     private String nome;
 

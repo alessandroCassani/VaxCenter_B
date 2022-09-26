@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 /**
- * La classe UIChoosingRooles crea l'interfaccia dove l'utente decide il ruolo in cui vuole accedere
+ * La classe UIChoosingRooles crea l'interfaccia grafica dove venegono presentate le due sezioni di funzionalita' fornite dal sistema, quella dedicata agli operatori
+ * vaccinali e quella dedicata ai cittadini
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani

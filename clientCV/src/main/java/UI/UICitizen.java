@@ -84,7 +84,6 @@ public class UICitizen extends JFrame implements ActionListener {
         cercaCentroVaccinale.setOpaque(true);
 
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
-
         JLabel registraCitizen = new JLabel(reg);
         JLabel registralabel = new JLabel("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
         registralabel.setForeground(Color.WHITE);

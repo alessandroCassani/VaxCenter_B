@@ -8,13 +8,13 @@
  import java.awt.event.ActionListener;
 
  /**
-  * classe che rappresenta l'interfaccia grafica che permette di gestire l'accensione e lo spegnimento del server
+  * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
   * @author Alessandro Cassani
   */
  public class UIServerHome extends JFrame implements ActionListener {
 
      /**
-      * bottone di accensione server
+      * bottone di attivazione del server
       */
     JButton startBtn = new JButton("START");
 
@@ -24,12 +24,12 @@
     JLabel textField = new JLabel("manage the server!");
 
      /**
-      * bottone di spegnimento dle server
+      * bottone di spegnimento del server
       */
     JButton stopBtn = new JButton("STOP");
 
      /**
-      * container di interfaccia
+      * container relativo all'interfaccia grafica
       */
     Container container = getContentPane();
 
@@ -103,7 +103,6 @@
             //eliminazione oggetto server dal registry
 
             status.setText("server offline!");
-
         }
     }
 }
