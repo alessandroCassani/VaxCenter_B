@@ -148,13 +148,17 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+        Border bordobtn_AE = new LineBorder(new Color(0,49,83), 2, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
 
-        infoUtente.setBounds(0, 0, 450, 565);
+
+
+        infoUtente.setBounds(550, -5, 450, 570);
         infoUtente.setLayout(null);
         infoUtente.setBackground(new Color(181, 226, 232));
-        infoUtente.setBorder(bordobtn);
+        infoUtente.setBorder(bordobtn_AE);
+
 
 
 
@@ -194,7 +198,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
 
         backToCitizen = new JButton(ind);
-        backToCitizen.setBounds(10, 5, 55 , 55);
+        backToCitizen.setBounds(375, 7, 55 , 55);
         backToCitizen.setFont(new Font("Georgia", Font.BOLD, 20));
         backToCitizen.setBackground(new Color(181, 226, 232));
         backToCitizen.setForeground(Color.WHITE);
@@ -238,10 +242,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaMDT.setFont(new Font("Arial", Font.BOLD, 12));
         severitaMDT.setBounds(160, 50, 60, 30);
         severitaMDT.setBackground(Color.WHITE);
+        severitaMDT.setBorder(bordobtn_AE);
 
         noteMalditesta.setFont(new Font("Arial", Font.BOLD, 10));
         noteMalditesta.setPreferredSize(new Dimension(325, 75));
         noteMalditesta.setBounds(250, 50, 250, 30);
+        noteMalditesta.setBorder(bordobtn_AE);
 
 
         //Febbre
@@ -256,10 +262,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaFebbre.setFont(new Font("Arial", Font.BOLD, 12));
         severitaFebbre.setBounds(160, 105, 60, 30);
         severitaFebbre.setBackground(Color.WHITE);
+        severitaFebbre.setBorder(bordobtn_AE);
 
         noteFebbre.setFont(new Font("Arial", Font.BOLD, 10));
         noteFebbre.setPreferredSize(new Dimension(325, 75));
         noteFebbre.setBounds(250, 105, 250, 30);
+        noteFebbre.setBorder(bordobtn_AE);
 
 
         //Dolore Addominale e/o Articolare
@@ -274,10 +282,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaDMA.setFont(new Font("Arial", Font.BOLD, 12));
         severitaDMA.setBounds(160, 155, 60, 30);
         severitaDMA.setBackground(Color.WHITE);
+        severitaDMA.setBorder(bordobtn_AE);
 
         noteDMA.setFont(new Font("Arial", Font.BOLD, 10));
         noteDMA.setPreferredSize(new Dimension(325, 75));
         noteDMA.setBounds(250, 155, 250, 30);
+        noteDMA.setBorder(bordobtn_AE);
 
 
         //Linfoadenopatia
@@ -292,10 +302,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitalinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 12));
         severitalinfoadenopatia.setBounds(160, 205, 60, 30);
         severitalinfoadenopatia.setBackground(Color.WHITE);
+        severitalinfoadenopatia.setBorder(bordobtn_AE);
 
         notelinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 10));
         notelinfoadenopatia.setPreferredSize(new Dimension(325, 75));
         notelinfoadenopatia.setBounds(250, 205, 250, 30);
+        notelinfoadenopatia.setBorder(bordobtn_AE);
 
 
         //Tachicardia
@@ -310,10 +322,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitatachicardia.setFont(new Font("Arial", Font.BOLD, 12));
         severitatachicardia.setBounds(160, 255, 60, 30);
         severitatachicardia.setBackground(Color.WHITE);
+        severitatachicardia.setBorder(bordobtn_AE);
 
         notetachicardia.setFont(new Font("Arial", Font.BOLD, 10));
         notetachicardia.setPreferredSize(new Dimension(325, 75));
         notetachicardia.setBounds(250, 255, 250, 30);
+        notetachicardia.setBorder(bordobtn_AE);
 
 
         //Crisi Ipertensiva
@@ -328,14 +342,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 12));
         severitaCrisiIpertensiva.setBounds(160, 305, 60, 30);
         severitaCrisiIpertensiva.setBackground(Color.WHITE);
+        severitaCrisiIpertensiva.setBorder(bordobtn_AE);
 
         notetaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 10));
         notetaCrisiIpertensiva.setPreferredSize(new Dimension(325, 75));
         notetaCrisiIpertensiva.setBounds(250, 305, 250, 30);
+        notetaCrisiIpertensiva.setBorder(bordobtn_AE);
 
         //Panel info Eventi avversi già registrati
 
-        riepilogoEventiAvversiPersonali.setBounds(400, 25, 550, 500);
+        riepilogoEventiAvversiPersonali.setBounds(0, 0, 550, 500);
         riepilogoEventiAvversiPersonali.setLayout(null);
         riepilogoEventiAvversiPersonali.setBackground(new Color(209, 245, 250));
 
@@ -346,18 +362,20 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         tabellaRiepilogo.setBackground(new Color(209, 245, 250));
 
         tabellaRiepilogo.setRowHeight(60);
-        tabellaRiepilogo.setBorder(bordobtn);
+        tabellaRiepilogo.setBorder(bordobtn_AE);
         getContentPane().add(tabellaRiepilogo);
         tabellaRiepilogo.setEnabled(false);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
 
+        add(riepilogoEventiAvversiPersonali);
+
 
         //Panel Inserimento Eventi Avversi
-        inserisciEventiAvversi.setBounds(400, 25, 550, 500);
+        inserisciEventiAvversi.setBounds(0, 0, 550, 500);
         inserisciEventiAvversi.setLayout(null);
         inserisciEventiAvversi.setBackground(new Color(209, 245, 250));
 
-        labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));
+        labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 15));
         labelinsEventiAvversi.setBounds(20, 20, 200, 20);
 
         inserisciEventiAvversi.add(labelinsEventiAvversi);
@@ -460,7 +478,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
             }
 
-        } else if (e.getSource() == checkBoxMaldiTesta) {
+        }else if (e.getSource() == checkBoxMaldiTesta) {
             if (checkBoxMaldiTesta.isSelected()) {
                 severitaMDT.setVisible(true);
                 noteMalditesta.setVisible(true);
