@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
+
+import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 
@@ -20,21 +22,21 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
     JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
 
-    JTextField nomeCittadino = new JTextField(30);
+    RoundJTextField nomeCittadino = new RoundJTextField(30);
 
-    JTextField cognomeCittadino = new JTextField(30);
+    RoundJTextField cognomeCittadino = new RoundJTextField(30);
 
-    JTextField codiceFiscale = new JTextField(16);
+    RoundJTextField codiceFiscale = new RoundJTextField(16);
 
-    JTextField email = new JTextField(30);
+    RoundJTextField email = new RoundJTextField(30);
 
-    JTextField userID =new JTextField(20);
+    RoundJTextField userID =new RoundJTextField(20);
 
-    JPasswordField password = new JPasswordField(20);
+    RoundJTextField password = new RoundJTextField(20);
 
-    JPasswordField ripetiPassword = new JPasswordField(20);
+    RoundJTextField ripetiPassword = new RoundJTextField(20);
 
-    JTextField IDUnivoco = new JTextField(16);
+    RoundJTextField IDUnivoco = new RoundJTextField(16);
 
     JButton registraCittadino = new JButton("REGISTRA");
 
@@ -75,6 +77,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         nomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeCittadino.setPreferredSize(new Dimension(325, 75));
         nomeCittadino.setBounds(100, 195, 250, 55);
+        nomeCittadino.setEchoChar((char) 0);
 
         JLabel labelcognomeCit = new JLabel("Cognome:");
         labelcognomeCit.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -84,6 +87,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         cognomeCittadino.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognomeCittadino.setPreferredSize(new Dimension(325, 75));
         cognomeCittadino.setBounds(370, 195, 250, 55);
+        cognomeCittadino.setEchoChar((char) 0);
 
         JLabel labelCF = new JLabel("Codice Fiscale:");
         labelCF.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -93,24 +97,27 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 75));
         codiceFiscale.setBounds(640, 195, 250, 55);
+        codiceFiscale.setEchoChar((char) 0);
 
         JLabel labelEmail = new JLabel("Email:");
         labelEmail.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelEmail).setBounds(100, 240, 250, 75);
 
-        email.setFont(new Font("Arial", Font.BOLD, 20));
+        email.setFont(new Font("Arial", Font.ITALIC, 20));
         email.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         email.setPreferredSize(new Dimension(325, 75));
         email.setBounds(100, 295, 250, 55);
+        email.setEchoChar((char) 0);
 
         JLabel labelUserID = new JLabel("User ID:");
         labelUserID.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelUserID).setBounds(370, 240, 250, 75);
 
-        userID.setFont(new Font("Arial", Font.BOLD, 20));
+        userID.setFont(new Font("Arial", Font.ITALIC, 20));
         userID.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         userID.setPreferredSize(new Dimension(325, 75));
         userID.setBounds(370, 295, 250, 55);
+        userID.setEchoChar((char) 0);
 
         JLabel labelIDUnivoco = new JLabel("ID Vaccinazione:");
         labelIDUnivoco.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -120,6 +127,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         IDUnivoco.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         IDUnivoco.setBounds(640, 295, 250, 55);
         IDUnivoco.setBackground(Color.WHITE);
+        IDUnivoco.setEchoChar((char) 0);
 
         JLabel labelPassword = new JLabel("Password:");
         labelPassword.setFont(new Font("Georgia", Font.ITALIC, 17));

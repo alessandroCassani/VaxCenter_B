@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica rounded corners">
-      <change afterPath="$PROJECT_DIR$/serverCV/src/main/java/DBManagement.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664042360458</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="modifica main">
+      <created>1664047802630</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1664047802630</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
     <MESSAGE value="finita modifica UIRegisterVaccinated" />
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
     <MESSAGE value="finita modifica UIRegisterCitizen" />
@@ -440,6 +446,7 @@
     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
     <MESSAGE value="centralizzato testo in comboBox" />
     <MESSAGE value="modifica rounded corners" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica rounded corners" />
+    <MESSAGE value="modifica main" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica main" />
   </component>
 </project>
