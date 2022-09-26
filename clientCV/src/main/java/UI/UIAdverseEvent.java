@@ -200,6 +200,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     JLabel noteEA6 = new JLabel("Note (max. 256)");
 
+    //Label informativa per far capire all'utente che deve schiacciare
+    // il quadratino per inserire severità ed eventuali note per l'evento avverso selezionato
+
     JLabel premiQuadrato = new JLabel("Se hai avuto uno di questi simboli clicca il quadratino");
 
 
@@ -567,6 +570,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         setVisible(true);
 
     }
+
 
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
