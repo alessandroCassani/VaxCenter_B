@@ -113,7 +113,10 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     }
 
     /**
-     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
      */
 
     @Override

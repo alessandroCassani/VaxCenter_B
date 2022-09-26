@@ -236,6 +236,13 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setVisible(true);
 
     }
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == backToCitizen) {
