@@ -378,7 +378,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             new UICitizen();
         } else if (e.getSource() == switcha) {
             if (switcha.isSelected()) {
-
+                //sistemare grafica
                 riepilogoEventiAvversiPersonali.setVisible(false);
                 inserisciEventiAvversi.setVisible(true);
                 labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 12));

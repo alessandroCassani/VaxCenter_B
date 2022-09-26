@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione UIAdverseEvent">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dim_psw" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,8 +124,8 @@
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.WelcomeScreen" />
+        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -383,14 +384,7 @@
       <option name="project" value="LOCAL" />
       <updated>1664042360458</updated>
     </task>
-    <task id="LOCAL-00035" summary="modifica dim  in">
-      <created>1664180590733</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1664180590733</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,6 +414,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
     <MESSAGE value="finita modifica UIRegisterVaccinated" />
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
     <MESSAGE value="finita modifica UIRegisterCitizen" />
@@ -444,7 +439,6 @@
     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
     <MESSAGE value="centralizzato testo in comboBox" />
     <MESSAGE value="modifica rounded corners" />
-    <MESSAGE value="modifica dim  in" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica dim  in" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica rounded corners" />
   </component>
 </project>
