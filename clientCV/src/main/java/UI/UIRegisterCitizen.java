@@ -68,7 +68,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
         AutoCompleteDecorator.decorate(nomeCV);
 
-
         JLabel labelnomeCit = new JLabel("Nome:");
         labelnomeCit.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelnomeCit).setBounds(100, 140, 550, 75);
@@ -149,29 +148,29 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
 
         JLabel labelInfopsw = new JLabel("Requisiti Password:"); // serve per i requisiti password
-        labelInfopsw.setFont(new Font("Georgia", Font.BOLD, 10));
-        labelInfopsw.setForeground(new Color(0xEC0909));
+        labelInfopsw.setFont(new Font("Georgia", Font.BOLD, 11));
+        labelInfopsw.setForeground(new Color(65,102,245));
         add(labelInfopsw).setBounds(373, 420, 250, 15);
 
         JLabel labelInfopsw1 = new JLabel("-Lunghezza compresa tra 8 e 20 caratteri"); // serve per i requisiti password
-        labelInfopsw1.setFont(new Font("Georgia", Font.BOLD, 10));
-        labelInfopsw1.setForeground(new Color(0xEC0909));
+        labelInfopsw1.setFont(new Font("Georgia", Font.BOLD, 11));
+        labelInfopsw1.setForeground(new Color(65,102,245));
         add(labelInfopsw1).setBounds(372, 435, 290, 10);
 
         JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola ed una minuscola"); // serve per i requisiti password
-        labelInfopsw2.setFont(new Font("Georgia", Font.BOLD, 10));
-        labelInfopsw2.setForeground(new Color(0xEC0909));
-        add(labelInfopsw2).setBounds(372, 447, 290, 10);
+        labelInfopsw2.setFont(new Font("Georgia", Font.BOLD, 11));
+        labelInfopsw2.setForeground(new Color(65,102,245));
+        add(labelInfopsw2).setBounds(372, 447, 340, 10);
 
         JLabel labelInfopsw3 = new JLabel("-Almeno un numero"); // serve per i requisiti password
-        labelInfopsw3.setFont(new Font("Georgia", Font.BOLD, 10));
-        labelInfopsw3.setForeground(new Color(0xEC0909));
+        labelInfopsw3.setFont(new Font("Georgia", Font.BOLD, 11));
+        labelInfopsw3.setForeground(new Color(65,102,245));
         add(labelInfopsw3).setBounds(372, 459, 290, 10);
 
         JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale tra: ! # $ % & @ * + / - ? "); // serve per i requisiti password
-        labelInfopsw4.setFont(new Font("Georgia", Font.BOLD, 10));
-        labelInfopsw4.setForeground(new Color(0xEC0909));
-        add(labelInfopsw4).setBounds(372, 471, 320, 10);
+        labelInfopsw4.setFont(new Font("Georgia", Font.BOLD, 11));
+        labelInfopsw4.setForeground(new Color(65,102,245));
+        add(labelInfopsw4).setBounds(372, 471, 370, 10);
 
         registraCittadino.setBounds(675, 380, 150, 50);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
