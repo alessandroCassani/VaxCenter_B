@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione UIAdverseEvent">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
-    </list>
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="JavaDoc + UIAdverseEvent" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,15 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
@@ -158,7 +154,8 @@
       <workItem from="1663602155260" duration="11809000" />
       <workItem from="1663617746883" duration="77000" />
       <workItem from="1664186008992" duration="9000" />
-      <workItem from="1664217501951" duration="7184000" />
+      <workItem from="1664217501951" duration="7314000" />
+      <workItem from="1664225108625" duration="2682000" />
     </task>
     <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
       <created>1663258918566</created>
@@ -419,7 +416,28 @@
       <option name="project" value="LOCAL" />
       <updated>1664222136120</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Sistemazione UIAdverseEvent">
+      <created>1664224823778</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1664224823778</updated>
+    </task>
+    <task id="LOCAL-00039" summary="JavaDoc">
+      <created>1664225735950</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1664225735950</updated>
+    </task>
+    <task id="LOCAL-00040" summary="JavaDoc + UIAdverseEvent">
+      <created>1664227774357</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1664227774357</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finita modifica UIRegisterVaccinated" />
-    <MESSAGE value="finita modifica UIRegisterVaxCenter" />
     <MESSAGE value="finita modifica UIRegisterCitizen" />
     <MESSAGE value="finita modifica UICiti" />
     <MESSAGE value="aggiunta mouseListener to accedi button" />
@@ -474,6 +490,8 @@
     <MESSAGE value="centralizzato testo in comboBox" />
     <MESSAGE value="modifica rounded corners" />
     <MESSAGE value="Sistemazione UIAdverseEvent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione UIAdverseEvent" />
+    <MESSAGE value="JavaDoc" />
+    <MESSAGE value="JavaDoc + UIAdverseEvent" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc + UIAdverseEvent" />
   </component>
 </project>

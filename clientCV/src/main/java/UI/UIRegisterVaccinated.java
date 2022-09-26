@@ -15,7 +15,7 @@ import java.util.Objects;
  *  La classe UiRegisterVaccinated crea l'interfaccia grafica dove e' possibile inserire le informazioni necessarie alla registrazione a sistema di un vaccinato
  *
  * @author Paolo Bruscagin
- * @author alessandor Cassani
+ * @author Alessandro Cassani
  * @author Damiano Ficara
  */
 

@@ -8,6 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
+/**
+ * Interfaccia di animazione iniziale di avvio programma prima di accedere all'interfaccia UIChoosingRooles
+ *
+ * @author  Damiano Ficara
+ * @author  Alessandro Cassani
+ * @author  Paolo Bruscagin
+ */
+
 
 public class WelcomeScreen extends JFrame {
 
@@ -46,7 +54,7 @@ public class WelcomeScreen extends JFrame {
                 int value = progressBar.getValue();
                 if(value == 60) {
                     win.dispose();
-                    new UIAdverseEvent();
+                    new UIChoosingRooles();
                     timer.stop();
                 } else {
                     progressBar.setValue(value+4);
