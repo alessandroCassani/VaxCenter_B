@@ -3,11 +3,6 @@ package UI;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-/**
- * Libreria utilizzata per cercare tramite caratteri nella JComboBox i nomi dei centri vaccinali
- */
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -15,50 +10,83 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
-import java.time.LocalDate;
-
-
-
-
 
 /**
- *  La classe UIRegisterVaccinated crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un vaccinato
+ *  La classe UiRegisterVaccinated crea l'interfaccia grafica dove e' possibile inserire le informazioni necessarie alla registrazione a sistema di un vaccinato
  *
  * @author Paolo Bruscagin
+ * @author alessandor Cassani
  * @author Damiano Ficara
- * @author Alessandro Cassani
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
 
-
+    /**
+     * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
+     */
     JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
+    /**
+     * nome del vaccinato
+     */
     RoundJTextField nome = new RoundJTextField(30);
 
+    /**
+     * cognome del vaccinato
+     */
     RoundJTextField cognome = new RoundJTextField(30);
 
+    /**
+     * codice fiscale del vaccinato
+     */
     RoundJTextField codiceFiscale = new RoundJTextField(16);
 
+    /**
+     * menu' dal quale e' possibile selezionare una data nel formtato gg/mm/aaaa
+     */
     JXDatePicker data = new JXDatePicker();
 
+    /**
+     * Menu a tendina che indica le tipologie di vaccino somministrate che l'utente puo' selezionare
+     */
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
+    /**
+     * ID univoco generato al momento della vaccinazione
+     */
     JLabel IDUnivoco = new JLabel();
 
+    /**
+     *label rappresentante un messaggio di avviso relativo all'ID univoco
+     */
     JLabel warningIDUnivoco = new JLabel();
 
+    /**
+     * status dell'operazione
+     */
     JLabel status = new JLabel();
 
+    /**
+     * bottone per l'avvio del processo di registrazione del vaccinato
+     */
     JButton registraVaccinato = new JButton("REGISTRA");
 
+    /**
+     * bottone per tornare alla precedente pagina di UI (UIVaccineOperator)
+     */
     JButton backToVaccineOperator;
 
+    /**
+     * bottone per eliminare le stringhe inserite in fase di registrazione
+     */
     JButton pulisci = new JButton();
 
     /**
-     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated
+     *
+     * @author Paolo Bruscagin
+     * @author Alessandro Cassani
      */
 
     public UIRegisterVaccinated(){

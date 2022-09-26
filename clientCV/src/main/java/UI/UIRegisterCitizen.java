@@ -13,6 +13,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 
 /**
+ * La classe UICitizen crea l'interfaccia dove viene presentato il menu' di funzionalita' a cui l'utente cittadino puo' accedervi
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
@@ -20,34 +21,83 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 public class UIRegisterCitizen extends JFrame implements ActionListener {
 
+
+    /**
+     *  Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca nel DB
+     */
     JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
 
+    /**
+     * nome del cittadino
+     */
     RoundJTextField nomeCittadino = new RoundJTextField(30);
 
+    /**
+     * cognome del cittadino
+     */
     RoundJTextField cognomeCittadino = new RoundJTextField(30);
 
+    /**
+     * codice fiscale del cittadino
+     */
     RoundJTextField codiceFiscale = new RoundJTextField(16);
 
+    /**
+     * email del cittadino
+     */
     RoundJTextField email = new RoundJTextField(30);
 
+    /**
+     * user ID del cittadino
+     */
     RoundJTextField userID =new RoundJTextField(20);
 
+    /**
+     * password del cittadino
+     */
     RoundJTextField password = new RoundJTextField(20);
 
+    /**
+     * conferma password del cittadino
+     */
     RoundJTextField ripetiPassword = new RoundJTextField(20);
 
+    /**
+     * ID univoco del cittadino fornito al momento della vaccinazione
+     */
     RoundJTextField IDUnivoco = new RoundJTextField(16);
 
+    /**
+     * bottone per l'avvio del processo di registrazione a sistema di un cittadino
+     */
     JButton registraCittadino = new JButton("REGISTRA");
 
+    /**
+     * bottone che permette l'eliminazione delle stringhe inserite nei campi per la registrazione
+     */
     JButton pulisci;
 
+    /**
+     * checkBox che rende visibili le stringhe inserite come password
+     */
     JCheckBox showPassword = new JCheckBox("show password");
 
+    /**
+     * bottone che permette il ritorno alla UI precedente (UICitizen)
+     */
     JButton backToCitizen;
 
+    /**
+     * status dell'operazione
+     */
     JLabel status = new JLabel();
 
+    /**
+     * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata di registrazione del cittadino
+     *
+     * @author Paolo Bruscagin
+     * @author Alessandro cassani
+     */
     public UIRegisterCitizen(){
 
         Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);

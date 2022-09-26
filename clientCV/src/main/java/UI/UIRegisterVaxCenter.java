@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 /**
- *  La classe UIRegisterVaxCenter crea l'interfaccia dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
+ *  La classe UIRegisterVaxCenter crea l'interfaccia grafica dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
@@ -38,13 +38,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
     RoundJTextField nomeVia = new RoundJTextField(30);
 
     /**
-     * Area di testo per scrivere il numero civico del Centro vaccinale
+     * Area di testo per scrivere il numero civico del Centro Vaccinale
      */
 
     RoundJTextField numeroCivico = new RoundJTextField(10);
 
     /**
-     * Area di testo per scrivere il comune del Centro vaccinale
+     * Area di testo per scrivere il comune del Centro Vaccinale
      */
 
     RoundJTextField comune = new RoundJTextField(30);

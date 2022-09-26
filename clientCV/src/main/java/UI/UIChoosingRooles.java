@@ -1,8 +1,5 @@
 package UI;
 
-import UI.graphics.CurvesPanel;
-import org.jdesktop.swingx.JXDatePicker;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -11,10 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-
-
 /**
- * La classe UIChoosingRooles crea l'interfaccia dove l'utente decide il ruolo in cui vuole accedere
+ * La classe UIChoosingRooles crea l'interfaccia grafica dove venegono presentate le due sezioni di funzionalita' fornite dal sistema, quella dedicata agli operatori
+ * vaccinali e quella dedicata ai cittadini
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
@@ -33,23 +29,21 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
     /**
-     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata di scelta della tipologia di utente
+     *
+     * @author @Paolo Bruscagin
+     * @author Alessandro Cassani
      */
 
     public UIChoosingRooles(){
 
-
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         Border bordo = new LineBorder(new Color(0,49,83), 2, true);
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
         scelta.setBounds(590, 100, 400, 30);
 
-
-        //Personalizzazione bottone operatore vaccinale
-
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
-
-
         JLabel iconOV = new JLabel(op);
         JLabel operator = new JLabel("    OPERATORE VACCINALE");
         operator.setFont(new Font("Georgia", Font.BOLD, 15));
@@ -70,7 +64,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         //Personalizzazione bottone cittadino
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
-
         JLabel icon = new JLabel(cit);
         JLabel citizen = new JLabel("                 CITTADINO");
         citizen.setForeground(Color.WHITE);
@@ -88,9 +81,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         cittadino.addActionListener(this);
         cittadino.setOpaque(true);
 
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        //Icona avvio del programma
 
+        //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
