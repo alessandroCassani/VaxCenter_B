@@ -161,17 +161,17 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola ed una minuscola"); // serve per i requisiti password
         labelInfopsw2.setFont(new Font("Georgia", Font.BOLD, 10));
         labelInfopsw2.setForeground(new Color(0xEC0909));
-        add(labelInfopsw2).setBounds(370, 445, 200, 10);
+        add(labelInfopsw2).setBounds(370, 447, 200, 10);
 
         JLabel labelInfopsw3 = new JLabel("-Almeno un numero"); // serve per i requisiti password
         labelInfopsw3.setFont(new Font("Georgia", Font.BOLD, 10));
         labelInfopsw3.setForeground(new Color(0xEC0909));
-        add(labelInfopsw3).setBounds(370, 455, 200, 10);
+        add(labelInfopsw3).setBounds(370, 459, 200, 10);
 
         JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale tra: ! # $ % & @ * + / - ? "); // serve per i requisiti password
         labelInfopsw4.setFont(new Font("Georgia", Font.BOLD, 10));
         labelInfopsw4.setForeground(new Color(0xEC0909));
-        add(labelInfopsw4).setBounds(370, 465, 250, 10);
+        add(labelInfopsw4).setBounds(370, 471, 250, 10);
 
         registraCittadino.setBounds(675, 380, 150, 50);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
