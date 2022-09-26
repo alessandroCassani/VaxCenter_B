@@ -111,7 +111,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         nomeCentroVaccinale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeCentroVaccinale.setPreferredSize(new Dimension(550, 55));
         nomeCentroVaccinale.setBounds(130, 110, 225, 50);
-        nomeCentroVaccinale.setHorizontalAlignment(JTextField.CENTER);
         nomeCentroVaccinale.setEchoChar((char) 0);
 
         JLabel labelTip = new JLabel("Tipologia:");
@@ -133,7 +132,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         comune.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         comune.setPreferredSize(new Dimension(325, 75));
         comune.setBounds(630, 110, 225, 50);
-        comune.setHorizontalAlignment(JTextField.CENTER);
         comune.setEchoChar((char) 0);
 
 
@@ -151,7 +149,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         nomeVia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nomeVia.setPreferredSize(new Dimension(325, 75));
         nomeVia.setBounds(375, 220, 225, 50);
-        nomeVia.setHorizontalAlignment(JTextField.CENTER);
         nomeVia.setEchoChar((char) 0);
 
         JLabel labelNumeroCivico = new JLabel("N°");
@@ -162,7 +159,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         numeroCivico.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         numeroCivico.setPreferredSize(new Dimension(75, 75));
         numeroCivico.setBounds(705, 220, 75, 50);
-        numeroCivico.setHorizontalAlignment(JTextField.CENTER);
         numeroCivico.setEchoChar((char) 0);
 
         JLabel labelSigla = new JLabel("Provincia:");
@@ -173,7 +169,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(195, 325, 75, 50);
-        siglaProvincia.setHorizontalAlignment(JTextField.CENTER);
         siglaProvincia.setEchoChar((char) 0);
 
         JLabel labelCAP = new JLabel("CAP:");
@@ -184,7 +179,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         cap.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cap.setPreferredSize(new Dimension(100, 75));
         cap.setBounds(455, 325, 75, 50);
-        cap.setHorizontalAlignment(JTextField.CENTER);
         cap.setEchoChar((char) 0);
 
         pulisci = new JButton("PULISCI");

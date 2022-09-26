@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="aggiuntaRoundJTextField in UIRegisterCitizen.java, e caratteri italic">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundJTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundJTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -392,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664047802630</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="aggiuntaRoundJTextField in UIRegisterCitizen.java, e caratteri italic">
+      <created>1664176993943</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1664176993943</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finita modifica UIRegisterVaccinated" />
     <MESSAGE value="finita modifica UIRegisterVaxCenter" />
     <MESSAGE value="finita modifica UIRegisterCitizen" />
     <MESSAGE value="finita modifica UICiti" />
@@ -447,6 +456,7 @@
     <MESSAGE value="centralizzato testo in comboBox" />
     <MESSAGE value="modifica rounded corners" />
     <MESSAGE value="modifica main" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica main" />
+    <MESSAGE value="aggiuntaRoundJTextField in UIRegisterCitizen.java, e caratteri italic" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiuntaRoundJTextField in UIRegisterCitizen.java, e caratteri italic" />
   </component>
 </project>

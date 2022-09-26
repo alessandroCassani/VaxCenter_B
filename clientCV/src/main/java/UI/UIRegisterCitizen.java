@@ -129,6 +129,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         IDUnivoco.setBackground(Color.WHITE);
         IDUnivoco.setEchoChar((char) 0);
 
+
         JLabel labelPassword = new JLabel("Password:");
         labelPassword.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelPassword).setBounds(100, 350, 250, 55);
