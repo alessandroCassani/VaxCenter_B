@@ -1,6 +1,5 @@
 import util.*;
 
-import java.lang.reflect.Type;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.PreparedStatement;
@@ -35,11 +34,26 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
-        return false;
+        try{
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,email,username,password) \n"
+                                                                                    + "VALUES (?,?,?,?)");
+
+            //da modificare struttura cittadini registrati
+            ps.setString(1, cittadino.getId());
+            ps.setString(2, cittadino.getEmail());
+            ps.setString(2,cittadino.getAccount().getUserId());
+            ps.setString(4,cittadino.getAccount().getPassword());
+
+
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e){return false;}
+        return true;
     }
 
     @Override
-    public boolean registraVacinato(Vaccinato vaccinato) throws RemoteException {
+    public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         return false;
     }
 

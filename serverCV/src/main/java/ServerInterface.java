@@ -39,7 +39,8 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean registraVacinato(Vaccinato vaccinato) throws RemoteException;
+
+    boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException;
 
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
