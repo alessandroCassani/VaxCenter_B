@@ -57,7 +57,7 @@ public class MyPwdField extends JPasswordField {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setColor(new Color(230, 245, 241));
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 5, 5);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight() , 5, 5);
         paintIcon(g);
         super.paintComponent(g);
     }
@@ -87,6 +87,10 @@ public class MyPwdField extends JPasswordField {
             int y = (getHeight() - suffixIcon.getIconHeight()) / 2;
             g2.drawImage(suffix, getWidth() - suffixIcon.getIconWidth() - 10, y, this);
         }
+    }
+    protected void paintBorder(Graphics g) {
+        g.setColor(new Color(65, 102, 245));
+        g.drawRoundRect(0, 0, getWidth(), getHeight(), 6, 6);
     }
 
     private void initBorder() {

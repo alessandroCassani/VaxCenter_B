@@ -87,6 +87,10 @@ public class MyTextField extends JTextField {
             g2.drawImage(suffix, getWidth() - suffixIcon.getIconWidth() - 10, y, this);
         }
     }
+    protected void paintBorder(Graphics g) {
+        g.setColor(new Color(65, 102, 245));
+        g.drawRoundRect(0, 0, getWidth(), getHeight(), 6, 6);
+    }
 
     private void initBorder() {
         int left = 15;
