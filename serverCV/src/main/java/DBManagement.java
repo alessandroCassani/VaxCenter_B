@@ -61,7 +61,7 @@ public class DBManagement {
     }
 
     /**
-     * Metodo che crea la connessine al server Postgres tramite il driver JDBC
+     * Metodo che crea la connessione al server Postgres tramite il driver JDBC
      *
      * @param hostDB host del database
      * @param portDB porta del database

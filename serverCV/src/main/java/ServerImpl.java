@@ -1,7 +1,11 @@
 import util.*;
 
+import java.lang.reflect.Type;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
@@ -14,8 +18,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     @Override
-    public boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException {
-        return false;
+    public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,tipologia,numeroSegnalazioni,avgSeverita \n"
+                    + "VALUES (?,?,?,?,?)");
+            ps.setString(1, centroVaccinale.getNome());
+            ps.setString(2,centroVaccinale.getIndirizzo().toString());
+            ps.setString(3,centroVaccinale.getTipologia().toString());
+            ps.setNull(4, Types.NULL);
+            ps.setNull(5,Types.NULL);
+            ps.executeUpdate();
+            ps.close();
+        } catch(SQLException e){return false;}
+        return true;
     }
 
     @Override
