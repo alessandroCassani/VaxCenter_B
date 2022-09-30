@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica font">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +45,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -50,6 +60,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -60,6 +73,7 @@
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI\graphics" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
@@ -449,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664227944398</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="modifica font">
+      <created>1664556731407</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1664556731407</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finita modifica UIRegisterCitizen" />
     <MESSAGE value="finita modifica UICiti" />
     <MESSAGE value="aggiunta mouseListener to accedi button" />
     <MESSAGE value="aggiunta mouseListener to accedi label" />
@@ -504,6 +524,7 @@
     <MESSAGE value="Sistemazione UIAdverseEvent" />
     <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc" />
+    <MESSAGE value="modifica font" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica font" />
   </component>
 </project>

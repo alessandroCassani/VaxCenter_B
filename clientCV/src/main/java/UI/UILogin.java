@@ -4,6 +4,8 @@
  */
 package UI;
 
+import UI.graphics.MyTextField;
+
 import java.awt.*;
 
 /**
@@ -39,7 +41,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField2 = new MyTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -80,7 +82,9 @@ public class UILogin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-5865.png"))); // NOI18N
         jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(35, 190, 86)));
 
-        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+
+        jTextField2.setHint("Username");
+        jTextField2.setFont(new java.awt.Font("Cambria Math", 0, 20)); // NOI18N
         jTextField2.setBackground(new java.awt.Color(96, 117, 137));
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(96, 117, 137)));
 
@@ -106,7 +110,7 @@ public class UILogin extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car-key-5803.png"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(35, 190, 86)));
 
-        jPasswordField2.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        jPasswordField2.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         jPasswordField2.setBackground(new java.awt.Color(96, 117, 137));
         jPasswordField2.setBorder(null);
         jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
@@ -247,5 +251,5 @@ public class UILogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField2;
+    private MyTextField jTextField2;
 }
