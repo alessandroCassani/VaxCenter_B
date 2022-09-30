@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="aggiunta hint">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica username">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" afterDir="false" />
@@ -479,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664560766760</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="modifica username">
+      <created>1664561810110</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1664561810110</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="aggiunta mouseListener to accedi button" />
     <MESSAGE value="aggiunta mouseListener to accedi label" />
     <MESSAGE value="modifiche dimensioni" />
     <MESSAGE value="modifica allineamento choosingRoles" />
@@ -534,6 +538,7 @@
     <MESSAGE value="JavaDoc" />
     <MESSAGE value="modifica font" />
     <MESSAGE value="aggiunta hint" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta hint" />
+    <MESSAGE value="modifica username" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica username" />
   </component>
 </project>

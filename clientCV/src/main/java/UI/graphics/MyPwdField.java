@@ -48,7 +48,7 @@ public class MyPwdField extends JPasswordField {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setBackground(new Color(0, 0, 0, 0));
         setForeground(Color.decode("#7A8C8D"));
-        setFont(new java.awt.Font("sansserif", 0, 13));
+        setFont(new java.awt.Font("sansserif", 0, 16));
         setSelectionColor(new Color(75, 175, 152));
     }
 
