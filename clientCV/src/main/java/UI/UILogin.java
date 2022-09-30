@@ -47,7 +47,6 @@ public class UILogin extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         password = new MyPwdField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -189,7 +188,7 @@ public class UILogin extends javax.swing.JFrame {
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {
-       this.toBack();
+       this.dispose();
     }
 
     /**
@@ -231,7 +230,6 @@ public class UILogin extends javax.swing.JFrame {
     }
 
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
