@@ -2,6 +2,7 @@ import util.*;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -54,7 +55,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nomeCentro,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,isReg) \n" +
+                                                                                                     "VALUES(?,?,?,?,?,?,?,?");
+            ps.setString(1, vaccinato.getId());
+            ps.setString(2,vaccinato.getCentroVaccinale().getNome());
+            ps.setString(3,vaccinato.getNome());
+            ps.setString(4,vaccinato.getCognome());
+            ps.setString(5,vaccinato.getCodFisc());
+            ps.setDate(6, (Date) vaccinato.getDataSomministrazione());  //controllo cast
+            ps.setString(7,vaccinato.getVaccino().toString());
+            ps.setBoolean(8,false); //alla registrazione del vaccinato è impossibile che questo sia già loggato
+        }catch (SQLException e){return false;}
+        return true;
     }
 
     @Override
