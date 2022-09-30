@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica font">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="aggiunta hint">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/UI/UIServerHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,19 +63,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/clientCV/src/main/resources" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources" />
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\resources" />
-      <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\clientCV\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI\graphics" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
+      <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI\graphics" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
   </component>
@@ -470,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664556731407</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="aggiunta hint">
+      <created>1664560766759</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1664560766760</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finita modifica UICiti" />
     <MESSAGE value="aggiunta mouseListener to accedi button" />
     <MESSAGE value="aggiunta mouseListener to accedi label" />
     <MESSAGE value="modifiche dimensioni" />
@@ -525,6 +533,7 @@
     <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
     <MESSAGE value="modifica font" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifica font" />
+    <MESSAGE value="aggiunta hint" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta hint" />
   </component>
 </project>

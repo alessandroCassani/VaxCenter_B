@@ -1,5 +1,6 @@
 package UI.graphics;
 
+
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -9,9 +10,9 @@ import java.awt.Insets;
 import java.awt.RenderingHints;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
-public class MyTextField extends JTextField {
+public class MyPwdField extends JPasswordField {
 
     public String getHint() {
         return hint;
@@ -43,11 +44,11 @@ public class MyTextField extends JTextField {
     private Icon suffixIcon;
     private String hint = "";
 
-    public MyTextField() {
+    public MyPwdField() {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setBackground(new Color(0, 0, 0, 0));
         setForeground(Color.decode("#7A8C8D"));
-        setFont(new java.awt.Font("sansserif", 0, 16));
+        setFont(new java.awt.Font("sansserif", 0, 13));
         setSelectionColor(new Color(75, 175, 152));
     }
 
@@ -64,7 +65,7 @@ public class MyTextField extends JTextField {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if (getText().length() == 0) {
+        if (getPassword().length == 0) {
             int h = getHeight();
             ((Graphics2D) g).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             Insets ins = getInsets();
