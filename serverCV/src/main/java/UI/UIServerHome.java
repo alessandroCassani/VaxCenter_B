@@ -9,7 +9,8 @@
 
  /**
   * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
-  * @author Alessandro Cassani
+  *
+  *  @author Alessandro Cassani
   */
  public class UIServerHome extends JFrame implements ActionListener {
 

@@ -59,17 +59,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,email,username,password) \n"
-                                                                                    + "VALUES (?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,username,password) \n"
+                                                                                    + "VALUES (?,?,?,?,?,?,?)");
 
             //da modificare struttura cittadini registrati
             ps.setString(1, cittadino.getId());
-            ps.setString(2, cittadino.getEmail());
-            ps.setString(2,cittadino.getAccount().getUserId());
-            ps.setString(4,cittadino.getAccount().getPassword());
-
-
-
+            ps.setString(2, cittadino.getNome());
+            ps.setString(3,cittadino.getCognome());
+            ps.setString(4,cittadino.getCodFisc());
+            ps.setString(5, cittadino.getEmail());
+            ps.setString(6,cittadino.getAccount().getUserId());
+            ps.setString(7,cittadino.getAccount().getPassword());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e){return false;}
