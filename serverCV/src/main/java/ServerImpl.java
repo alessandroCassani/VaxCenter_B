@@ -7,16 +7,31 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 
+/**
+ * la classe serverImpl contiene l'implementazione dei metodi del server, ovvero quei metodi che direttamente sia per inserimenti che per controlli interagiscono
+ * con il DB. l'oggetto creato da questa classe corrispondera' all'oggetto server che sara' caricato su registry tramite RMI
+ *
+ * @author Alessandro Cassani
+ * @author Luca Perfetti
+ */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
      * costruttore vuoto
-     * @throws RemoteException
+     * @throws RemoteException eccezione RMI
      */
     protected ServerImpl() throws RemoteException {
         super();
     }
 
+    /**
+     * il metodo permette di registrare nel DB nell'oppurtuna tabella un centro vaccinale
+     * @param centroVaccinale centro vaccinale
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException eccezione RMI
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
@@ -33,6 +48,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette la registrazione nell'opportuna tabella del DB di un oggetto di tipo cittadino
+     * @param cittadino cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException eccezione RMI
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
@@ -53,6 +76,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette la registrazione nell'opportuna tabella del DB di un oggetto di tipo Vaccinato
+     * @param vaccinato persona vaccinata
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException eccezione RMI
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         try {
