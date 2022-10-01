@@ -61,7 +61,7 @@ public class DBManagement {
     }
 
     /**
-     * Metodo che crea la connessine al server Postgres tramite il driver JDBC
+     * Metodo che crea la connessione al server Postgres tramite il driver JDBC
      *
      * @param hostDB host del database
      * @param portDB porta del database
@@ -154,7 +154,7 @@ public class DBManagement {
                     + "avgSeverita Numeric);"
 
                     + "create table if not exists Cittadini_Registrati("
-                    + "id Numeric PRIMARY KEY,"
+                    + "id VARCHAR(16) PRIMARY KEY,"
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30),"
                     + "password VARCHAR(30));"

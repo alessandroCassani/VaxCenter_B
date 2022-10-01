@@ -2,6 +2,7 @@ import util.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 
 /**
  * interfaccia dei metodi del server, che saranno utilizzati nel sistema distribuito tramite RMI
@@ -18,7 +19,7 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException;
+    boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException, SQLException;
 
     /**
      * segnatura del emtodo che permette la registrazione di un cittadino
@@ -38,7 +39,8 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean registraVacinato(Vaccinato vaccinato) throws RemoteException;
+
+    boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException;
 
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
