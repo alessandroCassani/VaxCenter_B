@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="fix bug generale">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,13 +163,6 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-    </task>
-    <task id="LOCAL-00001" summary="cambiamento struttura moduli e package di progetto">
-      <created>1663258918566</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1663258918566</updated>
     </task>
     <task id="LOCAL-00002" summary="aggiornamento UI operatori vaccinali">
       <created>1663269806745</created>
@@ -509,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664564356977</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix bug generale">
+      <created>1664566174656</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1664566174658</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
