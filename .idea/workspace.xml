@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Impostazione campi search">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Aggiunta campo di ricerca">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/name.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/SearchField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/SearchField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/clientCV/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/clientCV/src/main/resources/images" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RecentsManager">
@@ -78,7 +79,7 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WelcomeScreen">
+  <component name="RunManager" selected="Application.UISearchVaxCenter">
     <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
       <module name="clientCV" />
@@ -98,6 +99,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="clientCV.UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UISearchVaxCenter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenter" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,14 +150,15 @@
       <item itemvalue="Application.UISplashScreen" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
+      <item itemvalue="Application.UISearchVaxCenter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UISearchVaxCenter" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UISplashScreen" />
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -168,14 +183,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="1742000" />
-    </task>
-    <task id="LOCAL-00004" summary="add doc">
-      <created>1663322393625</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1663322393625</updated>
+      <workItem from="1664728818104" duration="2860000" />
     </task>
     <task id="LOCAL-00005" summary="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
       <created>1663345889342</created>
@@ -513,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664733560401</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Aggiunta campo di ricerca">
+      <created>1664733901564</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1664733901564</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MODIFICA colori UIRegisterVaccinated" />
     <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
     <MESSAGE value="modifica posizione label in UIRegisterCitizen.class" />
     <MESSAGE value="Sistemazione generlae" />
@@ -564,10 +578,11 @@
     <MESSAGE value="modifica username" />
     <MESSAGE value="modifica pwd" />
     <MESSAGE value="modifica bottone login" />
-    <MESSAGE value="sistemazione generale" />
     <MESSAGE value="fix bug generale" />
     <MESSAGE value="update maven" />
     <MESSAGE value="Impostazione campi search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Impostazione campi search" />
+    <MESSAGE value="sistemazione generale" />
+    <MESSAGE value="Aggiunta campo di ricerca" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta campo di ricerca" />
   </component>
 </project>
