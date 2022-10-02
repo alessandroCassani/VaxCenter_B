@@ -1,7 +1,6 @@
 package UI;
 
 import UI.graphics.InfoSearch;
-import UI.graphics.InfoSearchEvent;
 import UI.graphics.SearchField;
 
 import javax.swing.ImageIcon;
@@ -17,10 +16,11 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
      */
     public UISearchVaxCenter() {
         initComponents();
+        // pernette du evidenziare il tipo di ricerca compiuta
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         search.addOption(new InfoSearch("Nome", new ImageIcon("C:\\Users\\damia\\Desktop\\name.png")));
         search.addOption(new InfoSearch("Comune", new ImageIcon("C:\\Users\\damia\\Desktop\\search.png")));
-
+        search.setSelectedIndex(0); // evidenzia primo elemento
     }
 
     /**
@@ -33,16 +33,43 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
     private void initComponents() {
 
         search = new SearchField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
+        });
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                        {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub", "40", "2"},
+                        {"lurate", "h", "b", "h", "b", "h", "b", "h", "b", "h"}
+                },
+                new String [] {
+                        "nome", "qualificatore", "via", "numero civico", "comune", "sigla", "cap", "tipologia", "segnalazioni", "mediaSeverità"
+                }
+        ));
+        table.setRowHeight(10);
+        jScrollPane1.setViewportView(table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(420, Short.MAX_VALUE)
-                                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE))
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -50,11 +77,30 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(427, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>
+
+    private void searchKeyPressed(java.awt.event.KeyEvent evt) {
+        // TODO add
+    }
+
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {
+        if(search.isSelected()) {
+            int option = search.getSelectedIndex();
+            String info = "%" + search.getText().trim() + "%";
+            if(option == 0) {
+                // cerca per nome
+            } else if(option == 1) {
+                // cerca per comune
+
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -92,6 +138,8 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify
+    private javax.swing.JScrollPane jScrollPane1;
     private SearchField search;
+    private javax.swing.JTable table;
     // End of variables declaration                   
 }

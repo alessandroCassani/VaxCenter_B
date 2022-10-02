@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Aggiunta campo di ricerca">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/name.png" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,21 +183,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="2860000" />
-    </task>
-    <task id="LOCAL-00005" summary="collegamento due classi di interfaccia server, riaggiunta listener su show password e checkBox">
-      <created>1663345889342</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1663345889342</updated>
-    </task>
-    <task id="LOCAL-00006" summary="modifica colori bottoni e tetFields">
-      <created>1663374287703</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1663374287703</updated>
+      <workItem from="1664728818104" duration="4752000" />
     </task>
     <task id="LOCAL-00007" summary="modifica colori bottoni e tetFields">
       <created>1663375160561</created>
@@ -528,7 +514,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664733901564</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Aggiunta opzione comune e nome">
+      <created>1664735154919</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1664735154919</updated>
+    </task>
+    <task id="LOCAL-00055" summary="bug fixed">
+      <created>1664735307778</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1664735307778</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,8 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
-    <MESSAGE value="modifica posizione label in UIRegisterCitizen.class" />
     <MESSAGE value="Sistemazione generlae" />
     <MESSAGE value="Sistemazione generale e aggiunta classi grafiche" />
     <MESSAGE value="Sistemazione UILogin" />
@@ -583,6 +581,8 @@
     <MESSAGE value="Impostazione campi search" />
     <MESSAGE value="sistemazione generale" />
     <MESSAGE value="Aggiunta campo di ricerca" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta campo di ricerca" />
+    <MESSAGE value="Aggiunta opzione comune e nome" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
 </project>
