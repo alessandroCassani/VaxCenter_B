@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="update maven">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Impostazione campi search">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/SearchField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/SearchField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -167,14 +168,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="1390000" />
-    </task>
-    <task id="LOCAL-00003" summary="aggiornamenti UI generali">
-      <created>1663322295266</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1663322295266</updated>
+      <workItem from="1664728818104" duration="1742000" />
     </task>
     <task id="LOCAL-00004" summary="add doc">
       <created>1663322393625</created>
@@ -512,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664728967705</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Impostazione campi search">
+      <created>1664733560401</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1664733560401</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifiche label di info sopra textField" />
     <MESSAGE value="MODIFICA colori UIRegisterVaccinated" />
     <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
     <MESSAGE value="modifica posizione label in UIRegisterCitizen.class" />
@@ -567,6 +567,7 @@
     <MESSAGE value="sistemazione generale" />
     <MESSAGE value="fix bug generale" />
     <MESSAGE value="update maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="update maven" />
+    <MESSAGE value="Impostazione campi search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Impostazione campi search" />
   </component>
 </project>
