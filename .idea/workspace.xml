@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="fix bug generale">
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="update maven">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +57,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/clientCV/src/main/resources" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
@@ -163,13 +167,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-    </task>
-    <task id="LOCAL-00002" summary="aggiornamento UI operatori vaccinali">
-      <created>1663269806745</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1663269806745</updated>
+      <workItem from="1664728818104" duration="1390000" />
     </task>
     <task id="LOCAL-00003" summary="aggiornamenti UI generali">
       <created>1663322295266</created>
@@ -507,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664566174658</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="update maven">
+      <created>1664728967704</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1664728967705</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifiche tdimensioni testo dimenticate" />
     <MESSAGE value="modifiche label di info sopra textField" />
     <MESSAGE value="MODIFICA colori UIRegisterVaccinated" />
     <MESSAGE value="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali" />
@@ -562,6 +566,7 @@
     <MESSAGE value="modifica bottone login" />
     <MESSAGE value="sistemazione generale" />
     <MESSAGE value="fix bug generale" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug generale" />
+    <MESSAGE value="update maven" />
+    <option name="LAST_COMMIT_MESSAGE" value="update maven" />
   </component>
 </project>
