@@ -6,7 +6,7 @@ import UI.graphics.SearchField;
 
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
@@ -80,6 +80,8 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         jScrollPane1.setOpaque(false);
         jScrollPane1.getViewport().setOpaque(false);
+        jTable1.setShowGrid(false);
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

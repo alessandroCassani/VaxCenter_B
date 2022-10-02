@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Aggiunta panel&#10;e resize generale">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Impostazione tabella e risoluzione problemi grafici">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +37,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -179,14 +184,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="10407000" />
-    </task>
-    <task id="LOCAL-00009" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
-      <created>1663376899169</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1663376899169</updated>
+      <workItem from="1664728818104" duration="11874000" />
     </task>
     <task id="LOCAL-00010" summary="aggiunta javaDoc">
       <created>1663412919386</created>
@@ -524,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664741362397</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Impostazione tabella e risoluzione problemi grafici">
+      <created>1664742799483</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1664742799483</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sistemazione UILogin" />
     <MESSAGE value="modifica allineamenti UIRegisterVaxCenter" />
     <MESSAGE value="modifica login dimensione e centralità" />
     <MESSAGE value="centralizzato testo in textField" />
@@ -579,6 +583,7 @@
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Aggiunta tabella visualizzazione" />
     <MESSAGE value="Aggiunta panel&#10;e resize generale" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta panel&#10;e resize generale" />
+    <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
+    <option name="LAST_COMMIT_MESSAGE" value="Impostazione tabella e risoluzione problemi grafici" />
   </component>
 </project>
