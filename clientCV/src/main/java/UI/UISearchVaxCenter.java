@@ -5,6 +5,7 @@ import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.ImageIcon;
 
 /**
@@ -23,6 +24,13 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
         search.addOption(new InfoSearch("Nome", new ImageIcon("C:\\Users\\damia\\Desktop\\name.png")));
         search.addOption(new InfoSearch("Comune", new ImageIcon("C:\\Users\\damia\\Desktop\\search.png")));
         search.setSelectedIndex(0); // evidenzia primo elemento
+        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
+        jTable1.getTableHeader().setOpaque(false);
+        jTable1.getTableHeader().setBackground(new Color(32,136,203));
+        jTable1.getTableHeader().setForeground(new Color(255,255,255));
+        jTable1.setRowHeight(25);
+
+
     }
 
     /**
@@ -57,16 +65,21 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
                 }
         ) {
             boolean[] canEdit = new boolean [] {
-                    false, false, false, false, false, false, false, false, true, true
+                    false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(10);
-        jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        jTable1.setFocusable(false);
+        jTable1.setRowHeight(25);
+        jTable1.setSelectionBackground(new java.awt.Color(232, 47, 95));
+        jTable1.setShowHorizontalLines(true);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setOpaque(false);
+        jScrollPane1.getViewport().setOpaque(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,7 +145,7 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

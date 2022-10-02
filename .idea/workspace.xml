@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Aggiunta tabella visualizzazione">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Aggiunta panel&#10;e resize generale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,19 +82,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.UISearchVaxCenter">
-    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
-      <module name="clientCV" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
       <module name="serverCV" />
@@ -103,6 +91,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UISearchVaxCenter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UISearchVaxCenter" />
+      <module name="clientCV" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,19 +142,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UILogin" />
       <item itemvalue="Application.UISplashScreen" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
       <item itemvalue="Application.UISearchVaxCenter" />
+      <item itemvalue="Application.UISearchVaxCenter (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.UISearchVaxCenter" />
+        <item itemvalue="Application.UISearchVaxCenter (1)" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.UISplashScreen" />
-        <item itemvalue="Application.WelcomeScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -184,14 +179,7 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="9083000" />
-    </task>
-    <task id="LOCAL-00008" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
-      <created>1663376665078</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1663376665079</updated>
+      <workItem from="1664728818104" duration="10407000" />
     </task>
     <task id="LOCAL-00009" summary="aggiunta classe account nel package util, creazione interfaccia server ServerInterface.java">
       <created>1663376899169</created>
@@ -529,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664737081601</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Aggiunta panel&#10;e resize generale">
+      <created>1664741362397</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1664741362397</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sistemazione generale e aggiunta classi grafiche" />
     <MESSAGE value="Sistemazione UILogin" />
     <MESSAGE value="modifica allineamenti UIRegisterVaxCenter" />
     <MESSAGE value="modifica login dimensione e centralità" />
@@ -584,6 +578,7 @@
     <MESSAGE value="Aggiunta opzione comune e nome" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Aggiunta tabella visualizzazione" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta tabella visualizzazione" />
+    <MESSAGE value="Aggiunta panel&#10;e resize generale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta panel&#10;e resize generale" />
   </component>
 </project>
