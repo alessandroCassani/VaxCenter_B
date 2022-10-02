@@ -18,8 +18,8 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
     public UISearchVaxCenter() {
         initComponents();
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
-        search.addOption(new InfoSearch("Nome", new ImageIcon(getClass().getResource("/images/name.png"))));
-        search.addOption(new InfoSearch("Comune", new ImageIcon(getClass().getResource("/images/info_vaxcenter.png"))));
+        search.addOption(new InfoSearch("Nome", new ImageIcon("C:\\Users\\damia\\Desktop\\name.png")));
+        search.addOption(new InfoSearch("Comune", new ImageIcon("C:\\Users\\damia\\Desktop\\search.png")));
 
     }
 
