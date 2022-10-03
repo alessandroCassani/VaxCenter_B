@@ -9,19 +9,19 @@ import UI.graphics.MyPwdField;
 import UI.graphics.MyTextField;
 import UI.graphics.RoundButton;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
  *
  * @author damiano ficara
  */
-public class UILogin extends javax.swing.JFrame {
+public class UILogin extends JFrame {
 
     /**
      * Creates new form UILog
      */
     public UILogin() {
-        this.setUndecorated(true);
         initComponents();
         setSize(1000,600);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -94,11 +94,7 @@ public class UILogin extends javax.swing.JFrame {
        password.setHint("Password");
        password.setPrefixIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car-key-5803.png")));
 
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
-            }
-        });
+        password.addActionListener(evt -> jPasswordField2ActionPerformed(evt));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setOpaque(false);
@@ -178,7 +174,6 @@ public class UILogin extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
     }// </editor-fold>
 
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {}
@@ -190,13 +185,6 @@ public class UILogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(() -> {
-            UILogin login = new UILogin();
-                    login.setLocationRelativeTo(null);
-                    login.setVisible(true);
-        });
-    }
 
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

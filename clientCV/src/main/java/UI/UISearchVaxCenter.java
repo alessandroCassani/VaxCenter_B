@@ -20,8 +20,8 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
         initComponents();
         // pernette du evidenziare il tipo di ricerca compiuta
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
-        search.addOption(new InfoSearch("Nome", new ImageIcon("C:\\Users\\damia\\Desktop\\name.png")));
-        search.addOption(new InfoSearch("Comune", new ImageIcon("C:\\Users\\damia\\Desktop\\search.png")));
+        search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
+        search.addOption(new InfoSearch("Comune",  new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
         search.setSelectedIndex(0); // evidenzia primo elemento
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
         jTable1.getTableHeader().setOpaque(false);

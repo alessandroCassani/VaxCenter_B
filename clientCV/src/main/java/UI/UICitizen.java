@@ -153,5 +153,6 @@ public class UICitizen extends JFrame implements ActionListener {
             this.dispose();
             new UILogin();
         }
+
     }
 }

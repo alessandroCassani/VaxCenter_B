@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione UI">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione collegamento varie classi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
@@ -163,8 +161,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UISearchVaxCenter" />
+        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UISearchVaxCenter (1)" />
         <item itemvalue="Application.UILoginToServer" />
       </list>
@@ -194,14 +192,7 @@
       <workItem from="1664728818104" duration="12448000" />
       <workItem from="1664787623128" duration="564000" />
       <workItem from="1664792958839" duration="225000" />
-      <workItem from="1664795795812" duration="1313000" />
-    </task>
-    <task id="LOCAL-00012" summary=".">
-      <created>1663413757118</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1663413757118</updated>
+      <workItem from="1664795795812" duration="3244000" />
     </task>
     <task id="LOCAL-00013" summary="finita modifica UIRegisterVaccinated">
       <created>1663770440666</created>
@@ -539,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664798849891</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Sistemazione collegamento varie classi">
+      <created>1664799233229</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1664799233229</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica login dimensione e centralità" />
     <MESSAGE value="centralizzato testo in textField" />
     <MESSAGE value="modifiche dimensioni UIChoosingRooles.java" />
     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
@@ -594,6 +591,7 @@
     <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Sistemazione UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione UI" />
+    <MESSAGE value="Sistemazione collegamento varie classi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione collegamento varie classi" />
   </component>
 </project>
