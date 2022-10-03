@@ -4,8 +4,7 @@ import UI.graphics.GradientPanel;
 import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -29,7 +28,11 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
         jTable1.getTableHeader().setBackground(new Color(32,136,203));
         jTable1.getTableHeader().setForeground(new Color(255,255,255));
         jTable1.setRowHeight(25);
-
+        setSize(1000,600);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setLocationRelativeTo(null);
+        setVisible(true);
 
     }
 
@@ -118,9 +121,6 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        setSize(new java.awt.Dimension(1000, 600));
-        setLocationRelativeTo(null);
     }// </editor-fold>
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
