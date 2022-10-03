@@ -4,6 +4,7 @@
  */
 package UI;
 
+import UI.graphics.GradientPanel;
 import UI.graphics.MyPwdField;
 import UI.graphics.MyTextField;
 import UI.graphics.RoundButton;
@@ -38,8 +39,8 @@ public class UILogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new GradientPanel(Color.decode("#099779"),Color.decode("#0f88f9"));
+        jPanel2 = new GradientPanel(Color.decode("#099773"),Color.decode("#0f68a9"));
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -220,12 +221,10 @@ public class UILogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                UILogin login = new UILogin();
-                        login.setLocationRelativeTo(null);
-                        login.setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            UILogin login = new UILogin();
+                    login.setLocationRelativeTo(null);
+                    login.setVisible(true);
         });
     }
 

@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Impostazione tabella e risoluzione problemi grafici">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="bug fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/UIAdverseEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/WelcomeScreen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +92,20 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UISearchVaxCenter">
+  <component name="RunManager" selected="Application.UILogin">
+    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
       <module name="serverCV" />
@@ -120,19 +139,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UISplashScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISplashScreen" />
-      <module name="clientCV" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientCV.UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WelcomeScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.WelcomeScreen" />
       <module name="clientCV" />
@@ -147,19 +153,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UISplashScreen" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
       <item itemvalue="Application.UISearchVaxCenter" />
       <item itemvalue="Application.UISearchVaxCenter (1)" />
+      <item itemvalue="Application.UILogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UISearchVaxCenter" />
-        <item itemvalue="Application.UISearchVaxCenter (1)" />
         <item itemvalue="Application.WelcomeScreen" />
+        <item itemvalue="Application.UISearchVaxCenter (1)" />
         <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.UISplashScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -184,14 +190,10 @@
       <workItem from="1664225108625" duration="2682000" />
       <workItem from="1664227817751" duration="135000" />
       <workItem from="1664228121332" duration="844000" />
-      <workItem from="1664728818104" duration="11874000" />
-    </task>
-    <task id="LOCAL-00010" summary="aggiunta javaDoc">
-      <created>1663412919386</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1663412919387</updated>
+      <workItem from="1664728818104" duration="12448000" />
+      <workItem from="1664787623128" duration="564000" />
+      <workItem from="1664792958839" duration="225000" />
+      <workItem from="1664795795812" duration="662000" />
     </task>
     <task id="LOCAL-00011" summary="aggiunta metodi di controllo in ServerInterface.java e relativa JavaDoc">
       <created>1663413667092</created>
@@ -529,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664742799483</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="bug fixed">
+      <created>1664744379344</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1664744379344</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,10 +589,10 @@
     <MESSAGE value="sistemazione generale" />
     <MESSAGE value="Aggiunta campo di ricerca" />
     <MESSAGE value="Aggiunta opzione comune e nome" />
-    <MESSAGE value="bug fixed" />
     <MESSAGE value="Aggiunta tabella visualizzazione" />
     <MESSAGE value="Aggiunta panel&#10;e resize generale" />
     <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
-    <option name="LAST_COMMIT_MESSAGE" value="Impostazione tabella e risoluzione problemi grafici" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
 </project>
