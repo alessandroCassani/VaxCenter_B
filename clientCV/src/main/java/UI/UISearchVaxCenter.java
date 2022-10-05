@@ -170,6 +170,13 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     private javax.swing.JTable jTable1;
     private SearchField search;
 
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
