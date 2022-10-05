@@ -1,5 +1,7 @@
 package UI;
 
+import UI.graphics.RoundButton;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -20,7 +22,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione operatore vaccinale
      */
-    JButton operatoreVaccinale = new JButton();
+    RoundButton operatoreVaccinale = new RoundButton();
 
     /**
      * Bottone per accedere alla sezione cittadino
@@ -48,6 +50,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         JLabel operator = new JLabel("    OPERATORE VACCINALE");
         operator.setFont(new Font("Georgia", Font.BOLD, 15));
         operator.setForeground(Color.WHITE);
+
+
         operatoreVaccinale.setLayout(new BorderLayout());
         operatoreVaccinale.add(iconOV,BorderLayout.WEST);
         operatoreVaccinale.add(operator,BorderLayout.CENTER);
