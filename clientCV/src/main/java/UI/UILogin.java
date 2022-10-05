@@ -11,12 +11,18 @@ import UI.graphics.RoundButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Objects;
 
 /**
  *
- * @author damiano ficara
+ * Classe che permette al Cittadino di fare il Login
+ *
+ * @author Damiano Ficara
+ * @author Paolo Bruscagin
  */
-public class UILogin extends JFrame {
+public class UILogin extends JFrame implements ActionListener {
 
     /**
      * Creates new form UILog
@@ -53,7 +59,7 @@ public class UILogin extends JFrame {
         jPanel2.setBackground(new java.awt.Color(162, 173, 208));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/citizen.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/citizen.png")))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -196,4 +202,16 @@ public class UILogin extends JFrame {
     private javax.swing.JPanel jPanel6;
     private MyPwdField password;
     private MyTextField username;
+
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }
