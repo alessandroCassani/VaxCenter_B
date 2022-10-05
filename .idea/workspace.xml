@@ -189,21 +189,7 @@
       <workItem from="1664787623128" duration="564000" />
       <workItem from="1664792958839" duration="225000" />
       <workItem from="1664795795812" duration="3244000" />
-      <workItem from="1664973493168" duration="4060000" />
-    </task>
-    <task id="LOCAL-00018" summary="modifiche dimensioni">
-      <created>1663781997513</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663781997513</updated>
-    </task>
-    <task id="LOCAL-00019" summary="modifica allineamento choosingRoles">
-      <created>1663783194315</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663783194315</updated>
+      <workItem from="1664973493168" duration="4435000" />
     </task>
     <task id="LOCAL-00020" summary="modifica allinemanto icone nei Button della intera UI">
       <created>1663787211424</created>
@@ -534,7 +520,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664977549533</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Sistemazione Bug UI">
+      <created>1664977719017</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977719017</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Sistemazione Bug UI">
+      <created>1664977948938</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977948938</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

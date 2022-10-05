@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+
 /**
  *
  * Classe che permette al Cittadino di fare il Login
@@ -28,12 +29,15 @@ public class UILogin extends JFrame implements ActionListener {
      * Creates new form UILog
      */
     public UILogin() {
+
         initComponents();
         setSize(1000,600);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setVisible(true);
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
+        setIconImage(logo.getImage());
     }
 
     @SuppressWarnings("unchecked")
@@ -128,7 +132,7 @@ public class UILogin extends JFrame implements ActionListener {
 
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/color50ind.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel3MousePressed(evt);
