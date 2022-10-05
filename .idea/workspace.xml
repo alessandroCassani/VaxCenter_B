@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione collegamento varie classi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione Bug UI">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,19 +63,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/clientCV/src/main/resources/images" />
-    <property name="settings.editor.selected.configurable" value="build.tools" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/brusc/Documents/GitHub/VaxCenter_B/clientCV/src/main/resources/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources" />
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\documentazione" />
-      <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\admin\IdeaProjects\VaxCenter_B\util\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -193,55 +189,7 @@
       <workItem from="1664787623128" duration="564000" />
       <workItem from="1664792958839" duration="225000" />
       <workItem from="1664795795812" duration="3244000" />
-    </task>
-    <task id="LOCAL-00013" summary="finita modifica UIRegisterVaccinated">
-      <created>1663770440666</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1663770440666</updated>
-    </task>
-    <task id="LOCAL-00014" summary="finita modifica UIRegisterVaxCenter">
-      <created>1663774931140</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1663774931140</updated>
-    </task>
-    <task id="LOCAL-00015" summary="finita modifica UIRegisterCitizen">
-      <created>1663779042380</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1663779042380</updated>
-    </task>
-    <task id="LOCAL-00016" summary="finita modifica UICiti">
-      <created>1663781154213</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1663781154213</updated>
-    </task>
-    <task id="LOCAL-00017" summary="aggiunta mouseListener to accedi label">
-      <created>1663781490253</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1663781490253</updated>
-    </task>
-    <task id="LOCAL-00018" summary="modifiche dimensioni">
-      <created>1663781997513</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1663781997513</updated>
-    </task>
-    <task id="LOCAL-00019" summary="modifica allineamento choosingRoles">
-      <created>1663783194315</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1663783194315</updated>
+      <workItem from="1664973493168" duration="4435000" />
     </task>
     <task id="LOCAL-00020" summary="modifica allinemanto icone nei Button della intera UI">
       <created>1663787211424</created>
@@ -537,7 +485,56 @@
       <option name="project" value="LOCAL" />
       <updated>1664799233229</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Sistemazione Bug UI">
+      <created>1664977036762</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977036763</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Sistemazione Bug UI">
+      <created>1664977406604</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977406604</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Sistemazione Bug UI">
+      <created>1664977434866</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977434866</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Sistemazione Bug UI">
+      <created>1664977455646</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977455646</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Sistemazione Bug UI">
+      <created>1664977549533</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977549533</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Sistemazione Bug UI">
+      <created>1664977719017</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977719017</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Sistemazione Bug UI">
+      <created>1664977948938</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1664977948938</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="centralizzato testo in textField" />
     <MESSAGE value="modifiche dimensioni UIChoosingRooles.java" />
     <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
     <MESSAGE value="centralizzato testo in comboBox" />
@@ -592,6 +588,7 @@
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Sistemazione UI" />
     <MESSAGE value="Sistemazione collegamento varie classi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione collegamento varie classi" />
+    <MESSAGE value="Sistemazione Bug UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione Bug UI" />
   </component>
 </project>
