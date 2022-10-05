@@ -11,7 +11,7 @@ import java.util.Objects;
 import javax.swing.*;
 
 /**
- * La classe UISearchVaxCenter permette di ricercare i centri vaccinale tramite due tipologie di ricerca:
+ * La classe UISearchVaxCenter permette di ricercare i centri vaccinale tramite due tipologie di RICERCA:
  *   - Ricerca per nome
  *   - Ricerca per comune e tipologia
  *
