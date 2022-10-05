@@ -5,6 +5,7 @@ import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 
 import java.awt.*;
+import java.util.Objects;
 import javax.swing.*;
 
 /**
@@ -33,6 +34,8 @@ public class UISearchVaxCenter extends javax.swing.JFrame {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setVisible(true);
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
+        setIconImage(logo.getImage());
 
     }
 

@@ -43,6 +43,9 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     public UIVaccineOperator(){
 
+        ImageIcon immVO = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/immOpVac.jpg")));
+
+
         Border bordo = new LineBorder(new Color(0,49,83), 2, true);
         Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
 
