@@ -5,6 +5,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * la classe serverImpl contiene l'implementazione dei metodi del server, ovvero quei metodi che direttamente sia per inserimenti che per controlli interagiscono
@@ -88,9 +90,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM Vaccinati");
             ResultSet resultSet = preparedStatement.executeQuery();
-            ArrayList<BigInteger> id = new ArrayList<>();
+            TreeSet<BigInteger> id = new TreeSet<>();
             while(resultSet.next()){
-                id.add(new BigInteger(resultSet.getString(1)));            }
+                id.add(new BigInteger(resultSet.getString(1))); //TreeSet ordina di default gli elementi in ordine crescente
+            }
+            BigInteger numero = id.last();
+
             preparedStatement.close();
 
 
