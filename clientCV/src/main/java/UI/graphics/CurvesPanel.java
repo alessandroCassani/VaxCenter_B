@@ -16,6 +16,7 @@ import java.awt.geom.CubicCurve2D;
 import java.awt.geom.GeneralPath;
 import javax.swing.Timer;
 
+
 public class CurvesPanel extends GradientPanel {
 
     private RenderingHints hints;

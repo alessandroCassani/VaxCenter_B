@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]" date="1664978356152" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 05/10/2022 15:59 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/graphics/CurvesPanel$1.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/graphics/CurvesPanel$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]/CurvesPanel$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UICitizen.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UICitizen.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]/UICitizen.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/UISearchVaxCenter.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/UISearchVaxCenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]/UISearchVaxCenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="clientCV/target/classes/UI/graphics/CurvesPanel.class" />
+    <option name="AFTER_PATH" value="clientCV/target/classes/UI/graphics/CurvesPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2022_15_59_[Changes]/CurvesPanel.class" />
+  </binary>
+</changelist>
