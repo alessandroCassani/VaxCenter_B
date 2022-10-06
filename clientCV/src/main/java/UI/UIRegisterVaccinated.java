@@ -181,7 +181,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
         pulisci = new JButton(pul);
-        pulisci.setBounds(850, 390, 50, 50);
+        pulisci.setBounds(850, 400, 50, 50);
         pulisci.setFont(new Font("Georgia", Font.BOLD, 17));
         pulisci.setBackground(new Color(181, 226, 232));
         pulisci.setForeground(Color.WHITE);
