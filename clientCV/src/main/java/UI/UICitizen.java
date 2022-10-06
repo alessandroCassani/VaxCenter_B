@@ -59,13 +59,13 @@ public class UICitizen extends JFrame implements ActionListener {
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
 
 
-        login.setFont(new Font("Georgia", Font.ITALIC, 20));
+        login.setFont(new Font("Georgia", Font.ITALIC, 23));
         Font font = login.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         login.setFont(font.deriveFont(attributes));
         login.setForeground(new Color(0,49,83));
-        login.setBounds(890,60,100,30);
+        login.setBounds(880,60,100,30);
         login.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
