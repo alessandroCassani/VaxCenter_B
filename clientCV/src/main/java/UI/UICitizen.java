@@ -65,7 +65,7 @@ public class UICitizen extends JFrame implements ActionListener {
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         login.setFont(font.deriveFont(attributes));
         login.setForeground(new Color(0,49,83));
-        login.setBounds(890,20,100,30);
+        login.setBounds(890,60,100,30);
         login.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
