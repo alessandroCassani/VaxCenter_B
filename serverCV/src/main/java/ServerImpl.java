@@ -1,11 +1,10 @@
 import util.*;
 
+import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * la classe serverImpl contiene l'implementazione dei metodi del server, ovvero quei metodi che direttamente sia per inserimenti che per controlli interagiscono
@@ -87,10 +86,11 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccina(nomeCentro,id) VALUES (?,?)");
-            preparedStatement.setString(1,vaccinato.getCentroVaccinale().getNome());
-            preparedStatement.setString(2,vaccinato.getId());
-            preparedStatement.executeUpdate();
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM Vaccinati");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            ArrayList<BigInteger> id = new ArrayList<>();
+            while(resultSet.next()){
+                id.add(new BigInteger(resultSet.getString(1)));            }
             preparedStatement.close();
 
 
