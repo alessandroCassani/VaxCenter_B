@@ -47,7 +47,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         Border bordo = new LineBorder(new Color(0,49,83), 2, true);
-        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         //Personalizzazione bottone registra centro vaccinale
 
@@ -61,7 +61,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraCentroVaccinale.add(iconCV,BorderLayout.WEST);
         registraCentroVaccinale.add(registraCV,BorderLayout.CENTER);
         registraCentroVaccinale.setHorizontalAlignment(SwingConstants.CENTER);
-        registraCentroVaccinale.setBounds(600, 80, 350, 95);
+        registraCentroVaccinale.setBounds(600, 150, 350, 95);
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCentroVaccinale.setBackground(new Color(65, 102, 245));
         registraCentroVaccinale.setForeground(Color.WHITE);
@@ -81,7 +81,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraVaccinato.setLayout(new BorderLayout());
         registraVaccinato.add(iconRV,BorderLayout.WEST);
         registraVaccinato.add(registraVaccinatoLabel,BorderLayout.CENTER);
-        registraVaccinato.setBounds(600, 220, 350, 95);
+        registraVaccinato.setBounds(600, 300, 350, 95);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setBackground(new Color(65, 102, 245));
         registraVaccinato.setForeground(Color.WHITE);
@@ -92,12 +92,13 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         //Personalizzazione bottone indietro
 
-        backtoChoosingRooles =  new JButton("INDIETRO");
-        backtoChoosingRooles.setBounds(600, 400, 350, 95);
-        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 15));
-        backtoChoosingRooles.setBackground(new Color(248, 9, 55));
-        backtoChoosingRooles.setBorder(bordobtnInd);
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
+        backtoChoosingRooles = new JButton(ind);
+        backtoChoosingRooles.setBounds(10, 10, 55 , 55);
+        backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 17));
+        backtoChoosingRooles.setBackground(new Color(181, 226, 232));
         backtoChoosingRooles.setForeground(Color.WHITE);
+        backtoChoosingRooles.setBorder(bordobtnInd);
         backtoChoosingRooles.setFocusable(false);
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
