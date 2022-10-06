@@ -87,30 +87,32 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nomeCentro,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,isReg) \n" +
-                    "VALUES(?,?,?,?,?,?,?,?");
-            ps.setString(1, vaccinato.getId());
-            ps.setString(2,vaccinato.getCentroVaccinale().getNome());
-            ps.setString(3,vaccinato.getNome());
-            ps.setString(4,vaccinato.getCognome());
-            ps.setString(5,vaccinato.getCodFisc());
-            ps.setDate(6, (Date) vaccinato.getDataSomministrazione());  //controllo cast!!
-            ps.setString(7,vaccinato.getVaccino().toString());
-            ps.setBoolean(8,false); //alla registrazione del vaccinato è impossibile che questo sia già loggato
-            ps.executeUpdate();
-            ps.close();
-
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccina(nomeCentro,id) VALUES (?,?)");
             preparedStatement.setString(1,vaccinato.getCentroVaccinale().getNome());
             preparedStatement.setString(2,vaccinato.getId());
             preparedStatement.executeUpdate();
             preparedStatement.close();
+
+
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,nomecentro) \n" +
+                    "VALUES(?,?,?,?,?,?,?");
+            ps.setString(1, vaccinato.getId());
+            ps.setString(2,vaccinato.getNome());
+            ps.setString(3,vaccinato.getCognome());
+            ps.setString(4,vaccinato.getCodFisc());
+            ps.setDate(5, (Date) vaccinato.getDataSomministrazione());  //controllo cast!!
+            ps.setString(6,vaccinato.getVaccino().toString());
+            ps.setString(7,vaccinato.getCentroVaccinale().getNome());
+            ps.executeUpdate();
+            ps.close();
+
         }catch (SQLException e){return false;}
         return true;
     }
 
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException {
+
         return false;
     }
 
