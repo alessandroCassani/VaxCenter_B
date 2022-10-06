@@ -65,7 +65,7 @@ public class UICitizen extends JFrame implements ActionListener {
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         login.setFont(font.deriveFont(attributes));
         login.setForeground(new Color(0,49,83));
-        login.setBounds(880,60,100,30);
+        login.setBounds(880,70,100,30);
         login.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -80,7 +80,7 @@ public class UICitizen extends JFrame implements ActionListener {
         cercaCentroVaccinale.setLayout(new BorderLayout());
         cercaCentroVaccinale.add(cercaCV,BorderLayout.WEST);
         cercaCentroVaccinale.add(cercaLabel,BorderLayout.CENTER);
-        cercaCentroVaccinale.setBounds(600, 150, 350, 95);
+        cercaCentroVaccinale.setBounds(600, 160, 350, 95);
         cercaCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         cercaCentroVaccinale.setBackground(new Color(65, 102, 245));
         cercaCentroVaccinale.setForeground(Color.WHITE);
@@ -97,7 +97,7 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.setLayout(new BorderLayout());
         registraCittadino.add(registraCitizen,BorderLayout.WEST);
         registraCittadino.add(registralabel,BorderLayout.CENTER);
-        registraCittadino.setBounds(600, 300, 350, 95);
+        registraCittadino.setBounds(600, 310, 350, 95);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(65, 102, 245));
         registraCittadino.setForeground(Color.WHITE);
@@ -160,6 +160,5 @@ public class UICitizen extends JFrame implements ActionListener {
             this.dispose();
             new UILogin();
         }
-
     }
 }

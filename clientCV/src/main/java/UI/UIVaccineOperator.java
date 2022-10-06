@@ -94,7 +94,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backtoChoosingRooles = new JButton(ind);
-        backtoChoosingRooles.setBounds(10, 5, 55 , 55);
+        backtoChoosingRooles.setBounds(10, 10, 55 , 55);
         backtoChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 17));
         backtoChoosingRooles.setBackground(new Color(181, 226, 232));
         backtoChoosingRooles.setForeground(Color.WHITE);

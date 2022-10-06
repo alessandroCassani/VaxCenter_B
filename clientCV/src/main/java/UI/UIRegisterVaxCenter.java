@@ -186,7 +186,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToUIVaccineOperator = new JButton(ind);
-        backToUIVaccineOperator.setBounds(10, 20, 55 , 55);
+        backToUIVaccineOperator.setBounds(10, 10, 55 , 55);
         backToUIVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 17));
         backToUIVaccineOperator.setBackground(new Color(181, 226, 232));
         backToUIVaccineOperator.setForeground(Color.WHITE);
