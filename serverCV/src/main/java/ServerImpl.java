@@ -90,18 +90,20 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM Vaccinati");
             ResultSet resultSet = preparedStatement.executeQuery();
+            preparedStatement.close();
             TreeSet<BigInteger> id = new TreeSet<>();
             while(resultSet.next()){
                 id.add(new BigInteger(resultSet.getString(1))); //TreeSet ordina di default gli elementi in ordine crescente
             }
-            BigInteger numero = id.last();
-
-            preparedStatement.close();
-
+            BigInteger numero;
+            if(!id.isEmpty())
+                numero = id.last();
+            else
+                numero = new BigInteger("0000000000000000");
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,nomecentro) \n" +
                     "VALUES(?,?,?,?,?,?,?");
-            ps.setString(1, vaccinato.getId());
+            ps.setString(1, numero.toString());
             ps.setString(2,vaccinato.getNome());
             ps.setString(3,vaccinato.getCognome());
             ps.setString(4,vaccinato.getCodFisc());
