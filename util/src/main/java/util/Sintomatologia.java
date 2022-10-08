@@ -14,7 +14,7 @@ public enum Sintomatologia{
     /**
      * nome user friendly e in minuscolo della sintomatologia segnalata
      */
-    private String nome;
+    private final String nome;
 
     /**
      * metodo che associa un nome alla sintomatologia

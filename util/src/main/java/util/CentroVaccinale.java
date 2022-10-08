@@ -12,17 +12,17 @@ public class CentroVaccinale implements Serializable {
     /**
      * nome del centro vaccinale
      */
-    private String nome;
+    private final String nome;
 
     /**
      * indirizzo del centro vaccinale
      */
-    private Indirizzo indirizzo;
+    private final Indirizzo indirizzo;
 
     /**
      * tipologia di centro vaccinale
      */
-    private Tipologia tipologia;
+    private final Tipologia tipologia;
 
     /**
      * metodo che crea un oggetto di tipo centro vaccinale

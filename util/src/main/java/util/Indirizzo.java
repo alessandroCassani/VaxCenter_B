@@ -10,32 +10,32 @@ public class Indirizzo implements Serializable  {
     /**
      * qualificatore dell'indirizzo (via/viale/piazza)
      */
-    private Qualificatore qualificatore;
+    private final Qualificatore qualificatore;
 
     /**
      * nome indirizzo
      */
-    private String nome;
+    private final String nome;
 
     /**
      * numero civico
      */
-    private String civico;
+    private final String civico;
 
     /**
      * comune dove e' situato l'indirizzo
      */
-    private String comune;
+    private final String comune;
 
     /**
      * provincia dove e' situata l'indirizzo
      */
-    private String provincia;
+    private final String provincia;
 
     /**
      * cap dove e' situato l'indirizzo
      */
-    private int cap;
+    private final int cap;
 
     /**
      * metodo che gestisce e associa le informazioni di un indirizzo

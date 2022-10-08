@@ -1,6 +1,7 @@
 package util;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -13,34 +14,34 @@ public abstract class Persona implements Serializable {
     /**
      * nome della persona
      */
-    private String nome;
+    private final String nome;
     /**
      * cognome della persona
      */
-    private String cognome;
+    private final String cognome;
     /**
      * codice fiscale della persona
      */
-    private String codFisc;
+    private final String codFisc;
     /**
      * email della persona
      */
-    private String email;
+    private final String email;
 
     /**
      * id della persona
      */
-    private String id;
+    private final BigInteger id;
 
     /**
      * data di dascita della persona
      */
-    private Date dataNascita;
+    private final Date dataNascita;
 
     /**
      * centro vaccinale in cui si e' vaccinata la persona
      */
-    private CentroVaccinale centroVaccinale;
+    private final CentroVaccinale centroVaccinale;
 
     /**
      * metodo che permette la modellazione delle informazioni di un oggetto di tipo persona, il quale non sara' creato direttamente (classe astratta) ma sarà utilizzato nei costruttori delle sue sottoclassi
@@ -54,7 +55,7 @@ public abstract class Persona implements Serializable {
      *
      * @author Alessandro Cassani
      */
-    public Persona(String nome,String cognome, String codFisc,String email, String id, Date dataNascita, CentroVaccinale centroVaccinale){
+    public Persona(String nome,String cognome, String codFisc,String email, BigInteger id, Date dataNascita, CentroVaccinale centroVaccinale){
         this.nome = nome;
         this.cognome = cognome;
         this.codFisc = codFisc;
@@ -110,7 +111,7 @@ public abstract class Persona implements Serializable {
      *
      * @author Alessandro Cassani
      */
-    public String getId(){
+    public BigInteger getId(){
         return id;
     }
 

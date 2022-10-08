@@ -28,7 +28,7 @@ public class RoundButton extends JButton {
         this.effectColor = effectColor;
     }
 
-    private Animator animator;
+    private final Animator animator;
     private int targetSize;
     private float animatSize;
     private Point pressedPoint;

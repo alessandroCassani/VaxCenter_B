@@ -13,12 +13,12 @@ public class Sintomo implements Serializable {
     /**
      * sintomatologia segnalata
      */
-    private Sintomatologia sintomatologia;
+    private final Sintomatologia sintomatologia;
 
     /**
      * severita' in scala 1-10 della sintomatologia segnalata
      */
-    private int severita;
+    private final int severita;
 
     /**
      * metodo che registra le informazioni del sintomo segnalato

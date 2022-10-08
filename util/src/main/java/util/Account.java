@@ -11,12 +11,12 @@ import java.io.Serializable;
     /**
      * userId dell'account
      */
-    private String userId;
+    private final String userId;
 
     /**
      * password dell'account
      */
-    private String password;
+    private final String password;
 
     /**
      * metodo che permette la creazione di un oggetto di tipo Account
