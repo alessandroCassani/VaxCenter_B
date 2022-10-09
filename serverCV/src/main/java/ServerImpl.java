@@ -50,7 +50,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette la registrazione nell'opportuna tabella del DB di un oggetto di tipo cittadino
+     * il metodo permette la registrazione nella tabella del DB Cittadini_Registrati di un oggetto di tipo cittadino, e l'inserimento delle informazioni relative al suo account associato nella tabella Account
      * @param cittadino cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione RMI
@@ -63,7 +63,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,nomeCentroVaccinale) \n"
                     + "VALUES (?,?,?,?,?,?)");
 
-            //da modificare struttura cittadini registrati
             ps.setString(1, cittadino.getId().toString());
             ps.setString(2, cittadino.getNome());
             ps.setString(3,cittadino.getCognome());
@@ -72,6 +71,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(6,cittadino.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
+
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Account(id,username,password) \n" +
+                    "VALUES (?,?,?)");
+            preparedStatement.setString(1,cittadino.getId().toString());
+            preparedStatement.setString(2,cittadino.getAccount().getUserId());
+            preparedStatement.setString(3,cittadino.getAccount().getPassword());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException e){return false;}
         return true;
     }
