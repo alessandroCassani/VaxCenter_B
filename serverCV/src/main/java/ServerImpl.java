@@ -159,7 +159,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentroVaccinale WHERE nomeCentro = ?");
+
+            ps.setString(1, VaxCenterName);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 
     @Override
