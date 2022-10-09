@@ -2,10 +2,7 @@ import util.*;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 
 /**
  * la classe serverImpl contiene l'implementazione dei metodi del server, ovvero quei metodi che direttamente sia per inserimenti che per controlli interagiscono
@@ -134,8 +131,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
+    //bisogna cambiare il risultato boolean
     @Override
-    public boolean isVaccinatedRegistrated(String user) throws RemoteException {
+    public boolean isVaccinatedRegistrated(String nomeCentro) throws RemoteException {
         return false;
     }
 }
