@@ -60,25 +60,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,nomeCentroVaccinale) \n"
-                    + "VALUES (?,?,?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,username,password,nomeCentroVaccinale) \n"
+                    + "VALUES (?,?,?,?,?,?,?,?)");
 
             ps.setString(1, cittadino.getId().toString());
             ps.setString(2, cittadino.getNome());
             ps.setString(3,cittadino.getCognome());
             ps.setString(4,cittadino.getCodFisc());
             ps.setString(5, cittadino.getEmail());
-            ps.setString(6,cittadino.getCentroVaccinale().getNome());
+            ps.setString(6,cittadino.getAccount().getUserId());
+            ps.setString(7,cittadino.getAccount().getPassword());
+            ps.setString(8,cittadino.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
-
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Account(id,username,password) \n" +
-                    "VALUES (?,?,?)");
-            preparedStatement.setString(1,cittadino.getId().toString());
-            preparedStatement.setString(2,cittadino.getAccount().getUserId());
-            preparedStatement.setString(3,cittadino.getAccount().getPassword());
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
         } catch (SQLException e){return false;}
         return true;
     }
@@ -126,9 +120,32 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(id,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) \n +" +
-                    " VALUE (?;?;?;?;?;?");
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(username,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) \n +" +
+                    " VALUE (?,?,?,?,?,?");
 
+            int count = 1;
+            for (Sintomo sintomo: eventiAvversi.getSintomi()) {
+                if(sintomo.getSeverita()!=0)
+                    preparedStatement.setBoolean(count,true);
+                else
+                    preparedStatement.setBoolean(count,false);
+                count++;
+            }
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Severita(username,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) \n +" +
+                    " VALUE (?,?,?,?,?,?,?");
+            int size = eventiAvversi.getSintomi().size();
+            count = 1;
+            while(count<size-1) {  //-1 perchè ultimo campo ci sono le note
+                    ps.setInt(count,eventiAvversi.getSintomi().get(count).getSeverita());
+                    count++;
+            }
+            ps.setString(size, eventiAvversi.getNote());
+            ps.executeUpdate();
+            ps.close();
         } catch (SQLException e) {return  false;}
         return true;
     }
