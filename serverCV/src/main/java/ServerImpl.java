@@ -157,6 +157,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette il controllo della già avvenuta registrazione di un centro vaccinale
+     * @param VaxCenterName nome del centro vaccinale
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     */
     @Override
     public boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException {
         try {
