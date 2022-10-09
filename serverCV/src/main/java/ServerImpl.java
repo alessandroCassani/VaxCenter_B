@@ -4,8 +4,6 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -26,7 +24,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette di registrare nel DB nell'oppurtuna tabella un centro vaccinale
+     * il metodo permette di registrare nel DB nella tabella  centriVaccinali le informazioni relative ad un centro vaccinale
      * @param centroVaccinale centro vaccinale
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione RMI
@@ -50,7 +48,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette la registrazione nella tabella del DB Cittadini_Registrati di un oggetto di tipo cittadino, e l'inserimento delle informazioni relative al suo account associato nella tabella Account
+     * il metodo permette la registrazione nella tabella del DB Cittadini_Registrati di un oggetto di tipo cittadino
      * @param cittadino cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione RMI
@@ -117,6 +115,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette la registrazione nelle tabelle Severita e Eventi_Avversi le informazioni relative agli eventi avversi registrati dal cittadino.
+     * le severita' sono inserite come interi nella tabella Severita, le note opzionali come ultimo campo sotto forma di stringhe.
+     * le sintomatologie registrate sono registrate nella tabella Eventi_Avversi sotto forma di booleani. true se sintomo riscontrato, altrimenti false
+     *
+     * @param eventiAvversi serie di eventi avversi segnalati
+     * @return true o false in base all'esito dell'operazione
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException {
         try {
@@ -125,10 +134,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
             int count = 1;
             for (Sintomo sintomo: eventiAvversi.getSintomi()) {
-                if(sintomo.getSeverita()!=0)
-                    preparedStatement.setBoolean(count,true);
-                else
-                    preparedStatement.setBoolean(count,false);
+                preparedStatement.setBoolean(count, sintomo.getSeverita() != 0);
                 count++;
             }
             preparedStatement.executeUpdate();
