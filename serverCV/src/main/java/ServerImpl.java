@@ -60,8 +60,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,username,password) \n"
-                    + "VALUES (?,?,?,?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codFisc,email,nomeCentroVaccinale) \n"
+                    + "VALUES (?,?,?,?,?,?)");
 
             //da modificare struttura cittadini registrati
             ps.setString(1, cittadino.getId().toString());
@@ -69,8 +69,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(3,cittadino.getCognome());
             ps.setString(4,cittadino.getCodFisc());
             ps.setString(5, cittadino.getEmail());
-            ps.setString(6,cittadino.getAccount().getUserId());
-            ps.setString(7,cittadino.getAccount().getPassword());
+            ps.setString(6,cittadino.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e){return false;}
@@ -119,8 +118,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException {
+        try {
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(id,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) \n +" +
+                    " VALUE (?;?;?;?;?;?");
 
-        return false;
+        } catch (SQLException e) {return  false;}
+        return true;
     }
 
     @Override
