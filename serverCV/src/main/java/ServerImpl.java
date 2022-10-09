@@ -111,6 +111,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
+    /**
+     * il metodo permette di controllare se il cittadino è già registrato oppure no
+     * @param account account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     */
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
