@@ -134,6 +134,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette il controllo in fase di accesso e registrazione dell'utente dell'avvenuta registrazione del cittadino
+     * @param user nome utente
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     */
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
         try {
