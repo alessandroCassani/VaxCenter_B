@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 import javax.swing.*;
 
+
 /**
  * La classe UISearchVaxCenter permette di ricercare i centri vaccinale tramite due tipologie di RICERCA:
  *   - Ricerca per nome
@@ -70,6 +71,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             }
         });
 
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
                         {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub", "40", "2"},
@@ -87,6 +89,10 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                 return canEdit [columnIndex];
             }
         });
+
+
+
+        jTable1.setFont(new Font("sansserif", Font.BOLD, 15));
         jTable1.setFocusable(false);
         jTable1.setRowHeight(25);
         jTable1.setSelectionBackground(new java.awt.Color(232, 47, 95));
@@ -94,6 +100,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         jScrollPane1.setOpaque(false);
+
         jScrollPane1.getViewport().setOpaque(false);
         jTable1.setShowGrid(false);
 
@@ -189,5 +196,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
-    // End of variables declaration                   
+
+
+
 }
