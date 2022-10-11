@@ -100,6 +100,11 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/color50ind.png")));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,6 +148,11 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         );
     }// </editor-fold>
 
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {
+        this.dispose();
+        new UICitizen();
+    }
+
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
         if(search.isSelected()) {
             int option = search.getSelectedIndex();
@@ -159,19 +169,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UISearchVaxCenter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        java.awt.EventQueue.invokeLater(() -> new UISearchVaxCenter().setVisible(true));
-    }
+
 
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;

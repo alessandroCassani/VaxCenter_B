@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="spostamento bottone ritorno indietro">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="aggiunta bottone torno indietro ui search">
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/images/citizen.png" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/images/citizen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="bugLogin" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -200,21 +190,7 @@
       <workItem from="1665307542516" duration="59000" />
       <workItem from="1665439558898" duration="813000" />
       <workItem from="1665507288553" duration="1261000" />
-      <workItem from="1665524035106" duration="1710000" />
-    </task>
-    <task id="LOCAL-00021" summary="modifiche tdimensioni testo dimenticate">
-      <created>1663788463326</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1663788463326</updated>
-    </task>
-    <task id="LOCAL-00022" summary="modifiche label di info sopra textField">
-      <created>1663927925991</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1663927925992</updated>
+      <workItem from="1665524035106" duration="2008000" />
     </task>
     <task id="LOCAL-00023" summary="MODIFICA colori UIRegisterVaccinated">
       <created>1663934754980</created>
@@ -545,7 +521,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664978801998</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="aggiunta bottone torno indietro ui search">
+      <created>1665525875265</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1665525875266</updated>
+    </task>
+    <task id="LOCAL-00071" summary="aggiunta bottone torno indietro ui search">
+      <created>1665525880205</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1665525880205</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
     <MESSAGE value="centralizzato testo in comboBox" />
     <MESSAGE value="modifica rounded corners" />
     <MESSAGE value="Sistemazione UIAdverseEvent" />
@@ -600,6 +589,7 @@
     <MESSAGE value="Sistemazione collegamento varie classi" />
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione bottone Login" />
+    <MESSAGE value="aggiunta bottone torno indietro ui search" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta bottone torno indietro ui search" />
   </component>
 </project>
