@@ -13,12 +13,12 @@ public class EventiAvversi implements Serializable {
         /**
          * note opzionali
          */
-    private String note;
+    private final String note;
 
         /**
          * lista di sintomi segnalati dall'utente post vaccinazione
          */
-    private ArrayList<Sintomo> sintomi;
+    private final ArrayList<Sintomo> sintomi;
 
         /**
          * metodo che modella le informazioni di un oggetto di tipo EventiAvversi

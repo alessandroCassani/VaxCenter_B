@@ -78,7 +78,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                         "Nome", "Qualificatore", "Via", "Numero Civico", "Comune", "Sigla", "Cap", "Tipologia", "Segnalazioni", "MediaSeverità"
                 }
         ) {
-            boolean[] canEdit = new boolean [] {
+            final boolean[] canEdit = new boolean [] {
                     false, false, false, false, false, false, false, false, false, false
             };
 
@@ -150,7 +150,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
