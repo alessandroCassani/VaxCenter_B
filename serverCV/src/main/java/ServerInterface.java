@@ -52,6 +52,7 @@ public interface ServerInterface extends Remote {
      */
     boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException;
 
+
     /**
      * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
      * @param account account del cittadino
@@ -93,7 +94,7 @@ public interface ServerInterface extends Remote {
     boolean isCitizenRegistrated(String citizen) throws RemoteException;
 
     /**
-     * segbatura del metodo che permette il controllo della già avvenuta vaccinazione del cittadino
+     * segnatura del metodo che permette il controllo della già avvenuta vaccinazione del cittadino
      * @param user codice fiscale dle vaccinato
      * @return true o false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
@@ -101,4 +102,13 @@ public interface ServerInterface extends Remote {
      *  @author Alessandro Cassani
      */
     boolean isVaccinatedRegistrated(String user) throws RemoteException;
+
+    /**
+     * segnatura del metodo che permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
+     * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro cassani
+     */
+    boolean getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
 }

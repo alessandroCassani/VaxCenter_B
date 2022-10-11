@@ -34,13 +34,11 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,tipologia,numeroSegnalazioni,avgSeverita \n"
-                    + "VALUES (?,?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,tipologia) \n"
+                    + "VALUES (?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
             ps.setString(2,centroVaccinale.getIndirizzo().toString());
             ps.setString(3,centroVaccinale.getTipologia().toString());
-            ps.setNull(4, Types.NULL);
-            ps.setNull(5,Types.NULL);
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){return false;}
@@ -178,6 +176,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public boolean isVaccinatedRegistrated(String user) throws RemoteException {
+        return false;
+    }
+
+    /**
+     * segnatura del metodo che permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
+     *
+     * @param nomeCentroVaccinale nome del centro vaccinale di cui si viuole avere il prospetto riassuntivo
+     * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
+     * @throws RemoteException eccezione rmi
+     * @author Alessandro cassani
+     */
+    @Override
+    public boolean getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
         return false;
     }
 }
