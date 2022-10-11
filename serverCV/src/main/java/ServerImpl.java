@@ -186,10 +186,24 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param nomeCentroVaccinale nome del centro vaccinale di cui si viuole avere il prospetto riassuntivo
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
+     *
      * @author Alessandro cassani
      */
     @Override
     public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+        try {
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT COUNT(mal_di_testa) AVG(mal_dit_esta) COUNT(febbre) AVG(febbre) COUNT(dolori_muscolari) AVG(dolori_muscolari)" +
+                    "COUNT(linfoadenopatia) AVG(linfoadenopatia) COUNT(crisi_ipertensiva) AVG(crisi_ipertensiva) \n" +
+                    "FROM Severita JOIN Cittadini_registrati USING username WHERE nomeCentro =" + nomeCentroVaccinale);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return "mal di testa: " + resultSet.getString(1) + " segnalazioni media intensita' " + resultSet.getString(2) +
+                        " febbre: " + resultSet.getString(3) + " segnalazioni media intensita' " + resultSet.getString(4) +
+                        " dolori muscolari: " + resultSet.getString(5) + " segnalazioni media intensita' " + resultSet.getString(6) +
+                        " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) +
+                        " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
+
+        } catch (SQLException e) {}
         return "";
     }
 
