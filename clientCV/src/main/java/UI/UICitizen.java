@@ -69,6 +69,7 @@ public class UICitizen extends JFrame implements ActionListener {
         login.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                setVisible(false);
                 new UILogin();
             }
         });

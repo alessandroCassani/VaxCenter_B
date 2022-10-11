@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="aggiunta bottone torno indietro ui search">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="risoluzione spostamento bottone login">
+      <change afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,14 +195,8 @@
       <workItem from="1665307542516" duration="59000" />
       <workItem from="1665439558898" duration="813000" />
       <workItem from="1665507288553" duration="1261000" />
-      <workItem from="1665524035106" duration="2008000" />
-    </task>
-    <task id="LOCAL-00023" summary="MODIFICA colori UIRegisterVaccinated">
-      <created>1663934754980</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1663934754980</updated>
+      <workItem from="1665524035106" duration="3536000" />
+      <workItem from="1665527679122" duration="1005000" />
     </task>
     <task id="LOCAL-00024" summary="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
       <created>1663938065676</created>
@@ -535,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665525880205</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="aggiunta evento ritorno indietro">
+      <created>1665526105411</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1665526105411</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,8 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="centralizzato testo in comboBox" />
-    <MESSAGE value="modifica rounded corners" />
     <MESSAGE value="Sistemazione UIAdverseEvent" />
     <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
@@ -590,6 +594,8 @@
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
     <MESSAGE value="aggiunta bottone torno indietro ui search" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta bottone torno indietro ui search" />
+    <MESSAGE value="aggiunta evento ritorno indietro" />
+    <MESSAGE value="risoluzione spostamento bottone login" />
+    <option name="LAST_COMMIT_MESSAGE" value="risoluzione spostamento bottone login" />
   </component>
 </project>
