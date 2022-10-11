@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
+import java.util.LinkedList;
 import java.util.TreeSet;
 
 /**
@@ -188,7 +189,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro cassani
      */
     @Override
-    public boolean getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
-        return false;
+    public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+        return "";
+    }
+
+    @Override
+    public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
+        return null;
+    }
+
+    @Override
+    public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
+        return null;
     }
 }
