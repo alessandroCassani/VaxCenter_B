@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -35,11 +36,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,tipologia) \n"
-                    + "VALUES (?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia) \n"
+                    + "VALUES (?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getIndirizzo().toString());
-            ps.setString(3,centroVaccinale.getTipologia().toString());
+            ps.setString(2,centroVaccinale.getIndirizzo().getComune());
+            ps.setString(3,centroVaccinale.getIndirizzo().getQualificatore().toString());
+            ps.setString(4,centroVaccinale.getIndirizzo().getNome());
+            ps.setString(5,centroVaccinale.getIndirizzo().getCivico());
+            ps.setString(6,centroVaccinale.getIndirizzo().getProvincia());
+            ps.setInt(7,centroVaccinale.getIndirizzo().getCap());
+            ps.setString(8,centroVaccinale.getTipologia().toString());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){return false;}
@@ -209,7 +215,29 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
-        return null;
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia)" +
+                                                        "WHERE Comune = " + comune + " AND tipologia = " + tipologia.toString());
+             ResultSet resultSet = ps.executeQuery();
+             ps.close();
+            LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
+             while(resultSet.next()) {
+                 String nome = resultSet.getString(1);
+                 String Comune = resultSet.getString(2);
+                 String qualificatore = resultSet.getString(3);
+                 Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
+                 String via = resultSet.getString(4);
+                 String numCivico = resultSet.getString(5);
+                 String sigla = resultSet.getString(6);
+                 int cap = resultSet.getInt(7);
+                 String tipo = resultSet.getString(8);
+                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
+
+                 Indirizzo indirizzo = new Indirizzo(qualificatore1,nome,numCivico,comune,sigla,cap);
+                 listaCentri.add(new CentroVaccinale(nome,indirizzo,tipologia1));
+             }
+             return listaCentri;
+        } catch (SQLException e) {return null;}
     }
 
     @Override
