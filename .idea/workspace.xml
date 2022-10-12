@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="ulteriori miglioramenti">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Resize immagine e bottoni rotondi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,21 +194,8 @@
       <workItem from="1665524035106" duration="3536000" />
       <workItem from="1665527679122" duration="3642000" />
       <workItem from="1665559336001" duration="141000" />
-      <workItem from="1665566131612" duration="4094000" />
-    </task>
-    <task id="LOCAL-00026" summary="Sistemazione generlae">
-      <created>1663943212477</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943212478</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Sistemazione UILogin">
-      <created>1663943965621</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943965621</updated>
+      <workItem from="1665566131612" duration="4435000" />
+      <workItem from="1665579961398" duration="372000" />
     </task>
     <task id="LOCAL-00028" summary="modifica allineamenti UIRegisterVaxCenter">
       <created>1664026162126</created>
@@ -540,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665531310633</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="sistemazione bottoni&#10;e implementazione immagini">
+      <created>1665570900208</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1665570900209</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Resize immagine e bottoni rotondi">
+      <created>1665571198976</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1665571198976</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,8 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaDoc" />
-    <MESSAGE value="modifica font" />
     <MESSAGE value="aggiunta hint" />
     <MESSAGE value="modifica username" />
     <MESSAGE value="modifica pwd" />
@@ -595,6 +593,8 @@
     <MESSAGE value="risoluzione spostamento bottone login" />
     <MESSAGE value="risoluzione bug ui login" />
     <MESSAGE value="ulteriori miglioramenti" />
-    <option name="LAST_COMMIT_MESSAGE" value="ulteriori miglioramenti" />
+    <MESSAGE value="sistemazione bottoni&#10;e implementazione immagini" />
+    <MESSAGE value="Resize immagine e bottoni rotondi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resize immagine e bottoni rotondi" />
   </component>
 </project>
