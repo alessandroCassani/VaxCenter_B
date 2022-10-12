@@ -139,7 +139,7 @@ public class DBManagement {
                     + "dataVaccino DATE,"
                     + "vaxTipo VARCHAR(30));"
 
-                    + "create table if not exists CentroVaccinale("
+                    + "create table if not exists CentriVaccinali("
                     + "nomeCentro VARCHAR(30) PRIMARY KEY,"
                     + "qualificatore VARCHAR(20),"
                     + "nomeVia CHAR(2),"
