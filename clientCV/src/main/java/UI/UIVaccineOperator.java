@@ -55,7 +55,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         //Personalizzazione bottone registra centro vaccinale
 
         ImageIcon cv = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/centrivaccinali.png")));
-
+        cv = registraCentroVaccinale.resizeImage(cv,90,90);
         JLabel iconCV = new JLabel(cv);
         JLabel registraCV = new JLabel("<html>REGISTRA<br> CENTRO VACCINALE</html>");
         registraCV.setForeground(Color.WHITE);
@@ -68,7 +68,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCentroVaccinale.setBackground(new Color(65, 102, 245));
         registraCentroVaccinale.setForeground(Color.WHITE);
-        registraCentroVaccinale.setBorder(new EmptyBorder(0,24,0,0));
+        registraCentroVaccinale.setBorder(new EmptyBorder(0,24,10,0));
         registraCentroVaccinale.setFocusable(false);
         registraCentroVaccinale.addActionListener(this);
 
@@ -77,7 +77,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         ImageIcon cr = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registravaccinato.png")));
 
         JLabel iconRV = new JLabel(cr);
-        JLabel registraVaccinatoLabel = new JLabel("   REGISTRA VACCINATO");
+        JLabel registraVaccinatoLabel = new JLabel("REGISTRA VACCINATO");
         registraVaccinatoLabel.setForeground(Color.WHITE);
         registraVaccinatoLabel.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setLayout(new BorderLayout());

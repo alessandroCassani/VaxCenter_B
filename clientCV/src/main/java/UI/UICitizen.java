@@ -45,7 +45,7 @@ public class UICitizen extends JFrame implements ActionListener {
      * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
      */
 
-    RoundButton backToChoosingRooles;
+    JButton backToChoosingRooles;
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata di menu' del cittadino
@@ -94,8 +94,10 @@ public class UICitizen extends JFrame implements ActionListener {
 
 
         ImageIcon reg = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/registraCittadino_vaxcenter.png")));
+        reg = registraCittadino.resizeImage(reg,100,80);
         JLabel registraCitizen = new JLabel(reg);
-        JLabel registralabel = new JLabel("<html>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
+
+        JLabel registralabel = new JLabel("<html><br>REGISTRATI PRESSO<br> UN CENTRO VACCINALE</html>");
         registralabel.setForeground(Color.WHITE);
         registralabel.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setLayout(new BorderLayout());
@@ -105,7 +107,7 @@ public class UICitizen extends JFrame implements ActionListener {
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCittadino.setBackground(new Color(65, 102, 245));
         registraCittadino.setForeground(Color.WHITE);
-        registraCittadino.setBorder(new EmptyBorder(0,24,0,0));
+        registraCittadino.setBorder(new EmptyBorder(0,24,10,0));
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
 

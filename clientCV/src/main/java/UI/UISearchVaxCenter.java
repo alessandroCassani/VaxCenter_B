@@ -29,7 +29,9 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         // pernette du evidenziare il tipo di ricerca compiuta
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
-        search.addOption(new InfoSearch("Comune",  new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
+        ImageIcon ic = new javax.swing.ImageIcon(getClass().getResource("/images/cityhall.png"));
+        ic = resizeImage(ic,30,30);
+        search.addOption(new InfoSearch("Comune e Tipologia",  ic));
         search.setSelectedIndex(0); // evidenzia primo elemento
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
         jTable1.getTableHeader().setOpaque(false);
@@ -57,7 +59,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new GradientPanel(Color.decode("#099773"),Color.decode("#0f68a9"));
+        jPanel1 = new GradientPanel(Color.decode("#cad0ff"),Color.decode("#e3e3e3"));
+        //jPanel1 = new GradientPanel(Color.decode("#ebf4f5"),Color.decode("#b5c6e0"));
         search = new SearchField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -74,11 +77,11 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
-                        {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub", "40", "2"},
-                        {"lurate", "h", "b", "h", "b", "h", "b", "h", "b", "h"}
+                        {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub",},
+                        {"lurate", "h", "b", "h", "b", "h", "b", "h",}
                 },
                 new String [] {
-                        "Nome", "Qualificatore", "Via", "Numero Civico", "Comune", "Sigla", "Cap", "Tipologia", "Segnalazioni", "MediaSeverità"
+                        "Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia",
                 }
         ) {
             final boolean[] canEdit = new boolean [] {
@@ -171,6 +174,13 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
             }
         }
+    }
+
+    public ImageIcon resizeImage(ImageIcon ic, int x, int y) {
+        Image img = ic.getImage() ;
+        Image newimg = img.getScaledInstance( x, y,  java.awt.Image.SCALE_SMOOTH ) ;
+        ic = new ImageIcon( newimg );
+        return ic;
     }
 
     /**

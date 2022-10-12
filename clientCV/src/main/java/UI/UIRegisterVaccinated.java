@@ -81,7 +81,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * bottone per eliminare le stringhe inserite in fase di registrazione
      */
-    JButton pulisci = new JButton();
+    JButton pulisci;
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated

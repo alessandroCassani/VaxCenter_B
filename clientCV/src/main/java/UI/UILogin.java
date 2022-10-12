@@ -107,7 +107,7 @@ public class UILogin extends JFrame implements ActionListener {
        password.setHint("Password");
        password.setPrefixIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car-key-5803.png")));
 
-        password.addActionListener(evt -> jPasswordField2ActionPerformed(evt));
+       //password.addActionListener(evt -> jPasswordField2ActionPerformed(evt));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setOpaque(false);
@@ -189,7 +189,6 @@ public class UILogin extends JFrame implements ActionListener {
 
     }// </editor-fold>
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {
         this.dispose();
