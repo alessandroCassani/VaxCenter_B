@@ -1,5 +1,6 @@
 package UI;
 
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 
 import javax.swing.*;
@@ -70,7 +71,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Bottone per la verifica dei dati scritti
      */
 
-    JButton registra = new JButton("REGISTRA");
+    RoundButton registra = new RoundButton("REGISTRA");
 
     /**
      * Bottone per tornare nell'interfaccia UIVaccineOperator
@@ -96,7 +97,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     public UIRegisterVaxCenter(){
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale");
@@ -199,10 +200,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         registra.setFont(new Font("Georgia", Font.BOLD, 20));
         registra.setBackground(new Color(0,0,128));
         registra.setForeground(Color.WHITE);
-        registra.setBorder(bordobtn);
         registra.setFocusable(false);
         registra.addActionListener(this);
-        registra.setOpaque(true);
+
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
         status.setBounds(125, 510, 400, 75);

@@ -4,8 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="sistemazione generale">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +54,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -63,20 +82,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/clientCV/src/main/resources/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
@@ -89,9 +100,6 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI\graphics" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
   </component>
   <component name="RunManager" selected="Application.WelcomeScreen">
     <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -99,7 +107,20 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
+      <module name="serverCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientCV.UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,7 +140,7 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,7 +153,7 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,14 +161,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WelcomeScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.WelcomeScreen" />
-      <module name="clientCV" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
       <item itemvalue="Application.UISearchVaxCenter" />
       <item itemvalue="Application.UISearchVaxCenter (1)" />
@@ -156,10 +171,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UISearchVaxCenter" />
         <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UISearchVaxCenter (1)" />
+        <item itemvalue="Application.UISearchVaxCenter" />
+        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -190,75 +205,14 @@
       <workItem from="1664795795812" duration="3244000" />
       <workItem from="1664973493168" duration="4435000" />
       <workItem from="1664978502065" duration="623000" />
-      <workItem from="1665131603427" duration="246000" />
-      <workItem from="1665131894596" duration="28000" />
-      <workItem from="1665173266339" duration="14000" />
-      <workItem from="1665243275604" duration="809000" />
-      <workItem from="1665566719701" duration="7463000" />
-      <workItem from="1665575874467" duration="5661000" />
-    </task>
-    <task id="LOCAL-00027" summary="Sistemazione UILogin">
-      <created>1663943965621</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943965621</updated>
-    </task>
-    <task id="LOCAL-00028" summary="modifica allineamenti UIRegisterVaxCenter">
-      <created>1664026162126</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026162126</updated>
-    </task>
-    <task id="LOCAL-00029" summary="modifica login dimensione e centralità">
-      <created>1664026564942</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026564942</updated>
-    </task>
-    <task id="LOCAL-00030" summary="centralizzato testo in textField">
-      <created>1664027194330</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1664027194330</updated>
-    </task>
-    <task id="LOCAL-00031" summary="modifiche dimensioni UIChoosingRooles.java">
-      <created>1664028769618</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1664028769618</updated>
-    </task>
-    <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
-      <created>1664041542365</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041542365</updated>
-    </task>
-    <task id="LOCAL-00033" summary="centralizzato testo in comboBox">
-      <created>1664041892980</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041892980</updated>
-    </task>
-    <task id="LOCAL-00034" summary="modifica rounded corners">
-      <created>1664042360458</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1664042360458</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Sistemazione UIAdverseEvent">
-      <created>1664185927256</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1664185927256</updated>
+      <workItem from="1665307542516" duration="59000" />
+      <workItem from="1665439558898" duration="813000" />
+      <workItem from="1665507288553" duration="1261000" />
+      <workItem from="1665524035106" duration="3536000" />
+      <workItem from="1665527679122" duration="3642000" />
+      <workItem from="1665559336001" duration="141000" />
+      <workItem from="1665566131612" duration="4435000" />
+      <workItem from="1665579961398" duration="5226000" />
     </task>
     <task id="LOCAL-00036" summary="Sistemazione UIAdverseEvent">
       <created>1664221046733</created>
@@ -498,49 +452,112 @@
       <option name="project" value="LOCAL" />
       <updated>1664978801998</updated>
     </task>
-    <task id="LOCAL-00070" summary="risoluzione bug UIVaccineOperator">
-      <created>1665131720230</created>
+    <task id="LOCAL-00070" summary="aggiunta bottone torno indietro ui search">
+      <created>1665525875265</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1665131720230</updated>
+      <updated>1665525875266</updated>
     </task>
-    <task id="LOCAL-00071" summary="checkData">
-      <created>1665579143449</created>
+    <task id="LOCAL-00071" summary="aggiunta bottone torno indietro ui search">
+      <created>1665525880205</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1665579143449</updated>
+      <updated>1665525880205</updated>
     </task>
-    <task id="LOCAL-00072" summary="checkData doc">
-      <created>1665579392856</created>
+    <task id="LOCAL-00072" summary="aggiunta evento ritorno indietro">
+      <created>1665526105411</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1665579392856</updated>
+      <updated>1665526105411</updated>
     </task>
-    <task id="LOCAL-00073" summary="modifica JComboBox">
-      <created>1665579947587</created>
+    <task id="LOCAL-00073" summary="risoluzione bug ui login">
+      <created>1665528816930</created>
       <option name="number" value="00073" />
       <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1665579947587</updated>
+      <updated>1665528816931</updated>
     </task>
-    <task id="LOCAL-00074" summary="checkPassword">
-      <created>1665580354012</created>
+    <task id="LOCAL-00074" summary="ulteriori miglioramenti">
+      <created>1665531310633</created>
       <option name="number" value="00074" />
       <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1665580354012</updated>
+      <updated>1665531310633</updated>
     </task>
-    <task id="LOCAL-00075" summary="checkPassword">
-      <created>1665581258872</created>
+    <task id="LOCAL-00075" summary="sistemazione bottoni&#10;e implementazione immagini">
+      <created>1665570900208</created>
       <option name="number" value="00075" />
       <option name="presentableId" value="LOCAL-00075" />
       <option name="project" value="LOCAL" />
-      <updated>1665581258872</updated>
+      <updated>1665570900209</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Resize immagine e bottoni rotondi">
+      <created>1665571198976</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1665571198976</updated>
+    </task>
+    <task id="LOCAL-00077" summary="sistemazione bottoni round">
+      <created>1665580556665</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1665580556666</updated>
+    </task>
+    <task id="LOCAL-00078" summary="sistemazione bottoni registercitizen">
+      <created>1665581193595</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581193595</updated>
+    </task>
+    <task id="LOCAL-00079" summary="sistemazione bottoni UIRegisterCitizen">
+      <created>1665581305942</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581305942</updated>
+    </task>
+    <task id="LOCAL-00080" summary="sistemazione bottoni UIRegisterCitizen">
+      <created>1665581375118</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581375118</updated>
+    </task>
+    <task id="LOCAL-00081" summary="sistemazione bottoni UIRegisterVaxCenter">
+      <created>1665581544401</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581544401</updated>
+    </task>
+    <task id="LOCAL-00082" summary="resize UICitizen e bottoni">
+      <created>1665581669785</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581669785</updated>
+    </task>
+    <task id="LOCAL-00083" summary="sistemazione ultimi bottoni UIVaccineOperator">
+      <created>1665581806587</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581806587</updated>
+    </task>
+    <task id="LOCAL-00084" summary="sistemazione generale">
+      <created>1665584956128</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1665584956128</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,16 +587,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaDoc" />
-    <MESSAGE value="modifica font" />
-    <MESSAGE value="aggiunta hint" />
-    <MESSAGE value="modifica username" />
-    <MESSAGE value="modifica pwd" />
-    <MESSAGE value="modifica bottone login" />
-    <MESSAGE value="fix bug generale" />
-    <MESSAGE value="update maven" />
     <MESSAGE value="Impostazione campi search" />
-    <MESSAGE value="sistemazione generale" />
     <MESSAGE value="Aggiunta campo di ricerca" />
     <MESSAGE value="Aggiunta opzione comune e nome" />
     <MESSAGE value="Aggiunta tabella visualizzazione" />
@@ -590,11 +598,20 @@
     <MESSAGE value="Sistemazione collegamento varie classi" />
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
-    <MESSAGE value="risoluzione bug UIVaccineOperator" />
-    <MESSAGE value="checkData" />
-    <MESSAGE value="checkData doc" />
-    <MESSAGE value="modifica JComboBox" />
-    <MESSAGE value="checkPassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkPassword" />
+    <MESSAGE value="aggiunta bottone torno indietro ui search" />
+    <MESSAGE value="aggiunta evento ritorno indietro" />
+    <MESSAGE value="risoluzione spostamento bottone login" />
+    <MESSAGE value="risoluzione bug ui login" />
+    <MESSAGE value="ulteriori miglioramenti" />
+    <MESSAGE value="sistemazione bottoni&#10;e implementazione immagini" />
+    <MESSAGE value="Resize immagine e bottoni rotondi" />
+    <MESSAGE value="sistemazione bottoni round" />
+    <MESSAGE value="sistemazione bottoni registercitizen" />
+    <MESSAGE value="sistemazione bottoni UIRegisterCitizen" />
+    <MESSAGE value="sistemazione bottoni UIRegisterVaxCenter" />
+    <MESSAGE value="resize UICitizen e bottoni" />
+    <MESSAGE value="sistemazione ultimi bottoni UIVaccineOperator" />
+    <MESSAGE value="sistemazione generale" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemazione generale" />
   </component>
 </project>
