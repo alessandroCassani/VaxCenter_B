@@ -180,11 +180,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
-    @Override
-    public boolean isCitizenRegistrated(String citizen) throws RemoteException {
-        return false;
-    }
-
     //bisogna cambiare il risultato boolean
     @Override
     public boolean isVaccinatedRegistrated(String nomeCentro) throws RemoteException {
