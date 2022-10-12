@@ -321,7 +321,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             } else if (!pswvalidator.validate(password.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
-            } else{
+            }else{
                 status.setForeground(new Color(0x077507));
                 status.setText("Registrato con successo!");
             }
