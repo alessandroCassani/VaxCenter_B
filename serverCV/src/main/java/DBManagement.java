@@ -161,9 +161,11 @@ public class DBManagement {
 
                     + "create table if not exists Eventi_Avversi("
                     + "id Numeric PRIMARY KEY,"
-                    + "nomeEventoAvverso VARCHAR(30),"
-                    + "severita Numeric,"
-                    + "note VARCHAR(256));";
+                    + "mal_di_testa INTEGER,"
+                    + "febbre INTEGER,"
+                    + "dolori_muscolari INTEGER,"
+                    + "linfoadenompatia INTEGER,"
+                    + "crisi_ipertensiva INTEGER);";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
