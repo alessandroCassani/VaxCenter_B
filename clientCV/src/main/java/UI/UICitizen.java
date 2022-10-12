@@ -160,9 +160,6 @@ public class UICitizen extends JFrame implements ActionListener {
         } else if (e.getSource() == registraCittadino) {
             this.dispose();
             new UIRegisterCitizen();
-        } else if (e.getSource() == login) {
-            this.dispose();
-            new UILogin();
         }
     }
 }

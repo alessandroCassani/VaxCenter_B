@@ -5,22 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="sistemazione generale">
-      <change afterPath="$PROJECT_DIR$/clientCV/src/main/resources/images/cityhall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientCV/target/classes/images/cityhall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UICitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,14 +212,7 @@
       <workItem from="1665527679122" duration="3642000" />
       <workItem from="1665559336001" duration="141000" />
       <workItem from="1665566131612" duration="4435000" />
-      <workItem from="1665579961398" duration="4769000" />
-    </task>
-    <task id="LOCAL-00035" summary="Sistemazione UIAdverseEvent">
-      <created>1664185927256</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1664185927256</updated>
+      <workItem from="1665579961398" duration="5226000" />
     </task>
     <task id="LOCAL-00036" summary="Sistemazione UIAdverseEvent">
       <created>1664221046733</created>
@@ -552,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665581806587</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="sistemazione generale">
+      <created>1665584956128</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1665584956128</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
