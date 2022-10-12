@@ -399,7 +399,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         //Label informativa quadratino eventi avversi
         premiQuadrato.setFont(new Font("Georgia", Font.BOLD, 10));
-        premiQuadrato.setBounds(20, 370, 300, 12);
+        premiQuadrato.setBounds(20, 370, 350, 12);
         premiQuadrato.setForeground(new Color(0x0729AF));
 
 

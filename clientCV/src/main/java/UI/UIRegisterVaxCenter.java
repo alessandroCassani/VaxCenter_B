@@ -1,5 +1,6 @@
 package UI;
 
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 
 import javax.swing.*;
@@ -29,7 +30,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere il qualificatore del Centro Vaccinale
      */
 
-    JComboBox qualificatore =new JComboBox<>(new String[]{"Via", "Viale", "Piazza"});
+    JComboBox qualificatore =new JComboBox<>(new String[]{"","Via", "Viale", "Piazza"});
 
     /**
      * Area di testo per scrivere il nome della via/viale/piazza del Centro vaccinale
@@ -64,13 +65,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere la tipologia del Centro Vaccinale (tipologia (ospedaliero, aziendale, hub)
      */
 
-    JComboBox<String> tipologia = new JComboBox(new String[]{"HUB", "OSPEDALIERO", "AZIENDALE"});
+    JComboBox<String> tipologia = new JComboBox(new String[]{"","HUB", "OSPEDALIERO", "AZIENDALE"});
 
     /**
      * Bottone per la verifica dei dati scritti
      */
 
-    JButton registra = new JButton("REGISTRA");
+    RoundButton registra = new RoundButton("REGISTRA");
 
     /**
      * Bottone per tornare nell'interfaccia UIVaccineOperator
@@ -80,7 +81,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     /**
      * campo di testo in cui viene visuaizzato lo stato della registra centro vaccinale
-      */
+     */
 
     JLabel status = new JLabel();
 
@@ -96,7 +97,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     public UIRegisterVaxCenter(){
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel tiotoloCV = new JLabel("Inserisci un nuovo Centro Vaccinale");
@@ -199,10 +200,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         registra.setFont(new Font("Georgia", Font.BOLD, 20));
         registra.setBackground(new Color(0,0,128));
         registra.setForeground(Color.WHITE);
-        registra.setBorder(bordobtn);
         registra.setFocusable(false);
         registra.addActionListener(this);
-        registra.setOpaque(true);
+
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
         status.setBounds(125, 510, 400, 75);
@@ -259,13 +259,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             }
         }else if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
-            qualificatore.setSelectedItem("Via");
+            qualificatore.setSelectedItem("");
             nomeVia.setText("");
             numeroCivico.setText("");
             comune.setText("");
             siglaProvincia.setText("");
             cap.setText("");
-            tipologia.setSelectedItem("HUB");
+            tipologia.setSelectedItem("");
             status.setText("");
         }
     }

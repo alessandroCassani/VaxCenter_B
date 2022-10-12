@@ -1,9 +1,11 @@
 
 import util.*;
+
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -36,7 +38,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia) \n"
-                    + "VALUES (?,?,?,?,?,?,?)");
+                    + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
             ps.setString(2,centroVaccinale.getIndirizzo().getComune());
             ps.setString(3,centroVaccinale.getIndirizzo().getQualificatore().toString());
@@ -160,29 +162,104 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
+    /**
+     * il metodo permette di controllare se il cittadino è già registrato oppure no
+     * @param account account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Luca Perfetti
+     */
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Cittadini_Registrati WHERE username = ? AND password = ?");
+
+            ps.setString(1, String.valueOf(account));
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 
+    /**
+     * il metodo permette il controllo in fase di accesso e registrazione dell'utente dell'avvenuta registrazione del cittadino
+     * @param user nome utente
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Luca Perfetti
+     */
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Cittadini_Registrati WHERE username = ?");
+
+            ps.setString(1, user);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 
+    /**
+     * il metodo permette il controllo della già avvenuta registrazione di un centro vaccinale
+     * @param VaxCenterName nome del centro vaccinale
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Luca Perfetti
+     */
     @Override
     public boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentroVaccinale WHERE nomeCentro = ?");
+
+            ps.setString(1, VaxCenterName);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 
-    @Override
-    public boolean isCitizenRegistrated(String citizen) throws RemoteException {
-        return false;
-    }
-
+    /**
+     * il metodo permette il controllo della già avvenuta vaccinazione del cittadino
+     * @param user codice fiscale del vaccinato
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Luca Perfetti
+     */
     @Override
     public boolean isVaccinatedRegistrated(String user) throws RemoteException {
-        return false;
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Vaccinati WHERE codicefiscale = ?");
+
+            ps.setString(1, user);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 
     /**

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="Sistemazione bottone Login">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,6 +74,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brusc\Documents\GitHub\VaxCenter_B\clientCV\src\main\resources\images" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\resources\images" />
@@ -88,6 +89,9 @@
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI\graphics" />
       <recent name="C:\Users\damia\Desktop\Progetti\VaxCenter_B\clientCV\src\main\java\UI" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.WelcomeScreen">
     <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -95,20 +99,7 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILoginToServer" />
-      <module name="serverCV" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientCV.UI.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,7 +119,7 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UI.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,7 +132,7 @@
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UI.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,8 +140,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WelcomeScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.WelcomeScreen" />
+      <module name="clientCV" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
       <item itemvalue="Application.UISearchVaxCenter" />
       <item itemvalue="Application.UISearchVaxCenter (1)" />
@@ -159,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WelcomeScreen" />
+        <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISearchVaxCenter" />
         <item itemvalue="Application.UILogin" />
         <item itemvalue="Application.UISearchVaxCenter (1)" />
-        <item itemvalue="Application.UILoginToServer" />
       </list>
     </recent_temporary>
   </component>
@@ -193,48 +190,12 @@
       <workItem from="1664795795812" duration="3244000" />
       <workItem from="1664973493168" duration="4435000" />
       <workItem from="1664978502065" duration="623000" />
-    </task>
-    <task id="LOCAL-00021" summary="modifiche tdimensioni testo dimenticate">
-      <created>1663788463326</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1663788463326</updated>
-    </task>
-    <task id="LOCAL-00022" summary="modifiche label di info sopra textField">
-      <created>1663927925991</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1663927925992</updated>
-    </task>
-    <task id="LOCAL-00023" summary="MODIFICA colori UIRegisterVaccinated">
-      <created>1663934754980</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1663934754980</updated>
-    </task>
-    <task id="LOCAL-00024" summary="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
-      <created>1663938065676</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1663938065677</updated>
-    </task>
-    <task id="LOCAL-00025" summary="modifica posizione label in UIRegisterCitizen.class">
-      <created>1663938530835</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1663938530835</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Sistemazione generlae">
-      <created>1663943212477</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943212478</updated>
+      <workItem from="1665131603427" duration="246000" />
+      <workItem from="1665131894596" duration="28000" />
+      <workItem from="1665173266339" duration="14000" />
+      <workItem from="1665243275604" duration="809000" />
+      <workItem from="1665566719701" duration="7463000" />
+      <workItem from="1665575874467" duration="5661000" />
     </task>
     <task id="LOCAL-00027" summary="Sistemazione UILogin">
       <created>1663943965621</created>
@@ -537,7 +498,49 @@
       <option name="project" value="LOCAL" />
       <updated>1664978801998</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="risoluzione bug UIVaccineOperator">
+      <created>1665131720230</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1665131720230</updated>
+    </task>
+    <task id="LOCAL-00071" summary="checkData">
+      <created>1665579143449</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579143449</updated>
+    </task>
+    <task id="LOCAL-00072" summary="checkData doc">
+      <created>1665579392856</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579392856</updated>
+    </task>
+    <task id="LOCAL-00073" summary="modifica JComboBox">
+      <created>1665579947587</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579947587</updated>
+    </task>
+    <task id="LOCAL-00074" summary="checkPassword">
+      <created>1665580354012</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1665580354012</updated>
+    </task>
+    <task id="LOCAL-00075" summary="checkPassword">
+      <created>1665581258872</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581258872</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,11 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creata classe custom Tf, con estensione PasswordField" />
-    <MESSAGE value="centralizzato testo in comboBox" />
-    <MESSAGE value="modifica rounded corners" />
-    <MESSAGE value="Sistemazione UIAdverseEvent" />
-    <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
     <MESSAGE value="modifica font" />
     <MESSAGE value="aggiunta hint" />
@@ -592,6 +590,11 @@
     <MESSAGE value="Sistemazione collegamento varie classi" />
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione bottone Login" />
+    <MESSAGE value="risoluzione bug UIVaccineOperator" />
+    <MESSAGE value="checkData" />
+    <MESSAGE value="checkData doc" />
+    <MESSAGE value="modifica JComboBox" />
+    <MESSAGE value="checkPassword" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkPassword" />
   </component>
 </project>
