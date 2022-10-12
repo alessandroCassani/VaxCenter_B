@@ -133,7 +133,6 @@ public class DBManagement {
 
             String query = "create table if not exists Vaccinati("
                     + "id Numeric PRIMARY KEY,"
-                    + "nomeCentro VARCHAR(30),"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "CodiceFiscale CHAR(16),"
