@@ -1,7 +1,10 @@
 package UI;
 
+import UI.graphics.RoundButton;
+
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,12 +25,12 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione registra centro vaccinale
      */
-    JButton registraCentroVaccinale = new JButton() ;
+    RoundButton registraCentroVaccinale = new RoundButton() ;
 
     /**
      * Bottone per accedere alla sezione registra vaccinato
      */
-    JButton registraVaccinato = new JButton();
+    RoundButton registraVaccinato = new RoundButton();
 
     /**
      * Bottone per tornare nell'interfaccia grafica UIChoosingRooles
@@ -46,7 +49,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         //ImageIcon immVO = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/immOpVac.jpg")));
 
 
-        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
+
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         //Personalizzazione bottone registra centro vaccinale
@@ -65,10 +68,9 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraCentroVaccinale.setFont(new Font("Georgia", Font.BOLD, 15));
         registraCentroVaccinale.setBackground(new Color(65, 102, 245));
         registraCentroVaccinale.setForeground(Color.WHITE);
-        registraCentroVaccinale.setBorder(bordo);
+        registraCentroVaccinale.setBorder(new EmptyBorder(0,24,0,0));
         registraCentroVaccinale.setFocusable(false);
         registraCentroVaccinale.addActionListener(this);
-        registraCentroVaccinale.setOpaque(true);
 
         //Personalizzazione bottone rigistra vaccinato
 
@@ -85,10 +87,10 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 15));
         registraVaccinato.setBackground(new Color(65, 102, 245));
         registraVaccinato.setForeground(Color.WHITE);
-        registraVaccinato.setBorder(bordo);
+        registraVaccinato.setBorder(new EmptyBorder(0,24,0,0));
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
-        registraVaccinato.setOpaque(true);
+
 
         //Personalizzazione bottone indietro
 

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="sistemazione bottoni UIRegisterCitizen">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="resize UICitizen e bottoni">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,21 +193,7 @@
       <workItem from="1665527679122" duration="3642000" />
       <workItem from="1665559336001" duration="141000" />
       <workItem from="1665566131612" duration="4435000" />
-      <workItem from="1665579961398" duration="1508000" />
-    </task>
-    <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
-      <created>1664041542365</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041542365</updated>
-    </task>
-    <task id="LOCAL-00033" summary="centralizzato testo in comboBox">
-      <created>1664041892980</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041892980</updated>
+      <workItem from="1665579961398" duration="1807000" />
     </task>
     <task id="LOCAL-00034" summary="modifica rounded corners">
       <created>1664042360458</created>
@@ -540,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665581375118</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="sistemazione bottoni UIRegisterVaxCenter">
+      <created>1665581544401</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581544401</updated>
+    </task>
+    <task id="LOCAL-00082" summary="resize UICitizen e bottoni">
+      <created>1665581669785</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581669785</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,8 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica bottone login" />
-    <MESSAGE value="fix bug generale" />
     <MESSAGE value="update maven" />
     <MESSAGE value="Impostazione campi search" />
     <MESSAGE value="sistemazione generale" />
@@ -595,6 +591,8 @@
     <MESSAGE value="sistemazione bottoni round" />
     <MESSAGE value="sistemazione bottoni registercitizen" />
     <MESSAGE value="sistemazione bottoni UIRegisterCitizen" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistemazione bottoni UIRegisterCitizen" />
+    <MESSAGE value="sistemazione bottoni UIRegisterVaxCenter" />
+    <MESSAGE value="resize UICitizen e bottoni" />
+    <option name="LAST_COMMIT_MESSAGE" value="resize UICitizen e bottoni" />
   </component>
 </project>
