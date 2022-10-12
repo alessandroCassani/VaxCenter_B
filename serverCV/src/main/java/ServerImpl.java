@@ -1,9 +1,11 @@
+import org.checkerframework.checker.units.qual.C;
 import util.*;
 
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -35,11 +37,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,tipologia) \n"
-                    + "VALUES (?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia) \n"
+                    + "VALUES (?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getIndirizzo().toString());
-            ps.setString(3,centroVaccinale.getTipologia().toString());
+            ps.setString(2,centroVaccinale.getIndirizzo().getComune());
+            ps.setString(3,centroVaccinale.getIndirizzo().getQualificatore().toString());
+            ps.setString(4,centroVaccinale.getIndirizzo().getNome());
+            ps.setString(5,centroVaccinale.getIndirizzo().getCivico());
+            ps.setString(6,centroVaccinale.getIndirizzo().getProvincia());
+            ps.setInt(7,centroVaccinale.getIndirizzo().getCap());
+            ps.setString(8,centroVaccinale.getTipologia().toString());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){return false;}
@@ -145,8 +152,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             int size = eventiAvversi.getSintomi().size();
             count = 1;
             while(count<size-1) {  //-1 perchè ultimo campo ci sono le note
-                    ps.setInt(count,eventiAvversi.getSintomi().get(count).getSeverita());
-                    count++;
+                ps.setInt(count,eventiAvversi.getSintomi().get(count).getSeverita());
+                count++;
             }
             ps.setString(size, eventiAvversi.getNote());
             ps.executeUpdate();
@@ -198,22 +205,85 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return "mal di testa: " + resultSet.getString(1) + " segnalazioni media intensita' " + resultSet.getString(2)  +"\n"+
-                        " febbre: " + resultSet.getString(3) + " segnalazioni media intensita' " + resultSet.getString(4) + "\n"+
-                        " dolori muscolari: " + resultSet.getString(5) + " segnalazioni media intensita' " + resultSet.getString(6) + "\n"+
-                        " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) + "\n"+
-                        " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
+                    " febbre: " + resultSet.getString(3) + " segnalazioni media intensita' " + resultSet.getString(4) + "\n"+
+                    " dolori muscolari: " + resultSet.getString(5) + " segnalazioni media intensita' " + resultSet.getString(6) + "\n"+
+                    " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) + "\n"+
+                    " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
 
         } catch (SQLException e) {}
         return "";
     }
 
+    /**
+     * il metodo permette la ricerca di una serie di centri vaccinali specificando il comune e la tipologia di essi
+     * @param comune comune dove ricercare centro vaccinale
+     * @param tipologia tipologia di centro vaccinale da ricercare
+     * @return lista di centri vaccinali
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
-        return null;
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia)" +
+                    "WHERE Comune = " + comune + " AND tipologia = " + tipologia.toString());
+            ResultSet resultSet = ps.executeQuery();
+            ps.close();
+            LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
+            Indirizzo indirizzo = null;
+            while(resultSet.next()) {
+                String nome = resultSet.getString(1);
+                String Comune = resultSet.getString(2);
+                String qualificatore = resultSet.getString(3);
+                Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
+                String via = resultSet.getString(4);
+                String numCivico = resultSet.getString(5);
+                String sigla = resultSet.getString(6);
+                int cap = resultSet.getInt(7);
+                String tipo = resultSet.getString(8);
+                Tipologia tipologia1 = Tipologia.getTipo(tipo);
+
+                indirizzo = new Indirizzo(qualificatore1,via,numCivico,Comune,sigla,cap);
+                listaCentri.add(new CentroVaccinale(nome,indirizzo,tipologia1));
+            }
+            return listaCentri;
+        } catch (SQLException e) {return null;}
     }
 
+    /**
+     * il metodo permette la ricerca di una serie di centri vaccinali specificando una stringa rappresentante il nome (o parte di esso)
+     * @param nome nome del centro vaccinale (anche non completa)
+     * @return lista di centri vaccinali
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro cassani
+     */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
-        return null;
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia)" +
+                    "WHERE nomeCentro LIKE %" + nome + "%" );
+            ResultSet resultSet = ps.executeQuery();
+            ps.close();
+            LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
+            Indirizzo indirizzo = null;
+            while(resultSet.next()){
+                String nomeCentro = resultSet.getString(1);
+                String comune = resultSet.getString(2);
+                String qualificatore = resultSet.getString(3);
+                Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
+                String via = resultSet.getString(4);
+                String numCivico = resultSet.getString(5);
+                String sigla = resultSet.getString(6);
+                int cap = resultSet.getInt(7);
+                String tipo = resultSet.getString(8);
+                Tipologia tipologia1 = Tipologia.getTipo(tipo);
+
+                indirizzo = new Indirizzo(qualificatore1,via,numCivico,comune,sigla,cap);
+                listaCentri.add(new CentroVaccinale(nomeCentro,indirizzo,tipologia1));
+            }
+            return listaCentri;
+        } catch (SQLException e) {return null;}
     }
 }
