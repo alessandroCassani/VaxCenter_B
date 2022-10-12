@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkData doc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifica JComboBox">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/CheckData/PasswordValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +195,7 @@
       <workItem from="1665173266339" duration="14000" />
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
-      <workItem from="1665575874467" duration="3881000" />
-    </task>
-    <task id="LOCAL-00024" summary="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
-      <created>1663938065676</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1663938065677</updated>
+      <workItem from="1665575874467" duration="4189000" />
     </task>
     <task id="LOCAL-00025" summary="modifica posizione label in UIRegisterCitizen.class">
       <created>1663938530835</created>
@@ -543,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665579392856</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="modifica JComboBox">
+      <created>1665579947587</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579947587</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sistemazione UIAdverseEvent" />
     <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
     <MESSAGE value="modifica font" />
@@ -598,6 +594,7 @@
     <MESSAGE value="risoluzione bug UIVaccineOperator" />
     <MESSAGE value="checkData" />
     <MESSAGE value="checkData doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkData doc" />
+    <MESSAGE value="modifica JComboBox" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica JComboBox" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import java.util.Objects;
 
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
+import CheckData.PasswordValidator;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
@@ -214,7 +215,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         labelInfopsw1.setForeground(new Color(65,102,245));
         add(labelInfopsw1).setBounds(372, 435, 290, 11);
 
-        JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola ed una minuscola"); // serve per i requisiti password
+        JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola e una minuscola"); // serve per i requisiti password
         labelInfopsw2.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw2.setForeground(new Color(65,102,245));
         add(labelInfopsw2).setBounds(372, 447, 340, 11);
@@ -224,7 +225,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         labelInfopsw3.setForeground(new Color(65,102,245));
         add(labelInfopsw3).setBounds(372, 459, 290, 11);
 
-        JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale tra: ! # $ % & @ * + / - ? ");
+        JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale come ! @ # & ( )");
         labelInfopsw4.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw4.setForeground(new Color(65,102,245));
         add(labelInfopsw4).setBounds(372, 471, 370, 11);
@@ -309,6 +310,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         } else if (e.getSource() == registraCittadino) {
             EmailValidator emailValidator = new EmailValidator();
             CFValidator cfvalidator = new CFValidator();
+            PasswordValidator pswvalidator = new PasswordValidator();
 
             if(!emailValidator.validate(email.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
@@ -316,7 +318,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
-
+            } else if (!pswvalidator.validate(password.getText().trim())) {
+                status.setForeground(new Color(0xEC0909));
+                status.setText("I dati inseriti non sono corretti! Riprovare ...");
             } else{
                 status.setForeground(new Color(0x077507));
                 status.setText("Registrato con successo!");
