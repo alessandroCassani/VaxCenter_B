@@ -148,9 +148,7 @@ public class DBManagement {
                     + "comune VARCHAR(30),"
                     + "sigla CHAR(2),"
                     + "cap VARCHAR(5),"
-                    + "tipologia VARCHAR(20),"
-                    + "numeroSegnalazioni INTEGER,"
-                    + "avgSeverita INTEGER);"
+                    + "tipologia VARCHAR(20));"
 
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
