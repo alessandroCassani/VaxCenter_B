@@ -29,7 +29,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere il qualificatore del Centro Vaccinale
      */
 
-    JComboBox qualificatore =new JComboBox<>(new String[]{"Via", "Viale", "Piazza"});
+    JComboBox qualificatore =new JComboBox<>(new String[]{"","Via", "Viale", "Piazza"});
 
     /**
      * Area di testo per scrivere il nome della via/viale/piazza del Centro vaccinale
@@ -64,7 +64,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Menù a tendina per scegliere la tipologia del Centro Vaccinale (tipologia (ospedaliero, aziendale, hub)
      */
 
-    JComboBox<String> tipologia = new JComboBox(new String[]{"HUB", "OSPEDALIERO", "AZIENDALE"});
+    JComboBox<String> tipologia = new JComboBox(new String[]{"","HUB", "OSPEDALIERO", "AZIENDALE"});
 
     /**
      * Bottone per la verifica dei dati scritti
@@ -259,13 +259,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             }
         }else if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
-            qualificatore.setSelectedItem("Via");
+            qualificatore.setSelectedItem("");
             nomeVia.setText("");
             numeroCivico.setText("");
             comune.setText("");
             siglaProvincia.setText("");
             cap.setText("");
-            tipologia.setSelectedItem("HUB");
+            tipologia.setSelectedItem("");
             status.setText("");
         }
     }
