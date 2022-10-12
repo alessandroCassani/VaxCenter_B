@@ -168,7 +168,13 @@ public class DBManagement {
                     + "crisi_ipertensiva INTEGER);"
 
                     + "create table if not exists Severita("
-                    + ")";
+                    + "id Numeric PRIMARY KEY,"
+                    + "mal_di_testa INTEGER,"
+                    + "febbre INTEGER,"
+                    + "dolori_muscolari INTEGER,"
+                    + "linfoadenompatia INTEGER,"
+                    + "crisi_ipertensiva INTEGER,"
+                    + "note VARCHAR(256));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
