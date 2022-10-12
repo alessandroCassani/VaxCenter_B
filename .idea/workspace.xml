@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkData" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkData doc">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,14 +198,7 @@
       <workItem from="1665173266339" duration="14000" />
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
-      <workItem from="1665575874467" duration="3269000" />
-    </task>
-    <task id="LOCAL-00023" summary="MODIFICA colori UIRegisterVaccinated">
-      <created>1663934754980</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1663934754980</updated>
+      <workItem from="1665575874467" duration="3881000" />
     </task>
     <task id="LOCAL-00024" summary="modifica colori background controrni textField e bottoni registrazione, indietro, e di scelta principali">
       <created>1663938065676</created>
@@ -538,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665579143449</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="checkData doc">
+      <created>1665579392856</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579392856</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica rounded corners" />
     <MESSAGE value="Sistemazione UIAdverseEvent" />
     <MESSAGE value="JavaDoc + UIAdverseEvent" />
     <MESSAGE value="JavaDoc" />
@@ -593,6 +597,7 @@
     <MESSAGE value="Sistemazione bottone Login" />
     <MESSAGE value="risoluzione bug UIVaccineOperator" />
     <MESSAGE value="checkData" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkData" />
+    <MESSAGE value="checkData doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkData doc" />
   </component>
 </project>

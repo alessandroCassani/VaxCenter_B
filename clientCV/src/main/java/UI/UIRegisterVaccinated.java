@@ -28,7 +28,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
      */
-    JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new String[]{"","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     /**
      * nome del vaccinato
@@ -53,7 +53,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica le tipologie di vaccino somministrate che l'utente puo' selezionare
      */
-    JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
+    JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"","Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
     /**
      * ID univoco generato al momento della vaccinazione
@@ -259,11 +259,11 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
             }
         }else if(e.getSource() == pulisci) {
-                nomeCV.setSelectedItem("Paolo");
+                nomeCV.setSelectedItem("");
                 nome.setText("");
                 cognome.setText("");
                 codiceFiscale.setText("");
-                vaccinoSomministrato.setSelectedItem("Pfizer");
+                vaccinoSomministrato.setSelectedItem("");
                 status.setText("");
                 IDUnivoco.setText("");
                 warningIDUnivoco.setText("");
