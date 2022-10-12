@@ -165,7 +165,10 @@ public class DBManagement {
                     + "febbre INTEGER,"
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenompatia INTEGER,"
-                    + "crisi_ipertensiva INTEGER);";
+                    + "crisi_ipertensiva INTEGER);"
+
+                    + "create table if not exists Severita("
+                    + ")";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
