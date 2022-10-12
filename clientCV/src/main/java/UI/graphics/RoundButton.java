@@ -14,6 +14,8 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class RoundButton extends JButton {
 
+
+
     public Color getEffectColor() {
         return effectColor;
     }
@@ -66,6 +68,41 @@ public class RoundButton extends JButton {
 
     public RoundButton(Icon icon) {
         super(null, icon);
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent me) {
+                targetSize = Math.max(getWidth(), getHeight()) * 2;
+                animatSize = 0;
+                pressedPoint = me.getPoint();
+                alpha = 0.5f;
+                if (animator.isRunning()) {
+                    animator.stop();
+                }
+                animator.start();
+            }
+        });
+        TimingTarget target = new TimingTargetAdapter() {
+            @Override
+            public void timingEvent(float fraction) {
+                if (fraction > 0.5f) {
+                    alpha = 1 - fraction;
+                }
+                animatSize = fraction * targetSize;
+                repaint();
+            }
+        };
+        animator = new Animator(700, target);
+        animator.setAcceleration(0.5f);
+        animator.setDeceleration(0.5f);
+        animator.setResolution(0);
+    }
+
+    public RoundButton(String text) {
+        super(text);
+        setContentAreaFilled(false);
+        setBorder(new EmptyBorder(5, 0, 5, 0));
+        setBackground(Color.WHITE);
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {

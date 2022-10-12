@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
@@ -70,7 +71,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * bottone per l'avvio del processo di registrazione a sistema di un cittadino
      */
-    JButton registraCittadino = new JButton("REGISTRA");
+    RoundButton registraCittadino = new RoundButton("REGISTRA");
 
     /**
      * bottone che permette l'eliminazione delle stringhe inserite nei campi per la registrazione
@@ -80,7 +81,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * checkBox che rende visibili le stringhe inserite come password
      */
-    JCheckBox showPassword = new JCheckBox("show password");
+    JCheckBox showPassword = new JCheckBox("Mostra password");
 
     /**
      * bottone che permette il ritorno alla UI precedente (UICitizen)
@@ -226,10 +227,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
         registraCittadino.setBackground(new Color(0,0,128));
         registraCittadino.setForeground(Color.WHITE);
-        registraCittadino.setBorder(bordobtn);
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
-        registraCittadino.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
         status.setBounds(75, 700, 400, 75);

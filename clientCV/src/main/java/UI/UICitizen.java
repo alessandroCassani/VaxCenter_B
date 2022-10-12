@@ -56,7 +56,7 @@ public class UICitizen extends JFrame implements ActionListener {
 
     public UICitizen() {
 
-        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
 
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
 
@@ -114,7 +114,6 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.setFont(new Font("Georgia", Font.BOLD, 17));
         backToChoosingRooles.setBackground(new Color(181, 226, 232));
         backToChoosingRooles.setForeground(Color.WHITE);
-        backToChoosingRooles.setBorder(bordobtnInd);
         backToChoosingRooles.setFocusable(false);
         backToChoosingRooles.addActionListener(this);
         backToChoosingRooles.setOpaque(true);
