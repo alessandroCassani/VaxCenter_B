@@ -8,9 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-import UI.graphics.RoundButton;
+import CheckData.EmailValidator;
+import CheckData.CFValidator;
+import CheckData.PasswordValidator;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
+
 
 
 /**
@@ -23,10 +27,11 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 public class UIRegisterCitizen extends JFrame implements ActionListener {
 
 
+
     /**
      *  Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca nel DB
      */
-    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
+    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"","Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
 
     /**
      * nome del cittadino
@@ -71,7 +76,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * bottone per l'avvio del processo di registrazione a sistema di un cittadino
      */
-    RoundButton registraCittadino = new RoundButton("REGISTRA");
+    JButton registraCittadino = new JButton("REGISTRA");
 
     /**
      * bottone che permette l'eliminazione delle stringhe inserite nei campi per la registrazione
@@ -81,7 +86,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * checkBox che rende visibili le stringhe inserite come password
      */
-    JCheckBox showPassword = new JCheckBox("Mostra password");
+    JCheckBox showPassword = new JCheckBox("show password");
 
     /**
      * bottone che permette il ritorno alla UI precedente (UICitizen)
@@ -93,6 +98,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     JLabel status = new JLabel();
 
+
+
     /**
      * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata di registrazione del cittadino
      *
@@ -101,7 +108,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     public UIRegisterCitizen(){
 
-
+        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel titoloCittadino = new JLabel("Registrati presso un Centro Vaccinale");
@@ -206,32 +213,34 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         JLabel labelInfopsw1 = new JLabel("-Lunghezza compresa tra 8 e 20 caratteri"); // serve per i requisiti password
         labelInfopsw1.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw1.setForeground(new Color(65,102,245));
-        add(labelInfopsw1).setBounds(372, 435, 290, 10);
+        add(labelInfopsw1).setBounds(372, 435, 290, 11);
 
-        JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola ed una minuscola"); // serve per i requisiti password
+        JLabel labelInfopsw2 = new JLabel("-Almeno una lettera maiuscola e una minuscola"); // serve per i requisiti password
         labelInfopsw2.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw2.setForeground(new Color(65,102,245));
-        add(labelInfopsw2).setBounds(372, 447, 340, 10);
+        add(labelInfopsw2).setBounds(372, 447, 340, 11);
 
         JLabel labelInfopsw3 = new JLabel("-Almeno un numero");
         labelInfopsw3.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw3.setForeground(new Color(65,102,245));
-        add(labelInfopsw3).setBounds(372, 459, 290, 10);
+        add(labelInfopsw3).setBounds(372, 459, 290, 11);
 
-        JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale tra: ! # $ % & @ * + / - ? ");
+        JLabel labelInfopsw4 = new JLabel("-Almeno un carattere speciale come ! @ # & ( )");
         labelInfopsw4.setFont(new Font("Georgia", Font.BOLD, 11));
         labelInfopsw4.setForeground(new Color(65,102,245));
-        add(labelInfopsw4).setBounds(372, 471, 370, 10);
+        add(labelInfopsw4).setBounds(372, 471, 370, 11);
 
         registraCittadino.setBounds(675, 380, 150, 50);
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
         registraCittadino.setBackground(new Color(0,0,128));
         registraCittadino.setForeground(Color.WHITE);
+        registraCittadino.setBorder(bordobtn);
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
+        registraCittadino.setOpaque(true);
 
-        status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(75, 700, 400, 75);
+        status.setFont(new Font("Georgia", Font.BOLD, 14));
+        status.setBounds(500, 500, 400, 50);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToCitizen = new JButton(ind);
@@ -269,6 +278,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         add(registraCittadino);
         add(pulisci);
         add(backToCitizen);
+        add(status);
 
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
@@ -298,10 +308,20 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             this.dispose();
             new UICitizen();
         } else if (e.getSource() == registraCittadino) {
-            if (!nomeCittadino.getText().equals("Paolo")){
+            EmailValidator emailValidator = new EmailValidator();
+            CFValidator cfvalidator = new CFValidator();
+            PasswordValidator pswvalidator = new PasswordValidator();
+
+            if(!emailValidator.validate(email.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
-            } else{
+        } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
+                status.setForeground(new Color(0xEC0909));
+                status.setText("I dati inseriti non sono corretti! Riprovare ...");
+            } else if (!pswvalidator.validate(password.getText().trim())) {
+                status.setForeground(new Color(0xEC0909));
+                status.setText("I dati inseriti non sono corretti! Riprovare ...");
+            }else{
                 status.setForeground(new Color(0x077507));
                 status.setText("Registrato con successo!");
             }
