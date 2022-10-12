@@ -116,6 +116,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param account account del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
+     *
+     * @author Luca Perfetti
      */
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
@@ -139,6 +141,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param user nome utente
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
+     *
+     * @author Luca Perfetti
      */
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
@@ -162,6 +166,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param VaxCenterName nome del centro vaccinale
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
+     *
+     * @author Luca Perfetti
      */
     @Override
     public boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException {
