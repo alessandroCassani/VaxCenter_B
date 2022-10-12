@@ -131,5 +131,12 @@ public interface ServerInterface extends Remote {
      */
     LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws  RemoteException;
 
-
+    /**
+     * segnatura del emtodo che permette la ricerca dei nomi dei centri avccinali esistenti
+     * @return lista dei nomi dei centri vaccinali esistenti
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    LinkedList<String> getNomicentriVaccinali() throws RemoteException;
 }

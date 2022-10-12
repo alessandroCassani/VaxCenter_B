@@ -286,4 +286,24 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return listaCentri;
         } catch (SQLException e) {return null;}
     }
+
+    /**
+     * metodo che permette la ricerca dei nomi dei centri vaccinali esistenti
+     * @return lista dei nomi dei centri vaccinali esistenti
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    @Override
+    public LinkedList<String> getNomicentriVaccinali() throws RemoteException {
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nomeCentro FROM CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia)");
+            ResultSet resultSet = ps.executeQuery();
+            LinkedList<String> listaNomiCentri = new LinkedList<>();
+            while(resultSet.next()){
+                listaNomiCentri.add(resultSet.getString(1));
+            }
+            return listaNomiCentri;
+        } catch (SQLException e) {return null;}
+    }
 }
