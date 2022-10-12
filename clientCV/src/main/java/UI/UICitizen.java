@@ -76,6 +76,7 @@ public class UICitizen extends JFrame implements ActionListener {
             }
         });
 
+        info = cercaCentroVaccinale.resizeImage(info,80,80);
         JLabel cercaCV = new JLabel(info);
         JLabel cercaLabel = new JLabel("<html>RICERCA<br> CENTRO VACCINALE</html>");
         cercaLabel.setForeground(Color.WHITE);
