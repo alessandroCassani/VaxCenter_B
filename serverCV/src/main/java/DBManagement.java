@@ -138,8 +138,7 @@ public class DBManagement {
                     + "cognome VARCHAR(30),"
                     + "codiceFiscale CHAR(16),"
                     + "dataVaccino DATE,"
-                    + "vaxTipo VARCHAR(30),"
-                    + "isReg BOOLEAN);"
+                    + "vaxTipo VARCHAR(30));"
 
                     + "create table if not exists CentroVaccinale("
                     + "nomeCentro VARCHAR(30) PRIMARY KEY,"
@@ -150,8 +149,8 @@ public class DBManagement {
                     + "sigla CHAR(2),"
                     + "cap VARCHAR(5),"
                     + "tipologia VARCHAR(20),"
-                    + "numeroSegnalazioni Numeric,"
-                    + "avgSeverita Numeric);"
+                    + "numeroSegnalazioni INTEGER,"
+                    + "avgSeverita INTEGER);"
 
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
