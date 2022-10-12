@@ -11,6 +11,7 @@ import java.util.Objects;
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
 import CheckData.PasswordValidator;
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
@@ -76,7 +77,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * bottone per l'avvio del processo di registrazione a sistema di un cittadino
      */
-    JButton registraCittadino = new JButton("REGISTRA");
+    RoundButton registraCittadino = new RoundButton("REGISTRA");
 
     /**
      * bottone che permette l'eliminazione delle stringhe inserite nei campi per la registrazione
@@ -86,7 +87,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      * checkBox che rende visibili le stringhe inserite come password
      */
-    JCheckBox showPassword = new JCheckBox("show password");
+    JCheckBox showPassword = new JCheckBox("mostra password");
 
     /**
      * bottone che permette il ritorno alla UI precedente (UICitizen)
@@ -108,7 +109,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     public UIRegisterCitizen(){
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel titoloCittadino = new JLabel("Registrati presso un Centro Vaccinale");
@@ -234,10 +234,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         registraCittadino.setFont(new Font("Georgia", Font.BOLD, 17));
         registraCittadino.setBackground(new Color(0,0,128));
         registraCittadino.setForeground(Color.WHITE);
-        registraCittadino.setBorder(bordobtn);
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
-        registraCittadino.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 14));
         status.setBounds(500, 500, 400, 50);

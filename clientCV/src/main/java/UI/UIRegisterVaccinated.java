@@ -1,6 +1,7 @@
 package UI;
 
 import CheckData.CFValidator;
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
@@ -73,7 +74,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * bottone per l'avvio del processo di registrazione del vaccinato
      */
-    JButton registraVaccinato = new JButton("REGISTRA");
+    RoundButton registraVaccinato = new RoundButton("REGISTRA");
 
     /**
      * bottone per tornare alla precedente pagina di UI (UIVaccineOperator)
@@ -94,7 +95,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     public UIRegisterVaccinated(){
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato");
@@ -156,10 +156,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0,0,128));
         registraVaccinato.setForeground(Color.WHITE);
-        registraVaccinato.setBorder(bordobtn);
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
-        registraVaccinato.setOpaque(true);
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
