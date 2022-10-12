@@ -45,8 +45,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         scelta.setBounds(590, 100, 400, 30);
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
-        op = resizeImage(op);
-        Border space = new EmptyBorder(0,24,0,0);
+        op = resizeImage(op,70,80);
         JLabel iconOV = new JLabel(op);
         JLabel operator = new JLabel("    OPERATORE VACCINALE");
         operator.setFont(new Font("Georgia", Font.BOLD, 15));
@@ -55,7 +54,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
 
         operatoreVaccinale.setLayout(new BorderLayout());
-        operatoreVaccinale.setBorder(space);
+        operatoreVaccinale.setBorder(new EmptyBorder(0,24,0,0));
         operatoreVaccinale.add(iconOV,BorderLayout.WEST);
         operatoreVaccinale.add(operator,BorderLayout.CENTER);
         operatoreVaccinale.setBounds(600, 180, 350, 95);
@@ -70,12 +69,13 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         //Personalizzazione bottone cittadino
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
+        cit = resizeImage(cit,60,70);
         JLabel icon = new JLabel(cit);
         JLabel citizen = new JLabel("                 CITTADINO");
         citizen.setForeground(Color.WHITE);
         citizen.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setLayout(new BorderLayout());
-        cittadino.setBorder(space);
+        cittadino.setBorder(new EmptyBorder(0,29,0,0));
         cittadino.add(icon,BorderLayout.WEST);
         cittadino.add(citizen,BorderLayout.CENTER);
         cittadino.setBounds(600, 335, 350, 95);
@@ -126,9 +126,9 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         }
     }
 
-    public ImageIcon resizeImage(ImageIcon ic) {
+    public ImageIcon resizeImage(ImageIcon ic, int x, int y) {
         Image img = ic.getImage() ;
-        Image newimg = img.getScaledInstance( 70, 80,  java.awt.Image.SCALE_SMOOTH ) ;
+        Image newimg = img.getScaledInstance( x, y,  java.awt.Image.SCALE_SMOOTH ) ;
         ic = new ImageIcon( newimg );
         return ic;
     }
