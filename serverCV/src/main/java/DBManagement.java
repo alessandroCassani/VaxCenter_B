@@ -136,7 +136,7 @@ public class DBManagement {
                     + "nomeCentro VARCHAR(30),"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
-                    + "codiceFiscale CHAR(16),"
+                    + "CodiceFiscale CHAR(16),"
                     + "dataVaccino DATE,"
                     + "vaxTipo VARCHAR(30));"
 
@@ -152,6 +152,9 @@ public class DBManagement {
 
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
+                    + "nome VARCHAR(30),"
+                    + "cognome VARCHAR(30),"
+                    + "CodiceFiscale CHAR(16),"
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30),"
                     + "password VARCHAR(30));"
