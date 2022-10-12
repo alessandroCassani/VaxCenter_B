@@ -233,7 +233,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                  String tipo = resultSet.getString(8);
                  Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
-                 Indirizzo indirizzo = new Indirizzo(qualificatore1,nome,numCivico,comune,sigla,cap);
+                 Indirizzo indirizzo = new Indirizzo(qualificatore1,via,numCivico,Comune,sigla,cap);
                  listaCentri.add(new CentroVaccinale(nome,indirizzo,tipologia1));
              }
              return listaCentri;
