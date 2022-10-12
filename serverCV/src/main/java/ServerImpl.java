@@ -182,7 +182,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     //bisogna cambiare il risultato boolean
     @Override
-    public boolean isVaccinatedRegistrated(String nomeCentro) throws RemoteException {
-        return false;
+    public boolean isVaccinatedRegistrated(String user) throws RemoteException {
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Vaccinati WHERE codicefiscale = ?");
+
+            ps.setString(1, user);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return true;
     }
 }
