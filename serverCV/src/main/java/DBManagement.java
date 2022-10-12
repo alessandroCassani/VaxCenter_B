@@ -159,7 +159,7 @@ public class DBManagement {
                     + "password VARCHAR(30));"
 
                     + "create table if not exists Eventi_Avversi("
-                    + "id Numeric PRIMARY KEY,"
+                    + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "dolori_muscolari INTEGER,"
@@ -167,7 +167,7 @@ public class DBManagement {
                     + "crisi_ipertensiva INTEGER);"
 
                     + "create table if not exists Severita("
-                    + "id Numeric PRIMARY KEY,"
+                    + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "dolori_muscolari INTEGER,"
