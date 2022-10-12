@@ -247,7 +247,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 indirizzo = new Indirizzo(qualificatore1,via,numCivico,Comune,sigla,cap);
                 listaCentri.add(new CentroVaccinale(nome,indirizzo,tipologia1));
             }
-            return listaCentri;
+            if(listaCentri.isEmpty())
+                return null;
+            else
+                return listaCentri;
         } catch (SQLException e) {return null;}
     }
 
@@ -283,7 +286,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 indirizzo = new Indirizzo(qualificatore1,via,numCivico,comune,sigla,cap);
                 listaCentri.add(new CentroVaccinale(nomeCentro,indirizzo,tipologia1));
             }
-            return listaCentri;
+            if(listaCentri.isEmpty())
+                return null;
+            else
+                return listaCentri;
         } catch (SQLException e) {return null;}
     }
 
@@ -303,7 +309,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             while(resultSet.next()){
                 listaNomiCentri.add(resultSet.getString(1));
             }
-            return listaNomiCentri;
+            if(listaNomiCentri.isEmpty())
+                return null;
+            else
+                return listaNomiCentri;
         } catch (SQLException e) {return null;}
     }
 }
