@@ -150,7 +150,7 @@ public class DBManagement {
                     + "tipologia VARCHAR(20));"
 
                     + "create table if not exists Cittadini_Registrati("
-                    + "id VARCHAR(16) PRIMARY KEY,"
+                    + "id Numeric PRIMARY KEY,"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "CodiceFiscale CHAR(16),"
