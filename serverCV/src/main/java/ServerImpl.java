@@ -180,7 +180,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return true;
     }
 
-    //bisogna cambiare il risultato boolean
+    /**
+     * il metodo permette il controllo della già avvenuta vaccinazione del cittadino
+     * @param user codice fiscale del vaccinato
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     */
     @Override
     public boolean isVaccinatedRegistrated(String user) throws RemoteException {
         try {
