@@ -17,5 +17,12 @@
             <version>1.7.1</version>
             <scope>import</scope>
         </dependency>
+        <dependency>
+            <groupId>net.java.dev.timingframework</groupId>
+            <artifactId>timingframework</artifactId>
+            <version>1.0</version>
+            <scope>import</scope>
+        </dependency>
     </dependencies>
+
 </project>

@@ -1,5 +1,7 @@
 package UI;
 
+import CheckData.CFValidator;
+import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
@@ -9,7 +11,9 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.util.Objects;
+
 
 /**
  *  La classe UiRegisterVaccinated crea l'interfaccia grafica dove e' possibile inserire le informazioni necessarie alla registrazione a sistema di un vaccinato
@@ -25,7 +29,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
      */
-    JComboBox nomeCV = new JComboBox<>(new String[]{"Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new String[]{"","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
 
     /**
      * nome del vaccinato
@@ -50,7 +54,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica le tipologie di vaccino somministrate che l'utente puo' selezionare
      */
-    JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"Pfizer", "AstraZeneca", "Moderna", "J&J"});
+    JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"","Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
     /**
      * ID univoco generato al momento della vaccinazione
@@ -70,7 +74,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * bottone per l'avvio del processo di registrazione del vaccinato
      */
-    JButton registraVaccinato = new JButton("REGISTRA");
+    RoundButton registraVaccinato = new RoundButton("REGISTRA");
 
     /**
      * bottone per tornare alla precedente pagina di UI (UIVaccineOperator)
@@ -80,7 +84,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * bottone per eliminare le stringhe inserite in fase di registrazione
      */
-    JButton pulisci = new JButton();
+    JButton pulisci;
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated
@@ -91,8 +95,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
     public UIRegisterVaccinated(){
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
-        Border bordobtnInd = new LineBorder(new Color(169,50, 38), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
         JLabel tiotoloVaccinato = new JLabel("Inserisci un nuovo Vaccinato");
         tiotoloVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -101,87 +104,88 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
         JLabel labelnomeVac = new JLabel("Nome:");
         labelnomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelnomeVac).setBounds(280, 35, 550, 55);
+        add(labelnomeVac).setBounds(280, 45, 550, 55);
 
         nome.setFont(new Font("Arial", Font.ITALIC, 20));
         nome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         nome.setPreferredSize(new Dimension(325, 55));
-        nome.setBounds(140, 80, 325, 50);
+        nome.setBounds(140, 90, 325, 50);
         nome.setEchoChar((char) 0);
 
         JLabel labelcognomeVac = new JLabel("Cognome:");
         labelcognomeVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelcognomeVac).setBounds(650, 35, 550, 55);
+        add(labelcognomeVac).setBounds(650, 45, 550, 55);
 
         cognome.setFont(new Font("Arial", Font.ITALIC, 20));
         cognome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cognome.setPreferredSize(new Dimension(325, 55));
-        cognome.setBounds(520, 80, 325, 50);
+        cognome.setBounds(520, 90, 325, 50);
         cognome.setEchoChar((char) 0);
 
         JLabel labelcf = new JLabel("Codice Fiscale:");
         labelcf.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelcf).setBounds(250, 150, 550, 55);
+        add(labelcf).setBounds(250, 160, 550, 55);
 
         codiceFiscale.setFont(new Font("Arial", Font.ITALIC, 20));
         codiceFiscale.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         codiceFiscale.setPreferredSize(new Dimension(325, 55));
-        codiceFiscale.setBounds(140, 195, 325, 50);
+        codiceFiscale.setBounds(140, 205, 325, 50);
         codiceFiscale.setEchoChar((char) 0);
 
-        JLabel labeldata = new JLabel("Data somministrazione (aaaa-mm-gg):");
+        JLabel labeldata = new JLabel("Data somministrazione:");
         labeldata.setFont(new Font("Georgia",Font.ITALIC, 17));
-        add(labeldata).setBounds(530, 150, 550, 55);
+        add(labeldata).setBounds(530, 160, 550, 55);
 
         data.setFont(new Font("Arial", Font.ITALIC, 20));
         data.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         data.setPreferredSize(new Dimension(325, 55));
-        data.setBounds(520, 195, 325, 50);
+        data.setBounds(520, 205, 325, 50);
+        data.setDate(new Date());
 
         JLabel labelTipVac = new JLabel("Tipologia:");
         labelTipVac.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelTipVac).setBounds(260, 265, 550, 55);
+        add(labelTipVac).setBounds(260, 275, 550, 55);
 
         vaccinoSomministrato.setFont(new Font("Arial", Font.ITALIC, 20));
         vaccinoSomministrato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-        vaccinoSomministrato.setBounds(140, 310, 325, 50);
+        vaccinoSomministrato.setBounds(140, 320, 325, 50);
         vaccinoSomministrato.setBackground(Color.WHITE);
         ((JLabel)vaccinoSomministrato.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        registraVaccinato.setBounds(380, 450, 230, 60);
+        registraVaccinato.setBounds(380, 460, 230, 60);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0,0,128));
         registraVaccinato.setForeground(Color.WHITE);
-        registraVaccinato.setBorder(bordobtn);
         registraVaccinato.setFocusable(false);
         registraVaccinato.addActionListener(this);
-        registraVaccinato.setOpaque(true);
 
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
-        add(labelNome).setBounds(590, 265, 550, 55);
+        add(labelNome).setBounds(590, 275, 550, 55);
 
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-        nomeCV.setBounds(520, 310, 325, 50);
+        nomeCV.setBounds(520, 320, 325, 50);
         nomeCV.setBackground(Color.WHITE);
         AutoCompleteDecorator.decorate(nomeCV);
         ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        backToVaccineOperator =  new JButton("INDIETRO");
-        backToVaccineOperator.setBounds(90, 450, 230, 60);
-        backToVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 20));
-        backToVaccineOperator.setBackground(new Color(248, 9, 55));
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
+        backToVaccineOperator = new JButton(ind);
+        backToVaccineOperator.setBounds(10, 10, 55 , 55);
+        backToVaccineOperator.setFont(new Font("Georgia", Font.BOLD, 17));
+        backToVaccineOperator.setBackground(new Color(181, 226, 232));
         backToVaccineOperator.setForeground(Color.WHITE);
         backToVaccineOperator.setBorder(bordobtnInd);
         backToVaccineOperator.setFocusable(false);
         backToVaccineOperator.addActionListener(this);
         backToVaccineOperator.setOpaque(true);
 
-        pulisci = new JButton("PULISCI");
-        pulisci.setBounds(670, 450, 230, 60);
-        pulisci.setFont(new Font("Georgia", Font.BOLD, 20));
-        pulisci.setBackground(new Color(0xEF0808));
+        ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
+        pulisci = new JButton(pul);
+        pulisci.setBounds(850, 400, 50, 50);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 17));
+        pulisci.setBackground(new Color(181, 226, 232));
         pulisci.setForeground(Color.WHITE);
         pulisci.setBorder(bordobtnInd);
         pulisci.setFocusable(false);
@@ -189,12 +193,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         pulisci.setOpaque(true);
 
         status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(350, 370, 400, 55);
+        status.setBounds(350, 380, 400, 55);
 
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        IDUnivoco.setBounds(125, 540, 400, 50);
+        IDUnivoco.setBounds(125, 550, 400, 50);
         warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        warningIDUnivoco.setBounds(125, 565, 600, 55);
+        warningIDUnivoco.setBounds(125, 575, 600, 55);
 
         setLayout(null);
         add(backToVaccineOperator);
@@ -235,15 +239,17 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        CFValidator cfvalidator = new CFValidator();
+
         if (e.getSource() == backToVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
             IDUnivoco.setText("");
             warningIDUnivoco.setText("");
-            if (!nome.getText().equals("Paolo")){
+            if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
                 status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti!");
+                status.setText("I dati inseriti non sono corretti! Riprovare ...");
             } else {
                 status.setForeground(new Color(0x077507));
                 status.setText("Centro Vaccinale registrato con successo!");
@@ -251,15 +257,16 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
             }
         }else if(e.getSource() == pulisci) {
-                nomeCV.setSelectedItem("Paolo");
-                nome.setText("");
-                cognome.setText("");
-                codiceFiscale.setText("");
-                vaccinoSomministrato.setSelectedItem("Pfizer");
-                status.setText("");
-                IDUnivoco.setText("");
-                warningIDUnivoco.setText("");
+            nomeCV.setSelectedItem("");
+            nome.setText("");
+            cognome.setText("");
+            codiceFiscale.setText("");
+            vaccinoSomministrato.setSelectedItem("");
+            status.setText("");
+            IDUnivoco.setText("");
+            warningIDUnivoco.setText("");
+            data.setDate(new Date());
         }
+
     }
 }
-

@@ -1,5 +1,6 @@
 package util;
 
+import java.math.BigInteger;
 import java.util.Date;
 
     /**
@@ -12,7 +13,7 @@ public class Cittadino extends Persona {
         /**
          * Account associato al cittadino
          */
-    private Account account;
+    private final Account account;
 
         /**
          * metodo che permette la modellazione delle informazioni di un oggetto di tipo Cittadino
@@ -28,7 +29,7 @@ public class Cittadino extends Persona {
          *
          * @author Alessandro Cassani
          */
-    public Cittadino(String nome, String cognome, String codFisc, String email, String id, Date dataNascita, CentroVaccinale centroVaccinale, Account account){
+    public Cittadino(String nome, String cognome, String codFisc, String email, BigInteger id, Date dataNascita, CentroVaccinale centroVaccinale, Account account){
         super(nome,cognome,codFisc,email,id,dataNascita,centroVaccinale);
         this.account = account;
     }

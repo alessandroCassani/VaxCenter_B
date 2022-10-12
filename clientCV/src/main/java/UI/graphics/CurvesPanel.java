@@ -18,9 +18,9 @@ import javax.swing.Timer;
 
 public class CurvesPanel extends GradientPanel {
 
-    private RenderingHints hints;
+    private final RenderingHints hints;
     private int counter = 0;
-    private Timer timer = new Timer(20, new ActionListener() {
+    private final Timer timer = new Timer(20, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent ae) {
             repaint();

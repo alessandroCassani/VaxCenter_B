@@ -16,4 +16,13 @@ public enum Tipologia {
     public String toString() {
         return this.name().toLowerCase();
     }
+
+    public static Tipologia getTipo(String tipologia){
+        switch(tipologia.toUpperCase()){
+            case "HUB": return HUB;
+            case "OSPEDALIERO": return OSPEDALIERO;
+            case "AZIENDALE": return AZIENDALE;
+        }
+        return null;
+    }
 }
