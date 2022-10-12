@@ -238,6 +238,28 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
+     * metodo che permette il controllo della doppia registrazione di un cittadino
+     * @param citizen codice fiscale del cittadino
+     * @return true o false in base all'esito dell'operazione
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    @Override
+    public boolean isCitizenRegistrated(String citizen) throws RemoteException {
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Cittadini_Registrati WHERE cf = ?");
+            ps.setString(1,citizen);
+            ResultSet resultSet = ps.executeQuery();
+            ps.close();
+            if(resultSet.next())
+                return false;
+
+        } catch (SQLException e) {return false;}
+        return true;
+    }
+
+    /**
      * il metodo permette il controllo della già avvenuta vaccinazione del cittadino
      * @param user codice fiscale del vaccinato
      * @return true/false in base all'esito dell'operazione
