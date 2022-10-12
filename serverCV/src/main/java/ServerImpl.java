@@ -191,6 +191,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param user codice fiscale del vaccinato
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
+     *
+     * @author Luca Perfetti
      */
     @Override
     public boolean isVaccinatedRegistrated(String user) throws RemoteException {
