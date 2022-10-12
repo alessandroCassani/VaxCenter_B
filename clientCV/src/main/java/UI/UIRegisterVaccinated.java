@@ -257,17 +257,16 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
             }
         }else if(e.getSource() == pulisci) {
-                nomeCV.setSelectedItem("");
-                nome.setText("");
-                cognome.setText("");
-                codiceFiscale.setText("");
-                vaccinoSomministrato.setSelectedItem("");
-                status.setText("");
-                IDUnivoco.setText("");
-                warningIDUnivoco.setText("");
-                data.setDate(new Date());
+            nomeCV.setSelectedItem("");
+            nome.setText("");
+            cognome.setText("");
+            codiceFiscale.setText("");
+            vaccinoSomministrato.setSelectedItem("");
+            status.setText("");
+            IDUnivoco.setText("");
+            warningIDUnivoco.setText("");
+            data.setDate(new Date());
         }
 
     }
 }
-

@@ -313,7 +313,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             if(!emailValidator.validate(email.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
-        } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
+            } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
                 status.setForeground(new Color(0xEC0909));
                 status.setText("I dati inseriti non sono corretti! Riprovare ...");
             } else if (!pswvalidator.validate(password.getText().trim())) {

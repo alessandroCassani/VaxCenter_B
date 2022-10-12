@@ -1,4 +1,4 @@
-import org.checkerframework.checker.units.qual.C;
+
 import util.*;
 
 import java.math.BigInteger;
@@ -38,7 +38,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia) \n"
-                    + "VALUES (?,?,?,?,?,?,?)");
+                    + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
             ps.setString(2,centroVaccinale.getIndirizzo().getComune());
             ps.setString(3,centroVaccinale.getIndirizzo().getQualificatore().toString());
