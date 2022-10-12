@@ -3,6 +3,12 @@ package CheckData;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * La classe CFValidator controlla se il CF inserito dall'operatore vaccinale o dal cittadino sia sintatticamente corretto
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class CFValidator {
     private Pattern pattern;
     private Matcher matcher;
@@ -14,10 +20,9 @@ public class CFValidator {
     }
 
     /**
-     * Validate hex with regular expression
+     * Convalida esadecimale con espressione regolare
      *
-     * @param hex
-     *            hex for validation
+     * @param hex per validazione
      * @return true valid hex, false invalid hex
      */
     public boolean validate(final String hex) {

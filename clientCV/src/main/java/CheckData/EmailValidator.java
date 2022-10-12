@@ -3,6 +3,12 @@ package CheckData;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * La classe EmailValidator controlla se la l'indirizzo Email inserito dal cittadino sia sintatticamente corretto e con dominio valido
+ *
+ * @author Paolo Bruscagin
+ */
+
 public class EmailValidator {
 
     private Pattern pattern;
@@ -15,10 +21,9 @@ public class EmailValidator {
     }
 
     /**
-     * Validate hex with regular expression
+     * Convalida esadecimale con espressione regolare
      *
-     * @param hex
-     *            hex for validation
+     * @param hex per validazione
      * @return true valid hex, false invalid hex
      */
     public boolean validate(final String hex) {
