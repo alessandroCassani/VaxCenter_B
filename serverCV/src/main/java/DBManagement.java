@@ -137,7 +137,7 @@ public class DBManagement {
                     + "cognome VARCHAR(30),"
                     + "CodiceFiscale CHAR(16),"
                     + "dataVaccino DATE,"
-                    + "vaxTipo VARCHAR(30)"
+                    + "vaxTipo VARCHAR(30),"
                     + "nomeCentro VARCHAR(30) REFERENCES CentriVaccinali);"
 
                     + "create table if not exists CentriVaccinali("
@@ -157,7 +157,8 @@ public class DBManagement {
                     + "CodiceFiscale CHAR(16),"
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30),"
-                    + "password VARCHAR(30));"
+                    + "password VARCHAR(30),"
+                    + "nomeCentro VARCHAR(30) REFERENCES CentriVaccinali);"
 
                     + "create table if not exists Eventi_Avversi("
                     + "username VARCHAR(30) PRIMARY KEY,"
