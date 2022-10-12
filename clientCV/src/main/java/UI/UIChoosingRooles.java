@@ -1,9 +1,10 @@
 package UI;
 
 import UI.graphics.RoundButton;
+
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,8 +27,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     /**
      * Bottone per accedere alla sezione cittadino
      */
-    RoundButton cittadino = new RoundButton();
-
+    JButton cittadino = new JButton();
 
 
     /**
@@ -40,21 +40,19 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     public UIChoosingRooles(){
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        Border bordo = new LineBorder(new Color(0,49,83), 2, true);
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("Georgia", Font.BOLD, 17));
         scelta.setBounds(590, 100, 400, 30);
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
-        op = operatoreVaccinale.resizeImage(op,70,80);
         JLabel iconOV = new JLabel(op);
         JLabel operator = new JLabel("    OPERATORE VACCINALE");
         operator.setFont(new Font("Georgia", Font.BOLD, 15));
         operator.setForeground(Color.WHITE);
 
 
-
         operatoreVaccinale.setLayout(new BorderLayout());
-        operatoreVaccinale.setBorder(new EmptyBorder(0,24,0,0));
         operatoreVaccinale.add(iconOV,BorderLayout.WEST);
         operatoreVaccinale.add(operator,BorderLayout.CENTER);
         operatoreVaccinale.setBounds(600, 180, 350, 95);
@@ -62,20 +60,19 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         operatoreVaccinale.setBackground(new Color(65, 102, 245));
         operatoreVaccinale.setHorizontalTextPosition(SwingConstants.RIGHT);
         operatoreVaccinale.setForeground(Color.WHITE);
+        operatoreVaccinale.setBorder(bordo);
         operatoreVaccinale.setFocusable(false);
         operatoreVaccinale.addActionListener(this);
-
+        operatoreVaccinale.setOpaque(true);
 
         //Personalizzazione bottone cittadino
 
         ImageIcon cit = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cittadino.png")));
-        cit = cittadino.resizeImage(cit,60,70);
         JLabel icon = new JLabel(cit);
         JLabel citizen = new JLabel("                 CITTADINO");
         citizen.setForeground(Color.WHITE);
         citizen.setFont(new Font("Georgia", Font.BOLD, 15));
         cittadino.setLayout(new BorderLayout());
-        cittadino.setBorder(new EmptyBorder(0,29,0,0));
         cittadino.add(icon,BorderLayout.WEST);
         cittadino.add(citizen,BorderLayout.CENTER);
         cittadino.setBounds(600, 335, 350, 95);
@@ -83,8 +80,11 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         cittadino.setBackground(new Color(65, 102, 245));
         cittadino.setForeground(Color.WHITE);
         cittadino.setIconTextGap(80);
+        cittadino.setBorder(bordo);
         cittadino.setFocusable(false);
         cittadino.addActionListener(this);
+        cittadino.setOpaque(true);
+
 
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
@@ -125,6 +125,4 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             new UICitizen();
         }
     }
-
-
 }
