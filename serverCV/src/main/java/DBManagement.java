@@ -156,7 +156,7 @@ public class DBManagement {
                     + "cognome VARCHAR(30),"
                     + "CodiceFiscale CHAR(16),"
                     + "email VARCHAR(30),"
-                    + "username VARCHAR(30),"
+                    + "username VARCHAR(30) REFERENCES Eventi_Avversi,"
                     + "password VARCHAR(30),"
                     + "nomeCentro VARCHAR(30) REFERENCES CentriVaccinali);"
 
