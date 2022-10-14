@@ -29,7 +29,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
      */
-    JComboBox nomeCV = new JComboBox<>(new String[]{"","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca","Paolo", "Damiano", "Alessandro", "Luca"}); // da fare in modo diverso
+    JComboBox nomeCV = new JComboBox<>(new String[]{""}); // da fare in modo diverso
 
     /**
      * nome del vaccinato

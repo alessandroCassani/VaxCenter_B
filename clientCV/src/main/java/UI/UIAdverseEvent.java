@@ -1,5 +1,7 @@
 package UI;
 
+import UI.graphics.RoundButton;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -48,7 +50,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * Bottone per registrare gli eventi avversi
      */
-    JButton registraEA = new JButton("REGISTRA");
+    RoundButton registraEA = new RoundButton("REGISTRA");
 
     /**
      * Bottone per tornare alle UICitizen
@@ -317,7 +319,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     public UIAdverseEvent(){
 
 
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
         Border bordobtn_AE = new LineBorder(new Color(0,49,83), 2, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
@@ -453,12 +454,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaMDT.setFont(new Font("Arial", Font.BOLD, 12));
         severitaMDT.setBounds(160, 75, 60, 30);
         severitaMDT.setBackground(Color.WHITE);
-        severitaMDT.setBorder(bordobtn_AE);
+        severitaMDT.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         noteMalditesta.setFont(new Font("Arial", Font.BOLD, 10));
         noteMalditesta.setPreferredSize(new Dimension(325, 75));
         noteMalditesta.setBounds(250, 75, 250, 30);
-        noteMalditesta.setBorder(bordobtn_AE);
+        noteMalditesta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
 
         //Febbre
@@ -473,12 +476,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaFebbre.setFont(new Font("Arial", Font.BOLD, 12));
         severitaFebbre.setBounds(160, 125, 60, 30);
         severitaFebbre.setBackground(Color.WHITE);
-        severitaFebbre.setBorder(bordobtn_AE);
+        severitaFebbre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         noteFebbre.setFont(new Font("Arial", Font.BOLD, 10));
         noteFebbre.setPreferredSize(new Dimension(325, 75));
         noteFebbre.setBounds(250, 125, 250, 30);
-        noteFebbre.setBorder(bordobtn_AE);
+        noteFebbre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
 
         //Dolore Addominale e/o Articolare
@@ -493,12 +498,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaDMA.setFont(new Font("Arial", Font.BOLD, 12));
         severitaDMA.setBounds(160, 175, 60, 30);
         severitaDMA.setBackground(Color.WHITE);
-        severitaDMA.setBorder(bordobtn_AE);
+        severitaDMA.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         noteDMA.setFont(new Font("Arial", Font.BOLD, 10));
         noteDMA.setPreferredSize(new Dimension(325, 75));
         noteDMA.setBounds(250, 175, 250, 30);
-        noteDMA.setBorder(bordobtn_AE);
+        noteDMA.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
 
         //Linfoadenopatia
@@ -513,12 +520,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitalinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 12));
         severitalinfoadenopatia.setBounds(160, 225, 60, 30);
         severitalinfoadenopatia.setBackground(Color.WHITE);
-        severitalinfoadenopatia.setBorder(bordobtn_AE);
+        severitalinfoadenopatia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         notelinfoadenopatia.setFont(new Font("Arial", Font.BOLD, 10));
         notelinfoadenopatia.setPreferredSize(new Dimension(325, 75));
         notelinfoadenopatia.setBounds(250, 225, 250, 30);
-        notelinfoadenopatia.setBorder(bordobtn_AE);
+        notelinfoadenopatia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
 
         //Tachicardia
@@ -533,12 +542,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitatachicardia.setFont(new Font("Arial", Font.BOLD, 12));
         severitatachicardia.setBounds(160, 275, 60, 30);
         severitatachicardia.setBackground(Color.WHITE);
-        severitatachicardia.setBorder(bordobtn_AE);
+        severitatachicardia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         notetachicardia.setFont(new Font("Arial", Font.BOLD, 10));
         notetachicardia.setPreferredSize(new Dimension(325, 75));
         notetachicardia.setBounds(250, 275, 250, 30);
-        notetachicardia.setBorder(bordobtn_AE);
+        notetachicardia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
 
         //Crisi Ipertensiva
@@ -553,12 +564,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 12));
         severitaCrisiIpertensiva.setBounds(160, 325, 60, 30);
         severitaCrisiIpertensiva.setBackground(Color.WHITE);
-        severitaCrisiIpertensiva.setBorder(bordobtn_AE);
+        severitaCrisiIpertensiva.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         notetaCrisiIpertensiva.setFont(new Font("Arial", Font.BOLD, 10));
         notetaCrisiIpertensiva.setPreferredSize(new Dimension(325, 75));
         notetaCrisiIpertensiva.setBounds(250, 325, 250, 30);
-        notetaCrisiIpertensiva.setBorder(bordobtn_AE);
+        notetaCrisiIpertensiva.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+
 
         //Panel info Eventi avversi già registrati
 
@@ -632,10 +645,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         registraEA.setFont(new Font("Georgia", Font.BOLD, 15));
         registraEA.setBackground(new Color(0,0,128));
         registraEA.setForeground(Color.WHITE);
-        registraEA.setBorder(bordobtn);
         registraEA.setFocusable(false);
         registraEA.addActionListener(this);
-        registraEA.setOpaque(true);
 
 
         ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));

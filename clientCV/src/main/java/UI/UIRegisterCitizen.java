@@ -32,7 +32,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      *  Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca nel DB
      */
-    JComboBox<String> nomeCV = new JComboBox<>(new String[]{"","Paolo", "Damiano", "Alessandro", "Luca"}); // ricerca in db
+    JComboBox<String> nomeCV = new JComboBox<>(new String[]{""}); // ricerca in db
 
     /**
      * nome del cittadino
