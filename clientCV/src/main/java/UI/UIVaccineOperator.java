@@ -21,6 +21,8 @@ import java.util.Objects;
 
 public class UIVaccineOperator extends JFrame implements ActionListener {
 
+    JPanel immagine = new JPanel();
+
 
     /**
      * Bottone per accedere alla sezione registra centro vaccinale
@@ -51,6 +53,14 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
+        immagine.setBounds(50, 100, 500, 398);
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/newVaccinatedV2.png"))));
+
+        immagine.add(lblPic);
+
+
 
         //Personalizzazione bottone registra centro vaccinale
 
@@ -109,6 +119,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         add(registraCentroVaccinale);
         add(registraVaccinato);
         add(backtoChoosingRooles);
+        add(immagine);
 
         //Icona avvio del programma
 
