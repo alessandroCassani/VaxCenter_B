@@ -72,7 +72,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         immagine.setBounds(50, 80, 520, 430);
         immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();
-        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Vac_v1.png"))));
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/sfondoVac.png"))));
         immagine.add(lblPic);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
