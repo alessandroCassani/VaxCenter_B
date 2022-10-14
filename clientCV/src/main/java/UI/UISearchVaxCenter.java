@@ -43,6 +43,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setVisible(true);
+        setTitle("Ricerca Centro Vaccinale - Info");
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
