@@ -10,6 +10,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Objects;
 
+
+
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
 import CheckData.PasswordValidator;
