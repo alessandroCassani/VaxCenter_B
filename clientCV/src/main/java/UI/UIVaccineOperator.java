@@ -48,16 +48,13 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
     public UIVaccineOperator(){
 
-        //ImageIcon immVO = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/immOpVac.jpg")));
-
-
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
-        immagine.setBounds(50, 100, 500, 398);
+        immagine.setBounds(50, 100, 500, 408);
+        immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();
         lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/newVaccinatedV2.png"))));
-
         immagine.add(lblPic);
 
 
