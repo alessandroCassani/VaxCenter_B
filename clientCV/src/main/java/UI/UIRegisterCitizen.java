@@ -345,7 +345,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             }
 
         }else if(e.getSource() == pulisci) {
-            nomeCV.setSelectedItem("Paolo");
+            nomeCV.setSelectedItem("");
             nomeCittadino.setText("");
             cognomeCittadino.setText("");
             email.setText("");
