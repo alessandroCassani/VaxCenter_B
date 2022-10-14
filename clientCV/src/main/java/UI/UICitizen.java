@@ -26,6 +26,11 @@ import java.util.Objects;
 public class UICitizen extends JFrame implements ActionListener {
 
     /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
+    JPanel immagine = new JPanel();
+
+    /**
      * Bottone per accedere alla sezione info centro vaccinale
      */
     RoundButton cercaCentroVaccinale = new RoundButton();
@@ -55,6 +60,12 @@ public class UICitizen extends JFrame implements ActionListener {
      */
 
     public UICitizen() {
+
+        immagine.setBounds(50, 80, 520, 430);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Vac_v1.png"))));
+        immagine.add(lblPic);
 
 
 
@@ -126,6 +137,7 @@ public class UICitizen extends JFrame implements ActionListener {
         add(registraCittadino);
         add(login);
         add(backToChoosingRooles);
+        add(immagine);
 
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));

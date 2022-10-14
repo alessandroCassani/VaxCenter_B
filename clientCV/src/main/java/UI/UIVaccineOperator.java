@@ -21,6 +21,9 @@ import java.util.Objects;
 
 public class UIVaccineOperator extends JFrame implements ActionListener {
 
+    /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
     JPanel immagine = new JPanel();
 
 

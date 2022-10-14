@@ -28,6 +28,12 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      */
     RoundButton cittadino = new RoundButton();
 
+    /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
+    JPanel immagine = new JPanel();
+
+
 
 
     /**
@@ -38,6 +44,12 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      */
 
     public UIChoosingRooles(){
+
+        immagine.setBounds(50, 80, 520, 430);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/Vac_v1.png"))));
+        immagine.add(lblPic);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
@@ -94,6 +106,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
+        add(immagine);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize (1000, 600);
