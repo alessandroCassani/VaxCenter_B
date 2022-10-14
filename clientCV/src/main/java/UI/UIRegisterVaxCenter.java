@@ -230,6 +230,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(status);
         add(pulisci);
 
+        //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",

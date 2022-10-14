@@ -216,6 +216,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(warningIDUnivoco);
         add(data);
 
+        //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",

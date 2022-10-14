@@ -673,6 +673,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(pulisciEventiAvversi);
         inserisciEventiAvversi.add(status);
 
+
+        //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",

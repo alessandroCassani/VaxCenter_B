@@ -53,6 +53,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
     public UIChoosingRooles(){
 
+        //Label cliccabile che ti permette di uscire dal programma
 
         esci.setFont(new Font("Georgia", Font.ITALIC, 18));
         Font font = esci.getFont();
@@ -68,6 +69,8 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
             }
         });
+
+        //immagine programma
 
         immagine.setBounds(50, 80, 520, 430);
         immagine.setBackground(new Color(181, 226, 232));

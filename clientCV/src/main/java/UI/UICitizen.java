@@ -61,6 +61,9 @@ public class UICitizen extends JFrame implements ActionListener {
 
     public UICitizen() {
 
+
+        //immagine programma
+
         immagine.setBounds(50, 80, 520, 430);
         immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();

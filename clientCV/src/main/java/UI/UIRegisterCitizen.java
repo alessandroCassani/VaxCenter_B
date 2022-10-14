@@ -282,6 +282,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         add(backToCitizen);
         add(status);
 
+
+        //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",

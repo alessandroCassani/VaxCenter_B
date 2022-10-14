@@ -54,6 +54,8 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
+        //immagine programma
+
         immagine.setBounds(50, 80, 520, 430);
         immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();
