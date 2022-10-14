@@ -166,7 +166,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(500, 335, 100, 50);
-        siglaProvincia.setEditable(false);
+        siglaProvincia.setEditable(false); //immutabile in quanto viene completato automaticamente
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -176,7 +176,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         cap.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
         cap.setPreferredSize(new Dimension(100, 75));
         cap.setBounds(675, 335, 125, 50);
-        cap.setEditable(false);
+        cap.setEditable(false);//immutabile in quanto viene completato automaticamente
 
         ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
         pulisci = new JButton(pul);

@@ -262,7 +262,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
 
-    //Tabella 6x3 (righe x colonne)
+    //Tabella 6x3 (righe x colonne) immutabile in quanto viene completato automaticamente
     String[][] data = {{nomeEvento,severitàEvento,noteEvento },{"Mal di testa", s1,note1},{"Febbre", s2,note2},{"Dolori Musc. Art.", s3,note3},{"Linfoadenopatia", s4,note4},{"Tachicardia", s5,note5},{"Crisi Ipertensiva", s6,note6}};
     String[] coloumn = {"NOME", "SEVERITA'", "NOTE"};
 
