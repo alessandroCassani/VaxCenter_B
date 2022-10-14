@@ -39,6 +39,8 @@ public class UILogin extends JFrame implements ActionListener {
         setTitle("Login");
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
+        setResizable(false);
+
     }
 
     @SuppressWarnings("unchecked")
