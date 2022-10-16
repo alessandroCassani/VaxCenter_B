@@ -139,6 +139,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         showPassword.setBackground(new Color(181, 226, 232));
 
         loginButton.setBounds(675,410,200,50);
+        loginButton.setFont(new Font("Georgia", Font.BOLD, 20));
         loginButton.addActionListener(this);
         loginButton.setForeground(new Color(0XFFE900));
         loginButton.setBackground(new Color(0Xe43e6f));
