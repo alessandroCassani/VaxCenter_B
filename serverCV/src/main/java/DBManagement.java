@@ -132,14 +132,13 @@ public class DBManagement {
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
 
             String query = "create table if not exists Vaccinati("
-                    + "id Numeric PRIMARY KEY,"
+                    + "id VARCHAR(16) PRIMARY KEY,"
                     + "nomeCentro VARCHAR(30),"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "codiceFiscale CHAR(16),"
-                    + "dataVaccino DATE,"
-                    + "vaxTipo VARCHAR(30),"
-                    + "isReg BOOLEAN);"
+                    + "dataVaccino VARCHAR(20),"
+                    + "vaxTipo VARCHAR(30));"
 
                     + "create table if not exists CentroVaccinale("
                     + "nomeCentro VARCHAR(30) PRIMARY KEY,"
@@ -163,8 +162,7 @@ public class DBManagement {
             preparedstmt.close();
             return true;
         }catch(Exception e){
-            System.out.println(e);
-        }
+                            e.printStackTrace();}
         return false;
     }
 }

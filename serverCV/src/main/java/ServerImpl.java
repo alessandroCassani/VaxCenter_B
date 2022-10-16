@@ -37,8 +37,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
             Connection con = DBManagement.getDB().connection;
-            System.out.println(con.isValid(10));
-            System.out.println(DBManagement.url+DBManagement.nameDB);
             PreparedStatement ps = con.prepareStatement("INSERT INTO centrovaccinale(nomeCentro,indirizzo,tipologia) "
                     + "VALUES (?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
@@ -89,9 +87,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM Vaccinati");
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM vaccinati");
             ResultSet resultSet = preparedStatement.executeQuery();
-            preparedStatement.close();
             TreeSet<BigInteger> id = new TreeSet<>();
             while(resultSet.next()){
                 id.add(new BigInteger(resultSet.getString(1))); //TreeSet ordina di default gli elementi in ordine crescente
@@ -101,20 +98,21 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 numero = id.last();
             else
                 numero = new BigInteger("0000000000000000");
+            preparedStatement.close();
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,nomecentro) \n" +
-                    "VALUES(?,?,?,?,?,?,?");
+                    "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, numero.toString());
             ps.setString(2,vaccinato.getNome());
             ps.setString(3,vaccinato.getCognome());
             ps.setString(4,vaccinato.getCodFisc());
-            ps.setDate(5, (Date) vaccinato.getDataSomministrazione());  //controllo cast!!
+            ps.setString(5,vaccinato.getDataSomministrazione().toString());  //controllo cast!!
             ps.setString(6,vaccinato.getVaccino().toString());
             ps.setString(7,vaccinato.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
 
-        }catch (SQLException e){return false;}
+        }catch (SQLException e){e.printStackTrace();return false;}
         return true;
     }
 
