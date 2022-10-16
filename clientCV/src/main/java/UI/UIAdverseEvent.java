@@ -678,6 +678,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 UIManager.put("OptionPane.yesButtonText", "Si");
+                UIManager.put("OptionPane.noButtonText", "No");
 
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
                         "Esci?", JOptionPane.YES_NO_OPTION);
