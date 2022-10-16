@@ -63,6 +63,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     JLabel esci = new JLabel("Esci");
 
+    /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
+    JPanel immagine = new JPanel();
+
     public static void main(String[] args) {
         new UILoginToServer();
     }
@@ -89,6 +94,14 @@ public class UILoginToServer extends JFrame implements ActionListener {
             }
         });
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
+
+        //immagine programma
+
+        immagine.setBounds(50, 80, 520, 430);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/scv_v2.png"))));
+        immagine.add(lblPic);
 
 
         hostLabel.setFont(new Font("Arial",Font.ITALIC,20));
@@ -137,6 +150,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(loginButton);
         add(showPassword);
         add(esci);
+        add(immagine);
 
 
         //Icona avvio del programma
