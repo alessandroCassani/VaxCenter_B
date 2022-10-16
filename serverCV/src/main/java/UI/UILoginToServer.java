@@ -4,10 +4,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -53,14 +52,16 @@ public class UILoginToServer extends JFrame implements ActionListener {
     JButton loginButton=new JButton("LOGIN");
 
     /**
-     * container dei componenti di interfaccia grafica
-     */
-    Container container = getContentPane();
-
-    /**
      * checkBox che permette di mostrare o nascondere la password inserita
      */
     JCheckBox showPassword = new JCheckBox("show password");
+
+
+    /**
+     * Label Esci che permette di uscire dal programma
+     */
+
+    JLabel esci = new JLabel("Esci");
 
     public static void main(String[] args) {
         new UILoginToServer();
@@ -70,9 +71,25 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * costruttore che permette il caricamento dei componenti di interfaccia grafica
      */
     public UILoginToServer(){
+
+        //Label cliccabile che ti permette di uscire dal programma
+
+        esci.setFont(new Font("Georgia", Font.ITALIC, 18));
+        Font font = esci.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        esci.setFont(font.deriveFont(attributes));
+        esci.setForeground(new Color(0,49,83));
+        esci.setBounds(60,30,100,20);
+        esci.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(0);
+
+            }
+        });
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
 
-        container.setLayout(null);
 
         hostLabel.setFont(new Font("Arial",Font.ITALIC,20));
         hostLabel.setBounds(600,200,100,20);
@@ -111,15 +128,15 @@ public class UILoginToServer extends JFrame implements ActionListener {
         loginButton.setBackground(new Color(0Xe43e6f));
 
 
-        container.add(hostLabel);
-        container.add(hostName);
-        container.add(userLabel);
-        container.add(pswLabel);
-        container.add(userTextField);
-        container.add(pswTextField);
-        container.add(loginButton);
-
-        container.add(showPassword);
+        add(hostLabel);
+        add(hostName);
+        add(userLabel);
+        add(pswLabel);
+        add(userTextField);
+        add(pswTextField);
+        add(loginButton);
+        add(showPassword);
+        add(esci);
 
 
         //Icona avvio del programma
