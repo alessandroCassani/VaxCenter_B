@@ -46,6 +46,8 @@ public class UILogin extends JFrame implements ActionListener {
         //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
+                UIManager.put("OptionPane.yesButtonText", "Si");
+
                 int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
                         "Esci?", JOptionPane.YES_NO_OPTION);
 
