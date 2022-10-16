@@ -22,17 +22,29 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * label rappresentante la stringa host
      */
-    JLabel hostLabel = new JLabel("host:");
+    JLabel hostLabel = new JLabel("Host:");
 
     /**
-     * label rappresentante la stringa di default uguale a localhost
+     * campo di testo dove inserire l'host
      */
-    JLabel hostName = new JLabel("localhost");
+    JTextField hostTextField = new JTextField();
+
+    /**
+     * label rappresentante la stringa port
+     */
+
+    JLabel portLabel =new JLabel("Port");
+
+    /**
+     * campo di testo dove inserire la porta
+     */
+
+    JTextField portTextField = new JTextField();
 
     /**
      * label rappresentante la stringa di default uguale a username
      */
-    JLabel userLabel = new JLabel("username:");
+    JLabel userLabel = new JLabel("Username:");
 
     /**
      * campo di testo dove inserire lo user
@@ -46,7 +58,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * label rappresentante password
      */
-    JLabel pswLabel = new JLabel("password:");
+    JLabel pswLabel = new JLabel("Password:");
 
     /**
      * bottone di login
@@ -69,6 +81,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * Panel per inserire l'immagine d'interfaccia
      */
     JPanel immagine = new JPanel();
+
+    /**
+     * Avvio del programma Server
+     * @param args
+     * @author Paolo Bruscagin
+     */
 
     public static void main(String[] args) {
         new UILoginToServer();
@@ -107,19 +125,29 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
 
         hostLabel.setFont(new Font("Arial",Font.ITALIC,20));
-        hostLabel.setBounds(600,200,100,20);
+        hostLabel.setBounds(600,150,100,20);
         hostLabel.setBorder(bordo);
 
-        hostName.setFont(new Font("Arial",Font.BOLD,20));
-        hostName.setBounds(750,200,100,20);
-        hostName.setBorder(bordo);
+        hostTextField.setFont(new Font("Arial",Font.BOLD,16));
+        hostTextField.setBounds(750,150,150,30);
+        hostTextField.setBackground(new Color(0Xf5bbcd));
+        hostTextField.setBorder(bordo);
+
+        portLabel.setFont(new Font("Arial",Font.ITALIC,20));
+        portLabel.setBounds(600,200,100,20);
+        portLabel.setBorder(bordo);
+
+        portTextField.setFont(new Font("Arial",Font.BOLD,16));
+        portTextField.setBounds(750,200,150,30);
+        portTextField.setBackground(new Color(0Xf5bbcd));
+        portTextField.setBorder(bordo);
 
         userLabel.setFont(new Font("Arial",Font.ITALIC,20));
-        userLabel.setBounds(600,250,100,20);
+        userLabel.setBounds(600,250,120,20);
         userLabel.setBorder(bordo);
 
-        userTextField.setFont(new Font("Arial",Font.BOLD,20));
-        userTextField.setBounds(750,250,100,30);
+        userTextField.setFont(new Font("Arial",Font.BOLD,16));
+        userTextField.setBounds(750,250,150,30);
         userTextField.setBackground(new Color(0Xf5bbcd));
         userTextField.setBorder(bordo);
 
@@ -128,12 +156,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswLabel.setBounds(600,300,100,20);
         pswLabel.setBorder(bordo);
 
-        pswTextField.setFont(new Font("Arial",Font.BOLD,20));
-        pswTextField.setBounds(750,300,100,30);
+        pswTextField.setFont(new Font("Arial",Font.BOLD,16));
+        pswTextField.setBounds(750,300,150,30);
         pswTextField.setBackground(new Color(0Xf5bbcd));
         pswTextField.setBorder(bordo);
 
-        showPassword.setBounds(860,310,130,12);
+        showPassword.setBounds(750,350,130,12);
         showPassword.setFont(new Font("Arial",Font.BOLD,12));
         showPassword.addActionListener(this);
         showPassword.setBackground(new Color(181, 226, 232));
@@ -146,7 +174,9 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
 
         add(hostLabel);
-        add(hostName);
+        add(hostTextField);
+        add(portLabel);
+        add(portTextField);
         add(userLabel);
         add(pswLabel);
         add(userTextField);
