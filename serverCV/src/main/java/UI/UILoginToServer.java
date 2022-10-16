@@ -138,8 +138,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
         showPassword.setBackground(new Color(181, 226, 232));
 
-        loginButton.setBounds(675,380,100,50);
-        loginButton.setOpaque(true);
+        loginButton.setBounds(675,410,200,50);
         loginButton.addActionListener(this);
         loginButton.setForeground(new Color(0XFFE900));
         loginButton.setBackground(new Color(0Xe43e6f));
