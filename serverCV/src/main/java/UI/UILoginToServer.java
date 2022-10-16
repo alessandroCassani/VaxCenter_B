@@ -104,7 +104,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
     }
 
     /**
-     * costruttore che permette il caricamento dei componenti di interfaccia grafica
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
      */
     public UILoginToServer(){
 
@@ -262,7 +262,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
     }
 
     /**
-     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti di interfaccia grafica
+     * metodo che permette la gestione degli eventi associati ai listener legati ai componenti d'interfaccia grafica
      * @param e the event to be processed
      *
      * @author Alessandro Cassani
