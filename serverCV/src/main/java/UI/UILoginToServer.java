@@ -153,6 +153,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(immagine);
 
 
+
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logoServer.png")));
         setIconImage(logo.getImage());

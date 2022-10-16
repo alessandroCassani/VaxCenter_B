@@ -44,12 +44,20 @@
     JLabel status = new JLabel();
 
      /**
+      * Bottone per tornare nell'interfaccia UILoginToServer
+      */
+
+     JButton backToLoginToServer;
+
+     /**
       * costruttore che contiene le informazioni per il caricamento dei componenti di interfaccia grafica
       *
       * @author Alessandro Cassani
       */
     public UIServerHome(){
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
 
         container.setLayout(null);
 
@@ -73,11 +81,23 @@
         stopBtn.setOpaque(true);
         stopBtn.addActionListener(this);
 
+        ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
+        backToLoginToServer = new JButton(ind);
+        backToLoginToServer.setBounds(10, 10, 55 , 55);
+        backToLoginToServer.setFont(new Font("Georgia", Font.BOLD, 17));
+        backToLoginToServer.setBackground(new Color(181, 226, 232));
+        backToLoginToServer.setForeground(Color.WHITE);
+        backToLoginToServer.setBorder(bordobtnInd);
+        backToLoginToServer.setFocusable(false);
+        backToLoginToServer.addActionListener(this);
+        backToLoginToServer.setOpaque(true);
 
-        container.add(startBtn);
-        container.add(stopBtn);
-        container.add(textField);
-        container.add(status);
+
+        add(startBtn);
+        add(stopBtn);
+        add(textField);
+        add(status);
+        add(backToLoginToServer);
 
 
         //Icona avvio del programma
@@ -104,7 +124,7 @@
                 UIManager.put("OptionPane.yesButtonText", "Si");
                 UIManager.put("OptionPane.noButtonText", "No");
 
-                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
+                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire? Non comporterà variazioni allo stato del Server ...",
                         "Esci?", JOptionPane.YES_NO_OPTION);
 
                 if (resp == JOptionPane.YES_OPTION) {
@@ -131,12 +151,14 @@
             // caricamento oggetto server nel registry
 
              status.setText("server running...");
-        }
-
-        if(e.getSource() == stopBtn){
+        } else if(e.getSource() == stopBtn){
             //eliminazione oggetto server dal registry
 
             status.setText("server offline!");
+        } else if (e.getSource() == backToLoginToServer) {
+            this.dispose();
+            new UILoginToServer();
+
         }
     }
 }
