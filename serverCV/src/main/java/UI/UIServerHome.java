@@ -101,7 +101,7 @@
 
 
         //Icona avvio del programma
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logoServer.png")));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb.png")));
         setIconImage(logo.getImage());
 
         setTitle("Server Home");

@@ -1,5 +1,7 @@
 package UI;
 
+import UI.graphics.RoundButton;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -49,12 +51,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * bottone di login
      */
-    JButton loginButton=new JButton("LOGIN");
+    RoundButton loginButton=new RoundButton("LOGIN");
 
     /**
      * checkBox che permette di mostrare o nascondere la password inserita
      */
-    JCheckBox showPassword = new JCheckBox("show password");
+    JCheckBox showPassword = new JCheckBox("mostra password");
 
 
     /**
@@ -131,10 +133,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
         pswTextField.setBackground(new Color(0Xf5bbcd));
         pswTextField.setBorder(bordo);
 
-        showPassword.setBounds(860,310,130,15);
+        showPassword.setBounds(860,310,130,12);
+        showPassword.setFont(new Font("Arial",Font.BOLD,12));
         showPassword.addActionListener(this);
+        showPassword.setBackground(new Color(181, 226, 232));
 
-        loginButton.setBounds(675,380,90,40);
+        loginButton.setBounds(675,380,100,50);
         loginButton.setOpaque(true);
         loginButton.addActionListener(this);
         loginButton.setForeground(new Color(0XFFE900));
@@ -155,7 +159,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
 
         //Icona avvio del programma
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logoServer.png")));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb.png")));
         setIconImage(logo.getImage());
 
         setTitle("Login to Server");
