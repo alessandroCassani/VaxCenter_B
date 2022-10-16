@@ -67,12 +67,13 @@ public class UICitizen extends JFrame implements ActionListener {
         immagine.setBounds(50, 80, 520, 430);
         immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();
-        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/sfondoVac.png"))));
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/CT.png"))));
         immagine.add(lblPic);
 
 
 
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
 
         login.setFont(new Font("Georgia", Font.ITALIC, 23));
@@ -134,6 +135,8 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.setFocusable(false);
         backToChoosingRooles.addActionListener(this);
         backToChoosingRooles.setOpaque(true);
+        backToChoosingRooles.setBorder(bordobtnInd);
+
 
         setLayout(null);
         add(cercaCentroVaccinale);
