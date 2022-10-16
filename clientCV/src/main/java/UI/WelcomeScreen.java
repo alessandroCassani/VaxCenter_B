@@ -67,6 +67,12 @@ public class WelcomeScreen extends JFrame {
         });
         timer.start();
     }
+
+    /**
+     * Avvio del programma Utente
+     * @param args
+     * @author Paolo Bruscagin
+     */
     public static void main(String[] args) {
         new WelcomeScreen();
     }
