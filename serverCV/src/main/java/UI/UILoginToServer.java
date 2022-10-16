@@ -83,6 +83,12 @@ public class UILoginToServer extends JFrame implements ActionListener {
     JPanel immagine = new JPanel();
 
     /**
+     * Status che indica che non è stato possibile accedere al Server
+     */
+
+    JLabel statusError = new JLabel("Non è stato possibile accedere al Server! Riprovare...");
+
+    /**
      * Avvio del programma Server
      * @param args
      * @author Paolo Bruscagin
@@ -96,6 +102,10 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * costruttore che permette il caricamento dei componenti di interfaccia grafica
      */
     public UILoginToServer(){
+
+        JLabel titolo = new JLabel("ACCEDI AL SERVER");
+        titolo.setFont(new Font("Georgia", Font.BOLD, 17));
+        titolo.setBounds(670, 80, 400, 30);
 
         //Label cliccabile che ti permette di uscire dal programma
 
@@ -173,6 +183,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
         loginButton.setBackground(new Color(0Xe43e6f));
 
 
+        statusError.setFont(new Font("Georgia", Font.BOLD, 14));
+        statusError.setForeground(new Color(0xEC0909));
+        statusError.setBounds(500, 500, 400, 55);
+
+
         add(hostLabel);
         add(hostTextField);
         add(portLabel);
@@ -185,6 +200,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(showPassword);
         add(esci);
         add(immagine);
+        add(titolo);
+        add(statusError).setVisible(false);
 
 
 
