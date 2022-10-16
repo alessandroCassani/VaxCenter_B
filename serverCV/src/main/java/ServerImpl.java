@@ -95,7 +95,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             }
             BigInteger numero;
             if(!id.isEmpty())
-                numero = id.last();
+                numero = id.last().add(new BigInteger("0000000000000001"));
             else
                 numero = new BigInteger("0000000000000000");
             preparedStatement.close();
