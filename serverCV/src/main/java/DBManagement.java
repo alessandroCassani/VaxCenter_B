@@ -10,7 +10,7 @@ public class DBManagement {
     /**
      * Nome del database
      */
-    final String nameDB = "vaxcenter";
+    static String nameDB = "vaxcenter";
 
     /**
      * Rappresenta l'istanza corrente del databse
@@ -20,32 +20,32 @@ public class DBManagement {
     /**
      * Indirizzo di rete del dbms
      */
-    String hostDB = "localhost";
+    static String hostDB = "localhost";
 
     /**
      * Porta del server Postgres
      */
-    int portDB = 1099;
+    static int portDB = 5432;
 
     /**
      * Username dell'utente per accedere al server Postgres
      */
-    String userDB;
+     static String userDB;
 
     /**
      * Password dell'utente per accedere al server Postgres
      */
-    String passwordDB;
+    static String passwordDB;
 
     /**
      * Oggetto per gestire la connessione
      */
-    Connection connection = null;
+    public static Connection connection = null;
 
     /**
      * Url per la connessione al server Postgres
      */
-    String url = "jdbc:postgresql://"+ hostDB + ":" + portDB + "/";
+    static String url = "jdbc:postgresql://"+ hostDB + ":" + portDB + "/";
 
 
     /**
@@ -56,6 +56,7 @@ public class DBManagement {
     public static DBManagement getDB(){
         if(instanceDB == null){
             instanceDB = new DBManagement();
+            connect("localhost",5432,"postgres","postgres");
         }
         return instanceDB;
     }
@@ -63,24 +64,24 @@ public class DBManagement {
     /**
      * Metodo che crea la connessione al server Postgres tramite il driver JDBC
      *
-     * @param hostDB host del database
-     * @param portDB porta del database
-     * @param userDB username per accedere al server di Postgres
-     * @param passwordDB password per accedere al server di Postgres
+     * @param host host del database
+     * @param port porta del database
+     * @param user username per accedere al server di Postgres
+     * @param password password per accedere al server di Postgres
      * @return true o false, in base all'esito dell'operazione
      *
      * @author Luca Perfetti
      */
-    public boolean connect(String hostDB, int portDB, String userDB, String passwordDB){
-        this.hostDB = hostDB;
-        this.portDB = portDB;
-        this.userDB = userDB;
-        this.passwordDB = passwordDB;
+    public static boolean connect(String host, int port, String user, String password){
+        hostDB = host;
+        portDB = port;
+        userDB = user;
+        passwordDB = password;
 
         try{
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-
+            //System.out.println(connection.isValid(10));
             if(connection!=null){
                 createTable();
                 return true;
@@ -100,7 +101,7 @@ public class DBManagement {
      *
      * @author Luca Perfetti
      */
-    public boolean createDB(){
+    private static boolean createDB(){
         PreparedStatement preparedstmt;
 
         try{
@@ -109,7 +110,6 @@ public class DBManagement {
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
             preparedstmt.close();
-            connection.close();
             createTable();
             return true;
         }catch(Exception e){
@@ -125,7 +125,7 @@ public class DBManagement {
      *
      * @author Luca Perfetti
      */
-    public boolean createTable(){
+    private static boolean createTable(){
         PreparedStatement preparedstmt;
 
         try{
@@ -143,15 +143,8 @@ public class DBManagement {
 
                     + "create table if not exists CentroVaccinale("
                     + "nomeCentro VARCHAR(30) PRIMARY KEY,"
-                    + "qualificatore VARCHAR(20),"
-                    + "nomeVia CHAR(2),"
-                    + "numeroCivico VARCHAR(30),"
-                    + "comune VARCHAR(30),"
-                    + "sigla CHAR(2),"
-                    + "cap VARCHAR(5),"
-                    + "tipologia VARCHAR(20),"
-                    + "numeroSegnalazioni Numeric,"
-                    + "avgSeverita Numeric);"
+                    + "indirizzo VARCHAR(60),"
+                    + "tipologia VARCHAR(20));"
 
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
@@ -168,7 +161,6 @@ public class DBManagement {
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
             preparedstmt.close();
-            connection.close();
             return true;
         }catch(Exception e){
             System.out.println(e);

@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -37,19 +36,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia) \n"
-                    + "VALUES (?,?,?,?,?,?,?,?)");
+            Connection con = DBManagement.getDB().connection;
+            System.out.println(con.isValid(10));
+            System.out.println(DBManagement.url+DBManagement.nameDB);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO centrovaccinale(nomeCentro,indirizzo,tipologia) "
+                    + "VALUES (?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getIndirizzo().getComune());
-            ps.setString(3,centroVaccinale.getIndirizzo().getQualificatore().toString());
-            ps.setString(4,centroVaccinale.getIndirizzo().getNome());
-            ps.setString(5,centroVaccinale.getIndirizzo().getCivico());
-            ps.setString(6,centroVaccinale.getIndirizzo().getProvincia());
-            ps.setInt(7,centroVaccinale.getIndirizzo().getCap());
-            ps.setString(8,centroVaccinale.getTipologia().toString());
+            ps.setString(2,centroVaccinale.getIndirizzo().toString());
+            ps.setString(3,centroVaccinale.getTipologia().toString());
             ps.executeUpdate();
             ps.close();
-        } catch(SQLException e){return false;}
+        } catch(SQLException e){ e.printStackTrace();return false;}
         return true;
     }
 
