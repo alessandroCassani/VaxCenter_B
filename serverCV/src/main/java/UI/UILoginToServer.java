@@ -12,6 +12,7 @@ import java.util.Objects;
  * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al dataBase Postgres e alle funzionalita' del server
  *
  *  @author Alessandro Cassani
+ *  @author Paolo Bruscagin
  */
 public class UILoginToServer extends JFrame implements ActionListener {
 
@@ -108,10 +109,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
         loginButton.setBackground(new Color(0Xe43e6f));
 
 
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
-        JLabel background = new JLabel(logo);
-        background.setBounds(0,-20,600,600);
-
         container.add(hostLabel);
         container.add(hostName);
         container.add(userLabel);
@@ -119,16 +116,26 @@ public class UILoginToServer extends JFrame implements ActionListener {
         container.add(userTextField);
         container.add(pswTextField);
         container.add(loginButton);
-        container.add(background);
+
         container.add(showPassword);
 
 
-        setTitle("Login to server");
+        //Icona avvio del programma
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logoServer.png")));
+        setIconImage(logo.getImage());
+
+        setTitle("Login to Server");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize (1000, 600);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setForeground(Color.WHITE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        setSize (dim.width / 2, dim.height / 2);
-        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        getContentPane().setBackground(new Color(181, 226, 232));
+        setForeground(Color.WHITE);
         setVisible(true);
     }
 
@@ -137,11 +144,13 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * @param e the event to be processed
      *
      * @author Alessandro Cassani
+     * @author Paolo Bruscagin
      */
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
+            this.dispose();
             //verifica accesso db con metodo connect
             new UIServerHome();
         }

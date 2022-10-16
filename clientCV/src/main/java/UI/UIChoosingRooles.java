@@ -129,7 +129,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
