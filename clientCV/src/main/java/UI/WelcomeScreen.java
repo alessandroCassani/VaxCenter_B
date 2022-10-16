@@ -19,6 +19,10 @@ import java.net.URL;
 
 public class WelcomeScreen extends JFrame {
 
+    /**
+     * Timer per la durata effettiva della WelcomeScreen
+     */
+
     Timer timer;
     public WelcomeScreen() {
         displayWelcomeScreen();
