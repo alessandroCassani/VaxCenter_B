@@ -21,6 +21,11 @@
  public class UIServerHome extends JFrame implements ActionListener {
 
      /**
+      * Panel per inserire l'immagine d'interfaccia
+      */
+     JPanel immagine = new JPanel();
+
+     /**
       * bottone di attivazione del server
       */
     RoundButton startBtn = new RoundButton("START");
@@ -28,7 +33,7 @@
      /**
       * campo di testo per UI per informare l'utente sullo scopo dell'interfaccia grafica
       */
-    JLabel textField = new JLabel("Manage the server!");
+    JLabel textField = new JLabel("Gestisci il Server:");
 
      /**
       * bottone di spegnimento del server
@@ -55,9 +60,17 @@
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
+        //immagine programma
 
-        textField.setFont(new Font("Arial",Font.ITALIC,50));
-        textField.setBounds(260,80,600,100);
+        immagine.setBounds(70, 120, 300, 300);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb_ridv1.png"))));
+        immagine.add(lblPic);
+
+
+        textField.setFont(new Font("Arial",Font.ITALIC,30));
+        textField.setBounds(100,60,300,30);
         textField.setBorder(bordo);
 
         status.setFont(new Font("Arial",Font.ITALIC,20));
@@ -65,13 +78,13 @@
         status.setBorder(bordo);
 
         startBtn.setBorder(bordo);
-        startBtn.setBounds(225,250,200,75);
+        startBtn.setBounds(435,150,200,75);
         startBtn.setBackground(new Color(0xFF0EB94E, true));
         startBtn.setFont(new Font("Georgia", Font.BOLD, 20));
         startBtn.addActionListener(this);
 
         stopBtn.setBorder(bordo);
-        stopBtn.setBounds(635,250,200,75);
+        stopBtn.setBounds(700,150,200,75);
         stopBtn.setBackground(new Color(0xCC1E1E));
         stopBtn.setFont(new Font("Georgia", Font.BOLD, 20));
         stopBtn.addActionListener(this);
@@ -93,6 +106,7 @@
         add(textField);
         add(status);
         add(backToLoginToServer);
+        add(immagine);
 
 
         //Icona avvio del programma
