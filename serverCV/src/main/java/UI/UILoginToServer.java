@@ -275,13 +275,19 @@ public class UILoginToServer extends JFrame implements ActionListener {
             this.dispose();
             //verifica accesso db con metodo connect
             new UIServerHome();
-        }
-
-        if(e.getSource() == showPassword){
+        }else if(e.getSource() == showPassword){
             if (showPassword.isSelected())
                 pswTextField.setEchoChar((char) 0);
                 else
                 pswTextField.setEchoChar('*');
+        } else if (e.getSource() == pulisci) {
+            hostTextField.setText("");
+            portTextField.setText("");
+            userTextField.setText("");
+            pswTextField.setText("");
+            statusError.setVisible(false);
+            showPassword.setSelected(false);
+
         }
     }
 }
