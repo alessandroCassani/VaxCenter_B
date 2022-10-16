@@ -89,6 +89,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
     JLabel statusError = new JLabel("Non è stato possibile accedere al Server! Riprovare...");
 
     /**
+     * Bottone per pulire tutte i campi
+     */
+    JButton pulisci;
+
+    /**
      * Avvio del programma Server
      * @param args
      * @author Paolo Bruscagin
@@ -124,6 +129,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
             }
         });
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
 
         //immagine programma
 
@@ -176,7 +183,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
         showPassword.setBackground(new Color(181, 226, 232));
 
-        loginButton.setBounds(675,410,200,50);
+        loginButton.setBounds(600,410,200,50);
         loginButton.setFont(new Font("Georgia", Font.BOLD, 20));
         loginButton.addActionListener(this);
         loginButton.setForeground(new Color(0XFFE900));
@@ -186,6 +193,17 @@ public class UILoginToServer extends JFrame implements ActionListener {
         statusError.setFont(new Font("Georgia", Font.BOLD, 14));
         statusError.setForeground(new Color(0xEC0909));
         statusError.setBounds(500, 500, 400, 55);
+
+        ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
+        pulisci = new JButton(pul);
+        pulisci.setBounds(825, 410, 50, 50);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 17));
+        pulisci.setBackground(new Color(181, 226, 232));
+        pulisci.setForeground(Color.WHITE);
+        pulisci.setBorder(bordobtnInd);
+        pulisci.setFocusable(false);
+        pulisci.addActionListener(this);
+        pulisci.setOpaque(true);
 
 
         add(hostLabel);
@@ -202,6 +220,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(immagine);
         add(titolo);
         add(statusError).setVisible(false);
+        add(pulisci);
 
 
 
