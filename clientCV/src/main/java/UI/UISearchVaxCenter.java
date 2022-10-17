@@ -32,7 +32,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
         ImageIcon ic = new javax.swing.ImageIcon(getClass().getResource("/images/cityhall.png"));
-        ic = resizeImage(ic,30,30);
+        ic = resizeImage(ic,20,20);
         search.addOption(new InfoSearch("Comune e Tipologia",  ic));
         search.setSelectedIndex(0); // evidenzia primo elemento
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
