@@ -137,6 +137,7 @@ public class DBManagement {
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "codiceFiscale CHAR(16),"
+                    + "dataNascita VARCHAR(40),"
                     + "dataVaccino VARCHAR(40),"
                     + "vaxTipo VARCHAR(30));"
 

@@ -100,15 +100,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 numero = new BigInteger("0000000000000000");
             preparedStatement.close();
 
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataVaccino,vaxTipo,nomecentro) \n" +
-                    "VALUES(?,?,?,?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataNascita,dataVaccino,vaxTipo,nomecentro) \n" +
+                    "VALUES(?,?,?,?,?,?,?,?)");
             ps.setString(1, numero.toString());
             ps.setString(2,vaccinato.getNome());
             ps.setString(3,vaccinato.getCognome());
             ps.setString(4,vaccinato.getCodFisc());
-            ps.setString(5,vaccinato.getDataSomministrazione().toString());  //controllo cast!!
-            ps.setString(6,vaccinato.getVaccino().toString());
-            ps.setString(7,vaccinato.getCentroVaccinale().getNome());
+            ps.setString(5,vaccinato.getDataNascita().toString());
+            ps.setString(6,vaccinato.getDataSomministrazione().toString());
+            ps.setString(7,vaccinato.getVaccino().toString());
+            ps.setString(8,vaccinato.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
 
