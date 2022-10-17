@@ -145,13 +145,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Severita(username,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) \n +" +
                     " VALUE (?,?,?,?,?,?,?");
-            int size = eventiAvversi.getSintomi().size();
+            // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
+            //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
             count = 1;
-            while(count<size-1) {  //-1 perchè ultimo campo ci sono le note
+            while(count<6) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count).getSeverita());
                 count++;
             }
-            ps.setString(size, eventiAvversi.getNote());
+            ps.setString(7, eventiAvversi.getNote());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {e.printStackTrace();return  false;}
