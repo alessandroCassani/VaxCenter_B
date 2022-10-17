@@ -145,6 +145,16 @@ public class DBManagement {
                     + "indirizzo VARCHAR(60),"
                     + "tipologia VARCHAR(20));"
 
+                    + "create table if not exists Cittadini_Registrati("
+                    + "id VARCHAR(16) PRIMARY KEY,"
+                    + "nome VARCHAR(30),"
+                    + "cognome VARCHAR(30),"
+                    + "CodiceFiscale CHAR(16),"
+                    + "email VARCHAR(30),"
+                    + "username VARCHAR(30),"
+                    + "password VARCHAR(30),"
+                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentroVaccinale);"
+
                     + "create table if not exists Eventi_Avversi("
                     + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
@@ -160,17 +170,8 @@ public class DBManagement {
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenompatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
-                    + "note VARCHAR(256));"
+                    + "note VARCHAR(256));";
 
-                    + "create table if not exists Cittadini_Registrati("
-                    + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome VARCHAR(30),"
-                    + "cognome VARCHAR(30),"
-                    + "CodiceFiscale CHAR(16),"
-                    + "email VARCHAR(30),"
-                    + "username VARCHAR(30) REFERENCES Eventi_Avversi,"
-                    + "password VARCHAR(30),"
-                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentroVaccinale);";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
