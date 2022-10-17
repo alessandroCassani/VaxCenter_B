@@ -145,6 +145,12 @@ public class DBManagement {
                     + "indirizzo VARCHAR(60),"
                     + "tipologia VARCHAR(20));"
 
+                    + "create table if not exists Eventi_Avversi("
+                    + "id VARCHAR(16) PRIMARY KEY,"
+                    + "nomeEventoAvverso VARCHAR(30),"
+                    + "severita Numeric,"
+                    + "note VARCHAR(256));"
+
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome VARCHAR(30),"
@@ -153,13 +159,7 @@ public class DBManagement {
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30) REFERENCES Eventi_Avversi,"
                     + "password VARCHAR(30),"
-                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentriVaccinali);"
-
-                    + "create table if not exists Eventi_Avversi("
-                    + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nomeEventoAvverso VARCHAR(30),"
-                    + "severita Numeric,"
-                    + "note VARCHAR(256));";
+                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentriVaccinali);";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
