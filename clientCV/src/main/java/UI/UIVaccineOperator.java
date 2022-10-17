@@ -116,6 +116,7 @@ public class UIVaccineOperator extends JFrame implements ActionListener {
         backtoChoosingRooles.setFocusable(false);
         backtoChoosingRooles.addActionListener(this);
         backtoChoosingRooles.setOpaque(true);
+        backtoChoosingRooles.setContentAreaFilled(false);
 
         setLayout(null);
         add(registraCentroVaccinale);

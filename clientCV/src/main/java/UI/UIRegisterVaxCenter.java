@@ -199,6 +199,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         backToUIVaccineOperator.setFocusable(false);
         backToUIVaccineOperator.addActionListener(this);
         backToUIVaccineOperator.setOpaque(true);
+        backToUIVaccineOperator.setContentAreaFilled(false);
+
 
         registra.setBounds(500, 435, 220, 50);
         registra.setFont(new Font("Georgia", Font.BOLD, 20));

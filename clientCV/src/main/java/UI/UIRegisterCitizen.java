@@ -254,6 +254,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         backToCitizen.setFocusable(false);
         backToCitizen.addActionListener(this);
         backToCitizen.setOpaque(true);
+        backToCitizen.setContentAreaFilled(false);
+
 
         ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
         pulisci = new JButton(pul);

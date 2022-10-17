@@ -136,6 +136,7 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.addActionListener(this);
         backToChoosingRooles.setOpaque(true);
         backToChoosingRooles.setBorder(bordobtnInd);
+        backToChoosingRooles.setContentAreaFilled(false);
 
 
         setLayout(null);

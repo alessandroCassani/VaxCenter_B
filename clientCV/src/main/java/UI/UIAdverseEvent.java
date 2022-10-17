@@ -379,6 +379,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         backToCitizen.setFocusable(false);
         backToCitizen.addActionListener(this);
         backToCitizen.setOpaque(true);
+        backToCitizen.setContentAreaFilled(false);
+
 
         switcha.setFont(new Font("Arial", Font.BOLD, 15));
         switcha.setBounds(400, 500, 20, 15);

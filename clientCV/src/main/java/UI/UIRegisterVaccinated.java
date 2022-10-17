@@ -182,6 +182,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         backToVaccineOperator.setFocusable(false);
         backToVaccineOperator.addActionListener(this);
         backToVaccineOperator.setOpaque(true);
+        backToVaccineOperator.setContentAreaFilled(false);
+
 
         ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
         pulisci = new JButton(pul);
