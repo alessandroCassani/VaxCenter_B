@@ -139,9 +139,12 @@ public class DBManagement {
                     + "dataVaccino VARCHAR(40),"
                     + "vaxTipo VARCHAR(30));"
 
-                    + "create table if not exists CentroVaccinale("
-                    + "nomeCentro VARCHAR(30) PRIMARY KEY,"
-                    + "indirizzo VARCHAR(60),"
+                    + "create table if not exists centrovaccinale("
+                    + "nomecentro VARCHAR(30) PRIMARY KEY,"
+                    + "qualificatore VARCHAR(7),"
+                    + "nomevia VARCHAR(30),"
+                    + "civico VARCHAR(6),"
+                    + "provincia CHAR(2),"
                     + "comune VARCHAR(30),"
                     + "cap INTEGER,"
                     + "tipologia VARCHAR(20));"
@@ -180,7 +183,6 @@ public class DBManagement {
             preparedstmt.close();
             return true;
         }catch(Exception e){
-                            e.printStackTrace();}
-        return false;
-    }
+            e.printStackTrace();}
+        return false;}
 }
