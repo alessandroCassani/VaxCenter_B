@@ -146,9 +146,20 @@ public class DBManagement {
                     + "tipologia VARCHAR(20));"
 
                     + "create table if not exists Eventi_Avversi("
-                    + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nomeEventoAvverso VARCHAR(30),"
-                    + "severita Numeric,"
+                    + "username VARCHAR(30) PRIMARY KEY,"
+                    + "mal_di_testa INTEGER,"
+                    + "febbre INTEGER,"
+                    + "dolori_muscolari INTEGER,"
+                    + "linfoadenompatia INTEGER,"
+                    + "crisi_ipertensiva INTEGER);"
+
+                    + "create table if not exists Severita("
+                    + "username VARCHAR(30) PRIMARY KEY,"
+                    + "mal_di_testa INTEGER,"
+                    + "febbre INTEGER,"
+                    + "dolori_muscolari INTEGER,"
+                    + "linfoadenompatia INTEGER,"
+                    + "crisi_ipertensiva INTEGER,"
                     + "note VARCHAR(256));"
 
                     + "create table if not exists Cittadini_Registrati("
