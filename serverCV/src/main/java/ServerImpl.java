@@ -303,12 +303,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentriVaccinali(nomeCentro,Comune,qualificatore,via,numCivico,sigla,cap,tipologia)" +
-                    "WHERE Comune = " + comune + " AND tipologia = " + tipologia.toString());
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentriVaccinali(nomeCentro,indirizzo,comune,cap,tipologia)" +
+                    "WHERE Comune = ? AND tipologia = ?");
+            ps.setString(1,comune);
+            ps.setString(2,tipologia.toString());
             ResultSet resultSet = ps.executeQuery();
-            ps.close();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
-            Indirizzo indirizzo = null;
+            Indirizzo indirizzo = null;  //non riesci ad estrare indirizzo
             while(resultSet.next()) {
                 String nome = resultSet.getString(1);
                 String Comune = resultSet.getString(2);
@@ -323,6 +324,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
                 indirizzo = new Indirizzo(qualificatore1,via,numCivico,sigla);
                 listaCentri.add(new CentroVaccinale(nome,indirizzo,Comune,cap,tipologia1));
+                ps.close();
             }
             if(listaCentri.isEmpty())
                 return null;
