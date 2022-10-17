@@ -90,6 +90,21 @@ public class CurvesPanel extends GradientPanel {
                 25.0f, 4.0f, true);
     }
 
+    /**
+     * Metodo che permette di disegnare l'animazione di avvio dell'applicazione
+     * @param g2 <code>Oggetto Grafico</code> di riferimento
+     * @param y1   the <i>y1</i> coordinata del punto
+     * @param y1_offset   the <i>y1</i> coordinata del punto
+     * @param y2   the <i>y2</i> coordinata del punto
+     * @param y2_offset   the <i>y2</i> coordinata del punto
+     * @param cy1   the <i>cy1</i> coordinata del punto
+     * @param cy1_offset   the <i>cy1</i> coordinata del punto
+     * @param thickness   spessore della curva
+     * @param speed   velocità della curva
+     * @param invert   inversione della curva a seconda del risultato
+     *
+     * @author Damiano Ficara
+     */
     private void drawCurve(Graphics2D g2,
             float y1, float y1_offset,
             float y2, float y2_offset,

@@ -188,6 +188,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
         if(search.isSelected()) {
+
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
@@ -210,7 +211,9 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
      * @param args the command line arguments
      */
 
+    public void dbConnection() {
 
+    }
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
