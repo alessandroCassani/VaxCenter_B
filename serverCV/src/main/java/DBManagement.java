@@ -157,11 +157,11 @@ public class DBManagement {
 
                     + "create table if not exists Eventi_Avversi("
                     + "username VARCHAR(30) PRIMARY KEY,"
-                    + "mal_di_testa INTEGER,"
-                    + "febbre INTEGER,"
-                    + "dolori_muscolari INTEGER,"
-                    + "linfoadenompatia INTEGER,"
-                    + "crisi_ipertensiva INTEGER);"
+                    + "mal_di_testa BOOLEAN,"
+                    + "febbre BOOLEAN,"
+                    + "dolori_muscolari BOOLEAN,"
+                    + "linfoadenompatia BOOLEAN,"
+                    + "crisi_ipertensiva BOOLEAN);"
 
                     + "create table if not exists Severita("
                     + "username VARCHAR(30) PRIMARY KEY,"
