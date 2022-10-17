@@ -133,7 +133,7 @@ public class UILogin extends JFrame implements ActionListener {
         rnd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 setVisible(false);
-                new UIAdverseEvent();
+                new UIAdverseEvent(username.getText());
             }
         });
 
