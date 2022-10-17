@@ -83,16 +83,16 @@
 
         status.setFont(new Font("Arial",Font.ITALIC,20));
         status.setText("Server Offline ...");
-        status.setBounds(420,400,200,30);
+        status.setBounds(500,300,200,30);
         status.setBorder(bordo);
 
-        sr.setBounds(620, 380, 150, 150);
+        sr.setBounds(650, 280, 150, 150);
         sr.setBackground(new Color(181, 226, 232));
         JLabel  lblSR = new JLabel();
         lblSR.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/srunning_v1.gif"))));
         sr.add(lblSR);
 
-        so.setBounds(620, 380, 150, 150);
+        so.setBounds(650, 280, 150, 150);
         so.setBackground(new Color(181, 226, 232));
         JLabel  lblSO = new JLabel();
         lblSO.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/X_v2.png"))));
