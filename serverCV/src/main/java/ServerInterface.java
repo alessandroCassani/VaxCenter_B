@@ -51,7 +51,7 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean inserisciEventiAvversi(EventiAvversi eventiAvversi) throws RemoteException;
+    boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException;
 
 
     /**

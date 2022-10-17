@@ -159,16 +159,18 @@ public class DBManagement {
                     + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa BOOLEAN,"
                     + "febbre BOOLEAN,"
+                    + "tachicardia BOOLEAN,"
                     + "dolori_muscolari BOOLEAN,"
-                    + "linfoadenompatia BOOLEAN,"
+                    + "linfoadenopatia BOOLEAN,"
                     + "crisi_ipertensiva BOOLEAN);"
 
                     + "create table if not exists Severita("
                     + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
+                    + "tachicardia INTEGER,"
                     + "dolori_muscolari INTEGER,"
-                    + "linfoadenompatia INTEGER,"
+                    + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
                     + "note VARCHAR(256));";
 
