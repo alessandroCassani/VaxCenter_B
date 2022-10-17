@@ -84,16 +84,6 @@ public interface ServerInterface extends Remote {
      */
     boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException;
 
-    /** 
-     *  segnatura del metodo che permette il controllo della già avvenuta registrazione di un cittadino a sistema
-     * @param citizen codice fiscale del cittadino
-     * @return true o false in base all'esito dell'operazione
-     * @throws RemoteException eccezione rmi
-     *
-     *  @author Alessandro Cassani
-     */
-    boolean isCitizenRegistrated(String citizen) throws RemoteException;
-
     /**
      * segnatura del metodo che permette il controllo della già avvenuta vaccinazione del cittadino
      * @param user codice fiscale dle vaccinato
