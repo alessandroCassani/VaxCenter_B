@@ -130,30 +130,31 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(username,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
-                    "VALUES(?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
+                    "VALUES(?,?,?,?,?,?,?)");
 
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
             int count;
             preparedStatement.setString(1,user);
-            for (count=2;count<=7;count++) {
+            for (count=2;count<8;count++) {
                 preparedStatement.setBoolean(count, eventiAvversi.getSintomi().get(count-1).getSeverita() != 0);
             }
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
 
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Severita(username,mal_di_testa,febbre,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                    " VALUES (?,?,?,?,?,?,?)");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Severita(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                    " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            count = 1;
-            while(count<=6) {
+            ps.setString(1,user);
+            count = 2;
+            while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-1).getSeverita());
                 count++;
             }
-            ps.setString(7, eventiAvversi.getNote());
+            ps.setString(8, eventiAvversi.getNote());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {e.printStackTrace();return  false;}
