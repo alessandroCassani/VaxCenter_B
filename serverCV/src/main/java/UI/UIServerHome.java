@@ -102,6 +102,8 @@
         backToLoginToServer.addActionListener(this);
         backToLoginToServer.setFocusable(false);
         backToLoginToServer.setOpaque(true);
+        backToLoginToServer.setContentAreaFilled(false);
+
 
 
         add(startBtn);
