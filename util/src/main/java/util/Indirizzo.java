@@ -23,38 +23,24 @@ public class Indirizzo implements Serializable  {
     private final String civico;
 
     /**
-     * comune dove e' situato l'indirizzo
-     */
-    private final String comune;
-
-    /**
      * provincia dove e' situata l'indirizzo
      */
     private final String provincia;
-
-    /**
-     * cap dove e' situato l'indirizzo
-     */
-    private final int cap;
 
     /**
      * metodo che gestisce e associa le informazioni di un indirizzo
      * @param qualificatore qualificatore dell'indirizzo (via/viale/piazza)
      * @param nome nome indirizzo
      * @param civico numero civico
-     * @param comune comune dove e' situato l'indirizzo
      * @param provincia provincia dove e' situata l'indirizzo
-     * @param cap  cap dove e' situato l'indirizzo
      *
      * @author Alessandro Cassani
      */
-    public Indirizzo(Qualificatore qualificatore,String nome,String civico,String comune,String provincia,int cap){
+    public Indirizzo(Qualificatore qualificatore,String nome,String civico,String provincia){
             this.qualificatore = qualificatore;
             this.nome = nome;
             this.civico = civico;
-            this.comune = comune;
             this.provincia = provincia;
-            this.cap = cap;
     }
 
     /**
@@ -89,17 +75,6 @@ public class Indirizzo implements Serializable  {
     }
 
     /**
-     *  metodo che accede al campo privato comune
-     * @return comune dell'indirizzo
-     *
-     *  @author Alessandro Cassani
-     */
-
-    public String getComune(){
-        return comune;
-    }
-
-    /**
      *  metodo che accede al campo privato provincia
      * @return provincia dell'indirizzo
      *
@@ -111,23 +86,12 @@ public class Indirizzo implements Serializable  {
     }
 
     /**
-     *  metodo che accede al campo privato cap
-     * @return cap dell'indirizzo
-     *
-     *  @author Alessandro Cassani
-     */
-
-    public int getCap(){
-        return cap;
-    }
-
-    /**
      * metodo che ritorna la stringa rappresentante l'indirizzo
      * @return qualificatore, nome, numero civico, comune , provincia e cap
      *
      *  @author Alessandro Cassani
      */
     public String toString(){
-        return qualificatore + " " + nome + " " + civico + " " + comune + " (" + provincia + ") " + cap;
+        return qualificatore + " " + nome + " " + civico + " " + "(" + provincia + ") ";
     }
 }

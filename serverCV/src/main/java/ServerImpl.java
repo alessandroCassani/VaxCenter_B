@@ -37,11 +37,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
             Connection con = DBManagement.getDB().connection;
-            PreparedStatement ps = con.prepareStatement("INSERT INTO centrovaccinale(nomeCentro,indirizzo,tipologia) "
-                    + "VALUES (?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,indirizzo,comune,cap,tipologia) "
+                    + "VALUES (?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
             ps.setString(2,centroVaccinale.getIndirizzo().toString());
-            ps.setString(3,centroVaccinale.getTipologia().toString());
+            ps.setString(3,centroVaccinale.getComune());
+            ps.setInt(4,centroVaccinale.getCap());
+            ps.setString(5,centroVaccinale.getTipologia().toString());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){ e.printStackTrace();return false;}
@@ -319,8 +321,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String tipo = resultSet.getString(8);
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
-                indirizzo = new Indirizzo(qualificatore1,via,numCivico,Comune,sigla,cap);
-                listaCentri.add(new CentroVaccinale(nome,indirizzo,tipologia1));
+                indirizzo = new Indirizzo(qualificatore1,via,numCivico,sigla);
+                listaCentri.add(new CentroVaccinale(nome,indirizzo,Comune,cap,tipologia1));
             }
             if(listaCentri.isEmpty())
                 return null;
@@ -358,8 +360,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String tipo = resultSet.getString(8);
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
-                indirizzo = new Indirizzo(qualificatore1,via,numCivico,comune,sigla,cap);
-                listaCentri.add(new CentroVaccinale(nomeCentro,indirizzo,tipologia1));
+                indirizzo = new Indirizzo(qualificatore1,via,numCivico,sigla);
+                listaCentri.add(new CentroVaccinale(nomeCentro,indirizzo,comune,cap,tipologia1));
             }
             if(listaCentri.isEmpty())
                 return null;

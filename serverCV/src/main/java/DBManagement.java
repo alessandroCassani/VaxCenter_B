@@ -81,7 +81,6 @@ public class DBManagement {
         try{
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-            //System.out.println(connection.isValid(10));
             if(connection!=null){
                 createTable();
                 return true;
@@ -120,7 +119,6 @@ public class DBManagement {
 
     /**
      * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono già
-     *
      * @return true o false, in base all'esito dell'operazione
      *
      * @author Luca Perfetti
@@ -144,6 +142,8 @@ public class DBManagement {
                     + "create table if not exists CentroVaccinale("
                     + "nomeCentro VARCHAR(30) PRIMARY KEY,"
                     + "indirizzo VARCHAR(60),"
+                    + "comune VARCHAR(30),"
+                    + "cap INTEGER,"
                     + "tipologia VARCHAR(20));"
 
                     + "create table if not exists Cittadini_Registrati("
@@ -174,7 +174,6 @@ public class DBManagement {
                     + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
                     + "note VARCHAR(256));";
-
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();

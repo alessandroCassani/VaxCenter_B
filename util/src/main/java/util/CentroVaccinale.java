@@ -15,6 +15,15 @@ public class CentroVaccinale implements Serializable {
     private final String nome;
 
     /**
+     * comune dove risiede il centro vaccinale
+     */
+    private String comune;
+    /**
+     * cap del comune del centro vaccinale
+     */
+    private int cap;
+
+    /**
      * indirizzo del centro vaccinale
      */
     private final Indirizzo indirizzo;
@@ -32,8 +41,10 @@ public class CentroVaccinale implements Serializable {
      *
      * @author Alessandro Cassani
      */
-    public CentroVaccinale(String nome,Indirizzo indirizzo,Tipologia tipologia){
+    public CentroVaccinale(String nome,Indirizzo indirizzo,String comune,int cap,Tipologia tipologia){
         this.nome = nome;
+        this.cap = cap;
+        this.comune = comune;
         this.indirizzo = indirizzo;
         this.tipologia = tipologia;
     }
@@ -48,6 +59,17 @@ public class CentroVaccinale implements Serializable {
         return nome;
     }
 
+    /**
+     *  metodo che accede al campo privato cap
+     * @return cap dell'indirizzo
+     *
+     *  @author Alessandro Cassani
+     */
+
+    public int getCap(){
+        return cap;
+    }
+
     /***
      * metodo che accede al campo privato indirizzo
      * @return l'indirizzo del centro vaccinale
@@ -57,6 +79,14 @@ public class CentroVaccinale implements Serializable {
     public Indirizzo getIndirizzo(){
         return indirizzo;
     }
+
+    /**
+     * metodo che accede al campo privato comune
+     * @return comune del centro vaccinale
+     *
+     *  @author Alessandro Cassani
+     */
+    public String getComune(){return comune;}
 
     /**
      * metodo che accede al campo tipologia
