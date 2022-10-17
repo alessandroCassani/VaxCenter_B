@@ -159,7 +159,7 @@ public class DBManagement {
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30) REFERENCES Eventi_Avversi,"
                     + "password VARCHAR(30),"
-                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentriVaccinali);";
+                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentroVaccinale);";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();

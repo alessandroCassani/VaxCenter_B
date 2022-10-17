@@ -72,7 +72,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(8,cittadino.getCentroVaccinale().getNome());
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException e){return false;}
+        } catch (SQLException e){e.printStackTrace();return false;}
         return true;
     }
 
