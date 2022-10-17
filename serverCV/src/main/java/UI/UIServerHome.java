@@ -24,6 +24,14 @@
       * Panel per inserire l'immagine d'interfaccia
       */
      JPanel immagine = new JPanel();
+     /**
+      * Panel per inserire l'immagine del server running
+      */
+     JPanel sr = new JPanel();
+     /**
+      * Panel per inserire l'immagine del server offline
+      */
+     JPanel so = new JPanel();
 
      /**
       * bottone di attivazione del server
@@ -74,8 +82,21 @@
         textField.setBorder(bordo);
 
         status.setFont(new Font("Arial",Font.ITALIC,20));
+        status.setText("Server Offline ...");
         status.setBounds(420,400,200,30);
         status.setBorder(bordo);
+
+        sr.setBounds(620, 400, 150, 150);
+        sr.setBackground(new Color(181, 226, 232));
+        JLabel  lblSR = new JLabel();
+        lblSR.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/srunning_v1.gif"))));
+        sr.add(lblSR);
+
+        so.setBounds(620, 400, 150, 150);
+        so.setBackground(new Color(181, 226, 232));
+        JLabel  lblSO = new JLabel();
+        lblSO.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/X_v2.png"))));
+        so.add(lblSO);
 
         startBtn.setBorder(bordo);
         startBtn.setBounds(435,150,200,75);
@@ -112,6 +133,8 @@
         add(status);
         add(backToLoginToServer);
         add(immagine);
+        add(sr).setVisible(false);
+        add(so);
 
 
         //Icona avvio del programma
@@ -164,11 +187,15 @@
         if(e.getSource() == startBtn){
             // caricamento oggetto server nel registry
 
-             status.setText("server running...");
+             status.setText("Server is Running ...");
+             sr.setVisible(true);
+             so.setVisible(false);
         } else if(e.getSource() == stopBtn){
             //eliminazione oggetto server dal registry
 
-            status.setText("server offline!");
+            status.setText("Server Offline ...");
+            so.setVisible(true);
+            sr.setVisible(false);
         } else if (e.getSource() == backToLoginToServer) {
             this.dispose();
             new UILoginToServer();
