@@ -161,7 +161,7 @@
                 UIManager.put("OptionPane.yesButtonText", "Si");
                 UIManager.put("OptionPane.noButtonText", "No");
 
-                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire? Non comporterà variazioni allo stato del Server ...",
+                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
                         "Esci?", JOptionPane.YES_NO_OPTION);
 
                 if (resp == JOptionPane.YES_OPTION) {
