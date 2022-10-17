@@ -137,7 +137,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             for (Sintomo sintomo: eventiAvversi.getSintomi()) {
                 preparedStatement.setBoolean(count, sintomo.getSeverita() != 0);
                 count++;
-            }
+            } //errore nei sintomi non segnalati balza quell'inserimento, o la lista li contiene tutti o trova un altro modo :)
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
@@ -153,7 +153,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(size, eventiAvversi.getNote());
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException e) {return  false;}
+        } catch (SQLException e) {e.printStackTrace();return  false;}
         return true;
     }
 
