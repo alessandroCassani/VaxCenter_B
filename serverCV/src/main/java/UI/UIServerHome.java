@@ -81,12 +81,14 @@
         startBtn.setBounds(435,150,200,75);
         startBtn.setBackground(new Color(0xFF0EB94E, true));
         startBtn.setFont(new Font("Georgia", Font.BOLD, 20));
+        startBtn.setFocusable(false);
         startBtn.addActionListener(this);
 
         stopBtn.setBorder(bordo);
         stopBtn.setBounds(700,150,200,75);
         stopBtn.setBackground(new Color(0xCC1E1E));
         stopBtn.setFont(new Font("Georgia", Font.BOLD, 20));
+        stopBtn.setFocusable(false);
         stopBtn.addActionListener(this);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
@@ -98,6 +100,7 @@
         backToLoginToServer.setBorder(bordobtnInd);
         backToLoginToServer.setFocusable(false);
         backToLoginToServer.addActionListener(this);
+        backToLoginToServer.setFocusable(false);
         backToLoginToServer.setOpaque(true);
 
 

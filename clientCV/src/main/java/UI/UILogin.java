@@ -153,6 +153,7 @@ public class UILogin extends JFrame implements ActionListener {
         rnd.setForeground(new java.awt.Color(96, 117, 137));
         rnd.setFont(new java.awt.Font("Arial", 1, 18));
         rnd.setText("LOGIN");
+        rnd.setFocusable(false);
         rnd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 setVisible(false);
