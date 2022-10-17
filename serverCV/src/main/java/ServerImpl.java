@@ -253,12 +253,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
-                return false;
+                return true;
             }
         }catch (SQLException e){
             return false;
         }
-        return true;
+        return false;
     }
 
     /**
