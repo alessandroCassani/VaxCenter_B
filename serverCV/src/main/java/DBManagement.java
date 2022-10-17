@@ -147,12 +147,16 @@ public class DBManagement {
 
                     + "create table if not exists Cittadini_Registrati("
                     + "id VARCHAR(16) PRIMARY KEY,"
+                    + "nome VARCHAR(30),"
+                    + "cognome VARCHAR(30),"
+                    + "CodiceFiscale CHAR(16),"
                     + "email VARCHAR(30),"
-                    + "username VARCHAR(30),"
-                    + "password VARCHAR(30));"
+                    + "username VARCHAR(30) REFERENCES Eventi_Avversi,"
+                    + "password VARCHAR(30),"
+                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentriVaccinali);"
 
                     + "create table if not exists Eventi_Avversi("
-                    + "id Numeric PRIMARY KEY,"
+                    + "id VARCHAR(16) PRIMARY KEY,"
                     + "nomeEventoAvverso VARCHAR(30),"
                     + "severita Numeric,"
                     + "note VARCHAR(256));";
