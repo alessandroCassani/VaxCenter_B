@@ -550,7 +550,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             severitaCrisiIpertensiva.setSelectedItem("");
 
         } else if (e.getSource() == registraEA) {
-            
+            JOptionPane.showMessageDialog(null, "Eventi Avversi registrati con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+
         }
 
     }
