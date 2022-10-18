@@ -37,7 +37,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean registraCentroVaccinale(CentroVaccinale centroVaccinale) throws RemoteException{
         try {
             Connection con = DBManagement.getDB().connection;
-            PreparedStatement ps = con.prepareStatement("INSERT INTO CentroVaccinale(nomeCentro,qualificatore,nomeVia,civico,provincia,comune,cap,tipologia) "
+            PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
             ps.setString(2,centroVaccinale.getQualificatore().toString());
@@ -228,7 +228,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isVaxcenterRegistrated(String VaxCenterName) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM CentroVaccinale WHERE nomeCentro = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali WHERE nome_centro_vaccinale = ?");
 
             ps.setString(1, VaxCenterName);
 
@@ -306,7 +306,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centrovaccinale \n" +
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali \n" +
                     "WHERE comune = '"+ comune +"' AND tipologia = '" + tipologia.toString() +"'");
             ResultSet resultSet = ps.executeQuery();
 
@@ -341,8 +341,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centrovaccinale " +
-                    "WHERE nomecentro LIKE % ? %" );
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
+                    "WHERE nome_centro_vaccinale LIKE % ? %" );
             ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -375,7 +375,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<String> getNomicentriVaccinali() throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nomecentro FROM CentroVaccinale(nomecentro,qualificatore,nomeVia,civico,provincia,comune,cap,tipologia)");
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nome_centro_vaccinale FROM centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia)");
             ResultSet resultSet = ps.executeQuery();
             LinkedList<String> listaNomiCentri = new LinkedList<>();
             while(resultSet.next()){
