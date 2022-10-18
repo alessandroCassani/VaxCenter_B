@@ -64,7 +64,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Cittadini_Registrati(id,nome,cognome,codiceFiscale,email,username,password,nomeCentroVaccinale) \n"
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cittadini(id,nome,cognome,codice_fiscale,email,username,password,nome_centro_vaccinale) \n"
                     + "VALUES (?,?,?,?,?,?,?,?)");
 
             ps.setString(1, cittadino.getId().toString());
@@ -168,7 +168,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette di controllare se il cittadino è già registrato oppure no
+     * il metodo permette di controllare se il cittadino ha un account oppure no
      * @param account account del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
@@ -178,7 +178,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Cittadini_Registrati WHERE username = ? AND password = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ? AND password = ?");
 
             ps.setString(1, String.valueOf(account));
 
@@ -193,7 +193,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette il controllo in fase di accesso e registrazione dell'utente dell'avvenuta registrazione del cittadino
+     * il metodo permette il controllo del nome utente gia' utilizzato
      * @param user nome utente
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException
@@ -203,7 +203,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Cittadini_Registrati WHERE username = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
 
             ps.setString(1, user);
 
@@ -281,7 +281,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT COUNT(mal_di_testa) AVG(mal_dit_esta) COUNT(febbre) AVG(febbre) COUNT(dolori_muscolari) AVG(dolori_muscolari)" +
                     "COUNT(linfoadenopatia) AVG(linfoadenopatia) COUNT(crisi_ipertensiva) AVG(crisi_ipertensiva) \n" +
-                    "FROM Severita JOIN Cittadini_registrati USING username WHERE nomeCentro =" + nomeCentroVaccinale);
+                    "FROM severita JOIN cittadini USING username WHERE nome_centro_vaccinale =" + nomeCentroVaccinale);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return "mal di testa: " + resultSet.getString(1) + " segnalazioni media intensita' " + resultSet.getString(2)  +"\n"+
@@ -290,7 +290,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) + "\n"+
                     " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
 
-        } catch (SQLException e) {}
+        } catch (SQLException e) {e.printStackTrace();}
         return "";
     }
 

@@ -149,15 +149,15 @@ public class DBManagement {
                     + "cap INTEGER,"
                     + "tipologia VARCHAR(20));"
 
-                    + "create table if not exists Cittadini_Registrati("
+                    + "create table if not exists cittadini("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
-                    + "CodiceFiscale CHAR(16),"
+                    + "Codice_fiscale CHAR(16),"
                     + "email VARCHAR(30),"
                     + "username VARCHAR(30),"
                     + "password VARCHAR(30),"
-                    + "nomeCentroVaccinale VARCHAR(30) REFERENCES CentroVaccinale);"
+                    + "nome_centro_vaccinale VARCHAR(30) REFERENCES centri_vaccinali);"
 
                     + "create table if not exists Eventi_Avversi("
                     + "username VARCHAR(30) PRIMARY KEY,"
