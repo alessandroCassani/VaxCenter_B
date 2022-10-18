@@ -375,7 +375,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<String> getNomicentriVaccinali() throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nome_centro_vaccinale FROM centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia)");
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nome_centro_vaccinale FROM centri_vaccinali ");
             ResultSet resultSet = ps.executeQuery();
             LinkedList<String> listaNomiCentri = new LinkedList<>();
             while(resultSet.next()){
