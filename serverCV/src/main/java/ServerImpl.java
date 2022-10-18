@@ -279,9 +279,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT COUNT(mal_di_testa) AVG(mal_dit_esta) COUNT(febbre) AVG(febbre) COUNT(dolori_muscolari) AVG(dolori_muscolari)" +
-                    "COUNT(linfoadenopatia) AVG(linfoadenopatia) COUNT(crisi_ipertensiva) AVG(crisi_ipertensiva) \n" +
-                    "FROM severita JOIN cittadini USING username WHERE nome_centro_vaccinale =" + nomeCentroVaccinale);
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT COUNT(mal_di_testa), AVG(mal_di_testa), COUNT(febbre), AVG(febbre), COUNT(dolori_muscolari), AVG(dolori_muscolari), " +
+                    "COUNT(linfoadenopatia), AVG(linfoadenopatia), COUNT(crisi_ipertensiva), AVG(crisi_ipertensiva) " +
+                    "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = " + nomeCentroVaccinale);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             return "mal di testa: " + resultSet.getString(1) + " segnalazioni media intensita' " + resultSet.getString(2)  +"\n"+
@@ -290,8 +290,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) + "\n"+
                     " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
 
-        } catch (SQLException e) {e.printStackTrace();}
-        return "";
+        } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
     /**
