@@ -342,8 +342,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE nome_centro_vaccinale LIKE % ? %" );
-            ps.setString(1,nome);
+                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
+           // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()){
@@ -362,7 +362,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             }
             ps.close();
             return listaCentri;
-        } catch (SQLException e) {return null;}
+        } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
     /**

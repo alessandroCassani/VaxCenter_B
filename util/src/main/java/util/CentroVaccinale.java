@@ -155,11 +155,11 @@ public class CentroVaccinale implements Serializable {
 
     /**
      * metodo che ritorno la stringa rappresentante le informazioni del centro vaccinale
-     * @return nome tipologia e indirizzo del centro vaccinale
+     * @return stringa contenente informazioni su centro vaccinale
      *
      *  @author Alessandro Cassani
      */
     public String toString(){
-        return nome + " tipologia: " + tipologia ;
+        return nome + qualificatore + nomeVia + civico + comune + provincia + cap + tipologia;
     }
 }
