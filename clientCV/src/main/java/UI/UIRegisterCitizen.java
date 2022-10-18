@@ -330,13 +330,13 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             PasswordValidator pswvalidator = new PasswordValidator();
 
             if(!emailValidator.validate(email.getText().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
                 JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
             } else if (!pswvalidator.validate(password.getText().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
             }else{
                 JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
             }

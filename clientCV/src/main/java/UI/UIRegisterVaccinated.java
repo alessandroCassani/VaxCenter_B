@@ -247,11 +247,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
             if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
-                Font f = new Font("Helvetica", Font.BOLD, 16);
-
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
             }
         }else if(e.getSource() == pulisci) {

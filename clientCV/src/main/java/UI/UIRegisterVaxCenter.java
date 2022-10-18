@@ -266,7 +266,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         } else if(e.getSource() == registra){
             //this.dispose();
             if (!nomeCentroVaccinale.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
