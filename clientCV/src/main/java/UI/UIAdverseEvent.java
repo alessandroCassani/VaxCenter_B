@@ -220,35 +220,21 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     //Tabella riassuntiva Eventi Avversi già registrati
 
-    String nomeEvento = "NOME";
-    String severitàEvento = "SEVERITA'";
-    String noteEvento = "NOTE";
-
-    //Dati che il DB automaticamente imposta e di conseguenza il valore della cella viene modificato
-    String s1;
-    String s2;
-    String s3;
-    String s4;
-    String s5;
-    String s6;
-
-    String note1;
-    String note2;
-    String note3;
-    String note4;
-    String note5;
-    String note6;
+    String nomeEvento = " NOME";
+    String severitàEvento = " SEVERITA'";
 
 
 
-    //Tabella 6x3 (righe x colonne) immutabile in quanto viene completato automaticamente
-    String[][] data = {{nomeEvento,severitàEvento,noteEvento },{"Mal di testa", s1,note1},{"Febbre", s2,note2},{"Dolori Musc. Art.", s3,note3},{"Linfoadenopatia", s4,note4},{"Tachicardia", s5,note5},{"Crisi Ipertensiva", s6,note6}};
-    String[] coloumn = {"NOME", "SEVERITA'", "NOTE"};
+    //Tabella 6x2 (righe x colonne) immutabile in quanto viene completato automaticamente
+    String[][] data = {{nomeEvento,severitàEvento },{" Mal di testa", ""},{" Febbre", ""},{" Dolori Musc. Art.", ""},{" Linfoadenopatia", ""},{" Tachicardia", ""},{" Crisi Ipertensiva", ""}};
+    String[] coloumn = {"NOME", "SEVERITA'"};
 
     /**
      * Tabella che mostra il riepilogo degli eventi avversi già registrati
      */
     JTable tabellaRiepilogo = new JTable(data, coloumn);
+
+    JLabel riepilogoNote = new JLabel("Note: nessuna nota inserita!");
 
     //JLabel per severità e note di ogni riga
 
@@ -518,11 +504,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 15));
         riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);
         tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
-        tabellaRiepilogo.setBounds(50,50,450,420);
+        tabellaRiepilogo.setBounds(50,50,360,350);
         tabellaRiepilogo.setBackground(new Color(209, 245, 250));
-        tabellaRiepilogo.setRowHeight(60);
+        tabellaRiepilogo.setRowHeight(50);
         tabellaRiepilogo.setBorder(bordobtn_AE);
         tabellaRiepilogo.setEnabled(false);
+        riepilogoNote.setBounds(50,400,400,100);
+        riepilogoNote.setFont(new Font("Georgia", Font.BOLD, 12));
+        riepilogoEventiAvversiPersonali.add(riepilogoNote);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
 
 
