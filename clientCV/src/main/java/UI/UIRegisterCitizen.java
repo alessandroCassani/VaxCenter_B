@@ -332,13 +332,22 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             if(!emailValidator.validate(email.getText().trim())) {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
-                JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else if (!pswvalidator.validate(password.getText().trim())) {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
             }else{
                 JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                nomeCV.setEnabled(false);
+                nomeCittadino.setEditable(false);
+                cognomeCittadino.setEditable(false);
+                codiceFiscale.setEditable(false);
+                email.setEditable(false);
+                userID.setEditable(false);
+                IDUnivoco.setEditable(false);
+                password.setEditable(false);
+                ripetiPassword.setEditable(false);
             }
 
         }else if(e.getSource() == pulisci) {
@@ -351,6 +360,15 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             ripetiPassword.setText("");
             IDUnivoco.setText("");
             showPassword.setSelected(false);
+            nomeCV.setEnabled(true);
+            nomeCittadino.setEditable(true);
+            cognomeCittadino.setEditable(true);
+            codiceFiscale.setEditable(true);
+            email.setEditable(true);
+            userID.setEditable(true);
+            IDUnivoco.setEditable(true);
+            password.setEditable(true);
+            ripetiPassword.setEditable(true);
 
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected()) {
