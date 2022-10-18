@@ -59,12 +59,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JButton backToCitizen;
 
-    //Status "Pop-up" per indicare se la registrazione è avvenuta con successo
-    /**
-     * Status che indica se gli eventi avversi sono stati registrati con successo o meno (pop-up)
-     */
-    JLabel status = new JLabel("Eventi Avversi Registrati!");
-
 
     //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
     JCheckBox switcha = new JCheckBox();
@@ -168,8 +162,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Label Crisi Ipertensiva
      */
     JLabel labelCrisiIpertensiva = new JLabel("Crisi Ipertensiva");
-
-
 
 
     /**
@@ -461,7 +453,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(severitatachicardia);
         inserisciEventiAvversi.add(labelCrisiIpertensiva);
         inserisciEventiAvversi.add(severitaCrisiIpertensiva);
-        inserisciEventiAvversi.add(status);
 
         registraEA.setBounds(300, 425, 150, 50);
         registraEA.setFont(new Font("Georgia", Font.BOLD, 15));
@@ -483,15 +474,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         pulisciEventiAvversi.addActionListener(this);
         pulisciEventiAvversi.setOpaque(true);
 
-        status.setBounds(30, 400, 250, 30);
-        status.setFont(new Font("Georgia", Font.BOLD, 15));
-        status.setBackground(new Color(209, 245, 250));
-        status.setForeground(new Color(0x07AF45));
-        status.setVisible(false);
-
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
-        inserisciEventiAvversi.add(status);
 
 
         //Popup "Se sicuro di uscire?"
@@ -553,33 +537,20 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
                 add(inserisciEventiAvversi).setVisible(false);
                 add(riepilogoEventiAvversiPersonali).setVisible(true);
 
-            } else if (e.getSource() == pulisciEventiAvversi) {
-                noteGenerali.setText("");
-                severitaMDT.setSelectedItem("");
-
-
-                severitaFebbre.setSelectedItem("");
-
-
-                severitaDMA.setSelectedItem("");
-
-
-                severitalinfoadenopatia.setSelectedItem("");
-
-
-                severitatachicardia.setSelectedItem("");
-
-
-                severitaCrisiIpertensiva.setSelectedItem("");
-
-                status.setVisible(false);
-
-
-            } else if (e.getSource() == registraEA) {
-                status.setVisible(true);
-
             }
 
+
+            }else if (e.getSource() == pulisciEventiAvversi) {
+            noteGenerali.setText("");
+            severitaMDT.setSelectedItem("");
+            severitaFebbre.setSelectedItem("");
+            severitaDMA.setSelectedItem("");
+            severitalinfoadenopatia.setSelectedItem("");
+            severitatachicardia.setSelectedItem("");
+            severitaCrisiIpertensiva.setSelectedItem("");
+
+        } else if (e.getSource() == registraEA) {
+            
         }
 
     }
