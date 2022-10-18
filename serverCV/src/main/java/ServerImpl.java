@@ -136,7 +136,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO Eventi_Avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
                     "VALUES(?,?,?,?,?,?,?)");
 
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
@@ -150,7 +150,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             preparedStatement.close();
 
 
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Severita(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO severita(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
@@ -196,7 +196,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette il controllo del nome utente gia' utilizzato
      * @param user nome utente
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      */
