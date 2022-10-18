@@ -285,16 +285,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                    "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = " + nomeCentroVaccinale);
+                    "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            return "mal di testa: " + resultSet.getString(1) + " segnalazioni media intensita' " + resultSet.getString(2)  +"\n"+
-                    " febbre: " + resultSet.getString(3) + " segnalazioni media intensita' " + resultSet.getString(4) + "\n"+
-                    " dolori muscolari: " + resultSet.getString(5) + " segnalazioni media intensita' " + resultSet.getString(6) + "\n"+
-                    " linfoadenopatia " +resultSet.getString(7) + " segnalazioni media intensita' " + resultSet.getString(8) + "\n"+
-                    " crisi ipertensiva " + resultSet.getString(9) + " segnalazioni media intensita' " + resultSet.getString(10);
+            if(resultSet.next()) {
+                return "CEFALEA: " + resultSet.getString(1) + " segnalazioni | Intensità media " + Double.parseDouble(resultSet.getString(2)) + "\n" +
+                        "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Double.parseDouble(resultSet.getString(4)) + "\n" +
+                        "DOLORI MUSCOLARI: " + resultSet.getString(5) + " segnalazioni | Intensità media " + Double.parseDouble(resultSet.getString(6)) + "\n" +
+                        "LINFOADENOPATIA " + resultSet.getString(7) + " segnalazioni | Intensità media " + Double.parseDouble(resultSet.getString(8)) + "\n" +
+                        "CRISI IPERTENSIVA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Double.parseDouble(resultSet.getString(10));
+            }
 
         } catch (SQLException e) {e.printStackTrace();return null;}
+        return null;
     }
 
     /**
