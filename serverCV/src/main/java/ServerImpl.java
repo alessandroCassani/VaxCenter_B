@@ -92,7 +92,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT Id FROM vaccinati");
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM vaccinati");
             ResultSet resultSet = preparedStatement.executeQuery();
             TreeSet<BigInteger> id = new TreeSet<>();
             while(resultSet.next()){
@@ -105,7 +105,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 numero = new BigInteger("0000000000000000");
             preparedStatement.close();
 
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO Vaccinati(id,nome,cognome,codiceFiscale,dataNascita,dataVaccino,vaxTipo,nomecentro) \n" +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_nascita,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?,?)");
             ps.setString(1, numero.toString());
             ps.setString(2,vaccinato.getNome());
@@ -253,7 +253,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isVaccinatedRegistrated(String user) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM Vaccinati WHERE codicefiscale = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM vaccinati WHERE codice_fiscale = ?");
 
             ps.setString(1, user);
 
@@ -375,7 +375,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<String> getNomicentriVaccinali() throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nomecentro FROM CentroVaccinale(nomeCentro,qualificatore,nomeVia,civico,provincia,comune,cap,tipologia)");
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT nomecentro FROM CentroVaccinale(nomecentro,qualificatore,nomeVia,civico,provincia,comune,cap,tipologia)");
             ResultSet resultSet = ps.executeQuery();
             LinkedList<String> listaNomiCentri = new LinkedList<>();
             while(resultSet.next()){
