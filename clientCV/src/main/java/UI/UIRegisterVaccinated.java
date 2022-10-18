@@ -58,20 +58,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"","Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
-    /**
-     * ID univoco generato al momento della vaccinazione
-     */
-    JLabel IDUnivoco = new JLabel();
 
-    /**
-     *label rappresentante un messaggio di avviso relativo all'ID univoco
-     */
-    JLabel warningIDUnivoco = new JLabel();
 
-    /**
-     * status dell'operazione
-     */
-    JLabel status = new JLabel();
 
     /**
      * bottone per l'avvio del processo di registrazione del vaccinato
@@ -87,6 +75,11 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      * bottone per eliminare le stringhe inserite in fase di registrazione
      */
     JButton pulisci;
+    /**
+     * Label ID Univoco 16 bit
+     */
+
+    JLabel IDUnivoco = new JLabel("ID Univoco:");
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated
@@ -154,6 +147,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         vaccinoSomministrato.setBackground(Color.WHITE);
         ((JLabel)vaccinoSomministrato.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
+        IDUnivoco.setBounds(350, 410, 230, 20);
+        IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 20));
+        IDUnivoco.setBackground(new Color(0,0,128));
+
+
+
         registraVaccinato.setBounds(380, 460, 230, 60);
         registraVaccinato.setFont(new Font("Georgia", Font.BOLD, 20));
         registraVaccinato.setBackground(new Color(0,0,128));
@@ -196,13 +195,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         pulisci.addActionListener(this);
         pulisci.setOpaque(true);
 
-        status.setFont(new Font("Georgia", Font.BOLD, 18));
-        status.setBounds(350, 380, 400, 55);
 
-        IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        IDUnivoco.setBounds(125, 550, 400, 50);
-        warningIDUnivoco.setFont(new Font("Georgia", Font.BOLD, 18));
-        warningIDUnivoco.setBounds(125, 575, 600, 55);
 
         setLayout(null);
         add(backToVaccineOperator);
@@ -213,10 +206,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(vaccinoSomministrato);
         add(registraVaccinato);
         add(pulisci);
-        add(status);
-        add(IDUnivoco);
-        add(warningIDUnivoco);
         add(data);
+        add(IDUnivoco).setVisible(false);
 
         //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
@@ -267,16 +258,18 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             this.dispose();
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
-            IDUnivoco.setText("");
-            warningIDUnivoco.setText("");
             if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti! Riprovare ...");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
             } else {
-                status.setForeground(new Color(0x077507));
-                status.setText("Centro Vaccinale registrato con successo!");
-                IDUnivoco.setText("ID Univoco: 100000001");
-                warningIDUnivoco.setText("ATTENZIONE! Memorizzare immediatamente l'id univoco!");
+                IDUnivoco.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                nome.setEditable(false);
+                cognome.setEditable(false);
+                codiceFiscale.setEditable(false);
+                data.setEnabled(false);
+                vaccinoSomministrato.setEnabled(false);
+                nomeCV.setEnabled(false);
             }
         }else if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
@@ -284,10 +277,15 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             cognome.setText("");
             codiceFiscale.setText("");
             vaccinoSomministrato.setSelectedItem("");
-            status.setText("");
-            IDUnivoco.setText("");
-            warningIDUnivoco.setText("");
             data.setDate(new Date());
+            nome.setEditable(true);
+            cognome.setEditable(true);
+            codiceFiscale.setEditable(true);
+            data.setEnabled(true);
+            vaccinoSomministrato.setEnabled(true);
+            nomeCV.setEnabled(true);
+            IDUnivoco.setVisible(false);
+
         }
 
     }

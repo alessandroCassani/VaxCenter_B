@@ -98,10 +98,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     JButton backToCitizen;
 
-    /**
-     * status dell'operazione
-     */
-    JLabel status = new JLabel();
 
 
 
@@ -241,8 +237,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         registraCittadino.setFocusable(false);
         registraCittadino.addActionListener(this);
 
-        status.setFont(new Font("Georgia", Font.BOLD, 14));
-        status.setBounds(500, 500, 400, 50);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToCitizen = new JButton(ind);
@@ -282,7 +276,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         add(registraCittadino);
         add(pulisci);
         add(backToCitizen);
-        add(status);
+
 
 
         //Popup "Se sicuro di uscire?"
@@ -336,17 +330,24 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             PasswordValidator pswvalidator = new PasswordValidator();
 
             if(!emailValidator.validate(email.getText().trim())) {
-                status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti! Riprovare ...");
-            } else if (!cfvalidator.validate(codiceFiscale.getText().trim())) {
-                status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti! Riprovare ...");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
             } else if (!pswvalidator.validate(password.getText().trim())) {
-                status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti! Riprovare ...");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
             }else{
-                status.setForeground(new Color(0x077507));
-                status.setText("Registrato con successo!");
+                JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                nomeCV.setEnabled(false);
+                nomeCittadino.setEditable(false);
+                cognomeCittadino.setEditable(false);
+                codiceFiscale.setEditable(false);
+                email.setEditable(false);
+                userID.setEditable(false);
+                IDUnivoco.setEditable(false);
+                password.setEditable(false);
+                ripetiPassword.setEditable(false);
             }
 
         }else if(e.getSource() == pulisci) {
@@ -358,8 +359,16 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             password.setText("");
             ripetiPassword.setText("");
             IDUnivoco.setText("");
-            status.setText("");
             showPassword.setSelected(false);
+            nomeCV.setEnabled(true);
+            nomeCittadino.setEditable(true);
+            cognomeCittadino.setEditable(true);
+            codiceFiscale.setEditable(true);
+            email.setEditable(true);
+            userID.setEditable(true);
+            IDUnivoco.setEditable(true);
+            password.setEditable(true);
+            ripetiPassword.setEditable(true);
 
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected()) {

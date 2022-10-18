@@ -81,12 +81,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
     JButton backToUIVaccineOperator;
 
-    /**
-     * campo di testo in cui viene visuaizzato lo stato della registra centro vaccinale
-     */
-
-    JLabel status = new JLabel();
-
 
     /**
      * Bottone per pulire tutte le JTextField e le JComboBox
@@ -210,9 +204,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         registra.addActionListener(this);
 
 
-        status.setFont(new Font("Georgia", Font.BOLD, 16));
-        status.setBounds(130, 435, 370, 75);
-
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
@@ -229,7 +220,6 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(tipologia);
         add(registra);
         add(backToUIVaccineOperator);
-        add(status);
         add(pulisci);
 
 
@@ -276,11 +266,17 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         } else if(e.getSource() == registra){
             //this.dispose();
             if (!nomeCentroVaccinale.getText().equals("")){
-                status.setForeground(new Color(0xEC0909));
-                status.setText("I dati inseriti non sono corretti!");
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
             } else {
-                status.setForeground(new Color(0x077507));
-                status.setText("Centro Vaccinale registrato con successo!");
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                nomeCentroVaccinale.setEditable(false);
+                tipologia.setEnabled(false);
+                qualificatore.setEnabled(false);
+                nomeVia.setEditable(false);
+                numeroCivico.setEditable(false);
+                comune.setEnabled(false);
+                registra.setEnabled(false);
             }
         }else if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
@@ -291,7 +287,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             siglaProvincia.setText("");
             cap.setText("");
             tipologia.setSelectedItem("");
-            status.setText("");
+            nomeCentroVaccinale.setEditable(true);
+            tipologia.setEnabled(true);
+            qualificatore.setEnabled(true);
+            nomeVia.setEditable(true);
+            numeroCivico.setEditable(true);
+            comune.setEnabled(true);
+            registra.setEnabled(true);
         }
     }
 }

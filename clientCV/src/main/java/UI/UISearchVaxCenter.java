@@ -207,9 +207,6 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         return ic;
     }
 
-    /**
-     * @param args the command line arguments
-     */
 
     public void dbConnection() {
 
