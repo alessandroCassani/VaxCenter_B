@@ -453,7 +453,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         severitaDMA.setBounds(160, 175, 60, 30);
         severitaDMA.setBackground(Color.WHITE);
         severitaDMA.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
-
+    //
 
         //Linfoadenopatia
         labellinfoadenopatia.setFont(new Font("Georgia", Font.BOLD, 12));
