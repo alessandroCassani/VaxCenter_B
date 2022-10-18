@@ -501,10 +501,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         //note generali text area
-        noteGenerali.setFont(new Font("Arial", Font.BOLD, 10));
+        noteGenerali.setFont(new Font("Arial", Font.BOLD, 12));
         noteGenerali.setPreferredSize(new Dimension(325, 75));
-        noteGenerali.setBounds(250, 75, 250, 280);
+        noteGenerali.setBounds(250, 75, 250, 270);
         noteGenerali.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        noteGenerali.setLineWrap(true);
+        noteGenerali.setWrapStyleWord(true);
 
 
         //Panel info Eventi avversi già registrati
