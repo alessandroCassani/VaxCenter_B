@@ -179,8 +179,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     //Tabella riassuntiva Eventi Avversi già registrati
-
+    /**
+     * nome colonna 1
+     */
     String nomeEvento = " NOME";
+    /**
+     * nome colonna 2
+     */
     String severitàEvento = " SEVERITA'";
 
 
@@ -196,25 +201,39 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JLabel riepilogoNote = new JLabel("Note: nessuna nota inserita!");
 
     //JLabel per severità e note di ogni riga
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA1 = new JLabel("Severità");
 
-
+    /**
+     * Label Severità
+     */
     JLabel noteGeneraliLabel = new JLabel("Note (max. 256)");
 
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA2 = new JLabel("Severità");
 
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA3 = new JLabel("Severità");
 
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA4 = new JLabel("Severità");
 
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA5 = new JLabel("Severità");
 
-
+    /**
+     * Label Severità
+     */
     JLabel severitaEA6 = new JLabel("Severità");
 
 
