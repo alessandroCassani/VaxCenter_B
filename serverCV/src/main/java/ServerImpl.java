@@ -341,8 +341,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centrovaccinale(nomecentro,qualificatore,nomeVia,civico,provincia,comune,cap,tipologia) " +
-                    "WHERE nomeCentro LIKE %?%" );
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centrovaccinale " +
+                    "WHERE nomecentro LIKE % ? %" );
             ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -361,10 +361,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 listaCentri.add(new CentroVaccinale(Nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
             }
             ps.close();
-            if(listaCentri.isEmpty())
-                return null;
-            else
-                return listaCentri;
+            return listaCentri;
         } catch (SQLException e) {return null;}
     }
 
@@ -384,10 +381,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             while(resultSet.next()){
                 listaNomiCentri.add(resultSet.getString(1));
             }
-            if(listaNomiCentri.isEmpty())
-                return null;
-            else
-                return listaNomiCentri;
+            return listaNomiCentri;
         } catch (SQLException e) {return null;}
     }
 }
