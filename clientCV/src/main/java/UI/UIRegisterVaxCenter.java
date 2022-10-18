@@ -275,7 +275,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 qualificatore.setEnabled(false);
                 nomeVia.setEditable(false);
                 numeroCivico.setEditable(false);
-                comune.setEditable(false);
+                comune.setEnabled(false);
                 registra.setEnabled(false);
             }
         }else if(e.getSource() == pulisci){
@@ -292,7 +292,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             qualificatore.setEnabled(true);
             nomeVia.setEditable(true);
             numeroCivico.setEditable(true);
-            comune.setEditable(true);
+            comune.setEnabled(true);
             registra.setEnabled(true);
         }
     }
