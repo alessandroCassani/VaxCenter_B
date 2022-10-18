@@ -94,6 +94,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
     JButton pulisci;
 
     /**
+     * JDialog check collegamento server
+     */
+    JDialog checkServerDialog = new JDialog();
+
+    /**
      * Avvio del programma Server
      * @param args
      * @author Paolo Bruscagin
