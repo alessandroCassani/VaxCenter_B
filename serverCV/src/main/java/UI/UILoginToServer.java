@@ -278,9 +278,13 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            this.dispose();
-            //verifica accesso db con metodo connect
-            new UIServerHome();
+            if (!pswTextField.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else {this.dispose();
+                //verifica accesso db con metodo connect
+                new UIServerHome();}
+
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected())
                 pswTextField.setEchoChar((char) 0);
