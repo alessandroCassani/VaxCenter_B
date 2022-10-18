@@ -270,7 +270,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
             } else {
                 JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-
+                nomeCentroVaccinale.setEditable(false);
+                tipologia.setEnabled(false);
+                qualificatore.setEnabled(false);
+                nomeVia.setEditable(false);
+                numeroCivico.setEditable(false);
+                comune.setEditable(false);
+                registra.setEnabled(false);
             }
         }else if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
@@ -281,6 +287,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             siglaProvincia.setText("");
             cap.setText("");
             tipologia.setSelectedItem("");
+            nomeCentroVaccinale.setEditable(true);
+            tipologia.setEnabled(true);
+            qualificatore.setEnabled(true);
+            nomeVia.setEditable(true);
+            numeroCivico.setEditable(true);
+            comune.setEditable(true);
+            registra.setEnabled(true);
         }
     }
 }
