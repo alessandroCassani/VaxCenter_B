@@ -182,7 +182,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * nome colonna 1
      */
-    String nomeEvento = " NOME";
+    String nomeEvento = " EVENTO AVVERSO";
     /**
      * nome colonna 2
      */
@@ -191,7 +191,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     //Tabella 6x2 (righe x colonne) immutabile in quanto viene completato automaticamente
     String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ""}, {" Febbre", ""}, {" Dolori Musc. Art.", ""}, {" Linfoadenopatia", ""}, {" Tachicardia", ""}, {" Crisi Ipertensiva", ""}};
-    String[] coloumn = {"NOME", "SEVERITA'"};
+    String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
     /**
      * Tabella che mostra il riepilogo degli eventi avversi già registrati
