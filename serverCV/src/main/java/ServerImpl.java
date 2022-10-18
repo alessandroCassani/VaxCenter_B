@@ -279,8 +279,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT COUNT(mal_di_testa), AVG(mal_di_testa), COUNT(febbre), AVG(febbre), COUNT(dolori_muscolari), AVG(dolori_muscolari), " +
-                    "COUNT(linfoadenopatia), AVG(linfoadenopatia), COUNT(crisi_ipertensiva), AVG(crisi_ipertensiva) " +
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement(
+                    "SELECT COUNT(mal_di_testa) AS segnalazioni_mdt, AVG(mal_di_testa) AS media_mdt, " +
+                            "COUNT(febbre) AS segnalazioni_febbre, AVG(febbre) AS media_febbre, " +
+                            "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
+                            "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
+                            "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
                     "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = " + nomeCentroVaccinale);
             ResultSet resultSet = preparedStatement.executeQuery();
 
