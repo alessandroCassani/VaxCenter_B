@@ -249,12 +249,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JLabel severitaEA6 = new JLabel("Severità");
 
 
-
-    public UIAdverseEvent(String text) {
+    static String user;
+    public UIAdverseEvent(String username) {
 
 
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
+        user = username;
 
 
         infoUtente.setBounds(550, -5, 450, 570);
