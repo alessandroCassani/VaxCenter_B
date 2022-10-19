@@ -212,24 +212,26 @@ import java.util.Objects;
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        boolean controllo = false;
         if(e.getSource() == startBtn){
             boolean check = startServer();
-             if(check)
+            if(check) {
                 status.setText("Server is Running ...");
-             else if(!check) {
-                 while(times < MAX_TIMES && !check) {
-                     check = startServer();
-                     status.setText("Tentativo: "+ times+1 + " di connessione in corso...");
-                     times++;
-                 }
-                 if(check) {
-                     status.setText("Server is Running ...");
-                 }
-                 if(times == MAX_TIMES) {
-                        status.setText("Tentativi massimi esauriti");
-                        System.exit(0);
-                    }
-             }
+            }else { // qui check è falso
+                while (times < MAX_TIMES || controllo == false)  {
+                    controllo = startServer();
+                    status.setText("Tentativo: " + times + 1 + " di connessione in corso...");
+                    times++;
+                }
+                if(times == MAX_TIMES) {
+                    status.setText("Tentativi massimi esauriti");
+                    System.exit(0);
+                }
+                if(controllo) {
+                    status.setText("Server is Running ...");
+                }
+
+            }
              sr.setVisible(true);
              so.setVisible(false);
         } else if(e.getSource() == stopBtn){
