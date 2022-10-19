@@ -218,7 +218,7 @@ import java.util.Objects;
             if(check) {
                 status.setText("Server is Running ...");
             }else { // qui check è falso
-                while (times < MAX_TIMES || controllo == false)  {
+                while (times < MAX_TIMES || !controllo)  {
                     controllo = startServer();
                     status.setText("Tentativo: " + times + 1 + " di connessione in corso...");
                     times++;
