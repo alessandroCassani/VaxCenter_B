@@ -213,10 +213,22 @@ import java.util.Objects;
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == startBtn){
-             if(startServer())
+            boolean check = startServer();
+             if(check)
                 status.setText("Server is Running ...");
-             else {
-                 status.setText("Server doesn't work correctly ...");
+             else if(!check) {
+                 while(times < MAX_TIMES && !check) {
+                     check = startServer();
+                     status.setText("Tentativo: "+ times+1 + " di connessione in corso...");
+                     times++;
+                 }
+                 if(check) {
+                     status.setText("Server is Running ...");
+                 }
+                 if(times == MAX_TIMES) {
+                        status.setText("Tentativi massimi esauriti");
+                        System.exit(0);
+                    }
              }
              sr.setVisible(true);
              so.setVisible(false);
