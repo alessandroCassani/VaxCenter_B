@@ -8,10 +8,12 @@ import UI.graphics.RoundButton;
  import java.awt.event.ActionListener;
  import java.awt.event.WindowAdapter;
  import java.awt.event.WindowEvent;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.ExportException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Objects;
 
  /**
@@ -43,14 +45,11 @@ import java.util.Objects;
      /**
       * Tentativi di utilizzo massimi del server
       */
-     static final int MAX_TIMES  = 3;
+     static boolean check = false;
      /**
-      * Variabile che identifica possibili tenetivi
+      * Variabile booleana che tiene traccia dello stato corrente del server
       */
-     static int times  = 0;
-     /**
-      * Panel per inserire l'immagine d'interfaccia
-      */
+
      JPanel immagine = new JPanel();
      /**
       * Panel per inserire l'immagine del server running
@@ -212,31 +211,13 @@ import java.util.Objects;
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        boolean controllo = false;
-        if(e.getSource() == startBtn){
-            boolean check = startServer();
-            if(check) {
-                status.setText("Server is Running ...");
-            }else { // qui check è falso
-                while (times < MAX_TIMES || !controllo)  {
-                    controllo = startServer();
-                    status.setText("Tentativo: " + times + 1 + " di connessione in corso...");
-                    times++;
-                }
-                if(times == MAX_TIMES) {
-                    status.setText("Tentativi massimi esauriti");
-                    System.exit(0);
-                }
-                if(controllo) {
-                    status.setText("Server is Running ...");
-                }
 
-            }
-             sr.setVisible(true);
-             so.setVisible(false);
+        if(e.getSource() == startBtn) {
+            startServer();
+            sr.setVisible(true);
+            so.setVisible(false);
         } else if(e.getSource() == stopBtn){
-            //eliminazione oggetto server dal registry
-
+            stopServer();
             status.setText("Server Offline ...");
             so.setVisible(true);
             sr.setVisible(false);
@@ -271,6 +252,22 @@ import java.util.Objects;
          }
 
          return true;
+     }
+
+     public static boolean stopServer(){
+         if(check){
+             try {
+                 registry.unbind(SERVICE_NAME);
+                 UnicastRemoteObject.unexportObject(server, true);
+                 check = false;
+                 return true;
+             } catch (RemoteException | NotBoundException e) {
+                 e.printStackTrace();
+             }
+             return false;
+         }else{
+             return true;
+         }
      }
 }
 
