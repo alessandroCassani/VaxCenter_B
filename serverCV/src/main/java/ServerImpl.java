@@ -27,7 +27,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * Costruttore vuoto
      * @throws RemoteException eccezione RMI
      */
-    protected ServerImpl() throws RemoteException {
+     ServerImpl() throws RemoteException {
         super();
     }
 

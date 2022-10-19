@@ -1,6 +1,4 @@
- package UI;
-
- import UI.graphics.RoundButton;
+import UI.graphics.RoundButton;
 
  import javax.swing.*;
  import javax.swing.border.Border;
@@ -10,7 +8,8 @@
  import java.awt.event.ActionListener;
  import java.awt.event.WindowAdapter;
  import java.awt.event.WindowEvent;
- import java.util.Objects;
+import java.rmi.registry.Registry;
+import java.util.Objects;
 
  /**
   * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
@@ -19,6 +18,20 @@
   *  @author Paolo Bruscagin
   */
  public class UIServerHome extends JFrame implements ActionListener {
+
+     /**
+      * Porta sulla quale si ascolterà il server
+      */
+     private static int PORT;
+     /**
+      *  Oggetto che implementa l'interfaccia <code>ServerInterface</code> e si occupa delle operazioni dei client
+      */
+     static ServerImpl server;
+
+     /**
+      * Oggetto <code>Registry</code> che mette a disposizione metodi per le operazioni relative ai riferimenti degli oggetti remoti
+      */
+     static Registry registry;
 
      /**
       * Panel per inserire l'immagine d'interfaccia
