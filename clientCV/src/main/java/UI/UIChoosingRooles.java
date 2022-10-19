@@ -41,9 +41,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     JLabel esci = new JLabel("Esci");
 
 
-
-
-
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata di scelta della tipologia di utente
      *
@@ -55,13 +52,13 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         //Label cliccabile che ti permette di uscire dal programma
 
-        esci.setFont(new Font("Georgia", Font.ITALIC, 18));
+        esci.setFont(new Font("Georgia", Font.ITALIC, 21));
         Font font = esci.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         esci.setFont(font.deriveFont(attributes));
-        esci.setForeground(new Color(0,49,83));
-        esci.setBounds(60,30,100,20);
+        esci.setForeground(new Color(24, 56, 203));
+        esci.setBounds(40,30,100,20);
         esci.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -80,8 +77,9 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
-        scelta.setFont(new Font("Georgia", Font.BOLD, 17));
+        scelta.setFont(new Font("roman_baseline", Font.PLAIN, 19));
         scelta.setBounds(590, 100, 400, 30);
+        scelta.setForeground(new Color(19, 47, 164));
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
         op = operatoreVaccinale.resizeImage(op,70,80);

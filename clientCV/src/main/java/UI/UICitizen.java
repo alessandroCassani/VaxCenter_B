@@ -76,13 +76,13 @@ public class UICitizen extends JFrame implements ActionListener {
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
 
-        login.setFont(new Font("Georgia", Font.ITALIC, 23));
+        login.setFont(new Font("Georgia", Font.ITALIC, 24));
         Font font = login.getFont();
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         login.setFont(font.deriveFont(attributes));
-        login.setForeground(new Color(0,49,83));
-        login.setBounds(880,70,100,30);
+        login.setForeground(new Color(24, 56, 203));
+        login.setBounds(880,60,100,30);
         login.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
