@@ -118,7 +118,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Label Dolori Muscolari e/o Articolari
      */
 
-    JLabel labelDMA = new JLabel("Dolori Mus. e Art.");
+    JLabel labelDMA = new JLabel("Dolori Muscolari");
+
+    /**
+     * Continuzione Label
+     */
+
+    JLabel labelDMAc = new JLabel("e Articolari");
 
 
 
@@ -387,7 +393,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         //Dolore Addominale e/o Articolare
         labelDMA.setFont(new Font("Georgia", Font.BOLD, 12));
-        labelDMA.setBounds(20, 175, 160, 20);
+        labelDMA.setBounds(20, 175, 160, 12);
+        labelDMAc.setFont(new Font("Georgia", Font.BOLD, 12));
+        labelDMAc.setBounds(20, 188, 160, 12);
 
 
         severitaDMA.setFont(new Font("Arial", Font.BOLD, 12));
@@ -494,6 +502,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(labelFebbre);
         inserisciEventiAvversi.add(severitaFebbre);
         inserisciEventiAvversi.add(labelDMA);
+        inserisciEventiAvversi.add(labelDMAc);
         inserisciEventiAvversi.add(severitaDMA);
         inserisciEventiAvversi.add(labellinfoadenopatia);
         inserisciEventiAvversi.add(severitalinfoadenopatia);
