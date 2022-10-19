@@ -312,7 +312,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     }
     /**
-     * il metodo permette di ottenere dalla TextField raffigurante host il valore inserito dall'utente
+     * il metodo permette di ottenere dalla TextField host inserito dall'utente
      * @return host scelto dall'utente
      * @author Damiano Ficara
      * @author Luca Perfetti
@@ -320,5 +320,27 @@ public class UILoginToServer extends JFrame implements ActionListener {
 
     public static String getHostTextField() {
         return hostTextField.getText();
+    }
+
+    /**
+     * il metodo permette di ottenere dalla TextField il nome utente inserito dall'utente
+     * @return nome utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+
+    public static String getUserTextField() {
+        return userTextField.getText();
+    }
+
+    /**
+     * il metodo permette di ottenere dalla PasswordField la password inserita dall'utente
+     * @return nome utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+    public static String getPswTextField() {
+        String pwd = String.valueOf(pswTextField.getPassword());
+        return pwd;
     }
 }
