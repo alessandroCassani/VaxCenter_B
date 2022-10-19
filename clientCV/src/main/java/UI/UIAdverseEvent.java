@@ -59,10 +59,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JButton backToCitizen;
 
-
     //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
     JCheckBox switcha = new JCheckBox();
-
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
     /**
@@ -236,12 +234,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JLabel severitaEA6 = new JLabel("Severità");
 
+    static String user;
 
 
-    public UIAdverseEvent() {
+    public UIAdverseEvent(String username){
 
-
-        Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
+        user = username;
+        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
+        Border bordobtn_AE = new LineBorder(new Color(0,49,83), 2, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
 
@@ -250,7 +250,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.setLayout(null);
         infoUtente.setBackground(new Color(181, 226, 232));
         infoUtente.setBorder(bordobtn_AE);
-
 
         //Informazioni InfoUtente
         JLabel titoloRiepilogo = new JLabel("Riepilogo Dati:");
