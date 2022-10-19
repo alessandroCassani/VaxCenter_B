@@ -128,7 +128,7 @@ public class DBManagement {
 
         try{
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-
+            
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome_centro_vaccinale VARCHAR(30),"

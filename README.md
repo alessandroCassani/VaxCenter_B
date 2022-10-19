@@ -1,3 +1,2 @@
-PROGETTO VAXCENTER
-LABORATORIO B, CORSO DI LAUREA TRIENNALE IN INFORMATICA
-UNIVERSITA' DEGLI STUDI DELL'INSUBRIA
+Progetto VaxCenter.
+Corso di laboratorio interdiscplinare B, laurea triennale in informatica Università degli Studi dell'Insubria

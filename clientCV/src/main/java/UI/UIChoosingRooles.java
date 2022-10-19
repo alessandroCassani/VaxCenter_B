@@ -5,8 +5,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -28,6 +29,19 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      */
     RoundButton cittadino = new RoundButton();
 
+    /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
+    JPanel immagine = new JPanel();
+
+    /**
+     * Label Esci che permette di uscire dal programma
+     */
+
+    JLabel esci = new JLabel("Esci");
+
+
+
 
 
     /**
@@ -38,6 +52,31 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
      */
 
     public UIChoosingRooles(){
+
+        //Label cliccabile che ti permette di uscire dal programma
+
+        esci.setFont(new Font("Georgia", Font.ITALIC, 18));
+        Font font = esci.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        esci.setFont(font.deriveFont(attributes));
+        esci.setForeground(new Color(0,49,83));
+        esci.setBounds(60,30,100,20);
+        esci.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(0);
+
+            }
+        });
+
+        //immagine programma
+
+        immagine.setBounds(50, 80, 520, 430);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/sfondoVac.png"))));
+        immagine.add(lblPic);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
@@ -90,10 +129,11 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
 
-        setLayout(null);
         add(scelta);
         add(operatoreVaccinale);
         add(cittadino);
+        add(immagine);
+        add(esci);
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize (1000, 600);
@@ -125,6 +165,5 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             new UICitizen();
         }
     }
-
 
 }

@@ -26,6 +26,11 @@ import java.util.Objects;
 public class UICitizen extends JFrame implements ActionListener {
 
     /**
+     * Panel per inserire l'immagine d'interfaccia
+     */
+    JPanel immagine = new JPanel();
+
+    /**
      * Bottone per accedere alla sezione info centro vaccinale
      */
     RoundButton cercaCentroVaccinale = new RoundButton();
@@ -57,8 +62,18 @@ public class UICitizen extends JFrame implements ActionListener {
     public UICitizen() {
 
 
+        //immagine programma
+
+        immagine.setBounds(50, 80, 520, 430);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/CT.png"))));
+        immagine.add(lblPic);
+
+
 
         ImageIcon info = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/info_vaxcenter.png")));
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
 
         login.setFont(new Font("Georgia", Font.ITALIC, 23));
@@ -120,12 +135,16 @@ public class UICitizen extends JFrame implements ActionListener {
         backToChoosingRooles.setFocusable(false);
         backToChoosingRooles.addActionListener(this);
         backToChoosingRooles.setOpaque(true);
+        backToChoosingRooles.setBorder(bordobtnInd);
+        backToChoosingRooles.setContentAreaFilled(false);
+
 
         setLayout(null);
         add(cercaCentroVaccinale);
         add(registraCittadino);
         add(login);
         add(backToChoosingRooles);
+        add(immagine);
 
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));

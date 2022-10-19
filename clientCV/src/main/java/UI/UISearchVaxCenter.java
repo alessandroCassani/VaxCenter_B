@@ -7,6 +7,8 @@ import UI.graphics.SearchField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Objects;
 import javax.swing.*;
 
@@ -30,7 +32,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
         ImageIcon ic = new javax.swing.ImageIcon(getClass().getResource("/images/cityhall.png"));
-        ic = resizeImage(ic,30,30);
+        ic = resizeImage(ic,20,20);
         search.addOption(new InfoSearch("Comune e Tipologia",  ic));
         search.setSelectedIndex(0); // evidenzia primo elemento
         jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD,12));
@@ -43,8 +45,29 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setLocationRelativeTo(null);
         setVisible(true);
+        setTitle("Ricerca Centro Vaccinale - Info");
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
+        setResizable(false);
+
+        //Popup "Se sicuro di uscire?"
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                UIManager.put("OptionPane.yesButtonText", "Si");
+                UIManager.put("OptionPane.noButtonText", "No");
+
+                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
+                        "Esci?", JOptionPane.YES_NO_OPTION);
+
+                if (resp == JOptionPane.YES_OPTION) {
+                    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    System.exit(0);
+                } else {
+                    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
+
 
     }
 
@@ -165,6 +188,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
         if(search.isSelected()) {
+
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
@@ -183,11 +207,10 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         return ic;
     }
 
-    /**
-     * @param args the command line arguments
-     */
 
+    public void dbConnection() {
 
+    }
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
