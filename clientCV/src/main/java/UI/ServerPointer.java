@@ -8,4 +8,8 @@ public class ServerPointer {
     public static Registry getRegistry(){
         return registry;
     }
+
+    public static void setRegistry(){
+
+    }
 }
