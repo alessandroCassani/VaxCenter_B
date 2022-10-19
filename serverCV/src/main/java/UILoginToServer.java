@@ -20,24 +20,24 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * label rappresentante la stringa host
      */
-    JLabel hostLabel = new JLabel("Host:");
+     JLabel hostLabel = new JLabel("Host:");
 
     /**
      * campo di testo dove inserire l'host
      */
-    JTextField hostTextField = new JTextField();
+    static JTextField hostTextField = new JTextField();
 
     /**
      * label rappresentante la stringa port
      */
 
-    static JLabel portLabel =new JLabel("Port");
+     JLabel portLabel =new JLabel("Port");
 
     /**
      * campo di testo dove inserire la porta
      */
 
-    JTextField portTextField = new JTextField();
+    static JTextField portTextField = new JTextField();
 
     /**
      * label rappresentante la stringa di default uguale a username
@@ -47,11 +47,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * campo di testo dove inserire lo user
      */
-    JTextField userTextField = new JTextField();
+    static JTextField userTextField = new JTextField();
     /**
      * campo di testo dove inserire lo password
      */
-    JPasswordField pswTextField = new JPasswordField();
+    static JPasswordField pswTextField = new JPasswordField();
 
     /**
      * label rappresentante password
@@ -280,7 +280,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {this.dispose();
-
+                DBManagement.connect();
                 new UIServerHome();}
 
         }else if(e.getSource() == showPassword){
@@ -306,7 +306,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * @author Luca Perfetti
      */
      public static Integer getPortLabel() {
-        String port =  portLabel.getText();
+        String port =  portTextField.getText();
         return Integer.parseInt(port);
 
     }
