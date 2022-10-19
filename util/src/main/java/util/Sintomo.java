@@ -11,6 +11,10 @@ import java.io.Serializable;
 public class Sintomo implements Serializable {
 
     /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
+    /**
      * sintomatologia segnalata
      */
     private final Sintomatologia sintomatologia;

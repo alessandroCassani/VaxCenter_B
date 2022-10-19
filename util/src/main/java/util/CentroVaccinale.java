@@ -8,6 +8,10 @@ import java.io.Serializable;
  * @author Alessandro Cassani
  */
 public class CentroVaccinale implements Serializable {
+    /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
 
     /**
      * nome del centro vaccinale

@@ -9,6 +9,10 @@ import java.util.ArrayList;
      * @author Alessandro Cassani
      */
 public class EventiAvversi implements Serializable {
+        /**
+         * Numero di seriale per la comunicazione RMI
+         */
+    private static final long serialVersionUID = 78910L;
 
         /**
          * note opzionali

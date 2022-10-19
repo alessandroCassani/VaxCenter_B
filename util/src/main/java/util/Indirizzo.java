@@ -8,6 +8,10 @@ import java.io.Serializable;
 public class Indirizzo implements Serializable  {
 
     /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
+    /**
      * qualificatore dell'indirizzo (via/viale/piazza)
      */
     private final Qualificatore qualificatore;

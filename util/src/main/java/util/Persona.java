@@ -10,6 +10,10 @@ import java.util.Date;
  * @author Alessandro Cassani
  */
 public abstract class Persona implements Serializable {
+    /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
 
     /**
      * nome della persona
