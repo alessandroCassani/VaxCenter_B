@@ -1,3 +1,5 @@
+package database;
+
 import UI.graphics.RoundButton;
 
  import javax.swing.*;
@@ -29,7 +31,7 @@ import java.util.Objects;
       */
      private static int PORT;
      /**
-      *  Oggetto che implementa l'interfaccia <code>ServerInterface</code> e si occupa delle operazioni dei client
+      *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
       */
      static ServerImpl server;
 
@@ -81,7 +83,7 @@ import java.util.Objects;
     JLabel status = new JLabel();
 
      /**
-      * Bottone per tornare nell'interfaccia UILoginToServer
+      * Bottone per tornare nell'interfaccia database.UILoginToServer
       */
 
      JButton backToLoginToServer;
@@ -246,6 +248,7 @@ import java.util.Objects;
              }
 
              registry.rebind(SERVICE_NAME, server);
+             check = true;
          }catch(RemoteException e){
              e.printStackTrace();
              return false;

@@ -3,6 +3,7 @@ package UI;
 import UI.graphics.GradientPanel;
 import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
+import database.ServerInterface;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -192,6 +193,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
+                // cerca per nome
 
             } else if(option == 1) {
                 // cerca per comune
@@ -208,9 +210,6 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     }
 
 
-    public void dbConnection() {
-
-    }
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

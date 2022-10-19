@@ -19,9 +19,13 @@ public class CentroVaccinale implements Serializable {
     private final String nome;
 
     /**
-     * indirizzo del centro vaccinale
+     * comune dove risiede il centro vaccinale
      */
-    private final Indirizzo indirizzo;
+    private String comune;
+    /**
+     * cap del comune del centro vaccinale
+     */
+    private int cap;
 
     /**
      * tipologia di centro vaccinale
@@ -29,20 +33,50 @@ public class CentroVaccinale implements Serializable {
     private final Tipologia tipologia;
 
     /**
+     * qualificatore dell'indirizzo (via/viale/piazza)
+     */
+    private final Qualificatore qualificatore;
+
+    /**
+     * nome indirizzo
+     */
+    private final String nomeVia;
+
+    /**
+     * numero civico
+     */
+    private final String civico;
+
+    /**
+     * provincia dove e' situata l'indirizzo
+     */
+    private final String provincia;
+
+    /**
      * metodo che crea un oggetto di tipo centro vaccinale
      * @param nome  nome del centro vaccinale
-     * @param indirizzo indirizzo del centro vaccinale
+     * @param qualificatore qualificatore (via/viale/piazza) indirizzo del centro vaccinale
+     * @param nomeVia nome via del centro vaccinale
+     * @param civico numero civico del centor vaccinale
+     * @param provincia provincia del centro vaccinale
+     * @param cap  cap del centor vaccinale
+     * @param comune comune del centro vaccinale
      * @param tipologia tipologia di centro vaccinale
      *
      * @author Alessandro Cassani
      */
-    public CentroVaccinale(String nome,Indirizzo indirizzo,Tipologia tipologia){
+    public CentroVaccinale(String nome,Qualificatore qualificatore,String nomeVia,String civico,String provincia,String comune,int cap,Tipologia tipologia){
         this.nome = nome;
-        this.indirizzo = indirizzo;
+        this.cap = cap;
+        this.comune = comune;
+        this.qualificatore = qualificatore;
+        this.nomeVia = nomeVia;
+        this.civico = civico;
+        this.provincia = provincia;
         this.tipologia = tipologia;
     }
 
-    /***
+    /**
      * metodo che accede al campo privato nome
      * @return nome del centro vaccinale
      *
@@ -52,15 +86,24 @@ public class CentroVaccinale implements Serializable {
         return nome;
     }
 
-    /***
-     * metodo che accede al campo privato indirizzo
-     * @return l'indirizzo del centro vaccinale
+    /**
+     *  metodo che accede al campo privato cap
+     * @return cap dell'indirizzo
      *
      *  @author Alessandro Cassani
      */
-    public Indirizzo getIndirizzo(){
-        return indirizzo;
+
+    public int getCap(){
+        return cap;
     }
+
+    /**
+     * metodo che accede al campo privato comune
+     * @return comune del centro vaccinale
+     *
+     *  @author Alessandro Cassani
+     */
+    public String getComune(){return comune;}
 
     /**
      * metodo che accede al campo tipologia
@@ -73,12 +116,54 @@ public class CentroVaccinale implements Serializable {
     }
 
     /**
+     * metodo che accede al campo privato qualificatore
+     * @return qualificatore indirizzo
+     *
+     *  @author Alessandro Cassani
+     */
+    public Qualificatore getQualificatore(){
+        return qualificatore;
+    }
+
+    /**
+     * metodo che accede al campo privato nomeVia
+     * @return nome indirizzo
+     *
+     *  @author Alessandro Cassani
+     */
+
+    public String getNomeVia(){
+        return nomeVia;
+    }
+
+    /**
+     * metodo che accede al campo privato civico
+     * @return numero civico
+     *
+     *  @author Alessandro Cassani
+     */
+    public String getCivico(){
+        return civico;
+    }
+
+    /**
+     *  metodo che accede al campo privato provincia
+     * @return provincia dell'indirizzo
+     *
+     *  @author Alessandro Cassani
+     */
+
+    public String getProvincia(){
+        return provincia;
+    }
+
+    /**
      * metodo che ritorno la stringa rappresentante le informazioni del centro vaccinale
-     * @return nome tipologia e indirizzo del centro vaccinale
+     * @return stringa contenente informazioni su centro vaccinale
      *
      *  @author Alessandro Cassani
      */
     public String toString(){
-        return nome + " tipologia: " + tipologia + "\n" + indirizzo;
+        return nome + qualificatore + nomeVia + civico + comune + provincia + cap + tipologia;
     }
 }
