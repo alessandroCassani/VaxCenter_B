@@ -30,8 +30,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         initComponents();
         // pernette du evidenziare il tipo di ricerca compiuta
         search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
-        search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(getClass().getResource("/images/nome.png"))));
-        ImageIcon ic = new javax.swing.ImageIcon(getClass().getResource("/images/cityhall.png"));
+        search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/nome.png")))));
+        ImageIcon ic = new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cityhall.png")));
         ic = resizeImage(ic,20,20);
         search.addOption(new InfoSearch("Comune e Tipologia",  ic));
         search.setSelectedIndex(0); // evidenzia primo elemento

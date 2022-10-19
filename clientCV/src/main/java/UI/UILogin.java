@@ -109,7 +109,7 @@ public class UILogin extends JFrame implements ActionListener {
         );
 
         username.setHint("Username");
-        username.setPrefixIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-5865.png")));
+        username.setPrefixIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/user-5865.png"))));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setOpaque(false);
@@ -128,7 +128,7 @@ public class UILogin extends JFrame implements ActionListener {
         );
 
         password.setHint("Password");
-        password.setPrefixIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car-key-5803.png")));
+        password.setPrefixIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/car-key-5803.png"))));
 
         //password.addActionListener(evt -> jPasswordField2ActionPerformed(evt));
 
@@ -165,7 +165,7 @@ public class UILogin extends JFrame implements ActionListener {
 
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/color50ind.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel3MousePressed(evt);
