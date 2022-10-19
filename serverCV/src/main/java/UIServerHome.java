@@ -237,7 +237,7 @@ import java.util.Objects;
      public static boolean startServer(){
          try{
              server = new ServerImpl();
-             PORT = UILoginToServer.getPortLabel();
+             PORT = UILoginToServer.getPortTextField();
 
              try {
                  registry = LocateRegistry.createRegistry(PORT);
