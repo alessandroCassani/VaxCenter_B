@@ -86,7 +86,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * Label Mal di testa
      */
-    JLabel labelmalDiTesta = new JLabel("Mail di Testa");
+    JLabel labelmalDiTesta = new JLabel("Mal di Testa");
 
 
     /**
