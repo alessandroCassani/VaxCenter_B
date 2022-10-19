@@ -8,7 +8,10 @@ import UI.graphics.RoundButton;
  import java.awt.event.ActionListener;
  import java.awt.event.WindowAdapter;
  import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.ExportException;
 import java.util.Objects;
 
  /**
@@ -33,6 +36,11 @@ import java.util.Objects;
       */
      static Registry registry;
 
+     /**
+      * Nome del servizio caricato sul registry
+      */
+
+     static final String SERVICE_NAME = "VaxCenter";
      /**
       * Panel per inserire l'immagine d'interfaccia
       */
@@ -198,7 +206,7 @@ import java.util.Objects;
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == startBtn){
-            // caricamento oggetto server nel registry
+
 
              status.setText("Server is Running ...");
              sr.setVisible(true);
@@ -215,4 +223,25 @@ import java.util.Objects;
 
         }
     }
+
+     public static boolean startServer(){
+         try{
+             server = new ServerImpl();
+
+             try {
+                 registry = LocateRegistry.createRegistry(PORT);
+             }catch (ExportException e){
+                 registry = LocateRegistry.getRegistry(PORT);
+             }
+
+             registry.rebind(SERVICE_NAME, server);
+         }catch(RemoteException e){
+             e.printStackTrace();
+             return false;
+         }
+
+         return true;
+     }
 }
+
+
