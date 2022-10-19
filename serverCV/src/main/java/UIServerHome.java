@@ -254,6 +254,12 @@ import java.util.Objects;
          return true;
      }
 
+     /**
+      * Il metodo permette di rimuove un oggetto registry e compiere unbind
+      * @return true/false a seguito del corretto funzionamento
+      * @author Damiano Ficara
+      * @author Luca Perfetti
+      */
      public static boolean stopServer(){
          if(check){
              try {
