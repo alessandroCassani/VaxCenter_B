@@ -280,7 +280,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {this.dispose();
-                DBManagement.connect();
+                DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
                 new UIServerHome();}
 
         }else if(e.getSource() == showPassword){
