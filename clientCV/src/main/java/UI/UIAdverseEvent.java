@@ -55,12 +55,19 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     RoundButton registraEA = new RoundButton("REGISTRA");
 
     /**
-     * Bottone per tornare alle UICitizen
+     * Bottone per tornare alle UICitizen dalla inserisci eventi avversi
      */
     JButton backToCitizen;
 
+    /**
+     * Bottone per tornare alle UICitizen dal riepilogo
+     */
+    JButton backToCitizenR;
+
+
     //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
     JCheckBox switcha = new JCheckBox();
+
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
     /**
@@ -195,8 +202,15 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Tabella che mostra il riepilogo degli eventi avversi già registrati
      */
     JTable tabellaRiepilogo = new JTable(data, coloumn);
+    /**
+     * Label per il riepilogo note
+     */
+    JLabel riepilogoNote = new JLabel("Note:");
 
-    JLabel riepilogoNote = new JLabel("Note: nessuna nota inserita!");
+    /**
+     * Text Area riepilogo note
+     */
+    JTextArea rn = new JTextArea();
 
     //JLabel per severità e note di ogni riga
     /**
@@ -234,15 +248,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JLabel severitaEA6 = new JLabel("Severità");
 
-    static String user;
 
 
-    public UIAdverseEvent(String username){
+    public UIAdverseEvent(String text) {
 
-        user = username;
-        Border bordobtn = new LineBorder(new Color(0,49,83), 4, true);
-        Border bordobtn_AE = new LineBorder(new Color(0,49,83), 2, true);
-        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
+        Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
 
 
@@ -250,6 +261,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.setLayout(null);
         infoUtente.setBackground(new Color(181, 226, 232));
         infoUtente.setBorder(bordobtn_AE);
+
 
         //Informazioni InfoUtente
         JLabel titoloRiepilogo = new JLabel("Riepilogo Dati:");
@@ -262,40 +274,47 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         JLabel cognomeUtente = new JLabel("Cognome: ");
         cognomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        cognomeUtente.setBounds(20, 150, 200, 20);
+        cognomeUtente.setBounds(20, 160, 200, 20);
 
         JLabel codiceFiscaleUtente = new JLabel("Codice Fiscale: ");
         codiceFiscaleUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        codiceFiscaleUtente.setBounds(20, 200, 200, 20);
+        codiceFiscaleUtente.setBounds(20, 220, 200, 20);
 
         JLabel emailUtente = new JLabel("Email: ");
         emailUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        emailUtente.setBounds(20, 250, 200, 20);
+        emailUtente.setBounds(20, 280, 200, 20);
 
         JLabel UserIDUtente = new JLabel("UserID: ");
         UserIDUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        UserIDUtente.setBounds(20, 300, 200, 20);
+        UserIDUtente.setBounds(20, 340, 200, 20);
 
         JLabel IDUnivocoUtente = new JLabel("ID Univoco: ");
         IDUnivocoUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        IDUnivocoUtente.setBounds(20, 350, 200, 20);
-
-        JLabel VaccinatoPresso = new JLabel("Vaccinato presso: ");
-        VaccinatoPresso.setFont(new Font("Georgia", Font.BOLD, 15));
-        VaccinatoPresso.setBounds(20, 400, 200, 20);
+        IDUnivocoUtente.setBounds(20, 400, 200, 20);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
 
         backToCitizen = new JButton(ind);
-        backToCitizen.setBounds(375, 7, 55, 55);
+        backToCitizen.setBounds(10, 10, 55, 55);
         backToCitizen.setFont(new Font("Georgia", Font.BOLD, 20));
         backToCitizen.setBackground(new Color(181, 226, 232));
         backToCitizen.setForeground(Color.WHITE);
-        backToCitizen.setBorder(bordobtnInd);
+        backToCitizen.setBorder(bordobtnPul);
         backToCitizen.setFocusable(false);
         backToCitizen.addActionListener(this);
         backToCitizen.setOpaque(true);
         backToCitizen.setContentAreaFilled(false);
+
+        backToCitizenR = new JButton(ind);
+        backToCitizenR.setBounds(10, 10, 55, 55);
+        backToCitizenR.setFont(new Font("Georgia", Font.BOLD, 20));
+        backToCitizenR.setBackground(new Color(181, 226, 232));
+        backToCitizenR.setForeground(Color.WHITE);
+        backToCitizenR.setBorder(bordobtnPul);
+        backToCitizenR.setFocusable(false);
+        backToCitizenR.addActionListener(this);
+        backToCitizenR.setOpaque(true);
+        backToCitizenR.setContentAreaFilled(false);
 
 
         switcha.setFont(new Font("Arial", Font.BOLD, 15));
@@ -310,9 +329,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.add(emailUtente);
         infoUtente.add(UserIDUtente);
         infoUtente.add(IDUnivocoUtente);
-        infoUtente.add(VaccinatoPresso);
 
-        infoUtente.add(backToCitizen);
+
         infoUtente.add(switcha);
 
         add(infoUtente);
@@ -418,25 +436,36 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         noteGenerali.setLineWrap(true);
         noteGenerali.setWrapStyleWord(true);
 
+        //riepilogo note
+        rn.setFont(new Font("Arial", Font.BOLD, 12));
+        rn.setBounds(100, 450, 360, 70);
+        rn.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
+        rn.setLineWrap(true);
+        rn.setWrapStyleWord(true);
+        rn.setEditable(false);
+
 
         //Panel info Eventi avversi già registrati
+
 
         riepilogoEventiAvversiPersonali.setBounds(0, 0, 550, 500);
         riepilogoEventiAvversiPersonali.setLayout(null);
         riepilogoEventiAvversiPersonali.setBackground(new Color(209, 245, 250));
 
         giaRegistrati.setFont(new Font("Georgia", Font.BOLD, 15));
-        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(175, 10, 300, 20);
+        riepilogoEventiAvversiPersonali.add(giaRegistrati).setBounds(180, 25, 300, 20);
         tabellaRiepilogo.setFont(new Font("Georgia", Font.BOLD, 15));
-        tabellaRiepilogo.setBounds(50, 50, 360, 350);
+        tabellaRiepilogo.setBounds(100, 70, 360, 350);
         tabellaRiepilogo.setBackground(new Color(209, 245, 250));
         tabellaRiepilogo.setRowHeight(50);
         tabellaRiepilogo.setBorder(bordobtn_AE);
         tabellaRiepilogo.setEnabled(false);
-        riepilogoNote.setBounds(50, 400, 400, 100);
+        riepilogoNote.setBounds(100, 430, 400, 15);
         riepilogoNote.setFont(new Font("Georgia", Font.BOLD, 12));
         riepilogoEventiAvversiPersonali.add(riepilogoNote);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
+        riepilogoEventiAvversiPersonali.add(rn);
+        riepilogoEventiAvversiPersonali.add(backToCitizenR);
 
 
         add(riepilogoEventiAvversiPersonali);
@@ -448,7 +477,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.setBackground(new Color(209, 245, 250));
 
         labelinsEventiAvversi.setFont(new Font("Georgia", Font.BOLD, 15));
-        labelinsEventiAvversi.setBounds(20, 20, 200, 20);
+        labelinsEventiAvversi.setBounds(270, 20, 200, 20);
 
         inserisciEventiAvversi.add(labelinsEventiAvversi);
         inserisciEventiAvversi.add(severitaEA1);
@@ -471,6 +500,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(severitatachicardia);
         inserisciEventiAvversi.add(labelCrisiIpertensiva);
         inserisciEventiAvversi.add(severitaCrisiIpertensiva);
+        inserisciEventiAvversi.add(backToCitizen);
 
         registraEA.setBounds(300, 425, 150, 50);
         registraEA.setFont(new Font("Georgia", Font.BOLD, 15));
@@ -543,6 +573,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         if (e.getSource() == backToCitizen) {
             this.dispose();
             new UICitizen();
+        } else if (e.getSource() == backToCitizenR) {
+            this.dispose();
+            new UICitizen();
         } else if (e.getSource() == switcha) {
             //Passaggio da un Panel all'altro
             //in seguito inserire comando automatico che capisca se gli eventi avversi sono registrati o meno
@@ -558,7 +591,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             }
 
 
-            }else if (e.getSource() == pulisciEventiAvversi) {
+        }else if (e.getSource() == pulisciEventiAvversi) {
             noteGenerali.setText("");
             severitaMDT.setSelectedItem("");
             severitaFebbre.setSelectedItem("");
