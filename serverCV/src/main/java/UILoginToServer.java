@@ -300,14 +300,25 @@ public class UILoginToServer extends JFrame implements ActionListener {
     }
 
     /**
-     * il metodo permette di ottenere dalla Label raffigurante la porta il valore inserito dall'utente
+     * il metodo permette di ottenere dalla TextField raffigurante la porta il valore inserito dall'utente
      * @return porta scelta dall'utente
      * @author Damiano Ficara
      * @author Luca Perfetti
      */
-     public static Integer getPortLabel() {
+     public static Integer getPortTextField() {
         String port =  portTextField.getText();
         return Integer.parseInt(port);
 
+
+    }
+    /**
+     * il metodo permette di ottenere dalla TextField raffigurante host il valore inserito dall'utente
+     * @return host scelto dall'utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+
+    public static String getHostTextField() {
+        return hostTextField.getText();
     }
 }
