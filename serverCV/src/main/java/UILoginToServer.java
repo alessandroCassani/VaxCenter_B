@@ -31,7 +31,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * label rappresentante la stringa port
      */
 
-    JLabel portLabel =new JLabel("Port");
+    static JLabel portLabel =new JLabel("Port");
 
     /**
      * campo di testo dove inserire la porta
@@ -297,5 +297,17 @@ public class UILoginToServer extends JFrame implements ActionListener {
             showPassword.setSelected(false);
 
         }
+    }
+
+    /**
+     * il metodo permette di ottenere dalla Label raffigurante la porta il valore inserito dall'utente
+     * @return porta scelta dall'utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+     public static Integer getPortLabel() {
+        String port =  portLabel.getText();
+        return Integer.parseInt(port);
+
     }
 }

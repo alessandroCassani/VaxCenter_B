@@ -39,8 +39,15 @@ import java.util.Objects;
      /**
       * Nome del servizio caricato sul registry
       */
-
      static final String SERVICE_NAME = "VaxCenter";
+     /**
+      * Tentativi di utilizzo massimi del server
+      */
+     static final int MAX_TIMES  = 3;
+     /**
+      * Variabile che identifica possibili tenetivi
+      */
+     static int times  = 0;
      /**
       * Panel per inserire l'immagine d'interfaccia
       */
@@ -206,9 +213,11 @@ import java.util.Objects;
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == startBtn){
-
-
-             status.setText("Server is Running ...");
+             if(startServer())
+                status.setText("Server is Running ...");
+             else {
+                 status.setText("Server doesn't work correctly ...");
+             }
              sr.setVisible(true);
              so.setVisible(false);
         } else if(e.getSource() == stopBtn){
@@ -224,9 +233,16 @@ import java.util.Objects;
         }
     }
 
+     /**
+      * Il metodo permette di istanziare un nuovo oggetto registry e definire un nuovo oggetto remoto
+      * @return true/false a seguito del corretto funzionamento
+      * @author Damiano Ficara
+      * @author Luca Perfetti
+      */
      public static boolean startServer(){
          try{
              server = new ServerImpl();
+             PORT = UILoginToServer.getPortLabel();
 
              try {
                  registry = LocateRegistry.createRegistry(PORT);
