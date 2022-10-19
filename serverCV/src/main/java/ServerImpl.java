@@ -19,7 +19,12 @@ import java.util.TreeSet;
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
-     * costruttore vuoto
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
+
+    /**
+     * Costruttore vuoto
      * @throws RemoteException eccezione RMI
      */
     protected ServerImpl() throws RemoteException {
