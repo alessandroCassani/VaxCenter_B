@@ -23,6 +23,11 @@
             <version>1.0</version>
             <scope>import</scope>
         </dependency>
+        <dependency>
+            <groupId>it.uninsubria</groupId>
+            <artifactId>serverCV</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

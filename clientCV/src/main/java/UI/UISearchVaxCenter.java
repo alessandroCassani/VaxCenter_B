@@ -192,7 +192,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
-                // cerca per nome
+
             } else if(option == 1) {
                 // cerca per comune
 
