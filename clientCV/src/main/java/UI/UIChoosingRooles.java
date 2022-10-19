@@ -79,6 +79,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("roman_baseline", Font.PLAIN, 19));
         scelta.setBounds(590, 100, 400, 30);
+        //scelta.setForeground(new Color(7, 114, 88));
         scelta.setForeground(new Color(19, 47, 164));
 
         ImageIcon op = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/operatorevaccinale.png")));
