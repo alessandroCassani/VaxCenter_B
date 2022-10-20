@@ -268,14 +268,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public boolean isIdCorrect(String id,String codiceFiscale) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.
-                    prepareStatement("SELECT id FROM vaccinati" +
+                    prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
             ps.setString(1, codiceFiscale);
 
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 String risultato = resultSet.getString(1);
-                return risultato.equals("id");
+                return risultato.equals(id);
             }
         } catch (SQLException e) {
             e.printStackTrace();
