@@ -9,7 +9,7 @@ public class ServerPointer {
         return registry;
     }
 
-    public static void setRegistry(){
-
+    public static void setRegistry(Registry registry){
+        ServerPointer.registry = registry;
     }
 }
