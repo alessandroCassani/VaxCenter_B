@@ -161,15 +161,6 @@ public class DBManagement {
 
                     + "create table if not exists eventi_avversi("
                     + "username VARCHAR(30) PRIMARY KEY,"
-                    + "mal_di_testa BOOLEAN,"
-                    + "febbre BOOLEAN,"
-                    + "tachicardia BOOLEAN,"
-                    + "dolori_muscolari BOOLEAN,"
-                    + "linfoadenopatia BOOLEAN,"
-                    + "crisi_ipertensiva BOOLEAN);"
-
-                    + "create table if not exists severita("
-                    + "username VARCHAR(30) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "tachicardia INTEGER,"

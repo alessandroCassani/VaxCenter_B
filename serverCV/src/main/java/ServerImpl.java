@@ -136,21 +136,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
-                    "VALUES(?,?,?,?,?,?,?)");
-
-            // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
-            //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
             int count;
-            preparedStatement.setString(1,user);
-            for (count=2;count<8;count++) {
-                preparedStatement.setBoolean(count, eventiAvversi.getSintomi().get(count-1).getSeverita() != 0);
-            }
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-
-
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO severita(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
@@ -285,7 +272,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                    "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                    "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
