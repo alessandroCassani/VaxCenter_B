@@ -16,4 +16,8 @@ public class ServerPointer {
     public static void setRegistry(Registry registry){
         ServerPointer.registry = registry;
     }
+
+    public static ServerInterface getStub(){
+
+    }
 }
