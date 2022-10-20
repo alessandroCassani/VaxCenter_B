@@ -20,4 +20,8 @@ public class ServerPointer {
     public static ServerInterface getStub(){
         return stub;
     }
+
+    public static void setStub(ServerInterface stub){
+        ServerPointer.stub = stub;
+    }
 }
