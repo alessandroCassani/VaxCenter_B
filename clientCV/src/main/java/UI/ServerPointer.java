@@ -5,6 +5,11 @@ import database.UILoginToServer;
 
 import java.rmi.registry.Registry;
 
+/**
+ * Classe che permette la comunicazione con il server remoto
+ *
+ * @author Luca Perfetti
+ */
 public class ServerPointer {
     /**
      * Oggetto che permette la comunicazione tra client e server
@@ -16,6 +21,12 @@ public class ServerPointer {
      */
     static ServerInterface stub;
 
+    /**
+     * Metodo che per mette di avviare il programma
+     * @param args
+     *
+     * @author Luca Perfetti
+     */
     public static void main(String[] args){
         new UILoginToServer();
     }
