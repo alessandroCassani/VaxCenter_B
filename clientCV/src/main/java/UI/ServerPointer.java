@@ -32,7 +32,7 @@ public class ServerPointer {
 
     /**
      * Metodo che permette di aggiornare l'oggetto registry
-     * @param registry il registry l'oggetto registry
+     * @param registry l'oggetto registry
      *
      * @author Luca Perfetti
      */
@@ -40,10 +40,22 @@ public class ServerPointer {
         ServerPointer.registry = registry;
     }
 
+    /**
+     * Metodo che ritorna l'oggetto stub
+     * @return l'oggetto stub
+     *
+     * @author Luca Perfetti
+     */
     public static ServerInterface getStub(){
         return stub;
     }
 
+    /**
+     * Metodo che permette di aggiornare l'oggetto stub
+     * @param stub l'oggetto stub
+     *
+     * @author Luca Perfetti
+     */
     public static void setStub(ServerInterface stub){
         ServerPointer.stub = stub;
     }
