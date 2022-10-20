@@ -1,9 +1,13 @@
 package UI;
 
+import database.ServerInterface;
+
 import java.rmi.registry.Registry;
 
 public class ServerPointer {
     static Registry registry;
+
+    static ServerInterface stub;
 
     public static Registry getRegistry(){
         return registry;
