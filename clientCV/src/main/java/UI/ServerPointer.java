@@ -18,6 +18,6 @@ public class ServerPointer {
     }
 
     public static ServerInterface getStub(){
-
+        return stub;
     }
 }
