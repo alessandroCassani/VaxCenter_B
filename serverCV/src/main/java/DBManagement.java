@@ -167,7 +167,13 @@ public class DBManagement {
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
-                    + "note VARCHAR(256));";
+                    + "note VARCHAR(256));"
+
+                    +"create table if not exists dataset_comuni("
+                    +"comune_localita' VARCHAR(40) PRIMARY KEY,"
+                    +"provincia VARCHAR(2),"
+                    +"cap INTEGER,"
+                    +"regione VARCHAR(21));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
