@@ -254,6 +254,36 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
+
+    /**
+     * metodo che permette la verifica dell'inserimento del corretto id in fase di registrazione
+     * @param id id del cittadino
+     * @param codiceFiscale codice fiscale del cittadino
+     * @return true se la stringa id inserita e' corretta, false altrimenti
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    @Override
+    public boolean isIdCorrect(String id,String codiceFiscale) throws RemoteException {
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.
+                    prepareStatement("SELECT id FROM vaccinati" +
+                            "WHERE codice_fiscale = ?");
+            ps.setString(1, codiceFiscale);
+
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                String risultato = resultSet.getString(1);
+                return risultato.equals("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
     /**
      * il metodo permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
      *
@@ -272,7 +302,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                    "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -336,7 +366,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
                     "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
-           // ps.setString(1,nome);
+            // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()){
