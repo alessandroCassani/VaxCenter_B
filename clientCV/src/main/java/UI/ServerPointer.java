@@ -20,10 +20,22 @@ public class ServerPointer {
         new UILoginToServer();
     }
 
+    /**
+     * Metodo che permette di ottenere un riferimento al registro sull'host corrente
+     * @return l'oggetto registry
+     *
+     * @author Luca Perfetti
+     */
     public static Registry getRegistry(){
         return registry;
     }
 
+    /**
+     * Metodo che permette di aggiornare l'oggetto registry
+     * @param registry il registry l'oggetto registry
+     *
+     * @author Luca Perfetti
+     */
     public static void setRegistry(Registry registry){
         ServerPointer.registry = registry;
     }
