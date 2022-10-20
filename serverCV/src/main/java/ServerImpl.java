@@ -407,4 +407,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return listaNomiCentri;
         } catch (SQLException e) {return null;}
     }
+
+
 }
