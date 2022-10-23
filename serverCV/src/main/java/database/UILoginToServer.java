@@ -278,7 +278,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            if (!pswTextField.getText().equals("")){
+            if (pswTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {this.dispose();
