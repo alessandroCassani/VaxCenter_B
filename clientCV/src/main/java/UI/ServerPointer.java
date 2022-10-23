@@ -27,6 +27,7 @@ public class ServerPointer {
      *
      * @author Luca Perfetti
      */
+    // Punto di avvio del server
     public static void main(String[] args){
         new UILoginToServer();
     }

@@ -87,7 +87,7 @@ public class DBManagement {
                 createTable();
                 return true;
             }else{
-                System.out.println("Connection failed");
+                System.out.println("Connection failed"); // va messo come pop-up
             }
         }catch (Exception e){
             createDB();

@@ -36,7 +36,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
      JLabel portLabel =new JLabel("Port");
 
     /**
-     * campo di testo dove inserire la porta
+     * campo di testo dove inserire la porta del database
      */
 
     static JTextField portTextField = new JTextField();

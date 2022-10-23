@@ -29,7 +29,7 @@ import java.util.Objects;
      /**
       * Porta sulla quale si ascolterà il server
       */
-     private static int PORT;
+     private static int PORT = 1099;
      /**
       *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
       */
@@ -239,7 +239,6 @@ import java.util.Objects;
      public static boolean startServer(){
          try{
              server = new ServerImpl();
-             PORT = UILoginToServer.getPortTextField();
 
              try {
                  registry = LocateRegistry.createRegistry(PORT);
