@@ -1,8 +1,8 @@
 package UI;
 
 import database.ServerInterface;
-import database.UILoginToServer;
 
+import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 /**
@@ -11,6 +11,10 @@ import java.rmi.registry.Registry;
  * @author Luca Perfetti
  */
 public class ServerPointer {
+    /**
+     * Porta sulla quale si ascolterà il server
+     */
+    private static int PORT = 1099;
     /**
      * Oggetto che permette la comunicazione tra client e server
      */
@@ -29,7 +33,7 @@ public class ServerPointer {
      */
     // Punto di avvio del server
     public static void main(String[] args){
-        new UILoginToServer();
+
     }
 
     /**
@@ -71,4 +75,12 @@ public class ServerPointer {
     public static void setStub(ServerInterface stub){
         ServerPointer.stub = stub;
     }
+
+
+    public static void connectToRMI() {
+        ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
+
+
+    }
+
 }
