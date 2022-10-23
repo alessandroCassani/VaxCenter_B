@@ -87,6 +87,12 @@ public class ServerPointer {
     }
 
 
+    /**
+     * Metodo che permette di inizializzare l'oggetto necessario alla comunicazione RMI
+     *
+     * @author Luca Perfetti
+     * @author Damiano Ficara
+     */
     public static void connectToRMI()
     {
         try {
