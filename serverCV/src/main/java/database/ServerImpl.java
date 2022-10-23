@@ -1,7 +1,8 @@
 package database;
 
+import database.DBManagement;
 import util.*;
-import database.*;
+
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -109,13 +110,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_nascita,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?,?)");
             ps.setString(1, numero.toString());
-            ps.setString(2,vaccinato.getNome());
-            ps.setString(3,vaccinato.getCognome());
-            ps.setString(4,vaccinato.getCodFisc());
-            ps.setString(5,vaccinato.getDataNascita().toString());
-            ps.setString(6,vaccinato.getDataSomministrazione().toString());
-            ps.setString(7,vaccinato.getVaccino().toString());
-            ps.setString(8,vaccinato.getCentroVaccinale().getNome());
+            ps.setString(2,vaccinato.getCentroVaccinale().getNome());
+            ps.setString(3,vaccinato.getNome());
+            ps.setString(4,vaccinato.getCognome());
+            ps.setString(5,vaccinato.getCodFisc());
+            ps.setString(6,vaccinato.getDataNascita().toString());
+            ps.setString(7,vaccinato.getDataSomministrazione().toString());
+            ps.setString(8,vaccinato.getVaccino().toString());
             ps.executeUpdate();
             ps.close();
 
@@ -137,21 +138,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva) " +
-                    "VALUES(?,?,?,?,?,?,?)");
-
-            // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
-            //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
             int count;
-            preparedStatement.setString(1,user);
-            for (count=2;count<8;count++) {
-                preparedStatement.setBoolean(count, eventiAvversi.getSintomi().get(count-1).getSeverita() != 0);
-            }
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-
-
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO severita(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
@@ -268,6 +256,36 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
+
+    /**
+     * metodo che permette la verifica dell'inserimento del corretto id in fase di registrazione
+     * @param id id del cittadino
+     * @param codiceFiscale codice fiscale del cittadino
+     * @return true se la stringa id inserita e' corretta, false altrimenti
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    @Override
+    public boolean isIdCorrect(String id,String codiceFiscale) throws RemoteException {
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.
+                    prepareStatement("SELECT id FROM vaccinati " +
+                            "WHERE codice_fiscale = ?");
+            ps.setString(1, codiceFiscale);
+
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                String risultato = resultSet.getString(1);
+                return risultato.equals(id);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
     /**
      * il metodo permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
      *
@@ -286,7 +304,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM severita JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {

@@ -98,6 +98,7 @@ public class ServerPointer {
         try {
             ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
+            System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
         }

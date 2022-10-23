@@ -216,6 +216,7 @@ import java.util.Objects;
 
         if(e.getSource() == startBtn) {
             startServer();
+            status.setText("Server is Running ...");
             sr.setVisible(true);
             so.setVisible(false);
         } else if(e.getSource() == stopBtn){

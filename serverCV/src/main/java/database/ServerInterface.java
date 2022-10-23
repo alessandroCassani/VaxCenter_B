@@ -97,6 +97,18 @@ public interface ServerInterface extends Remote {
     boolean isVaccinatedRegistrated(String user) throws RemoteException;
 
     /**
+     * segnatura del metodo che permette di controllare se l'id inserito dal cittadino in fase
+     * di registrazione combacia con il suo id registrato a sistema (tabella vaccinati)
+     * @param id id del cittadino
+     * @param codiceFiscale codice fiscale del cittadino
+     * @return true o false in base all'esito dell'operazione
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    boolean isIdCorrect(String id,String codiceFiscale) throws  RemoteException;
+
+    /**
      * segnatura del metodo che permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
