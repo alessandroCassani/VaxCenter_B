@@ -2,6 +2,9 @@ package UI;
 
 import database.ServerInterface;
 
+import javax.swing.*;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
@@ -15,6 +18,10 @@ public class ServerPointer {
      * Porta sulla quale si ascolterà il server
      */
     private static int PORT = 1099;
+    /**
+     * Nome del servizio caricato sul registry
+     */
+    static final String SERVICE_NAME = "VaxCenter";
     /**
      * Oggetto che permette la comunicazione tra client e server
      */
@@ -77,8 +84,15 @@ public class ServerPointer {
     }
 
 
-    public static void connectToRMI() {
-        ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
+    public static void connectToRMI()
+    {
+        try {
+            ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
+            ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
+        }catch (RemoteException | NotBoundException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
