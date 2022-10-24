@@ -8,12 +8,12 @@ public class CapProvincia {
     /**
      * cap del comune
      */
-    private String cap;
+    private final String cap;
 
     /**
      * provincia del comune
      */
-    private String provincia;
+    private final String provincia;
 
     /**
      * costruttore che permette la creazione di un oggetto passondo ai campi privati cap e provincia

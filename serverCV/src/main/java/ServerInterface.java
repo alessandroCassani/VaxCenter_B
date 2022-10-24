@@ -126,7 +126,7 @@ public interface ServerInterface extends Remote {
 
 
     /**
-     * segnatura del metodo che permette la ricerca di un centro vaccinale
+     * segnatura del metodo che permette la ricerca di un centro vaccinale tramite nome
      * @param nome nome del centro vaccinale (anche non completa)
      * @return lista di centri vaccinali
      * @throws RemoteException eccezione rmi
@@ -134,7 +134,7 @@ public interface ServerInterface extends Remote {
     LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws  RemoteException;
 
     /**
-     * segnatura del emtodo che permette la ricerca dei nomi dei centri avccinali esistenti
+     * segnatura del metodo che permette la ricerca dei nomi dei centri avccinali esistenti
      * @return lista dei nomi dei centri vaccinali esistenti
      * @throws RemoteException eccezione rmi
      *
