@@ -1,15 +1,15 @@
 public class CapProvincia {
 
-    private String comune;
+    private String cap;
 
     private String provincia;
 
 
-    public CapProvincia(String com,String prov){
-        comune = com;
+    public CapProvincia(String cap,String prov){
+        this.cap = cap;
         provincia = prov;
     }
 
-    public String getComune(){return comune;}
+    public String getComune(){return cap;}
     public String getProvincia(){return provincia;}
 }

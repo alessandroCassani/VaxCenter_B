@@ -1,3 +1,5 @@
+import org.postgresql.util.PSQLException;
+
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -86,7 +88,7 @@ public class DBManagement {
         try{
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-            if(connection!=null){
+            if(connection==null){
                 createTable();
                 insertDataSet();
                 return true;
@@ -116,6 +118,7 @@ public class DBManagement {
             preparedstmt.execute();
             preparedstmt.close();
             createTable();
+            insertDataSet();
             return true;
         }catch(Exception e){
             System.out.println(e);
@@ -195,31 +198,28 @@ public class DBManagement {
      *
      * @author Alessandro Cassani
      */
-    private static void insertDataSet() throws IOException {
-        URL resource = DBManagement.class.getResource("/dataset/dataset_comuni");
-        File dataset = null;
+    private static void insertDataSet() {
         try {
+            PreparedStatement ps;
+            URL resource = DBManagement.class.getResource("/dataset/dataset_comuni");
+            File dataset = null;
+            String ds = "";
             assert resource != null;
             dataset = Paths.get(resource.toURI()).toFile();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        assert dataset != null;
-        BufferedReader br = new BufferedReader(new FileReader(dataset));
-        StringBuilder sb = new StringBuilder();
-        String line = br.readLine();
+            assert dataset != null;
+            BufferedReader br = new BufferedReader(new FileReader(dataset));
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            int i = 0;
 
-        while (line != null) {
-            System.out.println(line);
-            sb.append(line);
-            sb.append("\n");
-            line = br.readLine();
-        }
-        String ds = sb.toString();
-
-        try {
-            PreparedStatement ps = getDB().connection.prepareStatement(ds);
-            ps.executeUpdate();
-            ps.close();
-        } catch (SQLException e) {e.printStackTrace();}
-    }}
+            while (line != null) {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+                i++;
+            }
+            ds = sb.toString();
+            getDB().connection.prepareStatement(ds).executeUpdate();
+        }catch(Exception e){e.printStackTrace();}
+    }
+}
