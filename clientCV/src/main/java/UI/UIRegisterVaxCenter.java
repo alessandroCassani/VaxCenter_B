@@ -273,10 +273,9 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                         (nome,Qualificatore.getQualificatore(qualifica),nomeIndirizzo,civico,
                                 "co","como", 22070, Tipologia.getTipo(tipologiaCentro)));
                 JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-            } catch (SQLException ex) {
+            } catch (SQLException | RemoteException ex) {
                 throw new RuntimeException(ex);
-            } catch (RemoteException ex) {
-                throw new RuntimeException(ex);
+
         }
     }
 
