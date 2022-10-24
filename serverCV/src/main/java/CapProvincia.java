@@ -34,7 +34,7 @@ public class CapProvincia implements Serializable {
      * metodo che permette l'output della stringa cap
      * @return string rappresentante il cap
      */
-    public String getComune(){return cap;}
+    public String getCap(){return cap;}
 
     /**
      * metodo che permette l'output della stringa rappresentante la provincia
