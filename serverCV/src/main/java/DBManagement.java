@@ -1,9 +1,16 @@
+import org.postgresql.util.PSQLException;
+
+import java.io.*;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.sql.*;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle
  *
  * @author Luca Perfetti
+ * @author Alessandro Cassani
  */
 
 public class DBManagement {
@@ -30,7 +37,7 @@ public class DBManagement {
     /**
      * Username dell'utente per accedere al server Postgres
      */
-     static String userDB;
+    static String userDB;
 
     /**
      * Password dell'utente per accedere al server Postgres
@@ -81,11 +88,10 @@ public class DBManagement {
         try{
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-            if(connection!=null){
+            if(connection==null) {
                 createTable();
+                insertDataSet();
                 return true;
-            }else{
-                System.out.println("Connection failed");
             }
         }catch (Exception e){
             createDB();
@@ -110,6 +116,7 @@ public class DBManagement {
             preparedstmt.execute();
             preparedstmt.close();
             createTable();
+            insertDataSet();
             return true;
         }catch(Exception e){
             System.out.println(e);
@@ -128,7 +135,7 @@ public class DBManagement {
 
         try{
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-            
+
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome_centro_vaccinale VARCHAR(30),"
@@ -167,7 +174,13 @@ public class DBManagement {
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
-                    + "note VARCHAR(256));";
+                    + "note VARCHAR(256));"
+
+                    +"create table if not exists dataset_comuni("
+                    +"comune VARCHAR(40) PRIMARY KEY,"
+                    +"provincia VARCHAR(2),"
+                    +"cap INTEGER,"
+                    +"regione VARCHAR(21));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
@@ -176,4 +189,35 @@ public class DBManagement {
         }catch(Exception e){
             e.printStackTrace();}
         return false;}
+
+
+    /**
+     * il metodo permette di inserire il dataSet di comuni province cap e regione italiane
+     *
+     * @author Alessandro Cassani
+     */
+    private static void insertDataSet() {
+        try {
+            PreparedStatement ps;
+            URL resource = DBManagement.class.getResource("/dataset/dataset_comuni");
+            File dataset = null;
+            String ds = "";
+            assert resource != null;
+            dataset = Paths.get(resource.toURI()).toFile();
+            assert dataset != null;
+            BufferedReader br = new BufferedReader(new FileReader(dataset));
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            int i = 0;
+
+            while (line != null) {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+                i++;
+            }
+            ds = sb.toString();
+            getDB().connection.prepareStatement(ds).executeUpdate();
+        }catch(Exception e){e.printStackTrace();}
+    }
 }

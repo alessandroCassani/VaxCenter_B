@@ -121,24 +121,40 @@ public interface ServerInterface extends Remote {
      * @param tipologia tipologia di centro vaccinale da ricercare
      * @return lista di centri vaccinali
      * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro cassani
      */
     LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws  RemoteException;
 
 
     /**
-     * segnatura del metodo che permette la ricerca di un centro vaccinale
+     * segnatura del metodo che permette la ricerca di un centro vaccinale tramite nome
      * @param nome nome del centro vaccinale (anche non completa)
      * @return lista di centri vaccinali
      * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro cassani
      */
     LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws  RemoteException;
 
     /**
-     * segnatura del emtodo che permette la ricerca dei nomi dei centri avccinali esistenti
+     * segnatura del metodo che permette la ricerca dei nomi dei centri avccinali esistenti
      * @return lista dei nomi dei centri vaccinali esistenti
      * @throws RemoteException eccezione rmi
      *
      * @author Alessandro Cassani
      */
     LinkedList<String> getNomicentriVaccinali() throws RemoteException;
+
+
+    /**
+     * il metodo permette di avere il cap e la provincia del comune inserito come parametro
+     * @param comune comune di cui si vogliono avere i dati
+     * @return cap e provincia del comune
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+    CapProvincia getComuneInfo(String comune) throws RemoteException;
+
 }
