@@ -101,6 +101,7 @@ public class ServerPointer {
             System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
+            System.out.println("Impossibile connettersi al server remoto");
         }
 
 

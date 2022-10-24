@@ -2,6 +2,9 @@ package UI;
 
 import UI.graphics.RoundButton;
 import UI.graphics.RoundJTextField;
+import util.CentroVaccinale;
+import util.Qualificatore;
+import util.Tipologia;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -11,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -265,11 +270,21 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             new UIVaccineOperator();
         } else if(e.getSource() == registra){
             //this.dispose();
-            if (!nomeCentroVaccinale.getText().equals("")){
+            if (nomeCentroVaccinale.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
-                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale("Montano Lucino Center", Qualificatore.VIA, "varese","39","CO","cagno"
+                            ,22043, Tipologia.AZIENDALE));
+                    JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (RemoteException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+
                 nomeCentroVaccinale.setEditable(false);
                 tipologia.setEnabled(false);
                 qualificatore.setEnabled(false);
