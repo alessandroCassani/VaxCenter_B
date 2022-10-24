@@ -1,3 +1,5 @@
+package database;
+
 import util.*;
 
 import java.rmi.Remote;
