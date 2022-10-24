@@ -88,12 +88,10 @@ public class DBManagement {
         try{
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
-            if(connection==null){
+            if(connection==null) {
                 createTable();
                 insertDataSet();
                 return true;
-            }else{
-                System.out.println("Connection failed");
             }
         }catch (Exception e){
             createDB();
