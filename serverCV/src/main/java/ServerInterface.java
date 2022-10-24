@@ -141,4 +141,15 @@ public interface ServerInterface extends Remote {
      * @author Alessandro Cassani
      */
     LinkedList<String> getNomicentriVaccinali() throws RemoteException;
+
+
+    /**
+     * il metodo permette di avere il cap e la provincia del comune inserito come parametro
+     * @param comune comune di cui si vogliono avere i dati
+     * @return cap e provincia del comune
+     * @throws RemoteException eccezione rmi
+     * @author Alessandro Casssani
+     */
+    CapProvincia getComuneInfo(String comune) throws RemoteException;
+
 }
