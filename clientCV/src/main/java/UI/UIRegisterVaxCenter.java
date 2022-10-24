@@ -2,6 +2,7 @@ package UI;
 
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
+import database.ServerImpl;
 import util.CentroVaccinale;
 import util.Qualificatore;
 import util.Tipologia;
@@ -16,6 +17,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -55,7 +59,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      * Area di testo per scrivere il comune del Centro Vaccinale
      */
 
-    JComboBox<String> comune = new JComboBox(new String[]{""});
+    JComboBox<String> comune;
 
     /**
      * Menù a tendina per scegliere la sigla della provincia del Centro Vaccinale
@@ -96,7 +100,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica
      */
-    public UIRegisterVaxCenter(){
+    public UIRegisterVaxCenter() {
 
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
@@ -128,6 +132,13 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         labelComune.setFont(new Font("Georgia",Font.ITALIC, 17));
         add(labelComune).setBounds(140, 280, 550, 75);
 
+        try {
+            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
+            String[] listComuni = l.toArray(new String[l.size()]);
+            comune = new JComboBox(listComuni);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
         comune.setFont(new Font("Arial", Font.ITALIC, 20));
         comune.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         comune.setPreferredSize(new Dimension(325, 75));
@@ -251,6 +262,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setSize (1000,600);
+
         getContentPane().setBackground(new Color(181, 226, 232));
         setLocationRelativeTo(null);
         setResizable(false);

@@ -409,6 +409,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {return null;}
     }
 
+    /**
+     * metodo che permette di ottenere la lista dei comuni italiani
+     * @return lista dei nomi dei comuni italiani
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     * @author Damiano Ficara
+     */
     @Override
     public CapProvincia getComuneInfo(String comune) throws RemoteException {
         String provincia = "";
