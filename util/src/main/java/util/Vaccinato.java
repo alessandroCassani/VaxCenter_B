@@ -9,6 +9,10 @@ import java.util.Date;
  * @author Alessandro Cassani
  */
 public class Vaccinato extends Persona {
+    /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
 
     /**
      * data di somministrazione del vaccino

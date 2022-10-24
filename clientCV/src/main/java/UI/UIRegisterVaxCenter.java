@@ -1,7 +1,10 @@
 package UI;
 
-import UI.graphics.RoundButton;
+import database.RoundButton;
 import UI.graphics.RoundJTextField;
+import util.CentroVaccinale;
+import util.Qualificatore;
+import util.Tipologia;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -11,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -252,6 +257,31 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+
+
+    private void registra(){
+        String nome = nomeCentroVaccinale.getText();
+        String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString());
+        String nomeIndirizzo = nomeVia.getText();
+        String civico = numeroCivico.getText();
+        String com = Objects.requireNonNull(comune.getSelectedItem().toString());
+        String provincia = siglaProvincia.getText();
+        String CAP = cap.getText();
+        String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
+        try {
+                ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
+                        (nome,Qualificatore.getQualificatore(qualifica),nomeIndirizzo,civico,
+                                "co","como", 22070, Tipologia.getTipo(tipologiaCentro)));
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            } catch (SQLException | RemoteException ex) {
+                throw new RuntimeException(ex);
+
+        }
+    }
+
+
+
+
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
      * @param e the event to be processed
@@ -265,11 +295,11 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             new UIVaccineOperator();
         } else if(e.getSource() == registra){
             //this.dispose();
-            if (!nomeCentroVaccinale.getText().equals("")){
+            if (nomeCentroVaccinale.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
-                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                registra();
                 nomeCentroVaccinale.setEditable(false);
                 tipologia.setEnabled(false);
                 qualificatore.setEnabled(false);

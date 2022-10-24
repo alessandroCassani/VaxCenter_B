@@ -1,6 +1,4 @@
-package UI;
-
-import UI.graphics.RoundButton;
+package database;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -22,24 +20,24 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * label rappresentante la stringa host
      */
-    JLabel hostLabel = new JLabel("Host:");
+     JLabel hostLabel = new JLabel("Host:");
 
     /**
      * campo di testo dove inserire l'host
      */
-    JTextField hostTextField = new JTextField();
+    static JTextField hostTextField = new JTextField();
 
     /**
      * label rappresentante la stringa port
      */
 
-    JLabel portLabel =new JLabel("Port");
+     JLabel portLabel =new JLabel("Port");
 
     /**
-     * campo di testo dove inserire la porta
+     * campo di testo dove inserire la porta del database
      */
 
-    JTextField portTextField = new JTextField();
+    static JTextField portTextField = new JTextField();
 
     /**
      * label rappresentante la stringa di default uguale a username
@@ -49,11 +47,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
     /**
      * campo di testo dove inserire lo user
      */
-    JTextField userTextField = new JTextField();
+    static JTextField userTextField = new JTextField();
     /**
      * campo di testo dove inserire lo password
      */
-    JPasswordField pswTextField = new JPasswordField();
+    static JPasswordField pswTextField = new JPasswordField();
 
     /**
      * label rappresentante password
@@ -278,11 +276,11 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            if (!pswTextField.getText().equals("")){
+            if (pswTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {this.dispose();
-                //verifica accesso db con metodo connect
+                DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
                 new UIServerHome();}
 
         }else if(e.getSource() == showPassword){
@@ -299,5 +297,50 @@ public class UILoginToServer extends JFrame implements ActionListener {
             showPassword.setSelected(false);
 
         }
+    }
+
+    /**
+     * il metodo permette di ottenere dalla TextField raffigurante la porta il valore inserito dall'utente
+     * @return porta scelta dall'utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+     public static Integer getPortTextField() {
+        String port =  portTextField.getText();
+        return Integer.parseInt(port);
+
+
+    }
+    /**
+     * il metodo permette di ottenere dalla TextField host inserito dall'utente
+     * @return host scelto dall'utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+
+    public static String getHostTextField() {
+        return hostTextField.getText();
+    }
+
+    /**
+     * il metodo permette di ottenere dalla TextField il nome utente inserito dall'utente
+     * @return nome utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+
+    public static String getUserTextField() {
+        return userTextField.getText();
+    }
+
+    /**
+     * il metodo permette di ottenere dalla PasswordField la password inserita dall'utente
+     * @return nome utente
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+    public static String getPswTextField() {
+        String pwd = String.valueOf(pswTextField.getPassword());
+        return pwd;
     }
 }

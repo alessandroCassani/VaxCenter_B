@@ -15,7 +15,7 @@ import java.util.Objects;
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
 import CheckData.PasswordValidator;
-import UI.graphics.RoundButton;
+import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 

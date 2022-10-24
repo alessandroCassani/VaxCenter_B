@@ -9,9 +9,14 @@ import java.io.Serializable;
  public class Account implements Serializable {
 
     /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
+    /**
      * userId dell'account
      */
     private final String userId;
+
 
     /**
      * password dell'account

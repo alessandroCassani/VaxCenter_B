@@ -1,8 +1,6 @@
- package UI;
+package database;
 
- import UI.graphics.RoundButton;
-
- import javax.swing.*;
+import javax.swing.*;
  import javax.swing.border.Border;
  import javax.swing.border.LineBorder;
  import java.awt.*;
@@ -10,7 +8,13 @@
  import java.awt.event.ActionListener;
  import java.awt.event.WindowAdapter;
  import java.awt.event.WindowEvent;
- import java.util.Objects;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.ExportException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.Objects;
 
  /**
   * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
@@ -21,8 +25,31 @@
  public class UIServerHome extends JFrame implements ActionListener {
 
      /**
-      * Panel per inserire l'immagine d'interfaccia
+      * Porta sulla quale si ascolterà il server
       */
+     private static int PORT = 1099;
+     /**
+      *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
+      */
+     static ServerImpl server;
+
+     /**
+      * Oggetto <code>Registry</code> che mette a disposizione metodi per le operazioni relative ai riferimenti degli oggetti remoti
+      */
+     static Registry registry;
+
+     /**
+      * Nome del servizio caricato sul registry
+      */
+     static final String SERVICE_NAME = "VaxCenter";
+     /**
+      * Tentativi di utilizzo massimi del server
+      */
+     static boolean check = false;
+     /**
+      * Variabile booleana che tiene traccia dello stato corrente del server
+      */
+
      JPanel immagine = new JPanel();
      /**
       * Panel per inserire l'immagine del server running
@@ -54,7 +81,7 @@
     JLabel status = new JLabel();
 
      /**
-      * Bottone per tornare nell'interfaccia UILoginToServer
+      * Bottone per tornare nell'interfaccia database.UILoginToServer
       */
 
      JButton backToLoginToServer;
@@ -184,15 +211,14 @@
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == startBtn){
-            // caricamento oggetto server nel registry
 
-             status.setText("Server is Running ...");
-             sr.setVisible(true);
-             so.setVisible(false);
+        if(e.getSource() == startBtn) {
+            startServer();
+            status.setText("Server is Running ...");
+            sr.setVisible(true);
+            so.setVisible(false);
         } else if(e.getSource() == stopBtn){
-            //eliminazione oggetto server dal registry
-
+            stopServer();
             status.setText("Server Offline ...");
             so.setVisible(true);
             sr.setVisible(false);
@@ -202,4 +228,54 @@
 
         }
     }
+
+     /**
+      * Il metodo permette di istanziare un nuovo oggetto registry e definire un nuovo oggetto remoto
+      * @return true/false a seguito del corretto funzionamento
+      * @author Damiano Ficara
+      * @author Luca Perfetti
+      */
+     public static boolean startServer(){
+         try{
+             server = new ServerImpl();
+
+             try {
+                 registry = LocateRegistry.createRegistry(PORT);
+             }catch (ExportException e){
+                 registry = LocateRegistry.getRegistry(PORT);
+             }
+
+             registry.rebind(SERVICE_NAME, server);
+             check = true;
+         }catch(RemoteException e){
+             e.printStackTrace();
+             return false;
+         }
+
+         return true;
+     }
+
+     /**
+      * Il metodo permette di rimuove un oggetto registry e compiere unbind
+      * @return true/false a seguito del corretto funzionamento
+      * @author Damiano Ficara
+      * @author Luca Perfetti
+      */
+     public static boolean stopServer(){
+         if(check){
+             try {
+                 registry.unbind(SERVICE_NAME);
+                 UnicastRemoteObject.unexportObject(server, true);
+                 check = false;
+                 return true;
+             } catch (RemoteException | NotBoundException e) {
+                 e.printStackTrace();
+             }
+             return false;
+         }else{
+             return true;
+         }
+     }
 }
+
+

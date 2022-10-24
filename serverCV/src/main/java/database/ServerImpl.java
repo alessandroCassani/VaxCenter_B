@@ -1,4 +1,6 @@
+package database;
 
+import database.DBManagement;
 import util.*;
 
 import java.math.BigInteger;

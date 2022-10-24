@@ -15,6 +15,8 @@ public class Cittadino extends Persona {
          */
     private final Account account;
 
+
+
         /**
          * metodo che permette la modellazione delle informazioni di un oggetto di tipo Cittadino
          *
