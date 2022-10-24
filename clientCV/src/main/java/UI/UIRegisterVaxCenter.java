@@ -257,6 +257,32 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+
+
+    private void registra(){
+        String nome = nomeCentroVaccinale.getText();
+        String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString());
+        String nomeIndirizzo = nomeVia.getText();
+        String civico = numeroCivico.getText();
+        String com = Objects.requireNonNull(comune.getSelectedItem().toString());
+        String provincia = siglaProvincia.getText();
+        String CAP = cap.getText();
+        String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
+        try {
+                ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
+                        (nome,Qualificatore.getQualificatore(qualifica),nomeIndirizzo,civico,
+                                "co","como", 22070, Tipologia.getTipo(tipologiaCentro)));
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } catch (RemoteException ex) {
+                throw new RuntimeException(ex);
+        }
+    }
+
+
+
+
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
      * @param e the event to be processed
@@ -274,17 +300,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
-                try {
-                    ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale("Montano Lucino Center", Qualificatore.VIA, "varese","39","CO","cagno"
-                            ,22043, Tipologia.AZIENDALE));
-                    JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                } catch (RemoteException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-
+                registra();
                 nomeCentroVaccinale.setEditable(false);
                 tipologia.setEnabled(false);
                 qualificatore.setEnabled(false);
