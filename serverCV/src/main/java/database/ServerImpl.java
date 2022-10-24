@@ -256,7 +256,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
-
     /**
      * metodo che permette la verifica dell'inserimento del corretto id in fase di registrazione
      * @param id id del cittadino
@@ -408,5 +407,22 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             }
             return listaNomiCentri;
         } catch (SQLException e) {return null;}
+    }
+
+    @Override
+    public CapProvincia getComuneInfo(String comune) throws RemoteException {
+        String provincia = "";
+        String cap = "";
+        try {
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT provincia,cap FROM dataset_comuni WHERE comune = ?");
+            preparedStatement.setString(1,comune.toUpperCase());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                provincia = resultSet.getString(1);
+                cap = resultSet.getString(2);
+            }
+            return new CapProvincia(cap,provincia);
+        } catch (SQLException e) {e.printStackTrace();}
+        return null;
     }
 }
