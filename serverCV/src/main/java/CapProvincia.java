@@ -1,9 +1,11 @@
+import java.io.Serializable;
+
 /**
  * la classe permette la modellazione di un oggetto contenente la provincia e il cap di un comune per cui viene creato questo oggetto
  *
  * @author Alessandro Cassani
  */
-public class CapProvincia {
+public class CapProvincia implements Serializable {
 
     /**
      * cap del comune
