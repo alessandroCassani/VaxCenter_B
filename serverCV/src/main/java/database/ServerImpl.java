@@ -1,8 +1,10 @@
 package database;
 
+
 import database.DBManagement;
 import util.*;
 
+import javax.swing.table.DefaultTableModel;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -354,19 +356,20 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
-    /**
-     * il metodo permette la ricerca di una serie di centri vaccinali specificando una stringa rappresentante il nome (o parte di esso)
-     * @param nome nome del centro vaccinale (anche non completa)
-     * @return lista di centri vaccinali
-     * @throws RemoteException eccezione rmi
-     *
-     * @author Alessandro cassani
-     */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
+        return null;
+    }
+
+    /**
+     * il metodo permette la ricerca di una serie di centri vaccinali specificando una stringa rappresentante il nome (o parte di esso)
+     * @return lista di centri vaccinali
+     * @author Alessandro cassani
+     */
+
+    public LinkedList<CentroVaccinale> getCentriVaccinali() throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali ");
             // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();

@@ -182,10 +182,10 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setBounds(500, 335, 100, 50);
         siglaProvincia.setEditable(false); //immutabile in quanto viene completato automaticamente
         try {
-            CapProvincia cp = ServerPointer.getStub().getComuneInfo("como");
-            System.out.println(cp.getProvincia());
-            System.out.println(cp.getCap());
-            //siglaProvincia.setText(ServerPointer.getStub().getComuneInfo(comune.getSelectedItem().toString()).getProvincia());
+            CapProvincia capProvincia = ServerPointer.getStub().getComuneInfo("napoli");
+            System.out.println(capProvincia.getCap().toString());
+            System.out.println(capProvincia.getCap().toString());
+            siglaProvincia.setText(capProvincia.getProvincia().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -284,6 +284,11 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
 
 
 
+    /**
+     * metodo privato che permette di registrare le informazioni di un centro vaccinale nel DB
+     * @author Damiano Ficara
+     */
+
     private void registra(){
         String nome = nomeCentroVaccinale.getText();
         String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString());
@@ -292,6 +297,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         String com = Objects.requireNonNull(comune.getSelectedItem().toString());
         String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
         try {
+
                 ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
                         (nome,Qualificatore.getQualificatore(qualifica),nomeIndirizzo,civico,
                                 "co",com, 22070, Tipologia.getTipo(tipologiaCentro)));

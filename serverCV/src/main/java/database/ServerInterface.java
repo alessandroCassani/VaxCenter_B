@@ -167,4 +167,6 @@ public interface ServerInterface extends Remote {
      * @author Damiano Ficara
      */
     LinkedList<String> getComuniNome() throws RemoteException;
+
+    LinkedList<CentroVaccinale>  getCentriVaccinali() throws RemoteException;
 }

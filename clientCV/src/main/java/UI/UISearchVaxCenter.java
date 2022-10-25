@@ -4,14 +4,17 @@ import UI.graphics.GradientPanel;
 import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 import database.ServerInterface;
+import util.CentroVaccinale;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -70,6 +73,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         });
 
 
+
+
     }
 
     /**
@@ -82,7 +87,9 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
-
+        var a = new LinkedList<CentroVaccinale>();
+        String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
+        Object[] o = new Object[indici.length];
         jPanel1 = new GradientPanel(Color.decode("#cad0ff"),Color.decode("#e3e3e3"));
         //jPanel1 = new GradientPanel(Color.decode("#ebf4f5"),Color.decode("#b5c6e0"));
         search = new SearchField();
@@ -98,25 +105,28 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             }
         });
 
+        try {
+             a = ServerPointer.getStub().getCentriVaccinali();
+        }catch (Exception e) {
+            e.printStackTrace();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                        {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub",},
-                        {"lurate", "h", "b", "h", "b", "h", "b", "h",}
-                },
-                new String [] {
-                        "Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia",
-                }
-        ) {
-            final boolean[] canEdit = new boolean [] {
-                    false, false, false, false, false, false, false, false, false, false
-            };
+        }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        DefaultTableModel model = new DefaultTableModel();
+        jTable1.setModel(model);
+        model.setColumnIdentifiers(indici);
 
+        for (CentroVaccinale c : a) {
+            o[0] = c.getNome();
+            o[1] = c.getComune().toLowerCase();
+            o[2] = c.getQualificatore();
+            o[3] = c.getNomeVia();
+            o[4] = c.getCivico();
+            o[5] = c.getProvincia();
+            o[6] = c.getCap();
+            o[7] = c.getTipologia();
+            model.addRow(o);
+        }
 
 
         jTable1.setFont(new Font("sansserif", Font.BOLD, 15));
