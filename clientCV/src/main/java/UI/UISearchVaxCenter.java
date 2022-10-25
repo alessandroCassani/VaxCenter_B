@@ -88,10 +88,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
         var a = new LinkedList<CentroVaccinale>();
-        String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
-        Object[] o = new Object[indici.length];
         jPanel1 = new GradientPanel(Color.decode("#cad0ff"),Color.decode("#e3e3e3"));
-        //jPanel1 = new GradientPanel(Color.decode("#ebf4f5"),Color.decode("#b5c6e0"));
         search = new SearchField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -107,27 +104,10 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
         try {
              a = ServerPointer.getStub().getCentriVaccinali();
+             loadData(a,new Object[indici.length]);
         }catch (Exception e) {
             e.printStackTrace();
-
         }
-
-        DefaultTableModel model = new DefaultTableModel();
-        jTable1.setModel(model);
-        model.setColumnIdentifiers(indici);
-
-        for (CentroVaccinale c : a) {
-            o[0] = c.getNome();
-            o[1] = c.getComune().toLowerCase();
-            o[2] = c.getQualificatore();
-            o[3] = c.getNomeVia();
-            o[4] = c.getCivico();
-            o[5] = c.getProvincia();
-            o[6] = c.getCap();
-            o[7] = c.getTipologia();
-            model.addRow(o);
-        }
-
 
         jTable1.setFont(new Font("sansserif", Font.BOLD, 15));
         jTable1.setFocusable(false);
@@ -198,17 +178,49 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     }
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
+        var a = new LinkedList<CentroVaccinale>();
         if(search.isSelected()) {
 
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
-                // cerca per nome
+                try {
+                     a = ServerPointer.getStub().getCentriVaccinali(info);
+                    System.out.println(a);
+                    loadData(a,new Object[indici.length]);
+                }catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
             } else if(option == 1) {
-                // cerca per comune
+                try {
+                     a = ServerPointer.getStub().getCentriVaccinali(info);
+                    loadData(a,new Object[indici.length]);
+                }catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
             }
+        }
+    }
+
+    private void loadData(LinkedList<CentroVaccinale> list, Object[] tuple) {
+        DefaultTableModel model = new DefaultTableModel();
+        jTable1.setModel(model);
+        model.setColumnIdentifiers(indici);
+
+        for (CentroVaccinale c : list) {
+            tuple[0] = c.getNome();
+            tuple[1] = c.getComune().toLowerCase();
+            tuple[2] = c.getQualificatore();
+            tuple[3] = c.getNomeVia();
+            tuple[4] = c.getCivico();
+            tuple[5] = c.getProvincia();
+            tuple[6] = c.getCap();
+            tuple[7] = c.getTipologia();
+            model.addRow(tuple);
         }
     }
 
@@ -226,6 +238,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private SearchField search;
+    private String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
 
 
     /**

@@ -358,7 +358,29 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
-        return null;
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
+                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
+            // ps.setString(1,nome);
+            ResultSet resultSet = ps.executeQuery();
+            LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
+            while(resultSet.next()){
+                String Nome = resultSet.getString(1);
+                String qualificatore = resultSet.getString(2);
+                Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
+                String via = resultSet.getString(3);
+                String numCivico = resultSet.getString(4);
+                String sigla = resultSet.getString(5);
+                String Comune = resultSet.getString(6);
+                int cap = resultSet.getInt(7);
+                String tipo = resultSet.getString(8);
+                Tipologia tipologia1 = Tipologia.getTipo(tipo);
+
+                listaCentri.add(new CentroVaccinale(Nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
+            }
+            ps.close();
+            return listaCentri;
+        } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
     /**
