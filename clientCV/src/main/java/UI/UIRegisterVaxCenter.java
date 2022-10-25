@@ -133,7 +133,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         add(labelComune).setBounds(140, 280, 550, 75);
 
         try {
-            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
+            List<String> l = ServerPointer.getStub().getComuniNome();
             String[] listComuni = l.toArray(new String[l.size()]);
             comune = new JComboBox(listComuni);
         }catch (Exception e) {

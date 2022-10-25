@@ -159,4 +159,5 @@ public interface ServerInterface extends Remote {
      */
     CapProvincia getComuneInfo(String comune) throws RemoteException;
 
+    LinkedList<String> getComuniNome() throws RemoteException;
 }

@@ -422,7 +422,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String provincia = "";
         String cap = "";
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT provincia,cap FROM dataset_comuni WHERE comune = ?");
+            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT comune FROM dataset_comuni WHERE comune = ?");
             preparedStatement.setString(1,comune.toUpperCase());
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
@@ -433,4 +433,18 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {e.printStackTrace();}
         return null;
     }
+
+    @Override
+    public LinkedList<String> getComuniNome() throws RemoteException {
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT comune FROM dataset_comuni");
+            ResultSet resultSet = ps.executeQuery();
+            LinkedList<String> listaNomiCentri = new LinkedList<>();
+            while(resultSet.next()){
+                listaNomiCentri.add(resultSet.getString(1));
+            }
+            return listaNomiCentri;
+        } catch (SQLException e) {return null;}
+    }
+
 }
