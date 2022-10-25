@@ -5,6 +5,7 @@ import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 import database.ServerInterface;
 import util.CentroVaccinale;
+import util.Tipologia;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -202,8 +203,9 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
 
             } else if(option == 1) {
                 jComboBox1.setVisible(true);
+                String tipologiaCentro  = Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
                 try {
-                     a = ServerPointer.getStub().getCentriVaccinali(info,jComboBox1.getSelectedItem());
+                     a = ServerPointer.getStub().getCentriVaccinali(info,Tipologia.getTipo(tipologiaCentro));
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
                     e.printStackTrace();
