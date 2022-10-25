@@ -26,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Damiano Ficara
  * @author Paolo Bruscagin
  */
-public class UISearchVaxCenter extends JFrame implements ActionListener {
+public class UISearchVaxCenter extends JFrame {
 
     /**
      * Creates new form UISearchVaxCenter
@@ -34,8 +34,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     public UISearchVaxCenter() {
         initComponents();
         // pernette du evidenziare il tipo di ricerca compiuta
-        search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         jComboBox1.setVisible(false);
+        search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/nome.png")))));
         ImageIcon ic = new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cityhall.png")));
         ic = resizeImage(ic,20,20);
@@ -132,8 +132,6 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -142,7 +140,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -178,8 +176,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(892, 534));
-        setLocationRelativeTo(null);    }// </editor-fold>
+         }// </editor-fold>
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {
         this.dispose();
@@ -193,6 +190,7 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
+                jComboBox1.setVisible(false);
                 try {
                      a = ServerPointer.getStub().getCentriVaccinali(info);
                     loadData(a,new Object[indici.length]);
@@ -258,10 +256,6 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
      *
      * @author Paolo Bruscagin
      */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
 
 
 
