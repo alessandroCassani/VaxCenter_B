@@ -2,6 +2,7 @@ package UI;
 
 import UI.graphics.GradientPanel;
 import UI.graphics.InfoSearch;
+import UI.graphics.InfoSearchEvent;
 import UI.graphics.SearchField;
 import database.ServerInterface;
 import util.CentroVaccinale;
@@ -33,9 +34,18 @@ public class UISearchVaxCenter extends JFrame {
      */
     public UISearchVaxCenter() {
         initComponents();
-        // pernette du evidenziare il tipo di ricerca compiuta
         jComboBox1.setVisible(false);
-        search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
+        // pernette du evidenziare il tipo di ricerca compiuta
+        search.addEventOptionSelected(
+                (option, index) -> {
+                    search.setHint("Ricerca per " + option.getName() + "...");
+                    if(option.getName().equals("Comune e Tipologia")) {
+                        jComboBox1.setVisible(true);
+                    }
+                }
+
+        );
+
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/nome.png")))));
         ImageIcon ic = new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cityhall.png")));
         ic = resizeImage(ic,20,20);
@@ -200,7 +210,6 @@ public class UISearchVaxCenter extends JFrame {
                 }
 
             } else if(option == 1) {
-                jComboBox1.setVisible(true);
                 String tipologiaCentro  = Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
                 try {
                      a = ServerPointer.getStub().getCentriVaccinali(info,Tipologia.getTipo(tipologiaCentro));
