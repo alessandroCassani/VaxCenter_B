@@ -14,7 +14,7 @@ public enum Tipologia {
      */
     @Override
     public String toString() {
-        return this.name().toLowerCase();
+        return this.name().toUpperCase();
     }
 
     public static Tipologia getTipo(String tipologia){

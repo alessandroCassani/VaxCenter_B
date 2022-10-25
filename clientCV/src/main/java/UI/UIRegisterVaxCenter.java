@@ -290,17 +290,17 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
 
     private void registra(){
-        String nome = nomeCentroVaccinale.getText();
-        String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString());
-        String nomeIndirizzo = nomeVia.getText();
-        String civico = numeroCivico.getText();
-        String com = Objects.requireNonNull(comune.getSelectedItem().toString());
-        String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
+        String nome = nomeCentroVaccinale.getText().toUpperCase();
+        String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString()).toUpperCase();
+        String nomeIndirizzo = nomeVia.getText().toUpperCase();
+        String civico = numeroCivico.getText().toUpperCase();
+        String com = Objects.requireNonNull(comune.getSelectedItem().toString()).toUpperCase();
+        String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString().toUpperCase();
         try {
 
                 ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
                         (nome,Qualificatore.getQualificatore(qualifica),nomeIndirizzo,civico,
-                                "co",com, 22070, Tipologia.getTipo(tipologiaCentro)));
+                                "CO",com, 22070, Tipologia.getTipo(tipologiaCentro)));
                 JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
             } catch (SQLException | RemoteException ex) {
                 throw new RuntimeException(ex);

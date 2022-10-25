@@ -41,6 +41,8 @@ public class UISearchVaxCenter extends JFrame {
                     search.setHint("Ricerca per " + option.getName() + "...");
                     if(option.getName().equals("Comune e Tipologia")) {
                         jComboBox1.setVisible(true);
+                    } else {
+                        jComboBox1.setVisible(false);
                     }
                 }
 
@@ -200,9 +202,9 @@ public class UISearchVaxCenter extends JFrame {
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
-                jComboBox1.setVisible(false);
+
                 try {
-                     a = ServerPointer.getStub().getCentriVaccinali(info);
+                     a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase());
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
                     e.printStackTrace();
@@ -212,7 +214,8 @@ public class UISearchVaxCenter extends JFrame {
             } else if(option == 1) {
                 String tipologiaCentro  = Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
                 try {
-                     a = ServerPointer.getStub().getCentriVaccinali(info,Tipologia.getTipo(tipologiaCentro));
+                     a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase(),Tipologia.getTipo(tipologiaCentro.toUpperCase()));
+                    System.out.println(a);
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
                     e.printStackTrace();
@@ -230,7 +233,7 @@ public class UISearchVaxCenter extends JFrame {
 
         for (CentroVaccinale c : list) {
             tuple[0] = c.getNome();
-            tuple[1] = c.getComune().toLowerCase();
+            tuple[1] = c.getComune();
             tuple[2] = c.getQualificatore();
             tuple[3] = c.getNomeVia();
             tuple[4] = c.getCivico();

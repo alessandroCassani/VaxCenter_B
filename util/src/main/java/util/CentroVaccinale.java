@@ -83,7 +83,7 @@ public class CentroVaccinale implements Serializable {
      *  @author Alessandro Cassani
      */
     public String getNome(){
-        return nome;
+        return nome.toUpperCase();
     }
 
     /**
@@ -103,7 +103,7 @@ public class CentroVaccinale implements Serializable {
      *
      *  @author Alessandro Cassani
      */
-    public String getComune(){return comune;}
+    public String getComune(){return comune.toUpperCase();}
 
     /**
      * metodo che accede al campo tipologia
@@ -133,7 +133,7 @@ public class CentroVaccinale implements Serializable {
      */
 
     public String getNomeVia(){
-        return nomeVia;
+        return nomeVia.toUpperCase();
     }
 
     /**
@@ -143,7 +143,7 @@ public class CentroVaccinale implements Serializable {
      *  @author Alessandro Cassani
      */
     public String getCivico(){
-        return civico;
+        return civico.toUpperCase();
     }
 
     /**
@@ -154,7 +154,7 @@ public class CentroVaccinale implements Serializable {
      */
 
     public String getProvincia(){
-        return provincia;
+        return provincia.toUpperCase();
     }
 
     /**
@@ -164,6 +164,6 @@ public class CentroVaccinale implements Serializable {
      *  @author Alessandro Cassani
      */
     public String toString(){
-        return nome + qualificatore + nomeVia + civico + comune + provincia + cap + tipologia;
+        return nome.toUpperCase() + qualificatore + nomeVia.toUpperCase() + civico.toUpperCase() + comune.toUpperCase() + provincia.toUpperCase() + cap + tipologia;
     }
 }
