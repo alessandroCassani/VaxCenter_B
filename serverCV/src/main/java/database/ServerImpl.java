@@ -422,16 +422,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String provincia = "";
         String cap = "";
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT comune FROM dataset_comuni WHERE comune = ?");
+            PreparedStatement preparedStatement =
+                    DBManagement.getDB().connection.prepareStatement("SELECT sigla FROM dataset_comuni WHERE comune = ?");
             preparedStatement.setString(1,comune.toUpperCase());
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 provincia = resultSet.getString(1);
                 cap = resultSet.getString(2);
             }
-            return new CapProvincia(cap,provincia);
+
         } catch (SQLException e) {e.printStackTrace();}
-        return null;
+        return new CapProvincia(cap,provincia);
     }
 
     @Override
