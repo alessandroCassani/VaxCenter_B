@@ -159,5 +159,12 @@ public interface ServerInterface extends Remote {
      */
     CapProvincia getComuneInfo(String comune) throws RemoteException;
 
+    /**
+     * il metodo permette di avere la lista di tutti i nomi dei comuni italiani
+     * @return lista comuni
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Damiano Ficara
+     */
     LinkedList<String> getComuniNome() throws RemoteException;
 }
