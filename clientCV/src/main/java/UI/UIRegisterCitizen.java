@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 
@@ -18,8 +20,10 @@ import CheckData.PasswordValidator;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-
+import util.CentroVaccinale;
+import util.Cittadino;
+import util.Qualificatore;
+import util.Tipologia;
 
 
 /**
@@ -313,6 +317,26 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
 
     }
 
+    private void registra(){
+        String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem().toString());
+        String nome = nomeCittadino.getText();
+        String cognome = cognomeCittadino.getText();
+        String CF = codiceFiscale.getText();
+        String emailCittadino = email.getText();
+        String username = userID.getText();
+        String IDVaccinazione = IDUnivoco.getText();
+        String psw = password.getText();
+        String conferma_psw = ripetiPassword.getText();
+
+        try {
+            ServerPointer.getStub().registraCentroVaccinale(new Cittadino();
+            JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException | RemoteException ex) {
+            throw new RuntimeException(ex);
+
+        }
+    }
+
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
      * @param e the event to be processed
@@ -338,7 +362,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             } else if (!pswvalidator.validate(password.getText().trim())) {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
             }else{
-                JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                registra();
                 nomeCV.setEnabled(false);
                 nomeCittadino.setEditable(false);
                 cognomeCittadino.setEditable(false);
