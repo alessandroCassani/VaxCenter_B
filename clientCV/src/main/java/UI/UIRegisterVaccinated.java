@@ -5,6 +5,11 @@ import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import util.CentroVaccinale;
+import util.Qualificatore;
+import util.Tipologia;
+import util.Vaccinato;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -13,6 +18,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -58,8 +65,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     JComboBox vaccinoSomministrato = new JComboBox<>(new String[]{"","Pfizer", "AstraZeneca", "Moderna", "J&J"});
 
-
-
+    //manca nome Centro Vaccinale
 
     /**
      * bottone per l'avvio del processo di registrazione del vaccinato
@@ -245,7 +251,23 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     }
 
     private void registra(){
-        
+        String nomeVacc = nome.getText();
+        String cognomeVacc = cognome.getText();
+        String CF = codiceFiscale.getText();
+        String dataSomministrazione = Objects.requireNonNull(data.getDate()).toString();
+        String tipologiaVaccino = Objects.requireNonNull(vaccinoSomministrato.getSelectedItem()).toString();
+        String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem()).toString();
+
+        try {
+            ServerPointer.getStub().registraCentroVaccinale(new Vaccinato
+                    (nomeVacc, cognomeVacc, CF, dataSomministrazione,
+                            Tipologia.getTipo(tipologiaVaccino), //nomeCentroVaccinale));
+            JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+
+                    IDUnivoco.getText(), "Messaggio",JOptionPane.INFORMATION_MESSAGE)));
+        } catch (SQLException | RemoteException ex) {
+            throw new RuntimeException(ex);
+
+        }
     }
 
     /**
@@ -266,8 +288,9 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
+                registra();
                 IDUnivoco.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                //JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                 nome.setEditable(false);
                 cognome.setEditable(false);
                 codiceFiscale.setEditable(false);
