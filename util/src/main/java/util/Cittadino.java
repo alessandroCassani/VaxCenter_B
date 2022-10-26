@@ -16,11 +16,6 @@ public class Cittadino extends Persona {
     private final Account account;
 
     /**
-     * * data di dascita della persona
-     */
-    private final Date dataNascita;
-
-    /**
      * email della persona
      */
     private final String email;
@@ -34,16 +29,14 @@ public class Cittadino extends Persona {
          * @param codFisc codice fiscale del cittadino
          * @param email email del cittadino
          * @param id id del cittadino
-         * @param dataNascita data di nascita del cittadino
          * @param centroVaccinale centro vaccinale in cui si e' vaccinato il cittadino
          * @param account account del cittadino
          *
          * @author Alessandro Cassani
          */
-    public Cittadino(String nome, String cognome, String codFisc, String email, BigInteger id, Date dataNascita, CentroVaccinale centroVaccinale, Account account){
+    public Cittadino(String nome, String cognome, String codFisc, String email, BigInteger id,CentroVaccinale centroVaccinale, Account account){
         super(nome,cognome,codFisc,id,centroVaccinale);
         this.email = email;
-        this.dataNascita = dataNascita;
         this.account = account;
     }
 
@@ -67,14 +60,5 @@ public class Cittadino extends Persona {
             return email;
         }
 
-        /**
-         * metodo che permette di accedere al campo privato data di nascita
-         * @return data di nascita della persona
-         *
-         * @author Alessandro Cassani
-         */
-        public Date getDataNascita(){
-            return dataNascita;
-        }
 }
 
