@@ -244,6 +244,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    private void registra(){
+        
+    }
+
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
      * @param e the event to be processed
