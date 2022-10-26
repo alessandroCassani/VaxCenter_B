@@ -44,13 +44,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getQualificatore().toString());
+            ps.setString(2,centroVaccinale.getQualificatore().toString().toUpperCase());
             ps.setString(3,centroVaccinale.getNomeVia());
             ps.setString(4,centroVaccinale.getCivico());
             ps.setString(5,centroVaccinale.getProvincia());
             ps.setString(6,centroVaccinale.getComune());
             ps.setInt(7,centroVaccinale.getCap());
-            ps.setString(8,centroVaccinale.getTipologia().toString());
+            ps.setString(8,centroVaccinale.getTipologia().toString().toUpperCase());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){ e.printStackTrace();return false;}
