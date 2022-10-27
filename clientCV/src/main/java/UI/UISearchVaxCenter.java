@@ -218,7 +218,7 @@ public class UISearchVaxCenter extends JFrame {
                 try {
                     System.out.println(info.toUpperCase());
                     System.out.println(tipologiaCentro);
-                    a = ServerPointer.getStub().getCentriVaccinali("varese",Tipologia.HUB);
+                    a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase(),Tipologia.getTipo(tipologiaCentro));
                     System.out.println(a);
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
