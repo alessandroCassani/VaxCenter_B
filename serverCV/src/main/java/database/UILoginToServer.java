@@ -294,6 +294,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
             userTextField.setText("");
             pswTextField.setText("");
             statusError.setVisible(false);
+            pswTextField.setEchoChar('*');
             showPassword.setSelected(false);
 
         }
