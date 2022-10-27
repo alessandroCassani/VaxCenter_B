@@ -1,8 +1,10 @@
 package database;
 
+
 import database.DBManagement;
 import util.*;
 
+import javax.swing.table.DefaultTableModel;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -42,13 +44,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getQualificatore().toString());
+            ps.setString(2,centroVaccinale.getQualificatore().toString().toUpperCase());
             ps.setString(3,centroVaccinale.getNomeVia());
             ps.setString(4,centroVaccinale.getCivico());
             ps.setString(5,centroVaccinale.getProvincia());
             ps.setString(6,centroVaccinale.getComune());
             ps.setInt(7,centroVaccinale.getCap());
-            ps.setString(8,centroVaccinale.getTipologia().toString());
+            ps.setString(8,centroVaccinale.getTipologia().toString().toUpperCase());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){ e.printStackTrace();return false;}
@@ -330,8 +332,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali \n" +
-                    "WHERE comune = '"+ comune +"' AND tipologia = '" + tipologia.toString() +"'");
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
+                    "WHERE comune  LIKE '%"+ comune.toUpperCase() +"%' AND tipologia LIKE'%" + tipologia.toString().toUpperCase() +"%'");
             ResultSet resultSet = ps.executeQuery();
 
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -342,9 +344,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String via = resultSet.getString(3);
                 String numCivico = resultSet.getString(4);
                 String sigla = resultSet.getString(5);
-                String Comune = resultSet.getString(6);
+                String Comune = resultSet.getString(6).toUpperCase();
                 int cap = resultSet.getInt(7);
-                String tipo = resultSet.getString(8);
+                String tipo = resultSet.getString(8).toUpperCase();
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
@@ -354,14 +356,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
-    /**
-     * il metodo permette la ricerca di una serie di centri vaccinali specificando una stringa rappresentante il nome (o parte di esso)
-     * @param nome nome del centro vaccinale (anche non completa)
-     * @return lista di centri vaccinali
-     * @throws RemoteException eccezione rmi
-     *
-     * @author Alessandro cassani
-     */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
@@ -380,6 +374,37 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String Comune = resultSet.getString(6);
                 int cap = resultSet.getInt(7);
                 String tipo = resultSet.getString(8);
+                Tipologia tipologia1 = Tipologia.getTipo(tipo);
+
+                listaCentri.add(new CentroVaccinale(Nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
+            }
+            ps.close();
+            return listaCentri;
+        } catch (SQLException e) {e.printStackTrace();return null;}
+    }
+
+    /**
+     * il metodo permette la ricerca di una serie di centri vaccinali specificando una stringa rappresentante il nome (o parte di esso)
+     * @return lista di centri vaccinali
+     * @author Alessandro cassani
+     */
+
+    public LinkedList<CentroVaccinale> getCentriVaccinali() throws RemoteException {
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali ");
+            // ps.setString(1,nome);
+            ResultSet resultSet = ps.executeQuery();
+            LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
+            while(resultSet.next()){
+                String Nome = resultSet.getString(1);
+                String qualificatore = resultSet.getString(2);
+                Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
+                String via = resultSet.getString(3);
+                String numCivico = resultSet.getString(4);
+                String sigla = resultSet.getString(5);
+                String Comune = resultSet.getString(6).toUpperCase();
+                int cap = resultSet.getInt(7);
+                String tipo = resultSet.getString(8).toUpperCase();
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(Nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
@@ -409,20 +434,43 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {return null;}
     }
 
+    /**
+     * metodo che permette di ottenere la lista dei comuni italiani
+     * @return lista dei nomi dei comuni italiani
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     * @author Damiano Ficara
+     */
     @Override
     public CapProvincia getComuneInfo(String comune) throws RemoteException {
         String provincia = "";
         String cap = "";
         try {
-            PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT provincia,cap FROM dataset_comuni WHERE comune = ?");
+            PreparedStatement preparedStatement =
+                    DBManagement.getDB().connection.prepareStatement("SELECT sigla,provincia FROM dataset_comuni WHERE comune = ?");
             preparedStatement.setString(1,comune.toUpperCase());
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 provincia = resultSet.getString(1);
                 cap = resultSet.getString(2);
             }
-            return new CapProvincia(cap,provincia);
+
         } catch (SQLException e) {e.printStackTrace();}
-        return null;
+        return new CapProvincia(cap,provincia);
     }
+
+    @Override
+    public LinkedList<String> getComuniNome() throws RemoteException {
+        try {
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT comune FROM dataset_comuni");
+            ResultSet resultSet = ps.executeQuery();
+            LinkedList<String> listaNomiCentri = new LinkedList<>();
+            while(resultSet.next()){
+                listaNomiCentri.add(resultSet.getString(1));
+            }
+            return listaNomiCentri;
+        } catch (SQLException e) {return null;}
+    }
+
 }

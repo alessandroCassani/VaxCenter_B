@@ -2,16 +2,21 @@ package UI;
 
 import UI.graphics.GradientPanel;
 import UI.graphics.InfoSearch;
+import UI.graphics.InfoSearchEvent;
 import UI.graphics.SearchField;
 import database.ServerInterface;
+import util.CentroVaccinale;
+import util.Tipologia;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -22,15 +27,27 @@ import javax.swing.*;
  * @author Damiano Ficara
  * @author Paolo Bruscagin
  */
-public class UISearchVaxCenter extends JFrame implements ActionListener {
+public class UISearchVaxCenter extends JFrame {
 
     /**
      * Creates new form UISearchVaxCenter
      */
     public UISearchVaxCenter() {
         initComponents();
+        jComboBox1.setVisible(false);
         // pernette du evidenziare il tipo di ricerca compiuta
-        search.addEventOptionSelected((option, index) -> search.setHint("Ricerca per " + option.getName() + "..."));
+        search.addEventOptionSelected(
+                (option, index) -> {
+                    search.setHint("Ricerca per " + option.getName() + "...");
+                    if(option.getName().equals("Comune e Tipologia")) {
+                        jComboBox1.setVisible(true);
+                    } else {
+                        jComboBox1.setVisible(false);
+                    }
+                }
+
+        );
+
         search.addOption(new InfoSearch("Nome", new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/nome.png")))));
         ImageIcon ic = new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/images/cityhall.png")));
         ic = resizeImage(ic,20,20);
@@ -70,6 +87,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
         });
 
 
+
+
     }
 
     /**
@@ -82,9 +101,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
-
+        var a = new LinkedList<CentroVaccinale>();
         jPanel1 = new GradientPanel(Color.decode("#cad0ff"),Color.decode("#e3e3e3"));
-        //jPanel1 = new GradientPanel(Color.decode("#ebf4f5"),Color.decode("#b5c6e0"));
         search = new SearchField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -98,26 +116,12 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
             }
         });
 
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                        {"schiranna", "hub", "como", "39", "varese", "va", "22070", "hub",},
-                        {"lurate", "h", "b", "h", "b", "h", "b", "h",}
-                },
-                new String [] {
-                        "Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia",
-                }
-        ) {
-            final boolean[] canEdit = new boolean [] {
-                    false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-
-
+        try {
+             a = ServerPointer.getStub().getCentriVaccinali();
+             loadData(a,new Object[indici.length]);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
         jTable1.setFont(new Font("sansserif", Font.BOLD, 15));
         jTable1.setFocusable(false);
@@ -147,11 +151,13 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
                                                 .addContainerGap())))
         );
@@ -159,9 +165,10 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jComboBox1))
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                                 .addContainerGap())
@@ -180,7 +187,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-    }// </editor-fold>
+
+         }// </editor-fold>
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {
         this.dispose();
@@ -188,17 +196,55 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     }
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {
+        var a = new LinkedList<CentroVaccinale>();
         if(search.isSelected()) {
 
             int option = search.getSelectedIndex();
             String info = "%" + search.getText().trim() + "%";
             if(option == 0) {
-                // cerca per nome
+
+                try {
+                    System.out.println(info);
+                     a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase());
+                    System.out.println(a);
+                    loadData(a,new Object[indici.length]);
+                }catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
             } else if(option == 1) {
-                // cerca per comune
+                String tipologiaCentro  = Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
+                try {
+                    System.out.println(info.toUpperCase());
+                    System.out.println(tipologiaCentro);
+                    a = ServerPointer.getStub().getCentriVaccinali("varese",Tipologia.HUB);
+                    System.out.println(a);
+                    loadData(a,new Object[indici.length]);
+                }catch (Exception e) {
+                    e.printStackTrace();
+
+                }
 
             }
+        }
+    }
+
+    private void loadData(LinkedList<CentroVaccinale> list, Object[] tuple) {
+        DefaultTableModel model = new DefaultTableModel();
+        jTable1.setModel(model);
+        model.setColumnIdentifiers(indici);
+
+        for (CentroVaccinale c : list) {
+            tuple[0] = c.getNome();
+            tuple[1] = c.getComune();
+            tuple[2] = c.getQualificatore();
+            tuple[3] = c.getNomeVia();
+            tuple[4] = c.getCivico();
+            tuple[5] = c.getProvincia();
+            tuple[6] = c.getCap();
+            tuple[7] = c.getTipologia();
+            model.addRow(tuple);
         }
     }
 
@@ -216,6 +262,8 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private SearchField search;
+    JComboBox<String> jComboBox1 = new JComboBox(new String[]{"","HUB", "OSPEDALIERO", "AZIENDALE"});
+    private String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
 
 
     /**
@@ -224,10 +272,6 @@ public class UISearchVaxCenter extends JFrame implements ActionListener {
      *
      * @author Paolo Bruscagin
      */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
 
 
 
