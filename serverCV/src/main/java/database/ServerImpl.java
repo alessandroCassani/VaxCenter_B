@@ -332,8 +332,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
-            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali \n" +
-                    "WHERE comune = '"+ comune +"' AND tipologia = '" + tipologia.toString() +"'");
+            PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
+                    "WHERE comune  LIKE '%"+ comune.toUpperCase() +"%' AND tipologia LIKE'%" + tipologia.toString().toUpperCase() +"%'");
             ResultSet resultSet = ps.executeQuery();
 
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -344,9 +344,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String via = resultSet.getString(3);
                 String numCivico = resultSet.getString(4);
                 String sigla = resultSet.getString(5);
-                String Comune = resultSet.getString(6);
+                String Comune = resultSet.getString(6).toUpperCase();
                 int cap = resultSet.getInt(7);
-                String tipo = resultSet.getString(8);
+                String tipo = resultSet.getString(8).toUpperCase();
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
@@ -402,9 +402,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String via = resultSet.getString(3);
                 String numCivico = resultSet.getString(4);
                 String sigla = resultSet.getString(5);
-                String Comune = resultSet.getString(6);
+                String Comune = resultSet.getString(6).toUpperCase();
                 int cap = resultSet.getInt(7);
-                String tipo = resultSet.getString(8);
+                String tipo = resultSet.getString(8).toUpperCase();
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(Nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));

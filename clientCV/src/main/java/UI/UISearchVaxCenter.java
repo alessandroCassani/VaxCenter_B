@@ -204,7 +204,9 @@ public class UISearchVaxCenter extends JFrame {
             if(option == 0) {
 
                 try {
+                    System.out.println(info);
                      a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase());
+                    System.out.println(a);
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
                     e.printStackTrace();
@@ -214,7 +216,9 @@ public class UISearchVaxCenter extends JFrame {
             } else if(option == 1) {
                 String tipologiaCentro  = Objects.requireNonNull(jComboBox1.getSelectedItem()).toString();
                 try {
-                     a = ServerPointer.getStub().getCentriVaccinali(info.toUpperCase(),Tipologia.getTipo(tipologiaCentro.toUpperCase()));
+                    System.out.println(info.toUpperCase());
+                    System.out.println(tipologiaCentro);
+                    a = ServerPointer.getStub().getCentriVaccinali("varese",Tipologia.HUB);
                     System.out.println(a);
                     loadData(a,new Object[indici.length]);
                 }catch (Exception e) {
