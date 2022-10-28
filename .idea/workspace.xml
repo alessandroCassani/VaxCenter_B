@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
@@ -21,10 +21,6 @@
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/CentroVaccinale.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/CentroVaccinale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Qualificatore.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Qualificatore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Tipologia.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Tipologia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +231,7 @@
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
       <workItem from="1665575874467" duration="5661000" />
-      <workItem from="1666967167499" duration="1975000" />
-    </task>
-    <task id="LOCAL-00027" summary="Sistemazione UILogin">
-      <created>1663943965621</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943965621</updated>
+      <workItem from="1666967167499" duration="2316000" />
     </task>
     <task id="LOCAL-00028" summary="modifica allineamenti UIRegisterVaxCenter">
       <created>1664026162126</created>
@@ -580,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665581258872</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="creata la classe UISearchVaxCenterDialog">
+      <created>1666969550905</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969550905</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaDoc" />
     <MESSAGE value="modifica font" />
     <MESSAGE value="aggiunta hint" />
     <MESSAGE value="modifica username" />
@@ -635,6 +630,7 @@
     <MESSAGE value="checkData doc" />
     <MESSAGE value="modifica JComboBox" />
     <MESSAGE value="checkPassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkPassword" />
+    <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="creata la classe UISearchVaxCenterDialog" />
   </component>
 </project>
