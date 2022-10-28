@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/CentroVaccinale.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/CentroVaccinale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Qualificatore.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Qualificatore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Tipologia.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Tipologia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +112,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WelcomeScreen">
+  <component name="RunManager" selected="Application.ServerPointer">
+    <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
       <module name="clientCV" />
@@ -107,9 +139,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UISearchVaxCenter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UISearchVaxCenter" />
-      <module name="clientCV" />
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.UILoginToServer" />
+      <module name="serverCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,18 +186,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ServerPointer" />
+      <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
       <item itemvalue="Application.UISearchVaxCenter" />
-      <item itemvalue="Application.UISearchVaxCenter (1)" />
       <item itemvalue="Application.UILogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerPointer" />
+        <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISearchVaxCenter" />
-        <item itemvalue="Application.UILogin" />
-        <item itemvalue="Application.UISearchVaxCenter (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -196,6 +235,7 @@
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
       <workItem from="1665575874467" duration="5661000" />
+      <workItem from="1666967167499" duration="1975000" />
     </task>
     <task id="LOCAL-00027" summary="Sistemazione UILogin">
       <created>1663943965621</created>
