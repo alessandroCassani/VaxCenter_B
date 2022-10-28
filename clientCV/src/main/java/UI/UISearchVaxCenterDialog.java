@@ -72,7 +72,7 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
             jLabelTipologia.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
             jLabelTipologia.setText("Tipologia:");
 
-            jLabelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/guiproject/serverhomeui/My_project-1-removebg2.png"))); // NOI18N
+            jLabelicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
             jLabelTitle.setFont(new java.awt.Font("Segoe Script", 3, 36)); // NOI18N
             jLabelTitle.setText("Centro Vaccinale");

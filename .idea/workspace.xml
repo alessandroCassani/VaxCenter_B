@@ -108,7 +108,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerPointer">
+  <component name="RunManager" selected="Application.UISearchVaxCenterDialog">
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
@@ -148,12 +148,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UISearchVaxCenter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenter" />
+    <configuration name="UISearchVaxCenterDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenterDialog" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -182,19 +182,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UISearchVaxCenterDialog" />
       <item itemvalue="Application.ServerPointer" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
-      <item itemvalue="Application.UISearchVaxCenter" />
       <item itemvalue="Application.UILogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UISearchVaxCenter" />
       </list>
     </recent_temporary>
   </component>
