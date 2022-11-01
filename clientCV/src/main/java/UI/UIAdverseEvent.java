@@ -99,7 +99,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Mal di testa (da 1 a 5)
      */
 
-    JComboBox severitaMDT = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitaMDT = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Febbre
@@ -115,7 +115,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Mal di testa (da 1 a 5)
      */
 
-    JComboBox severitaFebbre = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitaFebbre = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Dolori Muscolari e/o Articolari
@@ -138,7 +138,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Dolori Muscolari e/o Articolari (da 1 a 5)
      */
 
-    JComboBox severitaDMA = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitaDMA = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Linfoadenopatia
@@ -154,7 +154,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Linfoadenopatia (da 1 a 5)
      */
 
-    JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Tachicardia
@@ -170,7 +170,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Tachicardia (da 1 a 5)
      */
 
-    JComboBox severitatachicardia = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitatachicardia = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Crisi Ipertensiva
@@ -184,7 +184,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * Severità Crisi Ipertensiva (da 1 a 5)
      */
-    JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
+    JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
 
 
     //Text Area note (valevole per tutti i sintomi)
@@ -653,12 +653,12 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         }else if (e.getSource() == pulisciEventiAvversi) {
             noteGenerali.setText("");
-            severitaMDT.setSelectedItem("");
-            severitaFebbre.setSelectedItem("");
-            severitaDMA.setSelectedItem("");
-            severitalinfoadenopatia.setSelectedItem("");
-            severitatachicardia.setSelectedItem("");
-            severitaCrisiIpertensiva.setSelectedItem("");
+            severitaMDT.setSelectedItem("0");
+            severitaFebbre.setSelectedItem("0");
+            severitaDMA.setSelectedItem("0");
+            severitalinfoadenopatia.setSelectedItem("0");
+            severitatachicardia.setSelectedItem("0");
+            severitaCrisiIpertensiva.setSelectedItem("0");
 
         } else if (e.getSource() == registraEA) {
             registraEventiAvversi();
