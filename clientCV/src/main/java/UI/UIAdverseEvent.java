@@ -546,7 +546,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
 
-        if (ServerPointer.getStub().isAERegistered(user)){
+        if (ServerPointer.getStub().isAERegistered(username)){
                 inserisciEventiAvversi.setVisible(false);
                 riepilogoEventiAvversiPersonali.setVisible(true);
         }else {
