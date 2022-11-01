@@ -1,6 +1,7 @@
 package UI;
 
 import database.RoundButton;
+import util.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -10,7 +11,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 
 /**
  * Interfaccia che permette all'utente di registrare gli eventi avversi
@@ -255,8 +261,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JLabel severitaEA6 = new JLabel("Severità");
 
 
+
+
     static String user;
     public UIAdverseEvent(String username) {
+
 
 
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
@@ -275,7 +284,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         titoloRiepilogo.setFont(new Font("Georgia", Font.BOLD, 20));
         titoloRiepilogo.setBounds(100, 50, 200, 30);
 
-        JLabel nomeUtente = new JLabel("Nome: ");
+        JLabel nomeUtente = new JLabel("Nome: " );
         nomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
         nomeUtente.setBounds(20, 100, 200, 20);
 
@@ -571,6 +580,31 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     }
 
+    private void registraEventiAvversi(){
+        String note = noteGenerali.getText();
+        ArrayList<Sintomo> sintomi = new ArrayList<Sintomo>();
+        sintomi.add(new Sintomo(severitaMDT.getSelectedIndex(),Sintomatologia.MALDITESTA));
+        sintomi.add(new Sintomo(severitaFebbre.getSelectedIndex(),Sintomatologia.FEBBRE));
+        sintomi.add(new Sintomo(severitatachicardia.getSelectedIndex(),Sintomatologia.TACHICARDIA));
+        sintomi.add(new Sintomo(severitaDMA.getSelectedIndex(),Sintomatologia.DOLORI_MA));
+        sintomi.add(new Sintomo(severitalinfoadenopatia.getSelectedIndex(),Sintomatologia.LINFOADENOPATIA));
+        sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
+
+
+
+        try {
+
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "Paolo");
+            JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+
+        }
+    }
+
+
+
 
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
@@ -611,7 +645,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             severitaCrisiIpertensiva.setSelectedItem("");
 
         } else if (e.getSource() == registraEA) {
-            JOptionPane.showMessageDialog(null, "Eventi Avversi registrati con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            registraEventiAvversi();
 
         }
 
