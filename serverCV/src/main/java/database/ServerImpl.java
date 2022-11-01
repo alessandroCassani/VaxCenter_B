@@ -1,10 +1,8 @@
 package database;
 
 
-import database.DBManagement;
 import util.*;
 
-import javax.swing.table.DefaultTableModel;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -156,6 +154,30 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.close();
         } catch (SQLException e) {e.printStackTrace();return  false;}
         return true;
+    }
+    /**
+     * il metodo permette di controllare se il cittadino ha un account oppure no
+     * @param user account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Paolo Bruscagin
+     */
+    @Override
+    public boolean isAERegistered(String user) throws RemoteException {
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
+
+            ps.setString(1, user);
+
+            ResultSet resultSet = ps.executeQuery();
+            if(resultSet.next()){
+                return true;
+            }
+        }catch (SQLException e){
+            return false;
+        }
+        return false;
     }
 
     /**

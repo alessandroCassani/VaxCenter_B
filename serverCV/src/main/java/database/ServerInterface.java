@@ -55,6 +55,15 @@ public interface ServerInterface extends Remote {
      */
     boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException;
 
+    /**
+     * segnatura del metodo che permette il controllo in fase di accesso e registrazione dell'utente dell'avvenuta registrazione degli eventi avversi
+     * @param user nome utente
+     * @return true o false, in base all'esito dell'operazione
+     * @throws RemoteException eccezione rmi
+     *
+     *  @author Alessandro Cassani
+     */
+    boolean isAERegistered(String user) throws RemoteException;
 
     /**
      * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
