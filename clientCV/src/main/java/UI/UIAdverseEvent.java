@@ -264,7 +264,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     static String user;
-    public UIAdverseEvent(String username) {
+    public UIAdverseEvent(String username) throws RemoteException {
 
 
 
@@ -486,7 +486,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         riepilogoEventiAvversiPersonali.add(backToCitizenR);
 
 
-        add(riepilogoEventiAvversiPersonali);
+        add(riepilogoEventiAvversiPersonali).setVisible(false);;
 
 
         //Panel Inserimento Eventi Avversi
@@ -521,6 +521,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(severitaCrisiIpertensiva);
         inserisciEventiAvversi.add(backToCitizen);
 
+        add(inserisciEventiAvversi).setVisible(false);
+
         registraEA.setBounds(300, 425, 150, 50);
         registraEA.setFont(new Font("Georgia", Font.BOLD, 15));
         registraEA.setBackground(new Color(0, 0, 128));
@@ -543,6 +545,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
+
+        if (ServerPointer.getStub().isAERegistered(user)){
+                inserisciEventiAvversi.setVisible(false);
+                riepilogoEventiAvversiPersonali.setVisible(true);
+        }else {
+            inserisciEventiAvversi.setVisible(true);
+            riepilogoEventiAvversiPersonali.setVisible(false);
+        }
 
 
         //Popup "Se sicuro di uscire?"
@@ -577,6 +587,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+
+
 
     }
 
