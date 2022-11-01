@@ -580,6 +580,10 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * metodo privato che permette di registrare degli eventi avversi nel db
+     * @author Paolo Bruscagin
+     */
     private void registraEventiAvversi(){
         String note = noteGenerali.getText();
         ArrayList<Sintomo> sintomi = new ArrayList<Sintomo>();
