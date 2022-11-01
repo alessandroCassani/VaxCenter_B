@@ -61,7 +61,7 @@ public interface ServerInterface extends Remote {
      * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
-     *  @author Alessandro Cassani
+     *  @author Paolo Bruscagin
      */
     boolean isAERegistered(String user) throws RemoteException;
 
