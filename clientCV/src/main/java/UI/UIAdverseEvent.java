@@ -602,15 +602,17 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         sintomi.add(new Sintomo(severitaMDT.getSelectedIndex(),Sintomatologia.MALDITESTA));
         sintomi.add(new Sintomo(severitaFebbre.getSelectedIndex(),Sintomatologia.FEBBRE));
         sintomi.add(new Sintomo(severitatachicardia.getSelectedIndex(),Sintomatologia.TACHICARDIA));
+        System.out.println(severitatachicardia.getSelectedIndex());
         sintomi.add(new Sintomo(severitaDMA.getSelectedIndex(),Sintomatologia.DOLORI_MA));
         sintomi.add(new Sintomo(severitalinfoadenopatia.getSelectedIndex(),Sintomatologia.LINFOADENOPATIA));
         sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
+        //System.out.println(sintomi);
 
 
 
         try {
 
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "Paolo");
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
             JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {

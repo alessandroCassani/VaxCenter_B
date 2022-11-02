@@ -146,7 +146,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(1,user);
             count = 2;
             while(count<8) {
-                ps.setInt(count,eventiAvversi.getSintomi().get(count-1).getSeverita());
+                ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
+                System.out.println(eventiAvversi.getSintomi().get(count-2));
                 count++;
             }
             ps.setString(8, eventiAvversi.getNote());
@@ -155,6 +156,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {e.printStackTrace();return  false;}
         return true;
     }
+
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
      * @param user account del cittadino
