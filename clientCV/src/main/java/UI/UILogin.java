@@ -170,15 +170,15 @@ public class UILogin extends JFrame  {
                         new UIAdverseEvent(username.getText());
 
                     }
-                    else
-                        JOptionPane.showMessageDialog(null, "Accesso rifiutato! Tentativi rimasti:" + (MAX_TIMES - counter) , "Messaggio",JOptionPane.ERROR_MESSAGE);
+                    else {
+                        JOptionPane.showMessageDialog(null, "Accesso rifiutato! Tentativi rimasti:" + (MAX_TIMES - counter), "Messaggio", JOptionPane.ERROR_MESSAGE);
                         new UILogin();
                         counter++;
                         if (counter > MAX_TIMES) {
-                            JOptionPane.showMessageDialog(null, "Tentativi esauriti!", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "Tentativi esauriti!", "Messaggio", JOptionPane.ERROR_MESSAGE);
                             System.exit(0);
                         }
-
+                    }
                 } catch (RemoteException e) {
                     throw new RuntimeException(e);
                 }
