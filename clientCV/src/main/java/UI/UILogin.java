@@ -8,6 +8,7 @@ import UI.graphics.GradientPanel;
 import UI.graphics.MyPwdField;
 import UI.graphics.MyTextField;
 import database.RoundButton;
+import util.Account;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
 import java.util.Objects;
 
 
@@ -25,7 +27,7 @@ import java.util.Objects;
  * @author Damiano Ficara
  * @author Paolo Bruscagin
  */
-public class UILogin extends JFrame implements ActionListener {
+public class UILogin extends JFrame  {
 
     /**
      * Creates new form UILog
@@ -157,7 +159,20 @@ public class UILogin extends JFrame implements ActionListener {
         rnd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 setVisible(false);
-                new UIAdverseEvent(username.getText());
+                try {
+                    System.out.println("Utente:" + username.getText());
+                    System.out.println("Password:" + password.getText().toString());
+                    if(ServerPointer.getStub().isSignedUp(new Account(username.getText(),password.getText()))){
+                        System.out.println("Accesso in corso....");
+                        new UIAdverseEvent(username.getText());
+
+                    }
+                    else
+                        System.out.println("Accesso rifiutato");
+
+                } catch (RemoteException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -240,18 +255,6 @@ public class UILogin extends JFrame implements ActionListener {
     private MyPwdField password;
     private MyTextField username;
 
-
-    /**
-     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
-     * @param e the event to be processed
-     *
-     * @author Paolo Bruscagin
-     */
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-
-    }
 
 
 }

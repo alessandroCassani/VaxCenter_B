@@ -169,18 +169,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ? AND password = ?");
-
-            ps.setString(1, String.valueOf(account));
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini " +
+                    "WHERE username = '" + account.getUserId() + "'" + "AND password ='" + account.getPassword() +"'" );
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
-                return false;
+                return true;
             }
         }catch (SQLException e){
             return false;
         }
-        return true;
+        return false;
     }
 
     /**
@@ -230,6 +229,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         }catch (SQLException e){
             return false;
         }
+
         return false;
     }
 
