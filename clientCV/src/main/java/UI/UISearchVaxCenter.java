@@ -273,6 +273,6 @@ public class UISearchVaxCenter extends JFrame {
      * @author Paolo Bruscagin
      */
 
-
+    UISearchVaxCenterDialog vcdialog = new UISearchVaxCenterDialog();
 
 }
