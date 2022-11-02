@@ -167,7 +167,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isAERegistered(String user) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
 
             ps.setString(1, user);
 
@@ -180,6 +180,30 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         }
         return false;
     }
+
+    @Override
+    public String[] getPersonAE(String user) throws RemoteException {
+        PreparedStatement preparedStatement = null;
+        String [] info = new String [7];
+        try {
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
+            preparedStatement.setString(1,user);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                info[0] = String.valueOf(resultSet.getInt(2));
+                info[1] = String.valueOf(resultSet.getInt(3));
+                info[2] = String.valueOf(resultSet.getInt(4));
+                info[3] = String.valueOf(resultSet.getInt(5));
+                info[4] = String.valueOf(resultSet.getInt(6));
+                info[5] = String.valueOf(resultSet.getInt(7));
+                info[6] = resultSet.getString(8);
+            }
+            return info;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no

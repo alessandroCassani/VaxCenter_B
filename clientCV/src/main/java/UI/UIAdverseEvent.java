@@ -72,7 +72,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
-    JCheckBox switcha = new JCheckBox();
+    //JCheckBox switcha = new JCheckBox();
 
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
@@ -207,13 +207,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
     //Tabella 6x2 (righe x colonne) immutabile in quanto viene completato automaticamente
-    String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ""}, {" Febbre", ""}, {" Dolori Musc. Art.", ""}, {" Linfoadenopatia", ""}, {" Tachicardia", ""}, {" Crisi Ipertensiva", ""}};
-    String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
-    /**
-     * Tabella che mostra il riepilogo degli eventi avversi già registrati
-     */
-    JTable tabellaRiepilogo = new JTable(data, coloumn);
+
+
+
+
     /**
      * Label per il riepilogo note
      */
@@ -268,9 +266,25 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
 
+
+
+
+
+
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
+
+        String [] info;
+        info = ServerPointer.getStub().getPersonAE(user);
+
+        String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", info[0]}, {" Febbre", info[1]}, {" Tachicardia", info[2]}, {" Dolori Musc. Art.", info[3]}, {" Linfoadenopatia", info[4]}, {" Crisi Ipertensiva", info[5]}};
+
+        String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
+
+        JTable tabellaRiepilogo = new JTable(data, coloumn);
+
+
 
 
         infoUtente.setBounds(550, -5, 450, 570);
@@ -333,10 +347,10 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         backToCitizenR.setContentAreaFilled(false);
 
 
-        switcha.setFont(new Font("Arial", Font.BOLD, 15));
-        switcha.setBounds(400, 500, 20, 15);
-        switcha.addActionListener(this);
-        switcha.setBackground(new Color(181, 226, 232));
+        //switcha.setFont(new Font("Arial", Font.BOLD, 15));
+        //switcha.setBounds(400, 500, 20, 15);
+        //switcha.addActionListener(this);
+        //switcha.setBackground(new Color(181, 226, 232));
 
         infoUtente.add(titoloRiepilogo);
         infoUtente.add(nomeUtente);
@@ -347,7 +361,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.add(IDUnivocoUtente);
 
 
-        infoUtente.add(switcha);
+        //infoUtente.add(switcha);
 
         add(infoUtente);
 
@@ -480,6 +494,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         tabellaRiepilogo.setEnabled(false);
         riepilogoNote.setBounds(100, 430, 400, 15);
         riepilogoNote.setFont(new Font("Georgia", Font.BOLD, 12));
+        riepilogoNote.setText(info[6]);
         riepilogoEventiAvversiPersonali.add(riepilogoNote);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
         riepilogoEventiAvversiPersonali.add(rn);
@@ -546,13 +561,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
 
-        if (ServerPointer.getStub().isAERegistered(username)){
+        /*if (ServerPointer.getStub().isAERegistered(username)){
                 inserisciEventiAvversi.setVisible(false);
                 riepilogoEventiAvversiPersonali.setVisible(true);
         }else {
             inserisciEventiAvversi.setVisible(true);
             riepilogoEventiAvversiPersonali.setVisible(false);
-        }
+        }*/
+        add(riepilogoEventiAvversiPersonali).setVisible(true);
 
 
         //Popup "Se sicuro di uscire?"
@@ -612,7 +628,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         try {
 
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "Ale");
             JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {
@@ -638,22 +654,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         } else if (e.getSource() == backToCitizenR) {
             this.dispose();
             new UICitizen();
-        } else if (e.getSource() == switcha) {
-            //Passaggio da un Panel all'altro
-            //in seguito inserire comando automatico che capisca se gli eventi avversi sono registrati o meno
-            if (switcha.isSelected()) {
-                //sistemare grafica
-                add(riepilogoEventiAvversiPersonali).setVisible(false);
-                add(inserisciEventiAvversi).setVisible(true);
-
-            } else if (!switcha.isSelected()) {
-                add(inserisciEventiAvversi).setVisible(false);
-                add(riepilogoEventiAvversiPersonali).setVisible(true);
-
-            }
-
-
-        }else if (e.getSource() == pulisciEventiAvversi) {
+        } else if (e.getSource() == pulisciEventiAvversi) {
             noteGenerali.setText("");
             severitaMDT.setSelectedItem("0");
             severitaFebbre.setSelectedItem("0");
@@ -664,6 +665,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         } else if (e.getSource() == registraEA) {
             registraEventiAvversi();
+            inserisciEventiAvversi.setVisible(false);
+            riepilogoNote.setVisible(true);
 
         }
 
