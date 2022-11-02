@@ -7,6 +7,7 @@
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
@@ -70,7 +71,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lperf/OneDrive/Documenti/VaxCenter_B",
+    "last_opened_file_path": "C:/Users/lperf/OneDrive/Desktop/TestDataBase",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -223,35 +224,9 @@
       <workItem from="1666967167499" duration="3812000" />
       <workItem from="1667055181853" duration="2689000" />
       <workItem from="1667064892904" duration="38000" />
-      <workItem from="1667384705392" duration="4407000" />
-    </task>
-    <task id="LOCAL-00036" summary="Sistemazione UIAdverseEvent">
-      <created>1664221046733</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1664221046733</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Sistemazione UIAdverseEvent">
-      <created>1664222136120</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1664222136120</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Sistemazione UIAdverseEvent">
-      <created>1664224823778</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1664224823778</updated>
-    </task>
-    <task id="LOCAL-00039" summary="JavaDoc">
-      <created>1664225735950</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1664225735950</updated>
+      <workItem from="1667384705392" duration="4736000" />
+      <workItem from="1667398032634" duration="1416000" />
+      <workItem from="1667406611031" duration="3287000" />
     </task>
     <task id="LOCAL-00040" summary="JavaDoc + UIAdverseEvent">
       <created>1664227774357</created>
@@ -568,7 +543,35 @@
       <option name="project" value="LOCAL" />
       <updated>1667386324643</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="eliminato il precedente dalla classe">
+      <created>1667389141841</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389141842</updated>
+    </task>
+    <task id="LOCAL-00086" summary="eliminato il corpo della classe">
+      <created>1667389183285</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389183285</updated>
+    </task>
+    <task id="LOCAL-00087" summary="nuova implementazione della classe UISearchVaxCenterDialog">
+      <created>1667389314915</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389314915</updated>
+    </task>
+    <task id="LOCAL-00088" summary="eliminata l'icon">
+      <created>1667389372201</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389372201</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,10 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sistemazione generale" />
-    <MESSAGE value="Aggiunta campo di ricerca" />
-    <MESSAGE value="Aggiunta opzione comune e nome" />
-    <MESSAGE value="Aggiunta tabella visualizzazione" />
     <MESSAGE value="Aggiunta panel&#10;e resize generale" />
     <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
     <MESSAGE value="bug fixed" />
@@ -623,6 +622,10 @@
     <MESSAGE value="implementato il metodo jTable1MouseClicked" />
     <MESSAGE value="eliminato il metodo main" />
     <MESSAGE value="aggiunto e implementato il metodo addMouseListener" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto e implementato il metodo addMouseListener" />
+    <MESSAGE value="eliminato il precedente dalla classe" />
+    <MESSAGE value="eliminato il corpo della classe" />
+    <MESSAGE value="nuova implementazione della classe UISearchVaxCenterDialog" />
+    <MESSAGE value="eliminata l'icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="eliminata l'icon" />
   </component>
 </project>

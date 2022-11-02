@@ -6,12 +6,12 @@ import java.util.Objects;
 
 /**
 *
-* @author lperf
+* @author Luca Perfetti
 */
 public class UISearchVaxCenterDialog extends javax.swing.JFrame{
 
     /**
-     * Creates new form PopUpProspettoRiassuntivo
+     * Creates new form UISearchVaxCenterDialog
      */
     public UISearchVaxCenterDialog() {
         initComponents();
@@ -31,41 +31,75 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
         jLabelTitle = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
         jLabelinsNome = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jLabelSintomi = new javax.swing.JLabel();
+        jLabelSeverità = new javax.swing.JLabel();
+        jLabelcefalea = new javax.swing.JLabel();
+        jLabelfebbre = new javax.swing.JLabel();
+        jLabeldolori = new javax.swing.JLabel();
+        jLabelLinfo = new javax.swing.JLabel();
+        jLabelcrisi = new javax.swing.JLabel();
+        jLabelsevCefalea = new javax.swing.JLabel();
+        jLabelsevFebbre = new javax.swing.JLabel();
+        jLabelsevDolori = new javax.swing.JLabel();
+        jLabelsevLinfo = new javax.swing.JLabel();
+        jLabelsevCrisi = new javax.swing.JLabel();
+        jLabelNSegnalazioni = new javax.swing.JLabel();
+        jLabelnumSegnalazioni = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(181, 226, 232));
 
         jPanel1.setBackground(new java.awt.Color(181, 226, 232));
 
-        //jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/guiproject/serverhomeui/My_project-1-removebg2.png"))); // NOI18N
+        jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/guiproject/serverhomeui/My_project-1-removebg2.png"))); // NOI18N
 
         jLabelTitle.setFont(new java.awt.Font("Segoe Script", 3, 30)); // NOI18N
         jLabelTitle.setText("Centro Vaccinale");
 
-        jLabelNome.setFont(new java.awt.Font("Sitka Small", 2, 24)); // NOI18N
+        jLabelNome.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
         jLabelNome.setForeground(new java.awt.Color(0, 0, 153));
         jLabelNome.setText("Nome:");
 
-        jLabelinsNome.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
+        jLabelinsNome.setFont(new java.awt.Font("Sitka Small", 2, 18)); // NOI18N
 
-        jTable1.setBackground(new java.awt.Color(181, 226, 232));
-        jTable1.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 153));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                        {"Cefalea", null},
-                        {"Febbre", null},
-                        {"Dolori Muscolari", null},
-                        {"Linfoadenopatia", null},
-                        {null, null}
-                },
-                new String [] {
-                        "Sintomi", "Severità Media"
-                }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jLabelSintomi.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
+        jLabelSintomi.setForeground(new java.awt.Color(0, 0, 153));
+        jLabelSintomi.setText("SINTOMATOLOGIA");
+
+        jLabelSeverità.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
+        jLabelSeverità.setForeground(new java.awt.Color(0, 0, 153));
+        jLabelSeverità.setText("SEVERITA' MEDIA");
+
+        jLabelcefalea.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabelcefalea.setText("CEFALEA");
+
+        jLabelfebbre.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabelfebbre.setText("FEBBRE");
+
+        jLabeldolori.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabeldolori.setText("DOLORI MUSCOLARI");
+
+        jLabelLinfo.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabelLinfo.setText("LINFOADENOPATIA");
+
+        jLabelcrisi.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+        jLabelcrisi.setText("CRISI IPERTENSIVA");
+
+        jLabelsevCefalea.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+
+        jLabelsevFebbre.setFont(new java.awt.Font("Sitka Small", 0, 12)); // NOI18N
+
+        jLabelsevDolori.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+
+        jLabelsevLinfo.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+
+        jLabelsevCrisi.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
+
+        jLabelNSegnalazioni.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
+        jLabelNSegnalazioni.setForeground(new java.awt.Color(0, 0, 153));
+        jLabelNSegnalazioni.setText("Numero Segnalazioni:");
+
+        jLabelnumSegnalazioni.setFont(new java.awt.Font("Sitka Small", 2, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -74,37 +108,91 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addContainerGap()
                                                 .addComponent(jLabelIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(40, 40, 40)
-                                                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(38, 38, 38)
-                                                .addComponent(jLabelNome)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabelinsNome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(24, 24, 24)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(32, Short.MAX_VALUE))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabelNome)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jLabelinsNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabelNSegnalazioni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(jLabelnumSegnalazioni, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(474, 474, 474))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(jLabelLinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabelcrisi)
+                                                                                        .addComponent(jLabeldolori))
+                                                                                .addGap(154, 154, 154)
+                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(jLabelsevLinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabelsevDolori, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabelsevCrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(jLabelfebbre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabelcefalea))
+                                                                                .addGap(246, 246, 246)
+                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(jLabelsevFebbre, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabelsevCefalea, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addComponent(jLabelSintomi)
+                                                                                .addGap(73, 73, 73)
+                                                                                .addComponent(jLabelSeverità)))
+                                                                .addGap(304, 304, 304)))))
+                                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabelIcon)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addContainerGap()
-                                                .addComponent(jLabelIcon))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(45, 45, 45)
+                                                .addGap(40, 40, 40)
                                                 .addComponent(jLabelTitle)))
                                 .addGap(9, 9, 9)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jLabelinsNome)
+                                                        .addComponent(jLabelNome))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabelNSegnalazioni))
+                                        .addComponent(jLabelnumSegnalazioni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabelinsNome)
-                                        .addComponent(jLabelNome))
-                                .addGap(29, 29, 29)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(72, Short.MAX_VALUE))
+                                        .addComponent(jLabelSintomi)
+                                        .addComponent(jLabelSeverità))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelcefalea)
+                                        .addComponent(jLabelsevCefalea))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelfebbre)
+                                        .addComponent(jLabelsevFebbre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelLinfo)
+                                        .addComponent(jLabelsevDolori, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabelcrisi)
+                                        .addComponent(jLabelsevLinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabeldolori)
+                                        .addComponent(jLabelsevCrisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -113,7 +201,7 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -161,13 +249,24 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
 
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabelIcon;
+    private javax.swing.JLabel jLabelLinfo;
+    private javax.swing.JLabel jLabelNSegnalazioni;
     private javax.swing.JLabel jLabelNome;
+    private javax.swing.JLabel jLabelSeverità;
+    private javax.swing.JLabel jLabelSintomi;
     private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JLabel jLabelcefalea;
+    private javax.swing.JLabel jLabelcrisi;
+    private javax.swing.JLabel jLabeldolori;
+    private javax.swing.JLabel jLabelfebbre;
     private javax.swing.JLabel jLabelinsNome;
+    private javax.swing.JLabel jLabelnumSegnalazioni;
+    private javax.swing.JLabel jLabelsevCefalea;
+    private javax.swing.JLabel jLabelsevCrisi;
+    private javax.swing.JLabel jLabelsevDolori;
+    private javax.swing.JLabel jLabelsevFebbre;
+    private javax.swing.JLabel jLabelsevLinfo;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration
 }
-
 
