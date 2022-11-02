@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
@@ -233,21 +233,7 @@
       <workItem from="1666967167499" duration="3812000" />
       <workItem from="1667055181853" duration="2689000" />
       <workItem from="1667064892904" duration="38000" />
-      <workItem from="1667384705392" duration="300000" />
-    </task>
-    <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
-      <created>1664041542365</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041542365</updated>
-    </task>
-    <task id="LOCAL-00033" summary="centralizzato testo in comboBox">
-      <created>1664041892980</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041892980</updated>
+      <workItem from="1667384705392" duration="658000" />
     </task>
     <task id="LOCAL-00034" summary="modifica rounded corners">
       <created>1664042360458</created>
@@ -578,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667384984804</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="creato il metodo jTable1MouseClicked">
+      <created>1667385055334</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385055334</updated>
+    </task>
+    <task id="LOCAL-00082" summary="implementato il metodo jTable1MouseClicked">
+      <created>1667385153282</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385153282</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,8 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica bottone login" />
-    <MESSAGE value="fix bug generale" />
     <MESSAGE value="update maven" />
     <MESSAGE value="Impostazione campi search" />
     <MESSAGE value="sistemazione generale" />
@@ -633,6 +631,8 @@
     <MESSAGE value="aggiunta immagine" />
     <MESSAGE value="implementata con la parte di grafica la classe" />
     <MESSAGE value="creato l'oggetto vcdialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="creato l'oggetto vcdialog" />
+    <MESSAGE value="creato il metodo jTable1MouseClicked" />
+    <MESSAGE value="implementato il metodo jTable1MouseClicked" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementato il metodo jTable1MouseClicked" />
   </component>
 </project>
