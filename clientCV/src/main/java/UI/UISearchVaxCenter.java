@@ -27,6 +27,7 @@ import javax.swing.table.TableModel;
  *
  * @author Damiano Ficara
  * @author Paolo Bruscagin
+ * @author Luca Perfetti
  */
 public class UISearchVaxCenter extends JFrame {
 
@@ -110,6 +111,13 @@ public class UISearchVaxCenter extends JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
