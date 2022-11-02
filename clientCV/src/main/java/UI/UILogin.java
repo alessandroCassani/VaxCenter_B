@@ -160,18 +160,16 @@ public class UILogin extends JFrame  {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 setVisible(false);
                 try {
-                    System.out.println("Utente:" + username.getText());
-                    System.out.println("Password:" + password.getText().toString());
                     if(ServerPointer.getStub().isSignedUp(new Account(username.getText(),password.getText()))){
                         System.out.println("Accesso in corso....");
                         new UIAdverseEvent(username.getText());
 
                     }
                     else
-                        JOptionPane.showMessageDialog(null, "Accesso rifiutato! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Accesso rifiutato! Tentativi rimasti:" + (MAX_TIMES - counter) , "Messaggio",JOptionPane.ERROR_MESSAGE);
                         new UILogin();
                         counter++;
-                        if (counter >= 3) {
+                        if (counter > MAX_TIMES) {
                             JOptionPane.showMessageDialog(null, "Tentativi esauriti!", "Messaggio",JOptionPane.ERROR_MESSAGE);
                             System.exit(0);
                         }
@@ -262,6 +260,7 @@ public class UILogin extends JFrame  {
     private MyTextField username;
 
     private static Integer counter = 0;
+    private static  final Integer MAX_TIMES = 3;
 
 
 }

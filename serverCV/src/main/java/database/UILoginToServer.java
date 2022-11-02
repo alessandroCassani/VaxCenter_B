@@ -333,7 +333,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
     public static String getUserTextField() {
         return userTextField.getText();
     }
-
     /**
      * il metodo permette di ottenere dalla PasswordField la password inserita dall'utente
      * @return nome utente
