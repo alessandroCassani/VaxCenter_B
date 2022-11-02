@@ -356,11 +356,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         backToCitizenR.setContentAreaFilled(false);
 
 
-        //switcha.setFont(new Font("Arial", Font.BOLD, 15));
-        //switcha.setBounds(400, 500, 20, 15);
-        //switcha.addActionListener(this);
-        //switcha.setBackground(new Color(181, 226, 232));
-
         infoUtente.add(titoloRiepilogo);
         infoUtente.add(nomeUtente);
         infoUtente.add(cognomeUtente);
@@ -369,8 +364,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.add(UserIDUtente);
         infoUtente.add(IDUnivocoUtente);
 
-
-        //infoUtente.add(switcha);
 
         add(infoUtente);
 
