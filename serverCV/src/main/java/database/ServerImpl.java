@@ -126,8 +126,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette la registrazione nelle tabelle Severita e Eventi_Avversi le informazioni relative agli eventi avversi registrati dal cittadino.
-     * le severita' sono inserite come interi nella tabella Severita, le note opzionali come ultimo campo sotto forma di stringhe.
+     * il metodo permette la registrazione nella tabella Eventi_Avversi le informazioni relative agli eventi avversi registrati dal cittadino.
+     * le severita' e le note opzionali sono inserite come stringhe nella tabella eventi_avversi
      * le sintomatologie registrate sono registrate nella tabella Eventi_Avversi sotto forma di booleani. true se sintomo riscontrato, altrimenti false
      *
      * @param eventiAvversi serie di eventi avversi segnalati
