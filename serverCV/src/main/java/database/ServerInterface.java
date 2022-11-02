@@ -56,6 +56,10 @@ public interface ServerInterface extends Remote {
     boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException;
 
 
+    boolean isAERegistered(String user) throws RemoteException;
+
+    String[] getPersonAE(String user) throws RemoteException;
+
     /**
      * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
      * @param account account del cittadino
