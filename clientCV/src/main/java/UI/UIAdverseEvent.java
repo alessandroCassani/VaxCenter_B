@@ -6,6 +6,7 @@ import util.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -275,8 +277,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
 
+
+
         String [] info;
         info = ServerPointer.getStub().getPersonAE(user);
+
 
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", info[0]}, {" Febbre", info[1]}, {" Tachicardia", info[2]}, {" Dolori Musc. Art.", info[3]}, {" Linfoadenopatia", info[4]}, {" Crisi Ipertensiva", info[5]}};
 
@@ -494,10 +499,10 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         tabellaRiepilogo.setEnabled(false);
         riepilogoNote.setBounds(100, 430, 400, 15);
         riepilogoNote.setFont(new Font("Georgia", Font.BOLD, 12));
-        riepilogoNote.setText(info[6]);
         riepilogoEventiAvversiPersonali.add(riepilogoNote);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
         riepilogoEventiAvversiPersonali.add(rn);
+        rn.setText(info[6]);
         riepilogoEventiAvversiPersonali.add(backToCitizenR);
 
 
@@ -628,7 +633,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         try {
 
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "Ale");
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
             JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {
