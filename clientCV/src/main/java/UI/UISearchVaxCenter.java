@@ -231,7 +231,12 @@ public class UISearchVaxCenter extends JFrame {
     }
 
     private void loadData(LinkedList<CentroVaccinale> list, Object[] tuple) {
-        DefaultTableModel model = new DefaultTableModel();
+        DefaultTableModel model = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         jTable1.setModel(model);
         model.setColumnIdentifiers(indici);
 
