@@ -99,8 +99,13 @@ public class ServerPointer {
             ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
             System.out.println("Connessione avvenuta correttamente");
-        }catch (RemoteException | NotBoundException e) {
-            e.printStackTrace();
+        }catch (RemoteException e) {
+            JOptionPane.showMessageDialog(null, " AVVIARE PRIMA IL SERVER !", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+            System.out.println("Impossibile connettersi al server remoto");
+        } catch(NotBoundException e) {
+            JOptionPane.showMessageDialog(null, " SERVIZIO NON TROVATO !", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
             System.out.println("Impossibile connettersi al server remoto");
         }
 
