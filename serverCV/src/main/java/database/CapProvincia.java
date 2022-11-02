@@ -28,9 +28,8 @@ public class CapProvincia implements Serializable {
      * @author Alessandro Cassani
      */
     public CapProvincia(String cap,String prov){
-        provincia = prov;
         this.cap = cap;
-
+        provincia = prov;
     }
 
     /**
