@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
@@ -78,16 +79,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/clientCV/src/main/resources/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lperf/OneDrive/Desktop/TestDataBase",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -231,21 +232,9 @@
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
       <workItem from="1665575874467" duration="5661000" />
-      <workItem from="1666967167499" duration="2316000" />
-    </task>
-    <task id="LOCAL-00028" summary="modifica allineamenti UIRegisterVaxCenter">
-      <created>1664026162126</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026162126</updated>
-    </task>
-    <task id="LOCAL-00029" summary="modifica login dimensione e centralità">
-      <created>1664026564942</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026564942</updated>
+      <workItem from="1666967167499" duration="3812000" />
+      <workItem from="1667055181853" duration="2689000" />
+      <workItem from="1667064892904" duration="38000" />
     </task>
     <task id="LOCAL-00030" summary="centralizzato testo in textField">
       <created>1664027194330</created>
@@ -576,7 +565,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666969550905</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="implementata la classe UISearchVaxCenterDialog">
+      <created>1666969721870</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969721870</updated>
+    </task>
+    <task id="LOCAL-00078" summary="aggiunta immagine">
+      <created>1666969958616</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969958616</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +609,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica font" />
-    <MESSAGE value="aggiunta hint" />
     <MESSAGE value="modifica username" />
     <MESSAGE value="modifica pwd" />
     <MESSAGE value="modifica bottone login" />
@@ -631,6 +632,8 @@
     <MESSAGE value="modifica JComboBox" />
     <MESSAGE value="checkPassword" />
     <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="creata la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="aggiunta immagine" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta immagine" />
   </component>
 </project>
