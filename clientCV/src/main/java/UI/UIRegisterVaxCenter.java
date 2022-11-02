@@ -147,7 +147,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         comune.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         comune.setPreferredSize(new Dimension(325, 75));
         comune.setBounds(130, 335, 300, 50);
-
+        comune.getSelectedItem().toString();
         qualificatore.setFont(new Font("Arial", Font.ITALIC, 20));
         qualificatore.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         qualificatore.setBounds(130, 230, 100, 50);
@@ -181,15 +181,17 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(500, 335, 100, 50);
         siglaProvincia.setEditable(false); //immutabile in quanto viene completato automaticamente
-        try {
-            CapProvincia capProvincia = ServerPointer.getStub().getComuneInfo("napoli");
-            System.out.println(capProvincia.getCap().toString());
-            System.out.println(capProvincia.getCap().toString());
-            siglaProvincia.setText(capProvincia.getProvincia().toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+        comune.addActionListener(e -> {
+            try {
+                CapProvincia capProvincia = ServerPointer.getStub().getComuneInfo(comune.getSelectedItem().toString());
+                siglaProvincia.setText(capProvincia.getProvincia());
+                cap.setText(capProvincia.getCap());
+            } catch (RemoteException ex) {
+                throw new RuntimeException(ex);
+            }
+
+        });
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -295,12 +297,14 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         String nomeIndirizzo = nomeVia.getText().toUpperCase();
         String civico = numeroCivico.getText();
         String com = Objects.requireNonNull(comune.getSelectedItem().toString());
+        String provincia = siglaProvincia.getText().toUpperCase();
+        String code = cap.getText().toUpperCase();
         String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
         try {
 
             ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
                     (nome,Qualificatore.getQualificatore(qualifica.toUpperCase()),nomeIndirizzo,civico,
-                            "co",com.toUpperCase(), 22070, Tipologia.getTipo(tipologiaCentro.toUpperCase())));
+                            provincia,com.toUpperCase(), Integer.parseInt(code), Tipologia.getTipo(tipologiaCentro.toUpperCase())));
             JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException | RemoteException ex) {
             throw new RuntimeException(ex);
