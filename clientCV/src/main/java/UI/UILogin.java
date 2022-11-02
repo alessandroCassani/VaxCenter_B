@@ -22,7 +22,7 @@ import java.util.Objects;
 
 /**
  *
- * Classe che permette al Cittadino di fare il Login
+ * Classe che permette al Cittadino di compiere il Login
  *
  * @author Damiano Ficara
  * @author Paolo Bruscagin
@@ -30,7 +30,10 @@ import java.util.Objects;
 public class UILogin extends JFrame  {
 
     /**
-     * Creates new form UILog
+     * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata di login del cittadino
+     *
+     * @author Paolo Bruscagin
+     * @author Damiano Ficara
      */
     public UILogin() {
 
@@ -65,8 +68,13 @@ public class UILogin extends JFrame  {
 
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    /**
+     *
+     *Questo metodo viene chiamato dall'interno del costruttore per inizializzare il form.
+     *ATTENZIONE: NON modificare questo codice. Il contenuto di questo metodo è sempre
+     *rigenerato dal Forditor.
+     *
+     */
     private void initComponents() {
 
         jPanel1 = new GradientPanel(Color.decode("#099779"),Color.decode("#0f88f9"));
@@ -156,6 +164,7 @@ public class UILogin extends JFrame  {
         rnd.setFont(new java.awt.Font("Arial", 1, 18));
         rnd.setText("LOGIN");
         rnd.setFocusable(false);
+
         rnd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 setVisible(false);
