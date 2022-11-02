@@ -280,7 +280,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         String [] info;
-        info = ServerPointer.getStub().getPersonAE("alberto");
+        info = ServerPointer.getStub().getPersonAE(user);
+
+
 
 
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", info[0]}, {" Febbre", info[1]}, {" Tachicardia", info[2]}, {" Dolori Musc. Art.", info[3]}, {" Linfoadenopatia", info[4]}, {" Crisi Ipertensiva", info[5]}};
@@ -567,7 +569,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         add(riepilogoEventiAvversiPersonali).setVisible(false);
 
 
-        if (ServerPointer.getStub().isAERegistered("alberto")){
+        if (ServerPointer.getStub().isAERegistered(user)){
                 inserisciEventiAvversi.setVisible(false);
                 riepilogoEventiAvversiPersonali.setVisible(true);
         }else{
@@ -633,7 +635,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         try {
 
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "alberto");
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
             JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {
@@ -670,10 +672,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         } else if (e.getSource() == registraEA) {
             registraEventiAvversi();
-            inserisciEventiAvversi.setVisible(false);
-            //aggiornamento della tabella (bug)
+            severitaMDT.setEnabled(false);
+            severitaFebbre.setEnabled(false);
+            severitaDMA.setEnabled(false);
+            severitatachicardia.setEnabled(false);
+            severitalinfoadenopatia.setEnabled(false);
+            severitaCrisiIpertensiva.setEnabled(false);
+            noteGenerali.setEditable(false);
+            registraEA.setEnabled(false);
+            pulisciEventiAvversi.setEnabled(false);
 
-            riepilogoEventiAvversiPersonali.setVisible(true);
 
         }
 
