@@ -208,11 +208,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     String severitàEvento = " SEVERITA'";
 
 
-    //Tabella 6x2 (righe x colonne) immutabile in quanto viene completato automaticamente
-
-
-
-
 
     /**
      * Label per il riepilogo note
