@@ -280,7 +280,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         String [] info;
-        info = ServerPointer.getStub().getPersonAE(user);
+        info = ServerPointer.getStub().getPersonAE("alberto");
 
 
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", info[0]}, {" Febbre", info[1]}, {" Tachicardia", info[2]}, {" Dolori Musc. Art.", info[3]}, {" Linfoadenopatia", info[4]}, {" Crisi Ipertensiva", info[5]}};
@@ -288,6 +288,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
         JTable tabellaRiepilogo = new JTable(data, coloumn);
+
+
 
 
 
@@ -506,9 +508,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         riepilogoEventiAvversiPersonali.add(backToCitizenR);
 
 
-        add(riepilogoEventiAvversiPersonali).setVisible(false);;
-
-
         //Panel Inserimento Eventi Avversi
         inserisciEventiAvversi.setBounds(0, 0, 550, 500);
         inserisciEventiAvversi.setLayout(null);
@@ -541,8 +540,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(severitaCrisiIpertensiva);
         inserisciEventiAvversi.add(backToCitizen);
 
-        add(inserisciEventiAvversi).setVisible(false);
-
         registraEA.setBounds(300, 425, 150, 50);
         registraEA.setFont(new Font("Georgia", Font.BOLD, 15));
         registraEA.setBackground(new Color(0, 0, 128));
@@ -566,14 +563,17 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
 
-        /*if (ServerPointer.getStub().isAERegistered(username)){
+        add(inserisciEventiAvversi).setVisible(false);
+        add(riepilogoEventiAvversiPersonali).setVisible(false);
+
+
+        if (ServerPointer.getStub().isAERegistered("alberto")){
                 inserisciEventiAvversi.setVisible(false);
                 riepilogoEventiAvversiPersonali.setVisible(true);
-        }else {
+        }else{
             inserisciEventiAvversi.setVisible(true);
             riepilogoEventiAvversiPersonali.setVisible(false);
-        }*/
-        add(riepilogoEventiAvversiPersonali).setVisible(true);
+        }
 
 
         //Popup "Se sicuro di uscire?"
@@ -633,7 +633,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         try {
 
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
+            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), "alberto");
             JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {
@@ -671,7 +671,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         } else if (e.getSource() == registraEA) {
             registraEventiAvversi();
             inserisciEventiAvversi.setVisible(false);
-            riepilogoNote.setVisible(true);
+            //aggiornamento della tabella (bug)
+
+            riepilogoEventiAvversiPersonali.setVisible(true);
 
         }
 
