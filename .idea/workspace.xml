@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
@@ -226,14 +224,7 @@
       <workItem from="1667064892904" duration="38000" />
       <workItem from="1667384705392" duration="4736000" />
       <workItem from="1667398032634" duration="1416000" />
-      <workItem from="1667406611031" duration="3287000" />
-    </task>
-    <task id="LOCAL-00040" summary="JavaDoc + UIAdverseEvent">
-      <created>1664227774357</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227774357</updated>
+      <workItem from="1667406611031" duration="3631000" />
     </task>
     <task id="LOCAL-00041" summary="JavaDoc">
       <created>1664227843606</created>
@@ -571,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667389372201</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="implementato la classe UISearchVaxCenterDialog">
+      <created>1667410390289</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1667410390289</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Aggiunta panel&#10;e resize generale" />
     <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Sistemazione UI" />
@@ -626,6 +623,7 @@
     <MESSAGE value="eliminato il corpo della classe" />
     <MESSAGE value="nuova implementazione della classe UISearchVaxCenterDialog" />
     <MESSAGE value="eliminata l'icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="eliminata l'icon" />
+    <MESSAGE value="implementato la classe UISearchVaxCenterDialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementato la classe UISearchVaxCenterDialog" />
   </component>
 </project>
