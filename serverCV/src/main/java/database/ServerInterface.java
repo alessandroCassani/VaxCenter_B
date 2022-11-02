@@ -55,9 +55,24 @@ public interface ServerInterface extends Remote {
      */
     boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException;
 
-
+    /**
+     * segnatura del metodo che permette di controllare se gli eventi avversi sono già stati registrati per quel cittadino
+     * @param user account del cittadino
+     * @return true o false, in base all'esito dell'operazione
+     * @throws RemoteException eccezione rmi
+     *
+     *  @author Paolo Bruscagin
+     */
     boolean isAERegistered(String user) throws RemoteException;
 
+    /**
+     * segnatura del metodo che permette la restituzione degli eventi avversi già segnalati
+     * @param user nome del centro vaccinale (anche non completa)
+     * @return lista di centri vaccinali
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Paolo Bruscagin
+     */
     String[] getPersonAE(String user) throws RemoteException;
 
     /**
