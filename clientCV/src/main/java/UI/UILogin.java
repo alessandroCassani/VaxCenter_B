@@ -168,7 +168,13 @@ public class UILogin extends JFrame  {
 
                     }
                     else
-                        System.out.println("Accesso rifiutato");
+                        JOptionPane.showMessageDialog(null, "Accesso rifiutato! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                        new UILogin();
+                        counter++;
+                        if (counter >= 3) {
+                            JOptionPane.showMessageDialog(null, "Tentativi esauriti!", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                            System.exit(0);
+                        }
 
                 } catch (RemoteException e) {
                     throw new RuntimeException(e);
@@ -255,6 +261,7 @@ public class UILogin extends JFrame  {
     private MyPwdField password;
     private MyTextField username;
 
+    private static Integer counter = 0;
 
 
 }
