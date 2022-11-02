@@ -17,6 +17,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 
 /**
@@ -276,7 +277,29 @@ public class UISearchVaxCenter extends JFrame {
     UISearchVaxCenterDialog vcdialog = new UISearchVaxCenterDialog();
 
     public void jTable1MouseClicked(java.awt.event.MouseEvent evt){
+        int index = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+        String nome = model.getValueAt(index, 0).toString();
+        String comune = model.getValueAt(index, 1).toString();
+        String qualificatore = model.getValueAt(index, 2).toString();
+        String via = model.getValueAt(index, 3).toString();
+        String civico = model.getValueAt(index, 4).toString();
+        String sigla = model.getValueAt(index, 5).toString();
+        String CAP = model.getValueAt(index, 6).toString();
+        String Tipologia = model.getValueAt(index, 7).toString();
 
+        vcdialog.setVisible(true);
+        vcdialog.pack();
+        vcdialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        vcdialog.jLabelinsNome.setText(nome);
+        vcdialog.jLabelinsComune.setText(comune);
+        vcdialog.jLabelinsQualificatore.setText(qualificatore);
+        vcdialog.jLabelinsVia.setText(via);
+        vcdialog.jLabelinsCivico.setText(civico);
+        vcdialog.jLabelinsSigla.setText(sigla);
+        vcdialog.jLabelinsCAP.setText(CAP);
+        vcdialog.jLabelinsTipologia.setText(Tipologia);
     }
 
 }
