@@ -275,4 +275,8 @@ public class UISearchVaxCenter extends JFrame {
 
     UISearchVaxCenterDialog vcdialog = new UISearchVaxCenterDialog();
 
+    public void jTable1MouseClicked(java.awt.event.MouseEvent evt){
+
+    }
+
 }

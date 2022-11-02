@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
@@ -82,7 +80,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lperf/OneDrive/Desktop/TestDataBase",
+    "last_opened_file_path": "C:/Users/lperf/OneDrive/Documenti/VaxCenter_B",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -235,20 +233,7 @@
       <workItem from="1666967167499" duration="3812000" />
       <workItem from="1667055181853" duration="2689000" />
       <workItem from="1667064892904" duration="38000" />
-    </task>
-    <task id="LOCAL-00030" summary="centralizzato testo in textField">
-      <created>1664027194330</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1664027194330</updated>
-    </task>
-    <task id="LOCAL-00031" summary="modifiche dimensioni UIChoosingRooles.java">
-      <created>1664028769618</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1664028769618</updated>
+      <workItem from="1667384705392" duration="300000" />
     </task>
     <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
       <created>1664041542365</created>
@@ -579,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666969958616</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="implementata con la parte di grafica la classe">
+      <created>1667384958512</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384958513</updated>
+    </task>
+    <task id="LOCAL-00080" summary="creato l'oggetto vcdialog">
+      <created>1667384984804</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384984804</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,8 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifica username" />
-    <MESSAGE value="modifica pwd" />
     <MESSAGE value="modifica bottone login" />
     <MESSAGE value="fix bug generale" />
     <MESSAGE value="update maven" />
@@ -634,6 +631,8 @@
     <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
     <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
     <MESSAGE value="aggiunta immagine" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta immagine" />
+    <MESSAGE value="implementata con la parte di grafica la classe" />
+    <MESSAGE value="creato l'oggetto vcdialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="creato l'oggetto vcdialog" />
   </component>
 </project>
