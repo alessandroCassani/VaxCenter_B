@@ -10,6 +10,7 @@ import java.util.Date;
      */
 public class Cittadino extends Persona {
 
+
         /**
          * Account associato al cittadino
          */
