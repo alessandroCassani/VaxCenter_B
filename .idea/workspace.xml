@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +97,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UISearchVaxCenterDialog">
+  <component name="RunManager" selected="Application.ServerPointer">
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
@@ -189,9 +179,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.WelcomeScreen" />
       </list>
@@ -233,21 +223,7 @@
       <workItem from="1666967167499" duration="3812000" />
       <workItem from="1667055181853" duration="2689000" />
       <workItem from="1667064892904" duration="38000" />
-      <workItem from="1667384705392" duration="658000" />
-    </task>
-    <task id="LOCAL-00034" summary="modifica rounded corners">
-      <created>1664042360458</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1664042360458</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Sistemazione UIAdverseEvent">
-      <created>1664185927256</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1664185927256</updated>
+      <workItem from="1667384705392" duration="4407000" />
     </task>
     <task id="LOCAL-00036" summary="Sistemazione UIAdverseEvent">
       <created>1664221046733</created>
@@ -578,7 +554,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667385153282</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="eliminato il metodo main">
+      <created>1667385659696</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385659696</updated>
+    </task>
+    <task id="LOCAL-00084" summary="aggiunto e implementato il metodo addMouseListener">
+      <created>1667386324642</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1667386324643</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,8 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update maven" />
-    <MESSAGE value="Impostazione campi search" />
     <MESSAGE value="sistemazione generale" />
     <MESSAGE value="Aggiunta campo di ricerca" />
     <MESSAGE value="Aggiunta opzione comune e nome" />
@@ -633,6 +621,8 @@
     <MESSAGE value="creato l'oggetto vcdialog" />
     <MESSAGE value="creato il metodo jTable1MouseClicked" />
     <MESSAGE value="implementato il metodo jTable1MouseClicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementato il metodo jTable1MouseClicked" />
+    <MESSAGE value="eliminato il metodo main" />
+    <MESSAGE value="aggiunto e implementato il metodo addMouseListener" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto e implementato il metodo addMouseListener" />
   </component>
 </project>

@@ -112,12 +112,6 @@ public class UISearchVaxCenter extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
 
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -282,32 +276,6 @@ public class UISearchVaxCenter extends JFrame {
      * @author Paolo Bruscagin
      */
 
-    UISearchVaxCenterDialog vcdialog = new UISearchVaxCenterDialog();
 
-    public void jTable1MouseClicked(java.awt.event.MouseEvent evt){
-        int index = jTable1.getSelectedRow();
-        TableModel model = jTable1.getModel();
-        String nome = model.getValueAt(index, 0).toString();
-        String comune = model.getValueAt(index, 1).toString();
-        String qualificatore = model.getValueAt(index, 2).toString();
-        String via = model.getValueAt(index, 3).toString();
-        String civico = model.getValueAt(index, 4).toString();
-        String sigla = model.getValueAt(index, 5).toString();
-        String CAP = model.getValueAt(index, 6).toString();
-        String Tipologia = model.getValueAt(index, 7).toString();
-
-        vcdialog.setVisible(true);
-        vcdialog.pack();
-        vcdialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        vcdialog.jLabelinsNome.setText(nome);
-        vcdialog.jLabelinsComune.setText(comune);
-        vcdialog.jLabelinsQualificatore.setText(qualificatore);
-        vcdialog.jLabelinsVia.setText(via);
-        vcdialog.jLabelinsCivico.setText(civico);
-        vcdialog.jLabelinsSigla.setText(sigla);
-        vcdialog.jLabelinsCAP.setText(CAP);
-        vcdialog.jLabelinsTipologia.setText(Tipologia);
-    }
 
 }
