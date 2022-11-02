@@ -165,6 +165,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @throws RemoteException
      *
      * @author Luca Perfetti
+     * @author Damiano Ficara
      */
     @Override
     public boolean isSignedUp(Account account) throws RemoteException {
@@ -328,6 +329,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @throws RemoteException eccezione rmi
      *
      * @author Alessandro Cassani
+     * @author Damiano Ficara
      */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
@@ -355,7 +357,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return listaCentri;
         } catch (SQLException e) {e.printStackTrace();return null;}
     }
-
+    /**
+     * il metodo permette la ricerca di una serie di centri vaccinali specificando il comune e la tipologia di essi
+     * @param nome stringa che rappresenta il nome del centro vaccinale
+     * @return lista di centri vaccinali
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     * @author Damiano Ficara
+     */
     @Override
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
@@ -435,8 +445,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * metodo che permette di ottenere la lista dei comuni italiani
-     * @return lista dei nomi dei comuni italiani
+     * metodo che permette di ottenere sigla e provincia dato un comune
+     * @return sigla e provincia di un comune
      * @throws RemoteException eccezione rmi
      *
      * @author Alessandro Cassani
@@ -460,6 +470,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return new CapProvincia(cap,provincia);
     }
 
+
+    /**
+     * metodo che permette di ottenere la lista dei comuni italiani
+     * @return lista dei nomi dei comuni italiani
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     * @author Damiano Ficara
+     */
     @Override
     public LinkedList<String> getComuniNome() throws RemoteException {
         try {
