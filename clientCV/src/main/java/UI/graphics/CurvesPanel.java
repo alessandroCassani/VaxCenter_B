@@ -17,7 +17,7 @@ import java.awt.geom.GeneralPath;
 import javax.swing.Timer;
 
 /**
- * La classe CurvesPanel permette la creazione di un pannello con l'utilizzo di colori gradienti e animazioni visivie
+ * La classe CurvesPanel permette la creazione di un pannello con l'utilizzo di colori gradienti e animazioni visive della WelcomeScreen
   @author Damiano Ficara
  */
 public class CurvesPanel extends GradientPanel {
