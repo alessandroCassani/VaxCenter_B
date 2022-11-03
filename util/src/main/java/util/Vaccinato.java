@@ -1,6 +1,5 @@
 package util;
 
-import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -38,9 +37,9 @@ public class Vaccinato extends Persona {
      * @author  Alessandro Cassani
      *
      */
-    public Vaccinato(String nome, String cognome, String codFisc, String email, BigInteger id, Date dataNascita,
-                     CentroVaccinale centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
-        super(nome,cognome,codFisc,email,id,dataNascita,centroVaccinale);
+    public Vaccinato(String nome, String cognome, String codFisc, Date dataSomministrazione,
+                     Vaccino vaccino, CentroVaccinale centroVaccinale) {
+        super(nome,cognome,codFisc,centroVaccinale);
         this.dataSomministrazione = dataSomministrazione;
         this.vaccino = vaccino;
     }
@@ -51,7 +50,8 @@ public class Vaccinato extends Persona {
      *
      * @author  Alessandro Cassani
      */
-    public Date getDataSomministrazione(){
+    public static Date getDataSomministrazione(String dataSomministrazione){
+
         return dataSomministrazione;
     }
 
@@ -61,7 +61,7 @@ public class Vaccinato extends Persona {
      *
      * @author  Alessandro Cassani
      */
-    public  Vaccino getVaccino(){
+    public static Vaccino getVaccino(String vaccino){
         return vaccino;
     }
 }
