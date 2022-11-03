@@ -332,7 +332,9 @@ import javax.swing.table.DefaultTableModel;
     }
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt){
-
+        jtRowData.setVisible(true);
+        jtRowData.pack();
+        jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
 }
