@@ -259,7 +259,7 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
     private javax.swing.JLabel jLabelcrisi;
     private javax.swing.JLabel jLabeldolori;
     private javax.swing.JLabel jLabelfebbre;
-    private javax.swing.JLabel jLabelinsNome;
+    public javax.swing.JLabel jLabelinsNome;
     public javax.swing.JLabel jLabelnumSegnalazioni;
     public javax.swing.JLabel jLabelsevCefalea;
     public javax.swing.JLabel jLabelsevCrisi;
