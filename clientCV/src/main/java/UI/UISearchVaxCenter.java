@@ -145,6 +145,11 @@ import javax.swing.table.DefaultTableModel;
                     jLabel1MousePressed(evt);
                 }
             });
+            jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    jTable1MouseClicked(evt);
+                }
+            });
 
             javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panel);
             panel.setLayout(jPanel1Layout);
@@ -326,7 +331,7 @@ import javax.swing.table.DefaultTableModel;
 
     UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
     private void readData() throws RemoteException {
-        String prospetto = ServerPointer.getStub().getProspettoRiassuntivo("CernobbioHub");
+        String prospetto = ServerPointer.getStub().getProspettoRiassuntivo("COMO");
 
         System.out.println(prospetto);
     }
