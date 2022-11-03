@@ -3,7 +3,6 @@ package UI;
 import database.CapProvincia;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
-import database.ServerImpl;
 import util.CentroVaccinale;
 import util.Qualificatore;
 import util.Tipologia;
@@ -18,8 +17,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
