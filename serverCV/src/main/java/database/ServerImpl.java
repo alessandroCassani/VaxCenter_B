@@ -16,6 +16,7 @@ import java.util.TreeSet;
  *
  * @author Alessandro Cassani
  * @author Luca Perfetti
+ * @Paolo Bruscagin
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
@@ -477,6 +478,19 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.close();
             return listaCentri;
         } catch (SQLException e) {e.printStackTrace();return null;}
+    }
+
+    /**
+     * metodo che permette la restituzione dei dati di un cittadino registrato
+     * @return lista dei nomi dei centri vaccinali esistenti
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Paolo Bruscagin
+     */
+
+    @Override
+    public String[] getInfoCittadini() throws RemoteException {
+        return new String[0];
     }
 
     /**
