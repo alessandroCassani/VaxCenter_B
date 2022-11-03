@@ -270,7 +270,7 @@ public class UISearchVaxCenter extends JFrame {
     }
 
     /**
-     * Metodo che permette di tornare alla schermata precedente mediante la freccia apposita
+     * Metodo che permette di modificare la dimensione dell'immagine
      * @param ic immagine in ingresso
      * @param x cordinata relativa alle ascisse
      * @param y cordinata relativa alle ordinate
