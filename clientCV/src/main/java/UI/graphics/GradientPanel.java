@@ -8,16 +8,35 @@ import java.awt.Paint;
 
 import javax.swing.JPanel;
 
+/**
+ * La classe GradientPanel permette la creazione di un pannello con l'utilizzo di colori gradienti
+ @author Damiano Ficara
+ */
 public class GradientPanel extends JPanel {
 
+    /**
+     * Colore primario del pannello
+     */
     private final Color gradientStart;
+    /**
+     * Colore secondario del pannello
+     */
     private final Color gradientEnd;
 
+    /**
+     * Costruttore responsabile dell'inizializzazione dei colori
+     * @author Damiano Ficara
+     */
     public GradientPanel(Color gradientStart, Color gradientEnd) {
         this.gradientStart = gradientStart;
         this.gradientEnd = gradientEnd;
     }
 
+    /**
+     * Metodo responsabile dell'operazione di disegno del componente grafico
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     @Override
     public void paintComponent(Graphics g) {
         int height = getHeight();
