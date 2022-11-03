@@ -213,6 +213,21 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         }
     }
 
+    /**
+     * il metodo permette di avere il riepilogo dei dati personali di un cittadino
+     * @param user account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Paolo Bruscagin
+     */
+
+    public String[] getInfoCittadino(String user) throws RemoteException{
+
+        return new String[0];
+    }
+
+
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
@@ -480,18 +495,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
-    /**
-     * metodo che permette la restituzione dei dati di un cittadino registrato
-     * @return lista dei nomi dei centri vaccinali esistenti
-     * @throws RemoteException eccezione rmi
-     *
-     * @author Paolo Bruscagin
-     */
 
-    @Override
-    public String[] getInfoCittadini() throws RemoteException {
-        return new String[0];
-    }
 
     /**
      * metodo che permette la ricerca dei nomi dei centri vaccinali esistenti

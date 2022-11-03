@@ -68,7 +68,7 @@ public interface ServerInterface extends Remote {
     /**
      * segnatura del metodo che permette la restituzione degli eventi avversi già segnalati
      * @param user nome del centro vaccinale (anche non completa)
-     * @return lista di centri vaccinali
+     * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
@@ -76,13 +76,24 @@ public interface ServerInterface extends Remote {
     String[] getPersonAE(String user) throws RemoteException;
 
     /**
-     * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
-     * @param account account del cittadino
-     * @return true o false, in base all'esito dell'operazione
+     * segnatura del metodo che permette la restituzione dei dati di un cittadino
+     * @param user nome del centro vaccinale (anche non completa)
+     * @return eventi avversi cittadino
      * @throws RemoteException eccezione rmi
      *
-     *  @author Alessandro Cassani
+     * @author Paolo Bruscagin
      */
+    String[] getInfoCittadino(String user) throws RemoteException;
+
+    /**
+     * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
+     * @param account account del cittadino
+     * @return dati personali di un cittadino
+     * @throws RemoteException eccezione rmi
+     *
+     *  @author Paolo Bruscagin
+     */
+
     boolean isSignedUp(Account account) throws RemoteException;
 
     /**
@@ -189,5 +200,4 @@ public interface ServerInterface extends Remote {
 
     LinkedList<CentroVaccinale>  getCentriVaccinali() throws RemoteException;
 
-    String[] getInfoCittadini() throws RemoteException;
 }
