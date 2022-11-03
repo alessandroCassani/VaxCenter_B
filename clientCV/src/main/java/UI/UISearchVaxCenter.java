@@ -325,8 +325,14 @@ import javax.swing.table.DefaultTableModel;
      */
 
     UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
-    private void readData(){
+    private void readData() throws RemoteException {
+        String prospetto = ServerPointer.getStub().getProspettoRiassuntivo("CernobbioHub");
+
+        System.out.println(prospetto);
     }
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt){
+
+    }
 
 }
