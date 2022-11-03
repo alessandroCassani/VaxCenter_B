@@ -51,7 +51,7 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
 
         jPanel1.setBackground(new java.awt.Color(181, 226, 232));
 
-        jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/guiproject/serverhomeui/My_project-1-removebg2.png"))); // NOI18N
+        //jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/guiproject/serverhomeui/My_project-1-removebg2.png"))); // NOI18N
 
         jLabelTitle.setFont(new java.awt.Font("Segoe Script", 3, 30)); // NOI18N
         jLabelTitle.setText("Centro Vaccinale");
@@ -215,13 +215,13 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-        try {
+        /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -240,12 +240,12 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new UISearchVaxCenterDialog().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify
     private javax.swing.JLabel jLabelIcon;
@@ -260,12 +260,12 @@ public class UISearchVaxCenterDialog extends javax.swing.JFrame{
     private javax.swing.JLabel jLabeldolori;
     private javax.swing.JLabel jLabelfebbre;
     private javax.swing.JLabel jLabelinsNome;
-    private javax.swing.JLabel jLabelnumSegnalazioni;
-    private javax.swing.JLabel jLabelsevCefalea;
-    private javax.swing.JLabel jLabelsevCrisi;
-    private javax.swing.JLabel jLabelsevDolori;
-    private javax.swing.JLabel jLabelsevFebbre;
-    private javax.swing.JLabel jLabelsevLinfo;
+    public javax.swing.JLabel jLabelnumSegnalazioni;
+    public javax.swing.JLabel jLabelsevCefalea;
+    public javax.swing.JLabel jLabelsevCrisi;
+    public javax.swing.JLabel jLabelsevDolori;
+    public javax.swing.JLabel jLabelsevFebbre;
+    public javax.swing.JLabel jLabelsevLinfo;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration
 }
