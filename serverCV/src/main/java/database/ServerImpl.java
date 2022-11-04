@@ -145,7 +145,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(1,user);
             count = 2;
             while(count<8) {
-                ps.setInt(count,eventiAvversi.getSintomi().get(count-1).getSeverita());
+                ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
                 count++;
             }
             ps.setString(8, eventiAvversi.getNote());

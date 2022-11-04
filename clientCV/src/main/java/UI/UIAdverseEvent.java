@@ -637,17 +637,21 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             severitaCrisiIpertensiva.setSelectedItem("0");
 
         } else if (e.getSource() == registraEA) {
-            registraEventiAvversi();
-            severitaMDT.setEnabled(false);
-            severitaFebbre.setEnabled(false);
-            severitaDMA.setEnabled(false);
-            severitatachicardia.setEnabled(false);
-            severitalinfoadenopatia.setEnabled(false);
-            severitaCrisiIpertensiva.setEnabled(false);
-            noteGenerali.setEditable(false);
-            registraEA.setEnabled(false);
-            pulisciEventiAvversi.setEnabled(false);
+            if (noteGenerali.getText().length() > 256){
+                JOptionPane.showMessageDialog(null, "Puoi inserire massimo 256 caratteri! Riprova", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
+            }else {
+                registraEventiAvversi();
+                severitaMDT.setEnabled(false);
+                severitaFebbre.setEnabled(false);
+                severitaDMA.setEnabled(false);
+                severitatachicardia.setEnabled(false);
+                severitalinfoadenopatia.setEnabled(false);
+                severitaCrisiIpertensiva.setEnabled(false);
+                noteGenerali.setEditable(false);
+                registraEA.setEnabled(false);
+                pulisciEventiAvversi.setEnabled(false);
+            }
 
         }
 
