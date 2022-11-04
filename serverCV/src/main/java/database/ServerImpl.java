@@ -302,6 +302,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement(
                     "SELECT COUNT(mal_di_testa) AS segnalazioni_mdt, AVG(mal_di_testa) AS media_mdt, " +
                             "COUNT(febbre) AS segnalazioni_febbre, AVG(febbre) AS media_febbre, " +
+                            "COUNT(tachicardia) AS segnalazioni_tachicardia, AVG(tachicardia) AS media_tachicardia, " +
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
