@@ -310,11 +310,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return "CEFALEA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100 + "\n" +
+                return "MAL DI TESTA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100 + "\n" +
                         "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100 + "\n" +
-                        "DOLORI MUSCOLARI: " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100+ "\n" +
-                        "LINFOADENOPATIA " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100 + "\n" +
-                        "CRISI IPERTENSIVA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
+                        "TACHICARDIA " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100 + "\n" +
+                        "DOLORI MUSCOLARI: " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100+ "\n" +
+                        "LINFOADENOPATIA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100 + "\n" +
+                        "CRISI IPERTENSIVA " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
             }
 
         } catch (SQLException e) {e.printStackTrace();return null;}
