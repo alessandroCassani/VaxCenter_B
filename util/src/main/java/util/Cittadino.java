@@ -35,7 +35,7 @@ public class Cittadino extends Persona {
          *
          * @author Alessandro Cassani
          */
-    public Cittadino(String nome, String cognome, String codFisc, String email, BigInteger id,CentroVaccinale centroVaccinale, Account account){
+    public Cittadino(String nome, String cognome, String codFisc, String email, BigInteger id,String centroVaccinale, Account account){
         super(nome,cognome,codFisc,id,centroVaccinale);
         this.email = email;
         this.account = account;

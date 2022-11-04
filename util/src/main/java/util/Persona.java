@@ -37,7 +37,7 @@ public abstract class Persona implements Serializable {
     /**
      * centro vaccinale in cui si e' vaccinata la persona
      */
-    private final CentroVaccinale centroVaccinale;
+    private final String centroVaccinale;
 
     /**
      * metodo che permette la modellazione delle informazioni di un oggetto di tipo persona, il quale non sara' creato direttamente (classe astratta) ma sarà utilizzato nei costruttori delle sue sottoclassi
@@ -49,7 +49,7 @@ public abstract class Persona implements Serializable {
      *
      * @author Alessandro Cassani
      */
-    public Persona(String nome,String cognome, String codFisc, BigInteger id,CentroVaccinale centroVaccinale){
+    public Persona(String nome,String cognome, String codFisc, BigInteger id,String centroVaccinale){
         this.nome = nome;
         this.cognome = cognome;
         this.codFisc = codFisc;
@@ -104,7 +104,7 @@ public abstract class Persona implements Serializable {
      *
      * @author Alessandro Cassani
      */
-    public CentroVaccinale getCentroVaccinale(){
+    public String getCentroVaccinale(){
         return centroVaccinale;
     }
 }

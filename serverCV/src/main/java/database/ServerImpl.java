@@ -76,7 +76,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(5, cittadino.getEmail());
             ps.setString(6,cittadino.getAccount().getUserId());
             ps.setString(7,cittadino.getAccount().getPassword());
-            ps.setString(8,cittadino.getCentroVaccinale().getNome());
+            ps.setString(8,cittadino.getCentroVaccinale());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e){e.printStackTrace();return false;}
@@ -110,7 +110,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, numero.toString());
-            ps.setString(2,vaccinato.getCentroVaccinale().getNome());
+            ps.setString(2,vaccinato.getCentroVaccinale());
             ps.setString(3,vaccinato.getNome());
             ps.setString(4,vaccinato.getCognome());
             ps.setString(5,vaccinato.getCodFisc());
