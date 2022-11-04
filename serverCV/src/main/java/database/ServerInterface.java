@@ -189,4 +189,17 @@ public interface ServerInterface extends Remote {
     LinkedList<String> getComuniNome() throws RemoteException;
 
     LinkedList<CentroVaccinale>  getCentriVaccinali() throws RemoteException;
+
+    /**
+     * segnature del metodo che permette la restituzione dei dati personali di un cittadino
+     * @param user comune di cui si vogliono avere i dati
+     * @return dati cittadino
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Paolo Bruscagin
+     */
+
+    String[] getInfoCittadino(String user) throws RemoteException;
+
+
 }

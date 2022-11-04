@@ -181,6 +181,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return false;
     }
 
+    /**
+     * il metodo permette di avere il riepilogo degli eventi avversi già registrati di un cittadino
+     * @param user account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Paolo Bruscagin
+     */
+
     @Override
     public String[] getPersonAE(String user) throws RemoteException {
         PreparedStatement preparedStatement = null;
@@ -197,6 +206,34 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[4] = String.valueOf(resultSet.getInt(6));
                 info[5] = String.valueOf(resultSet.getInt(7));
                 info[6] = resultSet.getString(8);
+            }
+            return info;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+    /**
+     * il metodo permette di avere il riepilogo dei dati generali di un cittadino
+     * @param user account del cittadino
+     * @return true/false in base all'esito dell'operazione
+     * @throws RemoteException
+     *
+     * @author Paolo Bruscagin
+     */
+    public String[] getInfoCittadino(String user) throws RemoteException {
+        PreparedStatement preparedStatement = null;
+        String [] info = new String [6];
+        try {
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
+            preparedStatement.setString(1,user);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                info[0] = resultSet.getString(1);
+                info[1] = resultSet.getString(2);
+                info[2] = resultSet.getString(3);
+                info[3] = resultSet.getString(4);
+                info[4] = resultSet.getString(5);
+                info[5] = resultSet.getString(6);
             }
             return info;
         } catch (SQLException e) {

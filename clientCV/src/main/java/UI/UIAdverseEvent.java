@@ -262,12 +262,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     public UIAdverseEvent(String username) throws RemoteException {
 
 
-
-
-
-
-
-
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
@@ -277,6 +271,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         String [] info;
         info = ServerPointer.getStub().getPersonAE(user);
 
+        String [] infoC;
+        infoC = ServerPointer.getStub().getInfoCittadino(user);
 
 
 
@@ -285,9 +281,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
         JTable tabellaRiepilogo = new JTable(data, coloumn);
-
-
-
 
 
 
@@ -302,29 +295,29 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         titoloRiepilogo.setFont(new Font("Georgia", Font.BOLD, 20));
         titoloRiepilogo.setBounds(100, 50, 200, 30);
 
-        JLabel nomeUtente = new JLabel("Nome: " );
+        JLabel nomeUtente = new JLabel("Nome: " + infoC[1]);
         nomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        nomeUtente.setBounds(20, 100, 200, 20);
+        nomeUtente.setBounds(20, 100, 400, 20);
 
-        JLabel cognomeUtente = new JLabel("Cognome: ");
+        JLabel cognomeUtente = new JLabel("Cognome: " + infoC[2]);
         cognomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        cognomeUtente.setBounds(20, 160, 200, 20);
+        cognomeUtente.setBounds(20, 160, 400, 20);
 
-        JLabel codiceFiscaleUtente = new JLabel("Codice Fiscale: ");
+        JLabel codiceFiscaleUtente = new JLabel("Codice Fiscale: " + infoC[3]);
         codiceFiscaleUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        codiceFiscaleUtente.setBounds(20, 220, 200, 20);
+        codiceFiscaleUtente.setBounds(20, 220, 400, 20);
 
-        JLabel emailUtente = new JLabel("Email: ");
+        JLabel emailUtente = new JLabel("Email: " + infoC[4]);
         emailUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        emailUtente.setBounds(20, 280, 200, 20);
+        emailUtente.setBounds(20, 280, 400, 20);
 
-        JLabel UserIDUtente = new JLabel("UserID: ");
+        JLabel UserIDUtente = new JLabel("UserID: " + infoC[5]);
         UserIDUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        UserIDUtente.setBounds(20, 340, 200, 20);
+        UserIDUtente.setBounds(20, 340, 400, 20);
 
-        JLabel IDUnivocoUtente = new JLabel("ID Univoco: ");
+        JLabel IDUnivocoUtente = new JLabel("ID Univoco: " + infoC[0]);
         IDUnivocoUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        IDUnivocoUtente.setBounds(20, 400, 200, 20);
+        IDUnivocoUtente.setBounds(20, 400, 400, 20);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
 
