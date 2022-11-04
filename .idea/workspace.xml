@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/DBManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/EventiAvversi.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/EventiAvversi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Indirizzo.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Indirizzo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Sintomatologia.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Sintomatologia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +83,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lperf/OneDrive/Desktop/TestDataBase",
+    "last_opened_file_path": "C:/Users/lperf/OneDrive/Documenti/VaxCenter_B",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UISearchVaxCenterDialog">
+  <component name="RunManager" selected="Application.ServerPointer">
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
@@ -110,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.Test" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -170,18 +184,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
       <item itemvalue="Application.UISearchVaxCenterDialog" />
       <item itemvalue="Application.ServerPointer" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
-      <item itemvalue="Application.UILogin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.ServerPointer" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.UILoginToServer" />
-        <item itemvalue="Application.WelcomeScreen" />
+        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.WelcomeScreen" />
       </list>
     </recent_temporary>
@@ -225,27 +239,7 @@
       <workItem from="1667384705392" duration="4736000" />
       <workItem from="1667398032634" duration="1416000" />
       <workItem from="1667406611031" duration="3631000" />
-    </task>
-    <task id="LOCAL-00041" summary="JavaDoc">
-      <created>1664227843606</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227843606</updated>
-    </task>
-    <task id="LOCAL-00042" summary="JavaDoc">
-      <created>1664227944398</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227944398</updated>
-    </task>
-    <task id="LOCAL-00043" summary="modifica font">
-      <created>1664556731407</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1664556731407</updated>
+      <workItem from="1667551117125" duration="4187000" />
     </task>
     <task id="LOCAL-00044" summary="aggiunta hint">
       <created>1664560766759</created>
@@ -569,7 +563,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667410390289</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="aggiunta tachicardia al metodo getProspettoRiassuntivo">
+      <created>1667552484234</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1667552484234</updated>
+    </task>
+    <task id="LOCAL-00091" summary="preso il nome del centro vaccinale e stampato nella dialog">
+      <created>1667552889608</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1667552889608</updated>
+    </task>
+    <task id="LOCAL-00092" summary="sistemato il metodo getProspettoRiassuntivo">
+      <created>1667553573692</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1667553573692</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,9 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
-    <MESSAGE value="bug fixed" />
-    <MESSAGE value="Sistemazione UI" />
     <MESSAGE value="Sistemazione collegamento varie classi" />
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
@@ -624,6 +636,9 @@
     <MESSAGE value="nuova implementazione della classe UISearchVaxCenterDialog" />
     <MESSAGE value="eliminata l'icon" />
     <MESSAGE value="implementato la classe UISearchVaxCenterDialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementato la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="aggiunta tachicardia al metodo getProspettoRiassuntivo" />
+    <MESSAGE value="preso il nome del centro vaccinale e stampato nella dialog" />
+    <MESSAGE value="sistemato il metodo getProspettoRiassuntivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemato il metodo getProspettoRiassuntivo" />
   </component>
 </project>

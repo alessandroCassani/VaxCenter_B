@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Scanner;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -332,14 +333,28 @@ import javax.swing.table.TableModel;
 
     UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
     private void readData() throws RemoteException {
-        String prospetto = ServerPointer.getStub().getProspettoRiassuntivo("COMO");
 
-        System.out.println(prospetto);
     }
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt){
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
+
+        String prospetto;
+        try {
+            prospetto = ServerPointer.getStub().getProspettoRiassuntivo("VareseHub");
+
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+
+        Scanner sc = new Scanner(prospetto);
+        String malditesta = sc.nextLine();
+        String febbre = sc.nextLine();
+        String tachicardia = sc.nextLine();
+        String dolori = sc.nextLine();
+        String linfo = sc.nextLine();
+        String crisi = sc.nextLine();
 
         String nome = model.getValueAt(index, 0).toString();
 
@@ -348,6 +363,11 @@ import javax.swing.table.TableModel;
         jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         jtRowData.jLabelinsNome.setText(nome);
+        jtRowData.jLabelsevCefalea.setText(malditesta);
+        jtRowData.jLabelsevFebbre.setText(febbre);
+        jtRowData.jLabelsevDolori.setText(dolori);
+        jtRowData.jLabelsevLinfo.setText(linfo);
+        jtRowData.jLabelsevCrisi.setText(crisi);
     }
 
 }
