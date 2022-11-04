@@ -5,6 +5,8 @@ import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import util.Vaccinato;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -13,7 +15,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Objects;
 
 
@@ -89,6 +93,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
 
     public UIRegisterVaccinated(){
+
+
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
@@ -259,13 +265,15 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             this.dispose();
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
+
             if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
+
                 IDUnivoco.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
-                        "\n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                        "\n\n L'ID Univoco del Vaccinato è: \n\n"+ "000", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                 nome.setEditable(false);
                 cognome.setEditable(false);
                 codiceFiscale.setEditable(false);

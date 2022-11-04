@@ -92,7 +92,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException {
+    public BigInteger registraVaccinato(Vaccinato vaccinato) throws RemoteException {
+        BigInteger numero;
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM vaccinati");
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -100,7 +101,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             while(resultSet.next()){
                 id.add(new BigInteger(resultSet.getString(1))); //TreeSet ordina di default gli elementi in ordine crescente
             }
-            BigInteger numero;
             if(!id.isEmpty())
                 numero = id.last().add(new BigInteger("0000000000000001"));
             else
@@ -119,8 +119,11 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.executeUpdate();
             ps.close();
 
-        }catch (SQLException e){e.printStackTrace();return false;}
-        return true;
+
+
+
+        }catch (SQLException e){e.printStackTrace();return new BigInteger("-1");}
+        return numero;
     }
 
     /**
