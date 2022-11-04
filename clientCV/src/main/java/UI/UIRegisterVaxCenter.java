@@ -6,7 +6,6 @@ import UI.graphics.RoundJTextField;
 import util.CentroVaccinale;
 import util.Qualificatore;
 import util.Tipologia;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;

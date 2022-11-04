@@ -5,7 +5,6 @@ import UI.graphics.InfoSearch;
 import UI.graphics.SearchField;
 import util.CentroVaccinale;
 import util.Tipologia;
-
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

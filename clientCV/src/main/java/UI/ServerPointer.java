@@ -1,7 +1,6 @@
 package UI;
 
 import database.ServerInterface;
-
 import javax.swing.*;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
