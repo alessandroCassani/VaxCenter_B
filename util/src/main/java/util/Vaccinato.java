@@ -37,7 +37,7 @@ public class Vaccinato extends Persona {
      *
      */
     public Vaccinato(String nome, String cognome, String codFisc, BigInteger id,
-                     CentroVaccinale centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
+                     String centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
         super(nome,cognome,codFisc,id,centroVaccinale);
         this.dataSomministrazione = dataSomministrazione;
         this.vaccino = vaccino;

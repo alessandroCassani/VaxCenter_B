@@ -5,6 +5,7 @@ import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import util.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -13,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigInteger;
+import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -79,7 +82,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      * Label ID Univoco 16 bit
      */
 
-    JLabel IDUnivoco = new JLabel("ID Univoco:");
+    JLabel IDUnivoco = new JLabel();
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated
@@ -89,6 +92,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
 
     public UIRegisterVaccinated(){
+
+
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
 
@@ -150,6 +155,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         IDUnivoco.setBounds(350, 410, 230, 20);
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 20));
         IDUnivoco.setBackground(new Color(0,0,128));
+        IDUnivoco.setText("ID Univoco: ");
 
 
 
@@ -207,7 +213,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         add(registraVaccinato);
         add(pulisci);
         add(data);
-        add(IDUnivoco).setVisible(false);
+        add(IDUnivoco);
 
         //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
@@ -245,6 +251,30 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     }
 
     /**
+     * metodo privato che permette di registrare le informazioni di un centro vaccinale nel DB
+     * @author Paolo Bruscagin
+     */
+
+    private BigInteger registraVaccinato(){
+        String centrovaccinale = Objects.requireNonNull(nomeCV.getSelectedItem().toString().toUpperCase());
+        String nomeVac = nome.getText().toUpperCase();
+        String cognomeVac = cognome.getText().toUpperCase();
+        String cfVac = codiceFiscale.getText().toUpperCase();
+        Date dataVac = data.getDate();
+        String vacSommm  = Objects.requireNonNull(vaccinoSomministrato.getSelectedItem()).toString();
+        BigInteger idunivoco = new BigInteger("-1");
+        BigInteger id;
+        try {
+
+            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.valueOf(vacSommm)));
+            JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
+        return id;
+    }
+
+    /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
      * @param e the event to be processed
      *
@@ -258,18 +288,23 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             this.dispose();
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
+
             if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
+                BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
+                        "\n\n L'ID Univoco del Vaccinato è: \n\n"+ (id), "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                 nome.setEditable(false);
                 cognome.setEditable(false);
                 codiceFiscale.setEditable(false);
                 data.setEnabled(false);
                 vaccinoSomministrato.setEnabled(false);
                 nomeCV.setEnabled(false);
+                IDUnivoco.setVisible(true);
+                IDUnivoco.setText("ID univoco" + id);
             }
         }else if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");

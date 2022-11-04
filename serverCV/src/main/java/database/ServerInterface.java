@@ -2,6 +2,7 @@ package database;
 
 import util.*;
 
+import java.math.BigInteger;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
@@ -43,7 +44,7 @@ public interface ServerInterface extends Remote {
      *  @author Alessandro Cassani
      */
 
-    boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException;
+    BigInteger registraVaccinato(Vaccinato vaccinato) throws RemoteException;
 
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
