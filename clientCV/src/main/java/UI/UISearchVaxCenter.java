@@ -14,9 +14,10 @@ import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 
-    /**
+/**
      * La classe UISearchVaxCenter permette di ricercare i centri vaccinale tramite due tipologie di RICERCA:
      *   - Ricerca per nome
      *   - Ricerca per comune e tipologia
@@ -337,9 +338,16 @@ import javax.swing.table.DefaultTableModel;
     }
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt){
+        int index = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+
+        String nome = model.getValueAt(index, 0).toString();
+
         jtRowData.setVisible(true);
         jtRowData.pack();
         jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        jtRowData.jLabelinsNome.setText(nome);
     }
 
 }
