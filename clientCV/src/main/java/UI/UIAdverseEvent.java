@@ -264,7 +264,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoC = ServerPointer.getStub().getInfoCittadino(user);
 
 
-        String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])}, {" Febbre", ("       " +info[1])}, {" Tachicardia", ("       " +info[2])}, {" Dolori Musc. Art.", ("       " +info[3])}, {" Linfoadenopatia", ("       " +info[4])}, {" Crisi Ipertensiva", ("       " +info[5])}};
+        String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])},
+                {" Febbre", ("       " +info[1])}, {" Tachicardia", ("       " +info[2])}, {" Dolori Musc. Art.", ("       " +info[3])},
+                {" Linfoadenopatia", ("       " +info[4])}, {" Crisi Ipertensiva", ("       " +info[5])}};
 
         String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
@@ -602,7 +604,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         try {
 
             ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
-            JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!",
+                    "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
@@ -638,7 +641,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
         } else if (e.getSource() == registraEA) {
             if (noteGenerali.getText().length() > 256){
-                JOptionPane.showMessageDialog(null, "Puoi inserire massimo 256 caratteri! Riprova", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Puoi inserire massimo 256 caratteri! Riprova",
+                        "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {
                 registraEventiAvversi();
