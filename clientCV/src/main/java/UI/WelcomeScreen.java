@@ -1,7 +1,6 @@
 package UI;
 
 import UI.graphics.CurvesPanel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

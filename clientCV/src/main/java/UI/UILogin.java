@@ -9,7 +9,6 @@ import UI.graphics.MyPwdField;
 import UI.graphics.MyTextField;
 import database.RoundButton;
 import util.Account;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
