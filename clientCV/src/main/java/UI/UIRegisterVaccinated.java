@@ -6,7 +6,6 @@ import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import util.*;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -17,7 +16,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -251,6 +249,11 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
     }
+
+    /**
+     * metodo privato che permette di registrare le informazioni di un centro vaccinale nel DB
+     * @author Paolo Bruscagin
+     */
 
     private BigInteger registraVaccinato(){
         String centrovaccinale = Objects.requireNonNull(nomeCV.getSelectedItem().toString().toUpperCase());

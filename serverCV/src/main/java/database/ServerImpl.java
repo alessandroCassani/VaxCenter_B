@@ -119,9 +119,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.executeUpdate();
             ps.close();
 
-
-
-
         }catch (SQLException e){e.printStackTrace();return new BigInteger("-1");}
         return numero;
     }
