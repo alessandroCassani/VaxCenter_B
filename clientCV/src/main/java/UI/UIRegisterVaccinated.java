@@ -79,7 +79,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      * Label ID Univoco 16 bit
      */
 
-    JLabel IDUnivoco = new JLabel("ID Univoco:");
+    JLabel IDUnivoco = new JLabel();
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica UIRegisterVaccinated
@@ -150,6 +150,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         IDUnivoco.setBounds(350, 410, 230, 20);
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 20));
         IDUnivoco.setBackground(new Color(0,0,128));
+        IDUnivoco.setText("ID Univoco: ");
 
 
 
@@ -263,7 +264,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
             } else {
                 IDUnivoco.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! \n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
+                        "\n\n L'ID Univoco del Vaccinato è: \n\n"+ "0101010101010101010", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                 nome.setEditable(false);
                 cognome.setEditable(false);
                 codiceFiscale.setEditable(false);
