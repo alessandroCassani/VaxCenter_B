@@ -2,21 +2,16 @@ package UI;
 
 import database.RoundButton;
 import util.*;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Objects;
 
 
@@ -71,11 +66,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Bottone per tornare alle UICitizen dal riepilogo
      */
     JButton backToCitizenR;
-
-
-    //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
-    //JCheckBox switcha = new JCheckBox();
-
 
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
     /**
@@ -262,16 +252,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     public UIAdverseEvent(String username) throws RemoteException {
 
 
-
-
-
-
-
-
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
-
 
 
         String [] info;
@@ -281,17 +264,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoC = ServerPointer.getStub().getInfoCittadino(user);
 
 
-
-
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", info[0]}, {" Febbre", info[1]}, {" Tachicardia", info[2]}, {" Dolori Musc. Art.", info[3]}, {" Linfoadenopatia", info[4]}, {" Crisi Ipertensiva", info[5]}};
 
         String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
         JTable tabellaRiepilogo = new JTable(data, coloumn);
-
-
-
-
 
 
         infoUtente.setBounds(550, -5, 450, 570);
@@ -620,8 +597,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         sintomi.add(new Sintomo(severitaDMA.getSelectedIndex(),Sintomatologia.DOLORI_MA));
         sintomi.add(new Sintomo(severitalinfoadenopatia.getSelectedIndex(),Sintomatologia.LINFOADENOPATIA));
         sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
-        //System.out.println(sintomi);
-
 
 
         try {
