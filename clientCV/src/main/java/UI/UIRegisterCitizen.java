@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigInteger;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Objects;
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
@@ -15,8 +18,8 @@ import CheckData.PasswordValidator;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-
-
+import util.Account;
+import util.Cittadino;
 
 
 /**
@@ -308,6 +311,31 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
 
+    }
+
+
+    private void registraCittadino(){
+        String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem()).toString();
+        String name = nomeCittadino.getText().toUpperCase();
+        String surname = cognomeCittadino.getText().toUpperCase();
+        String cf = codiceFiscale.getText().toUpperCase();
+        String mail = email.getText().toUpperCase();
+        String userid = userID.getText().toUpperCase();
+        String ID = IDUnivoco.getText().toUpperCase();
+        String pwd = password.getText().toUpperCase();
+        String ripetiPwd = ripetiPassword.getText().toUpperCase();
+
+        try {
+            if(pwd.equals(ripetiPwd)) {
+                JOptionPane.showMessageDialog(null, "Errore! Password Incorretta ...", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            }
+            // VA CAMBIATO IL COSTRUTTORE
+            ServerPointer.getStub().registraCittadino(new Cittadino(
+                    name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
+            JOptionPane.showMessageDialog(null, "Cittadino registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     /**
