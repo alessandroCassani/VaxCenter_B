@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="implementato il metodo">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/DBManagement.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" />
@@ -80,16 +85,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lperf/OneDrive/Documenti/VaxCenter_B",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -193,8 +188,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ServerPointer" />
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.WelcomeScreen" />
       </list>
@@ -240,6 +235,8 @@
       <workItem from="1667398032634" duration="1416000" />
       <workItem from="1667406611031" duration="3631000" />
       <workItem from="1667551117125" duration="4187000" />
+      <workItem from="1667642587415" duration="1294000" />
+      <workItem from="1667746716492" duration="8000" />
     </task>
     <task id="LOCAL-00044" summary="aggiunta hint">
       <created>1664560766759</created>
@@ -612,6 +609,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Sistemazione collegamento varie classi" />
@@ -640,5 +638,13 @@
     <MESSAGE value="preso il nome del centro vaccinale e stampato nella dialog" />
     <MESSAGE value="sistemato il metodo getProspettoRiassuntivo" />
     <option name="LAST_COMMIT_MESSAGE" value="sistemato il metodo getProspettoRiassuntivo" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="UI.UISearchVaxCenter" memberName="rootPane" />
+        <PinnedItemInfo parentTag="UI.UISearchVaxCenter" memberName="jTable1" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

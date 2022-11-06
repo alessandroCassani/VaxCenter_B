@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
 import javax.swing.*;
@@ -147,6 +148,7 @@ import javax.swing.table.TableModel;
                     jLabel1MousePressed(evt);
                 }
             });
+
             jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     jTable1MouseClicked(evt);
@@ -336,38 +338,33 @@ import javax.swing.table.TableModel;
 
     }
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt){
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
 
-        String prospetto;
-        try {
-            prospetto = ServerPointer.getStub().getProspettoRiassuntivo("VareseHub");
-
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
-        }
-
-        Scanner sc = new Scanner(prospetto);
-        String malditesta = sc.nextLine();
-        String febbre = sc.nextLine();
-        String tachicardia = sc.nextLine();
-        String dolori = sc.nextLine();
-        String linfo = sc.nextLine();
-        String crisi = sc.nextLine();
+        String[] prospetto = new String[0];
 
         String nome = model.getValueAt(index, 0).toString();
+        try {
+            System.out.println(nome);
+            prospetto = ServerPointer.getStub().getProspettoRiassuntivo(nome);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
 
         jtRowData.setVisible(true);
         jtRowData.pack();
         jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         jtRowData.jLabelinsNome.setText(nome);
-        jtRowData.jLabelsevCefalea.setText(malditesta);
-        jtRowData.jLabelsevFebbre.setText(febbre);
-        jtRowData.jLabelsevDolori.setText(dolori);
-        jtRowData.jLabelsevLinfo.setText(linfo);
-        jtRowData.jLabelsevCrisi.setText(crisi);
+        jtRowData.jLabelMalDiTesta.setText(prospetto[0]);
+        jtRowData.jLabelfebbre.setText(prospetto[1]);
+        jtRowData.jLabelTachicardia.setText(prospetto[2]);
+        jtRowData.jLabeldolori.setText(prospetto[3]);
+        jtRowData.jLabelLinfo.setText(prospetto[4]);
+        jtRowData.jLabelcrisi.setText(prospetto[5]);
+
     }
 
 }

@@ -1,10 +1,8 @@
 package database;
 
 
-import database.DBManagement;
 import util.*;
 
-import javax.swing.table.DefaultTableModel;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -297,7 +295,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro cassani
      */
     @Override
-    public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+    public String[] getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+        String [] info = new String[6];
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement(
                     "SELECT COUNT(mal_di_testa) AS segnalazioni_mdt, AVG(mal_di_testa) AS media_mdt, " +
@@ -310,12 +309,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return "MAL DI TESTA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100 + "\n" +
-                        "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100 + "\n" +
-                        "TACHICARDIA " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100 + "\n" +
-                        "DOLORI MUSCOLARI: " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100+ "\n" +
-                        "LINFOADENOPATIA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100 + "\n" +
-                        "CRISI IPERTENSIVA " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
+                System.out.println(resultSet.getString(2));
+                info[0] = "MAL DI TESTA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100;
+                info[1] = "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100;
+                info[2] = "TACHICARDIA " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100;
+                info[3] = "DOLORI MUSCOLARI: " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100;
+                info[4] = "LINFOADENOPATIA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
+                info[5] = "CRISI IPERTENSIVA " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
+                return info;
             }
 
         } catch (SQLException e) {e.printStackTrace();return null;}

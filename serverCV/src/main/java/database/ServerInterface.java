@@ -115,7 +115,7 @@ public interface ServerInterface extends Remote {
      *
      * @author Alessandro cassani
      */
-    String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
+    String[] getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
 
     /**
      * segnatura del metodo che permette la ricerca di centri vaccinali
