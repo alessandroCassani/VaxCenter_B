@@ -334,9 +334,6 @@ import javax.swing.table.TableModel;
      */
 
     UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
-    private void readData() throws RemoteException {
-
-    }
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
         int index = jTable1.getSelectedRow();
