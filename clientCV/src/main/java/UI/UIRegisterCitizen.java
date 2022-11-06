@@ -326,10 +326,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         String ripetiPwd = ripetiPassword.getText().toUpperCase();
 
         try {
-            if(pwd.equals(ripetiPwd)) {
-                JOptionPane.showMessageDialog(null, "Errore! Password Incorretta ...", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            if(!pwd.equals(ripetiPwd)) {
+                JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "password diverse",JOptionPane.INFORMATION_MESSAGE);
             }
-            // VA CAMBIATO IL COSTRUTTORE
             ServerPointer.getStub().registraCittadino(new Cittadino(
                     name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
             JOptionPane.showMessageDialog(null, "Cittadino registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
