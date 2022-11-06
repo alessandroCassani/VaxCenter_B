@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
+import CheckData.IdValidator;
 import CheckData.PasswordValidator;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
@@ -314,7 +315,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     }
 
 
-    private void registraCittadino(){
+    private boolean registraCittadino(){
         String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem()).toString();
         String name = nomeCittadino.getText().toUpperCase();
         String surname = cognomeCittadino.getText().toUpperCase();
@@ -324,16 +325,42 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         String ID = IDUnivoco.getText().toUpperCase();
         String pwd = password.getText().toUpperCase();
         String ripetiPwd = ripetiPassword.getText().toUpperCase();
-
+        CFValidator cfvalidator = new CFValidator();
+        EmailValidator emailValidator = new EmailValidator();
+        IdValidator idValidator = new IdValidator();
+        PasswordValidator pswvalidator = new PasswordValidator();
         try {
             if(!pwd.equals(ripetiPwd)) {
                 JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "password diverse",JOptionPane.INFORMATION_MESSAGE);
+                return false;
             }
+            if (!cfvalidator.validate(cf.toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! controllare codice fiscale", "errore codice fiscale", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            if(!emailValidator.validate(mail)){
+                JOptionPane.showMessageDialog(null, "Errore! controllare email", "errore inserimento email", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            if(!idValidator.checkId(ID)){
+                JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "errore inserimento id", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            if(!pswvalidator.validate(pwd)){
+                JOptionPane.showMessageDialog(null, "Errore! controllare password ", "errore password", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+            if(!ServerPointer.getStub().isIdCorrect(ID,cf)){
+                JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "errore id", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
             ServerPointer.getStub().registraCittadino(new Cittadino(
                     name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
             JOptionPane.showMessageDialog(null, "Cittadino registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            return true;
         } catch (RemoteException ex) {
-            throw new RuntimeException(ex);
+            return false;
         }
     }
 

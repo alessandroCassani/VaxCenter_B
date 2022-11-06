@@ -215,9 +215,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette di avere il riepilogo dei dati generali di un cittadino
      * @param user account del cittadino
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
+     * @author Alessandro Cassani
      */
     public String[] getInfoCittadino(String user) throws RemoteException {
         PreparedStatement preparedStatement = null;
@@ -245,7 +246,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette di controllare se il cittadino ha un account oppure no
      * @param account account del cittadino
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      * @author Damiano Ficara
