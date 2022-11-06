@@ -23,6 +23,7 @@ import javax.swing.table.TableModel;
  *
  * @author Damiano Ficara
  * @author Paolo Bruscagin
+ * @author Luca Perfetti
  */
 public class UISearchVaxCenter extends JFrame {
 
@@ -290,8 +291,17 @@ public class UISearchVaxCenter extends JFrame {
         return ic;
     }
 
+    /**
+     * Oggetto della classe UISearchVaxCenterDialog
+     */
     UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
 
+    /**
+     * Metodo che permette l'apertura del prospetto riassuntivo di ogni centro vaccinale
+     * @param evt gestione dell'evento collegato al mouse
+     *
+     * @author Luca Perfetti
+     */
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
