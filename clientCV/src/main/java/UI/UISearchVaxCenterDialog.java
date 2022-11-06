@@ -5,7 +5,8 @@ import java.awt.*;
 import java.util.Objects;
 
 /**
-*
+ * La classe UISearchVaxCenterDialog permette di avere un prospetto riassuntivo del centro vaccinale selezionato
+ *
 * @author Luca Perfetti
 */
 public class UISearchVaxCenterDialog extends javax.swing.JFrame{
