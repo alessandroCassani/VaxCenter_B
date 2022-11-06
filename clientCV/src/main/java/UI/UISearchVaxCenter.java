@@ -300,7 +300,6 @@ public class UISearchVaxCenter extends JFrame {
 
         String nome = model.getValueAt(index, 0).toString();
         try {
-            System.out.println(nome);
             prospetto = ServerPointer.getStub().getProspettoRiassuntivo(nome);
         } catch (RemoteException e) {
             e.printStackTrace();
