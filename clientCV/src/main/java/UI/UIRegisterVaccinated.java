@@ -328,7 +328,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 vaccinoSomministrato.setEnabled(false);
                 nomeCV.setEnabled(false);
                 IDUnivoco.setVisible(true);
-                IDUnivoco.setText("ID univoco" + id);
+                IDUnivoco.setText("ID univoco: " + id);
             }
         }
         if(e.getSource() == pulisci) {
