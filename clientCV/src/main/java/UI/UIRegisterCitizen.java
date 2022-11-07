@@ -311,10 +311,16 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
     }
 
-
+    /**
+     * il metodo permette di prelevare le informazioni inserite nella UI riguardanti i dati di un vaccinato da registrare a sistema, e tramite il metodo del server
+     * completa questa operazione
+     *
+     * @return true o false in base all'esito dell'operazione
+     *
+     * @author Alessandro Cassani
+     */
     private boolean registraCittadino(){
         String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem()).toString();
         String name = nomeCittadino.getText().toUpperCase();
@@ -338,6 +344,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      * @param e the event to be processed
      *
      * @author Paolo Bruscagin
+     * @author Alessandro Cassani
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -351,11 +358,11 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             IdValidator idValidator = new IdValidator();
             try {
                 if (!emailValidator.validate(email.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Errore! email non valida", "Errore email", JOptionPane.ERROR_MESSAGE);
                 } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Errore! codice fiscale non valido", "Errore codice fiscale", JOptionPane.ERROR_MESSAGE);
                 } else if (!pswvalidator.validate(password.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Errore! password non valida", "Errore password", JOptionPane.ERROR_MESSAGE);
                 } else if (!idValidator.checkdata(IDUnivoco.getText().trim())) {
                     JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "errore inserimento id", JOptionPane.ERROR_MESSAGE);
                 } else if (!ServerPointer.getStub().isIdCorrect(IDUnivoco.getText().trim(), codiceFiscale.getText().trim())) {
