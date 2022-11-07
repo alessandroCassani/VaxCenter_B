@@ -326,16 +326,21 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             CFValidator cfvalidator = new CFValidator();
             PasswordValidator pswvalidator = new PasswordValidator();
 
-            if(!emailValidator.validate(email.getText().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            if(!emailValidator.validate(email.getText().trim()) ||
+                    !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
+                    !pswvalidator.validate(password.getText().trim()) || !ripetiPassword.getText().equals(password) ||
+                    nomeCV.getSelectedItem().equals("") || nomeCittadino.getText().equals("") ||
+                    cognomeCittadino.getText().equals("") || userID.getText().equals("") ||
+                    (IDUnivoco.getText().equals("") || (IDUnivoco.getText().length()!=16))) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            } /*else if (userID) // metodo server se lo user id è gia registrato {
 
-            } else if (!pswvalidator.validate(password.getText().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            }else if (codiceFiscale) // metodo server se il CF è gia registrato {
+
+            } else if (IDUnivoco) // metodo server si l'id univoco è gia registrato{
+
+            }*/ else{
                 nomeCV.setEnabled(false);
                 nomeCittadino.setEditable(false);
                 cognomeCittadino.setEditable(false);
@@ -347,7 +352,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 ripetiPassword.setEditable(false);
             }
 
-        }else if(e.getSource() == pulisci) {
+        }
+        if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
             nomeCittadino.setText("");
             cognomeCittadino.setText("");
@@ -367,7 +373,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             password.setEditable(true);
             ripetiPassword.setEditable(true);
 
-        }else if(e.getSource() == showPassword){
+        }
+        if(e.getSource() == showPassword){
             if (showPassword.isSelected()) {
                 password.setEchoChar((char) 0);
                 ripetiPassword.setEchoChar((char) 0);
