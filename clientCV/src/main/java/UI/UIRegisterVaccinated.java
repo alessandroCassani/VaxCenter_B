@@ -293,7 +293,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                     vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
                 JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            } else {
+            }/*
+            else if (codiceFiscale)// metodo server se il CF è gia registrato {
+
+            }
+            */
+            else {
                 BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
