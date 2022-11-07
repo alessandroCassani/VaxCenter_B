@@ -17,6 +17,7 @@ import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -34,7 +35,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
      */
-    JComboBox nomeCV = new JComboBox<>(new String[]{""}); // da fare in modo diverso
+    JComboBox<String> nomeCV;
 
     /**
      * nome del vaccinato
@@ -169,6 +170,15 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(590, 275, 550, 55);
+
+        try{
+            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
+            l.add(0,"");
+            String[] listCV = l.toArray((new String[l.size()]));
+            nomeCV = new JComboBox(listCV);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
