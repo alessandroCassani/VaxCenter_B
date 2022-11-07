@@ -292,6 +292,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean vac;
+        try {
+            vac = ServerPointer.getStub().isVaccinatedRegistrated(codiceFiscale.getText().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
         CFValidator cfvalidator = new CFValidator();
 
         if (e.getSource() == backToVaccineOperator) {
@@ -299,10 +305,17 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
 
-            if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            if (nome.getText().equals("") || cognome.getText().equals("") ||
+                    !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
+                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            } else {
+            }
+            else if (vac){
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            }
+
+            else {
                 BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
@@ -314,9 +327,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 vaccinoSomministrato.setEnabled(false);
                 nomeCV.setEnabled(false);
                 IDUnivoco.setVisible(true);
-                IDUnivoco.setText("ID univoco" + id);
+                IDUnivoco.setText("ID univoco: " + id);
             }
-        }else if(e.getSource() == pulisci) {
+        }
+        if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
             nome.setText("");
             cognome.setText("");
