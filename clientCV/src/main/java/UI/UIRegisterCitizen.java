@@ -376,9 +376,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 } else if (!pswvalidator.validate(password.getText().trim())) {
                     JOptionPane.showMessageDialog(null, "Errore! password non valida", "Errore password", JOptionPane.ERROR_MESSAGE);
                 } else if (!idValidator.checkdata(IDUnivoco.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "errore inserimento id", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "Errore inserimento id", JOptionPane.ERROR_MESSAGE);
                 } else if (!ServerPointer.getStub().isIdCorrect(IDUnivoco.getText().trim(), codiceFiscale.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "errore id", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "Errore id", JOptionPane.ERROR_MESSAGE);
                 }
                 else if(!password.equals(ripetiPassword)) {
                     JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "password diverse",JOptionPane.INFORMATION_MESSAGE);

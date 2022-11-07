@@ -329,12 +329,26 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
             this.dispose();
             new UIVaccineOperator();
         } else if (e.getSource() == registra) {
-            if (nomeCentroVaccinale.getText().equals("") || tipologia.getSelectedItem().equals("")
-                    || qualificatore.getSelectedItem().equals("") || nomeVia.getText().equals("")
-                    || numeroCivico.getText().equals("") || comune.getSelectedItem().equals("")) {
-                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
-            } else if (vac) {
-                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+            if (nomeCentroVaccinale.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome Centro Vaccinale inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            } else if (tipologia.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Tipologia selezionata non valida! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (qualificatore.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Qualificatore selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (nomeVia.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome della Via/Viale/Piazza inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (numeroCivico.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Numero civico inserito non valido! Rprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (comune.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Comune selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (vac) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale già Registrato! ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
             } else {
                 registra();

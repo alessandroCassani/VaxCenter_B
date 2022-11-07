@@ -305,17 +305,24 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
 
-            if (nome.getText().equals("") || cognome.getText().equals("") ||
-                    !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
-                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
-                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            if (nome.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Nome inserito non valido! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            }
-            else if (vac){
-                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
-            }
+            }else if (cognome.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Cognome inserito non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            else {
+            }else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Codice Fiscale inserito non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (vaccinoSomministrato.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Vaccino selezionato non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (nomeCV.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale selezionato non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (vac){
+                JOptionPane.showMessageDialog(null, "Cittadino già vaccinato!", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            } else {
                 BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
