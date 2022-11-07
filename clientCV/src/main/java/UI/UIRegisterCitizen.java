@@ -318,6 +318,8 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        //boolean cit;
+        //cit = ServerPointer.getStub().isUserRegistrated();
         if(e.getSource() == backToCitizen) {
             this.dispose();
             new UICitizen();
@@ -334,13 +336,11 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                     (IDUnivoco.getText().equals("") || (IDUnivoco.getText().length()!=16))) {
                 JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            } /*else if (userID) // metodo server se lo user id è gia registrato {
+            }
 
-            }else if (codiceFiscale) // metodo server se il CF è gia registrato {
+            //METTERE CONTROLLO CF PER USER GIA REGISTRATI
 
-            } else if (IDUnivoco) // metodo server si l'id univoco è gia registrato{
-
-            }*/ else{
+            else{
                 nomeCV.setEnabled(false);
                 nomeCittadino.setEditable(false);
                 cognomeCittadino.setEditable(false);

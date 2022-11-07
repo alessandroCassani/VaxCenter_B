@@ -277,7 +277,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE codice_fiscale = ?");
 
             ps.setString(1, user);
 
