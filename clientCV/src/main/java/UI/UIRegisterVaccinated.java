@@ -174,8 +174,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
             List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
             l.add(0,"");
-            String[] listComuni = l.toArray(new String[l.size()]);
-            nomeCV = new JComboBox(listComuni);
+            String[] listCV = l.toArray(new String[l.size()]);
+            nomeCV = new JComboBox(listCV);
 
         }catch (Exception e) {
             e.printStackTrace();
