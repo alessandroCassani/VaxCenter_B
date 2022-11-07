@@ -276,7 +276,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         BigInteger id;
         try {
 
-            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.valueOf(vacSommm)));
+            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.getVaccino(vacSommm)));
             JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
