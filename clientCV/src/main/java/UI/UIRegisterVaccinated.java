@@ -17,6 +17,7 @@ import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -34,7 +35,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
     /**
      * Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca
      */
-    JComboBox nomeCV = new JComboBox<>(new String[]{""}); // da fare in modo diverso
+    JComboBox<String> nomeCV;
 
     /**
      * nome del vaccinato
@@ -169,6 +170,17 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(590, 275, 550, 55);
 
+        try {
+
+            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
+            l.add(0,"");
+            String[] listComuni = l.toArray(new String[l.size()]);
+            nomeCV = new JComboBox(listComuni);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         nomeCV.setBounds(520, 320, 325, 50);
@@ -296,7 +308,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
             if (nome.getText().equals("") || cognome.getText().equals("") ||
                     !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
-                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("A")) {
+                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
                 JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }
