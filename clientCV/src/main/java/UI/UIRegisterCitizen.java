@@ -11,6 +11,7 @@ import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
@@ -37,7 +38,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      *  Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca nel DB
      */
-    JComboBox<String> nomeCV = new JComboBox<>(new String[]{""}); // ricerca in db
+    JComboBox<String> nomeCV;
 
     /**
      * nome del cittadino
@@ -119,6 +120,17 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(100, 40, 550, 75);
+
+        try {
+
+            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
+            l.add(0,"");
+            String[] listCV = l.toArray(new String[l.size()]);
+            nomeCV = new JComboBox(listCV);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
