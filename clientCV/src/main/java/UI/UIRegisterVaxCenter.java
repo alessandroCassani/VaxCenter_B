@@ -319,6 +319,12 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean vac ;
+        try {
+            vac = ServerPointer.getStub().isVaxcenterRegistrated(nomeCentroVaccinale.getText().toString().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
         if (e.getSource() == backToUIVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
@@ -327,12 +333,10 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                     || qualificatore.getSelectedItem().equals("") || nomeVia.getText().equals("")
                     || numeroCivico.getText().equals("") || comune.getSelectedItem().equals("")) {
                 JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
-            } /*
-            else if (nomeCentroVaccinale) // metodo server se il centro vaccinale è gia registrato {
+            } else if (vac) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
-            }
-            */
-         else {
+            } else {
             registra();
             nomeCentroVaccinale.setEditable(false);
             tipologia.setEnabled(false);
