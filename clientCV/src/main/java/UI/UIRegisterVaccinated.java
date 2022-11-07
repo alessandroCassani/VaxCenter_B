@@ -281,6 +281,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean vac;
+        try {
+            vac = ServerPointer.getStub().isVaccinatedRegistrated(codiceFiscale.getText().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
         CFValidator cfvalidator = new CFValidator();
 
         if (e.getSource() == backToVaccineOperator) {
@@ -290,14 +296,14 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
 
             if (nome.getText().equals("") || cognome.getText().equals("") ||
                     !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
-                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
+                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("A")) {
                 JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            }/*
-            else if (codiceFiscale)// metodo server se il CF è gia registrato {
-
             }
-            */
+            else if (vac){
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            }
+
             else {
                 BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
