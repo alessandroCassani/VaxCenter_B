@@ -319,13 +319,22 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backToUIVaccineOperator){
+        boolean vac ;
+        try {
+            vac = ServerPointer.getStub().isVaxcenterRegistrated(nomeCentroVaccinale.getText().toString().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
+        if (e.getSource() == backToUIVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
-        } else if(e.getSource() == registra){
-            //this.dispose();
-            if (nomeCentroVaccinale.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+        } else if (e.getSource() == registra) {
+            if (nomeCentroVaccinale.getText().equals("") || tipologia.getSelectedItem().equals("")
+                    || qualificatore.getSelectedItem().equals("") || nomeVia.getText().equals("")
+                    || numeroCivico.getText().equals("") || comune.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+            } else if (vac) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
             } else {
                 registra();
@@ -337,7 +346,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 comune.setEnabled(false);
                 registra.setEnabled(false);
             }
-        }else if(e.getSource() == pulisci){
+        }
+        if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
             qualificatore.setSelectedItem("");
             nomeVia.setText("");
