@@ -348,7 +348,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             EmailValidator emailValidator = new EmailValidator();
             CFValidator cfvalidator = new CFValidator();
             PasswordValidator pswvalidator = new PasswordValidator();
-
             IdValidator idValidator = new IdValidator();
             try {
                 if (!emailValidator.validate(email.getText().trim())) {
@@ -364,8 +363,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 }
                 else if(!password.equals(ripetiPassword)) {
                     JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "password diverse",JOptionPane.INFORMATION_MESSAGE);
-                }else {
-                    registraCittadino();
+                }else if(registraCittadino()) {
                     JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio", JOptionPane.INFORMATION_MESSAGE);
                     nomeCV.setEnabled(false);
                     nomeCittadino.setEditable(false);
@@ -376,6 +374,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                     IDUnivoco.setEditable(false);
                     password.setEditable(false);
                     ripetiPassword.setEditable(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Errore in fase di registrazione, prego riprovare", "Registrazione non effettuata", JOptionPane.INFORMATION_MESSAGE);
                 }
             }catch (RemoteException ex){ex.printStackTrace();}
         }else if(e.getSource() == pulisci) {
