@@ -24,6 +24,7 @@ import java.util.Objects;
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
+ * @author Luca Perfetti
  */
 
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {

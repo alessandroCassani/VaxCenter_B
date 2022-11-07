@@ -14,6 +14,7 @@ import java.util.Objects;
  *
  *  @author Alessandro Cassani
  *  @author Paolo Bruscagin
+ *  @author Luca Perfetti
  */
 public class UILoginToServer extends JFrame implements ActionListener {
 

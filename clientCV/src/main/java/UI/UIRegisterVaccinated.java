@@ -27,6 +27,7 @@ import java.util.Objects;
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
  * @author Damiano Ficara
+ * @author Luca perfetti
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
