@@ -24,6 +24,7 @@ import java.util.Objects;
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
+ * @author Luca Perfetti
  */
 
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
@@ -319,13 +320,36 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backToUIVaccineOperator){
+        boolean vac ;
+        try {
+            vac = ServerPointer.getStub().isVaxcenterRegistrated(nomeCentroVaccinale.getText().toString().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
+        if (e.getSource() == backToUIVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
-        } else if(e.getSource() == registra){
-            //this.dispose();
-            if (nomeCentroVaccinale.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+        } else if (e.getSource() == registra) {
+            if (nomeCentroVaccinale.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome Centro Vaccinale inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            } else if (tipologia.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Tipologia selezionata non valida! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (qualificatore.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Qualificatore selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (nomeVia.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome della Via/Viale/Piazza inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (numeroCivico.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Numero civico inserito non valido! Rprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (comune.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Comune selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (vac) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale già Registrato! ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
             } else {
                 registra();
@@ -337,7 +361,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 comune.setEnabled(false);
                 registra.setEnabled(false);
             }
-        }else if(e.getSource() == pulisci){
+        }
+        if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
             qualificatore.setSelectedItem("");
             nomeVia.setText("");

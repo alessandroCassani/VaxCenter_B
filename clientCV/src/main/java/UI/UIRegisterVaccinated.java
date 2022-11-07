@@ -27,6 +27,7 @@ import java.util.Objects;
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
  * @author Damiano Ficara
+ * @author Luca perfetti
  */
 
 public class UIRegisterVaccinated extends JFrame implements ActionListener {
@@ -276,7 +277,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         BigInteger id;
         try {
 
-            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.valueOf(vacSommm)));
+            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.getVaccino(vacSommm)));
             JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
@@ -292,6 +293,12 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean vac;
+        try {
+            vac = ServerPointer.getStub().isVaccinatedRegistrated(codiceFiscale.getText().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
         CFValidator cfvalidator = new CFValidator();
 
         if (e.getSource() == backToVaccineOperator) {
@@ -299,9 +306,23 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
 
-            if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            if (nome.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Nome inserito non valido! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
+            }else if (cognome.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Cognome inserito non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Codice Fiscale inserito non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (vaccinoSomministrato.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Vaccino selezionato non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (nomeCV.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale selezionato non valido! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            }else if (vac){
+                JOptionPane.showMessageDialog(null, "Cittadino già vaccinato!", "Messaggio",JOptionPane.ERROR_MESSAGE);
             } else {
                 BigInteger id = registraVaccinato();
                 IDUnivoco.setVisible(true);
@@ -314,9 +335,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 vaccinoSomministrato.setEnabled(false);
                 nomeCV.setEnabled(false);
                 IDUnivoco.setVisible(true);
-                IDUnivoco.setText("ID univoco" + id);
+                IDUnivoco.setText("ID univoco: " + id);
             }
-        }else if(e.getSource() == pulisci) {
+        }
+        if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
             nome.setText("");
             cognome.setText("");
