@@ -319,25 +319,27 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backToUIVaccineOperator){
+        if (e.getSource() == backToUIVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
-        } else if(e.getSource() == registra){
-            //this.dispose();
-            if (nomeCentroVaccinale.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
-
-            } else {
-                registra();
-                nomeCentroVaccinale.setEditable(false);
-                tipologia.setEnabled(false);
-                qualificatore.setEnabled(false);
-                nomeVia.setEditable(false);
-                numeroCivico.setEditable(false);
-                comune.setEnabled(false);
-                registra.setEnabled(false);
+        } else if (e.getSource() == registra) {
+            if (nomeCentroVaccinale.getText().equals("") || tipologia.getSelectedItem().equals("")
+                    || qualificatore.getSelectedItem().equals("") || nomeVia.getText().equals("")
+                    || numeroCivico.getText().equals("") || comune.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
             }
-        }else if(e.getSource() == pulisci){
+         else {
+            registra();
+            nomeCentroVaccinale.setEditable(false);
+            tipologia.setEnabled(false);
+            qualificatore.setEnabled(false);
+            nomeVia.setEditable(false);
+            numeroCivico.setEditable(false);
+            comune.setEnabled(false);
+            registra.setEnabled(false);
+            }
+        }
+        if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
             qualificatore.setSelectedItem("");
             nomeVia.setText("");

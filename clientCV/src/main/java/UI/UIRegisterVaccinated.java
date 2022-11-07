@@ -155,7 +155,6 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         IDUnivoco.setBounds(350, 410, 230, 20);
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 20));
         IDUnivoco.setBackground(new Color(0,0,128));
-        IDUnivoco.setText("ID Univoco: ");
 
 
 
@@ -289,8 +288,10 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             new UIVaccineOperator();
         }else  if (e.getSource() == registraVaccinato) {
 
-            if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            if (nome.getText().equals("") || cognome.getText().equals("") ||
+                    !cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim()) ||
+                    vaccinoSomministrato.getSelectedItem().equals("") || nomeCV.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Errore inserimento dati! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
                 BigInteger id = registraVaccinato();
@@ -306,7 +307,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 IDUnivoco.setVisible(true);
                 IDUnivoco.setText("ID univoco" + id);
             }
-        }else if(e.getSource() == pulisci) {
+        }
+        if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
             nome.setText("");
             cognome.setText("");
