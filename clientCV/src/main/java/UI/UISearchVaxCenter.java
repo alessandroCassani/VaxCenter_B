@@ -330,7 +330,6 @@ public class UISearchVaxCenter extends JFrame {
 
     }
 
-
     /**
      * Label per inserire l'immagine per tornare alla schermata precedente
      */
@@ -359,6 +358,14 @@ public class UISearchVaxCenter extends JFrame {
      * Intestazione dei campi della tabella
      */
     private String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
+
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
 
 
 

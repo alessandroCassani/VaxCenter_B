@@ -5,29 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/CheckData/IdValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/ServerPointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/ServerPointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenterDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/CurvesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/CurvesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/GradientPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/GradientPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/GradientPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/GradientPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyPwdField.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyPwdField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyTextField.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/CapProvincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/CapProvincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/DBManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/DBManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/RoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/RoundButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/DBManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/ServerInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/UI/UILoginToServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/UILoginToServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Cittadino.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Cittadino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Vaccinato.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Vaccinato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Vaccino.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Vaccino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/EventiAvversi.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/EventiAvversi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Indirizzo.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Indirizzo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/target/classes/util/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Persona.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Sintomatologia.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Sintomatologia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +108,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -85,6 +120,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "vcs.Git"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -598,7 +638,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="changeStructure" />
+                        <option value="RicercaCentroVaccinaleDialogLuca" />
                       </list>
                     </value>
                   </entry>
@@ -609,7 +649,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Sistemazione collegamento varie classi" />
