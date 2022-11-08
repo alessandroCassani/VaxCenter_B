@@ -8,20 +8,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.math.BigInteger;
-import java.rmi.RemoteException;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.Objects;
+
+
+
 import CheckData.EmailValidator;
 import CheckData.CFValidator;
-import CheckData.IdValidator;
 import CheckData.PasswordValidator;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-import util.Account;
-import util.Cittadino;
+
+
 
 
 /**
@@ -38,7 +36,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
     /**
      *  Menu a tendina che indica un insieme di centri vaccinali registrati a sistema che l'utente puo' selezionare a seguito di una ricerca nel DB
      */
-    JComboBox<String> nomeCV;
+    JComboBox<String> nomeCV = new JComboBox<>(new String[]{""}); // ricerca in db
 
     /**
      * nome del cittadino
@@ -120,17 +118,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         JLabel labelNome = new JLabel("Nome Centro Vaccinale:");
         labelNome.setFont(new Font("Georgia", Font.ITALIC, 17));
         add(labelNome).setBounds(100, 40, 550, 75);
-
-        try {
-
-            List<String> l = ServerPointer.getStub().getNomicentriVaccinali();
-            l.add(0,"");
-            String[] listCV = l.toArray(new String[l.size()]);
-            nomeCV = new JComboBox(listCV);
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
 
         nomeCV.setFont(new Font("Arial", Font.ITALIC, 20));
         nomeCV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
@@ -323,32 +310,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-    }
 
-    /**
-     * il metodo permette di prelevare le informazioni inserite nella UI riguardanti i dati di un vaccinato da registrare a sistema, e tramite il metodo del server
-     * completa questa operazione
-     *
-     * @return true o false in base all'esito dell'operazione
-     *
-     * @author Alessandro Cassani
-     */
-    private boolean registraCittadino(){
-        String nomeCentro = Objects.requireNonNull(nomeCV.getSelectedItem()).toString();
-        String name = nomeCittadino.getText().toUpperCase();
-        String surname = cognomeCittadino.getText().toUpperCase();
-        String cf = codiceFiscale.getText().toUpperCase();
-        String mail = email.getText();
-        String userid = userID.getText();
-        String ID = IDUnivoco.getText();
-        String pwd = password.getText();
-        try {
-            ServerPointer.getStub().registraCittadino(new Cittadino(
-                    name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
-            return true;
-        } catch (RemoteException ex) {
-            return false;
-        }
     }
 
     /**
@@ -356,16 +318,9 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      * @param e the event to be processed
      *
      * @author Paolo Bruscagin
-     * @author Alessandro Cassani
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        boolean cit;
-        try {
-            cit = ServerPointer.getStub().isUserRegistrated(codiceFiscale.getText().toUpperCase());
-        } catch (RemoteException ex) {
-            throw new RuntimeException(ex);
-        }
         if(e.getSource() == backToCitizen) {
             this.dispose();
             new UICitizen();
@@ -373,40 +328,28 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             EmailValidator emailValidator = new EmailValidator();
             CFValidator cfvalidator = new CFValidator();
             PasswordValidator pswvalidator = new PasswordValidator();
-            IdValidator idValidator = new IdValidator();
-            try {
-                if (!emailValidator.validate(email.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! email non valida", "Errore email", JOptionPane.ERROR_MESSAGE);
-                } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! codice fiscale non valido", "Errore codice fiscale", JOptionPane.ERROR_MESSAGE);
-                } else if (!pswvalidator.validate(password.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! password non valida", "Errore password", JOptionPane.ERROR_MESSAGE);
-                } else if (!idValidator.checkdata(idPadding(IDUnivoco.getText().trim()))) {
-                    JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "Errore inserimento id", JOptionPane.ERROR_MESSAGE);
-                } else if (!ServerPointer.getStub().isIdCorrect(IDUnivoco.getText().trim(), codiceFiscale.getText().trim())) {
-                    JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "Errore id", JOptionPane.ERROR_MESSAGE);
-                }
-                else if(!password.getText().equals(ripetiPassword.getText())) {
-                    JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "Password diverse",JOptionPane.INFORMATION_MESSAGE);
-                } else if (cit) {
-                    JOptionPane.showMessageDialog(null, "Utente già Registrato", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
-                } else if(registraCittadino()) {
-                    JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio", JOptionPane.INFORMATION_MESSAGE);
-                    nomeCV.setEnabled(false);
-                    nomeCittadino.setEditable(false);
-                    cognomeCittadino.setEditable(false);
-                    codiceFiscale.setEditable(false);
-                    email.setEditable(false);
-                    userID.setEditable(false);
-                    IDUnivoco.setEditable(false);
-                    password.setEditable(false);
-                    ripetiPassword.setEditable(false);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Errore in fase di registrazione, prego riprovare", "Registrazione non effettuata", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }catch (RemoteException ex){ex.printStackTrace();}
+            if(!emailValidator.validate(email.getText().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            } else if (!cfvalidator.validate(codiceFiscale.getText().toUpperCase().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
+            } else if (!pswvalidator.validate(password.getText().trim())) {
+                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                nomeCV.setEnabled(false);
+                nomeCittadino.setEditable(false);
+                cognomeCittadino.setEditable(false);
+                codiceFiscale.setEditable(false);
+                email.setEditable(false);
+                userID.setEditable(false);
+                IDUnivoco.setEditable(false);
+                password.setEditable(false);
+                ripetiPassword.setEditable(false);
+            }
+
         }else if(e.getSource() == pulisci) {
             nomeCV.setSelectedItem("");
             nomeCittadino.setText("");
@@ -437,64 +380,5 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 ripetiPassword.setEchoChar('*');
             }
         }
-    }
-
-    /**
-     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'id del vaccinato
-     * @param id id sul quale eseguire padding
-     * @return id a 16 cifre
-     *
-     * @author Alessandro Cassani
-     */
-    private static String idPadding(String id) {
-
-        switch (id.length()) {
-            case 1:
-                id = "000000000000000" + id;
-                break;
-            case 2:
-                id = "00000000000000" + id;
-                break;
-            case 3:
-                id = "0000000000000" + id;
-                break;
-            case 4:
-                id = "000000000000" + id;
-                break;
-            case 5:
-                id = "00000000000" + id;
-                break;
-            case 6:
-                id = "0000000000" + id;
-                break;
-            case 7:
-                id = "000000000" + id;
-                break;
-            case 8:
-                id = "00000000" + id;
-                break;
-            case 9:
-                id = "0000000" + id;
-                break;
-            case 10:
-                id = "000000" + id;
-                break;
-            case 11:
-                id = "00000" + id;
-                break;
-            case 12:
-                id = "0000" + id;
-                break;
-            case 13:
-                id = "000" + id;
-                break;
-            case 14:
-                id = "00" + id;
-                break;
-            case 15:
-                id = "0" + id;
-                break;
-        }
-        return id;
     }
 }

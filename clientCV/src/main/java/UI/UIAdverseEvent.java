@@ -1,7 +1,7 @@
 package UI;
 
 import database.RoundButton;
-import util.*;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -10,10 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.Objects;
-
 
 /**
  * Interfaccia che permette all'utente di registrare gli eventi avversi
@@ -67,6 +64,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JButton backToCitizenR;
 
+
+    //CheckBox temporanea che andrà cancellata per verificare il cambiamento del Panel
+    JCheckBox switcha = new JCheckBox();
+
+
     //Labels Titoli Panel Inserisci Eventi Avversi / Visualizza Eventi Avversi Registrati
     /**
      * Label Titolo situata nel Panelper registrare gli Eventi Avversi
@@ -91,7 +93,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Mal di testa (da 1 a 5)
      */
 
-    JComboBox severitaMDT = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitaMDT = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Febbre
@@ -107,7 +109,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Mal di testa (da 1 a 5)
      */
 
-    JComboBox severitaFebbre = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitaFebbre = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Dolori Muscolari e/o Articolari
@@ -130,7 +132,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Dolori Muscolari e/o Articolari (da 1 a 5)
      */
 
-    JComboBox severitaDMA = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitaDMA = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Linfoadenopatia
@@ -146,7 +148,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Linfoadenopatia (da 1 a 5)
      */
 
-    JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitalinfoadenopatia = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Tachicardia
@@ -162,7 +164,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Severità Tachicardia (da 1 a 5)
      */
 
-    JComboBox severitatachicardia = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitatachicardia = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     // Sintomatologia Crisi Ipertensiva
@@ -176,7 +178,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * Severità Crisi Ipertensiva (da 1 a 5)
      */
-    JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{"0", "1", "2", "3", "4", "5"});
+    JComboBox severitaCrisiIpertensiva = new JComboBox<>(new String[]{"", "1", "2", "3", "4", "5"});
 
 
     //Text Area note (valevole per tutti i sintomi)
@@ -198,7 +200,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     String severitàEvento = " SEVERITA'";
 
 
+    //Tabella 6x2 (righe x colonne) immutabile in quanto viene completato automaticamente
+    String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ""}, {" Febbre", ""}, {" Dolori Musc. Art.", ""}, {" Linfoadenopatia", ""}, {" Tachicardia", ""}, {" Crisi Ipertensiva", ""}};
+    String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
 
+    /**
+     * Tabella che mostra il riepilogo degli eventi avversi già registrati
+     */
+    JTable tabellaRiepilogo = new JTable(data, coloumn);
     /**
      * Label per il riepilogo note
      */
@@ -246,31 +255,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JLabel severitaEA6 = new JLabel("Severità");
 
 
-
-
     static String user;
-    public UIAdverseEvent(String username) throws RemoteException {
+    public UIAdverseEvent(String username) {
 
 
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
-
-
-        String [] info;
-        info = ServerPointer.getStub().getPersonAE(user);
-
-        String [] infoC;
-        infoC = ServerPointer.getStub().getInfoCittadino(user);
-
-
-        String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])},
-                {" Febbre", ("       " +info[1])}, {" Tachicardia", ("       " +info[2])}, {" Dolori Musc. Art.", ("       " +info[3])},
-                {" Linfoadenopatia", ("       " +info[4])}, {" Crisi Ipertensiva", ("       " +info[5])}};
-
-        String[] coloumn = {"EVENTO AVVERSO", "SEVERITA'"};
-
-        JTable tabellaRiepilogo = new JTable(data, coloumn);
 
 
         infoUtente.setBounds(550, -5, 450, 570);
@@ -284,29 +275,29 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         titoloRiepilogo.setFont(new Font("Georgia", Font.BOLD, 20));
         titoloRiepilogo.setBounds(100, 50, 200, 30);
 
-        JLabel nomeUtente = new JLabel("Nome:   " + infoC[1]);
+        JLabel nomeUtente = new JLabel("Nome: ");
         nomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        nomeUtente.setBounds(20, 100, 400, 20);
+        nomeUtente.setBounds(20, 100, 200, 20);
 
-        JLabel cognomeUtente = new JLabel("Cognome:   " + infoC[2]);
+        JLabel cognomeUtente = new JLabel("Cognome: ");
         cognomeUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        cognomeUtente.setBounds(20, 160, 400, 20);
+        cognomeUtente.setBounds(20, 160, 200, 20);
 
-        JLabel codiceFiscaleUtente = new JLabel("Codice Fiscale:   " + infoC[3]);
+        JLabel codiceFiscaleUtente = new JLabel("Codice Fiscale: ");
         codiceFiscaleUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        codiceFiscaleUtente.setBounds(20, 220, 400, 20);
+        codiceFiscaleUtente.setBounds(20, 220, 200, 20);
 
-        JLabel emailUtente = new JLabel("Email:   " + infoC[4]);
+        JLabel emailUtente = new JLabel("Email: ");
         emailUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        emailUtente.setBounds(20, 280, 400, 20);
+        emailUtente.setBounds(20, 280, 200, 20);
 
-        JLabel UserIDUtente = new JLabel("UserID:   " + infoC[5]);
+        JLabel UserIDUtente = new JLabel("UserID: ");
         UserIDUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        UserIDUtente.setBounds(20, 340, 400, 20);
+        UserIDUtente.setBounds(20, 340, 200, 20);
 
-        JLabel IDUnivocoUtente = new JLabel("ID Univoco:   " + infoC[0]);
+        JLabel IDUnivocoUtente = new JLabel("ID Univoco: ");
         IDUnivocoUtente.setFont(new Font("Georgia", Font.BOLD, 15));
-        IDUnivocoUtente.setBounds(20, 400, 400, 20);
+        IDUnivocoUtente.setBounds(20, 400, 200, 20);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
 
@@ -333,6 +324,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         backToCitizenR.setContentAreaFilled(false);
 
 
+        switcha.setFont(new Font("Arial", Font.BOLD, 15));
+        switcha.setBounds(400, 500, 20, 15);
+        switcha.addActionListener(this);
+        switcha.setBackground(new Color(181, 226, 232));
+
         infoUtente.add(titoloRiepilogo);
         infoUtente.add(nomeUtente);
         infoUtente.add(cognomeUtente);
@@ -341,6 +337,8 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         infoUtente.add(UserIDUtente);
         infoUtente.add(IDUnivocoUtente);
 
+
+        infoUtente.add(switcha);
 
         add(infoUtente);
 
@@ -476,8 +474,10 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         riepilogoEventiAvversiPersonali.add(riepilogoNote);
         riepilogoEventiAvversiPersonali.add(tabellaRiepilogo);
         riepilogoEventiAvversiPersonali.add(rn);
-        rn.setText(info[6]);
         riepilogoEventiAvversiPersonali.add(backToCitizenR);
+
+
+        add(riepilogoEventiAvversiPersonali);
 
 
         //Panel Inserimento Eventi Avversi
@@ -535,18 +535,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         inserisciEventiAvversi.add(registraEA);
         inserisciEventiAvversi.add(pulisciEventiAvversi);
 
-        add(inserisciEventiAvversi).setVisible(false);
-        add(riepilogoEventiAvversiPersonali).setVisible(false);
-
-
-        if (ServerPointer.getStub().isAERegistered(user)){
-            inserisciEventiAvversi.setVisible(false);
-            riepilogoEventiAvversiPersonali.setVisible(true);
-        }else{
-            inserisciEventiAvversi.setVisible(true);
-            riepilogoEventiAvversiPersonali.setVisible(false);
-        }
-
 
         //Popup "Se sicuro di uscire?"
         addWindowListener(new WindowAdapter() {
@@ -581,39 +569,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         setResizable(false);
         setVisible(true);
 
-
-
     }
-
-    /**
-     * metodo privato che permette di registrare degli eventi avversi nel db
-     * @author Paolo Bruscagin
-     */
-    private void registraEventiAvversi(){
-        String note = noteGenerali.getText();
-        ArrayList<Sintomo> sintomi = new ArrayList<Sintomo>();
-        sintomi.add(new Sintomo(severitaMDT.getSelectedIndex(),Sintomatologia.MALDITESTA));
-        sintomi.add(new Sintomo(severitaFebbre.getSelectedIndex(),Sintomatologia.FEBBRE));
-        sintomi.add(new Sintomo(severitatachicardia.getSelectedIndex(),Sintomatologia.TACHICARDIA));
-        System.out.println(severitatachicardia.getSelectedIndex());
-        sintomi.add(new Sintomo(severitaDMA.getSelectedIndex(),Sintomatologia.DOLORI_MA));
-        sintomi.add(new Sintomo(severitalinfoadenopatia.getSelectedIndex(),Sintomatologia.LINFOADENOPATIA));
-        sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
-
-
-        try {
-
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
-            JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!",
-                    "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (RemoteException ex) {
-            throw new RuntimeException(ex);
-
-        }
-    }
-
-
 
 
     /**
@@ -630,32 +586,32 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         } else if (e.getSource() == backToCitizenR) {
             this.dispose();
             new UICitizen();
-        } else if (e.getSource() == pulisciEventiAvversi) {
+        } else if (e.getSource() == switcha) {
+            //Passaggio da un Panel all'altro
+            //in seguito inserire comando automatico che capisca se gli eventi avversi sono registrati o meno
+            if (switcha.isSelected()) {
+                //sistemare grafica
+                add(riepilogoEventiAvversiPersonali).setVisible(false);
+                add(inserisciEventiAvversi).setVisible(true);
+
+            } else if (!switcha.isSelected()) {
+                add(inserisciEventiAvversi).setVisible(false);
+                add(riepilogoEventiAvversiPersonali).setVisible(true);
+
+            }
+
+
+        }else if (e.getSource() == pulisciEventiAvversi) {
             noteGenerali.setText("");
-            severitaMDT.setSelectedItem("0");
-            severitaFebbre.setSelectedItem("0");
-            severitaDMA.setSelectedItem("0");
-            severitalinfoadenopatia.setSelectedItem("0");
-            severitatachicardia.setSelectedItem("0");
-            severitaCrisiIpertensiva.setSelectedItem("0");
+            severitaMDT.setSelectedItem("");
+            severitaFebbre.setSelectedItem("");
+            severitaDMA.setSelectedItem("");
+            severitalinfoadenopatia.setSelectedItem("");
+            severitatachicardia.setSelectedItem("");
+            severitaCrisiIpertensiva.setSelectedItem("");
 
         } else if (e.getSource() == registraEA) {
-            if (noteGenerali.getText().length() > 256){
-                JOptionPane.showMessageDialog(null, "Puoi inserire massimo 256 caratteri! Riprova",
-                        "Messaggio",JOptionPane.ERROR_MESSAGE);
-
-            }else {
-                registraEventiAvversi();
-                severitaMDT.setEnabled(false);
-                severitaFebbre.setEnabled(false);
-                severitaDMA.setEnabled(false);
-                severitatachicardia.setEnabled(false);
-                severitalinfoadenopatia.setEnabled(false);
-                severitaCrisiIpertensiva.setEnabled(false);
-                noteGenerali.setEditable(false);
-                registraEA.setEnabled(false);
-                pulisciEventiAvversi.setEnabled(false);
-            }
+            JOptionPane.showMessageDialog(null, "Eventi Avversi registrati con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
         }
 

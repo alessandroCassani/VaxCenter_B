@@ -2,7 +2,6 @@ package database;
 
 import util.*;
 
-import java.math.BigInteger;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
@@ -38,13 +37,13 @@ public interface ServerInterface extends Remote {
     /**
      * segnatura del metodo che permette la registrazione di un vaccinato
      * @param vaccinato persona vaccinata
-     * @return stringa rappresentante id del vaccinato registrato
+     * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      *  @author Alessandro Cassani
      */
 
-    String registraVaccinato(Vaccinato vaccinato) throws RemoteException;
+    boolean registraVaccinato(Vaccinato vaccinato) throws RemoteException;
 
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
@@ -56,25 +55,6 @@ public interface ServerInterface extends Remote {
      */
     boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException;
 
-    /**
-     * segnatura del metodo che permette di controllare se gli eventi avversi sono già stati registrati per quel cittadino
-     * @param user account del cittadino
-     * @return true o false, in base all'esito dell'operazione
-     * @throws RemoteException eccezione rmi
-     *
-     *  @author Paolo Bruscagin
-     */
-    boolean isAERegistered(String user) throws RemoteException;
-
-    /**
-     * segnatura del metodo che permette la restituzione degli eventi avversi già segnalati
-     * @param user nome del centro vaccinale (anche non completa)
-     * @return lista di centri vaccinali
-     * @throws RemoteException eccezione rmi
-     *
-     * @author Paolo Bruscagin
-     */
-    String[] getPersonAE(String user) throws RemoteException;
 
     /**
      * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
@@ -135,7 +115,7 @@ public interface ServerInterface extends Remote {
      *
      * @author Alessandro cassani
      */
-    String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
+    String[] getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
 
     /**
      * segnatura del metodo che permette la ricerca di centri vaccinali
@@ -189,15 +169,4 @@ public interface ServerInterface extends Remote {
     LinkedList<String> getComuniNome() throws RemoteException;
 
     LinkedList<CentroVaccinale>  getCentriVaccinali() throws RemoteException;
-
-    /**
-     * segnature del metodo che permette la restituzione dei dati personali di un cittadino
-     * @param user comune di cui si vogliono avere i dati
-     * @return dati cittadino
-     * @throws RemoteException eccezione rmi
-     *
-     * @author Paolo Bruscagin
-     */
-
-    String[] getInfoCittadino(String user) throws RemoteException;
 }
