@@ -1,13 +1,20 @@
 package database;
 
+import org.postgresql.util.PSQLException;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.TextAttribute;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Objects;
+
+import static database.DBManagement.*;
 
 /**
  * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al dataBase Postgres e alle funzionalita' del server
@@ -281,6 +288,42 @@ public class UILoginToServer extends JFrame implements ActionListener {
                     portTextField.getText().equals("") || userTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
+            } else {
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    connection = DriverManager.getConnection(url + nameDB, userTextField.getText(), pswTextField.getText());
+                } catch (ClassNotFoundException | SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                if(connection!=null) {
+                    this.dispose();
+                    DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
+                    new UIServerHome();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }else if(e.getSource() == showPassword){
+            if (showPassword.isSelected())
+                pswTextField.setEchoChar((char) 0);
+            else
+                pswTextField.setEchoChar('*');
+        } else if (e.getSource() == pulisci) {
+            hostTextField.setText("");
+            portTextField.setText("");
+            userTextField.setText("");
+            pswTextField.setText("");
+            pswTextField.setEchoChar('*');
+            statusError.setVisible(false);
+            showPassword.setSelected(false);
+
+        }
+
+        /*if(e.getSource() == loginButton){
+            if (pswTextField.getText().equals("") || hostTextField.getText().equals("") ||
+                    portTextField.getText().equals("") || userTextField.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
+
             }else {this.dispose();
                 DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
                 new UIServerHome();}
@@ -299,7 +342,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
             statusError.setVisible(false);
             showPassword.setSelected(false);
 
-        }
+        }*/
     }
 
     /**
