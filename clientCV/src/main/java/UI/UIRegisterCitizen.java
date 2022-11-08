@@ -360,6 +360,12 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+        boolean cit;
+        try {
+            cit = ServerPointer.getStub().isUserRegistrated(codiceFiscale.getText().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
         if(e.getSource() == backToCitizen) {
             this.dispose();
             new UICitizen();
@@ -381,8 +387,11 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "Errore id", JOptionPane.ERROR_MESSAGE);
                 }
                 else if(!password.equals(ripetiPassword)) {
-                    JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "password diverse",JOptionPane.INFORMATION_MESSAGE);
-                }else if(registraCittadino()) {
+                    JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "Password diverse",JOptionPane.INFORMATION_MESSAGE);
+                } else if (cit) {
+                    JOptionPane.showMessageDialog(null, "Utente già Registrato", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+
+                } else if(registraCittadino()) {
                     JOptionPane.showMessageDialog(null, "Registrazione avvenuta con successo!", "Messaggio", JOptionPane.INFORMATION_MESSAGE);
                     nomeCV.setEnabled(false);
                     nomeCittadino.setEditable(false);
