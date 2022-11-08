@@ -576,4 +576,49 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {return null;}
     }
 
+    /**
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'ide del vaccinato
+     * @param id id sul quale eseguire padding
+     * @return id a 16 cifre
+     *
+     * @author Alessandro Cassani
+     */
+    private String idPadding(String id){
+        String str = null;
+        switch (id.length()){
+            case 1: str = "000000000000000" + id;
+                break;
+            case 2: str = "00000000000000" + id;
+                break;
+            case 3: str = "0000000000000" + id;
+                break;
+            case 4: str = "000000000000" + id;
+                break;
+            case 5: str = "00000000000" + id;
+                break;
+            case 6: str = "0000000000" + id;
+                break;
+            case 7: str = "000000000" + id;
+                break;
+            case 8: str = "00000000" + id;
+                break;
+            case 9: str = "0000000" + id;
+                break;
+            case 10: str = "000000" + id;
+                break;
+            case 11: str = "00000" + id;
+                break;
+            case 12: str = "0000" + id;
+                break;
+            case 13: str = "000" + id;
+                break;
+            case 14: str = "00" + id;
+                break;
+            case 15: str = "0" + id;
+                break;
+            case 16: str = id;
+                break;
+        }
+        return str;
+    }
 }

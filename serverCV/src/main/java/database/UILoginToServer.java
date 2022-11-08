@@ -226,8 +226,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(statusError).setVisible(false);
         add(pulisci);
 
-
-
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb.png")));
         setIconImage(logo.getImage());
@@ -296,7 +294,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
             pswTextField.setEchoChar('*');
             statusError.setVisible(false);
             showPassword.setSelected(false);
-
         }
     }
 

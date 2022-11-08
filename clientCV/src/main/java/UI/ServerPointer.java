@@ -107,9 +107,5 @@ public class ServerPointer {
             System.exit(0);
             System.out.println("Impossibile connettersi al server remoto");
         }
-
-
-
     }
-
 }
