@@ -381,7 +381,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Errore! codice fiscale non valido", "Errore codice fiscale", JOptionPane.ERROR_MESSAGE);
                 } else if (!pswvalidator.validate(password.getText().trim())) {
                     JOptionPane.showMessageDialog(null, "Errore! password non valida", "Errore password", JOptionPane.ERROR_MESSAGE);
-                } else if (!idValidator.checkdata(IDUnivoco.getText().trim())) {
+                } else if (!idValidator.checkdata(idPadding(IDUnivoco.getText().trim()))) {
                     JOptionPane.showMessageDialog(null, "Errore! controllare lunghezza id (16 numeri)", "Errore inserimento id", JOptionPane.ERROR_MESSAGE);
                 } else if (!ServerPointer.getStub().isIdCorrect(IDUnivoco.getText().trim(), codiceFiscale.getText().trim())) {
                     JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "Errore id", JOptionPane.ERROR_MESSAGE);
@@ -437,5 +437,64 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 ripetiPassword.setEchoChar('*');
             }
         }
+    }
+
+    /**
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'id del vaccinato
+     * @param id id sul quale eseguire padding
+     * @return id a 16 cifre
+     *
+     * @author Alessandro Cassani
+     */
+    private static String idPadding(String id) {
+
+        switch (id.length()) {
+            case 1:
+                id = "000000000000000" + id;
+                break;
+            case 2:
+                id = "00000000000000" + id;
+                break;
+            case 3:
+                id = "0000000000000" + id;
+                break;
+            case 4:
+                id = "000000000000" + id;
+                break;
+            case 5:
+                id = "00000000000" + id;
+                break;
+            case 6:
+                id = "0000000000" + id;
+                break;
+            case 7:
+                id = "000000000" + id;
+                break;
+            case 8:
+                id = "00000000" + id;
+                break;
+            case 9:
+                id = "0000000" + id;
+                break;
+            case 10:
+                id = "000000" + id;
+                break;
+            case 11:
+                id = "00000" + id;
+                break;
+            case 12:
+                id = "0000" + id;
+                break;
+            case 13:
+                id = "000" + id;
+                break;
+            case 14:
+                id = "00" + id;
+                break;
+            case 15:
+                id = "0" + id;
+                break;
+        }
+        return id;
     }
 }

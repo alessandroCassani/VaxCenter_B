@@ -69,7 +69,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cittadini(id,nome,cognome,codice_fiscale,email,username,password,nome_centro_vaccinale) \n"
                     + "VALUES (?,?,?,?,?,?,?,?)");
 
-            ps.setString(1, cittadino.getId().toString());
+            ps.setString(1, idPadding(cittadino.getId()));
             ps.setString(2, cittadino.getNome());
             ps.setString(3,cittadino.getCognome());
             ps.setString(4,cittadino.getCodFisc());
@@ -184,7 +184,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette di avere il riepilogo degli eventi avversi già registrati di un cittadino
      * @param user account del cittadino
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */
@@ -359,11 +359,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
             ps.setString(1, codiceFiscale);
+            BigInteger idUnivoco = new BigInteger(id);
+            String idPostPadding = idPadding(idUnivoco);
 
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 String risultato = resultSet.getString(1);
-                return risultato.equals(id);
+                return risultato.equals(idPostPadding);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -486,7 +488,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali() throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali ");
-            // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()){
