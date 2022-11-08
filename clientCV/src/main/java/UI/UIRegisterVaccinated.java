@@ -265,7 +265,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      * @author Paolo Bruscagin
      */
 
-    private BigInteger registraVaccinato(){
+    private String registraVaccinato(){
         String centrovaccinale = Objects.requireNonNull(nomeCV.getSelectedItem().toString().toUpperCase());
         String nomeVac = nome.getText().toUpperCase();
         String cognomeVac = cognome.getText().toUpperCase();
@@ -273,7 +273,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         Date dataVac = data.getDate();
         String vacSommm  = Objects.requireNonNull(vaccinoSomministrato.getSelectedItem()).toString();
         BigInteger idunivoco = new BigInteger("-1");
-        BigInteger id;
+        String id;
         try {
 
             id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.valueOf(vacSommm)));
@@ -303,7 +303,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             } else {
-                BigInteger id = registraVaccinato();
+                String id = registraVaccinato();
                 IDUnivoco.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
                         "\n\n L'ID Univoco del Vaccinato è: \n\n"+ (id), "Messaggio",JOptionPane.INFORMATION_MESSAGE);

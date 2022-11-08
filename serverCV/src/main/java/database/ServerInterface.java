@@ -38,13 +38,13 @@ public interface ServerInterface extends Remote {
     /**
      * segnatura del metodo che permette la registrazione di un vaccinato
      * @param vaccinato persona vaccinata
-     * @return true o false, in base all'esito dell'operazione
+     * @return stringa rappresentante id del vaccinato registrato
      * @throws RemoteException eccezione rmi
      *
      *  @author Alessandro Cassani
      */
 
-    BigInteger registraVaccinato(Vaccinato vaccinato) throws RemoteException;
+    String registraVaccinato(Vaccinato vaccinato) throws RemoteException;
 
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
