@@ -92,7 +92,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public BigInteger registraVaccinato(Vaccinato vaccinato) throws RemoteException {
+    public String registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         BigInteger numero;
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM vaccinati");
@@ -109,7 +109,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
-            ps.setString(1, numero.toString());
+            ps.setString(1, idPadding(numero));
             ps.setString(2,vaccinato.getCentroVaccinale());
             ps.setString(3,vaccinato.getNome());
             ps.setString(4,vaccinato.getCognome());
@@ -119,8 +119,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.executeUpdate();
             ps.close();
 
-        }catch (SQLException e){e.printStackTrace();return new BigInteger("-1");}
-        return numero;
+        }catch (SQLException e){e.printStackTrace();return "-1";}
+        return idPadding(numero);
     }
 
     /**
@@ -576,4 +576,47 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         } catch (SQLException e) {return null;}
     }
 
+    /**
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'ide del vaccinato
+     * @param id id sul quale eseguire padding
+     * @return id a 16 cifre
+     *
+     * @author Alessandro Cassani
+     */
+    private static String idPadding(BigInteger id){
+        String str = String.valueOf(id);
+        switch (str.length()){
+            case 1: str = "000000000000000" + str;
+                break;
+            case 2: str = "00000000000000" + str;
+                break;
+            case 3: str = "0000000000000" + str;
+                break;
+            case 4: str = "000000000000" + str;
+                break;
+            case 5: str = "00000000000" + str;
+                break;
+            case 6: str = "0000000000" + str;
+                break;
+            case 7: str = "000000000" + str;
+                break;
+            case 8: str = "00000000" + str;
+                break;
+            case 9: str = "0000000" + str;
+                break;
+            case 10: str = "000000" + str;
+                break;
+            case 11: str = "00000" + str;
+                break;
+            case 12: str = "0000" + str;
+                break;
+            case 13: str = "000" + str;
+                break;
+            case 14: str = "00" + str;
+                break;
+            case 15: str = "0" + str;
+                break;
+        }
+        return str;
+    }
 }
