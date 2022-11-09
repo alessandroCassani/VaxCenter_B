@@ -210,8 +210,6 @@ public class UIServerHome extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
         if(e.getSource() == startBtn) {
             startServer();
             status.setText("Server is Running ...");

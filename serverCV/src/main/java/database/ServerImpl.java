@@ -3,10 +3,19 @@ package database;
 
 import util.*;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.Base64;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -18,6 +27,12 @@ import java.util.TreeSet;
  * @author Luca Perfetti
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
+
+    private final static String ALGORITHM = "AES/CBC/PKCS5Padding";
+
+     public static SecretKey key;
+
+     public static IvParameterSpec iv;
 
     /**
      * costruttore vuoto
@@ -619,5 +634,27 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 break;
         }
         return str;
+    }
+
+    public static String encrypt(String input,IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
+            InvalidAlgorithmParameterException, InvalidKeyException,
+            BadPaddingException, IllegalBlockSizeException {
+
+        javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(ALGORITHM);
+        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, key, iv);
+        byte[] cipherText = cipher.doFinal(input.getBytes());
+        return Base64.getEncoder()
+                .encodeToString(cipherText);
+    }
+
+    public static String decrypt(String cipherText,IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
+            InvalidAlgorithmParameterException, InvalidKeyException,
+            BadPaddingException, IllegalBlockSizeException {
+
+        javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(ALGORITHM);
+        cipher.init(javax.crypto.Cipher.DECRYPT_MODE, key, iv);
+        byte[] plainText = cipher.doFinal(Base64.getDecoder()
+                .decode(cipherText));
+        return new String(plainText);
     }
 }

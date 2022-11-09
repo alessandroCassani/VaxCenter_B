@@ -6,6 +6,7 @@ import org.postgresql.util.PSQLException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -79,6 +80,9 @@ public class DBManagement {
                     UILoginToServer.getPswTextField()
             );
         }
+
+        if(ServerImpl.key==null)
+            setKeyIv();
         return instanceDB;
     }
 
@@ -105,6 +109,7 @@ public class DBManagement {
             if(connection==null) {
                 createTable();
                 insertDataSet();
+                generateKeyIv();
                 return true;
             }
         }catch (Exception e){
@@ -131,6 +136,7 @@ public class DBManagement {
             preparedstmt.close();
             createTable();
             insertDataSet();
+            generateKeyIv();
             return true;
         }catch(Exception e){
             System.out.println(e);
@@ -254,13 +260,31 @@ public class DBManagement {
             IvParameterSpec iv = new IvParameterSpec(ivector);
 
 
+            //inserimento nella tabella cipher della chiave e del vettore di inizializzazione
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cipher(key,iv)" +
                     " VALUES (?,?)");
-
 
             ps.setString(1,encodedKey);
             ps.setString(2, Arrays.toString(iv.getIV()));
 
+            //assegnamento a campi statici del server
+            ServerImpl.iv = iv;
+            ServerImpl.key = key;
         } catch (NoSuchAlgorithmException e) {e.printStackTrace();} catch (SQLException e) {e.printStackTrace();}
+    }
+
+    private static void setKeyIv(){
+        try {
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT key,iv FROM cipher");
+            ResultSet resultSet = ps.executeQuery();
+
+            if(resultSet.next()){
+                String encodedKey = resultSet.getString(1);
+                byte[] decodedKey = Base64.getDecoder().decode(encodedKey);
+                SecretKey originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
+                ServerImpl.key = originalKey;
+                ServerImpl.iv = new IvParameterSpec(resultSet.getString(2).getBytes());
+            }
+        } catch (SQLException e) {e.printStackTrace();}
     }
 }
