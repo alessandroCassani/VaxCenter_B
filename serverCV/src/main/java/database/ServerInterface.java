@@ -2,7 +2,6 @@ package database;
 
 import util.*;
 
-import java.math.BigInteger;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
@@ -130,12 +129,12 @@ public interface ServerInterface extends Remote {
 
     /**
      * segnatura del metodo che permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
+     *
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
-     *
      * @author Alessandro cassani
      */
-    String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
+    String[] getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException;
 
     /**
      * segnatura del metodo che permette la ricerca di centri vaccinali
