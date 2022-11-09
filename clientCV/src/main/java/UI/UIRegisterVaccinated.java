@@ -154,7 +154,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         vaccinoSomministrato.setBackground(Color.WHITE);
         ((JLabel)vaccinoSomministrato.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        IDUnivoco.setBounds(350, 410, 230, 20);
+        IDUnivoco.setBounds(350, 410, 350, 20);
         IDUnivoco.setFont(new Font("Georgia", Font.BOLD, 20));
         IDUnivoco.setBackground(new Color(0,0,128));
         IDUnivoco.setText("ID Univoco: ");
