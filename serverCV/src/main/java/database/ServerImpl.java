@@ -273,13 +273,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini " +
-                    "WHERE username = '" + account.getUserId() + "'" + "AND password ='" + account.getPassword() +"'" );
+                    "WHERE username = '" + encrypt(account.getUserId() )+ "'" + "AND password ='" + encrypt(account.getPassword()) +"'" );
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException e){
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
             return false;
         }
         return false;
