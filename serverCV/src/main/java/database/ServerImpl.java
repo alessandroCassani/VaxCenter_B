@@ -380,15 +380,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @param nomeCentroVaccinale nome del centro vaccinale di cui si viuole avere il prospetto riassuntivo
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
-     *
      * @author Alessandro cassani
      */
     @Override
-    public String getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+    public String[] getProspettoRiassuntivo(String nomeCentroVaccinale) throws RemoteException {
+        String [] info = new String[6];
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement(
                     "SELECT COUNT(mal_di_testa) AS segnalazioni_mdt, AVG(mal_di_testa) AS media_mdt, " +
                             "COUNT(febbre) AS segnalazioni_febbre, AVG(febbre) AS media_febbre, " +
+                            "COUNT(tachicardia) AS segnalazioni_tachicardia, AVG(tachicardia) AS media_tachicardia, " +
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
@@ -396,11 +397,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return "CEFALEA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100 + "\n" +
-                        "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100 + "\n" +
-                        "DOLORI MUSCOLARI: " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100+ "\n" +
-                        "LINFOADENOPATIA " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100 + "\n" +
-                        "CRISI IPERTENSIVA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
+                info[0] = "MAL DI TESTA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100;
+                info[1] = "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100;
+                info[2] = "TACHICARDIA " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100;
+                info[3] = "DOLORI MUSCOLARI: " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100;
+                info[4] = "LINFOADENOPATIA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
+                info[5] = "CRISI IPERTENSIVA " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
+                return info;
             }
 
         } catch (SQLException e) {e.printStackTrace();return null;}
