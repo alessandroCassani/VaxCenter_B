@@ -279,10 +279,15 @@ public class UILoginToServer extends JFrame implements ActionListener {
                     portTextField.getText().equals("") || userTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            }else {this.dispose();
-                DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
-                new UIServerHome();}
-
+            }else {
+                if (DBManagement.connect(getHostTextField(), getPortTextField(), getUserTextField(), getPswTextField())) {
+                    this.dispose();
+                    new UIServerHome();
+                } else {
+                    this.dispose();
+                    new UILoginToServer();
+                }
+            }
         }
         if(e.getSource() == showPassword){
             if (showPassword.isSelected())
