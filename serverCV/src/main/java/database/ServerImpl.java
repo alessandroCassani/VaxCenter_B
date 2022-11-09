@@ -245,15 +245,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             preparedStatement.setString(1,user);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                info[0] = resultSet.getString(1);
-                info[1] = resultSet.getString(2);
-                info[2] = resultSet.getString(3);
-                info[3] = resultSet.getString(4);
-                info[4] = resultSet.getString(5);
-                info[5] = resultSet.getString(6);
+                info[0] = decrypt(resultSet.getString(1));
+                info[1] = decrypt(resultSet.getString(2));
+                info[2] = decrypt(resultSet.getString(3));
+                info[3] = decrypt(resultSet.getString(4));
+                info[4] = decrypt(resultSet.getString(5));
+                info[5] = decrypt(resultSet.getString(6));
             }
             return info;
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             return null;
         }
     }
