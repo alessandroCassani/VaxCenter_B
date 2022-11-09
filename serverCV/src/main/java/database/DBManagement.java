@@ -145,7 +145,7 @@ public class DBManagement {
 
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome_centro_vaccinale VARCHAR(30),"
+                    + "nome_centro_vaccinale VARCHAR(50),"
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "codice_fiscale VARCHAR(16),"
@@ -153,7 +153,7 @@ public class DBManagement {
                     + "tipo_vaccino VARCHAR(30));"
 
                     + "create table if not exists centri_vaccinali("
-                    + "nome_centro_vaccinale VARCHAR(30) PRIMARY KEY,"
+                    + "nome_centro_vaccinale VARCHAR(50) PRIMARY KEY,"
                     + "qualificatore VARCHAR(7),"
                     + "nome_via VARCHAR(30),"
                     + "civico VARCHAR(6),"
