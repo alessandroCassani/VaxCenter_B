@@ -27,7 +27,10 @@ public abstract class Persona implements Serializable {
      * codice fiscale della persona
      */
     private final String codFisc;
-
+    /**
+     * email della persona
+     */
+    private final String email;
 
     /**
      * id della persona
@@ -35,25 +38,34 @@ public abstract class Persona implements Serializable {
     private final BigInteger id;
 
     /**
+     * data di dascita della persona
+     */
+    private final Date dataNascita;
+
+    /**
      * centro vaccinale in cui si e' vaccinata la persona
      */
-    private final String centroVaccinale;
+    private final CentroVaccinale centroVaccinale;
 
     /**
      * metodo che permette la modellazione delle informazioni di un oggetto di tipo persona, il quale non sara' creato direttamente (classe astratta) ma sarà utilizzato nei costruttori delle sue sottoclassi
      * @param nome nome della persona
      * @param cognome cognome della persona
      * @param codFisc codice fiscale della persona
+     * @param email email della persona
      * @param id id della persona
+     * @param dataNascita data di nascita della persona
      * @param centroVaccinale centro vaccinale in cui si e' vaccinata la persona
      *
      * @author Alessandro Cassani
      */
-    public Persona(String nome,String cognome, String codFisc, BigInteger id,String centroVaccinale){
+    public Persona(String nome,String cognome, String codFisc,String email, BigInteger id, Date dataNascita, CentroVaccinale centroVaccinale){
         this.nome = nome;
         this.cognome = cognome;
         this.codFisc = codFisc;
+        this.email = email;
         this.id = id;
+        this.dataNascita = dataNascita;
         this.centroVaccinale = centroVaccinale;
     }
 
@@ -87,6 +99,15 @@ public abstract class Persona implements Serializable {
         return codFisc;
     }
 
+    /**
+     * metodo che permette di accedere al campo privato email
+     * @return email della persona
+     *
+     * @author Alessandro Cassani
+     */
+    public String getEmail(){
+        return email;
+    }
 
     /**
      * metodo che permette di accedere al campo privato id
@@ -99,12 +120,22 @@ public abstract class Persona implements Serializable {
     }
 
     /**
+     * metodo che permette di accedere al campo privato data di nascita
+     * @return data di nascita della persona
+     *
+     * @author Alessandro Cassani
+     */
+    public Date getDataNascita(){
+        return dataNascita;
+    }
+
+    /**
      * metodo che permette di accedere al campo privato centro vaccinale
      * @return centro vaccinale in cui si è vaccinata la persona
      *
      * @author Alessandro Cassani
      */
-    public String getCentroVaccinale(){
+    public CentroVaccinale getCentroVaccinale(){
         return centroVaccinale;
     }
 }

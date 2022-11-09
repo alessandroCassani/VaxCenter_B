@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author Alessandro Cassani
  */
 public class CapProvincia implements Serializable {
+
     /**
      * cap del comune
      */

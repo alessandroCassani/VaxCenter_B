@@ -5,7 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="checkPassword">
+      <change afterPath="$PROJECT_DIR$/clientCV/src/main/java/CheckData/IdValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/ServerPointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/ServerPointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIAdverseEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIChoosingRooles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaccinated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIRegisterVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UISearchVaxCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/UIVaccineOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/WelcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/CurvesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/CurvesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/GradientPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/GradientPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/InfoSearchEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyPwdField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/MyTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/UI/graphics/RoundButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/GradientPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/GradientPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyPwdField.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyPwdField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/CapProvincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/CapProvincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/DBManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/DBManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/RoundButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/RoundButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/UILoginToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/UILoginToServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Cittadino.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Cittadino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Vaccinato.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Vaccinato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/src/main/java/util/Vaccino.java" beforeDir="false" afterPath="$PROJECT_DIR$/util/src/main/java/util/Vaccino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +108,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -63,16 +120,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brusc/Documents/GitHub/VaxCenter_B/clientCV/src/main/resources/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -93,13 +145,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WelcomeScreen">
-    <configuration name="UILogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UILogin" />
+  <component name="RunManager" selected="Application.ServerPointer">
+    <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,19 +159,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UISearchVaxCenter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UISearchVaxCenter" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.Test" />
       <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UISearchVaxCenter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenter" />
+    <configuration name="UILoginToServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.UILoginToServer" />
+      <module name="serverCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UISearchVaxCenterDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenterDialog" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,18 +219,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.UISearchVaxCenterDialog" />
+      <item itemvalue="Application.ServerPointer" />
+      <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
-      <item itemvalue="Application.UISearchVaxCenter" />
-      <item itemvalue="Application.UISearchVaxCenter (1)" />
-      <item itemvalue="Application.UILogin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerPointer" />
+        <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UISearchVaxCenter" />
-        <item itemvalue="Application.UILogin" />
-        <item itemvalue="Application.UISearchVaxCenter (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -196,125 +268,15 @@
       <workItem from="1665243275604" duration="809000" />
       <workItem from="1665566719701" duration="7463000" />
       <workItem from="1665575874467" duration="5661000" />
-    </task>
-    <task id="LOCAL-00027" summary="Sistemazione UILogin">
-      <created>1663943965621</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1663943965621</updated>
-    </task>
-    <task id="LOCAL-00028" summary="modifica allineamenti UIRegisterVaxCenter">
-      <created>1664026162126</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026162126</updated>
-    </task>
-    <task id="LOCAL-00029" summary="modifica login dimensione e centralità">
-      <created>1664026564942</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1664026564942</updated>
-    </task>
-    <task id="LOCAL-00030" summary="centralizzato testo in textField">
-      <created>1664027194330</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1664027194330</updated>
-    </task>
-    <task id="LOCAL-00031" summary="modifiche dimensioni UIChoosingRooles.java">
-      <created>1664028769618</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1664028769618</updated>
-    </task>
-    <task id="LOCAL-00032" summary="creata classe custom Tf, con estensione PasswordField">
-      <created>1664041542365</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041542365</updated>
-    </task>
-    <task id="LOCAL-00033" summary="centralizzato testo in comboBox">
-      <created>1664041892980</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1664041892980</updated>
-    </task>
-    <task id="LOCAL-00034" summary="modifica rounded corners">
-      <created>1664042360458</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1664042360458</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Sistemazione UIAdverseEvent">
-      <created>1664185927256</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1664185927256</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Sistemazione UIAdverseEvent">
-      <created>1664221046733</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1664221046733</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Sistemazione UIAdverseEvent">
-      <created>1664222136120</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1664222136120</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Sistemazione UIAdverseEvent">
-      <created>1664224823778</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1664224823778</updated>
-    </task>
-    <task id="LOCAL-00039" summary="JavaDoc">
-      <created>1664225735950</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1664225735950</updated>
-    </task>
-    <task id="LOCAL-00040" summary="JavaDoc + UIAdverseEvent">
-      <created>1664227774357</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227774357</updated>
-    </task>
-    <task id="LOCAL-00041" summary="JavaDoc">
-      <created>1664227843606</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227843606</updated>
-    </task>
-    <task id="LOCAL-00042" summary="JavaDoc">
-      <created>1664227944398</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1664227944398</updated>
-    </task>
-    <task id="LOCAL-00043" summary="modifica font">
-      <created>1664556731407</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1664556731407</updated>
+      <workItem from="1666967167499" duration="3812000" />
+      <workItem from="1667055181853" duration="2689000" />
+      <workItem from="1667064892904" duration="38000" />
+      <workItem from="1667384705392" duration="4736000" />
+      <workItem from="1667398032634" duration="1416000" />
+      <workItem from="1667406611031" duration="3631000" />
+      <workItem from="1667551117125" duration="4187000" />
+      <workItem from="1667642587415" duration="1294000" />
+      <workItem from="1667746716492" duration="8000" />
     </task>
     <task id="LOCAL-00044" summary="aggiunta hint">
       <created>1664560766759</created>
@@ -540,7 +502,126 @@
       <option name="project" value="LOCAL" />
       <updated>1665581258872</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="creata la classe UISearchVaxCenterDialog">
+      <created>1666969550905</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969550905</updated>
+    </task>
+    <task id="LOCAL-00077" summary="implementata la classe UISearchVaxCenterDialog">
+      <created>1666969721870</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969721870</updated>
+    </task>
+    <task id="LOCAL-00078" summary="aggiunta immagine">
+      <created>1666969958616</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1666969958616</updated>
+    </task>
+    <task id="LOCAL-00079" summary="implementata con la parte di grafica la classe">
+      <created>1667384958512</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384958513</updated>
+    </task>
+    <task id="LOCAL-00080" summary="creato l'oggetto vcdialog">
+      <created>1667384984804</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384984804</updated>
+    </task>
+    <task id="LOCAL-00081" summary="creato il metodo jTable1MouseClicked">
+      <created>1667385055334</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385055334</updated>
+    </task>
+    <task id="LOCAL-00082" summary="implementato il metodo jTable1MouseClicked">
+      <created>1667385153282</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385153282</updated>
+    </task>
+    <task id="LOCAL-00083" summary="eliminato il metodo main">
+      <created>1667385659696</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1667385659696</updated>
+    </task>
+    <task id="LOCAL-00084" summary="aggiunto e implementato il metodo addMouseListener">
+      <created>1667386324642</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1667386324643</updated>
+    </task>
+    <task id="LOCAL-00085" summary="eliminato il precedente dalla classe">
+      <created>1667389141841</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389141842</updated>
+    </task>
+    <task id="LOCAL-00086" summary="eliminato il corpo della classe">
+      <created>1667389183285</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389183285</updated>
+    </task>
+    <task id="LOCAL-00087" summary="nuova implementazione della classe UISearchVaxCenterDialog">
+      <created>1667389314915</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389314915</updated>
+    </task>
+    <task id="LOCAL-00088" summary="eliminata l'icon">
+      <created>1667389372201</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1667389372201</updated>
+    </task>
+    <task id="LOCAL-00089" summary="implementato la classe UISearchVaxCenterDialog">
+      <created>1667410390289</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1667410390289</updated>
+    </task>
+    <task id="LOCAL-00090" summary="aggiunta tachicardia al metodo getProspettoRiassuntivo">
+      <created>1667552484234</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1667552484234</updated>
+    </task>
+    <task id="LOCAL-00091" summary="preso il nome del centro vaccinale e stampato nella dialog">
+      <created>1667552889608</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1667552889608</updated>
+    </task>
+    <task id="LOCAL-00092" summary="sistemato il metodo getProspettoRiassuntivo">
+      <created>1667553573692</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1667553573692</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +638,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="changeStructure" />
+                        <option value="RicercaCentroVaccinaleDialogLuca" />
                       </list>
                     </value>
                   </entry>
@@ -570,23 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaDoc" />
-    <MESSAGE value="modifica font" />
-    <MESSAGE value="aggiunta hint" />
-    <MESSAGE value="modifica username" />
-    <MESSAGE value="modifica pwd" />
-    <MESSAGE value="modifica bottone login" />
-    <MESSAGE value="fix bug generale" />
-    <MESSAGE value="update maven" />
-    <MESSAGE value="Impostazione campi search" />
-    <MESSAGE value="sistemazione generale" />
-    <MESSAGE value="Aggiunta campo di ricerca" />
-    <MESSAGE value="Aggiunta opzione comune e nome" />
-    <MESSAGE value="Aggiunta tabella visualizzazione" />
-    <MESSAGE value="Aggiunta panel&#10;e resize generale" />
-    <MESSAGE value="Impostazione tabella e risoluzione problemi grafici" />
-    <MESSAGE value="bug fixed" />
-    <MESSAGE value="Sistemazione UI" />
     <MESSAGE value="Sistemazione collegamento varie classi" />
     <MESSAGE value="Sistemazione Bug UI" />
     <MESSAGE value="Sistemazione bottone Login" />
@@ -595,6 +659,31 @@
     <MESSAGE value="checkData doc" />
     <MESSAGE value="modifica JComboBox" />
     <MESSAGE value="checkPassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkPassword" />
+    <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="aggiunta immagine" />
+    <MESSAGE value="implementata con la parte di grafica la classe" />
+    <MESSAGE value="creato l'oggetto vcdialog" />
+    <MESSAGE value="creato il metodo jTable1MouseClicked" />
+    <MESSAGE value="implementato il metodo jTable1MouseClicked" />
+    <MESSAGE value="eliminato il metodo main" />
+    <MESSAGE value="aggiunto e implementato il metodo addMouseListener" />
+    <MESSAGE value="eliminato il precedente dalla classe" />
+    <MESSAGE value="eliminato il corpo della classe" />
+    <MESSAGE value="nuova implementazione della classe UISearchVaxCenterDialog" />
+    <MESSAGE value="eliminata l'icon" />
+    <MESSAGE value="implementato la classe UISearchVaxCenterDialog" />
+    <MESSAGE value="aggiunta tachicardia al metodo getProspettoRiassuntivo" />
+    <MESSAGE value="preso il nome del centro vaccinale e stampato nella dialog" />
+    <MESSAGE value="sistemato il metodo getProspettoRiassuntivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemato il metodo getProspettoRiassuntivo" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="UI.UISearchVaxCenter" memberName="rootPane" />
+        <PinnedItemInfo parentTag="UI.UISearchVaxCenter" memberName="jTable1" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -29,16 +29,18 @@ public class Vaccinato extends Persona {
      * @param nome nome del vaccinato
      * @param cognome cognome del vaccinato
      * @param codFisc codice fiscale del vaccinato
+     * @param email email del vaccinato
      * @param id id numerico del vaccinato
+     * @param dataNascita data di nascita del vaccinato
      * @param centroVaccinale centro vaccinale in cui si e' vaccinato il vaccinato
      * @param dataSomministrazione data di somministrazione del vaccino
      * @param vaccino vaccino somministrato
      * @author  Alessandro Cassani
      *
      */
-    public Vaccinato(String nome, String cognome, String codFisc, BigInteger id,
-                     String centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
-        super(nome,cognome,codFisc,id,centroVaccinale);
+    public Vaccinato(String nome, String cognome, String codFisc, String email, BigInteger id, Date dataNascita,
+                     CentroVaccinale centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
+        super(nome,cognome,codFisc,email,id,dataNascita,centroVaccinale);
         this.dataSomministrazione = dataSomministrazione;
         this.vaccino = vaccino;
     }

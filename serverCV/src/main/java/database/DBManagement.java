@@ -149,6 +149,7 @@ public class DBManagement {
                     + "nome VARCHAR(30),"
                     + "cognome VARCHAR(30),"
                     + "codice_fiscale VARCHAR(16),"
+                    + "data_nascita VARCHAR(40),"
                     + "data_vaccino VARCHAR(40),"
                     + "tipo_vaccino VARCHAR(30));"
 
