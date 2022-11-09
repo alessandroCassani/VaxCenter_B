@@ -316,7 +316,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette il controllo della già avvenuta registrazione di un centro vaccinale
      * @param VaxCenterName nome del centro vaccinale
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      */
@@ -325,13 +325,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali WHERE nome_centro_vaccinale = ?");
-            ps.setString(1, VaxCenterName);
+            ps.setString(1, encrypt(VaxCenterName));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException e){
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
             return false;
         }
 
@@ -351,13 +352,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM vaccinati WHERE codice_fiscale = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(user));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException e){
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
             return false;
         }
         return false;
@@ -378,7 +380,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.
                     prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
-            ps.setString(1, codiceFiscale);
+            ps.setString(1, encrypt(codiceFiscale));
             BigInteger idUnivoco = new BigInteger(id);
             String idPostPadding = idPadding(idUnivoco);
 
@@ -387,7 +389,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String risultato = resultSet.getString(1);
                 return risultato.equals(idPostPadding);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             e.printStackTrace();
             return false;
         }
