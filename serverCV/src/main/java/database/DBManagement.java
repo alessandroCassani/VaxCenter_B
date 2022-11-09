@@ -3,6 +3,7 @@ package database;
 import database.UILoginToServer;
 import org.postgresql.util.PSQLException;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -129,6 +130,7 @@ public class DBManagement {
         }catch(Exception e){
             System.out.println(e);
         }
+        JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
         return false;
     }
 
