@@ -1,6 +1,7 @@
 package UI;
 
 import UI.graphics.CurvesPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,14 +28,6 @@ public class WelcomeScreen extends JFrame {
         displayWelcomeScreen();
     }
 
-
-    /**
-     * Metodo per realizzare graficamente la schermata di presentazione dell'applicativo
-     *
-     * @author  Damiano Ficara
-     * @author  Alessandro Cassani
-     * @author  Paolo Bruscagin
-     */
     private void displayWelcomeScreen() {
         final JWindow win = new JWindow(this);
 
