@@ -28,7 +28,7 @@ import java.util.TreeSet;
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
-    private final static String ALGORITHM = "AES/CBC/PKCS5Padding";
+    private final static String ALGORITHM = "AES/ECB/PKCS5Padding";
 
      public static SecretKey key;
 
@@ -56,18 +56,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             Connection con = DBManagement.getDB().connection;
             PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
-            ps.setString(1, encrypt(centroVaccinale.getNome()));
-            ps.setString(2,encrypt(centroVaccinale.getQualificatore().toString().toUpperCase()));
-            ps.setString(3,encrypt(centroVaccinale.getNomeVia()));
-            ps.setString(4,encrypt(centroVaccinale.getCivico()));
-            ps.setString(5,encrypt(centroVaccinale.getProvincia()));
-            ps.setString(6,encrypt(centroVaccinale.getComune()));
+            ps.setString(1, centroVaccinale.getNome());
+            ps.setString(2,centroVaccinale.getQualificatore().toString().toUpperCase());
+            ps.setString(3,centroVaccinale.getNomeVia());
+            ps.setString(4,centroVaccinale.getCivico());
+            ps.setString(5,centroVaccinale.getProvincia());
+            ps.setString(6,centroVaccinale.getComune());
             ps.setInt(7,centroVaccinale.getCap());
-            ps.setString(8,encrypt(centroVaccinale.getTipologia().toString().toUpperCase()));
+            ps.setString(8,centroVaccinale.getTipologia().toString().toUpperCase());
             ps.executeUpdate();
             ps.close();
-        } catch(SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){ e.printStackTrace();return false;}
+        } catch(SQLException e){ e.printStackTrace();return false;}
         return true;
     }
 
@@ -291,12 +290,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette il controllo del nome utente gia' utilizzato
+     * il metodo permette di controllare se il nome utente inserito e' gia' stato utilizzato
      * @param user nome utente
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
+     * @author Alessandro Cassani
      */
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
@@ -329,25 +329,24 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
 
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali WHERE nome_centro_vaccinale = ?");
-            ps.setString(1, encrypt(VaxCenterName));
+            ps.setString(1, VaxCenterName);
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
+        }catch (SQLException e){
+            e.printStackTrace();
             return false;
         }
-
         return false;
     }
 
     /**
      * il metodo permette il controllo della già avvenuta vaccinazione del cittadino
-     * @param user codice fiscale del vaccinato
+     * @param cf codice fiscale del vaccinato
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      */
@@ -390,7 +389,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
-                String risultato = resultSet.getString(1);
+                String risultato = idPadding(new BigInteger(resultSet.getString(1)));
                 return risultato.equals(idPostPadding);
             }
         } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
@@ -449,28 +448,27 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE comune  LIKE '%"+ encrypt(comune.toUpperCase()) +"%' AND tipologia LIKE'%" + encrypt(tipologia.toString().toUpperCase()) +"%'");
+                    "WHERE comune  LIKE '%"+ comune.toUpperCase() +"%' AND tipologia LIKE'%" + tipologia.toString().toUpperCase() +"%'");
             ResultSet resultSet = ps.executeQuery();
 
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()) {
-                String nome = decrypt(resultSet.getString(1));
-                String qualificatore = decrypt(resultSet.getString(2));
+                String nome = resultSet.getString(1);
+                String qualificatore = resultSet.getString(2);
                 Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
-                String via = decrypt(resultSet.getString(3));
-                String numCivico = decrypt(resultSet.getString(4));
-                String sigla = decrypt(resultSet.getString(5));
-                String Comune = decrypt(resultSet.getString(6).toUpperCase());
+                String via = resultSet.getString(3);
+                String numCivico = resultSet.getString(4);
+                String sigla = resultSet.getString(5);
+                String Comune = resultSet.getString(6).toUpperCase();
                 int cap = resultSet.getInt(7);
-                String tipo = decrypt(resultSet.getString(8).toUpperCase());
+                String tipo = resultSet.getString(8).toUpperCase();
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
             }
             ps.close();
             return listaCentri;
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
+        } catch (SQLException e) {e.printStackTrace();return null;}
     }
     /**
      * il metodo permette la ricerca di una serie di centri vaccinali specificando il comune e la tipologia di essi
@@ -485,7 +483,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE nome_centro_vaccinale LIKE '%"+ encrypt(nome) + "%'" );
+                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
             // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -505,8 +503,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             }
             ps.close();
             return listaCentri;
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
+        } catch (SQLException e) {e.printStackTrace();return null;}
     }
 
     /**
