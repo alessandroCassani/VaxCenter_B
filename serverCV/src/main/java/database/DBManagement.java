@@ -3,11 +3,18 @@ package database;
 import database.UILoginToServer;
 import org.postgresql.util.PSQLException;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.Base64;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle
@@ -229,5 +236,31 @@ public class DBManagement {
             ds = sb.toString();
             getDB().connection.prepareStatement(ds).executeUpdate();
         }catch(Exception e){e.printStackTrace();}
+    }
+
+    private static void generateKeyIv() {
+        KeyGenerator keyGenerator = null;
+        try {
+
+            //generazione key
+            keyGenerator = KeyGenerator.getInstance("AES");
+            keyGenerator.init(128);
+            SecretKey key = keyGenerator.generateKey();
+            String encodedKey = Base64.getEncoder().encodeToString(key.getEncoded());
+
+            //generazione iv
+            byte[] ivector = new byte[16];
+            new SecureRandom().nextBytes(ivector);
+            IvParameterSpec iv = new IvParameterSpec(ivector);
+
+
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cipher(key,iv)" +
+                    " VALUES (?,?)");
+
+
+            ps.setString(1,encodedKey);
+            ps.setString(2, Arrays.toString(iv.getIV()));
+
+        } catch (NoSuchAlgorithmException e) {e.printStackTrace();} catch (SQLException e) {e.printStackTrace();}
     }
 }
