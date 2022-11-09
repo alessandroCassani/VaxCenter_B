@@ -38,6 +38,6 @@ public enum Vaccino {
         if(this.name().equals("JOHNSON"))
             return "j&j";
         else
-            return this.name().toLowerCase();
+            return this.name().toUpperCase();
     }
 }
