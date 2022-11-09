@@ -85,16 +85,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     + "VALUES (?,?,?,?,?,?,?,?)");
 
             ps.setString(1, idPadding(cittadino.getId()));
-            ps.setString(2, cittadino.getNome());
-            ps.setString(3,cittadino.getCognome());
-            ps.setString(4,cittadino.getCodFisc());
-            ps.setString(5, cittadino.getEmail());
-            ps.setString(6,cittadino.getAccount().getUserId());
-            ps.setString(7,cittadino.getAccount().getPassword());
-            ps.setString(8,cittadino.getCentroVaccinale());
+            ps.setString(2, encrypt(cittadino.getNome()));
+            ps.setString(3,encrypt(cittadino.getCognome()));
+            ps.setString(4,encrypt(cittadino.getCodFisc()));
+            ps.setString(5, encrypt(cittadino.getEmail()));
+            ps.setString(6,encrypt(cittadino.getAccount().getUserId()));
+            ps.setString(7,encrypt(cittadino.getAccount().getUserId()));
+            ps.setString(8,encrypt(cittadino.getCentroVaccinale()));
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException e){e.printStackTrace();return false;}
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){e.printStackTrace();return false;}
         return true;
     }
 
@@ -125,16 +126,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, idPadding(numero));
-            ps.setString(2,vaccinato.getCentroVaccinale());
-            ps.setString(3,vaccinato.getNome());
-            ps.setString(4,vaccinato.getCognome());
-            ps.setString(5,vaccinato.getCodFisc());
-            ps.setString(6,vaccinato.getDataSomministrazione().toString());
-            ps.setString(7,vaccinato.getVaccino().toString());
+            ps.setString(2,encrypt(vaccinato.getCentroVaccinale()));
+            ps.setString(3,encrypt(vaccinato.getNome()));
+            ps.setString(4,encrypt(vaccinato.getCognome()));
+            ps.setString(5,encrypt(vaccinato.getCodFisc()));
+            ps.setString(6,encrypt(vaccinato.getDataSomministrazione().toString()));
+            ps.setString(7,encrypt(vaccinato.getVaccino().toString()));
             ps.executeUpdate();
             ps.close();
 
-        }catch (SQLException e){e.printStackTrace();return "-1";}
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){e.printStackTrace();return "-1";}
         return idPadding(numero);
     }
 
@@ -636,7 +638,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return str;
     }
 
-    public static String encrypt(String input,IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
+    public static String encrypt(String input) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
             BadPaddingException, IllegalBlockSizeException {
 
@@ -647,10 +649,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 .encodeToString(cipherText);
     }
 
-    public static String decrypt(String cipherText,IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
+    public static String decrypt(String cipherText) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
             BadPaddingException, IllegalBlockSizeException {
-
         javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(ALGORITHM);
         cipher.init(javax.crypto.Cipher.DECRYPT_MODE, key, iv);
         byte[] plainText = cipher.doFinal(Base64.getDecoder()
