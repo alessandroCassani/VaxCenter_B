@@ -102,8 +102,9 @@ public class DBManagement {
             }
         }catch (Exception e){
             createDB();
+            return false;
         }
-        return false;
+        return true;
     }
 
     /**
