@@ -56,17 +56,18 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             Connection con = DBManagement.getDB().connection;
             PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
-            ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getQualificatore().toString().toUpperCase());
-            ps.setString(3,centroVaccinale.getNomeVia());
-            ps.setString(4,centroVaccinale.getCivico());
-            ps.setString(5,centroVaccinale.getProvincia());
-            ps.setString(6,centroVaccinale.getComune());
+            ps.setString(1, encrypt(centroVaccinale.getNome()));
+            ps.setString(2,encrypt(centroVaccinale.getQualificatore().toString().toUpperCase()));
+            ps.setString(3,encrypt(centroVaccinale.getNomeVia()));
+            ps.setString(4,encrypt(centroVaccinale.getCivico()));
+            ps.setString(5,encrypt(centroVaccinale.getProvincia()));
+            ps.setString(6,encrypt(centroVaccinale.getComune()));
             ps.setInt(7,centroVaccinale.getCap());
-            ps.setString(8,centroVaccinale.getTipologia().toString().toUpperCase());
+            ps.setString(8,encrypt(centroVaccinale.getTipologia().toString().toUpperCase()));
             ps.executeUpdate();
             ps.close();
-        } catch(SQLException e){ e.printStackTrace();return false;}
+        } catch(SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){ e.printStackTrace();return false;}
         return true;
     }
 
@@ -159,16 +160,17 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,user);
+            ps.setString(1,encrypt(user));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
                 count++;
             }
-            ps.setString(8, eventiAvversi.getNote());
+            ps.setString(8, encrypt(eventiAvversi.getNote()));
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException e) {e.printStackTrace();return  false;}
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return  false;}
         return true;
     }
 
@@ -185,13 +187,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(user));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException e){
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
             return false;
         }
         return false;
@@ -212,7 +215,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [7];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
-            preparedStatement.setString(1,user);
+            preparedStatement.setString(1,encrypt(user));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -224,7 +227,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[6] = resultSet.getString(8);
             }
             return info;
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             return null;
         }
     }
@@ -242,7 +246,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [6];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
-            preparedStatement.setString(1,user);
+            preparedStatement.setString(1,encrypt(user));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = decrypt(resultSet.getString(1));
@@ -348,11 +352,11 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Luca Perfetti
      */
     @Override
-    public boolean isVaccinatedRegistrated(String user) throws RemoteException {
+    public boolean isVaccinatedRegistrated(String cf) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM vaccinati WHERE codice_fiscale = ?");
 
-            ps.setString(1, encrypt(user));
+            ps.setString(1, encrypt(cf));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -415,7 +419,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + encrypt(nomeCentroVaccinale) + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -426,7 +430,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                         "CRISI IPERTENSIVA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
             }
 
-        } catch (SQLException e) {e.printStackTrace();return null;}
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
         return null;
     }
 
@@ -444,27 +449,28 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String comune, Tipologia tipologia) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE comune  LIKE '%"+ comune.toUpperCase() +"%' AND tipologia LIKE'%" + tipologia.toString().toUpperCase() +"%'");
+                    "WHERE comune  LIKE '%"+ encrypt(comune.toUpperCase()) +"%' AND tipologia LIKE'%" + encrypt(tipologia.toString().toUpperCase()) +"%'");
             ResultSet resultSet = ps.executeQuery();
 
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()) {
-                String nome = resultSet.getString(1);
-                String qualificatore = resultSet.getString(2);
+                String nome = decrypt(resultSet.getString(1));
+                String qualificatore = decrypt(resultSet.getString(2));
                 Qualificatore qualificatore1 = Qualificatore.getQualificatore(qualificatore);
-                String via = resultSet.getString(3);
-                String numCivico = resultSet.getString(4);
-                String sigla = resultSet.getString(5);
-                String Comune = resultSet.getString(6).toUpperCase();
+                String via = decrypt(resultSet.getString(3));
+                String numCivico = decrypt(resultSet.getString(4));
+                String sigla = decrypt(resultSet.getString(5));
+                String Comune = decrypt(resultSet.getString(6).toUpperCase());
                 int cap = resultSet.getInt(7);
-                String tipo = resultSet.getString(8).toUpperCase();
+                String tipo = decrypt(resultSet.getString(8).toUpperCase());
                 Tipologia tipologia1 = Tipologia.getTipo(tipo);
 
                 listaCentri.add(new CentroVaccinale(nome,qualificatore1,via,numCivico,sigla,Comune,cap,tipologia1));
             }
             ps.close();
             return listaCentri;
-        } catch (SQLException e) {e.printStackTrace();return null;}
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
     }
     /**
      * il metodo permette la ricerca di una serie di centri vaccinali specificando il comune e la tipologia di essi
@@ -479,7 +485,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
+                    "WHERE nome_centro_vaccinale LIKE '%"+ encrypt(nome) + "%'" );
             // ps.setString(1,nome);
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
@@ -499,7 +505,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             }
             ps.close();
             return listaCentri;
-        } catch (SQLException e) {e.printStackTrace();return null;}
+        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
     }
 
     /**
