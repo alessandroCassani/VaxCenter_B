@@ -17,7 +17,7 @@ public class Vaccinato extends Persona {
     /**
      * data di somministrazione del vaccino
      */
-    private final Date dataSomministrazione;
+    private final String dataSomministrazione;
 
     /**
      * tipologia di vaccino somministrato
@@ -31,13 +31,13 @@ public class Vaccinato extends Persona {
      * @param codFisc codice fiscale del vaccinato
      * @param id id numerico del vaccinato
      * @param centroVaccinale centro vaccinale in cui si e' vaccinato il vaccinato
-     * @param dataSomministrazione data di somministrazione del vaccino
+     * @param dataSomministrazione stringa della data di somministrazione del vaccino
      * @param vaccino vaccino somministrato
      * @author  Alessandro Cassani
      *
      */
     public Vaccinato(String nome, String cognome, String codFisc, BigInteger id,
-                     String centroVaccinale, Date dataSomministrazione, Vaccino vaccino) {
+                     String centroVaccinale, String dataSomministrazione, Vaccino vaccino) {
         super(nome,cognome,codFisc,id,centroVaccinale);
         this.dataSomministrazione = dataSomministrazione;
         this.vaccino = vaccino;
@@ -45,11 +45,11 @@ public class Vaccinato extends Persona {
 
     /**
      * metodo che permette di accedere al campo privato dataSomministrazione
-     * @return data di somministrazione del vaccino
+     * @return stringa di data di somministrazione del vaccino
      *
      * @author  Alessandro Cassani
      */
-    public Date getDataSomministrazione(){
+    public String getDataSomministrazione(){
         return dataSomministrazione;
     }
 

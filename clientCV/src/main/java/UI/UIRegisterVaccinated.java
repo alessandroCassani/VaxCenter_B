@@ -16,8 +16,14 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 
@@ -266,23 +272,39 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
      * @author Paolo Bruscagin
      */
 
-    private String registraVaccinato(){
+    private String registraVaccinato()  {
         String centrovaccinale = Objects.requireNonNull(nomeCV.getSelectedItem().toString().toUpperCase());
         String nomeVac = nome.getText().toUpperCase();
         String cognomeVac = cognome.getText().toUpperCase();
         String cfVac = codiceFiscale.getText().toUpperCase();
-        Date dataVac = data.getDate();
+        String dataVaccino = getStringDate(data.getDate());
         String vacSommm  = Objects.requireNonNull(vaccinoSomministrato.getSelectedItem()).toString();
         BigInteger idunivoco = new BigInteger("-1");
         String id;
         try {
 
-            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVac, Vaccino.getVaccino(vacSommm)));
+            id = ServerPointer.getStub().registraVaccinato(new Vaccinato(nomeVac, cognomeVac, cfVac, idunivoco , centrovaccinale, dataVaccino, Vaccino.getVaccino(vacSommm)));
             JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
         }
         return id;
+    }
+
+    /**
+     * metodo che permette di ottenere la data con il formato italiano
+     * @param d data scelta dall'utente
+     *
+     * @author Damiano Ficara
+     */
+    private String getStringDate(Date d) {
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        Instant instant = d.toInstant();
+        LocalDate localDate = instant.atZone(defaultZoneId).toLocalDate();
+        System.out.println(localDate);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedString = localDate.format(formatter);
+        return formattedString;
     }
 
     /**
@@ -356,4 +378,8 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         }
 
     }
+
+
+
+
 }
