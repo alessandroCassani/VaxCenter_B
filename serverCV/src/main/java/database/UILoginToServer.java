@@ -283,12 +283,14 @@ public class UILoginToServer extends JFrame implements ActionListener {
                 DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
                 new UIServerHome();}
 
-        }else if(e.getSource() == showPassword){
+        }
+        if(e.getSource() == showPassword){
             if (showPassword.isSelected())
                 pswTextField.setEchoChar((char) 0);
             else
                 pswTextField.setEchoChar('*');
-        } else if (e.getSource() == pulisci) {
+        }
+        if (e.getSource() == pulisci) {
             hostTextField.setText("");
             portTextField.setText("");
             userTextField.setText("");
