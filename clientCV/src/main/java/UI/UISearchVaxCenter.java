@@ -199,6 +199,7 @@ public class UISearchVaxCenter extends JFrame {
 
     }// </editor-fold>
 
+
     /**
      * Metodo che permette di tornare alla schermata precedente mediante la freccia apposita
      * @param evt gestione dell'evento collegato al mouse
@@ -292,17 +293,13 @@ public class UISearchVaxCenter extends JFrame {
     }
 
     /**
-     * Oggetto della classe UISearchVaxCenterDialog
-     */
-    UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
-
-    /**
      * Metodo che permette l'apertura del prospetto riassuntivo di ogni centro vaccinale
      * @param evt gestione dell'evento collegato al mouse
      *
      * @author Luca Perfetti
      */
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+        UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
 
@@ -314,7 +311,6 @@ public class UISearchVaxCenter extends JFrame {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-
 
         jtRowData.setVisible(true);
         jtRowData.pack();
