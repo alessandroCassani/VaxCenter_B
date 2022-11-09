@@ -381,4 +381,65 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             }
         }
     }
+
+
+    /**
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'id del vaccinato
+     * @param id id sul quale eseguire padding
+     * @return id a 16 cifre
+     *
+     * @author Alessandro Cassani
+     */
+    private static String idPadding(String id) {
+
+        switch (id.length()) {
+            case 1:
+                id = "000000000000000" + id;
+                break;
+            case 2:
+                id = "00000000000000" + id;
+                break;
+            case 3:
+                id = "0000000000000" + id;
+                break;
+            case 4:
+                id = "000000000000" + id;
+                break;
+            case 5:
+                id = "00000000000" + id;
+                break;
+            case 6:
+                id = "0000000000" + id;
+                break;
+            case 7:
+                id = "000000000" + id;
+                break;
+            case 8:
+                id = "00000000" + id;
+                break;
+            case 9:
+                id = "0000000" + id;
+                break;
+            case 10:
+                id = "000000" + id;
+                break;
+            case 11:
+                id = "00000" + id;
+                break;
+            case 12:
+                id = "0000" + id;
+                break;
+            case 13:
+                id = "000" + id;
+                break;
+            case 14:
+                id = "00" + id;
+                break;
+            case 15:
+                id = "0" + id;
+                break;
+        }
+        return id; //ritorna l'id cittadino
+    }
+
 }
