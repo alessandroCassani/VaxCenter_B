@@ -8,10 +8,12 @@ import util.Tipologia;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
 import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 
 /**
@@ -21,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Damiano Ficara
  * @author Paolo Bruscagin
+ * @author Luca Perfetti
  */
 public class UISearchVaxCenter extends JFrame {
 
@@ -141,6 +144,12 @@ public class UISearchVaxCenter extends JFrame {
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel1MousePressed(evt);
+            }
+        });
+
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
 
@@ -280,6 +289,45 @@ public class UISearchVaxCenter extends JFrame {
         Image newimg = img.getScaledInstance( x, y,  java.awt.Image.SCALE_SMOOTH ) ;
         ic = new ImageIcon( newimg );
         return ic;
+    }
+
+    /**
+     * Oggetto della classe UISearchVaxCenterDialog
+     */
+    UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
+
+    /**
+     * Metodo che permette l'apertura del prospetto riassuntivo di ogni centro vaccinale
+     * @param evt gestione dell'evento collegato al mouse
+     *
+     * @author Luca Perfetti
+     */
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+        int index = jTable1.getSelectedRow();
+        TableModel model = jTable1.getModel();
+
+        String[] prospetto = new String[0];
+
+        String nome = model.getValueAt(index, 0).toString();
+        try {
+            prospetto = ServerPointer.getStub().getProspettoRiassuntivo(nome);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+
+        jtRowData.setVisible(true);
+        jtRowData.pack();
+        jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        jtRowData.jLabelinsNome.setText(nome);
+        jtRowData.jLabelMalDiTesta.setText(prospetto[0]);
+        jtRowData.jLabelfebbre.setText(prospetto[1]);
+        jtRowData.jLabelTachicardia.setText(prospetto[2]);
+        jtRowData.jLabeldolori.setText(prospetto[3]);
+        jtRowData.jLabelLinfo.setText(prospetto[4]);
+        jtRowData.jLabelcrisi.setText(prospetto[5]);
+
     }
 
 
