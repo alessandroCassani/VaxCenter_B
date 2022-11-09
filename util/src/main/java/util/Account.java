@@ -1,12 +1,12 @@
 package util;
 import java.io.Serializable;
 
-    /**
-     * classe che gestisce le informazioni di accesso ad un account
-     *
-     * @author Alessandro Cassani
-     */
- public class Account implements Serializable {
+/**
+ * classe che gestisce le informazioni di accesso ad un account
+ *
+ * @author Alessandro Cassani
+ */
+public class Account implements Serializable {
 
     /**
      * Numero di seriale per la comunicazione RMI
@@ -55,4 +55,4 @@ import java.io.Serializable;
     public String getPassword(){
         return password;
     }
- }
+}

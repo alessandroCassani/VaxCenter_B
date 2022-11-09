@@ -14,13 +14,14 @@ import java.util.Objects;
  *
  *  @author Alessandro Cassani
  *  @author Paolo Bruscagin
+ *  @author Luca Perfetti
  */
 public class UILoginToServer extends JFrame implements ActionListener {
 
     /**
      * label rappresentante la stringa host
      */
-     JLabel hostLabel = new JLabel("Host:");
+    JLabel hostLabel = new JLabel("Host:");
 
     /**
      * campo di testo dove inserire l'host
@@ -31,7 +32,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * label rappresentante la stringa port
      */
 
-     JLabel portLabel =new JLabel("Port");
+    JLabel portLabel =new JLabel("Port");
 
     /**
      * campo di testo dove inserire la porta del database
@@ -226,8 +227,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
         add(statusError).setVisible(false);
         add(pulisci);
 
-
-
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb.png")));
         setIconImage(logo.getImage());
@@ -276,7 +275,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            if (pswTextField.getText().equals("")){
+            if (pswTextField.getText().equals("") || hostTextField.getText().equals("") ||
+                    portTextField.getText().equals("") || userTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
             }else {this.dispose();
@@ -286,7 +286,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected())
                 pswTextField.setEchoChar((char) 0);
-                else
+            else
                 pswTextField.setEchoChar('*');
         } else if (e.getSource() == pulisci) {
             hostTextField.setText("");
@@ -296,9 +296,9 @@ public class UILoginToServer extends JFrame implements ActionListener {
             pswTextField.setEchoChar('*');
             statusError.setVisible(false);
             showPassword.setSelected(false);
-
         }
     }
+
 
     /**
      * il metodo permette di ottenere dalla TextField raffigurante la porta il valore inserito dall'utente
@@ -306,7 +306,7 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * @author Damiano Ficara
      * @author Luca Perfetti
      */
-     public static Integer getPortTextField() {
+    public static Integer getPortTextField() {
         String port =  portTextField.getText();
         return Integer.parseInt(port);
 
@@ -333,7 +333,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
     public static String getUserTextField() {
         return userTextField.getText();
     }
-
     /**
      * il metodo permette di ottenere dalla PasswordField la password inserita dall'utente
      * @return nome utente

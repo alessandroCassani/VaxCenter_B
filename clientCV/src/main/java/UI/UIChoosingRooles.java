@@ -56,7 +56,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         Map attributes = font.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
         esci.setFont(font.deriveFont(attributes));
-        esci.setForeground(new Color(24, 56, 203));
+        esci.setForeground(new Color(205, 221, 255));
         esci.setBounds(40,30,100,20);
         esci.addMouseListener(new MouseAdapter() {
             @Override
@@ -163,5 +163,4 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
             new UICitizen();
         }
     }
-
 }

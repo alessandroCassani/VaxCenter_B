@@ -53,12 +53,12 @@ public class Indirizzo implements Serializable  {
      * @author Alessandro Cassani
      */
     public Indirizzo(Qualificatore qualificatore,String nome,String civico,String comune,String provincia,int cap){
-            this.qualificatore = qualificatore;
-            this.nome = nome;
-            this.civico = civico;
-            this.comune = comune;
-            this.provincia = provincia;
-            this.cap = cap;
+        this.qualificatore = qualificatore;
+        this.nome = nome;
+        this.civico = civico;
+        this.comune = comune;
+        this.provincia = provincia;
+        this.cap = cap;
     }
 
     /**

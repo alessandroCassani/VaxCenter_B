@@ -1,13 +1,13 @@
 package database;
 
 import javax.swing.*;
- import javax.swing.border.Border;
- import javax.swing.border.LineBorder;
- import java.awt.*;
- import java.awt.event.ActionEvent;
- import java.awt.event.ActionListener;
- import java.awt.event.WindowAdapter;
- import java.awt.event.WindowEvent;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -16,81 +16,81 @@ import java.rmi.server.ExportException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Objects;
 
- /**
-  * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
-  *
-  *  @author Alessandro Cassani
-  *  @author Paolo Bruscagin
-  */
- public class UIServerHome extends JFrame implements ActionListener {
+/**
+ * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
+ *
+ *  @author Alessandro Cassani
+ *  @author Paolo Bruscagin
+ */
+public class UIServerHome extends JFrame implements ActionListener {
 
-     /**
-      * Porta sulla quale si ascolterà il server
-      */
-     private static int PORT = 1099;
-     /**
-      *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
-      */
-     static ServerImpl server;
+    /**
+     * Porta sulla quale si ascolterà il server
+     */
+    private static int PORT = 1099;
+    /**
+     *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
+     */
+    static ServerImpl server;
 
-     /**
-      * Oggetto <code>Registry</code> che mette a disposizione metodi per le operazioni relative ai riferimenti degli oggetti remoti
-      */
-     static Registry registry;
+    /**
+     * Oggetto <code>Registry</code> che mette a disposizione metodi per le operazioni relative ai riferimenti degli oggetti remoti
+     */
+    static Registry registry;
 
-     /**
-      * Nome del servizio caricato sul registry
-      */
-     static final String SERVICE_NAME = "VaxCenter";
-     /**
-      * Tentativi di utilizzo massimi del server
-      */
-     static boolean check = false;
-     /**
-      * Variabile booleana che tiene traccia dello stato corrente del server
-      */
+    /**
+     * Nome del servizio caricato sul registry
+     */
+    static final String SERVICE_NAME = "VaxCenter";
+    /**
+     * Tentativi di utilizzo massimi del server
+     */
+    static boolean check = false;
+    /**
+     * Variabile booleana che tiene traccia dello stato corrente del server
+     */
 
-     JPanel immagine = new JPanel();
-     /**
-      * Panel per inserire l'immagine del server running
-      */
-     JPanel sr = new JPanel();
-     /**
-      * Panel per inserire l'immagine del server offline
-      */
-     JPanel so = new JPanel();
+    JPanel immagine = new JPanel();
+    /**
+     * Panel per inserire l'immagine del server running
+     */
+    JPanel sr = new JPanel();
+    /**
+     * Panel per inserire l'immagine del server offline
+     */
+    JPanel so = new JPanel();
 
-     /**
-      * bottone di attivazione del server
-      */
+    /**
+     * bottone di attivazione del server
+     */
     RoundButton startBtn = new RoundButton("START");
 
-     /**
-      * campo di testo per UI per informare l'utente sullo scopo dell'interfaccia grafica
-      */
+    /**
+     * campo di testo per UI per informare l'utente sullo scopo dell'interfaccia grafica
+     */
     JLabel textField = new JLabel("Gestisci il Server:");
 
-     /**
-      * bottone di spegnimento del server
-      */
-     RoundButton stopBtn = new RoundButton("STOP");
+    /**
+     * bottone di spegnimento del server
+     */
+    RoundButton stopBtn = new RoundButton("STOP");
 
-     /**
-      *campo di testo in cui viene visuaizzato lo stato del server (on/off)
-      */
+    /**
+     *campo di testo in cui viene visuaizzato lo stato del server (on/off)
+     */
     JLabel status = new JLabel();
 
-     /**
-      * Bottone per tornare nell'interfaccia database.UILoginToServer
-      */
+    /**
+     * Bottone per tornare nell'interfaccia database.UILoginToServer
+     */
 
-     JButton backToLoginToServer;
+    JButton backToLoginToServer;
 
-     /**
-      * costruttore che contiene le informazioni per il caricamento dei componenti d'interfaccia grafica
-      *
-      * @author Alessandro Cassani
-      */
+    /**
+     * costruttore che contiene le informazioni per il caricamento dei componenti d'interfaccia grafica
+     *
+     * @author Alessandro Cassani
+     */
     public UIServerHome(){
         Border bordo = new LineBorder(new Color(0x808080, true), 2, true);
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
@@ -201,13 +201,13 @@ import java.util.Objects;
         });
     }
 
-     /**
-      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
-      * @param e the event to be processed
-      *
-      * @author Alessandro Cassani
-      * @author Paolo Bruscagin
-      */
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Alessandro Cassani
+     * @author Paolo Bruscagin
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -229,53 +229,52 @@ import java.util.Objects;
         }
     }
 
-     /**
-      * Il metodo permette di istanziare un nuovo oggetto registry e definire un nuovo oggetto remoto
-      * @return true/false a seguito del corretto funzionamento
-      * @author Damiano Ficara
-      * @author Luca Perfetti
-      */
-     public static boolean startServer(){
-         try{
-             server = new ServerImpl();
+    /**
+     * Il metodo permette di istanziare un nuovo oggetto registry e definire un nuovo oggetto remoto
+     * @return true/false a seguito del corretto funzionamento
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+    public static boolean startServer(){
+        try{
+            server = new ServerImpl();
 
-             try {
-                 registry = LocateRegistry.createRegistry(PORT);
-             }catch (ExportException e){
-                 registry = LocateRegistry.getRegistry(PORT);
-             }
+            try {
+                registry = LocateRegistry.createRegistry(PORT);
+            }catch (ExportException e){
+                registry = LocateRegistry.getRegistry(PORT);
+            }
 
-             registry.rebind(SERVICE_NAME, server);
-             check = true;
-         }catch(RemoteException e){
-             e.printStackTrace();
-             return false;
-         }
+            registry.rebind(SERVICE_NAME, server);
+            check = true;
+        }catch(RemoteException e){
+            e.printStackTrace();
+            return false;
+        }
 
-         return true;
-     }
+        return true;
+    }
 
-     /**
-      * Il metodo permette di rimuove un oggetto registry e compiere unbind
-      * @return true/false a seguito del corretto funzionamento
-      * @author Damiano Ficara
-      * @author Luca Perfetti
-      */
-     public static boolean stopServer(){
-         if(check){
-             try {
-                 registry.unbind(SERVICE_NAME);
-                 UnicastRemoteObject.unexportObject(server, true);
-                 check = false;
-                 return true;
-             } catch (RemoteException | NotBoundException e) {
-                 e.printStackTrace();
-             }
-             return false;
-         }else{
-             return true;
-         }
-     }
+    /**
+     * Il metodo permette di rimuove un oggetto registry e compiere unbind
+     * @return true/false a seguito del corretto funzionamento
+     * @author Damiano Ficara
+     * @author Luca Perfetti
+     */
+    public static boolean stopServer(){
+        if(check){
+            try {
+                registry.unbind(SERVICE_NAME);
+                UnicastRemoteObject.unexportObject(server, true);
+                check = false;
+                return true;
+            } catch (RemoteException | NotBoundException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
-
 

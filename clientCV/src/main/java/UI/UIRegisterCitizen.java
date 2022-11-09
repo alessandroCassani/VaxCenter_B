@@ -10,6 +10,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 import CheckData.EmailValidator;
@@ -337,10 +338,10 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
         String name = nomeCittadino.getText().toUpperCase();
         String surname = cognomeCittadino.getText().toUpperCase();
         String cf = codiceFiscale.getText().toUpperCase();
-        String mail = email.getText();
-        String userid = userID.getText();
-        String ID = IDUnivoco.getText();
-        String pwd = password.getText();
+        String mail = email.getText().toUpperCase();
+        String userid = userID.getText().toUpperCase();
+        String ID = IDUnivoco.getText().toUpperCase();
+        String pwd = password.getText().toUpperCase();
         try {
             ServerPointer.getStub().registraCittadino(new Cittadino(
                     name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
@@ -385,7 +386,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 } else if (!ServerPointer.getStub().isIdCorrect(IDUnivoco.getText().trim(), codiceFiscale.getText().trim())) {
                     JOptionPane.showMessageDialog(null, "Errore! l'id inserito non corrisponde a nessun utente vaccinato", "Errore id", JOptionPane.ERROR_MESSAGE);
                 }
-                else if(!password.getText().equals(ripetiPassword.getText())) {
+                else if(!password.equals(ripetiPassword)) {
                     JOptionPane.showMessageDialog(null, "Le password non combaciano, ricontrollale!", "Password diverse",JOptionPane.INFORMATION_MESSAGE);
                 } else if (cit) {
                     JOptionPane.showMessageDialog(null, "Utente già Registrato", "Messaggio",JOptionPane.INFORMATION_MESSAGE);

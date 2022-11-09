@@ -8,12 +8,10 @@ import util.Tipologia;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.rmi.RemoteException;
 import java.util.LinkedList;
 import java.util.Objects;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 
 /**
@@ -23,7 +21,6 @@ import javax.swing.table.TableModel;
  *
  * @author Damiano Ficara
  * @author Paolo Bruscagin
- * @author Luca Perfetti
  */
 public class UISearchVaxCenter extends JFrame {
 
@@ -144,12 +141,6 @@ public class UISearchVaxCenter extends JFrame {
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel1MousePressed(evt);
-            }
-        });
-
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
             }
         });
 
@@ -291,44 +282,6 @@ public class UISearchVaxCenter extends JFrame {
         return ic;
     }
 
-    /**
-     * Oggetto della classe UISearchVaxCenterDialog
-     */
-    UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
-
-    /**
-     * Metodo che permette l'apertura del prospetto riassuntivo di ogni centro vaccinale
-     * @param evt gestione dell'evento collegato al mouse
-     *
-     * @author Luca Perfetti
-     */
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
-        int index = jTable1.getSelectedRow();
-        TableModel model = jTable1.getModel();
-
-        String[] prospetto = new String[0];
-
-        String nome = model.getValueAt(index, 0).toString();
-        try {
-            prospetto = ServerPointer.getStub().getProspettoRiassuntivo(nome);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-
-
-        jtRowData.setVisible(true);
-        jtRowData.pack();
-        jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        jtRowData.jLabelinsNome.setText(nome);
-        jtRowData.jLabelMalDiTesta.setText(prospetto[0]);
-        jtRowData.jLabelfebbre.setText(prospetto[1]);
-        jtRowData.jLabelTachicardia.setText(prospetto[2]);
-        jtRowData.jLabeldolori.setText(prospetto[3]);
-        jtRowData.jLabelLinfo.setText(prospetto[4]);
-        jtRowData.jLabelcrisi.setText(prospetto[5]);
-
-    }
 
     /**
      * Label per inserire l'immagine per tornare alla schermata precedente
@@ -358,14 +311,6 @@ public class UISearchVaxCenter extends JFrame {
      * Intestazione dei campi della tabella
      */
     private String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
-
-
-    /**
-     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
-     * @param e the event to be processed
-     *
-     * @author Paolo Bruscagin
-     */
 
 
 

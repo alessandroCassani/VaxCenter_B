@@ -3,11 +3,9 @@ package UI;
 import database.CapProvincia;
 import database.RoundButton;
 import UI.graphics.RoundJTextField;
-import database.ServerImpl;
 import util.CentroVaccinale;
 import util.Qualificatore;
 import util.Tipologia;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -18,8 +16,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,6 +24,7 @@ import java.util.Objects;
  *
  * @author Paolo Bruscagin
  * @author Alessandro Cassani
+ * @author Luca Perfetti
  */
 
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {
@@ -147,7 +144,7 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         comune.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         comune.setPreferredSize(new Dimension(325, 75));
         comune.setBounds(130, 335, 300, 50);
-
+        comune.getSelectedItem().toString();
         qualificatore.setFont(new Font("Arial", Font.ITALIC, 20));
         qualificatore.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(65, 102, 245)));
         qualificatore.setBounds(130, 230, 100, 50);
@@ -181,15 +178,17 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         siglaProvincia.setPreferredSize(new Dimension(100, 75));
         siglaProvincia.setBounds(500, 335, 100, 50);
         siglaProvincia.setEditable(false); //immutabile in quanto viene completato automaticamente
-        try {
-            CapProvincia capProvincia = ServerPointer.getStub().getComuneInfo("napoli");
-            System.out.println(capProvincia.getCap().toString());
-            System.out.println(capProvincia.getCap().toString());
-            siglaProvincia.setText(capProvincia.getProvincia().toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
+        comune.addActionListener(e -> {
+            try {
+                CapProvincia capProvincia = ServerPointer.getStub().getComuneInfo(comune.getSelectedItem().toString());
+                siglaProvincia.setText(capProvincia.getProvincia());
+                cap.setText(capProvincia.getCap());
+            } catch (RemoteException ex) {
+                throw new RuntimeException(ex);
+            }
+
+        });
 
         JLabel labelCAP = new JLabel("CAP:");
         labelCAP.setFont(new Font("Georgia",Font.ITALIC, 17));
@@ -295,12 +294,14 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         String nomeIndirizzo = nomeVia.getText().toUpperCase();
         String civico = numeroCivico.getText();
         String com = Objects.requireNonNull(comune.getSelectedItem().toString());
+        String provincia = siglaProvincia.getText().toUpperCase();
+        String code = cap.getText().toUpperCase();
         String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
         try {
 
             ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
                     (nome,Qualificatore.getQualificatore(qualifica.toUpperCase()),nomeIndirizzo,civico,
-                            "co",com.toUpperCase(), 22070, Tipologia.getTipo(tipologiaCentro.toUpperCase())));
+                            provincia,com.toUpperCase(), Integer.parseInt(code), Tipologia.getTipo(tipologiaCentro.toUpperCase())));
             JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException | RemoteException ex) {
             throw new RuntimeException(ex);
@@ -319,13 +320,36 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == backToUIVaccineOperator){
+        boolean vac ;
+        try {
+            vac = ServerPointer.getStub().isVaxcenterRegistrated(nomeCentroVaccinale.getText().toString().toUpperCase());
+        } catch (RemoteException ex) {
+            throw new RuntimeException(ex);
+        }
+        if (e.getSource() == backToUIVaccineOperator) {
             this.dispose();
             new UIVaccineOperator();
-        } else if(e.getSource() == registra){
-            //this.dispose();
-            if (nomeCentroVaccinale.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Errore! Riprovare ...", "Messaggio",JOptionPane.ERROR_MESSAGE);
+        } else if (e.getSource() == registra) {
+            if (nomeCentroVaccinale.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome Centro Vaccinale inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            } else if (tipologia.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Tipologia selezionata non valida! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (qualificatore.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Qualificatore selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (nomeVia.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Nome della Via/Viale/Piazza inserito non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (numeroCivico.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Numero civico inserito non valido! Rprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (comune.getSelectedItem().equals("")) {
+                JOptionPane.showMessageDialog(null, "Comune selezionato non valido! Riprovare ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
+
+            }else if (vac) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale già Registrato! ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
             } else {
                 registra();
@@ -337,7 +361,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 comune.setEnabled(false);
                 registra.setEnabled(false);
             }
-        }else if(e.getSource() == pulisci){
+        }
+        if(e.getSource() == pulisci){
             nomeCentroVaccinale.setText("");
             qualificatore.setSelectedItem("");
             nomeVia.setText("");

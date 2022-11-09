@@ -12,26 +12,61 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
+/**
+ * La classe RoundButton è responsabile di disegnare i bottoni con uno stile circolare
+ * @author Paolo Bruscagin
+ */
+
 public class RoundButton extends JButton {
 
-
+    /**
+     * metodo che consente di ottenere il colore di effetto alla pressione del bottone
+     * @return colore di scelta
+     * @author Damiano Ficara
+     */
 
     public Color getEffectColor() {
         return effectColor;
     }
+    /**
+     * metodo che consente di impostare il colore di effetto della pressione del bottone
+     * @author Damiano Ficara
+     */
 
     public void setEffectColor(Color effectColor) {
         this.effectColor = effectColor;
     }
 
+    /**
+     * Variabile che rappresenta l'animazione alla selezione del bottone
+     */
+
     private final Animator animator;
+    /**
+     * Variabile che rappresenta la dimensione dell'obiettivo
+     */
     private int targetSize;
+    /**
+     * Variabile che rappresenta la dimensione dell'animazione
+     */
     private float animatSize;
+    /**
+     * Point che rappresenta il punto selezionato nel bottone
+     */
     private Point pressedPoint;
+    /**
+     * Variabile che rappresenta la trasparenza
+     */
     private float alpha;
+    /**
+     * Variabile che rappresenta il colore di selezione del bottone
+     */
     private Color effectColor = new Color(255, 255, 255);
 
-
+    /**
+     * Costruttore responsabile dell'inizializzazione dei componenti grafici, dell'animazione e degli eventi collegati ad esso
+     * @author Damiano Ficara
+     */
     public RoundButton() {
         setContentAreaFilled(false);
         setBorder(new EmptyBorder(5, 0, 5, 0));
@@ -66,6 +101,11 @@ public class RoundButton extends JButton {
         animator.setResolution(0);
     }
 
+    /**
+     * Costruttore responsabile dell'inizializzazione dei componenti grafici, dell'animazione e degli eventi collegati ad esso
+     * @param icon icona da impostare nel bottone
+     * @author Damiano Ficara
+     */
     public RoundButton(Icon icon) {
         super(null, icon);
         addMouseListener(new MouseAdapter() {
@@ -97,6 +137,11 @@ public class RoundButton extends JButton {
         animator.setResolution(0);
     }
 
+    /**
+     * Costruttore responsabile dell'inizializzazione dei componenti grafici, dell'animazione e degli eventi collegati ad esso
+     * @param text testo da impostare nel bottone
+     * @author Damiano Ficara
+     */
     public RoundButton(String text) {
         super(text);
         setContentAreaFilled(false);
@@ -132,6 +177,11 @@ public class RoundButton extends JButton {
         animator.setResolution(0);
     }
 
+    /**
+     * Metodo responsabile dell'operazione di disegno del componente grafico
+     * @param grphcs componente grafico considerato
+     * @author Damiano Ficara
+     */
     @Override
     protected void paintComponent(Graphics grphcs) {
         int width = getWidth();
@@ -151,11 +201,22 @@ public class RoundButton extends JButton {
         super.paintComponent(grphcs);
     }
 
+    /**
+     * metodo che permette di impostare il testo presente nel bottone
+     * @author Damiano Ficara
+     */
     @Override
     public void setText(String text) {
         super.setText(text);
     }
 
+    /**
+     * Metodo che permette di modificare la dimensione dell'immagine del bottone
+     * @param ic immagine in ingresso
+     * @param x cordinata relativa alle ascisse
+     * @param y cordinata relativa alle ordinate
+     * @author Damiano Ficara
+     */
     public ImageIcon resizeImage(ImageIcon ic, int x, int y) {
         Image img = ic.getImage() ;
         Image newimg = img.getScaledInstance( x, y,  Image.SCALE_SMOOTH ) ;
