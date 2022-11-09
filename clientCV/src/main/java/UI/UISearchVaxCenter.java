@@ -36,6 +36,7 @@ public class UISearchVaxCenter extends JFrame {
      */
 
     public UISearchVaxCenter() {
+        //jtRowData.setVisible(false);
         initComponents();
         jComboBox1.setVisible(false);
         // pernette du evidenziare il tipo di ricerca compiuta
@@ -292,17 +293,13 @@ public class UISearchVaxCenter extends JFrame {
     }
 
     /**
-     * Oggetto della classe UISearchVaxCenterDialog
-     */
-    UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
-
-    /**
      * Metodo che permette l'apertura del prospetto riassuntivo di ogni centro vaccinale
      * @param evt gestione dell'evento collegato al mouse
      *
      * @author Luca Perfetti
      */
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {
+        UISearchVaxCenterDialog jtRowData = new UISearchVaxCenterDialog();
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
 
