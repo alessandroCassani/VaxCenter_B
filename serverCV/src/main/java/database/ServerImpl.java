@@ -299,13 +299,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(user));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException e){
+        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
+                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
             return false;
         }
         return false;
