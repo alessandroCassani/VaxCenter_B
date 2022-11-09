@@ -495,6 +495,6 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                 id = "0" + id;
                 break;
         }
-        return id;
+        return id; //ritorna l'id cittadino
     }
 }
