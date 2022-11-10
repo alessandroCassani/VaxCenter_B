@@ -347,17 +347,20 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Cittadino già vaccinato!", "Messaggio",JOptionPane.ERROR_MESSAGE);
             } else {
                 String id = registraVaccinato();
-                IDUnivoco.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
-                        "\n\n L'ID Univoco del Vaccinato è: \n\n"+ (id), "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-                nome.setEditable(false);
-                cognome.setEditable(false);
-                codiceFiscale.setEditable(false);
-                data.setEnabled(false);
-                vaccinoSomministrato.setEnabled(false);
-                nomeCV.setEnabled(false);
-                IDUnivoco.setVisible(true);
-                IDUnivoco.setText("ID univoco: " + id);
+                if(!id.equals("-1")) {
+                    IDUnivoco.setVisible(true);
+                    JOptionPane.showMessageDialog(null, "Vaccinato registrato con successo! " +
+                            "\n\n L'ID Univoco del Vaccinato è: \n\n" + (id), "Messaggio", JOptionPane.INFORMATION_MESSAGE);
+                    nome.setEditable(false);
+                    cognome.setEditable(false);
+                    codiceFiscale.setEditable(false);
+                    data.setEnabled(false);
+                    vaccinoSomministrato.setEnabled(false);
+                    nomeCV.setEnabled(false);
+                    IDUnivoco.setVisible(true);
+                    IDUnivoco.setText("ID univoco: " + id);
+                }
+                else JOptionPane.showMessageDialog(null,"errore in fase di registrazione","errore",JOptionPane.ERROR_MESSAGE);
             }
         }
         if(e.getSource() == pulisci) {
