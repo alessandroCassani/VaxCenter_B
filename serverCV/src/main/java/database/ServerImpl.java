@@ -3,10 +3,20 @@ package database;
 
 import util.*;
 
+import javax.crypto.*;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
@@ -18,6 +28,12 @@ import java.util.TreeSet;
  * @author Luca Perfetti
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
+
+    private static final String SECRETKEY = "MksoYbsdkyHos78";
+
+    private static SecretKeySpec secretKey;
+
+    private static byte[] key;
 
     /**
      * costruttore vuoto
@@ -70,13 +86,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     + "VALUES (?,?,?,?,?,?,?,?)");
 
             ps.setString(1, idPadding(cittadino.getId()));
-            ps.setString(2, cittadino.getNome());
-            ps.setString(3,cittadino.getCognome());
-            ps.setString(4,cittadino.getCodFisc());
-            ps.setString(5, cittadino.getEmail());
-            ps.setString(6,cittadino.getAccount().getUserId());
-            ps.setString(7,cittadino.getAccount().getPassword());
-            ps.setString(8,cittadino.getCentroVaccinale());
+            ps.setString(2, encrypt(cittadino.getNome(),SECRETKEY));
+            ps.setString(3,encrypt(cittadino.getCognome(),SECRETKEY));
+            ps.setString(4,encrypt(cittadino.getCodFisc(),SECRETKEY));
+            ps.setString(5, encrypt(cittadino.getEmail(),SECRETKEY));
+            ps.setString(6,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
+            ps.setString(7,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
+            ps.setString(8,encrypt(cittadino.getCentroVaccinale(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e){e.printStackTrace();return false;}
@@ -110,12 +126,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, idPadding(numero));
-            ps.setString(2,vaccinato.getCentroVaccinale());
-            ps.setString(3,vaccinato.getNome());
-            ps.setString(4,vaccinato.getCognome());
-            ps.setString(5,vaccinato.getCodFisc());
-            ps.setString(6,vaccinato.getDataSomministrazione().toString());
-            ps.setString(7,vaccinato.getVaccino().toString());
+            ps.setString(2,encrypt(vaccinato.getCentroVaccinale(),SECRETKEY));
+            ps.setString(3,encrypt(vaccinato.getNome(),SECRETKEY));
+            ps.setString(4,encrypt(vaccinato.getCognome(),SECRETKEY));
+            ps.setString(5,encrypt(vaccinato.getCodFisc(),SECRETKEY));
+            ps.setString(6,encrypt(vaccinato.getDataSomministrazione().toString(),SECRETKEY));
+            ps.setString(7,encrypt(vaccinato.getVaccino().toString(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
 
@@ -142,13 +158,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,user);
+            ps.setString(1,encrypt(user,SECRETKEY));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
                 count++;
             }
-            ps.setString(8, eventiAvversi.getNote());
+            ps.setString(8, encrypt(eventiAvversi.getNote(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {e.printStackTrace();return  false;}
@@ -168,7 +184,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(user,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -195,7 +211,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [7];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
-            preparedStatement.setString(1,user);
+            preparedStatement.setString(1,encrypt(user,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -225,15 +241,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [6];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
-            preparedStatement.setString(1,user);
+            preparedStatement.setString(1,encrypt(user,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                info[0] = resultSet.getString(1);
-                info[1] = resultSet.getString(2);
-                info[2] = resultSet.getString(3);
-                info[3] = resultSet.getString(4);
-                info[4] = resultSet.getString(5);
-                info[5] = resultSet.getString(6);
+                info[0] = decrypt(resultSet.getString(1),SECRETKEY);
+                info[1] = decrypt(resultSet.getString(2),SECRETKEY);
+                info[2] = decrypt(resultSet.getString(3),SECRETKEY);
+                info[3] = decrypt(resultSet.getString(4),SECRETKEY);
+                info[4] = decrypt(resultSet.getString(5),SECRETKEY);
+                info[5] = decrypt(resultSet.getString(6),SECRETKEY);
             }
             return info;
         } catch (SQLException e) {
@@ -255,7 +271,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini " +
-                    "WHERE username = '" + account.getUserId() + "'" + "AND password ='" + account.getPassword() +"'" );
+                    "WHERE username = '" + encrypt(account.getUserId(),SECRETKEY)+ "'" + "AND password ='" + encrypt(account.getPassword(),SECRETKEY) +"'" );
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -268,19 +284,20 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette il controllo del nome utente gia' utilizzato
+     * il metodo permette di controllare se il nome utente inserito e' gia' stato utilizzato
      * @param user nome utente
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
+     * @author Alessandro Cassani
      */
     @Override
     public boolean isUserRegistrated(String user) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(user,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -296,7 +313,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette il controllo della già avvenuta registrazione di un centro vaccinale
      * @param VaxCenterName nome del centro vaccinale
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      */
@@ -312,26 +329,26 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 return true;
             }
         }catch (SQLException e){
+            e.printStackTrace();
             return false;
         }
-
         return false;
     }
 
     /**
      * il metodo permette il controllo della già avvenuta vaccinazione del cittadino
-     * @param user codice fiscale del vaccinato
+     * @param cf codice fiscale del vaccinato
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Luca Perfetti
      */
     @Override
-    public boolean isVaccinatedRegistrated(String user) throws RemoteException {
+    public boolean isVaccinatedRegistrated(String cf) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM vaccinati WHERE codice_fiscale = ?");
 
-            ps.setString(1, user);
+            ps.setString(1, encrypt(cf,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -358,13 +375,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.
                     prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
-            ps.setString(1, codiceFiscale);
+            ps.setString(1, encrypt(codiceFiscale,SECRETKEY));
             BigInteger idUnivoco = new BigInteger(id);
             String idPostPadding = idPadding(idUnivoco);
 
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
-                String risultato = resultSet.getString(1);
+                String risultato = idPadding(new BigInteger(resultSet.getString(1)));
                 return risultato.equals(idPostPadding);
             }
         } catch (SQLException e) {
@@ -393,7 +410,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + encrypt(nomeCentroVaccinale,SECRETKEY) + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -622,5 +639,66 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 break;
         }
         return str;
+    }
+
+    /**
+     * il metodo permette di creare una chiave segreta ed assegnarla al campo statico della classe relativo, partendo da una stirnga in input
+     * @param myKey stringa da cui generare la chiave segreta
+     *
+     * @author Alessandro Cassani
+     */
+    public static void setKey(final String myKey) {
+        MessageDigest sha = null;
+        try {
+            key = myKey.getBytes("UTF-8");
+            sha = MessageDigest.getInstance("SHA-1");
+            key = sha.digest(key);
+            key = Arrays.copyOf(key, 16);
+            secretKey = new SecretKeySpec(key, "AES");
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * il metodo permette di cifrare un messaggio sotto forma di stringa
+     * @param strToEncrypt plaintext
+     * @param secret chiave segreta
+     * @return ciphertext
+     *
+     * @author alessandro cassani
+     */
+    public static String encrypt(final String strToEncrypt, final String secret) {
+        try {
+            setKey(secret);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            return Base64.getEncoder()
+                    .encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
+        } catch (Exception e) {
+            System.out.println("Error while encrypting: " + e.toString());
+        }
+        return null;
+    }
+
+    /**
+     * il metodo permette di decifrare una stringa passata in input
+     * @param strToDecrypt ciphertext
+     * @param secret chiave segreta
+     * @return plaintext
+     *
+     * @author Alessandro cassani
+     */
+    public static String decrypt(final String strToDecrypt, final String secret) {
+        try {
+            setKey(secret);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            return new String(cipher.doFinal(Base64.getDecoder()
+                    .decode(strToDecrypt)));
+        } catch (Exception e) {
+            System.out.println("Error while decrypting: " + e.toString());
+        }
+        return null;
     }
 }

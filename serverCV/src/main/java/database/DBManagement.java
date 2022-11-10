@@ -3,11 +3,19 @@ package database;
 import database.UILoginToServer;
 import org.postgresql.util.PSQLException;
 
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.Base64;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle
@@ -64,14 +72,17 @@ public class DBManagement {
      * @author Luca Perfetti
      */
     public static DBManagement getDB(){
-        if(instanceDB == null){
+        if(instanceDB == null) {
             instanceDB = new DBManagement();
-            connect(UILoginToServer.getHostTextField(),
-                    UILoginToServer.getPortTextField(),
-                    UILoginToServer.getUserTextField(),
-                    UILoginToServer.getPswTextField()
+            connect("localhost", 5432, "postgres", "postgres"
             );
         }
+      //  UILoginToServer.getHostTextField(),
+      //          UILoginToServer.getPortTextField(),
+      //          UILoginToServer.getUserTextField(),
+      //          UILoginToServer.getPswTextField()
+
+
         return instanceDB;
     }
 
@@ -100,7 +111,7 @@ public class DBManagement {
                 insertDataSet();
                 return true;
             }
-        }catch (Exception e){
+        }catch (Exception e){ e.printStackTrace();
             createDB();
         }
         return false;
@@ -132,7 +143,7 @@ public class DBManagement {
     }
 
     /**
-     * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono già
+     * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono gia'
      * @return true o false, in base all'esito dell'operazione
      *
      * @author Luca Perfetti
@@ -182,6 +193,10 @@ public class DBManagement {
                     + "crisi_ipertensiva INTEGER,"
                     + "note VARCHAR(256));"
 
+                    +"create table if not exists cipher("
+                    +"key VARCHAR(40) PRIMARY KEY,"
+                    +"iv VARCHAR(40));"
+
                     +"create table if not exists dataset_comuni("
                     +"comune VARCHAR(40) PRIMARY KEY,"
                     +"provincia VARCHAR(2),"
@@ -226,4 +241,5 @@ public class DBManagement {
             getDB().connection.prepareStatement(ds).executeUpdate();
         }catch(Exception e){e.printStackTrace();}
     }
+
 }
