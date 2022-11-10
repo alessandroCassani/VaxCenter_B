@@ -29,7 +29,7 @@ import java.util.TreeSet;
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
-    public static final String SECRETKEY = "MksoYbsdkyHos78";
+    private static final String SECRETKEY = "MksoYbsdkyHos78";
 
     private static SecretKeySpec secretKey;
 
