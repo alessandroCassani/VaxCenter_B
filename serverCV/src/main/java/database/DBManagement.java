@@ -193,10 +193,6 @@ public class DBManagement {
                     + "crisi_ipertensiva INTEGER,"
                     + "note VARCHAR(256));"
 
-                    +"create table if not exists cipher("
-                    +"key VARCHAR(40) PRIMARY KEY,"
-                    +"iv VARCHAR(40));"
-
                     +"create table if not exists dataset_comuni("
                     +"comune VARCHAR(40) PRIMARY KEY,"
                     +"provincia VARCHAR(2),"
