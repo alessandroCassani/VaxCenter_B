@@ -130,7 +130,7 @@ public class DBManagement {
         }catch(Exception e){
             System.out.println(e);
         }
-        JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Username e/o Password sono errati!", "Messaggio",JOptionPane.ERROR_MESSAGE);
         return false;
     }
 

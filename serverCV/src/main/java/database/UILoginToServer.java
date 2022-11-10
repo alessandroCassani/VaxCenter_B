@@ -275,25 +275,19 @@ public class UILoginToServer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginButton){
-            if (pswTextField.getText().equals("") || hostTextField.getText().equals("") ||
-                    portTextField.getText().equals("") || userTextField.getText().equals("")){
-
-
-            }else {
-                if (DBManagement.connect(getHostTextField(), getPortTextField(), getUserTextField(), getPswTextField())) {
-                    if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
-                        this.dispose();
-                        new UIServerHome();
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio", JOptionPane.ERROR_MESSAGE);
-                    }
-                } else {
-                    if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
-                        this.dispose();
-                        new UILoginToServer();
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio", JOptionPane.ERROR_MESSAGE);
-                    }
+            if (DBManagement.connect(getHostTextField(), getPortTextField(), getUserTextField(), getPswTextField())) {
+                if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
+                    this.dispose();
+                    new UIServerHome();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
+                    this.dispose();
+                    new UILoginToServer();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
