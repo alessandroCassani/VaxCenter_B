@@ -72,17 +72,17 @@ public class DBManagement {
      * @author Luca Perfetti
      */
     public static DBManagement getDB(){
-        if(instanceDB == null){
+        if(instanceDB == null) {
             instanceDB = new DBManagement();
-            connect(UILoginToServer.getHostTextField(),
-                    UILoginToServer.getPortTextField(),
-                    UILoginToServer.getUserTextField(),
-                    UILoginToServer.getPswTextField()
+            connect("localhost", 5432, "postgres", "postgres"
             );
         }
+      //  UILoginToServer.getHostTextField(),
+      //          UILoginToServer.getPortTextField(),
+      //          UILoginToServer.getUserTextField(),
+      //          UILoginToServer.getPswTextField()
 
-        if(ServerImpl.key==null)
-            setKeyIv();
+
         return instanceDB;
     }
 
@@ -109,10 +109,9 @@ public class DBManagement {
             if(connection==null) {
                 createTable();
                 insertDataSet();
-                generateKeyIv();
                 return true;
             }
-        }catch (Exception e){
+        }catch (Exception e){ e.printStackTrace();
             createDB();
         }
         return false;
@@ -136,7 +135,6 @@ public class DBManagement {
             preparedstmt.close();
             createTable();
             insertDataSet();
-            generateKeyIv();
             return true;
         }catch(Exception e){
             System.out.println(e);
@@ -145,7 +143,7 @@ public class DBManagement {
     }
 
     /**
-     * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono già
+     * Metodo che permette di creare le tabelle nel database nel caso in cui esse non esistono gia'
      * @return true o false, in base all'esito dell'operazione
      *
      * @author Luca Perfetti
@@ -244,47 +242,4 @@ public class DBManagement {
         }catch(Exception e){e.printStackTrace();}
     }
 
-    private static void generateKeyIv() {
-        KeyGenerator keyGenerator = null;
-        try {
-
-            //generazione key
-            keyGenerator = KeyGenerator.getInstance("AES");
-            keyGenerator.init(128);
-            SecretKey key = keyGenerator.generateKey();
-            String encodedKey = Base64.getEncoder().encodeToString(key.getEncoded());
-
-            //generazione iv
-            byte[] ivector = new byte[16];
-            new SecureRandom().nextBytes(ivector);
-            IvParameterSpec iv = new IvParameterSpec(ivector);
-
-
-            //inserimento nella tabella cipher della chiave e del vettore di inizializzazione
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cipher(key,iv)" +
-                    " VALUES (?,?)");
-
-            ps.setString(1,encodedKey);
-            ps.setString(2, Arrays.toString(iv.getIV()));
-
-            //assegnamento a campi statici del server
-            ServerImpl.iv = iv;
-            ServerImpl.key = key;
-        } catch (NoSuchAlgorithmException e) {e.printStackTrace();} catch (SQLException e) {e.printStackTrace();}
-    }
-
-    private static void setKeyIv(){
-        try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT key,iv FROM cipher");
-            ResultSet resultSet = ps.executeQuery();
-
-            if(resultSet.next()){
-                String encodedKey = resultSet.getString(1);
-                byte[] decodedKey = Base64.getDecoder().decode(encodedKey);
-                SecretKey originalKey = new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
-                ServerImpl.key = originalKey;
-                ServerImpl.iv = new IvParameterSpec(resultSet.getString(2).getBytes());
-            }
-        } catch (SQLException e) {e.printStackTrace();}
-    }
 }

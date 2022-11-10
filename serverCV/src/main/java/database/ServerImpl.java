@@ -3,18 +3,19 @@ package database;
 
 import util.*;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
+import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.LinkedList;
 import java.util.TreeSet;
@@ -28,11 +29,11 @@ import java.util.TreeSet;
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
-    private final static String ALGORITHM = "AES/ECB/PKCS5Padding";
+    private final String SECRETKEY = "MksoYbsdkyHos78";
 
-     public static SecretKey key;
+    private static SecretKeySpec secretKey;
 
-     public static IvParameterSpec iv;
+    private static byte[] key;
 
     /**
      * costruttore vuoto
@@ -85,17 +86,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     + "VALUES (?,?,?,?,?,?,?,?)");
 
             ps.setString(1, idPadding(cittadino.getId()));
-            ps.setString(2, encrypt(cittadino.getNome()));
-            ps.setString(3,encrypt(cittadino.getCognome()));
-            ps.setString(4,encrypt(cittadino.getCodFisc()));
-            ps.setString(5, encrypt(cittadino.getEmail()));
-            ps.setString(6,encrypt(cittadino.getAccount().getUserId()));
-            ps.setString(7,encrypt(cittadino.getAccount().getUserId()));
-            ps.setString(8,encrypt(cittadino.getCentroVaccinale()));
+            ps.setString(2, encrypt(cittadino.getNome(),SECRETKEY));
+            ps.setString(3,encrypt(cittadino.getCognome(),SECRETKEY));
+            ps.setString(4,encrypt(cittadino.getCodFisc(),SECRETKEY));
+            ps.setString(5, encrypt(cittadino.getEmail(),SECRETKEY));
+            ps.setString(6,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
+            ps.setString(7,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
+            ps.setString(8,encrypt(cittadino.getCentroVaccinale(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){e.printStackTrace();return false;}
+        } catch (SQLException e){e.printStackTrace();return false;}
         return true;
     }
 
@@ -126,17 +126,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, idPadding(numero));
-            ps.setString(2,encrypt(vaccinato.getCentroVaccinale()));
-            ps.setString(3,encrypt(vaccinato.getNome()));
-            ps.setString(4,encrypt(vaccinato.getCognome()));
-            ps.setString(5,encrypt(vaccinato.getCodFisc()));
-            ps.setString(6,encrypt(vaccinato.getDataSomministrazione().toString()));
-            ps.setString(7,encrypt(vaccinato.getVaccino().toString()));
+            ps.setString(2,encrypt(vaccinato.getCentroVaccinale(),SECRETKEY));
+            ps.setString(3,encrypt(vaccinato.getNome(),SECRETKEY));
+            ps.setString(4,encrypt(vaccinato.getCognome(),SECRETKEY));
+            ps.setString(5,encrypt(vaccinato.getCodFisc(),SECRETKEY));
+            ps.setString(6,encrypt(vaccinato.getDataSomministrazione().toString(),SECRETKEY));
+            ps.setString(7,encrypt(vaccinato.getVaccino().toString(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
 
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){e.printStackTrace();return "-1";}
+        }catch (SQLException e){e.printStackTrace();return "-1";}
         return idPadding(numero);
     }
 
@@ -159,17 +158,16 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,encrypt(user));
+            ps.setString(1,encrypt(user,SECRETKEY));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
                 count++;
             }
-            ps.setString(8, encrypt(eventiAvversi.getNote()));
+            ps.setString(8, encrypt(eventiAvversi.getNote(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return  false;}
+        } catch (SQLException e) {e.printStackTrace();return  false;}
         return true;
     }
 
@@ -186,14 +184,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
 
-            ps.setString(1, encrypt(user));
+            ps.setString(1, encrypt(user,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
+        }catch (SQLException e){
             return false;
         }
         return false;
@@ -214,7 +211,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [7];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user));
+            preparedStatement.setString(1,encrypt(user,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -226,8 +223,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[6] = resultSet.getString(8);
             }
             return info;
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
+        } catch (SQLException e) {
             return null;
         }
     }
@@ -245,19 +241,18 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [6];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user));
+            preparedStatement.setString(1,encrypt(user,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                info[0] = decrypt(resultSet.getString(1));
-                info[1] = decrypt(resultSet.getString(2));
-                info[2] = decrypt(resultSet.getString(3));
-                info[3] = decrypt(resultSet.getString(4));
-                info[4] = decrypt(resultSet.getString(5));
-                info[5] = decrypt(resultSet.getString(6));
+                info[0] = decrypt(resultSet.getString(1),SECRETKEY);
+                info[1] = decrypt(resultSet.getString(2),SECRETKEY);
+                info[2] = decrypt(resultSet.getString(3),SECRETKEY);
+                info[3] = decrypt(resultSet.getString(4),SECRETKEY);
+                info[4] = decrypt(resultSet.getString(5),SECRETKEY);
+                info[5] = decrypt(resultSet.getString(6),SECRETKEY);
             }
             return info;
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
+        } catch (SQLException e) {
             return null;
         }
     }
@@ -276,14 +271,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini " +
-                    "WHERE username = '" + encrypt(account.getUserId() )+ "'" + "AND password ='" + encrypt(account.getPassword()) +"'" );
+                    "WHERE username = '" + encrypt(account.getUserId(),SECRETKEY)+ "'" + "AND password ='" + encrypt(account.getPassword(),SECRETKEY) +"'" );
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
+        }catch (SQLException e){
             return false;
         }
         return false;
@@ -303,14 +297,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
 
-            ps.setString(1, encrypt(user));
+            ps.setString(1, encrypt(user,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
+        }catch (SQLException e){
             return false;
         }
         return false;
@@ -355,14 +348,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM vaccinati WHERE codice_fiscale = ?");
 
-            ps.setString(1, encrypt(cf));
+            ps.setString(1, encrypt(cf,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
                 return true;
             }
-        }catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                InvalidKeyException | BadPaddingException | IllegalBlockSizeException e){
+        }catch (SQLException e){
             return false;
         }
         return false;
@@ -383,7 +375,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.
                     prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
-            ps.setString(1, encrypt(codiceFiscale));
+            ps.setString(1, encrypt(codiceFiscale,SECRETKEY));
             BigInteger idUnivoco = new BigInteger(id);
             String idPostPadding = idPadding(idUnivoco);
 
@@ -392,8 +384,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 String risultato = idPadding(new BigInteger(resultSet.getString(1)));
                 return risultato.equals(idPostPadding);
             }
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
@@ -418,7 +409,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + encrypt(nomeCentroVaccinale) + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + encrypt(nomeCentroVaccinale,SECRETKEY) + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -429,8 +420,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                         "CRISI IPERTENSIVA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
             }
 
-        } catch (SQLException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException |
-                 InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {e.printStackTrace();return null;}
+        } catch (SQLException e) {e.printStackTrace();return null;}
         return null;
     }
 
@@ -648,24 +638,42 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return str;
     }
 
-    public static String encrypt(String input) throws NoSuchPaddingException, NoSuchAlgorithmException,
-            InvalidAlgorithmParameterException, InvalidKeyException,
-            BadPaddingException, IllegalBlockSizeException {
-
-        javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(ALGORITHM);
-        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, key, iv);
-        byte[] cipherText = cipher.doFinal(input.getBytes());
-        return Base64.getEncoder()
-                .encodeToString(cipherText);
+    public static void setKey(final String myKey) {
+        MessageDigest sha = null;
+        try {
+            key = myKey.getBytes("UTF-8");
+            sha = MessageDigest.getInstance("SHA-1");
+            key = sha.digest(key);
+            key = Arrays.copyOf(key, 16);
+            secretKey = new SecretKeySpec(key, "AES");
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static String decrypt(String cipherText) throws NoSuchPaddingException, NoSuchAlgorithmException,
-            InvalidAlgorithmParameterException, InvalidKeyException,
-            BadPaddingException, IllegalBlockSizeException {
-        javax.crypto.Cipher cipher = javax.crypto.Cipher.getInstance(ALGORITHM);
-        cipher.init(javax.crypto.Cipher.DECRYPT_MODE, key, iv);
-        byte[] plainText = cipher.doFinal(Base64.getDecoder()
-                .decode(cipherText));
-        return new String(plainText);
+    public static String encrypt(final String strToEncrypt, final String secret) {
+        try {
+            setKey(secret);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            return Base64.getEncoder()
+                    .encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
+        } catch (Exception e) {
+            System.out.println("Error while encrypting: " + e.toString());
+        }
+        return null;
+    }
+
+    public static String decrypt(final String strToDecrypt, final String secret) {
+        try {
+            setKey(secret);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            return new String(cipher.doFinal(Base64.getDecoder()
+                    .decode(strToDecrypt)));
+        } catch (Exception e) {
+            System.out.println("Error while decrypting: " + e.toString());
+        }
+        return null;
     }
 }
