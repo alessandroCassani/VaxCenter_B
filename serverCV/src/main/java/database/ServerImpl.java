@@ -29,7 +29,7 @@ import java.util.TreeSet;
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
-    private final String SECRETKEY = "MksoYbsdkyHos78";
+    public static final String SECRETKEY = "MksoYbsdkyHos78";
 
     private static SecretKeySpec secretKey;
 
@@ -638,6 +638,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return str;
     }
 
+    /**
+     * il metodo permette di creare una chiave segreta ed assegnarla al campo statico della classe relativo, partendo da una stirnga in input
+     * @param myKey stringa da cui generare la chiave segreta
+     *
+     * @author Alessandro Cassani
+     */
     public static void setKey(final String myKey) {
         MessageDigest sha = null;
         try {
@@ -651,6 +657,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         }
     }
 
+    /**
+     * il metodo permette di cifrare un messaggio sotto forma di stringa
+     * @param strToEncrypt plaintext
+     * @param secret chiave segreta
+     * @return ciphertext
+     *
+     * @author alessandro cassani
+     */
     public static String encrypt(final String strToEncrypt, final String secret) {
         try {
             setKey(secret);
@@ -664,6 +678,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         return null;
     }
 
+    /**
+     * il metodo permette di decifrare una stringa passata in input
+     * @param strToDecrypt ciphertext
+     * @param secret chiave segreta
+     * @return plaintext
+     *
+     * @author Alessandro cassani
+     */
     public static String decrypt(final String strToDecrypt, final String secret) {
         try {
             setKey(secret);
