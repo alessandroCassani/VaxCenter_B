@@ -303,28 +303,27 @@ public class UISearchVaxCenter extends JFrame {
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
 
-        String[] prospetto = new String[0];
-
         String nome = model.getValueAt(index, 0).toString();
         try {
+            String[] prospetto;
             prospetto = ServerPointer.getStub().getProspettoRiassuntivo(nome);
-        } catch (RemoteException e) {
-            e.printStackTrace();
+
+            jtRowData.setVisible(true);
+            jtRowData.pack();
+            jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+            jtRowData.jLabelinsNome.setText(nome);
+            jtRowData.jLabelMalDiTesta.setText(prospetto[0]);
+            jtRowData.jLabelfebbre.setText(prospetto[1]);
+            jtRowData.jLabelTachicardia.setText(prospetto[2]);
+            jtRowData.jLabeldolori.setText(prospetto[3]);
+            jtRowData.jLabelLinfo.setText(prospetto[4]);
+            jtRowData.jLabelcrisi.setText(prospetto[5]);
+            jtRowData.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        } catch (NullPointerException | RemoteException e) {
+            jtRowData.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Nessun evento avverso segnalato", "Messaggio",JOptionPane.ERROR_MESSAGE);
         }
-
-
-        jtRowData.setVisible(true);
-        jtRowData.pack();
-        jtRowData.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        jtRowData.jLabelinsNome.setText(nome);
-        jtRowData.jLabelMalDiTesta.setText(prospetto[0]);
-        jtRowData.jLabelfebbre.setText(prospetto[1]);
-        jtRowData.jLabelTachicardia.setText(prospetto[2]);
-        jtRowData.jLabeldolori.setText(prospetto[3]);
-        jtRowData.jLabelLinfo.setText(prospetto[4]);
-        jtRowData.jLabelcrisi.setText(prospetto[5]);
-
     }
 
 

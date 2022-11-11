@@ -7,6 +7,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import javax.swing.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -108,8 +109,9 @@ public class DBManagement {
             }
         }catch (Exception e){
             createDB();
+            return false;
         }
-        return false;
+        return true;
     }
 
     /**
@@ -134,6 +136,7 @@ public class DBManagement {
         }catch(Exception e){
             System.out.println(e);
         }
+        JOptionPane.showMessageDialog(null, "Username e/o Password sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
         return false;
     }
 
