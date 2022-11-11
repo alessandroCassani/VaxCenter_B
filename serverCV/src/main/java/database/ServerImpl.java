@@ -92,7 +92,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(5, encrypt(cittadino.getEmail(),SECRETKEY));
             ps.setString(6,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
             ps.setString(7,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
-            ps.setString(8,encrypt(cittadino.getCentroVaccinale(),SECRETKEY));
+            ps.setString(8,cittadino.getCentroVaccinale());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e){e.printStackTrace();return false;}

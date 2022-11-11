@@ -74,15 +74,11 @@ public class DBManagement {
     public static DBManagement getDB(){
         if(instanceDB == null) {
             instanceDB = new DBManagement();
-            connect("localhost", 5432, "postgres", "postgres"
-            );
+            connect("localhost",5432,"postgres","postgres");
+          // connect(UILoginToServer.getHostTextField(), UILoginToServer.getPortTextField(), UILoginToServer.getUserTextField(),
+          //         UILoginToServer.getPswTextField()
+          // );
         }
-      //  UILoginToServer.getHostTextField(),
-      //          UILoginToServer.getPortTextField(),
-      //          UILoginToServer.getUserTextField(),
-      //          UILoginToServer.getPswTextField()
-
-
         return instanceDB;
     }
 
@@ -111,7 +107,7 @@ public class DBManagement {
                 insertDataSet();
                 return true;
             }
-        }catch (Exception e){ e.printStackTrace();
+        }catch (Exception e){
             createDB();
         }
         return false;
@@ -157,11 +153,11 @@ public class DBManagement {
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome_centro_vaccinale VARCHAR(50),"
-                    + "nome VARCHAR(30),"
-                    + "cognome VARCHAR(30),"
-                    + "codice_fiscale VARCHAR(16),"
+                    + "nome VARCHAR(50),"
+                    + "cognome VARCHAR(50),"
+                    + "codice_fiscale VARCHAR(50),"
                     + "data_vaccino VARCHAR(40),"
-                    + "tipo_vaccino VARCHAR(30));"
+                    + "tipo_vaccino VARCHAR(50));"
 
                     + "create table if not exists centri_vaccinali("
                     + "nome_centro_vaccinale VARCHAR(50) PRIMARY KEY,"
@@ -175,16 +171,16 @@ public class DBManagement {
 
                     + "create table if not exists cittadini("
                     + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome VARCHAR(30),"
-                    + "cognome VARCHAR(30),"
-                    + "codice_fiscale VARCHAR(16),"
-                    + "email VARCHAR(30),"
-                    + "username VARCHAR(30),"
-                    + "password VARCHAR(30),"
-                    + "nome_centro_vaccinale VARCHAR(30) REFERENCES centri_vaccinali);"
+                    + "nome VARCHAR(50),"
+                    + "cognome VARCHAR(50),"
+                    + "codice_fiscale VARCHAR(50),"
+                    + "email VARCHAR(50),"
+                    + "username VARCHAR(50),"
+                    + "password VARCHAR(50),"
+                    + "nome_centro_vaccinale VARCHAR(50) REFERENCES centri_vaccinali);"
 
                     + "create table if not exists eventi_avversi("
-                    + "username VARCHAR(30) PRIMARY KEY,"
+                    + "username VARCHAR(50) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "tachicardia INTEGER,"
