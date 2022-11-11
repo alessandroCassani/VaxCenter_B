@@ -176,7 +176,7 @@ public class DBManagement {
                     + "codice_fiscale VARCHAR(50),"
                     + "email VARCHAR(50),"
                     + "username VARCHAR(50),"
-                    + "password VARCHAR(50),"
+                    + "password VARCHAR(150),"
                     + "nome_centro_vaccinale VARCHAR(50) REFERENCES centri_vaccinali);"
 
                     + "create table if not exists eventi_avversi("

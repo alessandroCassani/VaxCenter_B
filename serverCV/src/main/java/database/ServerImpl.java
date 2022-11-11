@@ -476,8 +476,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public LinkedList<CentroVaccinale> getCentriVaccinali(String nome) throws RemoteException {
         try {
             PreparedStatement ps =  DBManagement.getDB().connection.prepareStatement("SELECT * FROM centri_vaccinali " +
-                    "WHERE nome_centro_vaccinale LIKE '%"+ nome + "%'" );
-            // ps.setString(1,nome);
+                    "WHERE nome_centro_vaccinale LIKE '%"+ nome.toUpperCase() + "%'" );
             ResultSet resultSet = ps.executeQuery();
             LinkedList<CentroVaccinale> listaCentri = new LinkedList<>();
             while(resultSet.next()){
@@ -702,5 +701,29 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             System.out.println("Error while decrypting: " + e.toString());
         }
         return null;
+    }
+
+    /**
+     * metodo che permette la creazione di un Hash da una stringa di partenza
+     * @param base stringa su cui eseguire la funzione di hash
+     * @return stringa cifrata
+     *
+     * @author Alessandro cassani
+     */
+
+    public static String sha256(final String base) {
+        try{
+            final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            final byte[] hash = digest.digest(base.getBytes("UTF-8"));
+            final StringBuilder hexString = new StringBuilder();
+            for (int i = 0; i < hash.length; i++) {
+                final String hex = Integer.toHexString(0xff & hash[i]);
+                if(hex.length() == 1)
+                    hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch(Exception ex){}
+        return base;
     }
 }
