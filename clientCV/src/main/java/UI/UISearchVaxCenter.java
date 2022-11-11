@@ -319,7 +319,6 @@ public class UISearchVaxCenter extends JFrame {
             jtRowData.jLabeldolori.setText(prospetto[3]);
             jtRowData.jLabelLinfo.setText(prospetto[4]);
             jtRowData.jLabelcrisi.setText(prospetto[5]);
-            jtRowData.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         } catch (NullPointerException | RemoteException e) {
             jtRowData.setVisible(false);
             JOptionPane.showMessageDialog(null, "Nessun evento avverso segnalato", "Messaggio",JOptionPane.ERROR_MESSAGE);
