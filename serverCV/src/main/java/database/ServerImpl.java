@@ -91,7 +91,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(4,encrypt(cittadino.getCodFisc(),SECRETKEY));
             ps.setString(5, encrypt(cittadino.getEmail(),SECRETKEY));
             ps.setString(6,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
-            ps.setString(7,encrypt(cittadino.getAccount().getUserId(),SECRETKEY));
+            ps.setString(7,sha256(cittadino.getAccount().getPassword()));
             ps.setString(8,cittadino.getCentroVaccinale());
             ps.executeUpdate();
             ps.close();
@@ -271,7 +271,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public boolean isSignedUp(Account account) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini " +
-                    "WHERE username = '" + encrypt(account.getUserId(),SECRETKEY)+ "'" + "AND password ='" + encrypt(account.getPassword(),SECRETKEY) +"'" );
+                    "WHERE username = '" + encrypt(account.getUserId(),SECRETKEY)+ "'" + "AND password ='" + sha256(account.getPassword()) +"'" );
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -410,7 +410,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + encrypt(nomeCentroVaccinale,SECRETKEY) + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
