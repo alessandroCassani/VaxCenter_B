@@ -58,13 +58,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = con.prepareStatement("INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "
                     + "VALUES (?,?,?,?,?,?,?,?)");
             ps.setString(1, centroVaccinale.getNome());
-            ps.setString(2,centroVaccinale.getQualificatore().toString().toUpperCase());
+            ps.setString(2,centroVaccinale.getQualificatore().toString());
             ps.setString(3,centroVaccinale.getNomeVia());
             ps.setString(4,centroVaccinale.getCivico());
             ps.setString(5,centroVaccinale.getProvincia());
             ps.setString(6,centroVaccinale.getComune());
             ps.setInt(7,centroVaccinale.getCap());
-            ps.setString(8,centroVaccinale.getTipologia().toString().toUpperCase());
+            ps.setString(8,centroVaccinale.getTipologia().toString());
             ps.executeUpdate();
             ps.close();
         } catch(SQLException e){ e.printStackTrace();return false;}
@@ -130,7 +130,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             ps.setString(3,encrypt(vaccinato.getNome(),SECRETKEY));
             ps.setString(4,encrypt(vaccinato.getCognome(),SECRETKEY));
             ps.setString(5,encrypt(vaccinato.getCodFisc(),SECRETKEY));
-            ps.setString(6,encrypt(vaccinato.getDataSomministrazione().toString(),SECRETKEY));
+            ps.setString(6,encrypt(vaccinato.getDataSomministrazione(),SECRETKEY));
             ps.setString(7,encrypt(vaccinato.getVaccino().toString(),SECRETKEY));
             ps.executeUpdate();
             ps.close();
@@ -244,7 +244,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             preparedStatement.setString(1,encrypt(user,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                info[0] = decrypt(resultSet.getString(1),SECRETKEY);
+                info[0] = resultSet.getString(1);
                 info[1] = decrypt(resultSet.getString(2),SECRETKEY);
                 info[2] = decrypt(resultSet.getString(3),SECRETKEY);
                 info[3] = decrypt(resultSet.getString(4),SECRETKEY);
@@ -692,10 +692,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public static String decrypt(final String strToDecrypt, final String secret) {
         try {
             setKey(secret);
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return new String(cipher.doFinal(Base64.getDecoder()
-                    .decode(strToDecrypt)));
+            byte [] decodedValue = Base64.getDecoder()
+                    .decode(strToDecrypt.getBytes());
+
+            return new String(cipher.doFinal(decodedValue));
         } catch (Exception e) {
             System.out.println("Error while decrypting: " + e.toString());
         }
