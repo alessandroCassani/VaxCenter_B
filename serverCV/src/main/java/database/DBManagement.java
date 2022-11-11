@@ -74,10 +74,9 @@ public class DBManagement {
     public static DBManagement getDB(){
         if(instanceDB == null) {
             instanceDB = new DBManagement();
-            connect("localhost",5432,"postgres","postgres");
-          // connect(UILoginToServer.getHostTextField(), UILoginToServer.getPortTextField(), UILoginToServer.getUserTextField(),
-          //         UILoginToServer.getPswTextField()
-          // );
+           connect(UILoginToServer.getHostTextField(), UILoginToServer.getPortTextField(), UILoginToServer.getUserTextField(),
+                   UILoginToServer.getPswTextField()
+           );
         }
         return instanceDB;
     }
