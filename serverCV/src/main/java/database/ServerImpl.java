@@ -220,7 +220,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[3] = String.valueOf(resultSet.getInt(5));
                 info[4] = String.valueOf(resultSet.getInt(6));
                 info[5] = String.valueOf(resultSet.getInt(7));
-                info[6] = resultSet.getString(8);
+                info[6] = decrypt(resultSet.getString(8), SECRETKEY);
             }
             return info;
         } catch (SQLException e) {

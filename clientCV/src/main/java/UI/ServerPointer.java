@@ -99,7 +99,7 @@ public class ServerPointer {
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
             System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException e) {
-            JOptionPane.showMessageDialog(null, " AVVIARE PRIMA IL SERVER !", "Messaggio",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " SERVER OFFLINE !", "Messaggio",JOptionPane.ERROR_MESSAGE);
             System.exit(0);
             System.out.println("Impossibile connettersi al server remoto");
         } catch(NotBoundException e) {
