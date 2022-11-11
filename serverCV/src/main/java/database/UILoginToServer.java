@@ -279,9 +279,23 @@ public class UILoginToServer extends JFrame implements ActionListener {
                     portTextField.getText().equals("") || userTextField.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Login Negato! Riprovare", "Messaggio",JOptionPane.ERROR_MESSAGE);
 
-            }else {this.dispose();
-                DBManagement.connect(getHostTextField(),getPortTextField(),getUserTextField(),getPswTextField());
-                new UIServerHome();}
+            }else {
+                if (DBManagement.connect(getHostTextField(), getPortTextField(), getUserTextField(), getPswTextField())) {
+                    if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
+                        this.dispose();
+                        new UIServerHome();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
+                        this.dispose();
+                        new UILoginToServer();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
 
         }
         if(e.getSource() == showPassword){
