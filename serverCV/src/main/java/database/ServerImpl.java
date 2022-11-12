@@ -416,10 +416,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             if(resultSet.next()) {
                 info[0] = "MAL DI TESTA: " + resultSet.getString(1) + " segnalazioni | Intensità media " +Math.floor(Double.parseDouble(resultSet.getString(2))*100)/100;
                 info[1] = "FEBBRE: " + resultSet.getString(3) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(4))*100)/100;
-                info[2] = "TACHICARDIA " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100;
+                info[2] = "TACHICARDIA: " + resultSet.getString(5) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(6))*100)/100;
                 info[3] = "DOLORI MUSCOLARI: " + resultSet.getString(7) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(8))*100)/100;
-                info[4] = "LINFOADENOPATIA " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
-                info[5] = "CRISI IPERTENSIVA " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
+                info[4] = "LINFOADENOPATIA: " + resultSet.getString(9) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(10))*100)/100;
+                info[5] = "CRISI IPERTENSIVA: " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
                 return info;
             }
 
