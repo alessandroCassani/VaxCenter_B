@@ -76,7 +76,7 @@ public class UIServerHome extends JFrame implements ActionListener {
     RoundButton stopBtn = new RoundButton("STOP");
 
     /**
-     * bottone d'inserimento del dataset
+     * bottone per la generazione di un dataset di test
      */
     RoundButton insertDS = new RoundButton("DATASET");
 
@@ -249,8 +249,8 @@ public class UIServerHome extends JFrame implements ActionListener {
                             "Inserimento DataSet", JOptionPane.YES_NO_OPTION);
 
                     if (resp == JOptionPane.YES_OPTION) {
+                        //Thread che generano un dataset
                         JOptionPane.showMessageDialog(null, "DataSet generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-
                     } else {
                         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                     }
