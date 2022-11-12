@@ -147,7 +147,7 @@ public class UIServerHome extends JFrame implements ActionListener {
 
         insertDS.setBorder(bordo);
         insertDS.setBounds(565,400,200,75);
-        insertDS.setBackground(new Color(0xFF12DECD, true));
+        insertDS.setBackground(new Color(0xFF2ED9C5, true));
         insertDS.setFont(new Font("Georgia", Font.BOLD, 20));
         insertDS.setFocusable(false);
         insertDS.addActionListener(this);
@@ -245,11 +245,11 @@ public class UIServerHome extends JFrame implements ActionListener {
             //Popup inserimento dataset
             UIManager.put("OptionPane.yesButtonText", "Si");
             UIManager.put("OptionPane.noButtonText", "No");
-                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di inserire il DataSet?",
+                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro voler generare un DataSet?",
                             "Inserimento DataSet", JOptionPane.YES_NO_OPTION);
 
                     if (resp == JOptionPane.YES_OPTION) {
-                        JOptionPane.showMessageDialog(null, "DataSet inserito con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "DataSet generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
 
                     } else {
                         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
