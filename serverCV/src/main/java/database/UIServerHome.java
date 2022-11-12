@@ -76,6 +76,12 @@ public class UIServerHome extends JFrame implements ActionListener {
     RoundButton stopBtn = new RoundButton("STOP");
 
     /**
+     * bottone d'inserimento del dataset
+     */
+    RoundButton insertDS = new RoundButton("DATASET");
+
+
+    /**
      *campo di testo in cui viene visuaizzato lo stato del server (on/off)
      */
     JLabel status = new JLabel();
@@ -97,7 +103,7 @@ public class UIServerHome extends JFrame implements ActionListener {
 
         //immagine programma
 
-        immagine.setBounds(70, 120, 300, 300);
+        immagine.setBounds(70, 160, 300, 300);
         immagine.setBackground(new Color(181, 226, 232));
         JLabel  lblPic = new JLabel();
         lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb_ridv1.png"))));
@@ -105,7 +111,7 @@ public class UIServerHome extends JFrame implements ActionListener {
 
 
         textField.setFont(new Font("Arial",Font.ITALIC,30));
-        textField.setBounds(100,60,300,30);
+        textField.setBounds(100,80,300,30);
         textField.setBorder(bordo);
 
         status.setFont(new Font("Arial",Font.ITALIC,20));
@@ -113,13 +119,13 @@ public class UIServerHome extends JFrame implements ActionListener {
         status.setBounds(500,300,200,30);
         status.setBorder(bordo);
 
-        sr.setBounds(650, 280, 150, 150);
+        sr.setBounds(650, 280, 150, 75);
         sr.setBackground(new Color(181, 226, 232));
         JLabel  lblSR = new JLabel();
         lblSR.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/srunning_v1.gif"))));
         sr.add(lblSR);
 
-        so.setBounds(650, 280, 150, 150);
+        so.setBounds(650, 280, 150, 75);
         so.setBackground(new Color(181, 226, 232));
         JLabel  lblSO = new JLabel();
         lblSO.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/X_v2.png"))));
@@ -138,6 +144,14 @@ public class UIServerHome extends JFrame implements ActionListener {
         stopBtn.setFont(new Font("Georgia", Font.BOLD, 20));
         stopBtn.setFocusable(false);
         stopBtn.addActionListener(this);
+
+        insertDS.setBorder(bordo);
+        insertDS.setBounds(565,400,200,75);
+        insertDS.setBackground(new Color(0xFF12DECD, true));
+        insertDS.setFont(new Font("Georgia", Font.BOLD, 20));
+        insertDS.setFocusable(false);
+        insertDS.addActionListener(this);
+
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToLoginToServer = new JButton(ind);
@@ -162,6 +176,7 @@ public class UIServerHome extends JFrame implements ActionListener {
         add(immagine);
         add(sr).setVisible(false);
         add(so);
+        add(insertDS);
 
 
         //Icona avvio del programma
@@ -225,6 +240,23 @@ public class UIServerHome extends JFrame implements ActionListener {
             new UILoginToServer();
 
         }
+
+        if (e.getSource() == insertDS){
+            //Popup inserimento dataset
+            UIManager.put("OptionPane.yesButtonText", "Si");
+            UIManager.put("OptionPane.noButtonText", "No");
+                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di inserire il DataSet?",
+                            "Inserimento DataSet", JOptionPane.YES_NO_OPTION);
+
+                    if (resp == JOptionPane.YES_OPTION) {
+                        JOptionPane.showMessageDialog(null, "DataSet inserito con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+
+                    } else {
+                        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                    }
+                }
+
+
     }
 
     /**
