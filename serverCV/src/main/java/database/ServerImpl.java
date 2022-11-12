@@ -2,16 +2,12 @@ package database;
 
 
 import util.*;
-
 import javax.crypto.*;
-import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
@@ -80,7 +76,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public boolean registraCittadino(Cittadino cittadino) throws RemoteException {
+    public synchronized boolean registraCittadino(Cittadino cittadino) throws RemoteException {
         try{
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO cittadini(id,nome,cognome,codice_fiscale,email,username,password,nome_centro_vaccinale) \n"
                     + "VALUES (?,?,?,?,?,?,?,?)");
@@ -108,7 +104,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public String registraVaccinato(Vaccinato vaccinato) throws RemoteException {
+    public synchronized String registraVaccinato(Vaccinato vaccinato) throws RemoteException {
         BigInteger numero;
         try {
             PreparedStatement preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM vaccinati");
@@ -151,7 +147,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
+    public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
             int count;
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
