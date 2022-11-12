@@ -16,25 +16,38 @@ import java.awt.geom.CubicCurve2D;
 import java.awt.geom.GeneralPath;
 import javax.swing.Timer;
 
+/**
+ * La classe CurvesPanel permette la creazione di un pannello con l'utilizzo di colori gradienti e animazioni visive della WelcomeScreen
+ @author Damiano Ficara
+ */
 public class CurvesPanel extends GradientPanel {
 
+    /**
+     * Oggetto che permette di compiere efficacemente il rendering della parte grafica
+     */
     private final RenderingHints hints;
+    /**
+     * Variabile che tiene traccia della progressione dell'animazione grafica
+     */
     private int counter = 0;
-    private final Timer timer = new Timer(20, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            repaint();
-        }
-    });
+    /**
+     * Timer per la durata dell'animazione grafica
+     */
+    private final Timer timer = new Timer(20, ae -> repaint());
+
+    /**
+     * metodo che consente l'avvio del timer
+     * @author Damiano Ficara
+     */
 
     public void start() {
         timer.start();
     }
 
-    public void stop() {
-        timer.stop();
-    }
-
+    /**
+     * Costruttore responsabile della scelta dei colori e dell'inizializzazione delle costanti di rendering e avvio del timer
+     * @author Damiano Ficara
+     */
     public CurvesPanel() {
         super(Color.decode("#099773"),Color.decode("#0f68a9"));
         hints = new RenderingHints(RenderingHints.KEY_ALPHA_INTERPOLATION,
@@ -50,6 +63,11 @@ public class CurvesPanel extends GradientPanel {
         start();
     }
 
+    /**
+     * Metodo responsabile dell'operazione di disegno del componente grafico
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     @Override
     public void paintComponent(Graphics g) {
         counter++;
@@ -106,15 +124,15 @@ public class CurvesPanel extends GradientPanel {
      * @author Damiano Ficara
      */
     private void drawCurve(Graphics2D g2,
-            float y1, float y1_offset,
-            float y2, float y2_offset,
-            float cx1, float cx1_offset,
-            float cy1, float cy1_offset,
-            float cx2, float cx2_offset,
-            float cy2, float cy2_offset,
-            float thickness,
-            float speed,
-            boolean invert) {
+                           float y1, float y1_offset,
+                           float y2, float y2_offset,
+                           float cx1, float cx1_offset,
+                           float cy1, float cy1_offset,
+                           float cx2, float cx2_offset,
+                           float cy2, float cy2_offset,
+                           float thickness,
+                           float speed,
+                           boolean invert) {
 
         float width = getWidth();
         float height = getHeight();
