@@ -1,5 +1,6 @@
 package util;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -8,7 +9,7 @@ import java.util.Date;
  *
  * @author Alessandro Cassani
  */
-public class Vaccinato extends Persona {
+public class Vaccinato extends Persona implements Serializable {
     /**
      * Numero di seriale per la comunicazione RMI
      */
