@@ -416,6 +416,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             password.setText("");
             ripetiPassword.setText("");
             IDUnivoco.setText("");
+            codiceFiscale.setText("");
             showPassword.setSelected(false);
             nomeCV.setEnabled(true);
             nomeCittadino.setEditable(true);
