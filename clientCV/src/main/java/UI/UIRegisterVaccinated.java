@@ -358,6 +358,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
                     vaccinoSomministrato.setEnabled(false);
                     nomeCV.setEnabled(false);
                     IDUnivoco.setVisible(true);
+                    registraVaccinato.setEnabled(false);
                     IDUnivoco.setText("ID univoco: " + id);
                 }
                 else JOptionPane.showMessageDialog(null,"errore in fase di registrazione","errore",JOptionPane.ERROR_MESSAGE);
@@ -376,6 +377,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             data.setEnabled(true);
             vaccinoSomministrato.setEnabled(true);
             nomeCV.setEnabled(true);
+            registraVaccinato.setEnabled(true);
             IDUnivoco.setVisible(false);
 
         }

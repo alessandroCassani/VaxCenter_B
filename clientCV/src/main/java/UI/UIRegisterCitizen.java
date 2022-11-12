@@ -402,6 +402,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
                     IDUnivoco.setEditable(false);
                     password.setEditable(false);
                     ripetiPassword.setEditable(false);
+                    registraCittadino.setEnabled(false);
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Errore in fase di registrazione, prego riprovare", "Registrazione non effettuata", JOptionPane.INFORMATION_MESSAGE);
@@ -427,6 +428,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             IDUnivoco.setEditable(true);
             password.setEditable(true);
             ripetiPassword.setEditable(true);
+            registraCittadino.setEnabled(true);
 
         }else if(e.getSource() == showPassword){
             if (showPassword.isSelected()) {
