@@ -12,38 +12,62 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 
+/**
+ * La classe MyPwdField permette di definire il campo relativo alla password nel login
+ @author Damiano Ficara
+ */
 public class MyPwdField extends JPasswordField {
 
+    /**
+     * metodo che consente di ottenere il suggerimento circa il valore da inserire
+     * @return suggerimento del campo
+     * @author Damiano Ficara
+     */
     public String getHint() {
         return hint;
     }
 
+    /**
+     * metodo che consente di impostare il suggerimento circa il valore da inserire
+     * @return nuovo suggerimento del campo
+     * @author Damiano Ficara
+     */
     public void setHint(String hint) {
         this.hint = hint;
     }
 
+    /**
+     * metodo che consente di ottenere l'icona di riferimento del campo
+     * @return icona del campo
+     * @author Damiano Ficara
+     */
     public Icon getPrefixIcon() {
         return prefixIcon;
     }
 
+    /**
+     * metodo che consente di impostare l'icona di riferimento del campo e impostare i bordi con uno stile prioritario
+     * @return icona del campo
+     * @author Damiano Ficara
+     */
     public void setPrefixIcon(Icon prefixIcon) {
         this.prefixIcon = prefixIcon;
         initBorder();
     }
 
-    public Icon getSuffixIcon() {
-        return suffixIcon;
-    }
-
-    public void setSuffixIcon(Icon suffixIcon) {
-        this.suffixIcon = suffixIcon;
-        initBorder();
-    }
-
+    /**
+     * Icona che rappresenta il riferimento del campo
+     */
     private Icon prefixIcon;
-    private Icon suffixIcon;
+    /**
+     * Stringa che rappresenta il suggerimento del campo
+     */
     private String hint = "";
 
+    /**
+     * Costruttore responsabile del disegno del campo di password e dell'inizializzazione di font e componenti grafici
+     * @author Damiano Ficara
+     */
     public MyPwdField() {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setBackground(new Color(0, 0, 0, 0));
@@ -52,6 +76,11 @@ public class MyPwdField extends JPasswordField {
         setSelectionColor(new Color(75, 175, 152));
     }
 
+    /**
+     * Metodo responsabile dell'operazione di disegno del componente grafico
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
@@ -62,6 +91,11 @@ public class MyPwdField extends JPasswordField {
         super.paintComponent(g);
     }
 
+    /**
+     * Metodo responsabile del disegno del suggerimento all'avvio
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     @Override
     public void paint(Graphics g) {
         super.paint(g);
@@ -75,6 +109,11 @@ public class MyPwdField extends JPasswordField {
         }
     }
 
+    /**
+     * Metodo responsabile del disegno dell'icona di riferimento del campo
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     private void paintIcon(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         if (prefixIcon != null) {
@@ -82,17 +121,22 @@ public class MyPwdField extends JPasswordField {
             int y = (getHeight() - prefixIcon.getIconHeight()) / 2;
             g2.drawImage(prefix, 10, y, this);
         }
-        if (suffixIcon != null) {
-            Image suffix = ((ImageIcon) suffixIcon).getImage();
-            int y = (getHeight() - suffixIcon.getIconHeight()) / 2;
-            g2.drawImage(suffix, getWidth() - suffixIcon.getIconWidth() - 10, y, this);
-        }
+
     }
+    /**
+     * Metodo responsabile del disegno del bordo del campo
+     * @param g componente grafico considerato
+     * @author Damiano Ficara
+     */
     protected void paintBorder(Graphics g) {
         g.setColor(new Color(65, 102, 245));
         g.drawRoundRect(0, 0, getWidth(), getHeight(), 6, 6);
     }
 
+    /**
+     * Metodo responsabile dell'inizializzazione del bordo del campo
+     * @author Damiano Ficara
+     */
     private void initBorder() {
         int left = 15;
         int right = 15;
@@ -101,10 +145,7 @@ public class MyPwdField extends JPasswordField {
             //  prefix is left
             left = prefixIcon.getIconWidth() + 15;
         }
-        if (suffixIcon != null) {
-            //  suffix is right
-            right = suffixIcon.getIconWidth() + 15;
-        }
+
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, left, 10, right));
     }
 }

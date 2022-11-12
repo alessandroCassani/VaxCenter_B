@@ -1,5 +1,6 @@
 package util;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Date;
 
@@ -8,8 +9,11 @@ import java.util.Date;
  *
  * @author Alessandro Cassani
  */
-public class Cittadino extends Persona {
-
+public class Cittadino extends Persona implements Serializable {
+    /**
+     * Numero di seriale per la comunicazione RMI
+     */
+    private static final long serialVersionUID = 78910L;
 
     /**
      * Account associato al cittadino
