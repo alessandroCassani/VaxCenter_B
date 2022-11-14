@@ -586,7 +586,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * metodo privato che permette di registrare degli eventi avversi nel db
      * @author Paolo Bruscagin
      */
-    private void registraEventiAvversi(){
+    private boolean registraEventiAvversi(){
         String note = noteGenerali.getText();
         ArrayList<Sintomo> sintomi = new ArrayList<Sintomo>();
         sintomi.add(new Sintomo(severitaMDT.getSelectedIndex(),Sintomatologia.MALDITESTA));
@@ -599,18 +599,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         try {
-
-            ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user);
-            JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!",
-                    "Messaggio",JOptionPane.INFORMATION_MESSAGE);
-
+            if(ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user)){
+                return true;
+            }
+            return false;
         } catch (RemoteException ex) {
             throw new RuntimeException(ex);
-
         }
     }
-
-
 
 
     /**
@@ -637,24 +633,29 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
             severitaCrisiIpertensiva.setSelectedItem("0");
 
         } else if (e.getSource() == registraEA) {
+
             if (noteGenerali.getText().length() > 256){
                 JOptionPane.showMessageDialog(null, "Puoi inserire massimo 256 caratteri! Riprova",
                         "Messaggio",JOptionPane.ERROR_MESSAGE);
-
-            }else {
-                registraEventiAvversi();
-                severitaMDT.setEnabled(false);
-                severitaFebbre.setEnabled(false);
-                severitaDMA.setEnabled(false);
-                severitatachicardia.setEnabled(false);
-                severitalinfoadenopatia.setEnabled(false);
-                severitaCrisiIpertensiva.setEnabled(false);
-                noteGenerali.setEditable(false);
-                registraEA.setEnabled(false);
-                pulisciEventiAvversi.setEnabled(false);
+            }else{
+                if(registraEventiAvversi()) {
+                    severitaMDT.setEnabled(false);
+                    severitaFebbre.setEnabled(false);
+                    severitaDMA.setEnabled(false);
+                    severitatachicardia.setEnabled(false);
+                    severitalinfoadenopatia.setEnabled(false);
+                    severitaCrisiIpertensiva.setEnabled(false);
+                    noteGenerali.setEditable(false);
+                    registraEA.setEnabled(false);
+                    pulisciEventiAvversi.setEnabled(false);
+                    JOptionPane.showMessageDialog(null, "Eventi Avversi Registrati con Successo!",
+                            "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Errore duante l'inserimento! Riprova",
+                            "Errore",JOptionPane.ERROR_MESSAGE);
+                }
             }
-
         }
-
     }
 }
