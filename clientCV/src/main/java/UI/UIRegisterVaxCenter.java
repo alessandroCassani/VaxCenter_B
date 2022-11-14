@@ -282,13 +282,12 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
     }
 
 
-
     /**
      * metodo privato che permette di registrare le informazioni di un centro vaccinale nel DB
      * @author Damiano Ficara
      */
 
-    private void registra(){
+    private boolean registraCentroVaccinale(){
         String nome = nomeCentroVaccinale.getText().toUpperCase();
         String qualifica = Objects.requireNonNull(qualificatore.getSelectedItem().toString());
         String nomeIndirizzo = nomeVia.getText().toUpperCase();
@@ -297,20 +296,22 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
         String provincia = siglaProvincia.getText().toUpperCase();
         String code = cap.getText().toUpperCase();
         String tipologiaCentro  = Objects.requireNonNull(tipologia.getSelectedItem()).toString();
+        boolean result;
         try {
 
-            ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
+            result = ServerPointer.getStub().registraCentroVaccinale(new CentroVaccinale
                     (nome,Qualificatore.getQualificatore(qualifica.toUpperCase()),nomeIndirizzo,civico,
                             provincia,com.toUpperCase(), Integer.parseInt(code), Tipologia.getTipo(tipologiaCentro.toUpperCase())));
-            JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+            if(result) {
+                JOptionPane.showMessageDialog(null, "Centro Vaccinale registrato con successo!", "Messaggio", JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            }
+            else
+                return false;
         } catch (SQLException | RemoteException ex) {
             throw new RuntimeException(ex);
-
         }
     }
-
-
-
 
     /**
      * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
@@ -320,7 +321,8 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        boolean vac ;
+        boolean vac;
+        boolean result;
         try {
             vac = ServerPointer.getStub().isVaxcenterRegistrated(nomeCentroVaccinale.getText().toString().toUpperCase());
         } catch (RemoteException ex) {
@@ -352,14 +354,17 @@ public class UIRegisterVaxCenter extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Centro Vaccinale già Registrato! ...", "Messaggio", JOptionPane.ERROR_MESSAGE);
 
             } else {
-                registra();
-                nomeCentroVaccinale.setEditable(false);
-                tipologia.setEnabled(false);
-                qualificatore.setEnabled(false);
-                nomeVia.setEditable(false);
-                numeroCivico.setEditable(false);
-                comune.setEnabled(false);
-                registra.setEnabled(false);
+                if(registraCentroVaccinale()) {
+                    nomeCentroVaccinale.setEditable(false);
+                    tipologia.setEnabled(false);
+                    qualificatore.setEnabled(false);
+                    nomeVia.setEditable(false);
+                    numeroCivico.setEditable(false);
+                    comune.setEnabled(false);
+                    registra.setEnabled(false);
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Errore in fase di registarzione! Riprovare ...", "errore", JOptionPane.ERROR_MESSAGE);
             }
         }
         if(e.getSource() == pulisci){

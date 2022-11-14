@@ -245,9 +245,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JLabel severitaEA6 = new JLabel("Severità");
 
-
-
-
     static String user;
     public UIAdverseEvent(String username) throws RemoteException {
 

@@ -375,9 +375,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
             nomeCV.setEnabled(true);
             registraVaccinato.setEnabled(true);
             IDUnivoco.setVisible(false);
-
         }
-
     }
 
 

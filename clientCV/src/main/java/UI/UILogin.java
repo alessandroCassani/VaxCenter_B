@@ -302,6 +302,4 @@ public class UILogin extends JFrame  {
      * variabile che tiene conto dei tentavi massimi per compiere il login
      */
     private static  final Integer MAX_TIMES = 3;
-
-
 }

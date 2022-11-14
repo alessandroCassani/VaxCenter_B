@@ -372,6 +372,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     prepareStatement("SELECT id FROM vaccinati " +
                             "WHERE codice_fiscale = ?");
             ps.setString(1, encrypt(codiceFiscale,SECRETKEY));
+
             BigInteger idUnivoco = new BigInteger(id);
             String idPostPadding = idPadding(idUnivoco);
 
