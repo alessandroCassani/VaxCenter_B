@@ -1,7 +1,7 @@
 package CheckData;
 
 /**
- * la classe fornisce il emtodo di controllo per la lunghezza dell'id inserito dall'utente
+ * la classe fornisce il metodo di controllo per la lunghezza dell'id inserito dall'utente
  *
  * @author Alessandro cassani
  * */
