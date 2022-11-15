@@ -354,7 +354,4 @@ public class UISearchVaxCenter extends JFrame {
      * Intestazione dei campi della tabella
      */
     private String[] indici = {"Nome", "Comune", "Qualificatore", "Via", "Civico", "Sigla", "Cap", "Tipologia"};
-
-
-
 }

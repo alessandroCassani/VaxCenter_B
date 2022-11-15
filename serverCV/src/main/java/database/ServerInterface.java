@@ -187,6 +187,14 @@ public interface ServerInterface extends Remote {
      */
     LinkedList<String> getComuniNome() throws RemoteException;
 
+    /**
+     * il metodo permette di cercare i centri vaccinali registrati nel DB
+     * @return lista di centri vaccinali
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Alessandro Cassani
+     */
+
     LinkedList<CentroVaccinale>  getCentriVaccinali() throws RemoteException;
 
     /**

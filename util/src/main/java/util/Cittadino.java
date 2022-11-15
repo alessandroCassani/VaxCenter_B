@@ -25,8 +25,6 @@ public class Cittadino extends Persona implements Serializable {
      */
     private final String email;
 
-
-
     /**
      * metodo che permette la modellazione delle informazioni di un oggetto di tipo Cittadino
      * @param nome nome del cittadino

@@ -597,7 +597,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         sintomi.add(new Sintomo(severitalinfoadenopatia.getSelectedIndex(),Sintomatologia.LINFOADENOPATIA));
         sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
 
-
         try {
             if(ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user)){
                 return true;

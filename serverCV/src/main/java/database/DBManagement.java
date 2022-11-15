@@ -66,7 +66,6 @@ public class DBManagement {
      */
     static String url = "jdbc:postgresql://"+ hostDB + ":" + portDB + "/";
 
-
     /**
      * Metodo che ritorna l'istanza del database
      *
@@ -235,5 +234,4 @@ public class DBManagement {
             getDB().connection.prepareStatement(ds).executeUpdate();
         }catch(Exception e){e.printStackTrace();}
     }
-
 }

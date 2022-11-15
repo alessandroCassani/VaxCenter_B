@@ -19,15 +19,16 @@ public abstract class Persona implements Serializable {
      * nome della persona
      */
     private final String nome;
+
     /**
      * cognome della persona
      */
     private final String cognome;
+
     /**
      * codice fiscale della persona
      */
     private final String codFisc;
-
 
     /**
      * id della persona

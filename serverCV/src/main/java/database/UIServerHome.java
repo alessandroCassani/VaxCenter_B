@@ -1,5 +1,9 @@
 package database;
 
+import database.RoundButton;
+import database.ServerImpl;
+import database.UILoginToServer;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -249,14 +253,11 @@ public class UIServerHome extends JFrame implements ActionListener {
                             "Inserimento Data Set", JOptionPane.YES_NO_OPTION);
 
                     if (resp == JOptionPane.YES_OPTION) {
-                        //Thread che generano un dataset
                         JOptionPane.showMessageDialog(null, "Data Set generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                     }
                 }
-
-
     }
 
     /**

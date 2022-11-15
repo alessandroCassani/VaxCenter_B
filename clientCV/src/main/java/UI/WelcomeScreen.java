@@ -74,5 +74,4 @@ public class WelcomeScreen extends JFrame {
         });
         timer.start();
     }
-
 }
