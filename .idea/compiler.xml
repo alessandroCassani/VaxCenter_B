@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="clientCV" />
         <module name="util" />
         <module name="serverCV" />
-        <module name="clientCV" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clientCV (1)" target="16" />
+      <module name="vax-centers" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
