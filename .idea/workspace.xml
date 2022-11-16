@@ -4,49 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="modifiche pom">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="maven check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIAdverseEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIChoosingRooles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UICitizen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UILogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterCitizen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaccinated.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIRegisterVaxCenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UISearchVaxCenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/UIVaccineOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/WelcomeScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/CurvesPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/GradientPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/InfoSearchEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyPwdField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/MyTextField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/RoundJTextField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/SearchField$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/SearchField$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/SearchField$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientCV/target/classes/UI/graphics/SearchField.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/target/classes/database/UILoginToServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Cittadino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Persona.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Sintomo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccinato.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" beforeDir="false" afterPath="$PROJECT_DIR$/util/target/classes/util/Vaccino.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,14 +238,7 @@
       <workItem from="1668350986499" duration="1408000" />
       <workItem from="1668367824483" duration="948000" />
       <workItem from="1668627515993" duration="2563000" />
-      <workItem from="1668630119149" duration="1056000" />
-    </task>
-    <task id="LOCAL-00054" summary="Aggiunta opzione comune e nome">
-      <created>1664735154919</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1664735154919</updated>
+      <workItem from="1668630119149" duration="2219000" />
     </task>
     <task id="LOCAL-00055" summary="bug fixed">
       <created>1664735307778</created>
@@ -622,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668279054662</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="maven check">
+      <created>1668631433842</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1668631433843</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checkData" />
     <MESSAGE value="checkData doc" />
     <MESSAGE value="modifica JComboBox" />
     <MESSAGE value="checkPassword" />
@@ -677,7 +637,8 @@
     <MESSAGE value="javadoc" />
     <MESSAGE value="javadoc SearchField" />
     <MESSAGE value="modifiche pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche pom" />
+    <MESSAGE value="maven check" />
+    <option name="LAST_COMMIT_MESSAGE" value="maven check" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
