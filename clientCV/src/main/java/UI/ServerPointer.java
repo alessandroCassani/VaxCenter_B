@@ -3,12 +3,13 @@ package UI;
 import database.ServerInterface;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.awt.font.TextAttribute;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,12 +36,54 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
     static ServerInterface stub;
 
+    /**
+     * Label Esci che permette di uscire dal programma
+     */
+
+    JLabel esci = new JLabel("Esci");
+
     public ServerPointer(){
 
+        //Label cliccabile che ti permette di uscire dal programma
+
+        esci.setFont(new Font("Georgia", Font.ITALIC, 18));
+        Font font = esci.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        esci.setFont(font.deriveFont(attributes));
+        esci.setForeground(new Color(0,49,83));
+        esci.setBounds(60,30,100,20);
+        esci.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(0);
+
+            }
+        });
+
+        //Popup "Se sicuro di uscire?"
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                UIManager.put("OptionPane.yesButtonText", "Si");
+                UIManager.put("OptionPane.noButtonText", "No");
+
+                int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro di uscire?",
+                        "Esci?", JOptionPane.YES_NO_OPTION);
+
+                if (resp == JOptionPane.YES_OPTION) {
+                    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    System.exit(0);
+                } else {
+                    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
 
         //Icona avvio del programma
         ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
         setIconImage(logo.getImage());
+
+        add(esci);
 
 
         setTitle("VaxCenter");
