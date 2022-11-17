@@ -74,9 +74,9 @@ public class ServerPointer extends JFrame implements ActionListener {
      * Panel per inserire l'immagine nel titolo
      */
 
-    static String host = hostName.getText().toString();
+    static String host;
 
-    static String port = portNumber.getText().toString();
+    static Integer port;
 
 
     public ServerPointer(){
@@ -103,6 +103,7 @@ public class ServerPointer extends JFrame implements ActionListener {
         hostName.setPreferredSize(new Dimension(250, 50));
         hostName.setBounds(120, 150, 250, 50);
         hostName.setEchoChar((char) 0);
+        hostName.setBackground(new Color(0x9AE7DA));
 
         JLabel labelport = new JLabel("Porta:");
         labelport.setFont(new Font("Georgia", Font.ITALIC, 17));
@@ -113,6 +114,7 @@ public class ServerPointer extends JFrame implements ActionListener {
         portNumber.setPreferredSize(new Dimension(250, 50));
         portNumber.setBounds(120, 250, 250, 50);
         portNumber.setEchoChar((char) 0);
+        portNumber.setBackground(new Color(0x9AE7DA));
 
         accedi.setBounds(140, 350, 150, 50);
         accedi.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -257,9 +259,11 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
     public static void connectToRMI()
     {
+        host = hostName.getText();
+        port = Integer.valueOf(portNumber.getText());
 
         try {
-            ServerPointer.setRegistry(LocateRegistry.getRegistry(host, Integer.parseInt(port)));
+            ServerPointer.setRegistry(LocateRegistry.getRegistry(host, port));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
             System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException e) {
