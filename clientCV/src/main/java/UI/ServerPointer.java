@@ -2,6 +2,9 @@ package UI;
 
 import database.ServerInterface;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -12,7 +15,7 @@ import java.rmi.registry.Registry;
  *
  * @author Luca Perfetti
  */
-public class ServerPointer {
+public class ServerPointer extends JFrame implements ActionListener {
     /**
      * Porta sulla quale si ascolterà il server
      */
@@ -31,6 +34,22 @@ public class ServerPointer {
      */
     static ServerInterface stub;
 
+    public ServerPointer(){
+        setTitle("VaxCenter");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize (500, 500);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setForeground(Color.WHITE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        getContentPane().setBackground(new Color(181, 226, 232));
+        setForeground(Color.WHITE);
+        setVisible(true);
+    }
+
     /**
      * Metodo che per mette di avviare il programma
      * @param args
@@ -40,8 +59,9 @@ public class ServerPointer {
     // Punto di avvio del client
     public static void main(String[] args)
     {
+
         ServerPointer.connectToRMI();
-        new WelcomeScreen();
+        new ServerPointer();
 
     }
 
@@ -107,5 +127,10 @@ public class ServerPointer {
             System.exit(0);
             System.out.println("Impossibile connettersi al server remoto");
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
