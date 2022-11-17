@@ -74,7 +74,6 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/sfondoVac.png"))));
         immagine.add(lblPic);
 
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         JLabel scelta = new JLabel("SELEZIONA LA TIPOLOGIA DI UTENTE");
         scelta.setFont(new Font("roman_baseline", Font.PLAIN, 19));
         scelta.setBounds(590, 100, 400, 30);
@@ -138,6 +137,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setResizable(false);
         setForeground(Color.WHITE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
