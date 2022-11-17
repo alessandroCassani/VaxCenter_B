@@ -51,12 +51,12 @@ public class ServerPointer extends JFrame implements ActionListener {
     /**
      * nome dell'host
      */
-    RoundJTextField hostName = new RoundJTextField(30);
+    static RoundJTextField hostName = new RoundJTextField(30);
 
     /**
      * numero porta
      */
-    RoundJTextField portNumber = new RoundJTextField(30);
+    static RoundJTextField portNumber = new RoundJTextField(30);
 
     /**
      * bottone per l'avvio del processo di registrazione del vaccinato
@@ -74,9 +74,10 @@ public class ServerPointer extends JFrame implements ActionListener {
      * Panel per inserire l'immagine nel titolo
      */
 
-    String a = hostName.getText().toString();
+    static String host = hostName.getText().toString();
 
-    int b = Integer.parseInt(hostName.getText().toString());
+    static String port = portNumber.getText().toString();
+
 
     public ServerPointer(){
 
@@ -258,7 +259,7 @@ public class ServerPointer extends JFrame implements ActionListener {
     {
 
         try {
-            ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
+            ServerPointer.setRegistry(LocateRegistry.getRegistry(host, Integer.parseInt(port)));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
             System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException e) {
@@ -275,7 +276,7 @@ public class ServerPointer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == accedi) {
-            //ServerPointer.connectToRMI();
+            ServerPointer.connectToRMI();
             this.dispose();
             new WelcomeScreen();
 
