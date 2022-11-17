@@ -188,8 +188,7 @@ public class UIRegisterVaccinated extends JFrame implements ActionListener {
         nomeCV.setBounds(520, 320, 325, 50);
         nomeCV.setBackground(Color.WHITE);
         AutoCompleteDecorator.decorate(nomeCV);
-
-        //((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        ((JLabel)nomeCV.getRenderer()).setHorizontalAlignment(JLabel.LEFT);
 
         ImageIcon ind = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/color50ind.png")));
         backToVaccineOperator = new JButton(ind);
