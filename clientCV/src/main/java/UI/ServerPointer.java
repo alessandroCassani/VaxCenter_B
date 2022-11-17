@@ -115,6 +115,8 @@ public class ServerPointer extends JFrame implements ActionListener {
         portNumber.setBounds(120, 250, 250, 50);
         portNumber.setEchoChar((char) 0);
         portNumber.setBackground(new Color(0x9AE7DA));
+        portNumber.setText("1099");
+        portNumber.setEditable(false);
 
         accedi.setBounds(140, 350, 150, 50);
         accedi.setFont(new Font("Georgia", Font.BOLD, 20));
@@ -260,10 +262,9 @@ public class ServerPointer extends JFrame implements ActionListener {
     public static void connectToRMI()
     {
         host = hostName.getText();
-        port = Integer.valueOf(portNumber.getText());
 
         try {
-            ServerPointer.setRegistry(LocateRegistry.getRegistry(host, port));
+            ServerPointer.setRegistry(LocateRegistry.getRegistry(host, PORT));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
             System.out.println("Connessione avvenuta correttamente");
         }catch (RemoteException e) {
@@ -287,7 +288,6 @@ public class ServerPointer extends JFrame implements ActionListener {
         }
         if(e.getSource() == pulisci){
             hostName.setText("");
-            portNumber.setText("");
         }
     }
 }
