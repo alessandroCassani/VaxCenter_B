@@ -74,6 +74,10 @@ public class ServerPointer extends JFrame implements ActionListener {
      * Panel per inserire l'immagine nel titolo
      */
 
+    String a = hostName.getText().toString();
+
+    int b = Integer.parseInt(hostName.getText().toString());
+
     public ServerPointer(){
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
@@ -252,6 +256,7 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
     public static void connectToRMI()
     {
+
         try {
             ServerPointer.setRegistry(LocateRegistry.getRegistry("localhost",PORT));
             ServerPointer.setStub((ServerInterface) ServerPointer.getRegistry().lookup(SERVICE_NAME));
@@ -270,7 +275,7 @@ public class ServerPointer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == accedi) {
-            ServerPointer.connectToRMI();
+            //ServerPointer.connectToRMI();
             this.dispose();
             new WelcomeScreen();
 
