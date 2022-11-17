@@ -3,6 +3,8 @@ package UI;
 import UI.graphics.RoundJTextField;
 import database.RoundButton;
 import database.ServerInterface;
+import database.UILoginToServer;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -197,7 +199,6 @@ public class ServerPointer extends JFrame implements ActionListener {
     public static void main(String[] args)
     {
         new ServerPointer();
-        //ServerPointer.connectToRMI();
 
 
     }
@@ -268,6 +269,15 @@ public class ServerPointer extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == accedi) {
+            ServerPointer.connectToRMI();
+            this.dispose();
+            new WelcomeScreen();
 
+        }
+        if(e.getSource() == pulisci){
+            hostName.setText("");
+            portNumber.setText("");
+        }
     }
 }
