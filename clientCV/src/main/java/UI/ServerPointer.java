@@ -1,7 +1,11 @@
 package UI;
 
+import UI.graphics.RoundJTextField;
+import database.RoundButton;
 import database.ServerInterface;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.TextAttribute;
@@ -42,7 +46,84 @@ public class ServerPointer extends JFrame implements ActionListener {
 
     JLabel esci = new JLabel("Esci");
 
+    /**
+     * nome dell'host
+     */
+    RoundJTextField hostName = new RoundJTextField(30);
+
+    /**
+     * numero porta
+     */
+    RoundJTextField portNumber = new RoundJTextField(30);
+
+    /**
+     * bottone per l'avvio del processo di registrazione del vaccinato
+     */
+    RoundButton accedi = new RoundButton("ACCEDI");
+
+
+    /**
+     * bottone per pulire i campi d'inserimento per l'accesso al server
+     */
+    JButton pulisci;
+
+    JPanel immagine = new JPanel();
+    /**
+     * Panel per inserire l'immagine nel titolo
+     */
+
     public ServerPointer(){
+
+        Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
+
+        JLabel accediAlServer = new JLabel("Accedi al Server:");
+        accediAlServer.setFont(new Font("Georgia", Font.BOLD, 20));
+        add(accediAlServer).setBounds(130, 75, 200, 25);
+
+        immagine.setBounds(310, 55, 55, 55);
+        immagine.setBackground(new Color(181, 226, 232));
+        JLabel  lblPic = new JLabel();
+        lblPic.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/serverdb_login_client.png"))));
+        immagine.add(lblPic);
+
+
+        JLabel labelhost = new JLabel("Host:");
+        labelhost.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelhost).setBounds(130, 125, 100, 20);
+
+        hostName.setFont(new Font("Arial", Font.ITALIC, 20));
+        hostName.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        hostName.setPreferredSize(new Dimension(250, 50));
+        hostName.setBounds(120, 150, 250, 50);
+        hostName.setEchoChar((char) 0);
+
+        JLabel labelport = new JLabel("Porta:");
+        labelport.setFont(new Font("Georgia", Font.ITALIC, 17));
+        add(labelport).setBounds(130, 225, 100, 20);
+
+        portNumber.setFont(new Font("Arial", Font.ITALIC, 20));
+        portNumber.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(65, 102, 245)));
+        portNumber.setPreferredSize(new Dimension(250, 50));
+        portNumber.setBounds(120, 250, 250, 50);
+        portNumber.setEchoChar((char) 0);
+
+        accedi.setBounds(140, 350, 150, 50);
+        accedi.setFont(new Font("Georgia", Font.BOLD, 20));
+        accedi.setBackground(new Color(0,0,128));
+        accedi.setForeground(Color.WHITE);
+        accedi.setFocusable(false);
+        accedi.addActionListener(this);
+
+        ImageIcon pul = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/coloroPul50.png")));
+        pulisci = new JButton(pul);
+        pulisci.setBounds(300, 350, 50, 50);
+        pulisci.setFont(new Font("Georgia", Font.BOLD, 17));
+        pulisci.setBackground(new Color(181, 226, 232));
+        pulisci.setForeground(Color.WHITE);
+        pulisci.setBorder(bordobtnInd);
+        pulisci.setFocusable(false);
+        pulisci.addActionListener(this);
+        pulisci.setOpaque(true);
 
         //Label cliccabile che ti permette di uscire dal programma
 
@@ -84,9 +165,14 @@ public class ServerPointer extends JFrame implements ActionListener {
         setIconImage(logo.getImage());
 
         add(esci);
+        add(hostName);
+        add(portNumber);
+        add(accedi);
+        add(pulisci);
+        add(immagine);
 
 
-        setTitle("VaxCenter");
+        setTitle("Connessione Server");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize (500, 500);
         setLocationRelativeTo(null);
