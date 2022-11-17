@@ -258,7 +258,7 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
     public static void connectToRMI()
     {
-        host = hostName.getText();
+        host = hostName.getText().toString();
 
         try {
             ServerPointer.setRegistry(LocateRegistry.getRegistry(host, PORT));
