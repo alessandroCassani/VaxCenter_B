@@ -9,6 +9,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Objects;
 
 /**
  * Classe che permette la comunicazione con il server remoto
@@ -35,6 +36,13 @@ public class ServerPointer extends JFrame implements ActionListener {
     static ServerInterface stub;
 
     public ServerPointer(){
+
+
+        //Icona avvio del programma
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/logo.png")));
+        setIconImage(logo.getImage());
+
+
         setTitle("VaxCenter");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize (500, 500);
@@ -59,9 +67,9 @@ public class ServerPointer extends JFrame implements ActionListener {
     // Punto di avvio del client
     public static void main(String[] args)
     {
-
-        ServerPointer.connectToRMI();
         new ServerPointer();
+        //ServerPointer.connectToRMI();
+
 
     }
 
