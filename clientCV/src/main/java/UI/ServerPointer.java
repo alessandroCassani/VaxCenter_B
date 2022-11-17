@@ -76,9 +76,6 @@ public class ServerPointer extends JFrame implements ActionListener {
 
     static String host;
 
-    static Integer port;
-
-
     public ServerPointer(){
 
         Border bordobtnInd = new LineBorder(new Color(181, 226, 232), 2, true);
