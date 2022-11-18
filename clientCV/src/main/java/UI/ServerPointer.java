@@ -19,9 +19,10 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Classe che permette la comunicazione con il server remoto
+ * Classe che permette la comunicazione con il server remoto tramite interfaccia grafica
  *
  * @author Luca Perfetti
+ * @author Paolo Bruscagin
  */
 public class ServerPointer extends JFrame implements ActionListener {
     /**
@@ -75,6 +76,17 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
 
     static String host;
+    /**
+     * Nome del server sul quale si connetterà il client
+     */
+
+
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata d'inserimento dell'host
+     * per consentire al client di connettersi al server
+     *
+     * @author @Paolo Bruscagin
+     */
 
     public ServerPointer(){
 
@@ -274,6 +286,13 @@ public class ServerPointer extends JFrame implements ActionListener {
             System.out.println("Impossibile connettersi al server remoto");
         }
     }
+
+    /**
+     * metodo che permette di gestire gli eventi associati ai listener dei componenti di UI attivati dall'utente
+     * @param e the event to be processed
+     *
+     * @author Paolo Bruscagin
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
