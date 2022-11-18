@@ -6,7 +6,11 @@ import java.util.Objects;
 /**
  * La classe UISearchVaxCenterDialog permette di avere un prospetto riassuntivo del centro vaccinale selezionato
  *
- * @author Luca Perfetti
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class UISearchVaxCenterDialog extends javax.swing.JFrame{
 

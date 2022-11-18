@@ -5,7 +5,11 @@ import java.io.Serializable;
 /**
  * classe che gestisce le informazioni sul singolo sintomo segnalato
  *
- * @author  Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 
 public class Sintomo implements Serializable {

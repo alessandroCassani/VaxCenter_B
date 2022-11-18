@@ -22,9 +22,11 @@ import java.util.Objects;
 /**
  *  La classe UIRegisterVaxCenter crea l'interfaccia grafica dove l'operatore vaccinale è in gardo di inserire i dati di un nuovo centro vaccinale
  *
- * @author Paolo Bruscagin
- * @author Alessandro Cassani
- * @author Luca Perfetti
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 
 public class UIRegisterVaxCenter extends JFrame implements ActionListener {

@@ -12,7 +12,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 /**
  * La classe MyPwdField permette di definire il campo relativo allo username nel login
- @author Damiano Ficara
+ *
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class MyTextField extends JTextField {
 

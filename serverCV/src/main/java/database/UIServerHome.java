@@ -23,8 +23,11 @@ import java.util.Objects;
 /**
  * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
  *
- *  @author Alessandro Cassani
- *  @author Paolo Bruscagin
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class UIServerHome extends JFrame implements ActionListener {
 

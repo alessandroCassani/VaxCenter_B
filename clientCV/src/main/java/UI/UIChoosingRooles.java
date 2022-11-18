@@ -13,8 +13,11 @@ import java.util.Objects;
  * La classe UIChoosingRooles crea l'interfaccia grafica dove venegono presentate le due sezioni di funzionalita' fornite dal sistema, quella dedicata agli operatori
  * vaccinali e quella dedicata ai cittadini
  *
- * @author Paolo Bruscagin
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class UIChoosingRooles extends JFrame implements ActionListener {
 

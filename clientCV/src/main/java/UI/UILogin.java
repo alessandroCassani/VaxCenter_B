@@ -21,8 +21,11 @@ import java.util.Objects;
  *
  * Classe che permette al Cittadino di compiere il Login
  *
- * @author Damiano Ficara
- * @author Paolo Bruscagin
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class UILogin extends JFrame  {
 

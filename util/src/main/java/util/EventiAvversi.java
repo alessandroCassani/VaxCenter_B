@@ -6,7 +6,11 @@ import java.util.ArrayList;
 /**
  * classe che permette la gestione delle informazioni sugli eventi avversi registrati da un cittadino post vaccinazione
  *
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class EventiAvversi implements Serializable {
     /**

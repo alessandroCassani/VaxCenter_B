@@ -18,7 +18,12 @@ import javax.swing.Timer;
 
 /**
  * La classe CurvesPanel permette la creazione di un pannello con l'utilizzo di colori gradienti e animazioni visive della WelcomeScreen
- @author Damiano Ficara
+ *
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class CurvesPanel extends GradientPanel {
 

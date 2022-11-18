@@ -7,7 +7,11 @@ import java.awt.geom.RoundRectangle2D;
 /**
  * classe che permette la personalizzazione delle textField presenti nell'interfaccia grafica di tutto il sistema
  *
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class RoundJTextField extends JPasswordField {
     private Shape shape;

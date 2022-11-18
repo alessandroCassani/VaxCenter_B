@@ -27,8 +27,11 @@ import util.Cittadino;
 /**
  * La classe UICitizen crea l'interfaccia dove viene presentato il menu' di funzionalita' a cui l'utente cittadino puo' accedervi
  *
- * @author Paolo Bruscagin
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 
 public class UIRegisterCitizen extends JFrame implements ActionListener {

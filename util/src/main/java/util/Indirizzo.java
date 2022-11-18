@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 /**
  * classe che gestisce le informazioni componenti di un indirizzo
+ *
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class Indirizzo implements Serializable  {
 

@@ -35,7 +35,12 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 /**
  * La classe SearchField è responsabile della gestione grafica del campo di ricerca
- @author Damiano Ficara
+ *
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class SearchField extends JTextField {
 

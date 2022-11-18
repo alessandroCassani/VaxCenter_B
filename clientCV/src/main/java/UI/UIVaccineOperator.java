@@ -14,8 +14,11 @@ import java.util.Objects;
  * La classe UIVaccineOperator crea l'interfaccia dove l'operatore vaccinale sceglie se inserire
  * un nuovo centro vaccinale oppure se inserire un nuovo cittadino vaccinato
  *
- * @author Paolo Bruscagin
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 
 public class UIVaccineOperator extends JFrame implements ActionListener {

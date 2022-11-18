@@ -13,9 +13,11 @@ import java.util.Objects;
 /**
  * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al dataBase Postgres e alle funzionalita' del server
  *
- *  @author Alessandro Cassani
- *  @author Paolo Bruscagin
- *  @author Luca Perfetti
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class UILoginToServer extends JFrame implements ActionListener {
 
