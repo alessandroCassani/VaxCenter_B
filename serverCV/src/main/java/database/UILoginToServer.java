@@ -100,11 +100,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
      */
     JDialog checkServerDialog = new JDialog();
 
-    /**
-     * Avvio del programma Server
-     * @param args
-     * @author Paolo Bruscagin
-     */
 
     public static void main(String[] args) {
         new UILoginToServer();
