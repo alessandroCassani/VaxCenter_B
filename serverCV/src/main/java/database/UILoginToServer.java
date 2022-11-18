@@ -6,6 +6,9 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.font.TextAttribute;
+import java.rmi.Remote;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.Map;
 import java.util.Objects;
 
@@ -102,6 +105,8 @@ public class UILoginToServer extends JFrame implements ActionListener {
      * @param args
      * @author Paolo Bruscagin
      */
+
+
 
     public static void main(String[] args) {
         new UILoginToServer();

@@ -31,7 +31,7 @@ public class UIServerHome extends JFrame implements ActionListener {
     /**
      *  Oggetto che implementa l'interfaccia <code>database.ServerInterface</code> e si occupa delle operazioni dei client
      */
-    static ServerImpl server;
+    private static ServerImpl server;
 
     /**
      * Oggetto <code>Registry</code> che mette a disposizione metodi per le operazioni relative ai riferimenti degli oggetti remoti
@@ -273,6 +273,10 @@ public class UIServerHome extends JFrame implements ActionListener {
         }else{
             return true;
         }
+    }
+
+    public static ServerImpl getServer() {
+        return server;
     }
 }
 
