@@ -5,7 +5,7 @@
  * @author Damiano Ficara - Matricola 744958 - Sede: VA
  * @author Luca Perfetti - Matricola 746581 - Sede: VA
  *
- * il package "graphics" è una collezione di classi create per la gestione dell'interfaccia grafica
+ * il package "graphics" è una collezione di classi create per la gestione dell'interfaccia grafica utente
  *
  * @see graphics.CurvesPanel si occupa della creazione di un pannello con l'utilizzo di colori gradienti e
  * animazioni visive della WelcomeScreen

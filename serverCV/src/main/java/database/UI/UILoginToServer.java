@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al dataBase Postgres e alle funzionalita' del server
+ * classe che rappresenta l'interfaccia grafica nella quale inserire le credenziali per accedere al Database PostgreSQL e alle funzionalita' del server
  *
  * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
  * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA

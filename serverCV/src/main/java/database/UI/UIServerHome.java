@@ -19,7 +19,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Objects;
 
 /**
- * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostGre
+ * classe che rappresenta l'interfaccia grafica che permette di gestire l'attivazione e lo spegnimento del server PostgreSQL
  *
  * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
  * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
