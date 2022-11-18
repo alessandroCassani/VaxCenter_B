@@ -20,8 +20,11 @@ import java.util.Objects;
 /**
  * Classe che permette la comunicazione con il server remoto tramite interfaccia grafica
  *
- * @author Luca Perfetti
- * @author Paolo Bruscagin
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public class ServerPointer extends JFrame implements ActionListener {
     /**
