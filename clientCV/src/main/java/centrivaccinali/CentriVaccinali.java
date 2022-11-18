@@ -1,10 +1,8 @@
-package database;
-
-import database.UI.UILoginToServer;
+package centrivaccinali;
 
 /**
  *
- * La Classe "Server_CentriVaccinali" permette di avviare il programma Server
+ * La Classe "CentriVaccinali" permette di avviare il programma Client
  *
  * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
  * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
@@ -13,10 +11,11 @@ import database.UI.UILoginToServer;
  *
  */
 
-public class Server_CentriVaccinali {
+
+public class CentriVaccinali {
 
     /**
-     * Metodo che per mette di avviare il programma Server
+     * Metodo che per mette di avviare il programma Client
      * @param args
      *
      * @author Alessandro Cassani
@@ -26,8 +25,6 @@ public class Server_CentriVaccinali {
      *
      */
     public static void main (String[] args){
-        new UILoginToServer();
+        new ServerPointer();
     }
-
-
 }

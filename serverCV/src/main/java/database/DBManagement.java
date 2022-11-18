@@ -1,22 +1,12 @@
 package database;
 
-import database.UILoginToServer;
-import org.postgresql.util.PSQLException;
+import database.UI.UILoginToServer;
 
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
 import javax.swing.*;
 import java.io.*;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.sql.*;
-import java.util.Arrays;
-import java.util.Base64;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle
