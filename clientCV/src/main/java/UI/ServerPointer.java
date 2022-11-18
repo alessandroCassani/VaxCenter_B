@@ -210,22 +210,6 @@ public class ServerPointer extends JFrame implements ActionListener {
     }
 
     /**
-     * Metodo che per mette di avviare il programma
-     * @param args
-     *
-     * @author Luca Perfetti
-     * @author Paolo Bruscagin
-     *
-     */
-    // Punto di avvio del client
-    public static void main(String[] args)
-    {
-        new ServerPointer();
-
-
-    }
-
-    /**
      * Metodo che permette di ottenere un riferimento al registro sull'host corrente
      * @return l'oggetto registry
      *
