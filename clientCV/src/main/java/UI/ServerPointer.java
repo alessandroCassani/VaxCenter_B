@@ -4,7 +4,6 @@ import UI.graphics.RoundJTextField;
 import database.RoundButton;
 import database.ServerInterface;
 import database.UILoginToServer;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -212,6 +211,8 @@ public class ServerPointer extends JFrame implements ActionListener {
      * @param args
      *
      * @author Luca Perfetti
+     * @author Paolo Bruscagin
+     *
      */
     // Punto di avvio del client
     public static void main(String[] args)
