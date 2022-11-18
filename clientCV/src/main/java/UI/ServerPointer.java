@@ -251,7 +251,7 @@ public class ServerPointer extends JFrame implements ActionListener {
 
 
     /**
-     * Metodo che permette di inizializzare l'oggetto necessario alla comunicazione RMI
+     * Metodo che permette d'inizializzare l'oggetto necessario alla comunicazione RMI
      *
      * @author Luca Perfetti
      * @author Damiano Ficara
