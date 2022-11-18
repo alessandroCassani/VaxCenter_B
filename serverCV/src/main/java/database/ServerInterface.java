@@ -10,7 +10,11 @@ import java.util.LinkedList;
 /**
  * interfaccia dei metodi del server, che saranno utilizzati nel sistema distribuito tramite RMI
  *
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
  */
 public interface ServerInterface extends Remote {
 

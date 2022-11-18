@@ -7,7 +7,12 @@ import java.util.Date;
 /**
  * classe astratta che gestisce le informazioni comuni alle sottoclassi di oggetti di tipo "Vaccinato" e di tipo "Cittadino"
  *
- * @author Alessandro Cassani
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ *
+ *
  */
 public abstract class Persona implements Serializable {
     /**
