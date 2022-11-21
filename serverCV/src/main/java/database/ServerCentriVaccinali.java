@@ -13,7 +13,7 @@ import database.UI.UILoginToServer;
  *
  */
 
-public class Server_CentriVaccinali {
+public class ServerCentriVaccinali {
 
     /**
      * Metodo che per mette di avviare il programma Server

@@ -49,7 +49,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>database.Server_CentriVaccinali</mainClass>
+                            <mainClass>database.ServerCentriVaccinali</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

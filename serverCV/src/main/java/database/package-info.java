@@ -12,7 +12,7 @@
  *
  * @see database.DBManagement classe relativa alla gestione e creazione del DB.
  *
- * @see database.Server_CentriVaccinali classe dove è contenuto il main del programma lato server
+ * @see database.ServerCentriVaccinali classe dove è contenuto il main del programma lato server
  *
  * @see database.ServerImpl classe in cui sono contenute le implementazioni dei metodi che rappresentano le funzionalita' richieste dagli
  * utenti
