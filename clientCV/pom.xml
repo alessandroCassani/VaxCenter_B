@@ -48,7 +48,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>UI.ServerPointer</mainClass>
+                            <mainClass>clientCV/src/main/java/UI/ServerPointer.java</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

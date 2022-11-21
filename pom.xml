@@ -8,7 +8,6 @@
     <packaging>pom</packaging>
     <version>1.0</version>
 
-    <name>LAB B project</name>
     <description>Progetto universitario 2021/2022</description>
 
     <modules>

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="maven check">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="pom principale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/util/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,16 +69,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/damia/Desktop/Progetti/VaxCenter_B",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/damia/Desktop/Progetti/VaxCenter_B&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -100,7 +99,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerPointer">
+  <component name="RunManager" selected="Application.UILoginToServer">
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
@@ -182,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.UILoginToServer" />
+        <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISearchVaxCenterDialog" />
         <item itemvalue="Application.Test" />
@@ -243,21 +242,9 @@
       <workItem from="1668630119149" duration="3410000" />
       <workItem from="1668695494019" duration="14000" />
       <workItem from="1668773254912" duration="249000" />
-      <workItem from="1669040685653" duration="2289000" />
-    </task>
-    <task id="LOCAL-00056" summary="Aggiunta tabella visualizzazione">
-      <created>1664737081601</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1664737081601</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Aggiunta panel&#10;e resize generale">
-      <created>1664741362397</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1664741362397</updated>
+      <workItem from="1669040685653" duration="2970000" />
+      <workItem from="1669048539286" duration="1605000" />
+      <workItem from="1669050565927" duration="1200000" />
     </task>
     <task id="LOCAL-00058" summary="Impostazione tabella e risoluzione problemi grafici">
       <created>1664742799483</created>
@@ -588,7 +575,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668632536553</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="maven complete">
+      <created>1669043263201</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1669043263204</updated>
+    </task>
+    <task id="LOCAL-00106" summary="pom principale">
+      <created>1669043333084</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1669043333084</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,8 +619,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checkData doc" />
-    <MESSAGE value="modifica JComboBox" />
     <MESSAGE value="checkPassword" />
     <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
     <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
@@ -643,7 +642,9 @@
     <MESSAGE value="javadoc SearchField" />
     <MESSAGE value="modifiche pom" />
     <MESSAGE value="maven check" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven check" />
+    <MESSAGE value="maven complete" />
+    <MESSAGE value="pom principale" />
+    <option name="LAST_COMMIT_MESSAGE" value="pom principale" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

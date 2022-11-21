@@ -49,7 +49,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>database.UILoginToServer</mainClass>
+                            <mainClass>database.UILoginToServer.java</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
