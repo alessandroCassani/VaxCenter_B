@@ -48,7 +48,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>UI.ServerPointer</mainClass>
+                            <mainClass>centrivaccinali.CentriVaccinali</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
