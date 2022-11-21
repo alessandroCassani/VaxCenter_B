@@ -1,8 +1,8 @@
 /**
- *  * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
- *  * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
- *  * @author Damiano Ficara - Matricola 744958 - Sede: VA
- *  * @author Luca Perfetti - Matricola 746581 - Sede: VA
+ * @author Alessandro Cassani - Matricola: 744512 - Sede: VA
+ * @author Paolo Bruscagin - Matricola: 744703 - Sede: VA
+ * @author Damiano Ficara - Matricola 744958 - Sede: VA
+ * @author Luca Perfetti - Matricola 746581 - Sede: VA
  *
  * il package "centrivaccinali" e' una collezione di classi che permettono la creazione della GUI
  * relativa all'operatore vaccinale, inoltre e' presente il punto di avvio (main) dell'applicazione lato client
