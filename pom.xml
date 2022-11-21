@@ -2,30 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>VaxCenter</artifactId>
-        <groupId>it.uninsubria</groupId>
-        <version>1.0</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>it.uninsubria</groupId>
-    <artifactId>util</artifactId>
+    <artifactId>VaxCenter</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+
+    <description>Progetto universitario 2021/2022</description>
+
+    <modules>
+        <module>clientCV</module>
+        <module>serverCV</module>
+        <module>util</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.4.1</version>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>

@@ -11,5 +11,9 @@
         <module name="clientCV" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="clientCV (1)" target="16" />
+      <module name="vax-centers" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
