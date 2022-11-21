@@ -11,7 +11,7 @@
 
     <groupId>it.uninsubria</groupId>
     <artifactId>util</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
