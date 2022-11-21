@@ -252,7 +252,7 @@ public class UIServerHome extends JFrame implements ActionListener {
             //Popup inserimento data set
             UIManager.put("OptionPane.yesButtonText", "Si");
             UIManager.put("OptionPane.noButtonText", "No");
-                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro voler generare un Data Set?",
+                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro voler generare un Data Set? Tutti i dati verranno persi",
                             "Inserimento Data Set", JOptionPane.YES_NO_OPTION);
 
                     if (resp == JOptionPane.YES_OPTION) {
