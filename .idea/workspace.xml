@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="pom principale">
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="correzione bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverCV/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,22 +98,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UILoginToServer">
+  <component name="RunManager">
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
-      <module name="clientCV" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.Test" />
       <module name="clientCV" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +159,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.UISearchVaxCenterDialog" />
       <item itemvalue="Application.ServerPointer" />
       <item itemvalue="Application.UILoginToServer" />
@@ -185,7 +170,6 @@
         <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.WelcomeScreen" />
         <item itemvalue="Application.UISearchVaxCenterDialog" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -244,14 +228,7 @@
       <workItem from="1668773254912" duration="249000" />
       <workItem from="1669040685653" duration="2970000" />
       <workItem from="1669048539286" duration="1605000" />
-      <workItem from="1669050565927" duration="1200000" />
-    </task>
-    <task id="LOCAL-00058" summary="Impostazione tabella e risoluzione problemi grafici">
-      <created>1664742799483</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1664742799483</updated>
+      <workItem from="1669050565927" duration="2251000" />
     </task>
     <task id="LOCAL-00059" summary="bug fixed">
       <created>1664744379344</created>
@@ -589,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669043333084</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="correzione bug">
+      <created>1669051810066</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1669051810067</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checkPassword" />
     <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
     <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
     <MESSAGE value="aggiunta immagine" />
@@ -644,7 +627,8 @@
     <MESSAGE value="maven check" />
     <MESSAGE value="maven complete" />
     <MESSAGE value="pom principale" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom principale" />
+    <MESSAGE value="correzione bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="correzione bug" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
