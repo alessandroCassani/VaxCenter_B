@@ -5,7 +5,7 @@
  * @author Damiano Ficara - Matricola 744958 - Sede: VA
  * @author Luca Perfetti - Matricola 746581 - Sede: VA
  *
- * il package "UI" è una collezione di classi create per gestire l'interfaccia grafica del server
+ * il package "UI" e' una collezione di classi create per gestire l'interfaccia grafica del server
  *
  * @see database.UI.RoundButton si occupa di disegnare i bottoni con uno stile circolare
  *
