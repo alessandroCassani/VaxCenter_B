@@ -35,6 +35,7 @@ public class RoundButton extends JButton {
     }
     /**
      * metodo che consente di impostare il colore di effetto della pressione del bottone
+     * @param effectColor colore in uso
      * @author Damiano Ficara
      */
 
@@ -220,6 +221,7 @@ public class RoundButton extends JButton {
      * @param ic immagine in ingresso
      * @param x cordinata relativa alle ascisse
      * @param y cordinata relativa alle ordinate
+     * @return immagine ridimensionata
      * @author Damiano Ficara
      */
     public ImageIcon resizeImage(ImageIcon ic, int x, int y) {
