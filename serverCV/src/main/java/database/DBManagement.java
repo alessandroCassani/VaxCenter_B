@@ -229,11 +229,11 @@ public class DBManagement {
     }
 
     public static void insertDataSetTest() throws SQLException{
-        Statement preparedStatement =connection.createStatement();
-        String query = "DELETE FROM centri_vaccinali;"
-                + "DELETE FROM eventi_avversi;"
-                + "DELETE FROM cittadini;"
-                + "DELETE FROM vaccinati;"
+        PreparedStatement ps = DBManagement.getDB().connection.prepareStatement(
+                "DELETE FROM eventi_avversi;"
+                        + "DELETE FROM vaccinati;"
+                        + "DELETE FROM cittadini;"
+                        +"DELETE FROM centri_vaccinali;"
 
                 + "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
                 "values('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21049, 'OSPEDALIERO');\n" +
@@ -346,8 +346,8 @@ public class DBManagement {
                 "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
                 " values('RRIVA', 4, 5, 2, 1, 0, 0, 'DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE');\n" +
                 "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('FCOLOMBO', 3, 4, 2, 0, 5, 5, 'SENSO DI NAUSEA');";
-
-        preparedStatement.executeUpdate(query);
+                " values('FCOLOMBO', 3, 4, 2, 0, 5, 5, 'SENSO DI NAUSEA');");
+        ps.executeUpdate();
+        ps.close();
     }
 }
