@@ -25,7 +25,6 @@ public class InfoSearch {
     /**
      * metodo che consente di impostare il nome dell'oggetto InfoSearch
      * @param name nome dell'oggetto in uso
-     * @return nuovo nome oggetto di ricerca
      * @author Damiano Ficara
      */
     public void setName(String name) {
@@ -33,7 +32,7 @@ public class InfoSearch {
     }
 
     /**
-     * metodo che consente di ottenre l'icona impostata nell'oggetto InfoSearch
+     * metodo che consente di ottenere l'icona impostata nell'oggetto InfoSearch
      * @return icona impostata
      * @author Damiano Ficara
      */
@@ -44,8 +43,7 @@ public class InfoSearch {
 
     /**
      * metodo che consente di impostare l'icona nell'oggetto InfoSearch
-     *
-     * @return nuova icona impostata
+     * @param icon icona attualmente in uso
      * @author Damiano Ficara
      */
 
