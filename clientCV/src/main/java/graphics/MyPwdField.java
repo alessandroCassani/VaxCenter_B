@@ -34,7 +34,7 @@ public class MyPwdField extends JPasswordField {
 
     /**
      * metodo che consente di impostare il suggerimento circa il valore da inserire
-     * @return nuovo suggerimento del campo
+     * @param hint suggerimento in uso
      * @author Damiano Ficara
      */
     public void setHint(String hint) {
@@ -52,7 +52,7 @@ public class MyPwdField extends JPasswordField {
 
     /**
      * metodo che consente di impostare l'icona di riferimento del campo e impostare i bordi con uno stile prioritario
-     * @return icona del campo
+     * @param prefixIcon icona del campo in uso
      * @author Damiano Ficara
      */
     public void setPrefixIcon(Icon prefixIcon) {
