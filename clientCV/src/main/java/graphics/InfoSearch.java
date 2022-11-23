@@ -50,6 +50,8 @@ public class InfoSearch {
     public void setIcon(Icon icon) {
         this.icon = icon;
     }
+
+
     /**
      * costruttore che inizializza i valori dell'oggetto InfoSearch
      * @author Damiano Ficara

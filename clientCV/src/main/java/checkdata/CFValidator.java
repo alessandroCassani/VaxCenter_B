@@ -19,6 +19,9 @@ public class CFValidator {
 
     private static final String CF_PATTERN = "^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$";
 
+    /**
+     * Metodo che permette la validazione del il codice fiscale
+     */
     public CFValidator() {
         pattern = Pattern.compile(CF_PATTERN);
     }

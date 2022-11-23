@@ -72,22 +72,23 @@ public class ServerPointer extends JFrame implements ActionListener {
      */
     JButton pulisci;
 
-    JPanel immagine = new JPanel();
     /**
      * Panel per inserire l'immagine nel titolo
      */
+    JPanel immagine = new JPanel();
 
-    static String host;
     /**
      * Nome del server sul quale si connetterà il client
      */
+    static String host;
+
 
 
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata d'inserimento dell'host
      * per consentire al client di connettersi al server
      *
-     * @author @Paolo Bruscagin
+     * @author Paolo Bruscagin
      */
 
     public ServerPointer(){

@@ -257,8 +257,9 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     /**
      * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata degli eventi avversi del cittadino
-     *
+     * @param username paramtetro per far ritornare il riepilogo dati
      * @author Paolo Bruscagin
+     * @throws RemoteException eccezione database
      */
     public UIAdverseEvent(String username) throws RemoteException {
 

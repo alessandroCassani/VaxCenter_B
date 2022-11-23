@@ -10,6 +10,10 @@ package checkdata;
  *
  * */
 public class IdValidator {
+
+    /**
+     * Metodo che permette la validazione dell'Id
+     */
     public IdValidator(){}
 
     /**

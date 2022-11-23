@@ -10,13 +10,13 @@ package centrivaccinali;
  * @author Luca Perfetti - Matricola 746581 - Sede: VA
  *
  */
-
-
 public class CentriVaccinali {
+
+
 
     /**
      * Metodo che per mette di avviare il programma Client
-     * @param args
+     * @param args argomento
      *
      * @author Alessandro Cassani
      * @author Paolo Bruscagin

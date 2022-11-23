@@ -17,7 +17,7 @@ public class ServerCentriVaccinali {
 
     /**
      * Metodo che per mette di avviare il programma Server
-     * @param args
+     * @param args argomento
      *
      * @author Alessandro Cassani
      * @author Paolo Bruscagin

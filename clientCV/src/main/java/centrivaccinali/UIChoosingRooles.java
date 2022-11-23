@@ -47,7 +47,7 @@ public class UIChoosingRooles extends JFrame implements ActionListener {
     /**
      * costruttore che permette il caricamento dei componenti d'interfaccia grafica della schermata di scelta della tipologia di utente
      *
-     * @author @Paolo Bruscagin
+     * @author Paolo Bruscagin
      * @author Alessandro Cassani
      */
 

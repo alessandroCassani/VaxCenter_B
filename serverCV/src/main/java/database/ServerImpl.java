@@ -174,7 +174,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * il metodo permette di controllare se il cittadino ha un account oppure no
      * @param user account del cittadino
      * @return true/false in base all'esito dell'operazione
-     * @throws RemoteException
+     * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */

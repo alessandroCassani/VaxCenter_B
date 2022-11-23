@@ -33,6 +33,7 @@ public interface ServerInterface extends Remote {
      * @param cittadino cittadino
      * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
+     * @throws SQLException eccezione database
      *
      *  @author Alessandro Cassani
      */

@@ -25,6 +25,10 @@ public class WelcomeScreen extends JFrame {
      */
 
     Timer timer;
+
+    /**
+     * costruttore che permette il caricamento dei componenti d'interfaccia grafica
+     */
     public WelcomeScreen() {
         displayWelcomeScreen();
     }

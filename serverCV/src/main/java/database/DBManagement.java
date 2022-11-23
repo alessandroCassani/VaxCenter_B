@@ -19,6 +19,8 @@ import java.sql.*;
  */
 
 public class DBManagement {
+
+
     /**
      * Nome del database
      */
@@ -228,6 +230,11 @@ public class DBManagement {
         }catch(Exception e){e.printStackTrace();}
     }
 
+    /**
+     * il metodo permette d'inserire il dataSet di test
+     *
+     * @author Luca Perfetti
+     */
     public static void insertTestDataSet() throws SQLException{
         PreparedStatement ps = DBManagement.getDB().connection.prepareStatement(
                 "DELETE FROM eventi_avversi;"
