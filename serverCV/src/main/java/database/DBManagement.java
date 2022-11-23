@@ -228,7 +228,7 @@ public class DBManagement {
         }catch(Exception e){e.printStackTrace();}
     }
 
-    public static void insertDataSetTest() throws SQLException{
+    public static void insertTestDataSet() throws SQLException{
         PreparedStatement ps = DBManagement.getDB().connection.prepareStatement(
                 "DELETE FROM eventi_avversi;"
                         + "DELETE FROM vaccinati;"

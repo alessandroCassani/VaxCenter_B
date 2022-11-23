@@ -257,7 +257,7 @@ public class UIServerHome extends JFrame implements ActionListener {
 
                     if (resp == JOptionPane.YES_OPTION) {
                         try {
-                            DBManagement.insertDataSetTest();
+                            DBManagement.insertTestDataSet();
                             JOptionPane.showMessageDialog(null, "Data Set generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
                         } catch (SQLException ex) {
                             JOptionPane.showMessageDialog(null, "Errore nella generazione del Data Set!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
