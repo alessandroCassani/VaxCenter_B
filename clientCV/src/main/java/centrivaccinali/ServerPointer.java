@@ -1,7 +1,7 @@
 package centrivaccinali;
 
 import graphics.RoundJTextField;
-import database.UI.RoundButton;
+import graphics.RoundButton;
 import database.ServerInterface;
 
 import javax.swing.*;
