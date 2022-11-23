@@ -17,7 +17,7 @@ import checkdata.CFValidator;
 import checkdata.IdValidator;
 import checkdata.PasswordValidator;
 import centrivaccinali.ServerPointer;
-import database.UI.RoundButton;
+import graphics.RoundButton;
 import graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import util.Account;
