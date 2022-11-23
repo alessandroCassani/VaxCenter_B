@@ -250,7 +250,16 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      */
     JLabel severitaEA6 = new JLabel("Severità");
 
+    /**
+     * Stringa statica per l'inserimento dello user
+     */
     static String user;
+
+    /**
+     * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata degli eventi avversi del cittadino
+     *
+     * @author Paolo Bruscagin
+     */
     public UIAdverseEvent(String username) throws RemoteException {
 
 
