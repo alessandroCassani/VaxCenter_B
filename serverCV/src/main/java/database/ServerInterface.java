@@ -23,6 +23,7 @@ public interface ServerInterface extends Remote {
      * @param centroVaccinale centro vaccinale
      * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
+     * @throws SQLException eccezione sql
      *
      *  @author Alessandro Cassani
      */
@@ -37,7 +38,7 @@ public interface ServerInterface extends Remote {
      *
      *  @author Alessandro Cassani
      */
-    boolean registraCittadino(Cittadino cittadino) throws RemoteException;
+    boolean registraCittadino(Cittadino cittadino) throws RemoteException,SQLException;
 
     /**
      * segnatura del metodo che permette la registrazione di un vaccinato
@@ -53,6 +54,7 @@ public interface ServerInterface extends Remote {
     /**
      * segbatura del metodo che permette la registrazione di una serie di eventi avversi segnalatyi dal cittadino registrato
      * @param eventiAvversi serie di eventi avversi segnalati
+     * @param user utente collegato
      * @return true o false, in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
@@ -134,7 +136,7 @@ public interface ServerInterface extends Remote {
 
     /**
      * segnatura del metodo che permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
-     *
+     * @param nomeCentroVaccinale nome del centro vaccinale di cui si vuole conoscere il prospetto
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
      * @author Alessandro cassani

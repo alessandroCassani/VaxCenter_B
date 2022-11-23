@@ -15,8 +15,8 @@ public class InfoSearch {
 
     /**
      * metodo che consente di ottenere il nome dell'oggetto InfoSearch
-     * @author Damiano Ficara
      * @return nome oggetto di ricerca
+     * @author Damiano Ficara
      */
     public String getName() {
         return name;
@@ -24,17 +24,17 @@ public class InfoSearch {
 
     /**
      * metodo che consente di impostare il nome dell'oggetto InfoSearch
+     * @param name nome dell'oggetto in uso
      * @author Damiano Ficara
-     * @return nuovo nome oggetto di ricerca
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * metodo che consente di ottenre l'icona impostata nell'oggetto InfoSearch
-     * @author Damiano Ficara
+     * metodo che consente di ottenere l'icona impostata nell'oggetto InfoSearch
      * @return icona impostata
+     * @author Damiano Ficara
      */
 
     public Icon getIcon() {
@@ -43,8 +43,8 @@ public class InfoSearch {
 
     /**
      * metodo che consente di impostare l'icona nell'oggetto InfoSearch
+     * @param icon icona attualmente in uso
      * @author Damiano Ficara
-     * @return nuova icona impostata
      */
 
     public void setIcon(Icon icon) {
@@ -54,6 +54,8 @@ public class InfoSearch {
 
     /**
      * costruttore che inizializza i valori dell'oggetto InfoSearch
+     * @param name nome tipologia ricerca
+     * @param icon icona della tipologia di ricerca
      * @author Damiano Ficara
      */
 

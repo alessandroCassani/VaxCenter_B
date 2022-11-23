@@ -1,7 +1,7 @@
 package centrivaccinali;
 
 import database.CapProvincia;
-import database.UI.RoundButton;
+import graphics.RoundButton;
 import graphics.RoundJTextField;
 import util.CentroVaccinale;
 import util.Qualificatore;

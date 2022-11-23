@@ -30,6 +30,8 @@ public class GradientPanel extends JPanel {
 
     /**
      * Costruttore responsabile dell'inizializzazione dei colori
+     * @param gradientStart colore primario
+     * @param gradientEnd colore secondario
      * @author Damiano Ficara
      */
     public GradientPanel(Color gradientStart, Color gradientEnd) {

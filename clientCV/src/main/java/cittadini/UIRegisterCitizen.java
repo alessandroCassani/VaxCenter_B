@@ -10,6 +10,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 import checkdata.EmailValidator;
@@ -17,7 +18,7 @@ import checkdata.CFValidator;
 import checkdata.IdValidator;
 import checkdata.PasswordValidator;
 import centrivaccinali.ServerPointer;
-import database.UI.RoundButton;
+import graphics.RoundButton;
 import graphics.RoundJTextField;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 import util.Account;
@@ -349,7 +350,7 @@ public class UIRegisterCitizen extends JFrame implements ActionListener {
             ServerPointer.getStub().registraCittadino(new Cittadino(
                     name,surname,cf,mail,new BigInteger(ID),nomeCentro,new Account(userid,pwd)));
             return true;
-        } catch (RemoteException ex) {
+        } catch (RemoteException | SQLException ex) {
             return false;
         }
     }
