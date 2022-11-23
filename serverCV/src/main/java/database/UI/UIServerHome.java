@@ -1,5 +1,6 @@
 package database.UI;
 
+import database.DBManagement;
 import database.ServerImpl;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.ExportException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.Objects;
 
 /**
@@ -250,11 +252,17 @@ public class UIServerHome extends JFrame implements ActionListener {
             //Popup inserimento data set
             UIManager.put("OptionPane.yesButtonText", "Si");
             UIManager.put("OptionPane.noButtonText", "No");
-                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro voler generare un Data Set?",
+                    int resp = JOptionPane.showConfirmDialog(null, "Sei sicuro voler generare un Data Set? Tutti i dati verranno persi",
                             "Inserimento Data Set", JOptionPane.YES_NO_OPTION);
 
                     if (resp == JOptionPane.YES_OPTION) {
-                        JOptionPane.showMessageDialog(null, "Data Set generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                        try {
+                            DBManagement.insertTestDataSet();
+                            JOptionPane.showMessageDialog(null, "Data Set generato con successo!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                        } catch (SQLException ex) {
+                            JOptionPane.showMessageDialog(null, "Errore nella generazione del Data Set!", "Messaggio",JOptionPane.INFORMATION_MESSAGE);
+                            throw new RuntimeException(ex);
+                        }
                     } else {
                         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                     }
