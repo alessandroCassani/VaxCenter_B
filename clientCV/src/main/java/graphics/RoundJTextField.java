@@ -14,6 +14,9 @@ import java.awt.geom.RoundRectangle2D;
  *
  */
 public class RoundJTextField extends JPasswordField {
+    /**
+     * Variabile responsabile della gestione della forma in uso
+     */
     private Shape shape;
 
     /**

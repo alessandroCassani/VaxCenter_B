@@ -53,7 +53,7 @@ public class SearchField extends JTextField {
 
     /**
      * metodo che consente di impostare il suggerimento del campo di ricerca
-     * @return stringa rappresentante il nuovo suggerimento
+     * @param hint suggerimento in uso
      * @author Damiano Ficara
      */
     public void setHint(String hint) {
@@ -72,7 +72,7 @@ public class SearchField extends JTextField {
 
     /**
      * metodo che consente di impostare il primo colore di sovrapposizione
-     * @return nuovo colore di sovrapposizione
+     * @param colorOverlay1 colore primario in uso
      * @author Damiano Ficara
      */
     public void setColorOverlay1(Color colorOverlay1) {
@@ -90,7 +90,7 @@ public class SearchField extends JTextField {
 
     /**
      * metodo che consente di impostare il secondo colore di sovrapposizione
-     * @return nuovo colore di sovrapposizione
+     * @param colorOverlay2 colore secondario di sovrapposizione in uso
      * @author Damiano Ficara
      */
     public void setColorOverlay2(Color colorOverlay2) {
@@ -210,7 +210,8 @@ public class SearchField extends JTextField {
         initAnimator();
     }
     /**
-     * metono che permette di aggiungere un'opzione di ricerca
+     * metodo che permette di aggiungere un'opzione di ricerca
+     * @param option opzione di ricerca da aggiungere
      * @author Damiano Ficara
      */
     public void addOption(InfoSearch option) {
@@ -223,6 +224,7 @@ public class SearchField extends JTextField {
 
     /**
      * metono che permette di aggiungere le specifiche di un tipo di ricerca
+     * @param event <code>InfoSearchEvent</code> da aggiungere
      * @author Damiano Ficara
      */
     public void addEventOptionSelected(InfoSearchEvent event) {
@@ -252,7 +254,8 @@ public class SearchField extends JTextField {
     }
 
     /**
-     * metono che permette evidenziare la ricerca selezionata
+     * metodo che permette di evidenziare la ricerca selezionata
+     * @param index indice da selezionare
      * @author Damiano Ficara
      */
     public void setSelectedIndex(int index) {
