@@ -28,7 +28,7 @@ import java.util.TreeSet;
  */
 public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
-    private static final String SECRETKEY = "MksoYbsdkyHos78";
+    static final String SECRETKEY = "MksoYbsdkyHos78";
 
     private static SecretKeySpec secretKey;
 
@@ -603,7 +603,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      *
      * @author Alessandro Cassani
      */
-    private static String idPadding(BigInteger id){
+    static String idPadding(BigInteger id){
         String str = String.valueOf(id);
         switch (str.length()){
             case 1: str = "000000000000000" + str;
