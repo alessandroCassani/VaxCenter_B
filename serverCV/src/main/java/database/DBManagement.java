@@ -152,15 +152,15 @@ public class DBManagement {
 
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome_centro_vaccinale VARCHAR(50),"
-                    + "nome VARCHAR(50),"
-                    + "cognome VARCHAR(50),"
-                    + "codice_fiscale VARCHAR(50),"
+                    + "nome_centro_vaccinale VARCHAR(150),"
+                    + "nome VARCHAR(150),"
+                    + "cognome VARCHAR(150),"
+                    + "codice_fiscale VARCHAR(150),"
                     + "data_vaccino VARCHAR(40),"
-                    + "tipo_vaccino VARCHAR(50));"
+                    + "tipo_vaccino VARCHAR(150));"
 
                     + "create table if not exists centri_vaccinali("
-                    + "nome_centro_vaccinale VARCHAR(50) PRIMARY KEY,"
+                    + "nome_centro_vaccinale VARCHAR(150) PRIMARY KEY,"
                     + "qualificatore VARCHAR(7),"
                     + "nome_via VARCHAR(30),"
                     + "civico VARCHAR(6),"
@@ -171,16 +171,16 @@ public class DBManagement {
 
                     + "create table if not exists cittadini("
                     + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome VARCHAR(50),"
-                    + "cognome VARCHAR(50),"
-                    + "codice_fiscale VARCHAR(50),"
-                    + "email VARCHAR(50),"
-                    + "username VARCHAR(50),"
+                    + "nome VARCHAR(150),"
+                    + "cognome VARCHAR(150),"
+                    + "codice_fiscale VARCHAR(150),"
+                    + "email VARCHAR(150),"
+                    + "username VARCHAR(150),"
                     + "password VARCHAR(150),"
-                    + "nome_centro_vaccinale VARCHAR(50) REFERENCES centri_vaccinali);"
+                    + "nome_centro_vaccinale VARCHAR(150) REFERENCES centri_vaccinali);"
 
                     + "create table if not exists eventi_avversi("
-                    + "username VARCHAR(50) PRIMARY KEY,"
+                    + "username VARCHAR(150) PRIMARY KEY,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "tachicardia INTEGER,"
@@ -190,7 +190,7 @@ public class DBManagement {
                     + "note VARCHAR(256));"
 
                     +"create table if not exists dataset_comuni("
-                    +"comune VARCHAR(40) PRIMARY KEY,"
+                    +"comune VARCHAR(140) PRIMARY KEY,"
                     +"provincia VARCHAR(2),"
                     +"cap INTEGER,"
                     +"regione VARCHAR(21));";
@@ -614,20 +614,284 @@ public class DBManagement {
         psV15.setString(6,encrypt(String.valueOf(24-11-2022),SECRETKEY));
         psV15.setString(7,encrypt("MODERNA",SECRETKEY));
 
-
-        PreparedStatement psE1 = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+        PreparedStatement psE1 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                 " VALUES (?,?,?,?,?,?,?,?)");
-        ps5.setString(1,encrypt("LucaP",SECRETKEY));
-        ps5.setInt(2, 5);
-        ps5.setInt(3, 4);
-        ps5.setInt(4, 2);
-        ps5.setInt(5, 0);
-        ps5.setInt(6, 2);
-        ps5.setInt(7, 3);
-        ps5.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+        psE1.setString(1,encrypt("Alemulino",SECRETKEY));
+        psE1.setInt(2, 0);
+        psE1.setInt(3, 2);
+        psE1.setInt(4, 4);
+        psE1.setInt(5, 5);
+        psE1.setInt(6, 2);
+        psE1.setInt(7, 5);
+        psE1.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+
+        PreparedStatement psE2 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE2.setString(1,encrypt("GianlucaLe",SECRETKEY));
+        psE2.setInt(2, 2);
+        psE2.setInt(3, 5);
+        psE2.setInt(4, 3);
+        psE2.setInt(5, 2);
+        psE2.setInt(6, 3);
+        psE2.setInt(7, 4);
+        psE2.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
+
+        PreparedStatement psE3 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE3.setString(1,encrypt("MarcoB",SECRETKEY));
+        psE3.setInt(2, 4);
+        psE3.setInt(3, 4);
+        psE3.setInt(4, 2);
+        psE3.setInt(5, 1);
+        psE3.setInt(6, 4);
+        psE3.setInt(7, 3);
+        psE3.setString(8, encrypt("SENSO DI VOMITO",SECRETKEY));
+
+        PreparedStatement psE4 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE4.setString(1,encrypt("MariaR",SECRETKEY));
+        psE4.setInt(2, 3);
+        psE4.setInt(3, 4);
+        psE4.setInt(4, 1);
+        psE4.setInt(5, 1);
+        psE4.setInt(6, 1);
+        psE4.setInt(7, 2);
+        psE4.setString(8, encrypt("STANCHEZZA",SECRETKEY));
+
+        PreparedStatement psE5 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE5.setString(1,encrypt("AnnaG",SECRETKEY));
+        psE5.setInt(2, 0);
+        psE5.setInt(3, 1);
+        psE5.setInt(4, 0);
+        psE5.setInt(5, 3);
+        psE5.setInt(6, 0);
+        psE5.setInt(7, 1);
+        psE5.setString(8, encrypt("DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+
+        PreparedStatement psE6 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE6.setString(1,encrypt("PaoloB",SECRETKEY));
+        psE6.setInt(2, 1);
+        psE6.setInt(3, 3);
+        psE6.setInt(4, 4);
+        psE6.setInt(5, 1);
+        psE6.setInt(6, 1);
+        psE6.setInt(7, 0);
+        psE6.setString(8, encrypt("BATTITO CARDIACO FORTE",SECRETKEY));
+
+        PreparedStatement psE7 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE7.setString(1,encrypt("MirkoB",SECRETKEY));
+        psE7.setInt(2, 1);
+        psE7.setInt(3, 5);
+        psE7.setInt(4, 2);
+        psE7.setInt(5, 2);
+        psE7.setInt(6, 4);
+        psE7.setInt(7, 3);
+        psE7.setString(8, encrypt("SENSO DI NAUSEA",SECRETKEY));
+
+        PreparedStatement psE8 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE8.setString(1,encrypt("SamueleI",SECRETKEY));
+        psE8.setInt(2, 2);
+        psE8.setInt(3, 5);
+        psE8.setInt(4, 3);
+        psE8.setInt(5, 5);
+        psE8.setInt(6, 2);
+        psE8.setInt(7, 2);
+        psE8.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
+
+        PreparedStatement psE9 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE9.setString(1,encrypt("AntonioB",SECRETKEY));
+        psE9.setInt(2, 5);
+        psE9.setInt(3, 4);
+        psE9.setInt(4, 5);
+        psE9.setInt(5, 4);
+        psE9.setInt(6, 4);
+        psE9.setInt(7, 3);
+        psE9.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+
+        PreparedStatement psE10 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE10.setString(1,encrypt("AleDelPiero",SECRETKEY));
+        psE10.setInt(2, 3);
+        psE10.setInt(3, 1);
+        psE10.setInt(4, 0);
+        psE10.setInt(5, 2);
+        psE10.setInt(6, 2);
+        psE10.setInt(7, 5);
+        psE10.setString(8, encrypt("SENSO DI VOMITO",SECRETKEY));
+
+        PreparedStatement psE11 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE11.setString(1,encrypt("AndreaV",SECRETKEY));
+        psE11.setInt(2, 1);
+        psE11.setInt(3, 2);
+        psE11.setInt(4, 5);
+        psE11.setInt(5, 1);
+        psE11.setInt(6, 5);
+        psE11.setInt(7, 1);
+        psE11.setString(8, encrypt("BRIVIDI",SECRETKEY));
+
+        PreparedStatement psE12 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE12.setString(1,encrypt("LucaT",SECRETKEY));
+        psE12.setInt(2, 0);
+        psE12.setInt(3, 5);
+        psE12.setInt(4, 4);
+        psE12.setInt(5, 5);
+        psE12.setInt(6, 5);
+        psE12.setInt(7, 0);
+        psE12.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
+
+        PreparedStatement psE13 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE13.setString(1,encrypt("ElisaAnelli",SECRETKEY));
+        psE13.setInt(2, 2);
+        psE13.setInt(3, 3);
+        psE13.setInt(4, 4);
+        psE13.setInt(5, 0);
+        psE13.setInt(6, 1);
+        psE13.setInt(7, 3);
+        psE13.setString(8, encrypt("STANCHEZZA",SECRETKEY));
+
+        PreparedStatement psE14 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE14.setString(1,encrypt("RobyRiva",SECRETKEY));
+        psE14.setInt(2, 4);
+        psE14.setInt(3, 5);
+        psE14.setInt(4, 2);
+        psE14.setInt(5, 1);
+        psE14.setInt(6, 0);
+        psE14.setInt(7, 0);
+        psE14.setString(8, encrypt("DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+
+        PreparedStatement psE15 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE15.setString(1,encrypt("FrancyColo",SECRETKEY));
+        psE15.setInt(2, 3);
+        psE15.setInt(3, 4);
+        psE15.setInt(4, 2);
+        psE15.setInt(5, 0);
+        psE15.setInt(6, 5);
+        psE15.setInt(7, 5);
+        psE15.setString(8, encrypt("SENSO DI NAUSEA",SECRETKEY));
 
         ps.executeUpdate();
+
+        psC1.executeUpdate();
+        psC2.executeUpdate();
+        psC3.executeUpdate();
+        psC4.executeUpdate();
+        psC5.executeUpdate();
+        psC6.executeUpdate();
+        psC7.executeUpdate();
+        psC8.executeUpdate();
+        psC9.executeUpdate();
+        psC10.executeUpdate();
+        psC11.executeUpdate();
+        psC12.executeUpdate();
+        psC13.executeUpdate();
+        psC14.executeUpdate();
+        psC15.executeUpdate();
+
+        psV1.executeUpdate();
+        psV2.executeUpdate();
+        psV3.executeUpdate();
+        psV4.executeUpdate();
+        psV5.executeUpdate();
+        psV6.executeUpdate();
+        psV7.executeUpdate();
+        psV8.executeUpdate();
+        psV9.executeUpdate();
+        psV10.executeUpdate();
+        psV11.executeUpdate();
+        psV12.executeUpdate();
+        psV13.executeUpdate();
+        psV14.executeUpdate();
+        psV15.executeUpdate();
+
+        psE1.executeUpdate();
+        psE2.executeUpdate();
+        psE3.executeUpdate();
+        psE4.executeUpdate();
+        psE5.executeUpdate();
+        psE6.executeUpdate();
+        psE7.executeUpdate();
+        psE8.executeUpdate();
+        psE9.executeUpdate();
+        psE10.executeUpdate();
+        psE11.executeUpdate();
+        psE12.executeUpdate();
+        psE13.executeUpdate();
+        psE14.executeUpdate();
+        psE15.executeUpdate();
+
         ps.close();
 
+        psC1.close();
+        psC2.close();
+        psC3.close();
+        psC4.close();
+        psC5.close();
+        psC6.close();
+        psC7.close();
+        psC8.close();
+        psC9.close();
+        psC10.close();
+        psC11.close();
+        psC12.close();
+        psC13.close();
+        psC14.close();
+        psC15.close();
+
+        psV1.close();
+        psV2.close();
+        psV3.close();
+        psV4.close();
+        psV5.close();
+        psV6.close();
+        psV7.close();
+        psV8.close();
+        psV9.close();
+        psV10.close();
+        psV11.close();
+        psV12.close();
+        psV13.close();
+        psV14.close();
+        psV15.close();
+
+        psE1.close();
+        psE2.close();
+        psE3.close();
+        psE4.close();
+        psE5.close();
+        psE6.close();
+        psE7.close();
+        psE8.close();
+        psE9.close();
+        psE10.close();
+        psE11.close();
+        psE12.close();
+        psE13.close();
+        psE14.close();
+        psE15.close();
     }
 }
