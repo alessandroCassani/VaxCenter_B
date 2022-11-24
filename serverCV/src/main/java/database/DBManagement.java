@@ -4,9 +4,13 @@ import database.UI.UILoginToServer;
 
 import javax.swing.*;
 import java.io.*;
+import java.math.BigInteger;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.*;
+
+import static database.ServerImpl.*;
+import static java.lang.Integer.parseInt;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle
@@ -242,119 +246,388 @@ public class DBManagement {
                         + "DELETE FROM cittadini;"
                         +"DELETE FROM centri_vaccinali;"
 
-                + "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
-                "values('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21049, 'OSPEDALIERO');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                +"INSERT INTO centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia) "+
+                "VALUES ('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21050, 'OSPEDALIERO');\n" +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('MALPENSA FIERE', 'VIA', 'XI SETTEMBRE', 16, 'VA', 'BUSTO ARSIZIO', 21052, 'HUB');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('HUB LURATE CACCIVIO', 'PIAZZA', 'ALPINI', 10, 'CO', 'LURATE CACCIVIO', 22075, 'HUB');\n" +
                 "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('OSPEDALE FORNAROLI', 'VIA', 'AL DONATORE DI SANGUE', 50, 'MI', 'MAGENTA', 20013, 'OSPEDALIERO');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('LARIOFIERE', 'VIALE', 'RESEGONE', 9, 'CO', 'ERBA', 22036, 'HUB');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('OSPEDALE DI CIVITA CASTELLANA', 'VIA', 'FERRETTI', 169,  'VT', 'CIVITA CASTELLANA', 01033, 'OSPEDALIERO');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('HUB DELLA SABINA', 'VIA', 'DELLA MECCANICA', 32, 'RI', 'PASSO CORESE', 02032, 'HUB');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ROMA', 00109, 'AZIENDALE');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('OSPEDALE CITTA DI CASTELLO', 'VIA', 'LUIGI ANGELINI', 10, 'PG', 'CITTA DI CASTELLO', 06012, 'OSPEDALIERO');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                 "values('UNIONE MONTANTA DEI SETTE COMUNI', 'VIA', 'STAZIONE', 1,'VI', 'ASIAGO', 36012, 'AZIENDALE');\n" +
-                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia) " +
-                "values('CENTRO MAROSTICA', 'VIA', '4 NOVEMBRE', 43, 'VI', 'MAROSTICA', 36063, 'HUB');"+
+                "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                "values('CENTRO MAROSTICA', 'VIA', '4 NOVEMBRE', 43, 'VI', 'MAROSTICA', 36063, 'HUB');");
+
+        PreparedStatement psC1 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000000, 'ALESSANDRO', 'MULINO', 'MLNLSS11G02C478D', 'AMULINO@GMAIL.COM', 'ALEMULINO', 'MULINOALE11@', 'HUB LURATE CACCIVIO');\n" +
-                "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale)" +
-                " values(0000000000000001, 'GIANLUCA', 'LENOVO', 'LNVGNL07H65D987V', 'GLENOVO@GMAIL.COM', 'GIANLUCAL', 'LENOVOGI98@', 'OSPEDALE CITTA DI CASTELLO');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC1.setString(1, idPadding(BigInteger.valueOf(00000000000000000)));
+        psC1.setString(2, encrypt("ALESSANDRO",SECRETKEY));
+        psC1.setString(3,encrypt("MULINO",SECRETKEY));
+        psC1.setString(4,encrypt("MLNLSS11G02C478D",SECRETKEY));
+        psC1.setString(5, encrypt("amulino@gmail.com",SECRETKEY));
+        psC1.setString(6,encrypt("Alemulino",SECRETKEY));
+        psC1.setString(7,sha256("Postgres23@"));
+        psC1.setString(8,"HUB LURATE CACCIVIO");
+
+        PreparedStatement psC2 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000002, 'MARCO', 'BERETTA', 'BRTMRC89P30P432P', 'MBERETTA@GMAIL.COM', 'MARCOB', 'BERETTAMA23@', 'OSPEDALE FORNAROLI'); \n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC2.setString(1, idPadding(BigInteger.valueOf(00000000000000001)));
+        psC2.setString(2, encrypt("GIANLUCA",SECRETKEY));
+        psC2.setString(3,encrypt("LENOVO",SECRETKEY));
+        psC2.setString(4,encrypt("LNVGNL07H65D987V",SECRETKEY));
+        psC2.setString(5, encrypt("glenovo@gmail.com",SECRETKEY));
+        psC2.setString(6,encrypt("GianlucaLe",SECRETKEY));
+        psC2.setString(7,sha256("Postgres23@"));
+        psC2.setString(8,"OSPEDALE CITTA DI CASTELLO");
+
+        PreparedStatement psC3 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000003, 'MARIA', 'RANA', 'RNAMRI09P12J462D', 'MARIARANA@GMAIL.COM', 'MARIAR', 'RANAMARIA56@', 'UNIVERSITARIA SANT ANDREA'); \n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC3.setString(1, idPadding(BigInteger.valueOf(00000000000000002)));
+        psC3.setString(2, encrypt("MARCO",SECRETKEY));
+        psC3.setString(3,encrypt("BERETTA",SECRETKEY));
+        psC3.setString(4,encrypt("BRTMRC89P30P432P",SECRETKEY));
+        psC3.setString(5, encrypt("mberetta@gmail.com",SECRETKEY));
+        psC3.setString(6,encrypt("'MarcoB'",SECRETKEY));
+        psC3.setString(7,sha256("Postgres23@"));
+        psC3.setString(8,"OSPEDALE FORNAROLI");
+
+        PreparedStatement psC4 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000004, 'ANNA', 'GAROFALO', 'GRFANN08L04J398P', 'AGAROFALO@GMAIL.COM','ANNAG', 'GAROFALO45@', 'LARIOFIERE');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC4.setString(1, idPadding(BigInteger.valueOf(00000000000000003)));
+        psC4.setString(2, encrypt("MARIA",SECRETKEY));
+        psC4.setString(3,encrypt("RANA",SECRETKEY));
+        psC4.setString(4,encrypt("RNAMRI09P12J462D",SECRETKEY));
+        psC4.setString(5, encrypt("mariarana@gmail.com",SECRETKEY));
+        psC4.setString(6,encrypt("MariaR",SECRETKEY));
+        psC4.setString(7,sha256("Postgres23@"));
+        psC4.setString(8,"UNIVERSITARIA SANT ANDREA");
+
+        PreparedStatement psC5 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000005, 'PAOLO', 'BARILLA', 'BRLPLA09L30J456P', 'PBARILLA@GMAIL.COM', 'PAOLOB', 'BARILLAM', 'TRADATEOSPEDALE'); \n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC5.setString(1, idPadding(BigInteger.valueOf(00000000000000004)));
+        psC5.setString(2, encrypt("ANNA",SECRETKEY));
+        psC5.setString(3,encrypt("GAROFALO",SECRETKEY));
+        psC5.setString(4,encrypt("GRFANN08L04J398P",SECRETKEY));
+        psC5.setString(5, encrypt("agarofalo@gmail.com",SECRETKEY));
+        psC5.setString(6,encrypt("AnnaG",SECRETKEY));
+        psC5.setString(7,sha256("Postgres23@"));
+        psC5.setString(8,"LARIOFIERE");
+
+        PreparedStatement psC6 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000006, 'MIRKO', 'BAROLO', 'BRLMRK12L24J192T', 'MBAROLO@GMAIL.COM', 'MIRKOB', 'BAROLO34@', 'UNIONE MONTANTA DEI SETTE COMUNI');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC6.setString(1, idPadding(BigInteger.valueOf(00000000000000005)));
+        psC6.setString(2, encrypt("PAOLO",SECRETKEY));
+        psC6.setString(3,encrypt("BARILLA",SECRETKEY));
+        psC6.setString(4,encrypt("BRLPLA09L30J456P",SECRETKEY));
+        psC6.setString(5, encrypt("pbarilla@gmail.com",SECRETKEY));
+        psC6.setString(6,encrypt("PaoloB",SECRETKEY));
+        psC6.setString(7,sha256("Postgres23@"));
+        psC6.setString(8,"TRADATEOSPEDALE");
+
+        PreparedStatement psC7 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000007, 'SAMUELE', 'IENOPOLI', 'NPLSML96R25P132K', 'SIENOPOLI@GMAIL.COM', 'SAMUI', 'IENOPOLIS@34', 'OSPEDALE DI CIVITA CASTELLANA'); \n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC7.setString(1, idPadding(BigInteger.valueOf(00000000000000006)));
+        psC7.setString(2, encrypt("MIRKO",SECRETKEY));
+        psC7.setString(3,encrypt("BAROLO",SECRETKEY));
+        psC7.setString(4,encrypt("BRLMRK12L24J192T",SECRETKEY));
+        psC7.setString(5, encrypt("mbarolo@gmail.com",SECRETKEY));
+        psC7.setString(6,encrypt("MirkoB",SECRETKEY));
+        psC7.setString(7,sha256("Postgres23@"));
+        psC7.setString(8,"UNIONE MONTANTA DEI SETTE COMUNI");
+
+        PreparedStatement psC8 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000008, 'ANTONIO', 'BANDERA', 'BNDNTN64T28P192J', 'ABANDERA@GMAIL.COM', 'ANTONIOB', 'BANDERAA98@', 'HUB DELLA SABINA');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC8.setString(1, idPadding(BigInteger.valueOf(00000000000000007)));
+        psC8.setString(2, encrypt("SAMUELE",SECRETKEY));
+        psC8.setString(3,encrypt("IENOPOLI",SECRETKEY));
+        psC8.setString(4,encrypt("NPLSML96R25P132K",SECRETKEY));
+        psC8.setString(5, encrypt("sienopoli@gmail.com",SECRETKEY));
+        psC8.setString(6,encrypt("SamueleI",SECRETKEY));
+        psC8.setString(7,sha256("Postgres23@"));
+        psC8.setString(8,"OSPEDALE DI CIVITA CASTELLANA");
+
+        PreparedStatement psC9 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000009, 'ALESSANDRO', 'DEL PIERO', 'DLPLSS02Y06I198P', 'ADELPIERO@GMAIL.COM', 'ALEDELPIERO', 'DELPIERO10@', 'MALPENSA FIERE');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC9.setString(1, idPadding(BigInteger.valueOf(00000000000000016)));
+        psC9.setString(2, encrypt("ANTONIO",SECRETKEY));
+        psC9.setString(3,encrypt("BANDERA",SECRETKEY));
+        psC9.setString(4,encrypt("BNDNTN64T28P192J",SECRETKEY));
+        psC9.setString(5, encrypt("abandera@gmail.com",SECRETKEY));
+        psC9.setString(6,encrypt("AntonioB",SECRETKEY));
+        psC9.setString(7,sha256("Postgres23@"));
+        psC9.setString(8,"HUB DELLA SABINA");
+
+        PreparedStatement psC10 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000010, 'ANDREA', 'VIERI', 'VRINDR89M14L145P', 'AVIERI@GMAIL.COM', 'AVIERI', 'VIERIAND@45', 'CENTRO MAROSTICA');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC10.setString(1, idPadding(BigInteger.valueOf(00000000000000015)));
+        psC10.setString(2, encrypt("ALESSANDRO",SECRETKEY));
+        psC10.setString(3,encrypt("DEL PIERO",SECRETKEY));
+        psC10.setString(4,encrypt("DLPLSS02Y06I198P",SECRETKEY));
+        psC10.setString(5, encrypt("adelpiero@gmail.com",SECRETKEY));
+        psC10.setString(6,encrypt("'AleDelPiero'",SECRETKEY));
+        psC10.setString(7,sha256("Postgres23@"));
+        psC10.setString(8,"MALPENSA FIERE");
+
+        PreparedStatement psC11 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000011, 'LUCA', 'TONI', 'TNOLCU99P29F531R', 'LTONI@GMAIL.COM', 'LTONI', 'LUCATONI@45', 'MALPENSA FIERE');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC11.setString(1, idPadding(BigInteger.valueOf(00000000000000010)));
+        psC11.setString(2, encrypt("ANDREA",SECRETKEY));
+        psC11.setString(3,encrypt("VIERI",SECRETKEY));
+        psC11.setString(4,encrypt("VRINDR89M14L145P",SECRETKEY));
+        psC11.setString(5, encrypt("avieri@gmail.com",SECRETKEY));
+        psC11.setString(6,encrypt("AndreaV",SECRETKEY));
+        psC11.setString(7,sha256("Postgres23@"));
+        psC11.setString(8,"CENTRO MAROSTICA");
+
+        PreparedStatement psC12 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000012, 'ELISABETTA', 'ANELLI', 'NLLLSB91T05B412V', 'EANELLI@GMIAL.COM', 'EANELLI', 'ANELLIE52@', 'OSPEDALE FORNAROLI');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC12.setString(1, idPadding(BigInteger.valueOf(00000000000000011)));
+        psC12.setString(2, encrypt("LUCA",SECRETKEY));
+        psC12.setString(3,encrypt("TONI",SECRETKEY));
+        psC12.setString(4,encrypt("TNOLCU99P29F531R",SECRETKEY));
+        psC12.setString(5, encrypt("ltoni@gmail.com",SECRETKEY));
+        psC12.setString(6,encrypt("LucaT",SECRETKEY));
+        psC12.setString(7,sha256("Postgres23@"));
+        psC12.setString(8,"MALPENSA FIERE");
+
+        PreparedStatement psC13 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000013, 'ROBERTA', 'RIVA', 'RVIRBR01O30U325M', 'RRIVA@GMAIL.COM', 'RRIVA', 'RIVAROBY96@', 'LARIOFIERE');\n" +
+                "values(?,?,?,?,?,?,?,?);");
+        psC13.setString(1, idPadding(BigInteger.valueOf(00000000000000012)));
+        psC13.setString(2, encrypt("ELISABETTA",SECRETKEY));
+        psC13.setString(3,encrypt("ANELLI",SECRETKEY));
+        psC13.setString(4,encrypt("NLLLSB91T05B412V",SECRETKEY));
+        psC13.setString(5, encrypt("eanelli@gmail.com",SECRETKEY));
+        psC13.setString(6,encrypt("ElisaAnelli",SECRETKEY));
+        psC13.setString(7,sha256("Postgres23@"));
+        psC13.setString(8,"OSPEDALE FORNAROLI");
+
+        PreparedStatement psC14 = DBManagement.getDB().connection.prepareStatement(
                 "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
-                "values(0000000000000014, 'FRANCESCA', 'COLOMBO', 'CLMFRN99R16G654J', 'FCOLOMBO@GMAIL.COM', 'FCOLOMBO', 'COLMBO59@', 'MALPENSA FIERE');"+
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                "values(0000000000000000, 'HUB LURATE CACCIVIO',  'ALESSANDRO', 'MULINO', 'MLNLSS11G02C478D', '01-01-2021', 'PFIZER');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                "values(0000000000000001, 'OSPEDALE CITTA DI CASTELLO','GIANLUCA', 'LENOVO', 'LNVGNL07H65D987V',  '01-01-2021', 'PFIZER');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000002, 'OSPEDALE FORNAROLI', 'MARCO', 'BERETTA', 'BRTMRC89P30P432P', '02-08-2021', 'ASTRAZENECA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000003, 'UNIVERSITARIA SANT ANDREA', 'MARIA', 'RANA', 'RNAMRI09P12J462D', '05-04-2021', 'MODERNA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                "values(0000000000000004, 'LARIOFIERE', 'ANNA', 'GAROFALO', 'GRFANN08L04J398P', '09-06-2021', 'J&J');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000005, 'TRADATEOSPEDALE', 'PAOLO', 'BARILLA', 'BRLPLA09L30J456P', '12-10-2021', 'ASTRAZENECA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000006, 'UNIONE MONTANTA DEI SETTE COMUNI', 'MIRKO', 'BAROLO', 'BRLMRK12L24J192T', '16-08-2021', 'J&J');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000007, 'OSPEDALE DI CIVITA CASTELLANA', 'SAMUELE', 'IENOPOLI', 'NPLSML96R25P132K', '30-01-2021', 'PFIZER');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000008, 'HUB DELLA SABINA', 'ANTONIO', 'BANDERA', 'BNDNTN64T28P192J', '01-02-2021', 'ASTRAZENECA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000009, 'MALPENSA FIERE', 'ALESSANDRO', 'DEL PIERO', 'DLPLSS02Y06I198P', '15-03-2021', 'PFIZER');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000010, 'CENTRO MAROSTICA', 'ANDREA', 'VIERI', 'VRINDR89M14L145P', '18-07-2021', 'MODERNA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000011, 'MALPENSA FIERE', 'LUCA', 'TONI', 'TNOLCU99P29F531R', '30-06-2021', 'ASTRAZENECA');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000012, 'OSPEDALE FORNAROLI', 'ELISABETTA', 'ANELLI', 'NLLLSB91T05B412V', '03-07-2021', 'J&J');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000013, 'LARIOFIERE', 'ROBERTA', 'RIVA', 'RVIRBR01O30U325M', '15-07-2021', 'PFIZER');\n" +
-                "insert into vaccinati(id, nome_centro_vaccinale, nome, cognome, codice_fiscale, data_vaccino, tipo_vaccino)" +
-                " values(0000000000000014, 'MALPENSA FIERE', 'FRANCESCA', 'COLOMBO', 'CLMFRN99R16G654J', '16-08-2021', 'MODERNA');"+
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('ALEMULINO', 0, 2, 4, 5, 2, 5, 'GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('GIANLUCAL', 2, 5, 3, 2, 3, 4, 'FEBBRE ALTA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('MARCOB', 4, 4, 2, 1, 4, 3, 'SENSO DI VOMITO');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('MARIAR', 3, 4, 1, 1, 1, 2, 'STANCHEZZA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('ANNAG', 0, 1, 0, 3, 0, 1, 'DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('PAOLOB', 1, 3, 4, 1, 1, 0, 'BATTITO CARDIACO FORTE');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('MIRKOB', 1, 5, 2, 2, 3, 4, 'SENSO DI NAUSEA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('SAMUI', 2, 5, 3, 5, 2, 2, 'FEBBRE ALTA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('ANTONIOB', 5, 4, 5, 4, 4, 3, 'GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('ALEDELPIERO', 3, 1, 0, 2, 2, 5, 'SENSO DI VOMITO');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note) " +
-                "values('AVIERI', 1, 2, 5, 1, 5, 1, 'BRIVIDI');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('LTONI', 0, 5, 4, 5, 5, 0, 'FEBBRE ALTA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('EANELLI', 2, 3, 4, 0, 1, 3, 'STANCHEZZA');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('RRIVA', 4, 5, 2, 1, 0, 0, 'DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE');\n" +
-                "insert into eventi_avversi(username, mal_di_testa, febbre, tachicardia, dolori_muscolari, linfoadenopatia, crisi_ipertensiva, note)" +
-                " values('FCOLOMBO', 3, 4, 2, 0, 5, 5, 'SENSO DI NAUSEA');");
+                "values(?,?,?,?,?,?,?,?);");
+        psC14.setString(1, idPadding(BigInteger.valueOf(00000000000000013)));
+        psC14.setString(2, encrypt("ROBERTA",SECRETKEY));
+        psC14.setString(3,encrypt("RIVA",SECRETKEY));
+        psC14.setString(4,encrypt("RVIRBR01O30U325M",SECRETKEY));
+        psC14.setString(5, encrypt("rriva@gmail.com",SECRETKEY));
+        psC14.setString(6,encrypt("RobyRiva",SECRETKEY));
+        psC14.setString(7,sha256("Postgres23@"));
+        psC14.setString(8,"LARIOFIERE");
+
+        PreparedStatement psC15 = DBManagement.getDB().connection.prepareStatement(
+                "insert into cittadini(id, nome, cognome, codice_fiscale, email, username, password, nome_centro_vaccinale) " +
+                "values(?,?,?,?,?,?,?,?);");
+        psC15.setString(1, idPadding(BigInteger.valueOf(00000000000000014)));
+        psC15.setString(2, encrypt("FRANCESCA",SECRETKEY));
+        psC15.setString(3,encrypt("COLOMBO",SECRETKEY));
+        psC15.setString(4,encrypt("CLMFRN99R16G654J",SECRETKEY));
+        psC15.setString(5, encrypt("fcolombo@gmail.com",SECRETKEY));
+        psC15.setString(6,encrypt("FrancyColo",SECRETKEY));
+        psC15.setString(7,sha256("Postgres23@"));
+        psC15.setString(8,"MALPENSA FIERE");
+
+        PreparedStatement psV1 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV1.setString(1, String.valueOf(0000000000000000));
+        psV1.setString(2,encrypt("HUB LURATE CACCIVIO",SECRETKEY));
+        psV1.setString(3,encrypt("ALESSANDRO",SECRETKEY));
+        psV1.setString(4,encrypt("MULINO",SECRETKEY));
+        psV1.setString(5,encrypt("MLNLSS11G02C478D",SECRETKEY));
+        psV1.setString(6,encrypt(String.valueOf(23-9-2022),SECRETKEY));
+        psV1.setString(7,encrypt("PFIZER",SECRETKEY));
+
+        PreparedStatement psV2 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV2.setString(1, String.valueOf(0000000000000001));
+        psV2.setString(2,encrypt("OSPEDALE CITTA DI CASTELLO",SECRETKEY));
+        psV2.setString(3,encrypt("GIANLUCA",SECRETKEY));
+        psV2.setString(4,encrypt("LENOVO",SECRETKEY));
+        psV2.setString(5,encrypt("LNVGNL07H65D987V",SECRETKEY));
+        psV2.setString(6,encrypt(String.valueOf(10-10-2022),SECRETKEY));
+        psV2.setString(7,encrypt("PFIZER",SECRETKEY));
+
+        PreparedStatement psV3 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV3.setString(1, String.valueOf(0000000000000002));
+        psV3.setString(2,encrypt("OSPEDALE FORNAROLI",SECRETKEY));
+        psV3.setString(3,encrypt("MARCO",SECRETKEY));
+        psV3.setString(4,encrypt("BERETTA",SECRETKEY));
+        psV3.setString(5,encrypt("BRTMRC89P30P432P",SECRETKEY));
+        psV3.setString(6,encrypt(String.valueOf(14-10-2022),SECRETKEY));
+        psV3.setString(7,encrypt("ASTRAZENECA",SECRETKEY));
+
+        PreparedStatement psV4 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV4.setString(1, String.valueOf(0000000000000003));
+        psV4.setString(2,encrypt("UNIVERSITARIA SANT ANDREA",SECRETKEY));
+        psV4.setString(3,encrypt("MARIA",SECRETKEY));
+        psV4.setString(4,encrypt("RANA",SECRETKEY));
+        psV4.setString(5,encrypt("RNAMRI09P12J462D",SECRETKEY));
+        psV4.setString(6,encrypt(String.valueOf(15-10-2022),SECRETKEY));
+        psV4.setString(7,encrypt("MODERNA",SECRETKEY));
+
+        PreparedStatement psV5 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV5.setString(1, String.valueOf(0000000000000004));
+        psV5.setString(2,encrypt("LARIOFIERE",SECRETKEY));
+        psV5.setString(3,encrypt("ANNA",SECRETKEY));
+        psV5.setString(4,encrypt("GAROFALO",SECRETKEY));
+        psV5.setString(5,encrypt("GRFANN08L04J398P",SECRETKEY));
+        psV5.setString(6,encrypt(String.valueOf(17-10-2022),SECRETKEY));
+        psV5.setString(7,encrypt("J&J",SECRETKEY));
+
+        PreparedStatement psV6 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV6.setString(1, String.valueOf(0000000000000005));
+        psV6.setString(2,encrypt("TRADATEOSPEDALE",SECRETKEY));
+        psV6.setString(3,encrypt("PAOLO",SECRETKEY));
+        psV6.setString(4,encrypt("BARILLA",SECRETKEY));
+        psV6.setString(5,encrypt("BRLPLA09L30J456P",SECRETKEY));
+        psV6.setString(6,encrypt(String.valueOf(17-10-2022),SECRETKEY));
+        psV6.setString(7,encrypt("ASTRAZENECA",SECRETKEY));
+
+        PreparedStatement psV7 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV7.setString(1, String.valueOf(0000000000000006));
+        psV7.setString(2,encrypt("UNIONE MONTANTA DEI SETTE COMUNI",SECRETKEY));
+        psV7.setString(3,encrypt("MIRKO",SECRETKEY));
+        psV7.setString(4,encrypt("BAROLO",SECRETKEY));
+        psV7.setString(5,encrypt("BRLMRK12L24J192T",SECRETKEY));
+        psV7.setString(6,encrypt(String.valueOf(27-10-2022),SECRETKEY));
+        psV7.setString(7,encrypt("J&J",SECRETKEY));
+
+        PreparedStatement psV8 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV8.setString(1, String.valueOf(0000000000000007));
+        psV8.setString(2,encrypt("OSPEDALE DI CIVITA CASTELLANA",SECRETKEY));
+        psV8.setString(3,encrypt("SAMUELE",SECRETKEY));
+        psV8.setString(4,encrypt("IENOPOLI",SECRETKEY));
+        psV8.setString(5,encrypt("NPLSML96R25P132K",SECRETKEY));
+        psV8.setString(6,encrypt(String.valueOf(1-11-2022),SECRETKEY));
+        psV8.setString(7,encrypt("PFIZER",SECRETKEY));
+
+        PreparedStatement psV9 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV9.setString(1, String.valueOf(0000000000000016));
+        psV9.setString(2,encrypt("HUB DELLA SABINA",SECRETKEY));
+        psV9.setString(3,encrypt("ANTONIO",SECRETKEY));
+        psV9.setString(4,encrypt("BANDERA",SECRETKEY));
+        psV9.setString(5,encrypt("BNDNTN64T28P192J",SECRETKEY));
+        psV9.setString(6,encrypt(String.valueOf(3-11-2022),SECRETKEY));
+        psV9.setString(7,encrypt("ASTRAZENECA",SECRETKEY));
+
+        PreparedStatement psV10 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV10.setString(1, String.valueOf(0000000000000015));
+        psV10.setString(2,encrypt("MALPENSA FIERE",SECRETKEY));
+        psV10.setString(3,encrypt("ALESSANDRO",SECRETKEY));
+        psV10.setString(4,encrypt("DEL PIERO",SECRETKEY));
+        psV10.setString(5,encrypt("DLPLSS02Y06I198P",SECRETKEY));
+        psV10.setString(6,encrypt(String.valueOf(8-11-2022),SECRETKEY));
+        psV10.setString(7,encrypt("PFIZER",SECRETKEY));
+
+        PreparedStatement psV11 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV11.setString(1, String.valueOf(0000000000000010));
+        psV11.setString(2,encrypt("CENTRO MAROSTICA",SECRETKEY));
+        psV11.setString(3,encrypt("ANDREA",SECRETKEY));
+        psV11.setString(4,encrypt("VIERI",SECRETKEY));
+        psV11.setString(5,encrypt("VRINDR89M14L145P",SECRETKEY));
+        psV11.setString(6,encrypt(String.valueOf(11-11-2022),SECRETKEY));
+        psV11.setString(7,encrypt("MODERNA",SECRETKEY));
+
+        PreparedStatement psV12 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV12.setString(1, String.valueOf(0000000000000011));
+        psV12.setString(2,encrypt("MALPENSA FIERE",SECRETKEY));
+        psV12.setString(3,encrypt("LUCA",SECRETKEY));
+        psV12.setString(4,encrypt("TONI",SECRETKEY));
+        psV12.setString(5,encrypt("TNOLCU99P29F531R",SECRETKEY));
+        psV12.setString(6,encrypt(String.valueOf(14-11-2022),SECRETKEY));
+        psV12.setString(7,encrypt("ASTRAZENECA",SECRETKEY));
+
+        PreparedStatement psV13 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV13.setString(1, String.valueOf(0000000000000012));
+        psV13.setString(2,encrypt("OSPEDALE FORNAROLI",SECRETKEY));
+        psV13.setString(3,encrypt("ELISABETTA",SECRETKEY));
+        psV13.setString(4,encrypt("ANELLI",SECRETKEY));
+        psV13.setString(5,encrypt("NLLLSB91T05B412V",SECRETKEY));
+        psV13.setString(6,encrypt(String.valueOf(20-11-2022),SECRETKEY));
+        psV13.setString(7,encrypt("J&J",SECRETKEY));
+
+        PreparedStatement psV14 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV14.setString(1, String.valueOf(0000000000000013));
+        psV14.setString(2,encrypt("LARIOFIERE",SECRETKEY));
+        psV14.setString(3,encrypt("ROBERTA",SECRETKEY));
+        psV14.setString(4,encrypt("RIVA",SECRETKEY));
+        psV14.setString(5,encrypt("RVIRBR01O30U325M",SECRETKEY));
+        psV14.setString(6,encrypt(String.valueOf(23-11-2022),SECRETKEY));
+        psV14.setString(7,encrypt("PFIZER",SECRETKEY));
+
+        PreparedStatement psV15 = DBManagement.getDB().connection.prepareStatement(
+                "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
+                "VALUES(?,?,?,?,?,?,?)");
+        psV15.setString(1, String.valueOf(0000000000000014));
+        psV15.setString(2,encrypt("MALPENSA FIERE",SECRETKEY));
+        psV15.setString(3,encrypt("FRANCESCA",SECRETKEY));
+        psV15.setString(4,encrypt("COLOMBO",SECRETKEY));
+        psV15.setString(5,encrypt("CLMFRN99R16G654J",SECRETKEY));
+        psV15.setString(6,encrypt(String.valueOf(24-11-2022),SECRETKEY));
+        psV15.setString(7,encrypt("MODERNA",SECRETKEY));
+
+
+        PreparedStatement psE1 = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        ps5.setString(1,encrypt("LucaP",SECRETKEY));
+        ps5.setInt(2, 5);
+        ps5.setInt(3, 4);
+        ps5.setInt(4, 2);
+        ps5.setInt(5, 0);
+        ps5.setInt(6, 2);
+        ps5.setInt(7, 3);
+        ps5.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
+
         ps.executeUpdate();
         ps.close();
+
     }
 }
