@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.sql.*;
 
 import static database.ServerImpl.*;
-import static java.lang.Integer.parseInt;
 
 /**
  * La classe DBManagement permette di creare la connessione al server Postgres, il database e le tabelle

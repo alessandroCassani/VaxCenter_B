@@ -394,7 +394,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     /**
      * il metodo permette  di avere il prospetto riassuntivo di uno specifico centro vaccinale
      *
-     * @param nomeCentroVaccinale nome del centro vaccinale di cui si viuole avere il prospetto riassuntivo
+     * @param nomeCentroVaccinale nome del centro vaccinale di cui si vuole avere il prospetto riassuntivo
      * @return severita' media e numero di segnalazioni di uno specifico centro vaccinale
      * @throws RemoteException eccezione rmi
      * @author Alessandro cassani
