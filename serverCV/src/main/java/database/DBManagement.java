@@ -66,7 +66,7 @@ public class DBManagement {
 
     /**
      * Metodo che ritorna l'istanza del database
-     *
+     * @return istanza del db
      * @author Luca Perfetti
      */
     public static DBManagement getDB(){
@@ -235,7 +235,7 @@ public class DBManagement {
 
     /**
      * il metodo permette d'inserire il dataSet di test
-     *
+     * @throws SQLException eccezione sql
      * @author Luca Perfetti
      */
     public static void insertTestDataSet() throws SQLException{
