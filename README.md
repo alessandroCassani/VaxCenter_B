@@ -3,8 +3,11 @@ Corso di Laboratorio Interdiscplinare B, Laurea Triennale in Informatica Univers
 
 PROGETTO REALIZZATO DA:
 CASSANI ALESSANDRO, matricola 744512 acassani@studenti.uninsubria.it sede: Varese
+
 FICARA DAMIANO, matricola 744958 dficara@studenti.uninsubria.it sede: Varese
+
 BRUSCAGIN PAOLO, matricola 744703 pbruscagin@studenti.uninsubria.it sede: Varese
+
 PERFETTI LUCA, matricola 746581 lperfetti1@studenti.uninsubria.it sede: Varese
 
 
