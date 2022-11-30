@@ -150,14 +150,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
+    public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String id) throws RemoteException {
         try {
             int count;
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(id,username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,encrypt(user,SECRETKEY));
+            ps.setString(1,encrypt(id,SECRETKEY));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
@@ -172,18 +172,18 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
-     * @param user account del cittadino
+     * @param id id del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */
     @Override
-    public boolean isAERegistered(String user) throws RemoteException {
+    public boolean isAERegistered(String id) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
 
-            ps.setString(1, encrypt(user,SECRETKEY));
+            ps.setString(1, encrypt(id,SECRETKEY));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -197,7 +197,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
      * il metodo permette di avere il riepilogo degli eventi avversi già registrati di un cittadino
-     * @param user account del cittadino
+     * @param id id del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
@@ -205,12 +205,12 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      */
 
     @Override
-    public String[] getPersonAE(String user) throws RemoteException {
+    public String[] getPersonAE(String id) throws RemoteException {
         PreparedStatement preparedStatement = null;
         String [] info = new String [7];
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user,SECRETKEY));
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
+            preparedStatement.setString(1,encrypt(id,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -226,21 +226,39 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return null;
         }
     }
+
+    public String getID(Account account) throws RemoteException {
+        PreparedStatement preparedStatement = null;
+        String ide ="";
+        try {
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username =  " + account.getUserId() +
+                    "AND password = " + account.getPassword() + "");
+            ResultSet resultSet = preparedStatement.executeQuery();
+         while(resultSet.next()) {
+             ide = String.valueOf(resultSet.getInt(1));
+         }
+         System.out.println(ide);
+         return ide;
+
+        } catch (SQLException e) {
+            return null;
+        }
+    }
     /**
      * il metodo permette di avere il riepilogo dei dati generali di un cittadino
-     * @param user account del cittadino
+     * @param id id del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      * @author Alessandro Cassani
      */
-    public String[] getInfoCittadino(String user) throws RemoteException {
+    public String[] getInfoCittadino(String id) throws RemoteException {
         PreparedStatement preparedStatement = null;
         String [] info = new String [6];
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user,SECRETKEY));
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE id = ?");
+            preparedStatement.setString(1,encrypt(id,SECRETKEY));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = resultSet.getString(1);
@@ -255,6 +273,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return null;
         }
     }
+
 
 
     /**

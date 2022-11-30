@@ -251,10 +251,6 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     JLabel severitaEA6 = new JLabel("Severità");
 
     /**
-     * Stringa statica per l'inserimento dello user
-     */
-    static String user;
-    /**
      * Stringa statica per l'inserimento dell'id
      */
     static String identificativo;
@@ -262,24 +258,23 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
     /**
      * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata degli eventi avversi del cittadino
-     * @param username paramtetro per far ritornare il riepilogo dati
+     * @param id parametro per far ritornare il riepilogo dati
      * @author Paolo Bruscagin
      * @throws RemoteException eccezione database
      */
-    public UIAdverseEvent(String username,String id) throws RemoteException {
+    public UIAdverseEvent(String id) throws RemoteException {
 
 
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
-        user = username;
         identificativo = id;
 
 
         String [] info;
-        info = ServerPointer.getStub().getPersonAE(user);
+        info = ServerPointer.getStub().getPersonAE(identificativo);
 
         String [] infoC;
-        infoC = ServerPointer.getStub().getInfoCittadino(user);
+        infoC = ServerPointer.getStub().getInfoCittadino(identificativo);
 
 
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])},
@@ -557,7 +552,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         add(riepilogoEventiAvversiPersonali).setVisible(false);
 
 
-        if (ServerPointer.getStub().isAERegistered(user)){
+        if (ServerPointer.getStub().isAERegistered(identificativo)){
             inserisciEventiAvversi.setVisible(false);
             riepilogoEventiAvversiPersonali.setVisible(true);
         }else{
@@ -619,7 +614,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         sintomi.add(new Sintomo(severitaCrisiIpertensiva.getSelectedIndex(),Sintomatologia.CRISIPERTENSIVA));
 
         try {
-            if(ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), user)){
+            if(ServerPointer.getStub().inserisciEventiAvversi((new EventiAvversi(note, sintomi)), identificativo)){
                 return true;
             }
             return false;

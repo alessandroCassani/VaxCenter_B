@@ -171,7 +171,9 @@ public class UILogin extends JFrame  {
                     if(ServerPointer.getStub().isSignedUp(new Account(username.getText(),password.getText()))){
                         System.out.println("Accesso in corso....");
                         counter = 0;
-                        new UIAdverseEvent(username.getText());
+                        String id = ServerPointer.getStub().getID(new Account(username.getText(),password.getText()));
+                        System.out.println(id);
+                        new UIAdverseEvent(id);
 
                     }
                     else {

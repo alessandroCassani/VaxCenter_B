@@ -214,4 +214,6 @@ public interface ServerInterface extends Remote {
      */
 
     String[] getInfoCittadino(String user) throws RemoteException;
+
+    String getID(Account acc) throws RemoteException;
 }
