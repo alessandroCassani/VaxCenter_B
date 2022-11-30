@@ -254,6 +254,11 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * Stringa statica per l'inserimento dello user
      */
     static String user;
+    /**
+     * Stringa statica per l'inserimento dell'id
+     */
+    static String identificativo;
+
 
     /**
      * costruttore che permette la creazione dei componenti di interfaccia grafica della schermata degli eventi avversi del cittadino
@@ -261,12 +266,13 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
      * @author Paolo Bruscagin
      * @throws RemoteException eccezione database
      */
-    public UIAdverseEvent(String username) throws RemoteException {
+    public UIAdverseEvent(String username,String id) throws RemoteException {
 
 
         Border bordobtn_AE = new LineBorder(new Color(0, 49, 83), 2, true);
         Border bordobtnPul = new LineBorder(new Color(209, 245, 250), 2, true);
         user = username;
+        identificativo = id;
 
 
         String [] info;

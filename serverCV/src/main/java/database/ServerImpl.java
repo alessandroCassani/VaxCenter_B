@@ -153,7 +153,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
         try {
             int count;
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(id,username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
