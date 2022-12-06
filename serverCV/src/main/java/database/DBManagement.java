@@ -149,7 +149,6 @@ public class DBManagement {
         try{
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
 
-            // da controllare
             String query = "create table if not exists vaccinati("
                     + "id VARCHAR(16) PRIMARY KEY,"
                     + "nome_centro_vaccinale VARCHAR(80) REFERENCES centri_vaccinali,"
@@ -165,10 +164,9 @@ public class DBManagement {
                     + "nome_via VARCHAR(30),"
                     + "civico VARCHAR(6),"
                     + "provincia CHAR(2),"
-                    + "comune VARCHAR(30),"
+                    + "comune VARCHAR(30) REFERENCES dataset_comuni,"
                     + "cap INTEGER,"
-                    + "tipologia VARCHAR(20);"
-                    + "FOREIGN KEY (comune,provincia) REFERENCES dataset_comuni);"
+                    + "tipologia VARCHAR(20));"
 
                     + "create table if not exists cittadini("
                     + "id VARCHAR(16) PRIMARY KEY REFERENCES vaccinati,"
@@ -191,11 +189,10 @@ public class DBManagement {
                     + "note VARCHAR(256));"
 
                     +"create table if not exists dataset_comuni("
-                    +"comune VARCHAR(40),"
+                    +"comune VARCHAR(40) PRIMARY KEY,"
                     +"provincia VARCHAR(2),"
                     +"cap INTEGER,"
-                    +"regione VARCHAR(21)"
-                    +"PRIMARY KEY (comune,provincia);";
+                    +"regione VARCHAR(21));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
@@ -617,9 +614,9 @@ public class DBManagement {
         psV15.setString(7,encrypt("MODERNA",SECRETKEY));
 
         PreparedStatement psE1 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE1.setInt(1, 0000000000000000);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE1.setString(1,encrypt("Alemulino",SECRETKEY));
         psE1.setInt(2, 0);
         psE1.setInt(3, 2);
         psE1.setInt(4, 4);
@@ -629,9 +626,9 @@ public class DBManagement {
         psE1.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
 
         PreparedStatement psE2 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE2.setInt(1, 0000000000000001);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE2.setString(1,encrypt("GianlucaLe",SECRETKEY));
         psE2.setInt(2, 2);
         psE2.setInt(3, 5);
         psE2.setInt(4, 3);
@@ -641,9 +638,9 @@ public class DBManagement {
         psE2.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
 
         PreparedStatement psE3 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE3.setInt(1, 0000000000000002);;
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE3.setString(1,encrypt("MarcoB",SECRETKEY));
         psE3.setInt(2, 4);
         psE3.setInt(3, 4);
         psE3.setInt(4, 2);
@@ -653,9 +650,9 @@ public class DBManagement {
         psE3.setString(8, encrypt("SENSO DI VOMITO",SECRETKEY));
 
         PreparedStatement psE4 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE4.setInt(1, 0000000000000003);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE4.setString(1,encrypt("MariaR",SECRETKEY));
         psE4.setInt(2, 3);
         psE4.setInt(3, 4);
         psE4.setInt(4, 1);
@@ -665,9 +662,9 @@ public class DBManagement {
         psE4.setString(8, encrypt("STANCHEZZA",SECRETKEY));
 
         PreparedStatement psE5 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE5.setInt(1, 0000000000000004);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE5.setString(1,encrypt("AnnaG",SECRETKEY));
         psE5.setInt(2, 0);
         psE5.setInt(3, 1);
         psE5.setInt(4, 0);
@@ -677,9 +674,9 @@ public class DBManagement {
         psE5.setString(8, encrypt("DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
 
         PreparedStatement psE6 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE6.setInt(1, 0000000000000005);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE6.setString(1,encrypt("PaoloB",SECRETKEY));
         psE6.setInt(2, 1);
         psE6.setInt(3, 3);
         psE6.setInt(4, 4);
@@ -689,9 +686,9 @@ public class DBManagement {
         psE6.setString(8, encrypt("BATTITO CARDIACO FORTE",SECRETKEY));
 
         PreparedStatement psE7 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE7.setInt(1, 0000000000000005);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE7.setString(1,encrypt("MirkoB",SECRETKEY));
         psE7.setInt(2, 1);
         psE7.setInt(3, 5);
         psE7.setInt(4, 2);
@@ -701,9 +698,9 @@ public class DBManagement {
         psE7.setString(8, encrypt("SENSO DI NAUSEA",SECRETKEY));
 
         PreparedStatement psE8 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE8.setInt(1, 0000000000000006);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE8.setString(1,encrypt("SamueleI",SECRETKEY));
         psE8.setInt(2, 2);
         psE8.setInt(3, 5);
         psE8.setInt(4, 3);
@@ -713,9 +710,9 @@ public class DBManagement {
         psE8.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
 
         PreparedStatement psE9 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE9.setInt(1, 0000000000000016);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE9.setString(1,encrypt("AntonioB",SECRETKEY));
         psE9.setInt(2, 5);
         psE9.setInt(3, 4);
         psE9.setInt(4, 5);
@@ -725,9 +722,9 @@ public class DBManagement {
         psE9.setString(8, encrypt("GONFIORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
 
         PreparedStatement psE10 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE10.setInt(1, 0000000000000015);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE10.setString(1,encrypt("AleDelPiero",SECRETKEY));
         psE10.setInt(2, 3);
         psE10.setInt(3, 1);
         psE10.setInt(4, 0);
@@ -737,9 +734,9 @@ public class DBManagement {
         psE10.setString(8, encrypt("SENSO DI VOMITO",SECRETKEY));
 
         PreparedStatement psE11 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE11.setInt(1, 0000000000000014);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE11.setString(1,encrypt("AndreaV",SECRETKEY));
         psE11.setInt(2, 1);
         psE11.setInt(3, 2);
         psE11.setInt(4, 5);
@@ -749,9 +746,9 @@ public class DBManagement {
         psE11.setString(8, encrypt("BRIVIDI",SECRETKEY));
 
         PreparedStatement psE12 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE12.setInt(1, 0000000000000013);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE12.setString(1,encrypt("LucaT",SECRETKEY));
         psE12.setInt(2, 0);
         psE12.setInt(3, 5);
         psE12.setInt(4, 4);
@@ -761,9 +758,9 @@ public class DBManagement {
         psE12.setString(8, encrypt("FEBBRE ALTA",SECRETKEY));
 
         PreparedStatement psE13 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE13.setInt(1, 0000000000000012);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE13.setString(1,encrypt("ElisaAnelli",SECRETKEY));
         psE13.setInt(2, 2);
         psE13.setInt(3, 3);
         psE13.setInt(4, 4);
@@ -773,9 +770,9 @@ public class DBManagement {
         psE13.setString(8, encrypt("STANCHEZZA",SECRETKEY));
 
         PreparedStatement psE14 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE14.setInt(1, 0000000000000011);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE14.setString(1,encrypt("RobyRiva",SECRETKEY));
         psE14.setInt(2, 4);
         psE14.setInt(3, 5);
         psE14.setInt(4, 2);
@@ -785,9 +782,9 @@ public class DBManagement {
         psE14.setString(8, encrypt("DOLORE AL BRACCIO NEL PUNTO DI INIEZIONE",SECRETKEY));
 
         PreparedStatement psE15 = DBManagement.getDB().connection.prepareStatement(
-                "INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
-                        " VALUES (?,?,?,?,?,?,?,?)");
-        psE15.setInt(1, 0000000000000010);
+                "INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+                " VALUES (?,?,?,?,?,?,?,?)");
+        psE15.setString(1,encrypt("FrancyColo",SECRETKEY));
         psE15.setInt(2, 3);
         psE15.setInt(3, 4);
         psE15.setInt(4, 2);

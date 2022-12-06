@@ -157,7 +157,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                     " VALUES (?,?,?,?,?,?,?,?)");
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,encrypt(id,SECRETKEY));
+            ps.setString(1,id);
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
