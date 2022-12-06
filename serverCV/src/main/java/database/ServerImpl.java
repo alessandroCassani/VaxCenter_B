@@ -183,7 +183,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
 
-            ps.setString(1, encrypt(id,SECRETKEY));
+            ps.setString(1, id);
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -210,7 +210,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [7];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
-            preparedStatement.setString(1,encrypt(id,SECRETKEY));
+            preparedStatement.setString(1,id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -258,7 +258,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [6];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE id = ?");
-            preparedStatement.setString(1,encrypt(id,SECRETKEY));
+            preparedStatement.setString(1,id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = resultSet.getString(1);
@@ -429,7 +429,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (id) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -441,7 +441,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[5] = "CRISI IPERTENSIVA: " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
                 return info;
             }
-
         } catch (SQLException e) {e.printStackTrace();return null;}
         return null;
     }
@@ -616,7 +615,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'ide del vaccinato
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'id del vaccinato
      * @param id id sul quale eseguire padding
      * @return id a 16 cifre
      *
