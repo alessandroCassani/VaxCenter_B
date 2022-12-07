@@ -271,10 +271,14 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
         String [] info;
+
         info = ServerPointer.getStub().getPersonAE(identificativo);
 
+
         String [] infoC;
+
         infoC = ServerPointer.getStub().getInfoCittadino(identificativo);
+
 
 
         String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])},
@@ -552,7 +556,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
         add(riepilogoEventiAvversiPersonali).setVisible(false);
 
 
-        if (ServerPointer.getStub().isAERegistered(identificativo)){
+        if (ServerPointer.getStub().isAERegistrated(identificativo)){
             inserisciEventiAvversi.setVisible(false);
             riepilogoEventiAvversiPersonali.setVisible(true);
         }else{

@@ -172,7 +172,7 @@ public class UILogin extends JFrame  {
                         System.out.println("Accesso in corso....");
                         counter = 0;
                         String id = ServerPointer.getStub().getID(new Account(username.getText(),password.getText()));
-                       // System.out.println(id);
+                       System.out.println("UILOGIN: " + id);
                         new UIAdverseEvent(id);
 
                     }

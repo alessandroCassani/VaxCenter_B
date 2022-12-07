@@ -70,7 +70,7 @@ public interface ServerInterface extends Remote {
      *
      *  @author Paolo Bruscagin
      */
-    boolean isAERegistered(String user) throws RemoteException;
+    boolean isAERegistrated(String user) throws RemoteException;
 
     /**
      * segnatura del metodo che permette la restituzione degli eventi avversi già segnalati

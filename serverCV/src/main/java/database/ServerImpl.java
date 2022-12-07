@@ -155,9 +155,10 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             int count;
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
+            System.out.println(id);
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,id);
+            ps.setString(1,idPadding(new BigInteger(id)));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
@@ -179,11 +180,11 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Paolo Bruscagin
      */
     @Override
-    public boolean isAERegistered(String id) throws RemoteException {
+    public boolean isAERegistrated(String id) throws RemoteException {
         try {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
 
-            ps.setString(1, id);
+            ps.setString(1, idPadding(new BigInteger(id)));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -210,7 +211,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [7];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
-            preparedStatement.setString(1,id);
+            preparedStatement.setString(1,idPadding(new BigInteger(id)));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -231,13 +232,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         PreparedStatement preparedStatement = null;
         String ide ="";
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username =  " + encrypt(account.getUserId(),SECRETKEY) +
-                    "AND password = " + sha256(account.getUserId()) + "");
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username = ?  "  +
+                    "AND password = ?" );
+            preparedStatement.setString(1,encrypt(account.getUserId(),SECRETKEY));
+            preparedStatement.setString(2,sha256(account.getPassword()));
             ResultSet resultSet = preparedStatement.executeQuery();
          while(resultSet.next()) {
              ide = String.valueOf(resultSet.getInt(1));
          }
-         //System.out.println(ide);
+         System.out.println(ide);
          return ide;
 
         } catch (SQLException e) {
@@ -258,7 +261,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         String [] info = new String [6];
         try {
             preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE id = ?");
-            preparedStatement.setString(1,id);
+            preparedStatement.setString(1,idPadding(new BigInteger(id)));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = resultSet.getString(1);

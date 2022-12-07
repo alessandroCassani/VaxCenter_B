@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="correzione bug" />
+    <list default="true" id="6a756c39-fa39-4a16-a2a1-e9b428ae5872" name="Changes" comment="sistemazione generale">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/cittadini/UIAdverseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/cittadini/UIAdverseEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientCV/src/main/java/cittadini/UILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientCV/src/main/java/cittadini/UILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/serverCV/src/main/java/database/ServerInterface.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +100,33 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CentriVaccinali">
+    <configuration name="CentriVaccinali" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="centrivaccinali.CentriVaccinali" />
+      <module name="clientCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="centrivaccinali.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerCentriVaccinali" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.ServerCentriVaccinali" />
+      <module name="serverCV" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServerPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.ServerPointer" />
       <module name="clientCV" />
@@ -114,19 +146,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UISearchVaxCenterDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.UISearchVaxCenterDialog" />
-      <module name="clientCV" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,17 +174,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.UISearchVaxCenterDialog" />
+      <item itemvalue="Application.CentriVaccinali" />
+      <item itemvalue="Application.ServerCentriVaccinali" />
       <item itemvalue="Application.ServerPointer" />
       <item itemvalue="Application.UILoginToServer" />
       <item itemvalue="Application.WelcomeScreen" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CentriVaccinali" />
+        <item itemvalue="Application.ServerCentriVaccinali" />
         <item itemvalue="Application.UILoginToServer" />
         <item itemvalue="Application.ServerPointer" />
         <item itemvalue="Application.WelcomeScreen" />
-        <item itemvalue="Application.UISearchVaxCenterDialog" />
       </list>
     </recent_temporary>
   </component>
@@ -225,34 +246,9 @@
       <workItem from="1669040685653" duration="2970000" />
       <workItem from="1669048539286" duration="1605000" />
       <workItem from="1669050565927" duration="2547000" />
-    </task>
-    <task id="LOCAL-00060" summary="Sistemazione UI">
-      <created>1664798849890</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1664798849891</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Sistemazione collegamento varie classi">
-      <created>1664799233229</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1664799233229</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Sistemazione Bug UI">
-      <created>1664977036762</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1664977036763</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Sistemazione Bug UI">
-      <created>1664977406604</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1664977406604</updated>
+      <workItem from="1670411599295" duration="3705000" />
+      <workItem from="1670416345448" duration="205000" />
+      <workItem from="1670427914137" duration="4091000" />
     </task>
     <task id="LOCAL-00064" summary="Sistemazione Bug UI">
       <created>1664977434866</created>
@@ -569,7 +565,35 @@
       <option name="project" value="LOCAL" />
       <updated>1669053160232</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="commit messaggio">
+      <created>1670341434448</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1670341434449</updated>
+    </task>
+    <task id="LOCAL-00110" summary="creazione tabelle completata">
+      <created>1670413565343</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1670413565344</updated>
+    </task>
+    <task id="LOCAL-00111" summary="creazione tabelle completata">
+      <created>1670413593617</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1670413593618</updated>
+    </task>
+    <task id="LOCAL-00112" summary="sistemazione generale">
+      <created>1670415095219</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1670415095219</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,9 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creata la classe UISearchVaxCenterDialog" />
-    <MESSAGE value="implementata la classe UISearchVaxCenterDialog" />
-    <MESSAGE value="aggiunta immagine" />
     <MESSAGE value="implementata con la parte di grafica la classe" />
     <MESSAGE value="creato l'oggetto vcdialog" />
     <MESSAGE value="creato il metodo jTable1MouseClicked" />
@@ -624,7 +645,10 @@
     <MESSAGE value="maven complete" />
     <MESSAGE value="pom principale" />
     <MESSAGE value="correzione bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="correzione bug" />
+    <MESSAGE value="commit messaggio" />
+    <MESSAGE value="creazione tabelle completata" />
+    <MESSAGE value="sistemazione generale" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemazione generale" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
