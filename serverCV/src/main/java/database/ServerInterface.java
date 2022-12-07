@@ -74,13 +74,13 @@ public interface ServerInterface extends Remote {
 
     /**
      * segnatura del metodo che permette la restituzione degli eventi avversi già segnalati
-     * @param user nome del centro vaccinale (anche non completa)
-     * @return lista di centri vaccinali
+     * @param id id del cittadino
+     * @return lista di eventi avversi già inseriti
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */
-    String[] getPersonAE(String user) throws RemoteException;
+    String[] getPersonAE(String id) throws RemoteException;
 
     /**
      * segnatura del metodo che permette di registrare a sistema l'account di un cittadino
@@ -215,5 +215,13 @@ public interface ServerInterface extends Remote {
 
     String[] getInfoCittadino(String user) throws RemoteException;
 
+    /**
+     * il metodo permette di recuperare l'identificativo del cittadino
+     * @param acc account del cittadino
+     * @return id del cittadino
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Damiano Ficara
+     */
     String getID(Account acc) throws RemoteException;
 }
