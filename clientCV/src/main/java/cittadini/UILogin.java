@@ -78,8 +78,8 @@ public class UILogin extends JFrame  {
      */
     private void initComponents() {
 
-        rightPanel = new GradientPanel(Color.decode("#099779"),Color.decode("#0f88f9"));
-        leftPanel = new GradientPanel(Color.decode("#099773"),Color.decode("#0f68a9"));
+        rightPanel = new GradientPanel(Color.decode("#B5E2E8"),Color.decode("#B5f9E8"));
+        leftPanel = new GradientPanel(Color.decode("#B5E2E8"),Color.decode("#B5E2E8"));
         intro = new javax.swing.JLabel();
         userPanel = new javax.swing.JPanel();
         imgUser = new javax.swing.JLabel();
@@ -171,7 +171,8 @@ public class UILogin extends JFrame  {
                     if(ServerPointer.getStub().isSignedUp(new Account(username.getText(),password.getText()))){
                         System.out.println("Accesso in corso....");
                         counter = 0;
-                        new UIAdverseEvent(username.getText());
+                        String id = ServerPointer.getStub().getID(new Account(username.getText(),password.getText()));
+                        new UIAdverseEvent(id);
 
                     }
                     else {

@@ -149,14 +149,13 @@ public class DBManagement {
         try{
             connection = DriverManager.getConnection(url + nameDB, userDB, passwordDB);
 
-            String query = "create table if not exists vaccinati("
-                    + "id VARCHAR(16) PRIMARY KEY,"
-                    + "nome_centro_vaccinale VARCHAR(80),"
-                    + "nome VARCHAR(50),"
-                    + "cognome VARCHAR(50),"
-                    + "codice_fiscale VARCHAR(50),"
-                    + "data_vaccino VARCHAR(40),"
-                    + "tipo_vaccino VARCHAR(50));"
+            String query = "create table if not exists dataset_comuni("
+                     +"comune VARCHAR(40),"
+                     +"provincia VARCHAR(2),"
+                     +"cap INTEGER,"
+                     +"regione VARCHAR(21),"
+                     +"PRIMARY KEY(comune,provincia));"
+
 
                     + "create table if not exists centri_vaccinali("
                     + "nome_centro_vaccinale VARCHAR(80) PRIMARY KEY,"
@@ -164,12 +163,23 @@ public class DBManagement {
                     + "nome_via VARCHAR(30),"
                     + "civico VARCHAR(6),"
                     + "provincia CHAR(2),"
-                    + "comune VARCHAR(30),"
+                    + "comune VARCHAR(40),"
                     + "cap INTEGER,"
-                    + "tipologia VARCHAR(20));"
+                    + "tipologia VARCHAR(20),"
+                    + "FOREIGN KEY(comune,provincia) REFERENCES dataset_comuni);"
+
+                    + "create table if not exists vaccinati("
+                    + "id VARCHAR(16) PRIMARY KEY,"
+                    + "nome_centro_vaccinale VARCHAR(80) REFERENCES centri_vaccinali,"
+                    + "nome VARCHAR(50),"
+                    + "cognome VARCHAR(50),"
+                    + "codice_fiscale VARCHAR(50),"
+                    + "data_vaccino VARCHAR(40),"
+                    + "tipo_vaccino VARCHAR(50));"
+
 
                     + "create table if not exists cittadini("
-                    + "id VARCHAR(16) PRIMARY KEY,"
+                    + "id VARCHAR(16) PRIMARY KEY REFERENCES vaccinati,"
                     + "nome VARCHAR(50),"
                     + "cognome VARCHAR(50),"
                     + "codice_fiscale VARCHAR(50),"
@@ -179,20 +189,14 @@ public class DBManagement {
                     + "nome_centro_vaccinale VARCHAR(80) REFERENCES centri_vaccinali);"
 
                     + "create table if not exists eventi_avversi("
-                    + "username VARCHAR(50) PRIMARY KEY,"
+                    + "id VARCHAR(16) PRIMARY KEY REFERENCES cittadini,"
                     + "mal_di_testa INTEGER,"
                     + "febbre INTEGER,"
                     + "tachicardia INTEGER,"
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
-                    + "note VARCHAR(256));"
-
-                    +"create table if not exists dataset_comuni("
-                    +"comune VARCHAR(40) PRIMARY KEY,"
-                    +"provincia VARCHAR(2),"
-                    +"cap INTEGER,"
-                    +"regione VARCHAR(21));";
+                    + "note VARCHAR(256));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();

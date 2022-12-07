@@ -125,7 +125,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, idPadding(numero));
-            ps.setString(2,encrypt(vaccinato.getCentroVaccinale(),SECRETKEY));
+            ps.setString(2,vaccinato.getCentroVaccinale());
             ps.setString(3,encrypt(vaccinato.getNome(),SECRETKEY));
             ps.setString(4,encrypt(vaccinato.getCognome(),SECRETKEY));
             ps.setString(5,encrypt(vaccinato.getCodFisc(),SECRETKEY));
@@ -150,14 +150,15 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
      * @author Alessandro Cassani
      */
     @Override
-    public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String user) throws RemoteException {
+    public synchronized boolean inserisciEventiAvversi(EventiAvversi eventiAvversi,String id) throws RemoteException {
         try {
             int count;
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(username,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO eventi_avversi(id,mal_di_testa,febbre,tachicardia,dolori_muscolari,linfoadenopatia,crisi_ipertensiva,note) " +
                     " VALUES (?,?,?,?,?,?,?,?)");
+            System.out.println(id);
             // la lista che contiene sintomi e severità deve contenere tutti i sintomi, non solo quelli segnalati
             //quelli non segnalati sono riconoscibili perchè hanno severità settata a 0
-            ps.setString(1,encrypt(user,SECRETKEY));
+            ps.setString(1,idPadding(new BigInteger(id)));
             count = 2;
             while(count<8) {
                 ps.setInt(count,eventiAvversi.getSintomi().get(count-2).getSeverita());
@@ -172,18 +173,18 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
-     * @param user account del cittadino
+     * @param id id del cittadino
      * @return true/false in base all'esito dell'operazione
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */
     @Override
-    public boolean isAERegistered(String user) throws RemoteException {
+    public boolean isAERegistrated(String id) throws RemoteException {
         try {
-            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
+            PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
 
-            ps.setString(1, encrypt(user,SECRETKEY));
+            ps.setString(1, idPadding(new BigInteger(id)));
 
             ResultSet resultSet = ps.executeQuery();
             if(resultSet.next()){
@@ -197,20 +198,20 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
 
     /**
      * il metodo permette di avere il riepilogo degli eventi avversi già registrati di un cittadino
-     * @param user account del cittadino
-     * @return true/false in base all'esito dell'operazione
+     * @param id id del cittadino
+     * @return eventi avversi del cittadino
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      */
 
     @Override
-    public String[] getPersonAE(String user) throws RemoteException {
+    public String[] getPersonAE(String id) throws RemoteException {
         PreparedStatement preparedStatement = null;
         String [] info = new String [7];
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user,SECRETKEY));
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM eventi_avversi WHERE id = ?");
+            preparedStatement.setString(1,idPadding(new BigInteger(id)));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = String.valueOf(resultSet.getInt(2));
@@ -226,21 +227,49 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return null;
         }
     }
+
+    /**
+     * il metodo permette di recuperare l'identificativo del cittadino
+     * @param account del cittadino
+     * @return id del cittadino
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Damiano Ficara
+     */
+    public String getID(Account account) throws RemoteException {
+        PreparedStatement preparedStatement = null;
+        String ide ="";
+        try {
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username = ?  "  +
+                    "AND password = ?" );
+            preparedStatement.setString(1,encrypt(account.getUserId(),SECRETKEY));
+            preparedStatement.setString(2,sha256(account.getPassword()));
+            ResultSet resultSet = preparedStatement.executeQuery();
+         while(resultSet.next()) {
+             ide = String.valueOf(resultSet.getInt(1));
+         }
+         System.out.println(ide);
+         return ide;
+
+        } catch (SQLException e) {
+            return null;
+        }
+    }
     /**
      * il metodo permette di avere il riepilogo dei dati generali di un cittadino
-     * @param user account del cittadino
-     * @return true/false in base all'esito dell'operazione
+     * @param id id del cittadino
+     * @return informazioni di base del cittadino
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
      * @author Alessandro Cassani
      */
-    public String[] getInfoCittadino(String user) throws RemoteException {
+    public String[] getInfoCittadino(String id) throws RemoteException {
         PreparedStatement preparedStatement = null;
         String [] info = new String [6];
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE username = ?");
-            preparedStatement.setString(1,encrypt(user,SECRETKEY));
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT * FROM cittadini WHERE id = ?");
+            preparedStatement.setString(1,idPadding(new BigInteger(id)));
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 info[0] = resultSet.getString(1);
@@ -255,7 +284,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return null;
         }
     }
-
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
@@ -410,7 +438,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                             "COUNT(dolori_muscolari) AS segnalazioni_dm, AVG(dolori_muscolari) AS media_dm, " +
                             "COUNT(linfoadenopatia) AS segnalazioni_linfoadenopatia, AVG(linfoadenopatia) AS media_linfoadenopatia, " +
                             "COUNT(crisi_ipertensiva) AS segnalazioni_ci, AVG(crisi_ipertensiva) AS media_ci " +
-                            "FROM eventi_avversi JOIN cittadini USING (username) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
+                            "FROM eventi_avversi JOIN cittadini USING (id) WHERE nome_centro_vaccinale = '" + nomeCentroVaccinale + "'");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
@@ -422,7 +450,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 info[5] = "CRISI IPERTENSIVA: " + resultSet.getString(11) + " segnalazioni | Intensità media " + Math.floor(Double.parseDouble(resultSet.getString(12))*100)/100;
                 return info;
             }
-
         } catch (SQLException e) {e.printStackTrace();return null;}
         return null;
     }
@@ -597,7 +624,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     }
 
     /**
-     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'ide del vaccinato
+     * il metodo permette di eseguire il padding fino a 16 cifre della stringa rappresentante l'id del vaccinato
      * @param id id sul quale eseguire padding
      * @return id a 16 cifre
      *
@@ -723,7 +750,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 hexString.append(hex);
             }
             return hexString.toString();
-        } catch(Exception ex){}
+        } catch(Exception ignored){}
         return base;
     }
 }
