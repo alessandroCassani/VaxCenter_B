@@ -199,7 +199,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     /**
      * il metodo permette di avere il riepilogo degli eventi avversi già registrati di un cittadino
      * @param id id del cittadino
-     * @return true/false in base all'esito dell'operazione
+     * @return eventi avversi del cittadino
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
@@ -228,6 +228,14 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         }
     }
 
+    /**
+     * il metodo permette di recuperare l'identificativo del cittadino
+     * @param account del cittadino
+     * @return id del cittadino
+     * @throws RemoteException eccezione rmi
+     *
+     * @author Damiano Ficara
+     */
     public String getID(Account account) throws RemoteException {
         PreparedStatement preparedStatement = null;
         String ide ="";
@@ -250,7 +258,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
     /**
      * il metodo permette di avere il riepilogo dei dati generali di un cittadino
      * @param id id del cittadino
-     * @return true/false in base all'esito dell'operazione
+     * @return informazioni di base del cittadino
      * @throws RemoteException eccezione rmi
      *
      * @author Paolo Bruscagin
