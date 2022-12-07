@@ -10,8 +10,10 @@ package util;
  *
  */
 public enum Vaccino {
+    /**
+    * Tipologie di vaccini presenti
+     */
     PFIZER, ASTRAZENECA, MODERNA, JOHNSON;
-
     /**
      * metodo che permette di ricreare un oggetto di tipo Vaccino partendo
      * da una stringa equivalente

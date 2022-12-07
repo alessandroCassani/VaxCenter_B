@@ -200,7 +200,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
     /**
      * nome colonna 2
      */
-    String severitàEvento = " SEVERITA'";
+    String severitaEvento = " SEVERITA'";
 
 
 
@@ -281,7 +281,7 @@ public class UIAdverseEvent extends JFrame implements ActionListener {
 
 
 
-        String[][] data = {{nomeEvento, severitàEvento}, {" Mal di testa", ("       " +info[0])},
+        String[][] data = {{nomeEvento, severitaEvento}, {" Mal di testa", ("       " +info[0])},
                 {" Febbre", ("       " +info[1])}, {" Tachicardia", ("       " +info[2])}, {" Dolori Musc. Art.", ("       " +info[3])},
                 {" Linfoadenopatia", ("       " +info[4])}, {" Crisi Ipertensiva", ("       " +info[5])}};
 
