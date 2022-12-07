@@ -125,7 +125,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             PreparedStatement ps = DBManagement.getDB().connection.prepareStatement("INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
                     "VALUES(?,?,?,?,?,?,?)");
             ps.setString(1, idPadding(numero));
-            ps.setString(2,encrypt(vaccinato.getCentroVaccinale(),SECRETKEY));
+            ps.setString(2,vaccinato.getCentroVaccinale());
             ps.setString(3,encrypt(vaccinato.getNome(),SECRETKEY));
             ps.setString(4,encrypt(vaccinato.getCognome(),SECRETKEY));
             ps.setString(5,encrypt(vaccinato.getCodFisc(),SECRETKEY));
@@ -231,13 +231,13 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
         PreparedStatement preparedStatement = null;
         String ide ="";
         try {
-            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username =  " + account.getUserId() +
-                    "AND password = " + account.getPassword() + "");
+            preparedStatement = DBManagement.getDB().connection.prepareStatement("SELECT id FROM cittadini WHERE username =  " + encrypt(account.getUserId(),SECRETKEY) +
+                    "AND password = " + sha256(account.getUserId()) + "");
             ResultSet resultSet = preparedStatement.executeQuery();
          while(resultSet.next()) {
              ide = String.valueOf(resultSet.getInt(1));
          }
-         System.out.println(ide);
+         //System.out.println(ide);
          return ide;
 
         } catch (SQLException e) {
@@ -273,8 +273,6 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
             return null;
         }
     }
-
-
 
     /**
      * il metodo permette di controllare se il cittadino ha un account oppure no
@@ -741,7 +739,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServerInterface {
                 hexString.append(hex);
             }
             return hexString.toString();
-        } catch(Exception ex){}
+        } catch(Exception ignored){}
         return base;
     }
 }
