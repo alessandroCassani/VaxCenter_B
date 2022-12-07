@@ -196,13 +196,7 @@ public class DBManagement {
                     + "dolori_muscolari INTEGER,"
                     + "linfoadenopatia INTEGER,"
                     + "crisi_ipertensiva INTEGER,"
-                    + "note VARCHAR(256));"
-
-
-
-
-
-                    ;
+                    + "note VARCHAR(256));";
 
             preparedstmt = connection.prepareStatement(query);
             preparedstmt.execute();
