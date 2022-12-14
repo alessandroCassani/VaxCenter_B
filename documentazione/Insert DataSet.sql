@@ -63,7 +63,7 @@ insert into centri_vaccinali values('LARIOFIERE', 'VIALE', 'RESEGONE', 9, 'CO', 
 insert into centri_vaccinali values('OSPEDALE DI CIVITA CASTELLANA', 'VIA', 'FERRETTI', 169,  'VT', 'CIVITA CASTELLANA', 01033, 'OSPEDALIERO');
 insert into centri_vaccinali values('HUB DELLA SABINA', 'VIA', 'DELLA MECCANICA', 32, 'RI', 'PASSO CORESE', 02032, 'HUB');
 insert into centri_vaccinali values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ROMA', 00109, 'AZIENDALE');
-insert into centri_vaccinali values('OSPEDALE CITTA DI CASTELLO', 'VIA', 'LUIGI ANGELINI', 10, 'PG', 'CITTA DI CASTELLO', 06012, 'OSPEDALIERO');
+insert into centri_vaccinali values('OSPEDALE MAGGIORE', 'VIALE', 'ANTONIO GRAMISCI', 14, 'PR', 'PARMA', 43126, 'OSPEDALIERO');
 insert into centri_vaccinali values('UNIONE MONTANTA DEI SETTE COMUNI', 'VIA', 'STAZIONE', 1,'VI', 'ASIAGO', 36012, 'AZIENDALE');
 insert into centri_vaccinali values('CENTRO MAROSTICA', 'VIA', '4 NOVEMBRE', 43, 'VI', 'MAROSTICA', 36063, 'HUB');
 
