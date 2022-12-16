@@ -283,13 +283,6 @@ public class UILoginToServer extends JFrame implements ActionListener {
                     }else{
                         JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
                     }
-                } else {
-                    if (getHostTextField().equals("localhost") && getPortTextField().equals(5432)){
-                        this.dispose();
-                        new UILoginToServer();
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Host e/o Porta sono errati!", "Messaggio", JOptionPane.ERROR_MESSAGE);
-                    }
                 }
             }
 
