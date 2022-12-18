@@ -66,11 +66,13 @@ Avviare l'applicazione
 Per avviare l'applicazione è sufficiente fare doppio click sul file nella cartella target/ del modulo che si vuole eseguire: 
 
 ▪serverCV-1.0.jar se si necessita utilizzare l'applicazione Server; 
+
 ▪clientCV-1.0.jar se si necessita utilizzare l'applicazione Client. 
 
 o in alternativa è possibile avviare il programma da terminale, con il seguente comando:
 
 ▪ cd {nome del percorso in cui è presente il file Server .jar} java -jar serverCV-1.0.jar 
+
 ▪ cd {nome del percorso in cui è presente il file Client .jar} java -jar clientCV-1.0.jar
 
 
