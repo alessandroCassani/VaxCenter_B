@@ -219,7 +219,7 @@ public class DBManagement {
             File dataset = File.createTempFile("dataset_comuni","txt");
             String ds = "";
 
-            //lettura dataset
+            //lettura dataset comuni
             try (FileOutputStream outputStream = new FileOutputStream(dataset)) {
                 int read;
                 byte[] bytes = new byte[1024];
