@@ -215,17 +215,23 @@ public class DBManagement {
     private static void insertDataSet() {
         try {
             PreparedStatement ps;
-            URL resource = DBManagement.class.getResource("/dataset/dataset_comuni");
-            File dataset = null;
+            InputStream in = DBManagement.class.getResourceAsStream("/dataset/dataset_comuni.txt");
+            File dataset = File.createTempFile("dataset_comuni","txt");
             String ds = "";
-            assert resource != null;
-            dataset = Paths.get(resource.toURI()).toFile();
-            assert dataset != null;
+
+            //lettura dataset
+            try (FileOutputStream outputStream = new FileOutputStream(dataset)) {
+                int read;
+                byte[] bytes = new byte[1024];
+                while ((read = in.read(bytes)) != -1) {
+                    outputStream.write(bytes, 0, read);
+                }
+            }
+
             BufferedReader br = new BufferedReader(new FileReader(dataset));
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             int i = 0;
-
             while (line != null) {
                 sb.append(line);
                 sb.append("\n");
@@ -250,7 +256,7 @@ public class DBManagement {
                             +"DELETE FROM centri_vaccinali;"
 
                             +"insert into centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia)"+
-                            "values ('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21050, 'OSPEDALIERO');\n" +
+                            "values ('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21049, 'OSPEDALIERO');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                             "values('MALPENSA FIERE', 'VIA', 'XI SETTEMBRE', 16, 'VA', 'BUSTO ARSIZIO', 21052, 'HUB');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
@@ -264,9 +270,9 @@ public class DBManagement {
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                             "values('HUB DELLA SABINA', 'VIA', 'DELLA MECCANICA', 32, 'RI', 'PASSO CORESE', 02032, 'HUB');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ROMA', 00109, 'AZIENDALE');\n" +
+                            "values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ANZIO', 00042, 'AZIENDALE');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('OSPEDALE MAGGIORE', 'VIALE', 'ANTONIO GRAMISCI', 14, 'PR', 'PARMA', 43126, 'OSPEDALIERO');\n" +
+                            "values('OSPEDALE MAGGIORE', 'VIALE', 'ANTONIO GRAMISCI', 14, 'PR', 'PARMA', 43100, 'OSPEDALIERO');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
                             "values('UNIONE MONTANTA DEI SETTE COMUNI', 'VIA', 'STAZIONE', 1,'VI', 'ASIAGO', 36012, 'AZIENDALE');\n" +
                             "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
