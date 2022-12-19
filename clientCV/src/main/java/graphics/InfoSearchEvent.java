@@ -13,7 +13,7 @@ public interface InfoSearchEvent {
 
     /**
      * Metodo responsabile della configurazione dell'opzione da ricercare
-     * @param option informazioni sulla ricerca da compoere
+     * @param option informazioni sulla ricerca da compiere
      * @param index tipologia di ricerca da compiere
      * @author Damiano Ficara
      */
