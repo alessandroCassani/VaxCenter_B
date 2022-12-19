@@ -81,15 +81,15 @@ o in alternativa è possibile avviare il programma da terminale, con il seguente
 ### Comandi Maven
 Compilazione Maven tramite riga di comando Per compilazione Maven tramite riga di comando eseguire i comandi nell'ordine seguente:
 
-`mvn clean 
-`
-`mnv validate `
+`mvn clean` 
 
-`mvn compile `
+`mnv validate`
 
-`mvn package `
+`mvn compile`
 
-`mvn javadoc:javadoc
-`
+`mvn package`
+
+`mvn javadoc:javadoc`
+
 
 Una volta fatto, nei moduli relativi, verrà generata una cartella "target" dove all'interno saranno presenti gli eseguibili .jar e la Javadoc del progetto.
