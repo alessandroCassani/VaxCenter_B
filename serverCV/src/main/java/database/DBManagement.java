@@ -215,17 +215,23 @@ public class DBManagement {
     private static void insertDataSet() {
         try {
             PreparedStatement ps;
-            URL resource = DBManagement.class.getResource("/dataset/dataset_comuni");
-            File dataset = null;
+            InputStream in = DBManagement.class.getResourceAsStream("/dataset/dataset_comuni.txt");
+            File dataset = File.createTempFile("dataset_comuni","txt");
             String ds = "";
-            assert resource != null;
-            dataset = Paths.get(resource.toURI()).toFile();
-            assert dataset != null;
+
+            //lettura dataset comuni
+            try (FileOutputStream outputStream = new FileOutputStream(dataset)) {
+                int read;
+                byte[] bytes = new byte[1024];
+                while ((read = in.read(bytes)) != -1) {
+                    outputStream.write(bytes, 0, read);
+                }
+            }
+
             BufferedReader br = new BufferedReader(new FileReader(dataset));
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             int i = 0;
-
             while (line != null) {
                 sb.append(line);
                 sb.append("\n");
@@ -243,34 +249,34 @@ public class DBManagement {
      * @author Luca Perfetti
      */
     public static void insertTestDataSet() throws SQLException {
-    PreparedStatement ps = DBManagement.getDB().connection.prepareStatement(
-                    "DELETE FROM eventi_avversi;"
-                            + "DELETE FROM cittadini;"
-                            + "DELETE FROM vaccinati;"
-                            +"DELETE FROM centri_vaccinali;"
+        PreparedStatement ps = DBManagement.getDB().connection.prepareStatement(
+                "DELETE FROM eventi_avversi;"
+                        + "DELETE FROM cittadini;"
+                        + "DELETE FROM vaccinati;"
+                        +"DELETE FROM centri_vaccinali;"
 
-                            +"insert into centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia)"+
-                            "values ('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21050, 'OSPEDALIERO');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('MALPENSA FIERE', 'VIA', 'XI SETTEMBRE', 16, 'VA', 'BUSTO ARSIZIO', 21052, 'HUB');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('HUB LURATE CACCIVIO', 'PIAZZA', 'ALPINI', 10, 'CO', 'LURATE CACCIVIO', 22075, 'HUB');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('OSPEDALE FORNAROLI', 'VIA', 'AL DONATORE DI SANGUE', 50, 'MI', 'MAGENTA', 20013, 'OSPEDALIERO');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('LARIOFIERE', 'VIALE', 'RESEGONE', 9, 'CO', 'ERBA', 22036, 'HUB');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('OSPEDALE DI CIVITA CASTELLANA', 'VIA', 'FERRETTI', 169,  'VT', 'CIVITA CASTELLANA', 01033, 'OSPEDALIERO');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('HUB DELLA SABINA', 'VIA', 'DELLA MECCANICA', 32, 'RI', 'PASSO CORESE', 02032, 'HUB');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ROMA', 00109, 'AZIENDALE');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('OSPEDALE MAGGIORE', 'VIALE', 'ANTONIO GRAMISCI', 14, 'PR', 'PARMA', 43126, 'OSPEDALIERO');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('UNIONE MONTANTA DEI SETTE COMUNI', 'VIA', 'STAZIONE', 1,'VI', 'ASIAGO', 36012, 'AZIENDALE');\n" +
-                            "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
-                            "values('CENTRO MAROSTICA', 'VIA', '4 NOVEMBRE', 43, 'VI', 'MAROSTICA', 36063, 'HUB');");
+                        +"insert into centri_vaccinali(nome_centro_vaccinale,qualificatore,nome_via,civico,provincia,comune,cap,tipologia)"+
+                        "values ('TRADATEOSPEDALE', 'VIA', 'ZANABONI', 1, 'VA', 'TRADATE', 21049, 'OSPEDALIERO');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('MALPENSA FIERE', 'VIA', 'XI SETTEMBRE', 16, 'VA', 'BUSTO ARSIZIO', 21052, 'HUB');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('HUB LURATE CACCIVIO', 'PIAZZA', 'ALPINI', 10, 'CO', 'LURATE CACCIVIO', 22075, 'HUB');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('OSPEDALE FORNAROLI', 'VIA', 'AL DONATORE DI SANGUE', 50, 'MI', 'MAGENTA', 20013, 'OSPEDALIERO');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('LARIOFIERE', 'VIALE', 'RESEGONE', 9, 'CO', 'ERBA', 22036, 'HUB');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('OSPEDALE DI CIVITA CASTELLANA', 'VIA', 'FERRETTI', 169,  'VT', 'CIVITA CASTELLANA', 01033, 'OSPEDALIERO');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('HUB DELLA SABINA', 'VIA', 'DELLA MECCANICA', 32, 'RI', 'PASSO CORESE', 02032, 'HUB');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('UNIVERSITARIA SANT ANDREA', 'VIA', 'DI GROTTAROSSA', 1035, 'RM', 'ANZIO', 00042, 'AZIENDALE');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('OSPEDALE MAGGIORE', 'VIALE', 'ANTONIO GRAMISCI', 14, 'PR', 'PARMA', 43100, 'OSPEDALIERO');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('UNIONE MONTANTA DEI SETTE COMUNI', 'VIA', 'STAZIONE', 1,'VI', 'ASIAGO', 36012, 'AZIENDALE');\n" +
+                        "insert into centri_vaccinali(nome_centro_vaccinale, qualificatore, nome_via, civico, provincia, comune, cap, tipologia)" +
+                        "values('CENTRO MAROSTICA', 'VIA', '4 NOVEMBRE', 43, 'VI', 'MAROSTICA', 36063, 'HUB');");
 
         PreparedStatement psV1 = DBManagement.getDB().connection.prepareStatement(
                 "INSERT INTO vaccinati(id,nome_centro_vaccinale,nome,cognome,codice_fiscale,data_vaccino,tipo_vaccino) \n" +
