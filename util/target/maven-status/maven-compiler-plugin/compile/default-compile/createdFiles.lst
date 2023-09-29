@@ -1,0 +1,11 @@
+util\Vaccinato.class
+util\Account.class
+util\Sintomo.class
+util\Persona.class
+util\Sintomatologia.class
+util\Qualificatore.class
+util\Tipologia.class
+util\Cittadino.class
+util\Vaccino.class
+util\EventiAvversi.class
+util\CentroVaccinale.class

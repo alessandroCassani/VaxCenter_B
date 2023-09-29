@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"centrivaccinali"},{"l":"checkdata"},{"l":"cittadini"},{"l":"graphics"}];updateSearchResults();

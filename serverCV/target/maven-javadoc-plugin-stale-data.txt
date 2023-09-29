@@ -1,0 +1,62 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/brusc/.m2/repository/org/postgresql/postgresql/42.5.0/postgresql-42.5.0.jar;C:/Users/brusc/.m2/repository/it/uninsubria/util/1.0/util-1.0.jar;C:/Users/brusc/.m2/repository/net/java/dev/timingframework/timingframework/1.0/timingframework-1.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'16'
+-sourcepath
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'serverCV 1.0 API'
+-use
+-version
+-windowtitle
+'serverCV 1.0 API'
+database
+database.UI
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/CapProvincia.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/DBManagement.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/package-info.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/ServerCentriVaccinali.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/ServerImpl.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/ServerInterface.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/UI/package-info.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/UI/RoundButton.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/UI/UILoginToServer.java'
+'C:/Users/brusc/Documents/GitHub/VaxCenter_B/serverCV/src/main/java/database/UI/UIServerHome.java'
+C:\Users\brusc\.m2\repository\org\postgresql\postgresql\42.5.0\postgresql-42.5.0.jar = 1666188804219
+C:\Users\brusc\.m2\repository\it\uninsubria\util\1.0\util-1.0.jar = 1669381118636
+C:\Users\brusc\.m2\repository\net\java\dev\timingframework\timingframework\1.0\timingframework-1.0.jar = 1664804173972
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\src\main\java = 1671471752723
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\allclasses-index.html = 1672307370857
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\allpackages-index.html = 1672307370861
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\copy.svg = 1672307370930
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\element-list = 1672307370643
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\help-doc.html = 1672307370920
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\index-all.html = 1672307370906
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\index.html = 1672307370824
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\jquery-ui.overrides.css = 1672307370978
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\member-search-index.js = 1672307370870
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\module-search-index.js = 1672307370864
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\overview-summary.html = 1672307370911
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\overview-tree.html = 1672307370818
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\package-search-index.js = 1672307370865
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\script.js = 1672307370928
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\search.js = 1672307370933
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\serialized-form.html = 1672307370732
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\stylesheet.css = 1672307370925
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\tag-search-index.js = 1672307370873
+C:\Users\brusc\Documents\GitHub\VaxCenter_B\serverCV\target\site\apidocs\type-search-index.js = 1672307370867
